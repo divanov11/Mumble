@@ -16,13 +16,13 @@
 }
 
 .btn-1 {
-  background-color: #5aa5b9;
-  color: #fff;
+  background-color: $color-main;
+  color: $color-white;
 }
 
 .btn-1-outline {
-  background-color: #5aa5b9;
-  color: #5aa5b9;
-  background-color: #fff;
-  border: 1px solid #5aa5b9;
+  background-color: $color-main;
+  color: $color-main;
+  background-color: $color-main;
+  border: 1px solid $color-main;
 }

@@ -1,13 +1,13 @@
 .card {
   border-radius: 10px;
-  background-color: #fff;
-  border: 1px solid #eaedf3;
+  background-color: $color-white;
+  border: 1px solid $color-light;
   margin: 10px;
 }
 
 .card-dark {
-  background-color: #eaecec;
-  border: 1px solid #eaedf3;
+  background-color: $color-light;
+  border: 1px solid $color-light;
 }
 
 .card-body {

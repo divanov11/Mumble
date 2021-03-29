@@ -1,0 +1,63 @@
+.codeblock {
+  code {
+    border-radius: 0.5rem;
+    height: auto;
+  }
+
+  &--sm {
+    height: 24rem;
+  }
+
+  &--md {
+    height: 32rem;
+  }
+
+  &--lg {
+    height: 44rem;
+  }
+
+  &--xl {
+    height: 64rem;
+  }
+}
+
+// highlight js
+.hljs-ln {
+  position: relative;
+  padding-left: 3em !important;
+
+  &__bg {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 4rem;
+    height: 100%;
+    border-right: 1px solid #555;
+    background: rgba(255, 255, 255, 0.18);
+  }
+
+  &__num {
+    position: relative;
+    display: inline-block;
+    height: 1.6rem;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &::before {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      right: 0;
+      margin-right: 1em;
+      color: #777;
+      font-style: normal;
+      font-weight: normal;
+      content: attr(data-num);
+    }
+  }
+}

@@ -29,4 +29,25 @@ body {
   line-height: 1.6;
   font-weight: $font-regular;
   font-size: 1.45rem;
+  background-color: $color-bg;
 }
+
+/*Customizing Scroll*/
+// textarea {
+//   scroll-behavior: smooth;
+//   scrollbar-width: thin;
+//   scrollbar-color: darken($color-light, 5%);
+
+//   &::-webkit-scrollbar-thumb {
+//     border-radius: 1rem;
+//   }
+//   &::-webkit-scrollbar {
+//     width: 1rem;
+//   }
+//   &::-webkit-scrollbar-track {
+//     background: $color-lighter;
+//   }
+//   &::-webkit-scrollbar-thumb {
+//     background-color: darken($color-light, 5%);
+//   }
+// }

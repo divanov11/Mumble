@@ -1,5 +1,5 @@
 .tag {
-  background-color: #3f4156;
+  background-color: $color-sub;
 
   height: fit-content;
   width: fit-content;
@@ -9,5 +9,5 @@
 }
 
 .tag small {
-  color: #fff;
+  color: $color-white;
 }

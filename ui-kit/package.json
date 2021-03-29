@@ -33,6 +33,7 @@
     "mini-css-extract-plugin": "^1.4.0",
     "node-sass": "^5.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "postcss": "^8.2.8",
     "postcss-hexrgba": "^2.0.1",
     "postcss-import": "^14.0.0",
     "postcss-loader": "^5.2.0",
@@ -48,7 +49,6 @@
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {
-    "lodash": "^4.17.21",
-    "postcss": "^8.2.8"
+    "highlight.js": "^10.7.1"
   }
 }

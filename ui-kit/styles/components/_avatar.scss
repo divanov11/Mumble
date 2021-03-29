@@ -1,25 +1,24 @@
-.user-thumbnail {
+.avatar {
   border-radius: 50%;
-  border: 2px solid #5aa5b9;
-  margin-right: 10px;
-}
+  border: 2px solid $color-main;
 
-.user-thumbnail-xl {
-  height: 200px;
-  width: 200px;
-}
+  &--xl {
+    height: 20rem;
+    width: 20rem;
+  }
 
-.user-thumbnail-lg {
-  height: 150px;
-  width: 150px;
-}
+  &--lg {
+    height: 15rem;
+    width: 15rem;
+  }
 
-.user-thumbnail-md {
-  height: 75px;
-  width: 75px;
-}
+  &--md {
+    height: 7.5rem;
+    width: 7.5rem;
+  }
 
-.user-thumbnail-sm {
-  height: 50px;
-  width: 50px;
+  &--sm {
+    height: 5rem;
+    width: 5rem;
+  }
 }

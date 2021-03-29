@@ -21,16 +21,9 @@ p,
 span,
 strong {
   font-size: 16px;
-  color: rgb(73, 73, 73);
+  color: $color-text;
 }
 
-.syntax {
-  background-color: hsl(0deg, 0%, 15%);
-  border: 1px solid #999;
-  display: block;
-  padding: 20px;
-  color: #eee;
-  width: 90%;
-  resize: none;
-  font-size: 16px;
+pre > code * {
+  font-family: $font-monospace !important;
 }

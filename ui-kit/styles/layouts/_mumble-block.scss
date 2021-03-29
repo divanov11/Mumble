@@ -1,0 +1,23 @@
+.mumble-block {
+  padding: $sec-ptb-lg;
+
+  &__title {
+    color: $color-sub;
+    font-weight: $font-medium;
+  }
+
+  &__info {
+    padding-bottom: 1rem;
+    border-bottom: 2px solid $color-main;
+  }
+
+  &__preview {
+    padding: 5rem 0;
+  }
+
+  &--avatar {
+    .mumble-block__preview > * {
+      margin-right: 1rem;
+    }
+  }
+}

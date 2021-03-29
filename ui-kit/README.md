@@ -1,6 +1,6 @@
 # 🎨 Mumble UI Kits
 
-A collection of components and style guildes for project Mumble 🔥.
+A collection of components and style guidelines for the project Mumble 🔥.
 
 ## Setup Command
 

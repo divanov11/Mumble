@@ -146,34 +146,38 @@
         >
       </div>
 
-      <div>
-        <h1>User Thumbnails</h1>
-        <p>Choose between 4 sizes for a user thumbnail icon.</p>
-        <hr />
-        <img
-          class="user-thumbnail user-thumbnail-xl"
-          src="https://randomuser.me/api/portraits/men/52.jpg"
-        />
-        <img
-          class="user-thumbnail user-thumbnail-lg"
-          src="https://randomuser.me/api/portraits/men/52.jpg"
-        />
-        <img
-          class="user-thumbnail user-thumbnail-md"
-          src="https://randomuser.me/api/portraits/men/52.jpg"
-        />
-        <img
-          class="user-thumbnail user-thumbnail-sm"
-          src="https://randomuser.me/api/portraits/men/52.jpg"
-        />
+      <div class="mumble-block mumble-block--avatar">
+        <h1 class="mumble-block__title">User Avatar</h1>
+        <p class="mumble-block__info">
+          Choose between 4 sizes for a user thumbnail icon.
+        </p>
+        <div class="mumble-block__preview">
+          <img
+            class="avatar avatar--xl"
+            src="https://randomuser.me/api/portraits/men/52.jpg"
+          />
+          <img
+            class="avatar avatar--lg"
+            src="https://randomuser.me/api/portraits/men/52.jpg"
+          />
+          <img
+            class="avatar avatar--md"
+            src="https://randomuser.me/api/portraits/men/52.jpg"
+          />
+          <img
+            class="avatar avatar--sm"
+            src="https://randomuser.me/api/portraits/men/52.jpg"
+          />
+        </div>
 
-        <textarea class="syntax" style="height: 130px">
-                <img class="user-thumbnail user-thumbnail-xl" src="#" />
-                <img class="user-thumbnail user-thumbnail-lg" src="#" />
-                <img class="user-thumbnail  user-thumbnail-md" src="#" />
-                <img class="user-thumbnail  user-thumbnail-sm" src="#" />
-            </textarea
-        >
+        <pre class="codeblock">
+            <code class="html">
+              &lt;img class="avatar avatar--xl" src="#" /&gt;
+              &lt;img class="avatar avatar--lg" src="#" /&gt;
+              &lt;img class="avatar avatar--md" src="#" /&gt;
+              &lt;img class="avatar avatar--sm" src="#" /&gt;
+            </code>
+        </pre>
       </div>
     </div>
   </body>

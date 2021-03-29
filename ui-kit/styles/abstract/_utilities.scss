@@ -1,20 +1,10 @@
-#container {
-  width: 1200px;
-  margin: 0 auto;
-  padding: 50px;
-  box-sizing: border-box;
-}
+// TODO: Work on Media Queries
 
-.syntax {
-  background-color: hsl(0deg, 0%, 15%);
-  border: 1px solid #999;
-  display: block;
-  padding: 20px;
-  color: #eee;
-  width: 90%;
-  resize: none;
-  font-size: 16px;
-  margin-top: 50px;
+#container {
+  width: 120rem;
+  margin: 0 auto;
+  padding: 5rem;
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 1200px) {
