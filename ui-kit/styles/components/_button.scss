@@ -1,0 +1,28 @@
+.btn {
+  display: block;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  width: fit-content;
+  height: fit-content;
+  margin: 5px;
+  font-size: 16px;
+}
+
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.btn-1 {
+  background-color: #5aa5b9;
+  color: #fff;
+}
+
+.btn-1-outline {
+  background-color: #5aa5b9;
+  color: #5aa5b9;
+  background-color: #fff;
+  border: 1px solid #5aa5b9;
+}

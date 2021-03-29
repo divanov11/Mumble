@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font;
+  text-rendering: optimizeLegibility;
+  color: inherit;
+  font-size: inherit;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 50%; //8px
+
+  @include media-queries(atSmall) {
+    font-size: 56.25%; //9px
+  }
+
+  @include media-queries(atLarge) {
+    font-size: 62.5%; //10px
+  }
+
+  @include media-queries(atLarger) {
+    font-size: 75%; //12px
+  }
+}
+
+body {
+  line-height: 1.6;
+  font-weight: $font-regular;
+  font-size: 1.45rem;
+}

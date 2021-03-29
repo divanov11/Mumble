@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="robots" content="noindex" />
+    <meta
+      name="description"
+      content="An open source social media platform and public forum for questions and discussions, built for developers."
+    />
+
+    <title>🎨 Mumble Ui Kit</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div>
+        <h6>
+          UI Kit for mumble.dev designed for easier styling of re-usable
+          components. For now all css from this UI kit will be added directly
+          into a css file inside of the mumble application. To contribute visit
+          the github repo here:
+          <a href="https://github.com/divanov11/mumble">Github Repo</a>
+        </h6>
+      </div>
+      <div>
+        <h1>Font Sizes</h1>
+        <p>
+          Preset settings for default font sizes. Sizes are set in pixels at the
+          moment but will be modified to use rem.
+        </p>
+        <hr />
+        <h1>Heading H1 (48px)</h1>
+        <h2>Heading H2 (36px)</h2>
+        <h3>Heading H3 (32px)</h3>
+        <h4>Heading H4 (28px)</h4>
+        <h5>Heading H5 (24px)</h5>
+        <h6>Heading H6 (18px)</h6>
+        <p>Paragraph text (16px)</p>
+
+        <span>Span Tag (16px)</span>
+        <br />
+        <strong>Strong tag (16px)</strong>
+
+        <textarea class="syntax" style="height: 250px">
+                <h1>Heading H1 (48px)</h1>
+                <h2>Heading H2 (36px)</h2>
+                <h3>Heading H3 (32px)</h3>
+                <h4>Heading H4 (28px)</h4>
+                <h5>Heading H5 (24px)</h5>
+                <h6>Heading H6 (18px)</h6>
+                <p>Paragraph text (16px)</p>
+                <span>Span Tag (16px)</span>
+                <strong>Strong tag (16px)</strong>
+            </textarea
+        >
+      </div>
+      <div>
+        <h1>Buttons</h1>
+        <p>
+          Choose between two buttons and 2 sizes by using the "btn" class with
+          additional settings. "btn" should be using with all buttons followed
+          by the button style (Filled or outlined). Setting a size is optional.
+        </p>
+
+        <hr />
+        <a class="btn btn-1" href="#">Button Default</a>
+        <a class="btn btn-1-outline" href="#">Button Outline</a>
+        <a class="btn btn-1 btn-sm" href="#">Button Small</a>
+        <a class="btn btn-1-outline btn-sm" href="#">Button Outline</a>
+
+        <textarea class="syntax" style="height: 140px">
+                <a class="btn btn-1" href="#">Button Default</a>
+                <a class="btn btn-1-outline" href="#">Button Outline</a>
+                <a class="btn btn-1 btn-sm" href="#">Button Small</a>
+                <a class="btn btn-1-outline btn-sm" href="#">Button Outline</a>
+            </textarea
+        >
+      </div>
+
+      <div>
+        <h1>Tags</h1>
+        <p>
+          To use the tag styling use the <b>"&lt;small&gt;"</b> tag inside of a
+          div and give it the class of "tag."
+        </p>
+        <hr />
+        <div class="tag">
+          <small>This is a tag</small>
+        </div>
+
+        <textarea class="syntax" style="height: 100px">
+                <div class="tag">
+                    <small>This is a tag</small>
+                </div>
+            </textarea
+        >
+      </div>
+
+      <div>
+        <h1>Cards</h1>
+        <p>
+          Choose between 2 card styles. Each card showed contain the class of
+          "card". By default the "card" class will give you a light themed card,
+          to choose style to add a second class "card-dark"
+        </p>
+        <hr />
+        <div class="card" style="width: 300px">
+          <div class="card-body">
+            <h5>Card Title</h5>
+            <p>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+        </div>
+
+        <div class="card card-dark" style="width: 300px">
+          <div class="card-body">
+            <h5>Card Dark Title</h5>
+            <p>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+        </div>
+
+        <textarea class="syntax" style="height: 400px">
+                <div class="card" style="width: 300px;">
+                    <div class="card-body">
+                        <h5>Card Title</h5>
+                        <p>Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="card card-dark" style="width: 300px;">
+                    <div class="card-body">
+                        <h5>Card Dark Title</h5>
+                        <p>Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                    </div>
+                </div>
+            </textarea
+        >
+      </div>
+
+      <div>
+        <h1>User Thumbnails</h1>
+        <p>Choose between 4 sizes for a user thumbnail icon.</p>
+        <hr />
+        <img
+          class="user-thumbnail user-thumbnail-xl"
+          src="https://randomuser.me/api/portraits/men/52.jpg"
+        />
+        <img
+          class="user-thumbnail user-thumbnail-lg"
+          src="https://randomuser.me/api/portraits/men/52.jpg"
+        />
+        <img
+          class="user-thumbnail user-thumbnail-md"
+          src="https://randomuser.me/api/portraits/men/52.jpg"
+        />
+        <img
+          class="user-thumbnail user-thumbnail-sm"
+          src="https://randomuser.me/api/portraits/men/52.jpg"
+        />
+
+        <textarea class="syntax" style="height: 130px">
+                <img class="user-thumbnail user-thumbnail-xl" src="#" />
+                <img class="user-thumbnail user-thumbnail-lg" src="#" />
+                <img class="user-thumbnail  user-thumbnail-md" src="#" />
+                <img class="user-thumbnail  user-thumbnail-sm" src="#" />
+            </textarea
+        >
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const codeBlocks = document.querySelectorAll(
+      ".code-header + .highlighter-rouge"
+    );
+    const copyCodeButtons = document.querySelectorAll(".copy-code-button");
+
+    copyCodeButtons.forEach((copyCodeButton, index) => {
+      const code = codeBlocks[index].innerText;
+
+      copyCodeButton.addEventListener("click", () => {
+        window.navigator.writeText(code);
+        copyCodeButton.classList.add("copied");
+
+        setTimeout(() => {
+          copyCodeButton.classList.remove("copied");
+        }, 2000);
+      });
+    });
+  </script>
+</html>

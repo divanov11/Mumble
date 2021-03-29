@@ -1,0 +1,9 @@
+{
+  "prettier.printWidth": 9999,
+  "prettier.endOfLine": "lf",
+  "prettier.tabWidth": 2,
+  "prettier.singleQuote": true,
+  "prettier.arrowParens": "avoid",
+  "prettier.trailingComma": "none",
+  "prettier.requireConfig": true
+}
