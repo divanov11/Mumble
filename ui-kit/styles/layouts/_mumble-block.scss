@@ -25,6 +25,16 @@
     }
   }
 
+  &--card {
+    .mumble-block__preview {
+      display: flex;
+
+      & > * {
+        margin-right: 2rem;
+      }
+    }
+  }
+
   &--avatar {
     .mumble-block__preview > * {
       margin-right: 1rem;

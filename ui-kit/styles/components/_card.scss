@@ -1,15 +1,16 @@
 .card {
-  border-radius: 10px;
+  border-radius: 1rem;
   background-color: $color-white;
-  border: 1px solid $color-light;
-  margin: 10px;
-}
+  border: 2px solid $color-light;
+  width: auto;
+  height: auto;
 
-.card-dark {
-  background-color: $color-light;
-  border: 1px solid $color-light;
-}
+  &--dark {
+    background-color: $color-light;
+    border-color: darken($color-light, 3%);
+  }
 
-.card-body {
-  padding: 20px;
+  &__body {
+    padding: 2.5rem;
+  }
 }

@@ -100,9 +100,9 @@
         </pre>
       </div>
 
-      <!-- Tags -->
-      <div class="mumble-block mubble-block--tags">
-        <h1 class="mumble-block__title">Tags</h1>
+      <!-- Tag -->
+      <div class="mumble-block mubble-block--tag">
+        <h1 class="mumble-block__title">Tag</h1>
         <p class="mumble-block__outline">
           To use the tag styling use the <b>"&lt;small&gt;"</b> tag inside of a
           div and give it the class of "tag."
@@ -130,55 +130,62 @@
         </pre>
       </div>
 
-      <!-- Cards -->
-      <div>
-        <h1>Cards</h1>
-        <p>
+      <!-- Card -->
+      <div class="mumble-block mumble-block--card">
+        <h1 class="mumble-block__title">Card</h1>
+        <p class="mumble-block__info">
           Choose between 2 card styles. Each card showed contain the class of
           "card". By default the "card" class will give you a light themed card,
           to choose style to add a second class "card-dark"
         </p>
-        <hr />
-        <div class="card" style="width: 300px">
-          <div class="card-body">
-            <h5>Card Title</h5>
-            <p>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+        <div class="mumble-block__preview">
+          <div class="card" style="width: 320px">
+            <div class="card__body">
+              <h3>Card Title</h3>
+              <p>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+
+          <div class="card card--dark" style="width: 320px">
+            <div class="card__body">
+              <h3>Card Dark Title</h3>
+              <p>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div class="card card-dark" style="width: 300px">
-          <div class="card-body">
-            <h5>Card Dark Title</h5>
-            <p>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-        </div>
+        <pre class="codeblock">
+          <code class="html">
+            &lt;div class="card" style="width: 320px"&gt;
+              &lt;div class="card__body"&gt;
+                &lt;h3&gt;Card Title&lt;/h3&gt;
+                &lt;p&gt;
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                &lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
 
-        <textarea class="syntax" style="height: 400px">
-                <div class="card" style="width: 300px;">
-                    <div class="card-body">
-                        <h5>Card Title</h5>
-                        <p>Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </p>
-                    </div>
-                </div>
-    
-                <div class="card card-dark" style="width: 300px;">
-                    <div class="card-body">
-                        <h5>Card Dark Title</h5>
-                        <p>Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </p>
-                    </div>
-                </div>
-            </textarea
-        >
+            &lt;div class="card card--dark" style="width: 320px"&gt;
+              &lt;div class="card__body"&gt;
+                &lt;h3&gt;Card Dark Title&lt;/h3&gt;
+                &lt;p&gt;
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                &lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          </code>
+        </pre>
       </div>
 
+      <!-- Avatar -->
       <div class="mumble-block mumble-block--avatar">
         <h1 class="mumble-block__title">User Avatar</h1>
         <p class="mumble-block__info">
