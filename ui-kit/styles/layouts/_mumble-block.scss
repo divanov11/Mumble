@@ -2,8 +2,9 @@
   padding: $sec-ptb-sm;
 
   &__title {
-    color: $color-sub;
-    font-weight: $font-medium;
+    color: $color-main;
+    font-size: 3rem;
+    font-weight: $font-bold;
   }
 
   &__info {
