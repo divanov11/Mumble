@@ -1,13 +1,21 @@
 .tag {
+  display: inline-block;
   background-color: $color-sub;
-
   height: fit-content;
   width: fit-content;
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin: 5px;
-}
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
 
-.tag small {
-  color: $color-white;
+  & > small {
+    color: $color-white;
+  }
+
+  &--outline {
+    border: 2px solid $color-sub;
+    background-color: transparent;
+    padding: 0.4rem 1rem;
+    & > small {
+      color: $color-sub;
+    }
+  }
 }

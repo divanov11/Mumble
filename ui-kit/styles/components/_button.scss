@@ -2,7 +2,7 @@
   display: inline-block;
   cursor: pointer;
   background-color: $color-light;
-  color: $color-text;
+  color: $color-sub;
   text-decoration: none;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
@@ -10,8 +10,14 @@
   width: fit-content;
   height: fit-content;
   font-size: 1.6rem;
-  // outline-width: 0;
-  // outline-color: transparent;
+  outline-width: 0;
+  outline-color: transparent;
+  backface-visibility: hidden;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    opacity: 0.95;
+  }
 
   &--main {
     background-color: $color-main;

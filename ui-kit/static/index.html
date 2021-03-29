@@ -69,9 +69,10 @@
       <div class="mumble-block mumble-block--button">
         <h1 class="mumble-block__title">Buttons</h1>
         <p class="mumble-block__info">
-          Choose between two buttons and 2 sizes by using the "btn" class with
-          additional settings. "btn" should be using with all buttons followed
-          by the button style (Filled or outlined). Setting a size is optional.
+          Choose between two styles, three variants and three sizes buttons by
+          using the "btn" class with additional settings. "btn" should be using
+          with all buttons followed by the button style (Filled or outlined).
+          Setting a size is optional.
         </p>
         <div class="mumble-block__preview">
           <button class="btn btn--main">Button Main</button>
@@ -100,25 +101,36 @@
       </div>
 
       <!-- Tags -->
-      <div>
-        <h1>Tags</h1>
-        <p>
+      <div class="mumble-block mubble-block--tags">
+        <h1 class="mumble-block__title">Tags</h1>
+        <p class="mumble-block__outline">
           To use the tag styling use the <b>"&lt;small&gt;"</b> tag inside of a
           div and give it the class of "tag."
         </p>
-        <hr />
-        <div class="tag">
-          <small>This is a tag</small>
+
+        <div class="mumble-block__preview">
+          <span class="tag">
+            <small>This is a tag</small>
+          </span>
+          <span class="tag tag--outline">
+            <small>This is a tag</small>
+          </span>
         </div>
 
-        <textarea class="syntax" style="height: 100px">
-                <div class="tag">
-                    <small>This is a tag</small>
-                </div>
-            </textarea
-        >
+        <pre class="codeblock">
+          <code class="html">
+            &lt;span class="tag"&gt; 
+              &lt;small&gt;This is a tag&lt;/small&gt;
+            &lt;/span&gt; 
+            
+            &lt;span class="tag tag--outline"&gt; 
+              &lt;small&gt;This is a tag&lt;/small&gt; 
+            &lt;/span&gt;
+          </code>
+        </pre>
       </div>
 
+      <!-- Cards -->
       <div>
         <h1>Cards</h1>
         <p>
