@@ -16,45 +16,49 @@
   <body>
     <div id="container">
       <div>
-        <h6>
+        <h3>🎨 Mumble UI Kits</h3>
+        <p>
           UI Kit for mumble.dev designed for easier styling of re-usable
           components. For now all css from this UI kit will be added directly
           into a css file inside of the mumble application. To contribute visit
           the github repo here:
           <a href="https://github.com/divanov11/mumble">Github Repo</a>
-        </h6>
-      </div>
-      <div>
-        <h1>Font Sizes</h1>
-        <p>
-          Preset settings for default font sizes. Sizes are set in pixels at the
-          moment but will be modified to use rem.
         </p>
-        <hr />
-        <h1>Heading H1 (48px)</h1>
-        <h2>Heading H2 (36px)</h2>
-        <h3>Heading H3 (32px)</h3>
-        <h4>Heading H4 (28px)</h4>
-        <h5>Heading H5 (24px)</h5>
-        <h6>Heading H6 (18px)</h6>
-        <p>Paragraph text (16px)</p>
+      </div>
+      <div class="mumble-block mumble-block--typography">
+        <h1 class="mumble-block__title">Font Sizes</h1>
+        <p class="mumble-block__info">
+          Preset settings for default font sizes. Sizes are set in pixels at the
+          moment but will be modified to use rem. Default font family is:
+          "Poppins" and for the monospace font it's "Fira Code".
+        </p>
 
-        <span>Span Tag (16px)</span>
-        <br />
-        <strong>Strong tag (16px)</strong>
+        <div class="mumble-block__preview">
+          <h1>Heading H1 (48px)</h1>
+          <h2>Heading H2 (36px)</h2>
+          <h3>Heading H3 (32px)</h3>
+          <h4>Heading H4 (28px)</h4>
+          <h5>Heading H5 (24px)</h5>
+          <h6>Heading H6 (18px)</h6>
+          <p>Paragraph text (16px)</p>
 
-        <textarea class="syntax" style="height: 250px">
-                <h1>Heading H1 (48px)</h1>
-                <h2>Heading H2 (36px)</h2>
-                <h3>Heading H3 (32px)</h3>
-                <h4>Heading H4 (28px)</h4>
-                <h5>Heading H5 (24px)</h5>
-                <h6>Heading H6 (18px)</h6>
-                <p>Paragraph text (16px)</p>
-                <span>Span Tag (16px)</span>
-                <strong>Strong tag (16px)</strong>
-            </textarea
-        >
+          <span>Span Tag (16px)</span>
+          <br />
+          <strong>Strong tag (16px)</strong>
+        </div>
+        <pre class="codeblock">
+          <code class="html">
+            &lt;h1&gt;Heading H1 (48px)&lt;/h1&gt;
+            &lt;h2&gt;Heading H2 (36px)&lt;/h2&gt;
+            &lt;h3&gt;Heading H3 (32px)&lt;/h3&gt;
+            &lt;h4&gt;Heading H4 (28px)&lt;/h4&gt;
+            &lt;h5&gt;Heading H5 (24px)&lt;/h5&gt;
+            &lt;h6&gt;Heading H6 (18px)&lt;/h6&gt;
+            &lt;p&gt;Paragraph text (16px)&lt;/p&gt;
+            &lt;span&gt;Span Tag (16px)&lt;/span&gt;
+            &lt;strong&gt;Strong tag (16px)&lt;/strong&gt;
+          </code>
+        </pre>
       </div>
       <div>
         <h1>Buttons</h1>

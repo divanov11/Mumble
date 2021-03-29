@@ -12,7 +12,13 @@
   }
 
   &__preview {
-    padding: 5rem 0;
+    padding: 3rem 0;
+  }
+
+  &--typography {
+    .mumble-block__preview > * {
+      line-height: 2;
+    }
   }
 
   &--avatar {

@@ -22,42 +22,45 @@
 }
 
 // highlight js
-.hljs-ln {
-  position: relative;
-  padding-left: 3em !important;
 
-  &__bg {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 4rem;
-    height: 100%;
-    border-right: 1px solid #555;
-    background: rgba(255, 255, 255, 0.18);
-  }
-
-  &__num {
+.hljs {
+  &-ln {
     position: relative;
-    display: inline-block;
-    height: 1.6rem;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    padding-left: 6rem !important;
 
-    &::before {
+    &__bg {
       position: absolute;
-      z-index: 2;
+      z-index: 1;
       top: 0;
-      right: 0;
-      margin-right: 1em;
-      color: #777;
-      font-style: normal;
-      font-weight: normal;
-      content: attr(data-num);
+      left: 0;
+      width: 7rem;
+      height: 100%;
+      border-right: 1px solid #555;
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    &__num {
+      position: relative;
+      display: inline-block;
+      height: 1.6rem;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
+      &::before {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        margin-right: 1em;
+        color: #777;
+        font-style: normal;
+        font-weight: normal;
+        content: attr(data-num);
+      }
     }
   }
 }

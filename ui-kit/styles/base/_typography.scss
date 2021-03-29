@@ -1,20 +1,26 @@
 h1 {
   font-size: 48px;
+  font-weight: $font-medium;
 }
 h2 {
   font-size: 36px;
+  font-weight: $font-bold;
 }
 h3 {
   font-size: 32px;
+  font-weight: $font-medium;
 }
 h4 {
   font-size: 28px;
+  font-weight: $font-regular;
 }
 h5 {
   font-size: 24px;
+  font-weight: $font-light;
 }
 h6 {
   font-size: 18px;
+  font-weight: $font-light;
 }
 
 p,
@@ -22,8 +28,14 @@ span,
 strong {
   font-size: 16px;
   color: $color-text;
+  font-weight: $font-regular;
 }
 
+strong {
+  font-weight: $font-medium;
+}
+
+pre > *,
 pre > code * {
   font-family: $font-monospace !important;
 }
