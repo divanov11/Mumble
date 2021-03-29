@@ -14,9 +14,9 @@
   </head>
 
   <body>
-    <div id="container">
-      <div>
-        <h3>🎨 Mumble UI Kits</h3>
+    <div class="mumble-block mumble-block--header">
+      <div class="container">
+        <h2>🎨 Mumble UI Kits</h2>
         <p>
           UI Kit for mumble.dev designed for easier styling of re-usable
           components. For now all css from this UI kit will be added directly
@@ -25,6 +25,9 @@
           <a href="https://github.com/divanov11/mumble">Github Repo</a>
         </p>
       </div>
+    </div>
+    <div class="container">
+      <!-- Typography -->
       <div class="mumble-block mumble-block--typography">
         <h1 class="mumble-block__title">Font Sizes</h1>
         <p class="mumble-block__info">
@@ -46,6 +49,7 @@
           <br />
           <strong>Strong tag (16px)</strong>
         </div>
+
         <pre class="codeblock">
           <code class="html">
             &lt;h1&gt;Heading H1 (48px)&lt;/h1&gt;
@@ -60,29 +64,42 @@
           </code>
         </pre>
       </div>
-      <div>
-        <h1>Buttons</h1>
-        <p>
+
+      <!-- Button -->
+      <div class="mumble-block mumble-block--button">
+        <h1 class="mumble-block__title">Buttons</h1>
+        <p class="mumble-block__info">
           Choose between two buttons and 2 sizes by using the "btn" class with
           additional settings. "btn" should be using with all buttons followed
           by the button style (Filled or outlined). Setting a size is optional.
         </p>
+        <div class="mumble-block__preview">
+          <button class="btn btn--main">Button Main</button>
+          <button class="btn btn--sub">Button Sub</button>
+          <button class="btn">Button Default</button>
+          <br /><br />
+          <button class="btn btn--main--outline">Button Main Outline</button>
+          <button class="btn btn--sub--outline">Button Sub Outline</button>
+          <br /><br />
+          <button class="btn btn--main btn--sm">Button Small</button>
+          <button class="btn btn--sub btn--lg">Button Large</button>
+        </div>
+        <pre class="codeblock">
+          <code class="html">
+            &lt;button class="btn btn--main"&gt;Button Main&lt;/button&gt;
+            &lt;button class="btn btn--sub"&gt;Button Sub&lt;/button&gt;
+            &lt;button class="btn"&gt;Button Default&lt;/button&gt;
 
-        <hr />
-        <a class="btn btn-1" href="#">Button Default</a>
-        <a class="btn btn-1-outline" href="#">Button Outline</a>
-        <a class="btn btn-1 btn-sm" href="#">Button Small</a>
-        <a class="btn btn-1-outline btn-sm" href="#">Button Outline</a>
+            &lt;button class="btn btn--main--outline"&gt;Button Main Outline&lt;/button&gt;
+            &lt;button class="btn btn--sub--outline"&gt;Button Sub Outline&lt;/button&gt;
 
-        <textarea class="syntax" style="height: 140px">
-                <a class="btn btn-1" href="#">Button Default</a>
-                <a class="btn btn-1-outline" href="#">Button Outline</a>
-                <a class="btn btn-1 btn-sm" href="#">Button Small</a>
-                <a class="btn btn-1-outline btn-sm" href="#">Button Outline</a>
-            </textarea
-        >
+            &lt;button class="btn btn--main btn--sm"&gt;Button Small&lt;/button&gt;
+            &lt;button class="btn btn--sub btn--lg"&gt;Button Large&lt;/button&gt;
+          </code>
+        </pre>
       </div>
 
+      <!-- Tags -->
       <div>
         <h1>Tags</h1>
         <p>

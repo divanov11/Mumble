@@ -39,3 +39,8 @@ pre > *,
 pre > code * {
   font-family: $font-monospace !important;
 }
+
+a {
+  color: $color-main;
+  font-weight: $font-medium;
+}

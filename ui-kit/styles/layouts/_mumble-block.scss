@@ -1,5 +1,5 @@
 .mumble-block {
-  padding: $sec-ptb-lg;
+  padding: $sec-ptb-sm;
 
   &__title {
     color: $color-sub;
@@ -13,6 +13,10 @@
 
   &__preview {
     padding: 3rem 0;
+  }
+
+  &--header {
+    background-color: $color-light;
   }
 
   &--typography {

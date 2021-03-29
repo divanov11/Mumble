@@ -1,6 +1,6 @@
 // TODO: Work on Media Queries
 
-#container {
+.container {
   width: 120rem;
   margin: 0 auto;
   padding: 5rem;
@@ -8,7 +8,7 @@
 }
 
 @media screen and (max-width: 1200px) {
-  #container {
+  .container {
     width: 100%;
     padding: 20px;
   }

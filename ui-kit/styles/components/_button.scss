@@ -1,28 +1,46 @@
 .btn {
-  display: block;
+  display: inline-block;
+  cursor: pointer;
+  background-color: $color-light;
+  color: $color-text;
   text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
   border: none;
   width: fit-content;
   height: fit-content;
-  margin: 5px;
-  font-size: 16px;
-}
+  font-size: 1.6rem;
+  // outline-width: 0;
+  // outline-color: transparent;
 
-.btn-sm {
-  padding: 5px 10px;
-  font-size: 14px;
-}
+  &--main {
+    background-color: $color-main;
+    color: $color-white;
 
-.btn-1 {
-  background-color: $color-main;
-  color: $color-white;
-}
+    &--outline {
+      background-color: transparent;
+      color: $color-main;
+      border: 2px solid $color-main;
+    }
+  }
 
-.btn-1-outline {
-  background-color: $color-main;
-  color: $color-main;
-  background-color: $color-main;
-  border: 1px solid $color-main;
+  &--sub {
+    background-color: $color-sub;
+    color: $color-white;
+    &--outline {
+      background-color: transparent;
+      color: $color-sub;
+      border: 2px solid $color-sub;
+    }
+  }
+
+  &--sm {
+    padding: 0.5rem 1.2rem;
+    font-size: 1.3rem;
+  }
+
+  &--lg {
+    padding: 1.2rem 5rem;
+    font-size: 1.8rem;
+  }
 }
