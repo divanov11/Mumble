@@ -12,6 +12,7 @@ import {Button} from "src/components/Button"
 
 <Button type="main" outline>This is a button</Button>
 ```
+All the code is written using Typescript and React.
 
 ## Using storybook
 
