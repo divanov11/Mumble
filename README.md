@@ -6,8 +6,6 @@ An Open Source Social Media Platform and Public Forum for Questions and Discussi
 - **Discord [Join here](https://discord.gg/TxgpyK8pzf)**
 
 
-## 📸 Screenshots :
-**User Feed** : <br/><br/>
 =======
 # Download & Setup Instructions
 
@@ -16,8 +14,8 @@ An Open Source Social Media Platform and Public Forum for Questions and Discussi
 * 3 - npm install
 * 4 - npm start
 
-## 📸 Screenshots
-**User Feed** <br/>
+## 📸 Screenshots :
+**User Feed** : <br/><br/>
 
 <img src="./images/home-page.PNG" width=600 />
 
