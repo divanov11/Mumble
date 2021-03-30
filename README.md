@@ -1,16 +1,18 @@
 # MUMBLE
+An Open Source Socialmedia Platform and Public forum for Questions and Discussions, built for Develpers.
 
-View UI Kit Here: http://mumble-lp.s3-website-us-west-2.amazonaws.com/
+## 🔗 Links
+- **UI Kit (Docs/Preview) 👉 [Here](http://mumble-lp.s3-website-us-west-2.amazonaws.com/)**
 
+## 📸 Screenshots
+**User Feed** <br/>
+<img src="./images/home-page.PNG" width=600 />
 
-User Feed
-![DEMO](../master/images/home-page.PNG)
+**User Profile Page**<br/>
+<img src="./images/profile-page.PNG" width=600 />
 
-User Profile Page
-![DEMO](../master/images/profile-page.PNG)
+**Discussion/Question Page**<br/>
+<img src="./images/discussion-page.PNG" width=600 />
 
-Discussion/Question Page
-![DEMO](../master/images/discussion-page.PNG)
-
-Login Page
-![DEMO](../master/images/login-page.PNG)
+**Login Page**<br/>
+<img src="./images/login-page.PNG" width=600 />
