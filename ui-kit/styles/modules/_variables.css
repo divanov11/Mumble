@@ -1,0 +1,15 @@
+:root {
+  --color-main: #5aa5b9;
+  --color-sub: #3f4156;
+  --color-text: #737373;
+  --color-gray: #999;
+  --color-light: #eaedf3;
+  --color-bg: '#f4f6f9';
+  --color-white: #fff;
+
+  --font-base: 'Poppins', Arial, Helvetica, 'Segoe UI', Roboto, Ubuntu, sans-serif;
+  --font-monospace: 'Fira Code', 'Courier New', Courier, monospace;
+  --font-regular: 300;
+  --font-medium: 500;
+  --font-bold: 700;
+}

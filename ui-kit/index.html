@@ -1,174 +1,211 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Mumble UI Kit</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' href='index.css'>
+    <meta name="robots" content="noindex" />
+    <meta
+      name="description"
+      content="An open source social media platform and public forum for questions and discussions, built for developers."
+    />
 
-    <link rel='stylesheet' type='text/css' href='style.css'>
-    <link rel='stylesheet' type='text/css' href='font.css'>
-    <link rel='stylesheet' type='text/css' href='button.css'>
-    <link rel='stylesheet' type='text/css' href='card.css'>
-</head>
+    <link rel="stylesheet" href="styles/app.css" />
+    <!-- Highlight.js Styles -->
+    <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@10.7.1/styles/default.min.css" />
+    <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@10.7.1/styles/night-owl.min.css" />
 
-<body>
+    <!-- Styles -->
 
-    <div id="container">
-        <div>
-            <h6>UI Kit for mumble.dev designed for easier styling of re-usable components. For now all css from this UI
-                kit will be added directly into a css file inside of the mumble application. To contribute visit the
-                github repo here: <a href="https://github.com/divanov11/mumble">Github Repo</a>
-            </h6>
-        </div>
-        <div>
-            <h1>Font Sizes</h1>
-            <p>Preset settings for default font sizes. Sizes are set in pixels at the moment but will be modified to use
-                rem.</p>
-            <hr>
-            <h1>Heading H1 (48px)</h1>
-            <h2>Heading H2 (36px)</h2>
-            <h3>Heading H3 (32px)</h3>
-            <h4>Heading H4 (28px)</h4>
-            <h5>Heading H5 (24px)</h5>
-            <h6>Heading H6 (18px)</h6>
-            <p>Paragraph text (16px)</p>
+    <title>🎨 Mumble Ui Kit</title>
+  </head>
 
-            <span>Span Tag (16px)</span>
-            <br>
-            <strong>Strong tag (16px)</strong>
+  <body>
+    <div class="mumble-block mumble-block--header">
+      <div class="container">
+        <h2>🎨 Mumble UI Kits</h2>
+        <p style="margin-top: 15px">
+          UI Kit for mumble.dev designed for easier styling of re-usable components. For now all css from this UI kit
+          will be added directly into a css file inside of the mumble application. To contribute visit the github repo
+          here:
+          <a href="https://github.com/divanov11/mumble">Github Repo</a> 👋
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <!-- Typography -->
+      <div class="mumble-block mumble-block--typography">
+        <h1 class="mumble-block__title">Font Sizes</h1>
+        <p class="mumble-block__info">
+          Preset settings for default font sizes. Sizes are set in pixels at the moment but will be modified to use rem.
+          Default font family is: "Poppins" and for the monospace font it's "Fira Code".
+        </p>
 
+        <div class="mumble-block__preview">
+          <h1>Heading H1 (48px)</h1>
+          <h2>Heading H2 (36px)</h2>
+          <h3>Heading H3 (32px)</h3>
+          <h4>Heading H4 (28px)</h4>
+          <h5>Heading H5 (24px)</h5>
+          <h6>Heading H6 (18px)</h6>
+          <p>Paragraph text (16px)</p>
 
-            <textarea class="syntax" style="height: 250px;">
-                <h1>Heading H1 (48px)</h1>
-                <h2>Heading H2 (36px)</h2>
-                <h3>Heading H3 (32px)</h3>
-                <h4>Heading H4 (28px)</h4>
-                <h5>Heading H5 (24px)</h5>
-                <h6>Heading H6 (18px)</h6>
-                <p>Paragraph text (16px)</p>
-                <span>Span Tag (16px)</span>
-                <strong>Strong tag (16px)</strong>
-            </textarea>
-
-
-
-        </div>
-        <div>
-            <h1>Buttons</h1>
-            <p>Choose between two buttons and 2 sizes by using the "btn" class with additional settings. "btn" should
-                be using with all buttons followed by the button style (Filled or outlined). Setting a size is optional.
-            </p>
-
-            <hr>
-            <a class="btn btn-1" href="#">Button Default</a>
-            <a class="btn btn-1-outline" href="#">Button Outline</a>
-            <a class="btn btn-1 btn-sm" href="#">Button Small</a>
-            <a class="btn btn-1-outline btn-sm" href="#">Button Outline</a>
-
-            <textarea class="syntax" style="height: 140px;">
-                <a class="btn btn-1" href="#">Button Default</a>
-                <a class="btn btn-1-outline" href="#">Button Outline</a>
-                <a class="btn btn-1 btn-sm" href="#">Button Small</a>
-                <a class="btn btn-1-outline btn-sm" href="#">Button Outline</a>
-            </textarea>
-
+          <span>Span Tag (16px)</span>
+          <br />
+          <strong>Strong tag (16px)</strong>
         </div>
 
-        <div>
-            <h1>Tags</h1>
-            <p>To use the tag styling use the <b>"&lt;small&gt;"</b> tag inside of a div and give it the class of "tag."
-            </p>
-            <hr>
-            <div class="tag">
-                <small>This is a tag</small>
+        <pre class="codeblock">
+          <code class="html">
+            &lt;h1&gt;Heading H1 (48px)&lt;/h1&gt;
+            &lt;h2&gt;Heading H2 (36px)&lt;/h2&gt;
+            &lt;h3&gt;Heading H3 (32px)&lt;/h3&gt;
+            &lt;h4&gt;Heading H4 (28px)&lt;/h4&gt;
+            &lt;h5&gt;Heading H5 (24px)&lt;/h5&gt;
+            &lt;h6&gt;Heading H6 (18px)&lt;/h6&gt;
+            &lt;p&gt;Paragraph text (16px)&lt;/p&gt;
+            &lt;span&gt;Span Tag (16px)&lt;/span&gt;
+            &lt;strong&gt;Strong tag (16px)&lt;/strong&gt;
+          </code>
+        </pre>
+      </div>
+
+      <!-- Button -->
+      <div class="mumble-block mumble-block--button">
+        <h1 class="mumble-block__title">Buttons</h1>
+        <p class="mumble-block__info">
+          Choose between two styles, three variants and three sizes buttons by using the "btn" class with additional
+          settings. "btn" should be using with all buttons followed by the button style (Filled or outlined). Setting a
+          size is optional.
+        </p>
+        <div class="mumble-block__preview">
+          <button class="btn btn--main">Button Main</button>
+          <button class="btn btn--sub">Button Sub</button>
+          <button class="btn">Button Default</button>
+          <br /><br />
+          <button class="btn btn--main--outline">Button Main Outline</button>
+          <button class="btn btn--sub--outline">Button Sub Outline</button>
+          <br /><br />
+          <button class="btn btn--main btn--sm">Button Small</button>
+          <button class="btn btn--sub btn--lg">Button Large</button>
+        </div>
+        <pre class="codeblock">
+          <code class="html">
+            &lt;button class="btn btn--main"&gt;Button Main&lt;/button&gt;
+            &lt;button class="btn btn--sub"&gt;Button Sub&lt;/button&gt;
+            &lt;button class="btn"&gt;Button Default&lt;/button&gt;
+
+            &lt;button class="btn btn--main--outline"&gt;Button Main Outline&lt;/button&gt;
+            &lt;button class="btn btn--sub--outline"&gt;Button Sub Outline&lt;/button&gt;
+
+            &lt;button class="btn btn--main btn--sm"&gt;Button Small&lt;/button&gt;
+            &lt;button class="btn btn--sub btn--lg"&gt;Button Large&lt;/button&gt;
+          </code>
+        </pre>
+      </div>
+
+      <!-- Tag -->
+      <div class="mumble-block mubble-block--tag">
+        <h1 class="mumble-block__title">Tag</h1>
+        <p class="mumble-block__outline">
+          To use the tag styling use the <b>"&lt;small&gt;"</b> tag inside of a div and give it the class of "tag."
+        </p>
+
+        <div class="mumble-block__preview">
+          <span class="tag">
+            <small>This is a tag</small>
+          </span>
+          <span class="tag tag--outline">
+            <small>This is a tag</small>
+          </span>
+        </div>
+
+        <pre class="codeblock">
+          <code class="html">
+            &lt;span class="tag"&gt; 
+              &lt;small&gt;This is a tag&lt;/small&gt;
+            &lt;/span&gt; 
+            
+            &lt;span class="tag tag--outline"&gt; 
+              &lt;small&gt;This is a tag&lt;/small&gt; 
+            &lt;/span&gt;
+          </code>
+        </pre>
+      </div>
+
+      <!-- Card -->
+      <div class="mumble-block mumble-block--card">
+        <h1 class="mumble-block__title">Card</h1>
+        <p class="mumble-block__info">
+          Choose between 2 card styles. Each card showed contain the class of "card". By default the "card" class will
+          give you a light themed card, to choose style to add a second class "card-dark"
+        </p>
+        <div class="mumble-block__preview">
+          <div class="card" style="width: 320px">
+            <div class="card__body">
+              <h3>Card Title</h3>
+              <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
+          </div>
 
-            <textarea class="syntax" style="height: 100px;">
-                <div class="tag">
-                    <small>This is a tag</small>
-                </div>
-            </textarea>
-        </div>
-
-        <div>
-            <h1>Cards</h1>
-            <p>Choose between 2 card styles. Each card showed contain the class of "card". By default the "card" class
-                will give you a light themed card, to choose style to add a second class "card-dark"</p>
-            <hr>
-            <div class="card" style="width: 300px;">
-                <div class="card-body">
-                    <h5>Card Title</h5>
-                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </p>
-                </div>
+          <div class="card card--dark" style="width: 320px">
+            <div class="card__body">
+              <h3>Card Dark Title</h3>
+              <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
-
-            <div class="card card-dark" style="width: 300px;">
-                <div class="card-body">
-                    <h5>Card Dark Title</h5>
-                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </p>
-                </div>
-            </div>
-
-            <textarea class="syntax" style="height: 400px;">
-                <div class="card" style="width: 300px;">
-                    <div class="card-body">
-                        <h5>Card Title</h5>
-                        <p>Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </p>
-                    </div>
-                </div>
-    
-                <div class="card card-dark" style="width: 300px;">
-                    <div class="card-body">
-                        <h5>Card Dark Title</h5>
-                        <p>Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </p>
-                    </div>
-                </div>
-            </textarea>
+          </div>
         </div>
 
-        <div>
-            <h1>User Thumbnails</h1>
-            <p>Choose between 4 sizes for a user thumbnail icon.</p>
-            <hr>
-            <img class="user-thumbnail user-thumbnail-xl" src="https://randomuser.me/api/portraits/men/52.jpg" />
-            <img class="user-thumbnail user-thumbnail-lg" src="https://randomuser.me/api/portraits/men/52.jpg" />
-            <img class="user-thumbnail  user-thumbnail-md" src="https://randomuser.me/api/portraits/men/52.jpg" />
-            <img class="user-thumbnail  user-thumbnail-sm" src="https://randomuser.me/api/portraits/men/52.jpg" />
+        <pre class="codeblock">
+          <code class="html">
+            &lt;div class="card" style="width: 320px"&gt;
+              &lt;div class="card__body"&gt;
+                &lt;h3&gt;Card Title&lt;/h3&gt;
+                &lt;p&gt;
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                &lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
 
-            <textarea class="syntax" style="height: 130px;">
-                <img class="user-thumbnail user-thumbnail-xl" src="#" />
-                <img class="user-thumbnail user-thumbnail-lg" src="#" />
-                <img class="user-thumbnail  user-thumbnail-md" src="#" />
-                <img class="user-thumbnail  user-thumbnail-sm" src="#" />
-            </textarea>
+            &lt;div class="card card--dark" style="width: 320px"&gt;
+              &lt;div class="card__body"&gt;
+                &lt;h3&gt;Card Dark Title&lt;/h3&gt;
+                &lt;p&gt;
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                &lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          </code>
+        </pre>
+      </div>
+
+      <!-- Avatar -->
+      <div class="mumble-block mumble-block--avatar">
+        <h1 class="mumble-block__title">User Avatar</h1>
+        <p class="mumble-block__info">Choose between 4 sizes for a user thumbnail icon.</p>
+        <div class="mumble-block__preview">
+          <img class="avatar avatar--xl" src="https://randomuser.me/api/portraits/men/52.jpg" />
+          <img class="avatar avatar--lg" src="https://randomuser.me/api/portraits/men/52.jpg" />
+          <img class="avatar avatar--md" src="https://randomuser.me/api/portraits/men/52.jpg" />
+          <img class="avatar avatar--sm" src="https://randomuser.me/api/portraits/men/52.jpg" />
         </div>
+
+        <pre class="codeblock">
+            <code class="html">
+              &lt;img class="avatar avatar--xl" src="#" /&gt;
+              &lt;img class="avatar avatar--lg" src="#" /&gt;
+              &lt;img class="avatar avatar--md" src="#" /&gt;
+              &lt;img class="avatar avatar--sm" src="#" /&gt;
+            </code>
+        </pre>
+      </div>
     </div>
 
-</body>
-
-<script>
-    const codeBlocks = document.querySelectorAll('.code-header + .highlighter-rouge');
-    const copyCodeButtons = document.querySelectorAll('.copy-code-button');
-
-    copyCodeButtons.forEach((copyCodeButton, index) => {
-        const code = codeBlocks[index].innerText;
-
-        copyCodeButton.addEventListener('click', () => {
-            window.navigator.writeText(code);
-            copyCodeButton.classList.add('copied');
-
-            setTimeout(() => {
-                copyCodeButton.classList.remove('copied');
-            }, 2000);
-        });
-    });
-</script>
-
+    <!-- Highlight.js Script -->
+    <script src="//unpkg.com/@highlightjs/cdn-assets@10.7.1/highlight.min.js"></script>
+    <!-- Script -->
+    <script src="/scripts/app.js"></script>
+  </body>
 </html>
