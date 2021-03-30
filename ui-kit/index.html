@@ -201,6 +201,229 @@
             </code>
         </pre>
       </div>
+
+      <!-- FORM -->
+      <div class="mumble-block mumble-block--form">
+        <h1 class="mumble-block__title">Form and Inputs</h1>
+        <p class="mumble-block__info">
+          Introducing the basic form and input fields. By default the form field with take the entire space of a
+          container. Make sure your are using the class name properly. More form fields are coming soon... 🏃‍♂️. Feel free
+          to contributes following the naming convention.
+        </p>
+        <div class="mumble-block__preview">
+          <form action="#" class="form">
+            <!-- Input:Text -->
+            <div class="form__field">
+              <label for="formInput#text">Full Name: </label>
+              <input
+                class="input input--text"
+                id="formInput#text"
+                type="text"
+                name="text"
+                placeholder="Enter your full name"
+              />
+            </div>
+
+            <!-- Input:Email -->
+            <div class="form__field">
+              <label for="formInput#email">Email: </label>
+              <input
+                class="input input--email"
+                id="formInput#email"
+                type="email"
+                name="email"
+                placeholder="e.g. user@domain.com"
+              />
+            </div>
+
+            <!-- Input:Password -->
+            <div class="form__field">
+              <label for="formInput#password">Password: </label>
+              <input
+                class="input input--password"
+                id="formInput#passowrd"
+                type="password"
+                name="password"
+                placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
+              />
+            </div>
+
+            <!-- Input:Radio -->
+            <div class="form__field form__field--radio">
+              <p>Favorite Color:</p>
+              <input class="input input--radio" id="formInput#radio-01" type="radio" value="red" name="color" />
+              <label for="formInput#radio-01">Red</label>
+              <input class="input input--radio" id="formInput#radio-02" type="radio" value="green" name="color" />
+              <label for="formInput#radio-02">Green</label>
+              <input class="input input--radio" id="formInput#radio-03" type="radio" value="blue" name="color" />
+              <label for="formInput#radio-03">Blue</label>
+            </div>
+
+            <!-- Input:Checkbox -->
+            <div class="form__field form__field--checkbox">
+              <p>Your Hobby:</p>
+              <input
+                class="input input--checkbox"
+                id="formInput#checkbox-01"
+                type="checkbox"
+                value="riding"
+                name="hobby"
+              />
+              <label for="formInput#checkbox-01">Riding Bike</label>
+              <input
+                class="input input--checkbox"
+                id="formInput#checkbox-02"
+                type="checkbox"
+                value="surfing"
+                name="hobby"
+              />
+              <label for="formInput#checkbox-02">Surfing Sea</label>
+              <input
+                class="input input--checkbox"
+                id="formInput#checkbox-03"
+                type="checkbox"
+                value="brewing-beer"
+                name="hobby"
+              />
+              <label for="formInput#checkbox-03">Brewing Beer</label>
+            </div>
+
+            <!-- Textarea -->
+            <div class="form__field">
+              <label for="formInput#textarea">Message: </label>
+              <textarea
+                class="input input--textarea"
+                name="message"
+                id="formInput#textarea"
+                placeholder="Write something awesome..."
+              ></textarea>
+            </div>
+
+            <!-- Input:Submit / Input:Reset  -->
+            <div class="form__field form__field--action">
+              <input class="btn" type="reset" value="Reset" />
+              <input class="btn btn--main" type="submit" value="Submit" />
+            </div>
+          </form>
+        </div>
+
+        <pre class="codeblock">
+            <code class="html">
+              &lt;form action="#" class="form"&gt;
+                &lt;!-- Input:Text --&gt;
+                &lt;div class="form__field"&gt;
+                  &lt;label for="formInput#text"&gt;Full Name: &lt;/label&gt;
+                  &lt;input
+                    class="input input--text"
+                    id="formInput#text"
+                    type="text"
+                    name="text"
+                    placeholder="Enter your full name"
+                  /&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Input:Email --&gt;
+                &lt;div class="form__field"&gt;
+                  &lt;label for="formInput#email"&gt;Email: &lt;/label&gt;
+                  &lt;input
+                    class="input input--email"
+                    id="formInput#email"
+                    type="email"
+                    name="email"
+                    placeholder="e.g. user@domain.com"
+                  /&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Input:Password --&gt;
+                &lt;div class="form__field"&gt;
+                  &lt;label for="formInput#password"&gt;Password: &lt;/label&gt;
+                  &lt;input
+                    class="input input--password"
+                    id="formInput#passowrd"
+                    type="password"
+                    name="password"
+                    placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
+                  /&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Input:Radio --&gt;
+                &lt;div class="form__field form__field--radio"&gt;
+                  &lt;p&gt;Favorite Color:&lt;/p&gt;
+                  &lt;input 
+                    class="input input--radio" 
+                    id="formInput#radio-01" 
+                    type="radio" 
+                    value="red" 
+                    name="color" 
+                  /&gt;
+                  &lt;label for="formInput#radio-01"&gt;Red&lt;/label&gt;
+                  &lt;input 
+                    class="input input--radio" 
+                    id="formInput#radio-02" 
+                    type="radio" 
+                    value="green" 
+                    name="color" 
+                  /&gt;
+                  &lt;label for="formInput#radio-02"&gt;Green&lt;/label&gt;
+                  &lt;input 
+                    class="input input--radio" 
+                    id="formInput#radio-03" 
+                    type="radio" 
+                    value="blue" 
+                    name="color" 
+                  /&gt;
+                  &lt;label for="formInput#radio-03"&gt;Blue&lt;/label&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Input:Checkbox --&gt;
+                &lt;div class="form__field form__field--checkbox"&gt;
+                  &lt;p&gt;Your Hobby:&lt;/p&gt;
+                  &lt;input
+                    class="input input--checkbox"
+                    id="formInput#checkbox-01"
+                    type="checkbox"
+                    value="riding"
+                    name="hobby"
+                  /&gt;
+                  &lt;label for="formInput#checkbox-01"&gt;Riding Bike&lt;/label&gt;
+                  &lt;input
+                    class="input input--checkbox"
+                    id="formInput#checkbox-02"
+                    type="checkbox"
+                    value="surfing"
+                    name="hobby"
+                  /&gt;
+                  &lt;label for="formInput#checkbox-02"&gt;Surfing Sea&lt;/label&gt;
+                  &lt;input
+                    class="input input--checkbox"
+                    id="formInput#checkbox-03"
+                    type="checkbox"
+                    value="brewing-beer"
+                    name="hobby"
+                  /&gt;
+                  &lt;label for="formInput#checkbox-03"&gt;Brewing Beer&lt;/label&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Textarea --&gt;
+                &lt;div class="form__field"&gt;
+                  &lt;label for="formInput#textarea"&gt;Message: &lt;/label&gt;
+                  &lt;textarea
+                    class="input input--textarea"
+                    name="message"
+                    id="formInput#textarea"
+                    placeholder="Write something awesome..."
+                  &gt;&lt;/textarea&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Input:Submit / Input:Reset  --&gt;
+                &lt;div class="form__field form__field--action"&gt;
+                  &lt;input class="btn" type="reset" value="Reset" /&gt;
+                  &lt;input class="btn btn--main" type="submit" value="Submit" /&gt;
+                &lt;/div&gt;
+              &lt;/form&gt;
+            </code>
+        </pre>
+      </div>
     </div>
 
     <!-- Highlight.js Script -->

@@ -1,10 +1,11 @@
 :root {
   --color-main: #5aa5b9;
+  --color-main-light: #e1f6fb;
   --color-sub: #3f4156;
   --color-text: #737373;
   --color-gray: #999;
-  --color-light: #eaedf3;
-  --color-bg: '#f4f6f9';
+  --color-light: #e5e7eb;
+  --color-bg: #f4f6f9;
   --color-white: #fff;
 
   --font-base: 'Poppins', Arial, Helvetica, 'Segoe UI', Roboto, Ubuntu, sans-serif;
