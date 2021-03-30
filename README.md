@@ -2,8 +2,8 @@
 An Open Source Socialmedia Platform and Public forum for Questions and Discussions, built for Develpers.
 
 ## 🔗 Links
-- **UI Kit (Docs/Preview) 👉 [Here](http://mumble-lp.s3-website-us-west-2.amazonaws.com/)**
-- **Discord [Join here](https://discord.com/invite/Tfr67ehuJH)**
+- **UI Kit (Docs/Preview)** 👉 [Here](http://mumble-lp.s3-website-us-west-2.amazonaws.com/)
+- **Discord** [Join here](https://discord.com/invite/Tfr67ehuJH)
 
 ## 📸 Screenshots
 **User Feed** <br/>
