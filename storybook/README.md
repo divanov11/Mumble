@@ -1,5 +1,17 @@
 # Mumble UI Kit Storybook
-Built using Storybook.js. View the docs on https://storybook.js.org
+Built using Storybook.js. View the docs on https://storybook.js.org.
+
+## What is this?
+From the Storybook library: "Storybook is an open source tool for developing UI components in isolation for React, Vue, Angular, and more. It makes building stunning UIs organized and efficient." In the `src/components` folder, there are react wrapper for all the CSS BEM components. For example, instead of writing 
+```
+<button className="btn btn--main--outline">This is a button</button>
+``` 
+you can use a React component to render the button 
+```
+import {Button} from "src/components/Button"
+
+<Button type="main" outline>This is a button</Button>
+```
 
 ## Using storybook
 
