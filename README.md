@@ -29,6 +29,9 @@ Start the development server on localhost:3000
 npm start
 ```
 
+# Want to Contribute?
+Check out the [contributing guide](https://github.com/divanov11/Mumble/blob/master/CONTRIBUTING.md).
+
 ## 📸 Screenshots :
 **User Feed** : <br/><br/>
 
