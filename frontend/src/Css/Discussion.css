@@ -1,0 +1,39 @@
+#discussion-container{
+    display: grid;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100vh;
+    grid-template-columns: 3fr 1fr;
+}
+
+
+
+.question-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    margin-bottom: 10px;
+}
+
+.discussion-headline{
+    font-size: 32px;
+}
+
+.asked-by{
+    margin-top: 10px;
+    color: rgb(160, 158, 158);
+    font-style: italic;
+}
+
+.big-vote-count{
+    font-size: 24px;
+    font-weight: 900;
+    color: #5eba7d;
+}
+
+.big-up-arrow{
+    font-size: 36px;
+}
+
+.big-down-arrow{
+    font-size: 36px;
+}
