@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* Base Styles */
+@import url('./modules/_variables.css'); /* Import it first */
+@import url('./modules/_base.css');
+@import url('./modules/_typography.css');
+@import url('./modules/_utilities.css');
+
+/* Components */
+@import url('./modules/_avatar.css');
+@import url('./modules/_button.css');
+@import url('./modules/_card.css');
+@import url('./modules/_codeblock.css');
+@import url('./modules/_form.css');
+@import url('./modules/_page.css');
+@import url('./modules/_tag.css');
+
+/* UI-Kit Page */
+@import url('./modules/_page.css');
