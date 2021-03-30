@@ -9,10 +9,25 @@ An Open Source Social Media Platform and Public Forum for Questions and Discussi
 =======
 # Download & Setup Instructions :
 
-* 1 - Clone project: git clone https://github.com/divanov11/mumble
-* 2 - cd frontend
-* 3 - npm install
-* 4 - npm start
+Clone the project. This will download the GitHub respository files onto your local machine. 
+
+```Shell
+git clone https://github.com/divanov11/mumble
+```
+
+### Frontend Instructions (Create React App)
+Change into the frontend directory
+```Shell
+cd mumble && cd frontend
+```
+Install the project dependencies
+```Shell
+npm install
+```
+Start the development server on localhost:3000
+```Shell
+npm start
+```
 
 ## 📸 Screenshots :
 **User Feed** : <br/><br/>
