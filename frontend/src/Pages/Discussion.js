@@ -6,7 +6,7 @@ import DiscussionsCard from '../Components/DiscussionsCard'
 import '../Css/Discussion.css';
 import userData from '../data/users'
 import discussions from '../data/discussions'
-
+import VotingWidget from '../Components/VotingWidget'
 
 function Discussion({ match }) {
     let discussion = discussions.find((d) => d.slug == match.params.slug)
@@ -20,12 +20,9 @@ function Discussion({ match }) {
                         <div className="question-wrapper">
                             <div className="question-sidebar">
 
-                                <img alt="img-description" className="user-thumbnail user-thumbnail-sm" src={discussion.user.profile_pic} />
+                                <img alt="img-description" className="user-thumbnail user-thumbnail-md" src={discussion.user.profile_pic} />
                                 <div className="custom-spacer"></div>
-
-                                <i className="fas fa-arrow-alt-up vote-icon big-up-arrow"></i>
-                                <p className="big-vote-count">{discussion.vote_ratio}</p>
-                                <i className="fas fa-arrow-alt-down vote-icon big-down-arrow"></i>
+                                <VotingWidget voteRatio={discussion.vote_ratio}/>
                             </div>
                             <div className="question-body">
                                 <h1 className="discussion-headline">{discussion.headline}</h1>
@@ -53,10 +50,7 @@ function Discussion({ match }) {
                                         <div className="question-sidebar">
                                             <img alt="img-description" className="user-thumbnail user-thumbnail-sm" src={answer.user.profile_pic} />
                                             <div className="custom-spacer"></div>
-
-                                            <i className="fas fa-arrow-alt-up vote-icon big-up-arrow"></i>
-                                            <p className="big-vote-count">{answer.vote_ratio}</p>
-                                            <i className="fas fa-arrow-alt-down vote-icon big-down-arrow"></i>
+                                            <VotingWidget voteRatio={answer.vote_ratio}/>
                                         </div>
                                         <div className="question-body">
                                             <Link to={`/profile/${answer.user.username}`}><h6>{answer.user.name} <small><i> @{answer.user.username}</i></small></h6>
