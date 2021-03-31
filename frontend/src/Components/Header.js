@@ -34,7 +34,7 @@ function Header() {
             <div id="nav-wrapper">
                 <i className="fas fa-bell nav-item nav-icon"></i>
                 {/* This will eventually be drop down list with options like settings, porfile, logout, etc */}
-                    <img id="nav-toggle-icon" onClick={toggleNav} alt="img-description" className="avatar avatar--sm nav-item" src="/static/media/screenshot.3f064de6.PNG" />
+                    <img id="nav-toggle-icon" onClick={toggleNav} alt="img-description" className="avatar avatar--sm nav-item" src={user.profile_pic} />
                 
             </div>
 
