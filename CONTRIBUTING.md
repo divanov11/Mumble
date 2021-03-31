@@ -45,7 +45,7 @@ For changes that address core functionality or would require breaking changes (e
 In general, we follow the ["fork-and-pull" Git workflow](https://github.com/susam/gitpr)
 
 1. Fork the repository to your own Github account
-2. Clone the project to your machine
+2. Clone the forked project to your machine
 ```
 git clone https://github.com/<your-github-username>/Mumble.git
 ```
@@ -104,6 +104,15 @@ git checkout -b 2nd-test-branch
 # make new changes and push to your fork
 ```
 4. After the pull request was merged, fetch it and update the master branch of your fork
+
+<img align="right" height="400" src="https://drive.google.com/uc?export=view&id=1H0yeU3gYUfhDu0ukyrElucNlzl2kGDCh" />
+
+### Minor Updates and Pull Requests
++ It is advicable, to combine all *minor updates* in a single pull request to reduce the number of pull requests.
++ Check for a list of minor updates in the [Issues](https://github.com/divanov11/Mumble/issues) as shown in the image.
++ Make changes and commit accordingly
++ Create a pull request and wait for review
++ Once your pull request has been merge, make sure to update your master branch.
 
 ## Getting Help
 
