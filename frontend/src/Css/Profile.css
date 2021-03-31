@@ -1,3 +1,10 @@
+.profile--layout{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    column-gap: 0.5rem;
+}
+
+
 #user-profile-summary{
     text-align: center;
 
@@ -19,3 +26,22 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+
+
+@media screen and (max-width: 1300px) {
+    .profile--layout {
+      grid-template-columns: 1fr 2fr;
+    }
+
+    #sidebar--right--profile{
+      display: none;
+    }
+   
+  }
+
+  @media screen and (max-width: 1100px) {
+    .profile--layout {
+      grid-template-columns: 1fr;
+    }
+   
+  }

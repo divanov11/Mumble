@@ -21,7 +21,7 @@
   transition: all 0.3s ease-in-out;
 }
 .btn:hover {
-  opacity: 0.95;
+  opacity: 0.8;
 }
 
 .btn--main {

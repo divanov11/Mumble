@@ -59,5 +59,4 @@ a {
   display: inline-block;
   color: var(--color-main);
   font-weight: var(--font-medium);
-  border-bottom: 2px solid var(--color-main);
 }

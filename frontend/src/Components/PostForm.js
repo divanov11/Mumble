@@ -15,20 +15,26 @@ function PostForm() {
 
     return (
         <div className="card">
-            <div className="card-body">
+
+            <div className="card__body">
+
                 <form onSubmit={submit} id="feed-post-form">
-                    <textarea
+                   <textarea
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
                         placeholder="Share your brilliant thought!"
                     ></textarea>
-                    <div id="post-btn-wrapper">
+
+                    <div id="post-btn" className="btn btn--main">
                         <input
                             id="post-btn"
                             className="btn btn-1"
                             type="submit"
                             value="Post"
                         />
+                              
+                    <div id="post-btn-wrapper">
+                        <input id="post-btn" className="btn btn--main" type="submit" value="Post" />
                     </div>
                 </form>
             </div>
