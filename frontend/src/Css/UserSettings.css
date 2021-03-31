@@ -5,7 +5,7 @@
     height: 100vh;
     grid-template-columns:1.5fr 3fr;
     grid-template-areas: "profile profileinfo";
-    grid-template-columns: minmax(300px, auto) auto;
+    grid-template-columns: minmax(300px, 390px) auto;
 }
 
 
@@ -25,3 +25,7 @@
 }
 
 
+.user-setting-edit {
+    color: #5AA5B9;
+    cursor: pointer;
+}

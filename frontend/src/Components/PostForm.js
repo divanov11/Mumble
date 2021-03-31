@@ -6,11 +6,10 @@ function PostForm() {
             <div className="card-body">
 
                 <form id="feed-post-form" method="POST">
-                    <textarea placeholder="Share your brilliant thought!"></textarea>
+                    <textarea placeholder="Share your brilliant thought!" />
                     <div id="post-btn-wrapper">
                         <input id="post-btn" className="btn btn-1" type="submit" value="Post" />
                     </div>
-
                 </form>
             </div>
         </div>
