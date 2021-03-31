@@ -539,9 +539,12 @@ textarea.input:active {
   #logo {
     font-size: 15px;
   }
-  #header .user-thumbnail {
-    height: 25%;
-    width: 25%;
+  #header .user-thumbnail-sm {
+    border-radius: 50%;
+    margin-right: 15px;
+    margin-top: 10px;
+    height: 40px;
+    width: 40px;
   }
   #nav-wrapper {
   align-items: center;
@@ -551,5 +554,6 @@ textarea.input:active {
 }
 .nav-item {
   margin: 5px;
+  margin-left: 0;
 }
 }
