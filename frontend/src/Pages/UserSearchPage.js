@@ -1,45 +1,48 @@
-const { useState } = require("react");
-const { useHistory } = require("react-router-dom");
+import { useState } from "react";
+import userData from "../data/users";
+import { Link } from "react-router-dom";
 
-function UserSearchPage({ location }) {
-  // Using a ?query= parameter will add a lot of future flexibility, allowing us to make queries to this page as a redirect possibly.
-
-  // Will need to figure out how to remove the URL formatting, if necessary.
-
-  const history = useHistory();
-
-  // Check query exists and is valid
-  if (location.search.substring(0, 7) !== "?query=") {
-    // If invalid query format redirect to https://site.com/find-user?query=
-    history.push({
-      pathname: "/find-user",
-      search: "?query=",
-    });
-  }
-
-  const query = location.search.substring(7);
-
-  const [queryInput, setQueryInput] = useState(query);
+function UserSearchPage() {
+  const [query, setQuery] = useState("");
 
   const handleChange = (e) => {
-    setQueryInput(e.target.value);
+    setQuery(e.target.value);
   };
 
-  const handleSubmit = () => {
-    history.push({
-      pathname: "/find-user",
-      search: `?query=${queryInput}`,
-    });
-  };
+  // This will be handled by the backend in future, why I haven't bothered making the code clean.
+  let filteredData = userData.filter(
+    (u) =>
+      u.username.toLowerCase().includes(query.toLowerCase()) ||
+      u.name.toLowerCase().includes(query.toLowerCase()) ||
+      u.interests
+        .map((d) => {
+          return d.toLowerCase();
+        })
+        .includes(query.toLowerCase())
+  );
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input value={queryInput} onChange={handleChange} type="text" />
+      <form className="form">
+        <input
+          className="input input--text"
+          value={query}
+          onChange={handleChange}
+          type="text"
+        />
       </form>
 
       <h1>Find a user</h1>
-      <h2>Query: {query}</h2>
+
+      {filteredData.map((user) => (
+        <Link key={user} to={`/users/${user.id}`}>
+          <div className="user-card">
+            <h3>{user.username}</h3>
+            <h6>{user.name}</h6>
+            <p>{user.bio}</p>
+          </div>
+        </Link>
+      ))}
     </div>
   );
 }
