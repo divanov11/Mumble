@@ -133,14 +133,13 @@ body{
   align-items: center;
 }
 
+
 .nav-icon{
   font-size: 24px;
 }
-
 .nav-item{
   margin: 10px;
 }
-
 #content-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -546,4 +545,8 @@ textarea.input:active {
   margin-right: 1rem;
 }
 
-
+@media screen and (max-width: 680px) {
+  body {
+    overflow-x: hidden;
+  }
+}

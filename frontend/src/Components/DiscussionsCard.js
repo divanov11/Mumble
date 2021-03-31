@@ -9,7 +9,7 @@ function DiscussionsCard({ discussions }) {
                 <a href="#">Start a Discussion</a>
                 <div className="custom-spacer"></div>
                 {discussions.map(discussion => (
-                    <div className="snippet-wrapper">
+                    <div className="snippet-wrapper" key={ discussion.id}>
                         <div className="snippet-engagement-count">
                             <p>{discussion.vote_ratio}</p>
                         </div>
