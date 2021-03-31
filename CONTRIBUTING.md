@@ -47,7 +47,7 @@ In general, we follow the ["fork-and-pull" Git workflow](https://github.com/susa
 1. Fork the repository to your own Github account
 2. Clone the project to your machine
 ```
-git clone https://github.com/divanov11/Mumble.git
+git clone https://github.com/<your-github-username>/Mumble.git
 ```
 3. Add Upstream or the remote of the original project to your local repository
 ```
