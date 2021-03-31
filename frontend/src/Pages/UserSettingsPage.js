@@ -18,7 +18,7 @@ function UserSettingsPage() {
                             />
                             <h5>Sam Wick</h5>
                             <div className='line-break'></div>
-                            <Link to='' className='btn btn-1 btn-sm'>
+                            <Link to='' className='btn btn-1 btn-md'>
                                 Update Picture
                             </Link>
                         </div>
@@ -94,7 +94,7 @@ function UserSettingsPage() {
                 </div>
             </section>
 
-            <section></section>
+            {/* <section></section> */}
         </div>
     );
 }
