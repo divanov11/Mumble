@@ -8,6 +8,7 @@ import Discussion from "./Pages/Discussion";
 import ProfilePage from "./Pages/ProfilePage";
 import UserSettingsPage from "./Pages/UserSettingsPage";
 import UserSearchPage from "./Pages/UserSearchPage";
+import TopicSeachPage from "./Pages/TopicSearchPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route component={UserSettingsPage} path={"/settings"} />
         <Route component={Discussion} path={"/discussion/:slug"} />
         <Route component={UserSearchPage} path={"/find-user"} />
+        <Route component={TopicSeachPage} path={"/find-topic"} />
       </main>
     </Router>
   );
