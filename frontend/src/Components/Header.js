@@ -39,22 +39,19 @@ function Header() {
             </div>
 
             <div className="card" id="user--navigation">
+
                 <div className="user-navigation--item">
-                    <p>(ICON)</p>
-                    <Link to={''}>Notifications</Link>
-                </div>
-                <div className="user-navigation--item">
-                    <p>(ICON)</p>
+                    <i className="fas fa-user user--nav--icon"></i>
                     <Link to={`/profile/${user.username}`}>Profile</Link>
                 </div>
 
                 <div className="user-navigation--item">
-                    <p>(ICON)</p>
+                <i className="fas fa-cog user--nav--icon"></i>
                     <Link to={'/settings'}>Settings</Link>
                 </div>
 
                 <div className="user-navigation--item">
-                    <p>(ICON)</p>
+                    <i className="fas fa-sign-out-alt user--nav--icon"></i>
                     <Link to={'/logout'}>Logout</Link>
                 </div>
              

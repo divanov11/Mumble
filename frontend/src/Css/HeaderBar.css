@@ -1,6 +1,6 @@
 #header{
     /* Change this to that sticky header I like*/
-    position: fixed;
+    position: sticky;
     top:0;
     width: 100%;
     display: flex;
@@ -55,4 +55,8 @@
       align-items: center;
       gap: 1rem;
 
+    }
+
+    .user--nav--icon{
+        color: var(--color-sub);
     }
