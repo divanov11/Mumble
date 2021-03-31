@@ -539,12 +539,15 @@ textarea.input:active {
   #logo {
     font-size: 15px;
   }
+  #header .user-thumbnail {
+    height: 25%;
+    width: 25%;
+  }
   #nav-wrapper {
   align-items: center;
 }
 .nav-icon{
   font-size: 18px;
-  /* margin-left: 8px; */
 }
 .nav-item {
   margin: 5px;
