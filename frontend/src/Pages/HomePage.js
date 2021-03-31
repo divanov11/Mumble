@@ -17,14 +17,13 @@ import articles from '../data/articles';
 
 function HomePage() {
     let posts = postsData;
-    let user = userData.find((u) => u.id === 1);
+    let user = userData.find((u) => u.id === '1');
     let contributers = userData;
 
     return (
         <div id='content-container'>
             <section id='left-sidebar'>
                 <Contributors users={contributers} />
-                {/* User user skills as placeholder but this should be Topics a user follows */}
                 <TopicTags tags={user.interests} />
             </section>
 

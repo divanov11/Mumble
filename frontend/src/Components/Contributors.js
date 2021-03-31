@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Contributers({ users }) {
-    console.log('users:', users);
     return (
         <div className='card'>
             <div className='card-body'>

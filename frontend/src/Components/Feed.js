@@ -46,7 +46,7 @@ function Feed({ posts }) {
 
                             <div className="post-comments-wrapper">
                                 {post.comments.map(comment => (
-                                    <div className="post-comment">
+                                    <div key={comment.id} className="post-comment">
                                         <div className="post-header-wrapper">
                                             <img alt="img-description" className="user-thumbnail user-thumbnail-sm" src={comment.user.profile_pic} />
                                             <Link className="post-user-name" to={`/profile/${comment.user.username}`}><h6>{comment.user.name}</h6></Link>
@@ -54,7 +54,7 @@ function Feed({ posts }) {
                                             <p className="post-meta">{comment.created}</p>
 
                                         </div>
-                                        <i class="replying-to-text"><small>Replying to  {comment.reply_at.map(user => (<span>- @{user.username}</span>))}</small></i>
+                                        <i class="replying-to-text"><small>Replying to  {comment.reply_at.map(user => (<span key={user.id}>- @{user.username}</span>))}</small></i>
                                         <div className="post-contents">
                                             <div className="post-votes">
                                                 <i className="fas fa-arrow-alt-up vote-icon up-arrow"></i>

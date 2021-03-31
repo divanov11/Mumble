@@ -10,7 +10,7 @@ function TopicTags({ tags }) {
                 <div className='line-break'></div>
                 <div className='tags-wrapper'>
                     {tags.map((tag, index) => (
-                        <div className='tag'>
+                        <div key={index} className='tag'>
                             <small>{tag}</small>
                         </div>
                     ))}
