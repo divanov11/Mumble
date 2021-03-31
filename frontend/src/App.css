@@ -164,6 +164,11 @@ body{
   resize: none;
 }
 
+textarea:focus-within {
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+}
+
 
 #post-btn-wrapper{
   display: flex;
@@ -207,6 +212,7 @@ body{
 
 .contributor-preview{
   display: flex;
+  align-items: center;
 }
 
 .contributor-preview a{
@@ -300,7 +306,6 @@ body{
   min-width: 25px;
   padding: 5px;
   margin-right: 10px;
- 
 }
 
 .snippet-text{
@@ -316,6 +321,9 @@ body{
   align-items: center;
 }
 
+.replying-to-text {
+  margin-left: 65px;
+}
 
 
 .post-meta{
@@ -327,7 +335,7 @@ body{
   display: flex;
   padding-bottom: 20px;
   border-bottom: 1px solid #EAEDF3;
-  
+  align-items: center;
 }
 
 .post-votes{
