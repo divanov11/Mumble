@@ -84,7 +84,7 @@ git status
 git push origin branch-name
 ```
 9. Open a PR in our repository and follow the PR template so that we can efficiently review the changes.
-10. After the pull request was merged, fetch it and update the default branch of your fork
+10. After the pull request was merged, fetch the upstream and update the default branch of your fork
 
 You can follow along with this video, [Contributing to Mumble](https://youtu.be/UZzYEA5UqN8)
 
