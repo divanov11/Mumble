@@ -49,15 +49,15 @@ function Discussion({ match }) {
 
                                         <div className="question-sidebar">
                                             <img alt="img-description" className="user-thumbnail user-thumbnail-sm" src={answer.user.profile_pic} />
-                                            <div className="custom-spacer"></div>
+                                            {/* <div className="custom-spacer"></div> */}
                                             <VotingWidget voteRatio={answer.vote_ratio}/>
                                         </div>
                                         <div className="question-body">
                                             <Link to={`/profile/${answer.user.username}`}><h6>{answer.user.name} <small><i> @{answer.user.username}</i></small></h6>
                                             </Link>
                                             <p>{answer.content}</p>
-                                            <div className="custom-spacer"></div>
-                                            <div className="line-break"></div>
+                                            {/* <div className="custom-spacer"></div> */}
+                                            {/* <div className="line-break"></div> */}
                                         </div>
                                     </div>
                                 ))}

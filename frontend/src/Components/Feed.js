@@ -54,7 +54,7 @@ function Feed({ posts }) {
                                             <p className="post-meta">{comment.created}</p>
 
                                         </div>
-                                        <i><small>Replying to  {comment.reply_at.map(user => (<span>- @{user.username}</span>))}</small></i>
+                                        <i class="replying-to-text"><small>Replying to  {comment.reply_at.map(user => (<span>- @{user.username}</span>))}</small></i>
                                         <div className="post-contents">
                                             <div className="post-votes">
                                                 <i className="fas fa-arrow-alt-up vote-icon up-arrow"></i>
