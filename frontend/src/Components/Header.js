@@ -17,7 +17,7 @@ function Header() {
                 <i className="fas fa-bell nav-item nav-icon"></i>
                 {/* This will eventually be drop down list with options like settings, porfile, logout, etc */}
                 <Link to={'/settings'}>
-                    <img alt="img-description" className="user-thumbnail user-thumbnail-sm nav-item" src="https://randomuser.me/api/portraits/men/52.jpg" />
+                    <img alt="img-description" className="avatar avatar--sm nav-item" src="https://randomuser.me/api/portraits/men/52.jpg" />
                 </Link>
             </div>
         </div>

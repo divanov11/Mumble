@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 function DiscussionsCard({ discussions }) {
     return (
-        <div className='card card-dark'>
-            <div className='card-body'>
+        <div className='card card--dark'>
+            <div className='card__body'>
                 <h5>Discussions</h5>
                 <Link to='#'>Start a Discussion</Link>
                 <div className='custom-spacer'></div>

@@ -1,6 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-
+import '../Css/HomePage.css'
 //Components
 import Contributors from '../Components/Contributors';
 import Feed from '../Components/Feed';
@@ -21,8 +20,8 @@ function HomePage() {
     let contributers = userData;
 
     return (
-        <div id='content-container'>
-            <section id='left-sidebar'>
+        <div class='container home--layout'>
+            <section id='sidebar--left--home'>
                 <Contributors users={contributers} />
                 <TopicTags tags={user.interests} />
             </section>
@@ -32,7 +31,7 @@ function HomePage() {
                 <Feed posts={posts} />
             </section>
 
-            <section id='right-sidebar'>
+            <section id='sidebar--right--home'>
                 <DiscussionsCard discussions={discussions} />
                 <ArticlesCard articles={articles} />
             </section>

@@ -7,18 +7,18 @@ function UserSettingsPage() {
         <div id='settings-page-container'>
             <section>
                 <div className='card'>
-                    <div className='card-body'>
+                    <div className='card__body'>
                         <h6>Account Settings</h6>
                         <div className='line-break'></div>
                         <div id='settings-pic-wrapper'>
                             <img
                                 alt='img-description'
-                                className='user-thumbnail user-thumbnail-lg'
+                                className='avatar avatar--lg'
                                 src='https://randomuser.me/api/portraits/men/52.jpg'
                             />
                             <h5>Sam Wick</h5>
                             <div className='line-break'></div>
-                            <Link to='' className='btn btn-1 btn-sm'>
+                            <Link to='' className='btn btn--main btn--sm'>
                                 Update Picture
                             </Link>
                         </div>
@@ -27,9 +27,9 @@ function UserSettingsPage() {
             </section>
             <section>
                 <div className='card'>
-                    <div className='card-body'>
-                        <div className='card card-dark'>
-                            <div className='card-body'>
+                    <div className='card__body'>
+                        <div className='card card--dark'>
+                            <div className='card__body'>
                                 <h6>
                                     User Information <Link to=''>Edit</Link>
                                 </h6>
@@ -44,8 +44,8 @@ function UserSettingsPage() {
                             </div>
                         </div>
 
-                        <div className='card card-dark'>
-                            <div className='card-body'>
+                        <div className='card card--dark'>
+                            <div className='card__body'>
                                 <h6>
                                     Username <Link href='#'>Edit</Link>
                                 </h6>
@@ -54,13 +54,13 @@ function UserSettingsPage() {
                             </div>
                         </div>
 
-                        <div className='card card-dark'>
-                            <div className='card-body'>
+                        <div className='card card--dark'>
+                            <div className='card__body'>
                                 <h6>
                                     Skills <Link href='#'>Edit</Link>
                                 </h6>
                                 <div className='line-break line-break-2'></div>
-                                <div id='topics-wrapper' className='card-body'>
+                                <div id='topics-wrapper' className='card__body'>
                                     <div className='tags-wrapper'>
                                         <div className='tag'>
                                             <small>Python</small>

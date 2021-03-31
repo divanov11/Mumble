@@ -22,22 +22,24 @@ function Profile({ match }) {
     );
 
     return (
-        <div id='content-container'>
-            <section id='left-sidebar'>
+        <div className='container profile--layout'>
+            <section id='sidebar--left--profile'>
                 <UserCard user={user} />
                 <SkillTags tags={user.skills} />
             </section>
 
             <section id='center-content'>
                 <div className='card'>
-                    <Link className='btn btn-1-outline btn-sm' to={'/'}>
+                    <div className="card__body">
+                    <Link className='btn btn--main--outline' to={'/'}>
                         &#8592; Go Back{' '}
                     </Link>
+                    </div>
                 </div>
                 <Feed posts={posts} />
             </section>
 
-            <section id='right-sidebar'>
+            <section id='sidebar--right--profile'>
                 <DiscussionsCard discussions={discussions} />
                 <ArticlesCard articles={articles} />
             </section>

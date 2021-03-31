@@ -7,10 +7,10 @@ function Feed({ posts }) {
 
             {posts.map(post => (
                 <div key={post.id} className="card">
-                    <div className="card-body">
+                    <div className="card__body">
                         <div className="post-wrapper">
                             <div className="post-header-wrapper">
-                                <img alt="img-description" className="user-thumbnail user-thumbnail-sm" src={post.user.profile_pic} />
+                                <img alt="img-description" className="avatar avatar--md" src={post.user.profile_pic} />
                                 <Link className="post-user-name" to={`/profile/${post.user.username}`}><h6>{post.user.name}</h6></Link>
                                 <p className="post-meta">@{post.user.username} .</p>
                                 <p className="post-meta">{post.created}</p>
@@ -48,8 +48,8 @@ function Feed({ posts }) {
                                 {post.comments.map(comment => (
                                     <div key={comment.id} className="post-comment">
                                         <div className="post-header-wrapper">
-                                            <img alt="img-description" className="user-thumbnail user-thumbnail-sm" src={comment.user.profile_pic} />
-                                            <Link className="post-user-name" to={`/profile/${comment.user.username}`}><h6>{comment.user.name}</h6></Link>
+                                            <img alt="img-description" className="avatar avatar--md" src={comment.user.profile_pic} />
+                                            <Link className="post-user-name" to={`/profile/${comment.user.username}`}><strong>{comment.user.name}</strong></Link>
                                             <p className="post-meta">@{comment.user.username} .</p>
                                             <p className="post-meta">{comment.created}</p>
 
