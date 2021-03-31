@@ -1,3 +1,6 @@
+body{
+  margin-top: 70px;
+}
 .custom-spacer{
   margin-top: 20px;
   margin-bottom: 20px;
@@ -16,38 +19,7 @@
 }
 
 
-#header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #3F4156;
-  color: #fff;
-  padding-left: 20px;
-  padding-right: 20px;
 
-}
-
-#logo{
-  font-size: 32px;
-}
-
-#logo a{
-  text-decoration: none;
-  color: #fff;
-}
-
-#nav-wrapper{
-  display: flex;
-  align-items: center;
-}
-
-.nav-icon{
-  font-size: 24px;
-}
-
-.nav-item{
-  margin: 10px;
-}
 
 
 #feed-post-form textarea {
@@ -88,6 +60,7 @@ textarea:focus-within {
 
 .contributor-wrapper{
   display: flex;
+  
   justify-content: space-between;
   align-items: center;
   padding-top:15px ;
@@ -97,6 +70,7 @@ textarea:focus-within {
 
 .contributor-preview{
   display: flex;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -149,6 +123,7 @@ textarea:focus-within {
 
 .post-header-wrapper{
   display: flex;
+  gap: 1rem;
   align-items: center;
 }
 
