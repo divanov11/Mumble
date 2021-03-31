@@ -23,7 +23,12 @@
     color: rgb(160, 158, 158);
     font-style: italic;
 }
-
+.question-sidebar {
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .big-vote-count{
     font-size: 24px;
     font-weight: 900;
@@ -36,4 +41,9 @@
 
 .big-down-arrow{
     font-size: 36px;
+}
+.voting-widget {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

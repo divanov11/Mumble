@@ -4,8 +4,10 @@ import Contributors from '../Components/Contributors';
 import DiscussionsCard from '../Components/DiscussionsCard';
 
 import '../Css/Discussion.css';
-import userData from '../data/users';
-import discussions from '../data/discussions';
+import userData from '../data/users'
+import discussions from '../data/discussions'
+import VotingWidget from '../Components/VotingWidget'
+
 
 function Discussion({ match }) {
     let discussion = discussions.find((d) => d.slug === match.params.slug);
@@ -16,22 +18,14 @@ function Discussion({ match }) {
     return (
         <div id='discussion-container'>
             <section>
-                <div className='card'>
-                    <div className='card-body'>
-                        <div className='question-wrapper'>
-                            <div className='question-sidebar'>
-                                <img
-                                    alt='img-description'
-                                    className='user-thumbnail user-thumbnail-sm'
-                                    src={discussion.user.profile_pic}
-                                />
-                                <div className='custom-spacer'></div>
+                <div className="card">
+                    <div className="card-body">
+                        <div className="question-wrapper">
+                            <div className="question-sidebar">
 
-                                <i className='fas fa-arrow-alt-up vote-icon big-up-arrow'></i>
-                                <p className='big-vote-count'>
-                                    {discussion.vote_ratio}
-                                </p>
-                                <i className='fas fa-arrow-alt-down vote-icon big-down-arrow'></i>
+                                <img alt="img-description" className="user-thumbnail user-thumbnail-md" src={discussion.user.profile_pic} />
+                                <div className="custom-spacer"></div>
+                                <VotingWidget voteRatio={discussion.vote_ratio}/>
                             </div>
                             <div className='question-body'>
                                 <h1 className='discussion-headline'>
@@ -60,23 +54,15 @@ function Discussion({ match }) {
                                 <p>{discussion.body}</p>
                                 <div className='custom-spacer'></div>
                                 <h6>3 Answers</h6>
-                                <div className='line-break'></div>
+                                <div className="line-break"></div>
 
-                                {discussion.answers.map((answer) => (
-                                    <div className='question-wrapper'>
-                                        <div className='question-sidebar'>
-                                            <img
-                                                alt='img-description'
-                                                className='user-thumbnail user-thumbnail-sm'
-                                                src={answer.user.profile_pic}
-                                            />
-                                            <div className='custom-spacer'></div>
+                                {discussion.answers.map(answer => (
+                                    <div className="question-wrapper">
 
-                                            <i className='fas fa-arrow-alt-up vote-icon big-up-arrow'></i>
-                                            <p className='big-vote-count'>
-                                                {answer.vote_ratio}
-                                            </p>
-                                            <i className='fas fa-arrow-alt-down vote-icon big-down-arrow'></i>
+                                        <div className="question-sidebar">
+                                            <img alt="img-description" className="user-thumbnail user-thumbnail-sm" src={answer.user.profile_pic} />
+                                            <div className="custom-spacer"></div>
+                                            <VotingWidget voteRatio={answer.vote_ratio}/>
                                         </div>
                                         <div className='question-body'>
                                             <Link
