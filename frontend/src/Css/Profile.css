@@ -1,21 +1,19 @@
-#user-profile-summary{
-    text-align: center;
-
+#user-profile-summary {
+  text-align: center;
 }
-#profile_pic{
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 20px;
-}
-
-#user-profile-name{
-    font-size: 28px;
+#profile_pic {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 
+#user-profile-name {
+  font-size: 28px;
+}
 
-#profile-stats-wrapper{
-    margin: 20px;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+#profile-stats-wrapper {
+  margin: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
