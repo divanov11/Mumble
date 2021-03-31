@@ -42,7 +42,7 @@ const UserSettingUpdateModel = ({ heading, dataType, userData, setUserData,  act
                         id="formInput#text"
                         type="text"
                         name="name"
-                        placeholder="Enter your full name" value={fields.name} onChange={handleFieldChanges} style={{width: 'auto'}}/>
+                        placeholder="Enter your full name" value={fields.name} onChange={handleFieldChanges} style={{width: '100%', maxWidth: '95%', minWidth: 'auto', padding: '1.2rem 5px'}}/>
                 </div>
                 <div class="form__field">
                   <label for="formInput#textarea">Message: </label>
@@ -50,7 +50,7 @@ const UserSettingUpdateModel = ({ heading, dataType, userData, setUserData,  act
                     class="input input--textarea"
                     name="bio"
                     id="formInput#textarea"
-                    placeholder="Write something awesome..." value={fields.bio} onChange={handleFieldChanges} style={{width: 'auto'}}
+                    placeholder="Write something awesome..." value={fields.bio} onChange={handleFieldChanges} style={{width: '100%', maxWidth: '95%', minWidth: 'auto', padding: '1.2rem 5px', minHeight: 'auto'}}
                   ></textarea>
                 </div>
             </>
@@ -66,7 +66,7 @@ const UserSettingUpdateModel = ({ heading, dataType, userData, setUserData,  act
                         id="formInput#text"
                         type="text"
                         name="username"
-                        placeholder="Enter your full name" value={fields.username} onChange={handleFieldChanges} style={{width: 'auto'}}/>
+                        placeholder="Enter your full name" value={fields.username} onChange={handleFieldChanges} style={{width: '100%', maxWidth: '95%', minWidth: 'auto', padding: '1.2rem 5px'}}/>
                 </div>
                 <div className="form__field">
                     <label for="formInput#text">Email: </label>
@@ -75,7 +75,7 @@ const UserSettingUpdateModel = ({ heading, dataType, userData, setUserData,  act
                         id="formInput#text"
                         type="email"
                         name="email"
-                        placeholder="Enter your full name" value={fields.email} onChange={handleFieldChanges} style={{width: 'auto'}}/>
+                        placeholder="Enter your full name" value={fields.email} onChange={handleFieldChanges} style={{width: '100%', maxWidth: '95%', minWidth: 'auto', padding: '1.2rem 5px'}}/>
                 </div>
                 </>
                 )
@@ -90,7 +90,7 @@ const UserSettingUpdateModel = ({ heading, dataType, userData, setUserData,  act
                             id="formInput#text"
                             type="text"
                             name="skills"
-                            placeholder="Enter your full name" value={fields.skills} onChange={handleFieldChanges} style={{width: 'auto'}}/>
+                            placeholder="Enter your full name" value={fields.skills} onChange={handleFieldChanges} style={{width: '100%', maxWidth: '95%', minWidth: 'auto', padding: '1.2rem 5px'}}/>
                     </div>
                 </>
                 )
