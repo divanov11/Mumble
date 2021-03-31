@@ -1,11 +1,13 @@
+import UserCard from "../Components/UserCard";
+import userData from "../data/users";
 const { useState } = require("react");
 const { useHistory } = require("react-router-dom");
 
 function UserSearchPage({ location }) {
+  let users = userData;
   // Using a ?query= parameter will add a lot of future flexibility, allowing us to make queries to this page as a redirect possibly.
 
   // Will need to figure out how to remove the URL formatting, if necessary.
-
   const history = useHistory();
 
   // Check query exists and is valid
@@ -40,6 +42,20 @@ function UserSearchPage({ location }) {
 
       <h1>Find a user</h1>
       <h2>Query: {query}</h2>
+      {users
+        .filter((user) => {
+          if (query == "") return user;
+          else if (user.name.toLowerCase().includes(query.toLowerCase())) {
+            return user;
+          }
+        })
+        .map((user) => {
+          return (
+            <div>
+              <UserCard user={user} />
+            </div>
+          );
+        })}
     </div>
   );
 }
