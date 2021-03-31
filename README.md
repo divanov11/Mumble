@@ -16,7 +16,7 @@ git clone https://github.com/divanov11/mumble
 ```
 
 ### Frontend Instructions (Create React App)
-Change into the frontend directory
+Navigate into the frontend directory
 ```Shell
 cd mumble && cd frontend
 ```
