@@ -1,5 +1,5 @@
-const { useState } = require("react");
-const { useHistory } = require("react-router-dom");
+const { useState } = require('react');
+const { useHistory } = require('react-router-dom');
 
 function UserSearchPage({ location }) {
   // Using a ?query= parameter will add a lot of future flexibility, allowing us to make queries to this page as a redirect possibly.
@@ -9,11 +9,11 @@ function UserSearchPage({ location }) {
   const history = useHistory();
 
   // Check query exists and is valid
-  if (location.search.substring(0, 7) !== "?query=") {
+  if (location.search.substring(0, 7) !== '?query=') {
     // If invalid query format redirect to https://site.com/find-user?query=
     history.push({
-      pathname: "/find-user",
-      search: "?query=",
+      pathname: '/find-user',
+      search: '?query='
     });
   }
 
@@ -21,14 +21,14 @@ function UserSearchPage({ location }) {
 
   const [queryInput, setQueryInput] = useState(query);
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     setQueryInput(e.target.value);
   };
 
   const handleSubmit = () => {
     history.push({
-      pathname: "/find-user",
-      search: `?query=${queryInput}`,
+      pathname: '/find-user',
+      search: `?query=${queryInput}`
     });
   };
 

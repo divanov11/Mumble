@@ -1,14 +1,11 @@
-#settings-page-container{
-    display: grid;
-    max-width: 1400px;
-    margin: 0 auto;
-    height: 100vh;
-    grid-template-columns:1fr 3fr 1fr;
+#settings-page-container {
+  display: grid;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100vh;
+  grid-template-columns: 1fr 3fr 1fr;
 }
 
-
-#settings-pic-wrapper{
-    text-align: center;
+#settings-pic-wrapper {
+  text-align: center;
 }
-
-
