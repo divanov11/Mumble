@@ -8,7 +8,7 @@ const Model = ({ heading, children, active, setActive }) => {
         setActive(false)
     }
     return ReactDom.createPortal(
-        <div className={`model-backdrop ${active && "active"} ${!active && "inactive"}`} ref={modelRef}>
+        <div className={`model-backdrop ${active && "active"} ${!active && "inactive"}`} ref={modelRef} onClick={closeModel}>
            <div className="mumble-model" onClick={(e) => e.stopPropagation()}>
                 <div className="model-header">
                     <h4>{heading}</h4>
