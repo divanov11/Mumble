@@ -14,7 +14,10 @@ function Header() {
     setShowNavigation(!showNavigation);
   };
 
-  const closeDropdown = () => setShowNavigation(false);
+  const closeDropdown = (e) => {
+    e.stopPropagation();
+    setShowNavigation(false);
+  };
 
   const navigationRef = useDetectClickOutside({
     onTriggered: closeDropdown,
@@ -44,8 +47,7 @@ function Header() {
           <div
             className="user-navigation--item"
             onClick={(e) => {
-              e.stopPropagation();
-              closeDropdown();
+              closeDropdown(e);
               history.push(`/profile/${user.username}`);
             }}
           >
@@ -56,8 +58,7 @@ function Header() {
           <div
             className="user-navigation--item"
             onClick={(e) => {
-              e.stopPropagation();
-              closeDropdown();
+              closeDropdown(e);
               history.push('/settings');
             }}
           >
@@ -68,8 +69,7 @@ function Header() {
           <div
             className="user-navigation--item"
             onClick={(e) => {
-              e.stopPropagation();
-              closeDropdown();
+              closeDropdown(e);
               history.push('/logout');
             }}
           >
