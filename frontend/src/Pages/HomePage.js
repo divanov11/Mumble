@@ -18,7 +18,7 @@ import articles from "../data/articles";
 function HomePage() {
 
     let posts = postsData;
-    let user = userData.find((u) => u.id === '1');
+    let user = userData.find((u) => u.id === 1);
     let contributers = userData;
 
     return (

@@ -6,7 +6,7 @@ import userData from '../data/users';
 
 
 function Header() {
-    let user = userData.find((u) => u.id === '1');
+    let user = userData.find((u) => u.id === 1);
     console.log('User:', user)
     let [nav, setNav] = useState('closed')
 
