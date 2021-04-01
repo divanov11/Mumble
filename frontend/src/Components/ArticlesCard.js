@@ -11,12 +11,12 @@ const ArticlesCard = ({ articles }) => {
 
         {articles.map((article) => (
           <div key={article.id} className="snippet-wrapper">
-            <div className="snippet-engagement-count">
+            <Link to={`/`} className="snippet-engagement-count">
               <p>{article.vote_rank}</p>
-            </div>
-            <div className="snippet-teaser">
+            </Link>
+            <Link to={"/"} className="snippet-teaser">
               <p className="snippet-text">{article.title}</p>
-            </div>
+            </Link>
           </div>
         ))}
       </div>

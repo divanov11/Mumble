@@ -41,8 +41,10 @@ const Feed = ({ posts }) => {
                 </div>
 
                 <div className="action-wrapper">
-                  <i className="fas fa-comment-lines"> </i>
-                  <span className="post-action-text">Comment</span>
+                  <div role="button" className="post-comment-wrapper">
+                    <i className="fas fa-comment-lines"> </i>
+                    <span className="post-action-text">Comment</span>
+                  </div>
                 </div>
 
                 <div className="action-wrapper">
@@ -97,8 +99,10 @@ const Feed = ({ posts }) => {
                       </div>
 
                       <div className="action-wrapper">
-                        <i className="fas fa-comment-lines"> </i>
-                        <span className="post-action-text">Comment</span>
+                        <div className="post-comment-wrapper">
+                          <i className="fas fa-comment-lines"> </i>
+                          <span className="post-action-text">Comment</span>
+                        </div>
                       </div>
 
                       <div className="action-wrapper">

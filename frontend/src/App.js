@@ -1,6 +1,6 @@
 import "./App.css";
 import "./ui-kit/styles/app.css";
-import { HashRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Header from "./Components/Header";
 import HomePage from "./Pages/HomePage";

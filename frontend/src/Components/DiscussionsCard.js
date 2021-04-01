@@ -10,9 +10,12 @@ const DiscussionsCard = ({ discussions }) => {
         <div className="custom-spacer"></div>
         {discussions.map((discussion, index) => (
           <div key={index} className="snippet-wrapper">
-            <div className="snippet-engagement-count">
+            <Link
+              className="snippet-engagement-count"
+              to={`/discussion/${discussion.slug}`}
+            >
               <p>{discussion.vote_ratio}</p>
-            </div>
+            </Link>
             <div className="snippet-teaser">
               <Link to={`/discussion/${discussion.slug}`}>
                 <p className="snippet-text">{discussion.headline}</p>
