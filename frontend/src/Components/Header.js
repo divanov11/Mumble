@@ -15,7 +15,6 @@ function Header() {
   };
 
   const closeDropdown = (e) => {
-    e.stopPropagation();
     setShowNavigation(false);
   };
 
