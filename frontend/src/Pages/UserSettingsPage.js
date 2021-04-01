@@ -4,8 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import User from "../data/users";
 import UserSettingUpdateModel from "../Components/UserSettingUpdateModel";
-
-const UserSettingsPage = () => {
+function UserSettingsPage() {
   const [currentUser, setCurrentUser] = useState(User[0]);
   const [updateModelActive, setUpdateModelActive] = useState(false);
   const [modelContent, setModelContent] = useState(null);
@@ -111,29 +110,29 @@ const UserSettingsPage = () => {
                   <div className="tags-wrapper">
                     {renderSkills()}
                     {/* <div className='tag'>
-                                          <small>Python</small>
-                                      </div>
-                                      <div className='tag'>
-                                          <small>Django</small>
-                                      </div>
-                                      <div className='tag'>
-                                          <small>React</small>
-                                      </div>
-                                      <div className='tag'>
-                                          <small>JavaScript</small>
-                                      </div>
-                                      <div className='tag'>
-                                          <small>Node JS</small>
-                                      </div>
-                                      <div className='tag'>
-                                          <small>Postgres</small>
-                                      </div>
-                                      <div className='tag'>
-                                          <small>System Architecture</small>
-                                      </div>
-                                      <div className='tag'>
-                                          <small>Security</small>
-                                      </div> */}
+                                            <small>Python</small>
+                                        </div>
+                                        <div className='tag'>
+                                            <small>Django</small>
+                                        </div>
+                                        <div className='tag'>
+                                            <small>React</small>
+                                        </div>
+                                        <div className='tag'>
+                                            <small>JavaScript</small>
+                                        </div>
+                                        <div className='tag'>
+                                            <small>Node JS</small>
+                                        </div>
+                                        <div className='tag'>
+                                            <small>Postgres</small>
+                                        </div>
+                                        <div className='tag'>
+                                            <small>System Architecture</small>
+                                        </div>
+                                        <div className='tag'>
+                                            <small>Security</small>
+                                        </div> */}
                   </div>
                 </div>
               </div>
@@ -145,6 +144,6 @@ const UserSettingsPage = () => {
       {/* <section></section> */}
     </div>
   );
-};
+}
 
 export default UserSettingsPage;

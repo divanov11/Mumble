@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const PostForm = () => {
+function PostForm() {
   const [message, setMessage] = useState("");
 
   /**
@@ -42,6 +42,6 @@ const PostForm = () => {
       </div>
     </div>
   );
-};
+}
 
 export default PostForm;
