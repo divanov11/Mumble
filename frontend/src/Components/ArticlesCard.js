@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function ArticlesCard({ articles }) {
   return (
@@ -14,7 +14,7 @@ function ArticlesCard({ articles }) {
             <Link to={`/`} className="snippet-engagement-count">
               <p>{article.vote_rank}</p>
             </Link>
-            <Link to={"/"} className="snippet-teaser">
+            <Link to={'/'} className="snippet-teaser">
               <p className="snippet-text">{article.title}</p>
             </Link>
           </div>

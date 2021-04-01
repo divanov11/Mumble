@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 function PostForm() {
-  const [message, setMessage] = useState("");
-
+  const [message, setMessage] = useState('');
 
   /**
    * Function that is called when post form is submitted
@@ -12,7 +11,7 @@ function PostForm() {
     // Do something with the form data
     alert(`Creating new post with message: ${message}`);
     // Clear the form fields
-    setMessage("");
+    setMessage('');
   };
 
   /**

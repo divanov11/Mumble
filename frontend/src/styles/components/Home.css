@@ -1,0 +1,23 @@
+.home--layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  column-gap: 1rem;
+}
+
+@media screen and (max-width: 1300px) {
+  .home--layout {
+    grid-template-columns: 1fr 2fr 0;
+  }
+  #sidebar--right--home {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .home--layout {
+    grid-template-columns: 1fr;
+  }
+  #sidebar--left--home {
+    display: none;
+  }
+}
