@@ -10,7 +10,7 @@ function SkillTags({ tags }) {
                 <div className="tags-wrapper">
 
                     {tags.map((tag, index) => (
-                        <div className="tag">
+                        <div className="tag" key={ index}>
                             <small>{tag}</small>
                         </div>
                     ))}

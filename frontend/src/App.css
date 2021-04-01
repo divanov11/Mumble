@@ -54,6 +54,7 @@ strong {
 
 body {
   background-color: #f4f6f9;
+  overflow-x: hidden;
 }
 
 .custom-spacer {
@@ -104,7 +105,8 @@ body {
 .card {
   border-radius: 10px;
   background-color: #fff;
-  border: 1px solid #eaedf3;
+  /* border: 1px solid #eaedf3; */
+  box-shadow: 0px 1px 13px -3px gray;
   margin: 10px;
 }
 
@@ -123,25 +125,39 @@ body {
   align-items: center;
   background-color: #3f4156;
   color: #fff;
-  padding-left: 20px;
-  padding-right: 20px;
+  width: 100%;
+  max-height: 8vh;
 }
 
 #logo {
   font-size: 32px;
+  margin-left: 20px;
 }
 
 #logo a {
   text-decoration: none;
   color: #fff;
+
 }
 
 #nav-wrapper {
   display: flex;
   align-items: center;
+  margin-right: 20px;
 }
+#header .user-thumbnail-sm {
+    border-radius: 50%;
+    margin-top: 2vh;
+  }
+
 
 .nav-icon {
+  font-size: 22px;
+  transition: 0.2s;
+}
+
+.nav-icon:hover {
+  transition: 0.2s;
   font-size: 24px;
 }
 .nav-item {
@@ -156,15 +172,19 @@ body {
 }
 
 #feed-post-form textarea {
+  text-align: center;
   display: block;
   width: 90%;
   margin: 0 auto;
   background-color: #f4f6f9;
   border: none;
+  box-shadow: 0px 1px 13px -5px #00000094;
   padding: 20px;
   font-size: 18px;
   border-radius: 50px;
   resize: none;
+  max-height: 5vh;
+  outline: none;
 }
 
 #post-btn-wrapper {
@@ -186,6 +206,7 @@ body {
 }
 
 #left-sidebar {
+
 }
 
 #center-content {
@@ -525,35 +546,60 @@ textarea.input:active {
   margin-right: 1rem;
 }
 
-@media screen and (max-width: 680px) {
-  body {
-    overflow-x: hidden;
+.contributor-wrapper .btn-1-outline {
+  transition: 0.2s;
+}
+
+.contributor-wrapper .btn-1-outline:hover {
+  background-color: #5aa5b9;
+  color: #FFF;
+  transition: 0.2s;
+}
+
+.userinfo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 980px) {
+
+  /* Override Ui-kits */
+  h5 {
+    font-size: 20px;
+  }
+  .custom-spacer {
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 
-  #header {
-    width: 100%;
-    max-height: 8vh;
-    padding-left: 10px;
-    padding-right: 10px;
+  h6 {
+    font-size: 16px;
   }
-  #logo {
+
+  .line-break {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  /* end override */
+
+  #content-container {
+    display: block;
+  }
+
+  #left-sidebar {
     font-size: 15px;
   }
-  #header .user-thumbnail-sm {
-    border-radius: 50%;
-    margin-right: 15px;
-    margin-top: 10px;
-    height: 40px;
-    width: 40px;
+
+  .contributor-wrapper {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
-  #nav-wrapper {
-  align-items: center;
-}
-.nav-icon{
-  font-size: 18px;
-}
-.nav-item {
-  margin: 5px;
-  margin-left: 0;
-}
+
+  .post-header-wrapper {
+    display: block;
+  }
+
+
 }
