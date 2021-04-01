@@ -176,9 +176,14 @@ textarea:focus-within {
   color: #a9a9ad;
 }
 
+.post-comment-wrapper {
+  cursor: pointer;
+}
+
 
 .vote-icon{
   color: #a9a9ad;
+  cursor: pointer;
 }
 
 .up-arrow{
