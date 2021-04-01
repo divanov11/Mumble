@@ -10,6 +10,15 @@
   transition: all 0.2s ease-in-out;
   z-index: 1000;
 }
+.model-backdrop.active {
+  display: flex;
+  opacity: 1;
+}
+
+.model-backdrop.inactive {
+  opacity: 0;
+  display: none;
+}
 
 .modal-backdrop .mumble-modal {
   background: White;

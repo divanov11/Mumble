@@ -46,7 +46,8 @@ const UserSettingUpdateModal = ({
       return (
         <>
           <div className="form__field">
-            <label htmlFor="formInput#text">Name: </label>
+            <label htmlFor="formInput#text">Full Name: </label>
+
             <input
               className="input input--text"
               id="formInput#text"
