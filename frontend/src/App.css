@@ -1,32 +1,25 @@
-
-.custom-spacer{
+.custom-spacer {
   margin-top: 20px;
   margin-bottom: 20px;
-
 }
 
 .line-break {
-  background-color: #EAEDF3;
+  background-color: #eaedf3;
   height: 1px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.line-break-2{
+.line-break-2 {
   background-color: #dadada;
 }
 
-
-
-
-
 #feed-post-form textarea {
-
   display: block;
-  width:90%;
-  margin:0 auto;
-  background-color: #F4F6F9;
-  border:none;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #f4f6f9;
+  border: none;
   padding: 20px;
   font-size: 18px;
   border-radius: 50px;
@@ -38,88 +31,84 @@ textarea:focus-within {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
 }
 
-
-#post-btn-wrapper{
+#post-btn-wrapper {
   display: flex;
   justify-content: flex-end;
   margin-top: 10px;
   padding-top: 10px;
-  border-top: 1px solid #EAEDF3;
+  border-top: 1px solid #eaedf3;
 }
 
-#post-btn{
+#post-btn {
   text-align: right;
 }
 
-.post-user-name{
+.post-user-name {
   text-decoration: none;
   color: #000;
 }
 
-.contributor-wrapper{
+.contributor-wrapper {
   display: flex;
-  
+
   justify-content: space-between;
   align-items: center;
-  padding-top:15px ;
-  padding-bottom:15px ;
-  border-top: 1px solid #EAEDF3;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-top: 1px solid #eaedf3;
 }
 
-.contributor-preview{
+.contributor-preview {
   display: flex;
   gap: 1rem;
   align-items: center;
 }
 
-.contributor-preview a{
+.contributor-preview a {
   text-decoration: none;
 }
 
-
-.tags-wrapper{
+.tags-wrapper {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
-.snippet-wrapper{
+.snippet-wrapper {
   display: flex;
   border-top: 1px solid #dadada;
   padding-top: 10px;
   padding-bottom: 10px;
-  
 }
 
-.snippet-wrapper a{
+.snippet-wrapper a {
   text-decoration: none;
 }
 
-
-.snippet-engagement-count{
+.snippet-engagement-count {
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color:#5eba7d ;
+  background-color: #5eba7d;
   color: #fff;
   min-width: 35px;
   padding: 5px;
   margin-right: 10px;
 }
 
-.snippet-engagement-count p{
+.snippet-engagement-count p {
   color: #fff;
 }
 
-.snippet-text{
-  color:rgb(131, 130, 130) ;
+.snippet-text {
+  color: rgb(131, 130, 130);
 }
 
-.post-wrapper{
- 
+.post-wrapper {
 }
 
-.post-header-wrapper{
+.post-header-wrapper {
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -129,37 +118,35 @@ textarea:focus-within {
   margin-left: 65px;
 }
 
-
-.post-meta{
+.post-meta {
   margin-left: 5px;
   color: rgb(131, 130, 130);
 }
 
-.post-contents{
+.post-contents {
   display: flex;
   padding-bottom: 20px;
-  border-bottom: 1px solid #EAEDF3;
+  border-bottom: 1px solid #eaedf3;
   align-items: center;
 }
 
-.post-votes{
+.post-votes {
   padding: 20px;
   text-align: center;
 }
 
-.vote-count{
+.vote-count {
   font-weight: 900;
   color: #5eba7d;
 }
 
-
-.post-actions-wrapper{
+.post-actions-wrapper {
   display: flex;
   padding: 10px;
   justify-content: space-between;
 }
 
-.post-actions-wrapper i{
+.post-actions-wrapper i {
   margin: 10px;
   color: #a9a9ad;
   cursor: pointer;
@@ -167,11 +154,11 @@ textarea:focus-within {
   font-size: 18px;
 }
 
-.post-actions-wrapper i:hover{
+.post-actions-wrapper i:hover {
   color: #6ce6eb;
 }
 
-.post-action-text{
+.post-action-text {
   font: 14px;
   color: #a9a9ad;
 }
@@ -180,29 +167,21 @@ textarea:focus-within {
   cursor: pointer;
 }
 
-
-.vote-icon{
+.vote-icon {
   color: #a9a9ad;
   cursor: pointer;
 }
 
-.up-arrow{
+.up-arrow {
   color: #000;
 }
 
-
 /* POST COMMENT STYLING */
 
-.post-comments-wrapper{
+.post-comments-wrapper {
   border-left: 1px dashed #d8d8d8;
 }
 
-.post-comment{
+.post-comment {
   padding: 20px;
-
 }
-
-
-
-
-
