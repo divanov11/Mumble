@@ -1,5 +1,5 @@
-const { useState } = require('react');
-const { useHistory } = require('react-router-dom');
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 function UserSearchPage({ location }) {
   // Using a ?query= parameter will add a lot of future flexibility, allowing us to make queries to this page as a redirect possibly.

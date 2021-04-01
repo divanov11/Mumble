@@ -86,6 +86,7 @@ textarea:focus-within {
 }
 
 .snippet-engagement-count {
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
