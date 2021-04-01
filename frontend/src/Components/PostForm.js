@@ -3,6 +3,7 @@ import React, { useState } from "react";
 function PostForm() {
   const [message, setMessage] = useState("");
 
+
   /**
    * Function that is called when post form is submitted
    */
@@ -24,7 +25,6 @@ function PostForm() {
   return (
     <div className="card">
       <div className="card__body">
-        <h3>Create Post</h3>
         <form className="form" onSubmit={onFormSubmit}>
           <div className="form__field">
             <textarea
