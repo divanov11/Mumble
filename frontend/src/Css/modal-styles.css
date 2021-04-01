@@ -1,4 +1,4 @@
-.model-backdrop {
+.Modal-backdrop {
     position: fixed;
     display: none;
     justify-content: center;
@@ -13,7 +13,7 @@
 
 
 
-.model-backdrop .mumble-model {
+.Modal-backdrop .mumble-Modal {
     background: White;
     border-radius: 6px;
     width: 80%;
@@ -21,15 +21,15 @@
     padding: 20px;
     
 }
-.mumble-model .model-header{
+.mumble-Modal .Modal-header{
     position: relative;
 }
-.model-header .model-close {
+.Modal-header .Modal-close {
     position: absolute;
     right: 0;
 }
 
-.mumble-model .model-actions {
+.mumble-Modal .Modal-actions {
     margin-top: 15px;
     display: flex;
     width: 100%;

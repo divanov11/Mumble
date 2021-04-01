@@ -3,15 +3,15 @@ import '../Css/UserSettings.css';
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import User from '../data/users'
-import UserSettingUpdateModel from '../Components/UserSettingUpdateModel'
+import UserSettingUpdateModal from '../Components/UserSettingUpdateModal'
 function UserSettingsPage() {
     const [currentUser, setCurrentUser] = useState(User[0])
-    const [updateModelActive, setUpdateModelActive] = useState(false)
-    const [modelContent, setModelContent] = useState(null)
+    const [updateModalActive, setUpdateModalActive] = useState(false)
+    const [ModalContent, setModalContent] = useState(null)
     const update = (e) => {
         const data_type = e.target.dataset.type
-        setModelContent(data_type)
-        setUpdateModelActive(true)
+        setModalContent(data_type)
+        setUpdateModalActive(true)
     }
     const renderSkills = () => {
         const skills = currentUser.skills.map((x, i) => {
@@ -25,7 +25,7 @@ function UserSettingsPage() {
     }
     return (
         <div id='settings-page-container'>
-            <UserSettingUpdateModel heading="Update User Settings" dataType={modelContent} userData={currentUser} setUserData={setCurrentUser} active={updateModelActive} setActive={setUpdateModelActive}/>
+            <UserSettingUpdateModal heading="Update User Settings" dataType={ModalContent} userData={currentUser} setUserData={setCurrentUser} active={updateModalActive} setActive={setUpdateModalActive}/>
             <section>
                 <div className='card'>
                     <div className='card__body'>

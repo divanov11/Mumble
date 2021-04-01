@@ -1,26 +1,26 @@
-import Model from '../Components/Model'
-import useForm from '../Components/useFormHook'
+import Modal from './Modal'
+import useForm from './useFormHook'
 
-const ContentComponent = ({ closeModel, children, handleFormSubmit }) => {
-    const HandlecloseModel = (e) => {
+const ContentComponent = ({ closeModal, children, handleFormSubmit }) => {
+    const HandlecloseModal = (e) => {
         e.preventDefault()
-        closeModel(false)
+        closeModal(false)
     }
     const submit = (e) => {
         handleFormSubmit(e)
-        closeModel(false)
+        closeModal(false)
     }
     return (
         <form onSubmit={submit}>
             {children}
-            <div className="model-actions">
+            <div className="Modal-actions">
                 <button className='btn btn-1 btn-md' style={{marginRight: '8px'}}>Update</button>
-                <button className='btn btn-1 btn-md' onClick={HandlecloseModel}>Cancel</button>
+                <button className='btn btn-1 btn-md' onClick={HandlecloseModal}>Cancel</button>
             </div>
         </form>
     )
 }
-const UserSettingUpdateModel = ({ heading, dataType, userData, setUserData,  active, setActive }) => {
+const UserSettingUpdateModal = ({ heading, dataType, userData, setUserData,  active, setActive }) => {
     const [fields, handleFieldChanges] = useForm(userData)
     const handleFormSubmit = (e) => {
         e.preventDefault()
@@ -36,7 +36,7 @@ const UserSettingUpdateModel = ({ heading, dataType, userData, setUserData,  act
             return (
             <>
                 <div className="form__field">
-                    <label for="formInput#text">Full Name: </label>
+                    <label htmlFor="formInput#text">Full Name: </label>
                     <input
                         className="input input--text"
                         id="formInput#text"
@@ -45,7 +45,7 @@ const UserSettingUpdateModel = ({ heading, dataType, userData, setUserData,  act
                         placeholder="Enter your full name" value={fields.name} onChange={handleFieldChanges} style={{width: '100%', minWidth: 'auto'}}/>
                 </div>
                 <div className="form__field">
-                  <label for="formInput#textarea">Bio: </label>
+                  <label htmlFor="formInput#textarea">Bio: </label>
                   <textarea
                     className="input input--textarea"
                     name="bio"
@@ -60,7 +60,7 @@ const UserSettingUpdateModel = ({ heading, dataType, userData, setUserData,  act
             return (
                 <>
                 <div className="form__field">
-                    <label for="formInput#text">UserName: </label>
+                    <label htmlFor="formInput#text">UserName: </label>
                     <input
                         className="input input--text"
                         id="formInput#text"
@@ -69,7 +69,7 @@ const UserSettingUpdateModel = ({ heading, dataType, userData, setUserData,  act
                         placeholder="Enter your full name" value={fields.username} onChange={handleFieldChanges} style={{width: '100%', minWidth: 'auto'}}/>
                 </div>
                 <div className="form__field">
-                    <label for="formInput#text">Email: </label>
+                    <label htmlFor="formInput#text">Email: </label>
                     <input
                         className="input input--text"
                         id="formInput#text"
@@ -84,7 +84,7 @@ const UserSettingUpdateModel = ({ heading, dataType, userData, setUserData,  act
             return (
                 <>
                     <div className="form__field" data-error={dataType}>
-                        <label for="formInput#text">Tags</label>
+                        <label htmlFor="formInput#text">Tags</label>
                         <input
                             className="input input--text"
                             id="formInput#text"
@@ -98,12 +98,12 @@ const UserSettingUpdateModel = ({ heading, dataType, userData, setUserData,  act
 
     }
     return (
-        <Model heading={heading} active={active} setActive={setActive}>
-            <ContentComponent closeModel={setActive} handleFormSubmit={handleFormSubmit}>
+        <Modal heading={heading} active={active} setActive={setActive}>
+            <ContentComponent closeModal={setActive} handleFormSubmit={handleFormSubmit}>
                 {renderFormFields()}
             </ContentComponent>
-        </Model>
+        </Modal>
     )
 }
 
-export default UserSettingUpdateModel
+export default UserSettingUpdateModal
