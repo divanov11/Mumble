@@ -58,8 +58,9 @@
 }
 
 /* Hover effects for outline buttons */
-.btn--main--outline:hover::before, .btn--sub--outline:hover::before {
-  content: "";
+.btn--main--outline:hover::before,
+.btn--sub--outline:hover::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
