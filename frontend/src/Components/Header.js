@@ -1,10 +1,11 @@
-import "../App.css";
-import "../Css/HeaderBar.css";
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import userData from "../data/users";
 import { useDetectClickOutside } from "react-detect-click-outside";
 import { useHistory } from 'react-router-dom'
+import '../styles/components/HeaderBar.css';
+
 function Header() {
   const user = userData.find((u) => Number(u.id) === 1);
   const [showNavigation, setShowNavigation] = useState(false);
@@ -23,7 +24,7 @@ function Header() {
   return (
     <div id="header">
       <div id="logo">
-        <Link to={"/"}>
+        <Link to={'/'}>
           <h3>MUMBLE</h3>
         </Link>
       </div>

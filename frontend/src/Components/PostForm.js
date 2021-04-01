@@ -1,18 +1,24 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 function PostForm() {
-  const [message, setMessage] = useState("");
-
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState(null);
 
   /**
    * Function that is called when post form is submitted
    */
   const onFormSubmit = (e) => {
     e.preventDefault();
-    // Do something with the form data
+    // If the message is empty set the error state and return the function
+    if (!message) {
+      return setError('Post cannot be empty!');
+    }
+
+    // If it is valid message do something with the form data
     alert(`Creating new post with message: ${message}`);
+
     // Clear the form fields
-    setMessage("");
+    setMessage('');
   };
 
   /**
@@ -20,6 +26,10 @@ function PostForm() {
    */
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
+    if (error && e.target.value) {
+      // if the there was an error & now it has a proper value set the error to null
+      setError(null);
+    }
   };
 
   return (
@@ -35,6 +45,17 @@ function PostForm() {
               onChange={handleMessageChange}
               value={message}
             ></textarea>
+
+            {error && (
+              <small
+                style={
+                  errorStyles // If there is an error show the error
+                }
+              >
+                {error}
+              </small>
+            )}
+
             <button id="post-btn" className="btn btn--main" type="submit">
               Submit
             </button>
@@ -46,3 +67,9 @@ function PostForm() {
 }
 
 export default PostForm;
+
+const errorStyles = {
+  color: 'rgb(220, 20, 60)', // bright red color
+  fontWeight: 'bold',
+  display: 'block',
+};
