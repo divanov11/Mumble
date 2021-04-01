@@ -1,9 +1,8 @@
-import "../App.css";
-import "../Css/HeaderBar.css";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import userData from "../data/users";
-import { useDetectClickOutside } from "react-detect-click-outside";
+import '../styles/components/HeaderBar.css';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import userData from '../data/users';
+import { useDetectClickOutside } from 'react-detect-click-outside';
 
 function Header() {
   const user = userData.find((u) => Number(u.id) === 1);
@@ -23,7 +22,7 @@ function Header() {
   return (
     <div id="header">
       <div id="logo">
-        <Link to={"/"}>
+        <Link to={'/'}>
           <h3>MUMBLE</h3>
         </Link>
       </div>
@@ -50,14 +49,14 @@ function Header() {
 
           <div className="user-navigation--item">
             <i className="fas fa-cog user--nav--icon"></i>
-            <Link onClick={closeDropdown} to={"/settings"}>
+            <Link onClick={closeDropdown} to={'/settings'}>
               Settings
             </Link>
           </div>
 
           <div className="user-navigation--item">
             <i className="fas fa-sign-out-alt user--nav--icon"></i>
-            <Link onClick={closeDropdown} to={"/logout"}>
+            <Link onClick={closeDropdown} to={'/logout'}>
               Logout
             </Link>
           </div>

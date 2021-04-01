@@ -1,18 +1,18 @@
-import React from "react";
-import "../Css/HomePage.css";
+import React from 'react';
+import '../styles/components/Home.css';
 //Components
-import Contributors from "../Components/Contributors";
-import Feed from "../Components/Feed";
-import PostForm from "../Components/PostForm";
-import TopicTags from "../Components/TopicTags";
-import DiscussionsCard from "../Components/DiscussionsCard";
-import ArticlesCard from "../Components/ArticlesCard";
+import Contributors from '../Components/Contributors';
+import Feed from '../Components/Feed';
+import PostForm from '../Components/PostForm';
+import TopicTags from '../Components/TopicTags';
+import DiscussionsCard from '../Components/DiscussionsCard';
+import ArticlesCard from '../Components/ArticlesCard';
 
 //Dummy Data Files
-import postsData from "../data/posts";
-import userData from "../data/users";
-import discussions from "../data/discussions";
-import articles from "../data/articles";
+import postsData from '../data/posts';
+import userData from '../data/users';
+import discussions from '../data/discussions';
+import articles from '../data/articles';
 
 function HomePage() {
   let posts = postsData;
@@ -20,7 +20,7 @@ function HomePage() {
   let contributors = userData;
 
   return (
-    <div class="container home--layout">
+    <div className="container home--layout">
       <section id="sidebar--left--home">
         <Contributors users={contributors} />
         <TopicTags tags={user.interests} />

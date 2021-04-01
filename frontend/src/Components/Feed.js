@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Feed({ posts }) {
   return (
@@ -71,9 +71,9 @@ function Feed({ posts }) {
                       <p className="post-meta">@{comment.user.username} .</p>
                       <p className="post-meta">{comment.created}</p>
                     </div>
-                    <i class="replying-to-text">
+                    <i className="replying-to-text">
                       <small>
-                        Replying to{" "}
+                        Replying to{' '}
                         {comment.reply_at.map((user) => (
                           <span key={user.id}>- @{user.username}</span>
                         ))}
