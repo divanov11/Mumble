@@ -14,16 +14,16 @@ function App() {
   return (
     <Router>
       <Header />
-      <Switch>
-        <Route exact path={"/login"} component={LoginPage} />
-        <main>
-          <Route exact path={"/"} component={HomePage} />
-          <Route exact path={"/profile/:username"} component={ProfilePage} />
-          <Route exact path={"/settings"} component={UserSettingsPage} />
-          <Route exact path={"/discussion/:slug"} component={Discussion} />
-          <Route exact path={"/find-user"} component={UserSearchPage} />
-        </main>
-      </Switch>
+      <main>
+        <Switch>
+          <Route exact path={"/login"} component={LoginPage} />
+            <Route exact path={"/"} component={HomePage} />
+            <Route exact path={"/profile/:username"} component={ProfilePage} />
+            <Route exact path={"/settings"} component={UserSettingsPage} />
+            <Route exact path={"/discussion/:slug"} component={Discussion} />
+            <Route exact path={"/find-user"} component={UserSearchPage} />
+        </Switch>
+      </main>
     </Router>
   );
 }
