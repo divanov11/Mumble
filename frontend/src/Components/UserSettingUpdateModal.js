@@ -60,7 +60,7 @@ const UserSettingUpdateModal = ({
             />
           </div>
           <div className="form__field">
-            <label htmlFor="formInput#textarea">Bio: </label>
+            <label htmlFor="formInput#textarea">About: </label>
             <textarea
               className="input input--textarea"
               name="bio"
@@ -77,7 +77,7 @@ const UserSettingUpdateModal = ({
       return (
         <>
           <div className="form__field">
-            <label htmlFor="formInput#text">UserName: </label>
+            <label htmlFor="formInput#text">Username: </label>
             <input
               className="input input--text"
               id="formInput#text"
