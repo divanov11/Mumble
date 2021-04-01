@@ -1,41 +1,32 @@
-.model-backdrop {
+.modal-backdrop {
   position: fixed;
   display: none;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  /* display: none; */
+  background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
-  transition: opacity 0.3ms ease-in-out;
-}
-.model-backdrop.active {
-  display: flex;
-  opacity: 1;
+  transition: all 0.2s ease-in-out;
+  z-index: 1000;
 }
 
-.model-backdrop.inactive {
-  opacity: 0;
-  display: none;
-}
-
-.model-backdrop .mumble-model {
+.modal-backdrop .mumble-modal {
   background: White;
   border-radius: 6px;
   width: 80%;
   max-width: 500px;
   padding: 20px;
 }
-.mumble-model .model-header {
+.mumble-modal .modal-header {
   position: relative;
 }
-.model-header .model-close {
+.modal-header .modal-close {
   position: absolute;
   right: 0;
 }
 
-.mumble-model .model-actions {
+.mumble-modal .modal-actions {
   margin-top: 15px;
   display: flex;
   width: 100%;
