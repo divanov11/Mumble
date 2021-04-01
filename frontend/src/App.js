@@ -1,5 +1,5 @@
 import "./App.css";
-import "./ui-kit/styles/app.css"
+import "./ui-kit/styles/app.css";
 import { HashRouter as Router, Route } from "react-router-dom";
 
 import Header from "./Components/Header";
@@ -10,7 +10,7 @@ import ProfilePage from "./Pages/ProfilePage";
 import UserSettingsPage from "./Pages/UserSettingsPage";
 import UserSearchPage from "./Pages/UserSearchPage";
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Header />
@@ -24,6 +24,6 @@ function App() {
       </main>
     </Router>
   );
-}
+};
 
 export default App;

@@ -1,7 +1,7 @@
 const { useState } = require("react");
 const { useHistory } = require("react-router-dom");
 
-function UserSearchPage({ location }) {
+const UserSearchPage = ({ location }) => {
   // Using a ?query= parameter will add a lot of future flexibility, allowing us to make queries to this page as a redirect possibly.
 
   // Will need to figure out how to remove the URL formatting, if necessary.
@@ -42,6 +42,6 @@ function UserSearchPage({ location }) {
       <h2>Query: {query}</h2>
     </div>
   );
-}
+};
 
 export default UserSearchPage;
