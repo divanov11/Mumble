@@ -26,8 +26,8 @@ const Model = ({ heading, children, active, setActive }) => {
     
     return ReactDom.createPortal(
         <div className={`model-backdrop`} ref={modelRef}>
-            {active ? toggleOn() : toggleOff()}
-            {active ? setTimeout(toggleOn1, 30) : setTimeout(toggleOff1, 200)}
+            <div style={{display: 'none'}}>{active ? toggleOn() : toggleOff()}
+            {active ? setTimeout(toggleOn1, 30) : setTimeout(toggleOff1, 200)}</div>
            <div className="mumble-model" onClick={(e) => e.stopPropagation()}>
                 <div className="model-header">
                     <h4>{heading}</h4>
