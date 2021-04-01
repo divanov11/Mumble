@@ -46,9 +46,9 @@ const UserSettingUpdateModel = ({
       return (
         <>
           <div className="form__field">
-            <label for="formInput#text">Full Name: </label>
+            <label htmlFor="formInput#text">Full Name: </label>
             <input
-              class="input input--text"
+              className="input input--text"
               id="formInput#text"
               type="text"
               name="name"
@@ -58,10 +58,10 @@ const UserSettingUpdateModel = ({
               style={{ width: '100%', minWidth: 'auto' }}
             />
           </div>
-          <div class="form__field">
-            <label for="formInput#textarea">Message: </label>
+          <div className="form__field">
+            <label htmlFor="formInput#textarea">Message: </label>
             <textarea
-              class="input input--textarea"
+              className="input input--textarea"
               name="bio"
               id="formInput#textarea"
               placeholder="Write something awesome..."
@@ -76,9 +76,9 @@ const UserSettingUpdateModel = ({
       return (
         <>
           <div className="form__field">
-            <label for="formInput#text">User Name: </label>
+            <label htmlFor="formInput#text">User Name: </label>
             <input
-              class="input input--text"
+              className="input input--text"
               id="formInput#text"
               type="text"
               name="username"
@@ -89,9 +89,9 @@ const UserSettingUpdateModel = ({
             />
           </div>
           <div className="form__field">
-            <label for="formInput#text">Email: </label>
+            <label htmlFor="formInput#text">Email: </label>
             <input
-              class="input input--text"
+              className="input input--text"
               id="formInput#text"
               type="email"
               name="email"
@@ -107,9 +107,9 @@ const UserSettingUpdateModel = ({
       return (
         <>
           <div className="form__field" data-error={dataType}>
-            <label for="formInput#text">Tags</label>
+            <label htmlFor="formInput#text">Tags</label>
             <input
-              class="input input--text"
+              className="input input--text"
               id="formInput#text"
               type="text"
               name="skills"
@@ -135,80 +135,4 @@ const UserSettingUpdateModel = ({
   );
 };
 
-    }
-    const renderFormFields = () => {
-        if (dataType === 'user-info'){
-            return (
-            <>
-                <div className="form__field">
-                    <label htmlFor="formInput#text">Full Name: </label>
-                    <input
-                        className="input input--text"
-                        id="formInput#text"
-                        type="text"
-                        name="name"
-                        placeholder="Enter your full name" value={fields.name} onChange={handleFieldChanges} style={{width: '100%', minWidth: 'auto'}}/>
-                </div>
-                <div className="form__field">
-                  <label htmlFor="formInput#textarea">Message: </label>
-                  <textarea
-                    className="input input--textarea"
-                    name="bio"
-                    id="formInput#textarea"
-                    placeholder="Write something awesome..." value={fields.bio} onChange={handleFieldChanges} style={{width: '100%', minWidth: 'auto'}}
-                  ></textarea>
-                </div>
-            </>
-            )
-        }
-        else if (dataType === 'user-detail'){
-            return (
-                <>
-                <div className="form__field">
-                    <label htmlFor="formInput#text">User Name: </label>
-                    <input
-                        className="input input--text"
-                        id="formInput#text"
-                        type="text"
-                        name="username"
-                        placeholder="Enter your full name" value={fields.username} onChange={handleFieldChanges} style={{width: '100%', minWidth: 'auto'}}/>
-                </div>
-                <div className="form__field">
-                    <label htmlFor="formInput#text">Email: </label>
-                    <input
-                        className="input input--text"
-                        id="formInput#text"
-                        type="email"
-                        name="email"
-                        placeholder="Enter your full name" value={fields.email} onChange={handleFieldChanges} style={{width: '100%', minWidth: 'auto'}}/>
-                </div>
-                </>
-                )
-        }
-        else if (dataType === 'user-skills'){
-            return (
-                <>
-                    <div className="form__field" data-error={dataType}>
-                        <label htmlFor="formInput#text">Tags</label>
-                        <input
-                            className="input input--text"
-                            id="formInput#text"
-                            type="text"
-                            name="skills"
-                            placeholder="Enter your full name" value={fields.skills} onChange={handleFieldChanges} style={{width: '100%', minWidth: 'auto'}}/>
-                    </div>
-                </>
-                )
-        }
-
-    }
-    return (
-        <Model heading={heading} active={active} setActive={setActive}>
-            <ContentComponent closeModel={setActive} handleFormSubmit={handleFormSubmit}>
-                {renderFormFields()}
-            </ContentComponent>
-        </Model>
-    )
-}
-
-export default UserSettingUpdateModel
+export default UserSettingUpdateModel;
