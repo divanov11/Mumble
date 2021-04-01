@@ -105,9 +105,6 @@ textarea:focus-within {
   color: rgb(131, 130, 130);
 }
 
-.post-wrapper {
-}
-
 .post-header-wrapper {
   display: flex;
   gap: 1rem;

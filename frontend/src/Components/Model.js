@@ -1,6 +1,6 @@
 import ReactDom from 'react-dom';
-import { useRef } from 'react'
-import '../Css/model-styles.css'
+import { useRef } from 'react';
+import '../styles/components/Modal.css';
 const Model = ({ heading, children, active, setActive }) => {
     const modelRef = useRef()
     const closeModel = (e) => {
@@ -24,3 +24,4 @@ const Model = ({ heading, children, active, setActive }) => {
     )
 }
 export default Model
+

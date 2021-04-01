@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../Css/login.css';
+import '../styles/components/Login.css';
 import screenshot from '../Images/screenshot.PNG';
 
 function LoginPage() {
@@ -53,25 +53,36 @@ function LoginPage() {
                             />
                         </div>
 
-                        <input
-                            className='submit btn btn--main'
-                            type='submit'
-                            value='Sign In'
-                        />
-                    </form>
-                    <div id='bottom-content'>
-                        <p>
-                            Already have an account?{' '}
-                            <Link to='#'>Register</Link>
-                        </p>
-                        <p>
-                            <Link to='#'>Forgot Password?</Link>
-                        </p>
-                    </div>
-                </div>
+
+            <div className="form__field">
+              <label for="formInput#password">Password: </label>
+              <input
+                className="input input--password"
+                id="formInput#passowrd"
+                type="password"
+                name="password"
+                placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
+              />
             </div>
+
+            <input
+              className="submit btn btn--main"
+              type="submit"
+              value="Sign In"
+            />
+          </form>
+          <div id="bottom-content">
+            <p>
+              Already have an account? <Link to="#">Register</Link>
+            </p>
+            <p>
+              <Link to="#">Forgot Password?</Link>
+            </p>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export default LoginPage;
