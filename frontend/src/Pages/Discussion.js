@@ -16,14 +16,14 @@ function Discussion({ match }) {
     );
 
     return (
-        <div id='discussion-container'>
+        <div className='container discussion--layout'>
             <section>
                 <div className="card">
-                    <div className="card-body">
+                    <div className="card__body">
                         <div className="question-wrapper">
                             <div className="question-sidebar">
 
-                                <img alt="img-description" className="user-thumbnail user-thumbnail-md" src={discussion.user.profile_pic} />
+                                <img alt="img-description" className="avatar avatar--md" src={discussion.user.profile_pic} />
                                 <div className="custom-spacer"></div>
                                 <VotingWidget voteRatio={discussion.vote_ratio}/>
                             </div>
@@ -60,7 +60,7 @@ function Discussion({ match }) {
                                     <div className="question-wrapper">
 
                                         <div className="question-sidebar">
-                                            <img alt="img-description" className="user-thumbnail user-thumbnail-sm" src={answer.user.profile_pic} />
+                                            <img alt="img-description" className="avatar avatar--md" src={answer.user.profile_pic} />
                                             {/* <div className="custom-spacer"></div> */}
                                             <VotingWidget voteRatio={answer.vote_ratio}/>
                                         </div>

@@ -1,11 +1,11 @@
 .container {
-  width: 120rem;
+  width: 140rem;
   margin: 0 auto;
-  padding: 5rem;
+  padding: 1rem;
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1400px) {
   .container {
     width: 100%;
     padding: 2rem;

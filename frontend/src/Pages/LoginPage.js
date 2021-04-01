@@ -5,8 +5,8 @@ import screenshot from '../Images/screenshot.PNG';
 
 function LoginPage() {
     return (
-        <div id='login-page-container'>
-            <div id='left-column'>
+        <div id='login--page--container'>
+            <div id='left--column--login'>
                 <div id='left-column-content'>
                     <h1 id='headline'>A place for developers to</h1>
                     <p id='subheadline'>
@@ -19,7 +19,7 @@ function LoginPage() {
                         src={screenshot}
                     />
                     <p>
-                        <small>
+                        <small className="login--summary">
                             An open source project. For the community, by the
                             community
                         </small>
@@ -27,14 +27,14 @@ function LoginPage() {
                 </div>
             </div>
 
-            <div id='right-column'>
+            <div id='right--column--login'>
                 <div id='form-wrapper'>
                     <h1 id='title'>Mumble</h1>
-                    <form action='#' class='form'>
-                        <div class='form__field'>
+                    <form action='#' className='form'>
+                        <div className='form__field'>
                             <label for='formInput#email'>Email: </label>
                             <input
-                                class='input input--email'
+                                className='input input--email'
                                 id='formInput#email'
                                 type='email'
                                 name='email'
@@ -42,10 +42,10 @@ function LoginPage() {
                             />
                         </div>
 
-                        <div class='form__field'>
+                        <div className='form__field'>
                             <label for='formInput#password'>Password: </label>
                             <input
-                                class='input input--password'
+                                className='input input--password'
                                 id='formInput#passowrd'
                                 type='password'
                                 name='password'
@@ -54,7 +54,7 @@ function LoginPage() {
                         </div>
 
                         <input
-                            className='submit'
+                            className='submit btn btn--main'
                             type='submit'
                             value='Sign In'
                         />

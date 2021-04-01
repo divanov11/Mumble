@@ -3,9 +3,9 @@ import React from 'react'
 function UserCard({ user }) {
     return (
         <div className="card">
-            <div className="card-body">
+            <div className="card__body">
                 <div id="user-profile-summary">
-                    <img alt="img-description" id="profile_pic" className="user-thumbnail user-thumbnail-lg" src={user.profile_pic} />
+                    <img alt="img-description" id="profile_pic" className="avatar avatar--xl" src={user.profile_pic} />
                     <h1 id="user-profile-name">{user.name}</h1>
                     <i>@{user.username}</i>
                     <div className="custom-spacer"></div>

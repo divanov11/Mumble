@@ -1,6 +1,6 @@
-import React from "react";
-// import { Link } from 'react-router-dom';
 
+import React from 'react';
+import '../Css/HomePage.css'
 //Components
 import Contributors from "../Components/Contributors";
 import Feed from "../Components/Feed";
@@ -16,29 +16,30 @@ import discussions from "../data/discussions";
 import articles from "../data/articles";
 
 function HomePage() {
-  let posts = postsData;
-  let user = userData.find((u) => u.id === 1);
-  let contributors = userData;
 
-  return (
-    <div id="content-container">
-      <section id="left-sidebar">
-        <Contributors users={contributors} />
-        {/* User user skills as placeholder but this should be Topics a user follows */}
-        <TopicTags tags={user.interests} />
-      </section>
+    let posts = postsData;
+    let user = userData.find((u) => u.id === '1');
+    let contributers = userData;
+
+    return (
+        <div class='container home--layout'>
+            <section id='sidebar--left--home'>
+                <Contributors users={contributers} />
+                <TopicTags tags={user.interests} />
+            </section>
 
       <section id="center-content">
         <PostForm />
         <Feed posts={posts} />
       </section>
 
-      <section id="right-sidebar">
-        <DiscussionsCard discussions={discussions} />
-        <ArticlesCard articles={articles} />
-      </section>
-    </div>
-  );
+
+            <section id='sidebar--right--home'>
+                <DiscussionsCard discussions={discussions} />
+                <ArticlesCard articles={articles} />
+            </section>
+        </div>
+    );
 }
 
 export default HomePage;
