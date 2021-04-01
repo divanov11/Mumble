@@ -3,6 +3,7 @@ import React, { useState } from "react";
 function PostForm() {
   const [message, setMessage] = useState("");
 
+
   /**
    * Function that is called when post form is submitted
    */
