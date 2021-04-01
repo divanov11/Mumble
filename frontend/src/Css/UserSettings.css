@@ -1,0 +1,23 @@
+#settings-page-container{
+    display: grid;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100vh;
+    grid-template-columns:1fr 3fr 1fr;
+}
+
+
+#settings-pic-wrapper{
+    text-align: center;
+}
+
+
+/* Media Queries for SMARTPHONE 320px */
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+    #settings-page-container {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+}
+
+
