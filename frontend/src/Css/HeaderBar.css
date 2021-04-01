@@ -10,6 +10,7 @@
     color: #fff;
     padding-left: 20px;
     padding-right: 20px;
+    z-index: 100;
   
   }
   
@@ -37,7 +38,6 @@
 
 
   #user--navigation{
-      display: none;
       position: fixed;
       width: 300px;
       top:60px;
