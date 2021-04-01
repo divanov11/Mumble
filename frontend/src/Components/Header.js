@@ -4,11 +4,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import userData from "../data/users";
 import { useDetectClickOutside } from "react-detect-click-outside";
-
+import { useHistory } from 'react-router-dom'
 function Header() {
   const user = userData.find((u) => Number(u.id) === 1);
   const [showNavigation, setShowNavigation] = useState(false);
-
+  const history = useHistory()
   const toggleDropdown = (e) => {
     e.stopPropagation();
     setShowNavigation(!showNavigation);
@@ -41,23 +41,35 @@ function Header() {
 
       {showNavigation && (
         <div ref={navigationRef} className="card" id="user--navigation">
-          <div className="user-navigation--item">
+          <div className="user-navigation--item" onClick={(e) => {
+              e.stopPropagation()
+              closeDropdown()
+              history.push(`/profile/${user.username}`)
+              }}>
             <i className="fas fa-user user--nav--icon"></i>
-            <Link onClick={closeDropdown} to={`/profile/${user.username}`}>
+            <Link to={`/profile/${user.username}`}>
               Profile
             </Link>
           </div>
 
-          <div className="user-navigation--item">
+          <div className="user-navigation--item" onClick={(e) => {
+              e.stopPropagation()
+              closeDropdown()
+              history.push("/settings")
+              }}>
             <i className="fas fa-cog user--nav--icon"></i>
-            <Link onClick={closeDropdown} to={"/settings"}>
+            <Link to={"/settings"}>
               Settings
             </Link>
           </div>
 
-          <div className="user-navigation--item">
+          <div className="user-navigation--item" onClick={(e) => {
+            e.stopPropagation()
+            closeDropdown()
+            history.push("/logout")
+            }}>
             <i className="fas fa-sign-out-alt user--nav--icon"></i>
-            <Link onClick={closeDropdown} to={"/logout"}>
+            <Link to={"/logout"}>
               Logout
             </Link>
           </div>

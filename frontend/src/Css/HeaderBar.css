@@ -54,7 +54,13 @@
       display: flex;
       align-items: center;
       gap: 1rem;
+      cursor: pointer;
 
+    
+
+    }
+    .user-navigation--item:hover {
+      background-color: #f2f2f2;
     }
 
     .user--nav--icon{
