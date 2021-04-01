@@ -32,7 +32,7 @@ function LoginPage() {
                     <h1 id='title'>Mumble</h1>
                     <form action='#' className='form'>
                         <div className='form__field'>
-                            <label for='formInput#email'>Email: </label>
+                            <label htmlFor='formInput#email'>Email: </label>
                             <input
                                 className='input input--email'
                                 id='formInput#email'
@@ -43,7 +43,7 @@ function LoginPage() {
                         </div>
 
                         <div className='form__field'>
-                            <label for='formInput#password'>Password: </label>
+                            <label htmlFor='formInput#password'>Password: </label>
                             <input
                                 className='input input--password'
                                 id='formInput#passowrd'

@@ -12,7 +12,7 @@ const Model = ({ heading, children, active, setActive }) => {
            <div className="mumble-model" onClick={(e) => e.stopPropagation()}>
                 <div className="model-header">
                     <h4>{heading}</h4>
-                    <div className="close-model" style={{position: 'absolute', top: '0', right: '0', cursor: 'pointer', padding: '5px'}} onClick={closeModel}><i class="fa fa-times" aria-hidden="true" /></div>
+                    <div className="close-model" style={{position: 'absolute', top: '0', right: '0', cursor: 'pointer', padding: '5px'}} onClick={closeModel}><i className="fa fa-times" aria-hidden="true" /></div>
                 </div>
                 <div className="line-break"></div>
                 <div className="model-content">
