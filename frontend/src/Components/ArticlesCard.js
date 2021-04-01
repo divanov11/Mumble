@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ArticlesCard = ({ articles }) => {
+function ArticlesCard({ articles }) {
   return (
     <div className="card card--dark">
       <div className="card__body">
@@ -22,6 +22,6 @@ const ArticlesCard = ({ articles }) => {
       </div>
     </div>
   );
-};
+}
 
 export default ArticlesCard;

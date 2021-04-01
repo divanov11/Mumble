@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Feed = ({ posts }) => {
+function Feed({ posts }) {
   return (
     <section>
       {posts.map((post) => (
@@ -121,6 +121,6 @@ const Feed = ({ posts }) => {
       ))}
     </section>
   );
-};
+}
 
 export default Feed;

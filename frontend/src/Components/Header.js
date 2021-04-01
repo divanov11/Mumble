@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import userData from "../data/users";
 import { useDetectClickOutside } from "react-detect-click-outside";
 
-const Header = () => {
+function Header() {
   const user = userData.find((u) => Number(u.id) === 1);
   const [showNavigation, setShowNavigation] = useState(false);
 
@@ -65,6 +65,6 @@ const Header = () => {
       )}
     </div>
   );
-};
+}
 
 export default Header;

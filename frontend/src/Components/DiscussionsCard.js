@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const DiscussionsCard = ({ discussions }) => {
+function DiscussionsCard({ discussions }) {
   return (
     <div className="card card--dark">
       <div className="card__body">
@@ -26,6 +26,6 @@ const DiscussionsCard = ({ discussions }) => {
       </div>
     </div>
   );
-};
+}
 
 export default DiscussionsCard;
