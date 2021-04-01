@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function ArticlesCard({ articles }) {
+const ArticlesCard=({ articles })=> {
   return (
     <div className="card card--dark">
       <div className="card__body">

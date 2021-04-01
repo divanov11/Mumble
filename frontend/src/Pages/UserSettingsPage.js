@@ -3,7 +3,7 @@ import '../Css/UserSettings.css';
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import User from '../data/users'
-import UserSettingUpdateModel from '../Components/UserSettingUpdateModel'
+
 function UserSettingsPage() {
     const [currentUser, setCurrentUser] = useState(User[0])
     const [updateModelActive, setUpdateModelActive] = useState(false)
@@ -25,7 +25,7 @@ function UserSettingsPage() {
     }
     return (
         <div id='settings-page-container'>
-            <UserSettingUpdateModel heading="Update User Settings" dataType={modelContent} userData={currentUser} setUserData={setCurrentUser} active={updateModelActive} setActive={setUpdateModelActive}/>
+            
             <section>
                 <div className='card'>
                     <div className='card__body'>
