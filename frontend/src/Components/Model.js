@@ -7,12 +7,33 @@ const Model = ({ heading, children, active, setActive }) => {
         e.stopPropagation()
         setActive(false)
     }
+    const toggleOn = () => {
+        modelRef.current.style.display = 'flex';
+    }
+    const toggleOn1 = () => {
+        modelRef.current.style.opacity = "1";
+    }
+    const toggleOff = () => {
+        if (modelRef.current){
+            modelRef.current.style.opacity = "0";  
+        }
+
+
+    }
+    const toggleOff1 = () => {
+        if (modelRef.current){
+            modelRef.current.style.display = 'none';
+        }
+    }
+    
     return ReactDom.createPortal(
-        <div className={`model-backdrop ${active && "active"} ${!active && "inactive"}`} ref={modelRef}>
+        <div className={`model-backdrop`} ref={modelRef}>
+            {active ? toggleOn() : toggleOff()}
+            {active ? setTimeout(toggleOn1, 30) : setTimeout(toggleOff1, 200)}
            <div className="mumble-model" onClick={(e) => e.stopPropagation()}>
                 <div className="model-header">
                     <h4>{heading}</h4>
-                    <div className="close-model" style={{position: 'absolute', top: '0', right: '0', cursor: 'pointer', padding: '5px'}} onClick={closeModel}><i class="fa fa-times" aria-hidden="true" /></div>
+                    <div className="close-model" style={{position: 'absolute', top: '0', right: '0', cursor: 'pointer', padding: '5px'}} onClick={closeModel}><i class="fa fa-times" aria-hidden="true" style={{fontSize: '16px'}}/></div>
                 </div>
                 <div className="line-break"></div>
                 <div className="model-content">
