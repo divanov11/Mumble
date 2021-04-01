@@ -38,16 +38,16 @@ const UserSettingUpdateModel = ({ heading, dataType, userData, setUserData,  act
                 <div className="form__field">
                     <label for="formInput#text">Full Name: </label>
                     <input
-                        class="input input--text"
+                        className="input input--text"
                         id="formInput#text"
                         type="text"
                         name="name"
                         placeholder="Enter your full name" value={fields.name} onChange={handleFieldChanges} style={{width: '100%', minWidth: 'auto'}}/>
                 </div>
-                <div class="form__field">
+                <div className="form__field">
                   <label for="formInput#textarea">Bio: </label>
                   <textarea
-                    class="input input--textarea"
+                    className="input input--textarea"
                     name="bio"
                     id="formInput#textarea"
                     placeholder="Write something awesome..." value={fields.bio} onChange={handleFieldChanges} style={{width: '100%', minWidth: 'auto'}}
@@ -62,7 +62,7 @@ const UserSettingUpdateModel = ({ heading, dataType, userData, setUserData,  act
                 <div className="form__field">
                     <label for="formInput#text">UserName: </label>
                     <input
-                        class="input input--text"
+                        className="input input--text"
                         id="formInput#text"
                         type="text"
                         name="username"
@@ -71,7 +71,7 @@ const UserSettingUpdateModel = ({ heading, dataType, userData, setUserData,  act
                 <div className="form__field">
                     <label for="formInput#text">Email: </label>
                     <input
-                        class="input input--text"
+                        className="input input--text"
                         id="formInput#text"
                         type="email"
                         name="email"
@@ -86,7 +86,7 @@ const UserSettingUpdateModel = ({ heading, dataType, userData, setUserData,  act
                     <div className="form__field" data-error={dataType}>
                         <label for="formInput#text">Tags</label>
                         <input
-                            class="input input--text"
+                            className="input input--text"
                             id="formInput#text"
                             type="text"
                             name="skills"
