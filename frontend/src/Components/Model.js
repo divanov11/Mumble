@@ -17,8 +17,6 @@ const Model = ({ heading, children, active, setActive }) => {
         if (modelRef.current){
             modelRef.current.style.opacity = "0";  
         }
-
-
     }
     const toggleOff1 = () => {
         if (modelRef.current){

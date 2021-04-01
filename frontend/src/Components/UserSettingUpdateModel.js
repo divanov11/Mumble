@@ -45,7 +45,7 @@ const UserSettingUpdateModel = ({ heading, dataType, userData, setUserData,  act
                         placeholder="Enter your full name" value={fields.name} onChange={handleFieldChanges} style={{width: '100%', minWidth: 'auto'}}/>
                 </div>
                 <div class="form__field">
-                  <label for="formInput#textarea">Message: </label>
+                  <label for="formInput#textarea">Bio: </label>
                   <textarea
                     class="input input--textarea"
                     name="bio"
@@ -60,7 +60,7 @@ const UserSettingUpdateModel = ({ heading, dataType, userData, setUserData,  act
             return (
                 <>
                 <div className="form__field">
-                    <label for="formInput#text">User Name: </label>
+                    <label for="formInput#text">UserName: </label>
                     <input
                         class="input input--text"
                         id="formInput#text"
