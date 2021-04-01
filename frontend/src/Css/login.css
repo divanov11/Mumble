@@ -1,28 +1,20 @@
-/* #header{
-    display: none;
-} */
-/*Not the right way todo this, lets fix it*/
-
-#login-page-container{
+#login--page--container{
     display: grid;
     grid-template-columns: 5fr 4fr;
     height: 100vh;
 }
 
 
-
-
-#left-column{
+#left--column--login{
     background-color: #3F4156;
     color: #fff;
     display: grid;
     justify-content: center;
     align-items: center;
-
 }
 
 #left-column-content{
-    width: 700px;
+    padding: 20px;
     text-align: center;
 }
 
@@ -33,25 +25,29 @@
 
 #subheadline{
     font-size: 22px;
+    color: var(--color-light);
 }
 
 #screenshot{
     margin-top: 20px;
     margin-bottom: 20px;
-    width: 600px;
+    width: 90%;
     -webkit-box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 55%);
     box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 55%);
 }
 
-#right-column{
+.login--summary{
+    color: var(--color-light);
+}
+
+#right--column--login{
     display: grid;
     align-items: center;
-    justify-content: center;
+    padding: 20px;
 }
 
 
 #form-wrapper{
-    width: 80%;
 }
 
 #title{
@@ -59,77 +55,18 @@
     padding-left: 40px;
 }
 
-.un {
-    width: 76%;
-    color: rgb(38, 50, 56);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    background: rgba(136, 126, 126, 0.04);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 50px;
-    text-align: center;
-    margin-bottom: 27px;
-    font-family: 'Ubuntu', sans-serif;
-    }
-    
-    form.form1 {
-        padding-top: 40px;
-    }
-
-
-    .pass {
-        width: 76%;
-        color: rgb(38, 50, 56);
-        font-weight: 700;
-        font-size: 14px;
-        letter-spacing: 1px;
-        background: rgba(136, 126, 126, 0.04);
-        padding: 10px 20px;
-        border: none;
-        border-radius: 20px;
-        outline: none;
-        box-sizing: border-box;
-        border: 2px solid rgba(0, 0, 0, 0.02);
-        margin-bottom: 50px;
-        text-align: center;
-        margin-bottom: 27px;
-        font-family: 'Ubuntu', sans-serif;
-        }
-
-
-.un:focus, .pass:focus {
-    border: 2px solid rgba(0, 0, 0, 0.18) !important;
-    
+  
+#bottom-content{
+    margin-top: 40px;
 }
 
+@media screen and (max-width: 1300px) {
+    #login--page--container {
+      grid-template-columns: 1fr;
+    }
 
-.submit {
-    cursor: pointer;
-      border-radius: 5em;
-      color: #fff;
-      background: #3F4156;
-      border: 0;
-      padding-left: 40px;
-      padding-right: 40px;
-      padding-bottom: 10px;
-      padding-top: 10px;
-      font-family: 'Ubuntu', sans-serif;
-      margin-left: 35%;
-      font-size: 13px;
-      box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-  }
-
-
-  .form1 label{
-      padding-left: 40px;
-  }
-  
-  #bottom-content{
-      margin-top: 40px;
+    #sidebar--right--profile{
+      display: none;
+    }
+   
   }

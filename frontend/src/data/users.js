@@ -3,6 +3,7 @@ const userData = [
         'id': '1',
         'name': 'Sam Wick',
         'username': 'realsamwick',
+        'email': 'realsamwick@gmail.com',
         'profile_pic': 'https://randomuser.me/api/portraits/men/52.jpg',
         'bio': "I was a lead developer in a past life, now I enjoy teaching others how to build cool applications",
         'vote_ratio': 58,
@@ -29,6 +30,7 @@ const userData = [
         'id': '2',
         'name': 'Chandler Palm',
         'username': 'chands',
+        'email': 'chands@gmail.com',
         'profile_pic': 'https://randomuser.me/api/portraits/men/56.jpg',
         "bio": "Easily generate Lorem Ipsum placeholder text in any number of characters, words sentences or paragraphs. Learn about the origins of the passage",
         'vote_ratio': "-8",
@@ -50,6 +52,7 @@ const userData = [
         'id': '3',
         'name': 'Janet Sours',
         'username': 'jsours',
+        'email': 'jsours@gmail.com',
         'profile_pic': 'https://randomuser.me/api/portraits/women/53.jpg',
         'bio': "Easily generate Lorem Ipsum placeholder text in any number of characters, words sentences or paragraphs. Learn about the origins of the passage",
         'vote_ratio': "4",
@@ -68,5 +71,6 @@ const userData = [
         ]
     }
 ]
+
 
 export default userData;

@@ -1,23 +1,23 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function SkillTags({ tags }) {
     return (
-        <div className="card">
-            <div id="topics-wrapper" className="card-body">
+        <div className='card'>
+            <div id='topics-wrapper' className='card__body'>
                 <h5>Skills</h5>
-                <a href="#">Expand Skills</a>
-                <div className="line-break"></div>
-                <div className="tags-wrapper">
-
+                <Link to='#'>Expand Skills</Link>
+                <div className='line-break'></div>
+                <div className='tags-wrapper'>
                     {tags.map((tag, index) => (
-                        <div className="tag">
+                        <div key={index} className='tag'>
                             <small>{tag}</small>
                         </div>
                     ))}
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default SkillTags
+export default SkillTags;
