@@ -6,8 +6,7 @@ An Open Source Social Media Platform and Public Forum for Questions and Discussi
 - **Discord [Join here](https://discord.gg/TxgpyK8pzf)**
 
 
-=======
-# Download & Setup Instructions :
+## Download & Setup Instructions :
 
 Clone the project. This will download the GitHub respository files onto your local machine. 
 
