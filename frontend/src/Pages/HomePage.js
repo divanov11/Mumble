@@ -1,39 +1,40 @@
-import React from 'react';
-// import { Link } from 'react-router-dom';
 
+import React from 'react';
+import '../Css/HomePage.css'
 //Components
-import Contributors from '../Components/Contributors';
-import Feed from '../Components/Feed';
-import PostForm from '../Components/PostForm';
-import TopicTags from '../Components/TopicTags';
-import DiscussionsCard from '../Components/DiscussionsCard';
-import ArticlesCard from '../Components/ArticlesCard';
+import Contributors from "../Components/Contributors";
+import Feed from "../Components/Feed";
+import PostForm from "../Components/PostForm";
+import TopicTags from "../Components/TopicTags";
+import DiscussionsCard from "../Components/DiscussionsCard";
+import ArticlesCard from "../Components/ArticlesCard";
 
 //Dummy Data Files
-import postsData from '../data/posts';
-import userData from '../data/users';
-import discussions from '../data/discussions';
-import articles from '../data/articles';
+import postsData from "../data/posts";
+import userData from "../data/users";
+import discussions from "../data/discussions";
+import articles from "../data/articles";
 
 function HomePage() {
+
     let posts = postsData;
-    let user = userData.find(u => u.id === '1')
+    let user = userData.find((u) => Number(u.id) === 1);
     let contributers = userData;
 
     return (
-        <div id='content-container'>
-            <section id='left-sidebar'>
+        <div class='container home--layout'>
+            <section id='sidebar--left--home'>
                 <Contributors users={contributers} />
-                {/* User user skills as placeholder but this should be Topics a user follows */}
                 <TopicTags tags={user.interests} />
             </section>
 
-            <section id='center-content'>
-                <PostForm />
-                <Feed posts={posts} />
-            </section>
+      <section id="center-content">
+        <PostForm />
+        <Feed posts={posts} />
+      </section>
 
-            <section id='right-sidebar'>
+
+            <section id='sidebar--right--home'>
                 <DiscussionsCard discussions={discussions} />
                 <ArticlesCard articles={articles} />
             </section>

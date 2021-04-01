@@ -13,14 +13,6 @@ function UserSettingsPage() {
         setModelContent(data_type)
         setUpdateModelActive(true)
     }
-    // const renderSkills = currentUser.skills.map((x, i) => {
-    //     return (
-    //         <div className='tag' key={i}>
-    //             <small>{x}</small>
-    //         </div>
-    //     )
-
-    // })
     const renderSkills = () => {
         const skills = currentUser.skills.map((x, i) => {
             return (
@@ -36,18 +28,19 @@ function UserSettingsPage() {
             <UserSettingUpdateModel heading="Update User Settings" dataType={modelContent} userData={currentUser} setUserData={setCurrentUser} active={updateModelActive} setActive={setUpdateModelActive}/>
             <section>
                 <div className='card'>
-                    <div className='card-body'>
+                    <div className='card__body'>
                         <h6>Account Settings</h6>
                         <div className='line-break'></div>
                         <div id='settings-pic-wrapper'>
                             <img
                                 alt='img-description'
-                                className='user-thumbnail user-thumbnail-lg'
+                                className='avatar avatar--lg'
                                 src='https://randomuser.me/api/portraits/men/52.jpg'
                             />
                             <h5>{currentUser.name}</h5>
                             <div className='line-break'></div>
                             <Link to='' className='btn btn-1 btn-md'>
+
                                 Update Picture
                             </Link>
                         </div>
@@ -56,9 +49,9 @@ function UserSettingsPage() {
             </section>
             <section>
                 <div className='card'>
-                    <div className='card-body'>
-                        <div className='card card-dark'>
-                            <div className='card-body'>
+                    <div className='card__body'>
+                        <div className='card card--dark'>
+                            <div className='card__body'>
                                 <h6>
                                     User Information <span onClick={update} data-type="user-info" className="user-setting-edit">Edit</span>
                                 </h6>
@@ -71,8 +64,8 @@ function UserSettingsPage() {
                             </div>
                         </div>
 
-                        <div className='card card-dark'>
-                            <div className='card-body'>
+                        <div className='card card--dark'>
+                            <div className='card__body'>
                                 <h6>
                                     Username <span data-type="user-detail" onClick={update} className="user-setting-edit">Edit</span>
                                 </h6>
@@ -82,13 +75,13 @@ function UserSettingsPage() {
                             </div>
                         </div>
 
-                        <div className='card card-dark'>
-                            <div className='card-body'>
+                        <div className='card card--dark'>
+                            <div className='card__body'>
                                 <h6>
                                     Skills <span data-type="user-skills" className="user-setting-edit" onClick={update}>Edit</span>
                                 </h6>
                                 <div className='line-break line-break-2'></div>
-                                <div id='topics-wrapper' className='card-body'>
+                                <div id='topics-wrapper' className='card__body'>
                                     <div className='tags-wrapper'>
                                         {renderSkills()}
                                         {/* <div className='tag'>

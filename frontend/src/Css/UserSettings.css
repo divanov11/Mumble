@@ -3,8 +3,7 @@
     max-width: 1400px;
     margin: 0 auto;
     height: 100vh;
-    grid-template-columns:1.5fr 3fr;
-    grid-template-areas: "profile profileinfo";
+    column-gap: 15px;
     grid-template-columns: minmax(300px, 390px) auto;
 }
 
