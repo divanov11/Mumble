@@ -45,7 +45,7 @@ function Discussion({ match }) {
 
                                 <div className='tags-wrapper'>
                                     {discussion.tags.map((tag) => (
-                                        <div className='tag'>
+                                        <div key={tag} className='tag'>
                                             <small>{tag}</small>
                                         </div>
                                     ))}
@@ -57,7 +57,7 @@ function Discussion({ match }) {
                                 <div className="line-break"></div>
 
                                 {discussion.answers.map(answer => (
-                                    <div className="question-wrapper">
+                                    <div key={answer.id} className="question-wrapper">
 
                                         <div className="question-sidebar">
                                             <img alt="img-description" className="avatar avatar--md" src={answer.user.profile_pic} />

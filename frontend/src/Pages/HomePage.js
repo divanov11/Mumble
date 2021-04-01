@@ -22,7 +22,7 @@ function HomePage() {
     let contributers = userData;
 
     return (
-        <div class='container home--layout'>
+        <div className='container home--layout'>
             <section id='sidebar--left--home'>
                 <Contributors users={contributers} />
                 <TopicTags tags={user.interests} />

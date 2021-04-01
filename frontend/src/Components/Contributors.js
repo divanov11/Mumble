@@ -20,7 +20,7 @@ function Contributers({ users }) {
                                 <strong>{user.name}</strong>
                             </Link>
                         </div>
-                        <Link className='btn btn--main--outline btn--sm' to=''>
+                        <Link className='btn btn--main--outline btn--sm' to='#'>
                             Follow
                         </Link>
                     </div>

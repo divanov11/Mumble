@@ -18,7 +18,7 @@ function UserSettingsPage() {
                             />
                             <h5>Sam Wick</h5>
                             <div className='line-break'></div>
-                            <Link to='' className='btn btn--main btn--sm'>
+                            <Link to='#' className='btn btn--main btn--sm'>
                                 Update Picture
                             </Link>
                         </div>
@@ -31,7 +31,7 @@ function UserSettingsPage() {
                         <div className='card card--dark'>
                             <div className='card__body'>
                                 <h6>
-                                    User Information <Link to=''>Edit</Link>
+                                    User Information <Link to='#'>Edit</Link>
                                 </h6>
                                 <div className='line-break line-break-2'></div>
                                 <p>Name: Sam Wick</p>
@@ -47,7 +47,7 @@ function UserSettingsPage() {
                         <div className='card card--dark'>
                             <div className='card__body'>
                                 <h6>
-                                    Username <Link href='#'>Edit</Link>
+                                    Username <Link to='#'>Edit</Link>
                                 </h6>
                                 <div className='line-break line-break-2'></div>
                                 <p>Username: @realsamwick</p>
@@ -57,7 +57,7 @@ function UserSettingsPage() {
                         <div className='card card--dark'>
                             <div className='card__body'>
                                 <h6>
-                                    Skills <Link href='#'>Edit</Link>
+                                    Skills <Link to='#'>Edit</Link>
                                 </h6>
                                 <div className='line-break line-break-2'></div>
                                 <div id='topics-wrapper' className='card__body'>
