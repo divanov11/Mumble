@@ -13,6 +13,7 @@ const Model = ({ heading, children, active, setActive }) => {
         !active && 'inactive'
       }`}
       ref={modelRef}
+      onClick={closeModel}
     >
       <div className="mumble-model" onClick={(e) => e.stopPropagation()}>
         <div className="model-header">
@@ -28,7 +29,7 @@ const Model = ({ heading, children, active, setActive }) => {
             }}
             onClick={closeModel}
           >
-            <i class="fa fa-times" aria-hidden="true" />
+            <i className="fa fa-times" aria-hidden="true" />
           </div>
         </div>
         <div className="line-break"></div>

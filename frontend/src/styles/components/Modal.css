@@ -9,6 +9,7 @@
   /* display: none; */
   opacity: 0;
   transition: opacity 0.3ms ease-in-out;
+  z-index: 1000;
 }
 .model-backdrop.active {
   display: flex;

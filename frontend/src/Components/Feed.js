@@ -71,7 +71,7 @@ function Feed({ posts }) {
                       <p className="post-meta">@{comment.user.username} .</p>
                       <p className="post-meta">{comment.created}</p>
                     </div>
-                    <i class="replying-to-text">
+                    <i className="replying-to-text">
                       <small>
                         Replying to{' '}
                         {comment.reply_at.map((user) => (
