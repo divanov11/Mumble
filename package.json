@@ -1,0 +1,24 @@
+{
+  "name": "mumble",
+  "version": "1.0.0",
+  "description": "An Open Source Social Media Platform and Public Forum for Questions and Discussions, built for Developers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/i-am-zach/mumble.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/i-am-zach/mumble/issues"
+  },
+  "homepage": "https://github.com/i-am-zach/mumble#readme",
+  "devDependencies": {
+    "husky": "^6.0.0"
+  }
+}
