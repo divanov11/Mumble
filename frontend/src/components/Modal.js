@@ -32,18 +32,8 @@ const Modal = ({ heading, children, active, setActive }) => {
       <div className="mumble-modal" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <h4>{heading}</h4>
-          <div
-            className="close-modal"
-            style={{
-              position: 'absolute',
-              top: '0',
-              right: '0',
-              cursor: 'pointer',
-              padding: '5px',
-            }}
-            onClick={closeModal}
-          >
-            <i className="fa fa-times" aria-hidden="true" />
+          <div className="close-modal" onClick={closeModal}>
+            <i className="fa fa-times close-icon" aria-hidden="true" />
           </div>
         </div>
         <div className="line-break"></div>
