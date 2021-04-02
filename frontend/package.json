@@ -19,7 +19,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint ./src",
-    "format": "prettier --write \"src/**/*.(js|jsx|ts|tsx|css|scss)\""
+    "format": "prettier --write \"src/**/*.(js|jsx|ts|tsx|css|scss)\"",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": [
@@ -32,6 +34,9 @@
         "off"
       ],
       "react/react-in-jsx-scope": [
+        "off"
+      ],
+      "import/no-anonymous-default-export": [
         "off"
       ]
     }
@@ -49,8 +54,15 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.1.21",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.1.21",
+    "@storybook/node-logger": "^6.1.21",
+    "@storybook/preset-create-react-app": "^3.1.7",
+    "@storybook/react": "^6.1.21",
     "eslint-plugin-react": "^7.23.1",
     "prettier": "^2.2.1",
+    "storybook-react-router": "^1.0.8",
     "typescript": "^4.2.3"
   }
 }
