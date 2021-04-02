@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import User from '../data/users';
 import UserSettingUpdateModal from '../Components/UserSettingUpdateModal';
+import Avatar from '../common/Avatar';
 function UserSettingsPage() {
   const [currentUser, setCurrentUser] = useState(User[0]);
   const [updateModelActive, setUpdateModelActive] = useState(false);
@@ -39,11 +40,7 @@ function UserSettingsPage() {
             <h6>Account Settings</h6>
             <div className="line-break"></div>
             <div id="settings-pic-wrapper">
-              <img
-                alt="img-description"
-                className="avatar avatar--lg"
-                src="https://randomuser.me/api/portraits/men/52.jpg"
-              />
+              <Avatar size="larger" />
               <h5>{currentUser.name}</h5>
               <div className="line-break"></div>
               <Link to="" className="btn btn-1 btn-md">

@@ -1,5 +1,5 @@
 import Modal from './Modal';
-import useForm from './useFormHook';
+import useForm from '../hooks/useFormHook';
 
 const ContentComponent = ({ closeModal, children, handleFormSubmit }) => {
   const HandlecloseModal = (e) => {
