@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Avatar from '../common/Avatar';
 
-function Contributers({ users }) {
+function Contributors({ users }) {
   return (
     <div className="card">
       <div className="card__body">
@@ -11,11 +12,7 @@ function Contributers({ users }) {
         {users.map((user) => (
           <div key={user.id} className="contributor-wrapper">
             <div className="contributor-preview">
-              <img
-                alt="img-description"
-                className="avatar avatar--md"
-                src={user.profile_pic}
-              />
+              <Avatar src={user.profile_pic} alt="img-description" />
               <Link to={`/profile/${user.username}`}>
                 <strong>{user.name}</strong>
               </Link>
@@ -30,4 +27,4 @@ function Contributers({ users }) {
   );
 }
 
-export default Contributers;
+export default Contributors;
