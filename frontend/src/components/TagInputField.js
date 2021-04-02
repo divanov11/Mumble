@@ -5,8 +5,8 @@ const TagInputField = ({ userData, tagListRef }) => {
   const [input, setInput] = useState('');
   const addTags = (e) => {
     e.stopPropagation();
-    const value = e.target.value;
-    if (e.key === 'Enter') {
+    const value = e.key === "," ? e.target.value.substring(0, e.target.value.length - 1)  : e.target.value;
+    if (e.key === 'Enter' || e.key === ',') {
       if (value) {
         setInput('');
         setTagList((state) => {
@@ -19,9 +19,10 @@ const TagInputField = ({ userData, tagListRef }) => {
   };
   const removeTag = (e) => {
     const value = e.target.previousSibling.textContent;
-    console.log(value);
     setTagList((tags) => {
-      return [...tags.filter((x) => x !== value)];
+      const newState = [...tags.filter((x) => x !== value)];
+      tagListRef.current = newState;
+      return newState
     });
   };
   const renderTags = tagList.map((x, i) => {
