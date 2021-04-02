@@ -3,7 +3,7 @@ import '../styles/components/UserSettings.css';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import User from '../data/users';
-import UserSettingUpdateModal from '../Components/UserSettingUpdateModal';
+import UserSettingUpdateModal from '../components/UserSettingUpdateModal';
 function UserSettingsPage() {
   const [currentUser, setCurrentUser] = useState(User[0]);
   const [updateModelActive, setUpdateModelActive] = useState(false);

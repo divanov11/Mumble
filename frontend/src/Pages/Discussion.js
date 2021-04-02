@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Contributors from '../Components/Contributors';
-import DiscussionsCard from '../Components/DiscussionsCard';
+import Contributors from '../components/Contributors';
+import DiscussionsCard from '../components/DiscussionsCard';
 
 import '../styles/components/Discussion.css';
 import userData from '../data/users';
 import discussions from '../data/discussions';
-import VotingWidget from '../Components/VotingWidget';
+import VotingWidget from '../components/VotingWidget';
 
 function Discussion({ match }) {
   let discussion = discussions.find((d) => d.slug === match.params.slug);
