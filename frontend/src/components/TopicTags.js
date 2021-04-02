@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Tag from '../common/Tag';
 
 function TopicTags({ tags }) {
   return (
@@ -10,9 +11,7 @@ function TopicTags({ tags }) {
         <div className="line-break"></div>
         <div className="tags-wrapper">
           {tags.map((tag, index) => (
-            <div key={index} className="tag">
-              <small>{tag}</small>
-            </div>
+            <Tag text={tag} key={index} />
           ))}
         </div>
       </div>
