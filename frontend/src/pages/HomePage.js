@@ -3,7 +3,7 @@ import '../styles/components/Home.css';
 //components
 import Contributors from '../components/Contributors';
 import Feed from '../components/Feed';
-import PostForm from '../components/PostForm';
+import PostForm from '../components/CreatePost';
 import TopicTags from '../components/TopicTags';
 import DiscussionsCard from '../components/DiscussionsCard';
 import ArticlesCard from '../components/ArticlesCard';
