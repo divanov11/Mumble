@@ -1,5 +1,6 @@
 .btn {
   display: inline-block;
+  position: relative;
   cursor: pointer;
   background-color: var(--color-light);
   color: var(--color-sub);
@@ -54,4 +55,25 @@
 .btn--lg {
   padding: 1.2rem 5rem;
   font-size: 1.8rem;
+}
+
+/* Hover effects for outline buttons */
+.btn--main--outline:hover::before,
+.btn--sub--outline:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
+  opacity: 0.1;
+}
+
+.btn--main--outline:hover::before {
+  background: var(--color-main);
+}
+
+.btn--sub--outline:hover::before {
+  background: var(--color-sub);
 }

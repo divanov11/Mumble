@@ -3,11 +3,9 @@
   "bracketSpacing": true,
   "endOfLine": "lf",
   "jsxBracketSameLine": false,
-  "jsxSingleQuote": false,
-  "parser": "babel",
   "printWidth": 80,
   "semi": true,
-  "singleQuote": false,
+  "singleQuote": true,
   "tabWidth": 2,
   "trailingComma": "all",
   "useTabs": false

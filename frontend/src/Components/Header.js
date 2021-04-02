@@ -1,63 +1,76 @@
-import React, {useState} from 'react'
-import '../App.css';
-import '../Css/HeaderBar.css';
-import { Link } from 'react-router-dom'
-import userData from '../data/users';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useDetectClickOutside } from 'react-detect-click-outside';
 
+import userData from '../data/users';
+import '../styles/components/HeaderBar.css';
 
 function Header() {
-    let user = userData.find((u) => Number(u.id) === 1);
-    console.log('User:', user)
-    let [nav, setNav] = useState('closed')
+  const user = userData.find((u) => Number(u.id) === 1);
+  const [showNavigation, setShowNavigation] = useState(false);
 
-    let toggleNav = () =>{
-        let navWrapper = document.getElementById('user--navigation')
-        
-        if(nav === 'closed'){
-            navWrapper.style.display = 'block'
-            setNav('open') 
-        }else{
-            navWrapper.style.display = 'none'
-            setNav('closed')
-        }
-    }
+  const toggleDropdown = (e) => {
+    e.stopPropagation();
+    setShowNavigation(!showNavigation);
+  };
 
-    return (
-        <div id="header">
+  const closeDropdown = () => setShowNavigation(false);
 
-            <div id="logo">
-                <Link to={'/'}>
-                    <h3>MUMBLE</h3>
-                </Link>
-            </div>
+  const navigationRef = useDetectClickOutside({
+    onTriggered: closeDropdown,
+  });
 
-            <div id="nav-wrapper">
-                <i className="fas fa-bell nav-item nav-icon"></i>
-                {/* This will eventually be drop down list with options like settings, porfile, logout, etc */}
-                    <img id="nav-toggle-icon" onClick={toggleNav} alt="img-description" className="avatar avatar--sm nav-item" src={user.profile_pic} />
-                
-            </div>
+  return (
+    <div id="header">
+      <div id="logo">
+        <Link to={'/'}>
+          <h3>MUMBLE</h3>
+        </Link>
+      </div>
 
-            <div className="card" id="user--navigation">
+      <div id="nav-wrapper">
+        <i className="fas fa-bell nav-item nav-icon"></i>
+        <img
+          id="nav-toggle-icon"
+          onClick={toggleDropdown}
+          alt="img-description"
+          className="avatar avatar--sm nav-item"
+          src={user.profile_pic}
+        />
+      </div>
 
-                <div className="user-navigation--item">
-                    <i className="fas fa-user user--nav--icon"></i>
-                    <Link to={`/profile/${user.username}`}>Profile</Link>
-                </div>
+      {showNavigation && (
+        <div ref={navigationRef} className="card" id="user--navigation">
+          <Link
+            to={`/profile/${user.username}`}
+            className="user-navigation--item"
+            onClick={closeDropdown}
+          >
+            <i className="fas fa-user user--nav--icon"></i>
+            Profile
+          </Link>
 
-                <div className="user-navigation--item">
-                <i className="fas fa-cog user--nav--icon"></i>
-                    <Link to={'/settings'}>Settings</Link>
-                </div>
+          <Link
+            to="/settings"
+            className="user-navigation--item"
+            onClick={closeDropdown}
+          >
+            <i className="fas fa-cog user--nav--icon"></i>
+            Settings
+          </Link>
 
-                <div className="user-navigation--item">
-                    <i className="fas fa-sign-out-alt user--nav--icon"></i>
-                    <Link to={'/logout'}>Logout</Link>
-                </div>
-             
-            </div>
+          <Link
+            to="/logout"
+            className="user-navigation--item"
+            onClick={closeDropdown}
+          >
+            <i className="fas fa-sign-out-alt user--nav--icon"></i>
+            Logout
+          </Link>
         </div>
-    )
+      )}
+    </div>
+  );
 }
 
-export default Header
+export default Header;

@@ -1,0 +1,63 @@
+#header {
+  /* Change this to that sticky header I like*/
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3f4156;
+  color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  z-index: 100;
+}
+
+#logo {
+  font-size: 32px;
+}
+
+#logo a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#nav-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.nav-icon {
+  font-size: 24px;
+}
+
+.nav-item {
+  margin: 10px;
+}
+
+#user--navigation {
+  position: fixed;
+  width: 300px;
+  top: 60px;
+  right: 20px;
+}
+
+#nav-toggle-icon {
+  cursor: pointer;
+}
+
+.user-navigation--item {
+  padding: 10px;
+  border-bottom: 1px solid #eaedf3;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+.user-navigation--item:hover {
+  background-color: #f2f2f2;
+}
+
+.user--nav--icon {
+  color: var(--color-sub);
+}
