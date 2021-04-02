@@ -17,7 +17,7 @@ function ArticlesCard({ articles }) {
               </Link>
             </div>
             <div className="snippet-teaser">
-              <Link to={'/'} className="snippet-teaser">
+              <Link to={`/article/${article.slug}`} className="snippet-teaser">
                 <p className="snippet-text">{article.title}</p>
               </Link>
             </div>
