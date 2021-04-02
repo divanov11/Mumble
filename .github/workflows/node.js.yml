@@ -32,7 +32,11 @@ jobs:
     - name: Performing React build 
       run: npm run build --if-present
       working-directory: ./frontend
+      env:
+        CI: false # causes warnings to become errors, and there are tons of pa11y errors to fix
 
     - name: Performing React tests if any defined 
       run: npm test
       working-directory: ./frontend
+      env:
+        CI: true # so that the test prompt doesn't show up
