@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from '../common/Button';
 
 function PostForm() {
   const [message, setMessage] = useState('');
@@ -56,9 +57,14 @@ function PostForm() {
               </small>
             )}
 
-            <button id="post-btn" className="btn btn--main" type="submit">
-              Submit
-            </button>
+            <Button
+              id="post-btn"
+              type="submit"
+              buttonStyle="main"
+              size="large"
+              text="Create Post"
+              iconName="pencil-alt"
+            />
           </div>
         </form>
       </div>
