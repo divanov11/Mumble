@@ -5,7 +5,7 @@ const Avatar = ({
   src = 'https://randomuser.me/api/portraits/men/52.jpg',
   size = 'medium',
   alt = 'User Avatar',
-  className,
+  className = '',
   ...others
 }) => {
   let avatarClass = 'md';
@@ -27,6 +27,7 @@ Avatar.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large', 'larger']),
+  className: PropTypes.string,
 };
 
 export default Avatar;

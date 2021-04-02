@@ -6,7 +6,7 @@ const Button = ({
   size = '',
   outline = false,
   className = '',
-  text = 'Button',
+  text = '',
   iconStyle = 'fas',
   iconName = '',
   children,
@@ -46,6 +46,7 @@ Button.propTypes = {
   outline: PropTypes.bool,
   iconName: PropTypes.string,
   iconStyle: PropTypes.string,
+  text: PropTypes.string,
 };
 
 export default Button;
