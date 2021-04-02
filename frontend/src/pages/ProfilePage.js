@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 import '../styles/components/Profile.css';
 
 //Components
-import Feed from '../Components/Feed';
-import DiscussionsCard from '../Components/DiscussionsCard';
-import ArticlesCard from '../Components/ArticlesCard';
-import SkillTags from '../Components/SkillTags';
+import Feed from '../components/Feed';
+import DiscussionsCard from '../components/DiscussionsCard';
+import ArticlesCard from '../components/ArticlesCard';
+import SkillTags from '../components/SkillTags';
 
 //Dummy Data Files
 import userData from '../data/users';
 import postsData from '../data/posts';
 import discussions from '../data/discussions';
 import articles from '../data/articles';
-import UserCard from '../Components/UserCard';
+import UserCard from '../components/UserCard';
 
 function Profile({ match }) {
   let user = userData.find((u) => u.username === match.params.username);
