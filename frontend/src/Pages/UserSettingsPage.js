@@ -107,33 +107,7 @@ function UserSettingsPage() {
                 </h6>
                 <div className="line-break line-break-2"></div>
                 <div id="topics-wrapper" className="card__body">
-                  <div className="tags-wrapper">
-                    {renderSkills()}
-                    {/* <div className='tag'>
-                                            <small>Python</small>
-                                        </div>
-                                        <div className='tag'>
-                                            <small>Django</small>
-                                        </div>
-                                        <div className='tag'>
-                                            <small>React</small>
-                                        </div>
-                                        <div className='tag'>
-                                            <small>JavaScript</small>
-                                        </div>
-                                        <div className='tag'>
-                                            <small>Node JS</small>
-                                        </div>
-                                        <div className='tag'>
-                                            <small>Postgres</small>
-                                        </div>
-                                        <div className='tag'>
-                                            <small>System Architecture</small>
-                                        </div>
-                                        <div className='tag'>
-                                            <small>Security</small>
-                                        </div> */}
-                  </div>
+                  <div className="tags-wrapper">{renderSkills()}</div>
                 </div>
               </div>
             </div>
