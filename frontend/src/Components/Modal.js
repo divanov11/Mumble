@@ -43,7 +43,7 @@ const Modal = ({ heading, children, active, setActive }) => {
             }}
             onClick={closeModal}
           >
-            <i class="fa fa-times" aria-hidden="true" />
+            <i className="fa fa-times" aria-hidden="true" />
           </div>
         </div>
         <div className="line-break"></div>

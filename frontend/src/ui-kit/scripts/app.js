@@ -1,5 +1,6 @@
 // Invoke Functions Call on Document Loaded
 document.addEventListener('DOMContentLoaded', function () {
+  // eslint-disable-next-line no-undef
   hljs.highlightAll();
 });
 
