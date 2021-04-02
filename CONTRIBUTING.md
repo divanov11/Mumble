@@ -130,7 +130,7 @@ You can follow along with this video, [Contributing to Mumble](https://youtu.be/
 
 ### Minor Updates and Pull Requests
 
-- It is advicable, to combine all _minor updates_ in a single pull request to reduce the number of pull requests.
+- It is advisable, to combine all _minor updates_ in a single pull request to reduce the number of pull requests.
 - Check for a list of minor updates in the [Issues](https://github.com/divanov11/Mumble/issues) as shown in the image.
 - Make changes and commit accordingly
 - Create a pull request and wait for review
