@@ -6,7 +6,6 @@ const TagInputField = ({ userData, tagListRef }) => {
   const addTags = (e) => {
     e.stopPropagation();
     const value = e.key === "," ? e.target.value.substring(0, e.target.value.length - 1)  : e.target.value;
-    console.log(e.key)
     if (e.key === 'Enter' || e.key === ',') {
       if (value) {
         setInput('');
