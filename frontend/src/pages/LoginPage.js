@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/components/Login.css';
-import screenshot from '../Images/screenshot.PNG';
+import screenshot from '../assets/images/screenshot.PNG';
 
 function LoginPage() {
   return (

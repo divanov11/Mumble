@@ -33,7 +33,10 @@ const TagInputField = ({ userData, tagListRef }) => {
     );
   });
   return (
-    <div className="input-tags" onClick={() => document.querySelector('.tag-input').focus()}>
+    <div
+      className="input-tags"
+      onClick={() => document.querySelector('.tag-input').focus()}
+    >
       <div className="input-tag-list">{renderTags}</div>
       <input
         type="text"

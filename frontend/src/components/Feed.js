@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Avatar from '../common/Avatar';
 
 function Feed({ posts }) {
   return (
@@ -9,11 +10,7 @@ function Feed({ posts }) {
           <div className="card__body">
             <div className="post-wrapper">
               <div className="post-header-wrapper">
-                <img
-                  alt="img-description"
-                  className="avatar avatar--md"
-                  src={post.user.profile_pic}
-                />
+                <Avatar src={post.user.profile_pic} alt="img-description" />
                 <Link
                   className="post-user-name"
                   to={`/profile/${post.user.username}`}
@@ -57,10 +54,10 @@ function Feed({ posts }) {
                 {post.comments.map((comment) => (
                   <div key={comment.id} className="post-comment">
                     <div className="post-header-wrapper">
-                      <img
-                        alt="img-description"
-                        className="avatar avatar--md"
+                      <Avatar
                         src={comment.user.profile_pic}
+                        alt="img-description"
+                        size="small"
                       />
                       <Link
                         className="post-user-name"

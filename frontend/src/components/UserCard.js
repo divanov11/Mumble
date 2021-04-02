@@ -1,15 +1,16 @@
 import React from 'react';
+import Avatar from '../common/Avatar';
 
 function UserCard({ user }) {
   return (
     <div className="card">
       <div className="card__body">
         <div id="user-profile-summary">
-          <img
+          <Avatar
             alt="img-description"
             id="profile_pic"
-            className="avatar avatar--xl"
             src={user.profile_pic}
+            size="larger"
           />
           <h1 id="user-profile-name">{user.name}</h1>
           <i>@{user.username}</i>

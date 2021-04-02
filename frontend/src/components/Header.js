@@ -4,6 +4,7 @@ import { useDetectClickOutside } from 'react-detect-click-outside';
 
 import userData from '../data/users';
 import '../styles/components/HeaderBar.css';
+import Avatar from '../common/Avatar';
 
 function Header() {
   const user = userData.find((u) => Number(u.id) === 1);
@@ -30,12 +31,13 @@ function Header() {
 
       <div id="nav-wrapper">
         <i className="fas fa-bell nav-item nav-icon"></i>
-        <img
+        <Avatar
           id="nav-toggle-icon"
           onClick={toggleDropdown}
           alt="img-description"
-          className="avatar avatar--sm nav-item"
           src={user.profile_pic}
+          className="nav-item"
+          size="small"
         />
       </div>
 

@@ -1,7 +1,7 @@
 import Modal from './Modal';
-import useForm from './useFormHook';
-import TagInputField from '../Components/TagInputField';
-import { useRef } from 'react';
+import useForm from '../hooks/useFormHook';
+import { useRef } from 'react'
+import TagInputField from './TagInputField'
 const ContentComponent = ({ closeModal, children, handleFormSubmit }) => {
   const HandlecloseModal = (e) => {
     e.preventDefault();

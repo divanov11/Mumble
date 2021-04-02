@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/components/Home.css';
-//Components
+//components
 import Contributors from '../Components/Contributors';
 import Feed from '../Components/Feed';
 import PostForm from '../Components/PostForm';

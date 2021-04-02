@@ -10,7 +10,7 @@
   cursor: text;
 }
 .input-tags:focus-within {
-    border: 2px solid #5aa5b9;
+  border: 2px solid #5aa5b9;
 }
 .input-tags input {
   border: none;
