@@ -1,0 +1,37 @@
+.create-post .btn--sm {
+  font-size: 1.5rem;
+  padding: 0.8rem 2rem;
+}
+
+.create-post__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.author-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.author-box__info {
+  margin-left: 1rem;
+  line-height: 1.2;
+}
+
+.author-box__name {
+  font-size: 1.65rem;
+  font-weight: var(--font-medium);
+  color: var(--color-sub);
+}
+
+.author-box__handle {
+  font-size: 1.45rem;
+  color: var(--color-gray);
+}
+
+.create-post__body > .form > .form__field > .input.input--textarea {
+  background-color: var(--color-bg);
+  margin: 1rem 0;
+}

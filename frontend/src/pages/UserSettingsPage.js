@@ -3,7 +3,8 @@ import '../styles/components/UserSettings.css';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import User from '../data/users';
-import UserSettingUpdateModal from '../Components/UserSettingUpdateModal';
+import UserSettingUpdateModal from '../components/UserSettingUpdateModal';
+import Avatar from '../common/Avatar';
 function UserSettingsPage() {
   const [currentUser, setCurrentUser] = useState(User[0]);
   const [updateModelActive, setUpdateModelActive] = useState(false);
@@ -39,11 +40,7 @@ function UserSettingsPage() {
             <h6>Account Settings</h6>
             <div className="line-break"></div>
             <div id="settings-pic-wrapper">
-              <img
-                alt="img-description"
-                className="avatar avatar--lg"
-                src="https://randomuser.me/api/portraits/men/52.jpg"
-              />
+              <Avatar size="larger" />
               <h5>{currentUser.name}</h5>
               <div className="line-break"></div>
               <Link to="" className="btn btn-1 btn-md">
@@ -107,33 +104,7 @@ function UserSettingsPage() {
                 </h6>
                 <div className="line-break line-break-2"></div>
                 <div id="topics-wrapper" className="card__body">
-                  <div className="tags-wrapper">
-                    {renderSkills()}
-                    {/* <div className='tag'>
-                                            <small>Python</small>
-                                        </div>
-                                        <div className='tag'>
-                                            <small>Django</small>
-                                        </div>
-                                        <div className='tag'>
-                                            <small>React</small>
-                                        </div>
-                                        <div className='tag'>
-                                            <small>JavaScript</small>
-                                        </div>
-                                        <div className='tag'>
-                                            <small>Node JS</small>
-                                        </div>
-                                        <div className='tag'>
-                                            <small>Postgres</small>
-                                        </div>
-                                        <div className='tag'>
-                                            <small>System Architecture</small>
-                                        </div>
-                                        <div className='tag'>
-                                            <small>Security</small>
-                                        </div> */}
-                  </div>
+                  <div className="tags-wrapper">{renderSkills()}</div>
                 </div>
               </div>
             </div>

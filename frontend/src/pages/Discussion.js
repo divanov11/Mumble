@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Contributors from '../Components/Contributors';
-import DiscussionsCard from '../Components/DiscussionsCard';
+import Contributors from '../components/Contributors';
+import DiscussionsCard from '../components/DiscussionsCard';
 
 import '../styles/components/Discussion.css';
 import userData from '../data/users';
 import discussions from '../data/discussions';
-import VotingWidget from '../Components/VotingWidget';
+import VotingWidget from '../components/VotingWidget';
+import Avatar from '../common/Avatar';
 
 function Discussion({ match }) {
   let discussion = discussions.find((d) => d.slug === match.params.slug);
@@ -21,9 +22,8 @@ function Discussion({ match }) {
           <div className="card__body">
             <div className="question-wrapper">
               <div className="question-sidebar">
-                <img
+                <Avatar
                   alt="img-description"
-                  className="avatar avatar--md"
                   src={discussion.user.profile_pic}
                 />
                 <div className="custom-spacer"></div>
@@ -57,9 +57,8 @@ function Discussion({ match }) {
                 {discussion.answers.map((answer) => (
                   <div key={answer.id} className="question-wrapper">
                     <div className="question-sidebar">
-                      <img
+                      <Avatar
                         alt="img-description"
-                        className="avatar avatar--md"
                         src={answer.user.profile_pic}
                       />
                       {/* <div className="custom-spacer"></div> */}

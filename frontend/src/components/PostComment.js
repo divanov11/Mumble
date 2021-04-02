@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Avatar } from '../common/Avatar';
 
 export const PostComment = ({ comment }) => {
   return (
     <div key={comment.id} className="post-comment">
       <div className="post-header-wrapper">
-        <img
-          alt="img-description"
-          className="avatar avatar--md"
+        <Avatar
           src={comment.user.profile_pic}
+          alt="img-description"
+          size="small"
         />
         <Link
           className="post-user-name"

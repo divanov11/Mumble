@@ -1,12 +1,14 @@
 import Modal from './Modal';
-import useForm from './useFormHook';
-
+import useForm from '../hooks/useFormHook';
+import { useRef } from 'react'
+import TagInputField from './TagInputField'
 const ContentComponent = ({ closeModal, children, handleFormSubmit }) => {
   const HandlecloseModal = (e) => {
     e.preventDefault();
     closeModal(false);
   };
   const submit = (e) => {
+    e.preventDefault();
     handleFormSubmit(e);
     closeModal(false);
   };
@@ -24,6 +26,7 @@ const ContentComponent = ({ closeModal, children, handleFormSubmit }) => {
     </form>
   );
 };
+
 const UserSettingUpdateModal = ({
   heading,
   dataType,
@@ -33,6 +36,7 @@ const UserSettingUpdateModal = ({
   setActive,
 }) => {
   const [fields, handleFieldChanges] = useForm(userData);
+  const tagList = useRef();
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (!e.target.firstChild.dataset.error) {
@@ -41,10 +45,27 @@ const UserSettingUpdateModal = ({
       });
     }
   };
+  const HandleTagFormSubmit = (e) => {
+    e.preventDefault();
+    const tags = tagList.current;
+    setUserData((data) => {
+      data.skills = tags;
+      return data;
+    });
+    setActive(false);
+  };
+  const preventSubmission = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+    }
+  };
   const renderFormFields = () => {
     if (dataType === 'user-info') {
       return (
-        <>
+        <ContentComponent
+          closeModal={setActive}
+          handleFormSubmit={handleFormSubmit}
+        >
           <div className="form__field">
             <label htmlFor="formInput#text">Full Name: </label>
 
@@ -71,11 +92,14 @@ const UserSettingUpdateModal = ({
               style={{ width: '100%', minWidth: 'auto' }}
             ></textarea>
           </div>
-        </>
+        </ContentComponent>
       );
     } else if (dataType === 'user-detail') {
       return (
-        <>
+        <ContentComponent
+          closeModal={setActive}
+          handleFormSubmit={handleFormSubmit}
+        >
           <div className="form__field">
             <label htmlFor="formInput#text">Username: </label>
             <input
@@ -102,36 +126,33 @@ const UserSettingUpdateModal = ({
               style={{ width: '100%', minWidth: 'auto' }}
             />
           </div>
-        </>
+        </ContentComponent>
       );
     } else if (dataType === 'user-skills') {
       return (
-        <>
+        <form onSubmit={HandleTagFormSubmit} onKeyPress={preventSubmission}>
           <div className="form__field" data-error={dataType}>
             <label htmlFor="formInput#text">Tags</label>
-            <input
-              className="input input--text"
-              id="formInput#text"
-              type="text"
-              name="skills"
-              placeholder="Enter your full name"
-              value={fields.skills}
-              onChange={handleFieldChanges}
-              style={{ width: '100%', minWidth: 'auto' }}
-            />
+            <TagInputField userData={userData} tagListRef={tagList} />
           </div>
-        </>
+          <div className="modal-actions">
+            <button className="btn btn-1 btn-md" style={{ marginRight: '8px' }}>
+              Update
+            </button>
+            <button
+              className="btn btn-1 btn-md"
+              onClick={() => setActive(false)}
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
       );
     }
   };
   return (
     <Modal heading={heading} active={active} setActive={setActive}>
-      <ContentComponent
-        closeModal={setActive}
-        handleFormSubmit={handleFormSubmit}
-      >
-        {renderFormFields()}
-      </ContentComponent>
+      {renderFormFields()}
     </Modal>
   );
 };

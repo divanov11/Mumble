@@ -1,12 +1,12 @@
 import React from 'react';
 import '../styles/components/Home.css';
-//Components
-import Contributors from '../Components/Contributors';
-import Feed from '../Components/Feed';
-import PostForm from '../Components/PostForm';
-import TopicTags from '../Components/TopicTags';
-import DiscussionsCard from '../Components/DiscussionsCard';
-import ArticlesCard from '../Components/ArticlesCard';
+//components
+import Contributors from '../components/Contributors';
+import Feed from '../components/Feed';
+import PostForm from '../components/CreatePost';
+import TopicTags from '../components/TopicTags';
+import DiscussionsCard from '../components/DiscussionsCard';
+import ArticlesCard from '../components/ArticlesCard';
 
 //Dummy Data Files
 import postsData from '../data/posts';
