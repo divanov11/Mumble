@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/components/Profile.css';
 
-//components
+//Components
 import Feed from '../components/Feed';
 import DiscussionsCard from '../components/DiscussionsCard';
 import ArticlesCard from '../components/ArticlesCard';
