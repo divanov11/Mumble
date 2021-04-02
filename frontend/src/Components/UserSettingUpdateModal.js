@@ -1,30 +1,30 @@
-import Model from '../Components/Model';
-import useForm from '../Components/useFormHook';
+import Modal from './Modal';
+import useForm from './useFormHook';
 
-const ContentComponent = ({ closeModel, children, handleFormSubmit }) => {
-  const HandlecloseModel = (e) => {
+const ContentComponent = ({ closeModal, children, handleFormSubmit }) => {
+  const HandlecloseModal = (e) => {
     e.preventDefault();
-    closeModel(false);
+    closeModal(false);
   };
   const submit = (e) => {
     handleFormSubmit(e);
-    closeModel(false);
+    closeModal(false);
   };
   return (
     <form onSubmit={submit}>
       {children}
-      <div className="model-actions">
+      <div className="modal-actions">
         <button className="btn btn-1 btn-md" style={{ marginRight: '8px' }}>
           Update
         </button>
-        <button className="btn btn-1 btn-md" onClick={HandlecloseModel}>
+        <button className="btn btn-1 btn-md" onClick={HandlecloseModal}>
           Cancel
         </button>
       </div>
     </form>
   );
 };
-const UserSettingUpdateModel = ({
+const UserSettingUpdateModal = ({
   heading,
   dataType,
   userData,
@@ -47,6 +47,7 @@ const UserSettingUpdateModel = ({
         <>
           <div className="form__field">
             <label htmlFor="formInput#text">Full Name: </label>
+
             <input
               className="input input--text"
               id="formInput#text"
@@ -59,7 +60,7 @@ const UserSettingUpdateModel = ({
             />
           </div>
           <div className="form__field">
-            <label htmlFor="formInput#textarea">Message: </label>
+            <label htmlFor="formInput#textarea">About: </label>
             <textarea
               className="input input--textarea"
               name="bio"
@@ -76,7 +77,7 @@ const UserSettingUpdateModel = ({
       return (
         <>
           <div className="form__field">
-            <label htmlFor="formInput#text">User Name: </label>
+            <label htmlFor="formInput#text">Username: </label>
             <input
               className="input input--text"
               id="formInput#text"
@@ -124,15 +125,15 @@ const UserSettingUpdateModel = ({
     }
   };
   return (
-    <Model heading={heading} active={active} setActive={setActive}>
+    <Modal heading={heading} active={active} setActive={setActive}>
       <ContentComponent
-        closeModel={setActive}
+        closeModal={setActive}
         handleFormSubmit={handleFormSubmit}
       >
         {renderFormFields()}
       </ContentComponent>
-    </Model>
+    </Modal>
   );
 };
 
-export default UserSettingUpdateModel;
+export default UserSettingUpdateModal;
