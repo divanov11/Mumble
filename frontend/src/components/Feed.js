@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PostComment } from './PostComment';
-import { Avatar } from '../common/Avatar';
+import Avatar from '../common/Avatar';
 
 function Feed({ posts }) {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Avatar } from '../common/Avatar';
+import Avatar from '../common/Avatar';
 
 export const PostComment = ({ comment }) => {
   return (
