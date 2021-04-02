@@ -8,7 +8,7 @@ import LoginPage from './pages/LoginPage';
 import Discussion from './pages/Discussion';
 import ProfilePage from './pages/ProfilePage';
 import UserSettingsPage from './pages/UserSettingsPage';
-import UserSearchPage from './pages/UserSearchPage';
+import SearchPage from './pages/SearchPage';
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
           <Route exact path={'/profile/:username'} component={ProfilePage} />
           <Route exact path={'/settings'} component={UserSettingsPage} />
           <Route exact path={'/discussion/:slug'} component={Discussion} />
-          <Route exact path={'/find-user'} component={UserSearchPage} />
+          <Route exact path={'/search'} component={SearchPage} />
         </main>
       </Switch>
     </Router>

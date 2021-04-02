@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDetectClickOutside } from 'react-detect-click-outside';
 
-import SearchBox from '../components/SearchBox'
+import SearchBox from '../components/SearchBox';
 
 import userData from '../data/users';
 import notifications from '../data/notifications';
 import '../styles/components/HeaderBar.css';
 import Avatar from '../common/Avatar';
-
 
 function Header() {
   const user = userData.find((u) => Number(u.id) === 1);
@@ -46,9 +45,7 @@ function Header() {
 
       <div id="nav-wrapper">
         <SearchBox/>
-        <i className="fas fa-bell nav-item nav-icon"
-           onClick={toggleNotification}
-        ></i>
+        <i className="fas fa-bell nav-item nav-icon" onClick={toggleNotification}></i>
         <Avatar
           id="nav-toggle-icon"
           onClick={toggleDropdown}
