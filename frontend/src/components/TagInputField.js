@@ -5,7 +5,10 @@ const TagInputField = ({ userData, tagListRef }) => {
   const [input, setInput] = useState('');
   const addTags = (e) => {
     e.stopPropagation();
-    const value = e.key === "," ? e.target.value.substring(0, e.target.value.length - 1)  : e.target.value;
+    const value =
+      e.key === ','
+        ? e.target.value.substring(0, e.target.value.length - 1)
+        : e.target.value;
     if (e.key === 'Enter' || e.key === ',') {
       if (value) {
         setInput('');
@@ -22,7 +25,7 @@ const TagInputField = ({ userData, tagListRef }) => {
     setTagList((tags) => {
       const newState = [...tags.filter((x) => x !== value)];
       tagListRef.current = newState;
-      return newState
+      return newState;
     });
   };
   const renderTags = tagList.map((x, i) => {

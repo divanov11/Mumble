@@ -8,7 +8,6 @@ import LoginPage from './pages/LoginPage';
 import Discussion from './pages/Discussion';
 import ProfilePage from './pages/ProfilePage';
 import UserSettingsPage from './pages/UserSettingsPage';
-import UserSearchPage from './pages/UserSearchPage';
 import SearchPage from './pages/SearchPage';
 
 function App() {
