@@ -23,10 +23,39 @@
 .modal-backdrop .mumble-modal {
   background: White;
   border-radius: 6px;
-  width: 80%;
-  max-width: 500px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 95%;
   padding: 20px;
+  margin: 0 15px;
 }
+.close-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+.close-icon {
+  font-size: 14px;
+  padding: 0;
+}
+@media (min-width: 400px) {
+  .modal-backdrop .mumble-modal {
+    margin: 0 25px;
+  }
+
+  .close-icon {
+    font-size: 16px;
+    padding: 2px;
+  }
+}
+@media (min-width: 1000px) {
+  .close-icon {
+    font-size: 18px;
+    padding: 3px;
+  }
+}
+
 .mumble-modal .modal-header {
   position: relative;
 }
