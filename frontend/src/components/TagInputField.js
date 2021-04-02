@@ -21,7 +21,9 @@ const TagInputField = ({ userData, tagListRef }) => {
     const value = e.target.previousSibling.textContent;
     console.log(value);
     setTagList((tags) => {
-      return [...tags.filter((x) => x !== value)];
+      const newState = [...tags.filter((x) => x !== value)];
+      tagListRef.current = newState;
+      return newState
     });
   };
   const renderTags = tagList.map((x, i) => {
