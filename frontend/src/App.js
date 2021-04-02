@@ -3,12 +3,12 @@ import './styles/App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Header from './components/Header';
-import HomePage from './Pages/HomePage';
-import LoginPage from './Pages/LoginPage';
-import Discussion from './Pages/Discussion';
-import ProfilePage from './Pages/ProfilePage';
-import UserSettingsPage from './Pages/UserSettingsPage';
-import UserSearchPage from './Pages/UserSearchPage';
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+import Discussion from './pages/Discussion';
+import ProfilePage from './pages/ProfilePage';
+import UserSettingsPage from './pages/UserSettingsPage';
+import UserSearchPage from './pages/UserSearchPage';
 
 function App() {
   return (
