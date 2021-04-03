@@ -107,6 +107,7 @@ textarea:focus-within {
 
 .post-header-wrapper {
   display: flex;
+  justify-content: space-between;
   gap: 1rem;
   align-items: center;
 }
@@ -116,8 +117,11 @@ textarea:focus-within {
 }
 
 .post-meta {
-  margin-left: 5px;
-  color: rgb(131, 130, 130);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  font-weight: var(--font-medium);
+  font-size: 1.3rem;
+  color: var(--color-light-gray);
 }
 
 .post-contents {
@@ -133,7 +137,7 @@ textarea:focus-within {
 }
 
 .vote-count {
-  font-weight: 900;
+  font-weight: var(--font-bold);
   color: #5eba7d;
 }
 
@@ -141,36 +145,42 @@ textarea:focus-within {
   display: flex;
   padding: 10px;
   justify-content: space-between;
+  transition: all 0.1s ease;
 }
 
 .post-actions-wrapper i {
   margin: 10px;
-  color: #a9a9ad;
+  color: var(--color-gray);
   cursor: pointer;
-  transition: 0.1s;
   font-size: 18px;
 }
 
-.post-actions-wrapper i:hover {
-  color: #6ce6eb;
+.action-wrapper:hover * {
+  color: var(--color-main);
 }
 
 .post-action-text {
-  font: 14px;
-  color: #a9a9ad;
+  font-size: 1.4rem;
+  font-weight: var(--font-medium);
 }
 
 .post-comment-wrapper {
   cursor: pointer;
 }
 
+.post-body {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  font-weight: var(--font-regular);
+}
+
 .vote-icon {
-  color: #a9a9ad;
+  color: var(--color-gray);
   cursor: pointer;
 }
 
 .up-arrow {
-  color: #000;
+  color: var(--color-sub);
 }
 
 /* POST COMMENT STYLING */
