@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 const Avatar = ({
   src = 'https://randomuser.me/api/portraits/men/52.jpg',
@@ -8,8 +9,14 @@ const Avatar = ({
   className = '',
   ...others
 }) => {
-  const avatarClass = `${className && className + ' '}avatar avatar--${size}`;
-  return <img className={avatarClass} alt={alt} src={src} {...others} />;
+  return (
+    <img
+      className={classNames(className, 'avatar', `avatar--${size}`)}
+      alt={alt}
+      src={src}
+      {...others}
+    />
+  );
 };
 
 Avatar.propTypes = {

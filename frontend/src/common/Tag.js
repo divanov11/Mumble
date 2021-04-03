@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 const Tag = ({ text, outline = false, className = '', ...others }) => {
-  const tagClass = `${className && className + ' '}tag ${
-    outline && 'tag--outline'
-  }`;
-
   return (
-    <span className={tagClass} {...others}>
+    <span
+      className={classNames(className, 'tag', { 'tag--outline': outline })}
+      {...others}
+    >
       <small>{text}</small>
     </span>
   );
