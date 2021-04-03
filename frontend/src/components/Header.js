@@ -16,11 +16,13 @@ function Header() {
 
   const toggleDropdown = (e) => {
     e.stopPropagation();
+    setShowNotification(false); // if the notification dropdown is open then close it
     setShowNavigation(!showNavigation);
   };
 
   const toggleNotification = (e) => {
     e.stopPropagation();
+    setShowNavigation(false); // if the avator dropdown is open then close it
     setShowNotification(!showNotification);
   };
 
