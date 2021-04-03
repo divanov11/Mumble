@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import AuthorBox from '../common/AuthorBox';
 import Avatar from '../common/Avatar';
-import Button from '../common/Button';
-
 import { distanceDate } from '../utilities/formatDate';
+
+import '../styles/components/Feed.css';
 
 function Feed({ posts }) {
   return (
@@ -20,16 +21,8 @@ function Feed({ posts }) {
                   handle={post.user.username}
                   url={`/profile/${post.user.username}`}
                   size="md"
-                >
-                  <p className="post-meta">{distanceDate(post.created)}</p>
-                </AuthorBox>
-                <Button
-                  buttonStyle="main"
-                  outline
-                  iconName="user-plus"
-                  text="Follow"
-                  size="sm"
                 />
+                <p className="post-meta">{distanceDate(post.created)}</p>
               </div>
               <div className="post-contents">
                 <div className="post-votes">
@@ -63,27 +56,22 @@ function Feed({ posts }) {
                 {post.comments.map((comment) => (
                   <div key={comment.id} className="post-comment">
                     <div className="post-header-wrapper">
-                      <Avatar
-                        src={comment.user.profile_pic}
-                        alt="img-description"
+                      <AuthorBox
+                        avatarSrc={comment.user.profile_pic}
+                        name={comment.user.name}
+                        handle={comment.user.username}
+                        url={`/profile/${comment.user.username}}`}
                         size="sm"
                       />
-                      <Link
-                        className="post-user-name"
-                        to={`/profile/${comment.user.username}`}
-                      >
-                        <strong>{comment.user.name}</strong>
-                      </Link>
-                      <p className="post-meta">@{comment.user.username} .</p>
                       <p className="post-meta">
                         {distanceDate(comment.created)}
                       </p>
                     </div>
                     <i className="replying-to-text">
                       <small>
-                        Replying to{' '}
+                        Replying to
                         {comment.reply_at.map((user) => (
-                          <span key={user.id}>- @{user.username}</span>
+                          <span key={user.id}> @{user.username}</span>
                         ))}
                       </small>
                     </i>

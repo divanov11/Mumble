@@ -10,17 +10,17 @@
 }
 
 .author-box--md .author-box__info {
-  margin-left: 1.5rem;
+  margin-left: 1.6rem;
   line-height: 1.3;
 }
 
 .author-box--lg .author-box__info {
-  margin-left: 2.5rem;
+  margin-left: 2.8rem;
   line-height: 1.6;
 }
 
 .author-box__name {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: var(--font-medium);
   color: var(--color-sub);
 }
