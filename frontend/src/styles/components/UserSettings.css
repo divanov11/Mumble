@@ -41,8 +41,8 @@
   cursor: pointer;
   outline: none;
 }
-.profile-update-btn input[type=file]::-webkit-file-upload-button {
-  cursor: pointer; 
+.profile-update-btn input[type='file']::-webkit-file-upload-button {
+  cursor: pointer;
 }
 .profile-update-btn span i {
   margin-right: 5px;
