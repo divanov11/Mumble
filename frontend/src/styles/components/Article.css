@@ -1,0 +1,11 @@
+#article--layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 1000px) {
+  #article--layout {
+    grid-template-columns: 1fr;
+  }
+}
