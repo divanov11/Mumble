@@ -2,30 +2,7 @@ import Modal from './Modal';
 import useForm from '../hooks/useFormHook';
 import { useRef } from 'react';
 import TagInputField from './TagInputField';
-const ContentComponent = ({ closeModal, children, handleFormSubmit }) => {
-  const HandlecloseModal = (e) => {
-    e.preventDefault();
-    closeModal(false);
-  };
-  const submit = (e) => {
-    e.preventDefault();
-    handleFormSubmit(e);
-    closeModal(false);
-  };
-  return (
-    <form onSubmit={submit}>
-      {children}
-      <div className="modal-actions">
-        <button className="btn btn-1 btn-md" style={{ marginRight: '8px' }}>
-          Update
-        </button>
-        <button className="btn btn-1 btn-md" onClick={HandlecloseModal}>
-          Cancel
-        </button>
-      </div>
-    </form>
-  );
-};
+import UserSettingModalContent from './UserSettingModalContent';
 
 const UserSettingUpdateModal = ({
   heading,
@@ -62,7 +39,7 @@ const UserSettingUpdateModal = ({
   const renderFormFields = () => {
     if (dataType === 'user-info') {
       return (
-        <ContentComponent
+        <UserSettingModalContent
           closeModal={setActive}
           handleFormSubmit={handleFormSubmit}
         >
@@ -92,11 +69,11 @@ const UserSettingUpdateModal = ({
               style={{ width: '100%', minWidth: 'auto' }}
             ></textarea>
           </div>
-        </ContentComponent>
+        </UserSettingModalContent>
       );
     } else if (dataType === 'user-detail') {
       return (
-        <ContentComponent
+        <UserSettingModalContent
           closeModal={setActive}
           handleFormSubmit={handleFormSubmit}
         >
@@ -126,7 +103,7 @@ const UserSettingUpdateModal = ({
               style={{ width: '100%', minWidth: 'auto' }}
             />
           </div>
-        </ContentComponent>
+        </UserSettingModalContent>
       );
     } else if (dataType === 'user-skills') {
       return (

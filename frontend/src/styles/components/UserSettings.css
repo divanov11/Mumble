@@ -26,3 +26,24 @@
   color: #5aa5b9;
   cursor: pointer;
 }
+.profile-update-btn {
+  position: relative;
+  overflow: hidden;
+}
+.profile-update-btn input[type='file'] {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  left: 0;
+  width: fit-content;
+}
+.profile-update-btn span i {
+  margin-right: 5px;
+  font-size: 14px;
+}
+@media (min-width: 480px) {
+  .profile-update-btn span i {
+    font-size: 16px;
+  }
+}

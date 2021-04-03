@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/components/UserSettings.css';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import User from '../data/users';
 import UserSettingUpdateModal from '../components/UserSettingUpdateModal';
 import Avatar from '../common/Avatar';
@@ -43,9 +42,21 @@ function UserSettingsPage() {
               <Avatar size="lg" />
               <h5>{currentUser.name}</h5>
               <div className="line-break"></div>
-              <Link to="" className="btn btn-1 btn-md">
+              {/* <Link to="" className="btn btn-1 btn-md">
                 Update Picture
-              </Link>
+              </Link> */}
+              <div className="btn btn-1 btn-md profile-update-btn">
+                <input
+                  type="file"
+                  accept="image/*"
+                  id="profile-pic"
+                  name="profile-pic"
+                />
+                <span>
+                  <i className="fas fa-camera" />
+                  Update Picture
+                </span>
+              </div>
             </div>
           </div>
         </div>
