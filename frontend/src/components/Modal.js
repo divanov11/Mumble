@@ -1,35 +1,38 @@
 import ReactDom from 'react-dom';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import '../styles/components/Modal.css';
+
 const Modal = ({ heading, children, active, setActive }) => {
   const modalRef = useRef();
-  const closeModal = (e) => {
-    e.stopPropagation();
+
+  const closeModal = () => {
     setActive(false);
   };
-  const toggleOn = () => {
-    modalRef.current.style.display = 'flex';
+
+  const MODAL_TRANSITION_TIME = 200; // Because we used 0.2s transition on .modal-backdrop
+
+  const fadeIn = (el) => {
+    el.style.display = 'flex';
+    setTimeout(() => {
+      el.style.opacity = '1';
+    }, 1);
   };
-  const toggleOn1 = () => {
-    modalRef.current.style.opacity = '1';
+
+  const fadeOut = (el) => {
+    el.style.opacity = '0';
+    setTimeout(() => {
+      el.style.display = 'none';
+    }, MODAL_TRANSITION_TIME);
   };
-  const toggleOff = () => {
-    if (modalRef.current) {
-      modalRef.current.style.opacity = '0';
-    }
-  };
-  const toggleOff1 = () => {
-    if (modalRef.current) {
-      modalRef.current.style.display = 'none';
-    }
-  };
+
+  useEffect(() => {
+    const modalEl = modalRef.current;
+    active ? fadeIn(modalEl) : fadeOut(modalEl);
+  }, [active]);
+
   return ReactDom.createPortal(
-    <div className={`modal-backdrop`} ref={modalRef}>
-      <div style={{ display: 'none' }}>
-        {active ? toggleOn() : toggleOff()}
-        {active ? setTimeout(toggleOn1, 30) : setTimeout(toggleOff1, 200)}
-      </div>
-      <div className="mumble-modal" onClick={(e) => e.stopPropagation()}>
+    <div className="modal-backdrop" ref={modalRef}>
+      <div className="mumble-modal">
         <div className="modal-header">
           <h4>{heading}</h4>
           <div className="close-modal" onClick={closeModal}>
