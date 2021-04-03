@@ -60,7 +60,69 @@
   overflow: hidden;
   text-align: center;
 }
+@media (max-height: 568){
+  .profile-pic--cropper-container {
+    max-height: 380px;
 
+  }
+}
 .ReactCrop__image {
-  max-height: 710px;
+  max-height: auto;
+}
+@media (max-height: 640px){
+  .profile-pic--cropper-container {
+    max-height: 400px;
+
+  }
+  .ReactCrop__image {
+    max-height: 400px;
+  }
+}
+@media (max-height: 740px){
+  .profile-pic--cropper-container {
+    max-height: 520px;
+
+  }
+  .ReactCrop__image {
+    max-height: 520px;
+  }
+}
+@media (max-height: 700px){
+  .profile-pic--cropper-container {
+    max-height: 440px;
+
+  }
+  .ReactCrop__image {
+    max-height: 440px;
+  }
+}
+@media (max-height: 640px){
+  .profile-pic--cropper-container {
+    max-height: 440px;
+
+  }
+  .ReactCrop__image {
+    max-height: 440px;
+  }
+}
+@media (max-height: 568px){
+  .profile-pic--cropper-container {
+    max-height: 390px;
+
+  }
+  .ReactCrop__image {
+    max-height: 390px;
+  }
+}
+
+@media(min-width: 700px){
+  .profile-pic--cropper-container {
+    max-height: 710px;
+    overflow: hidden;
+    text-align: center;
+  }
+  .ReactCrop__image {
+    max-height: 710px;
+  }
+  
 }
