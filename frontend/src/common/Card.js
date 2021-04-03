@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Card = ({ cardStyle = '', className, children, ...others }) => {
+const Card = ({ cardStyle = '', className = '', children, ...others }) => {
   const cardClass = `${className && className + ' '}card ${
     cardStyle === 'dark' && 'card--dark'
   }`;

@@ -32,7 +32,8 @@
 }
 
 .post-actions-wrapper i {
-  margin: 10px;
+  margin: 1rem;
+  margin-bottom: 0;
   color: var(--color-gray);
   cursor: pointer;
   font-size: 2rem;
@@ -88,9 +89,33 @@
 /* POST COMMENT STYLING */
 
 .post-comments-wrapper {
-  border-left: 1px dashed #d8d8d8;
+  margin-top: 1.5rem;
 }
 
-.post-comment {
-  padding: 20px;
+.post-comment > div {
+  border-radius: 10px;
+  padding: 2rem 3rem;
+  background-color: var(--color-white-light);
+  border: 2px solid var(--color-bg);
+}
+
+.post-card--comment {
+  transform: scale(0.92);
+}
+
+.comment__mentioned {
+  margin-bottom: 1rem;
+  font-size: 1.35rem;
+  font-weight: var(--font-medium);
+}
+
+.comment__mentioned span {
+  font-size: 1.35rem;
+  font-weight: var(--font-medium);
+  color: var(--color-main);
+}
+
+.comment__mentioned span:not(:last-child)::after {
+  content: ',';
+  margin-right: 0.3rem;
 }

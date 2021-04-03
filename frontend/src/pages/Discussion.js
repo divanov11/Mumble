@@ -6,7 +6,7 @@ import DiscussionsCard from '../components/DiscussionsCard';
 import '../styles/components/Discussion.css';
 import userData from '../data/users';
 import discussions from '../data/discussions';
-import VotingWidget from '../components/VotingWidget';
+import VotingWidget from '../common/VotingWidget';
 import Avatar from '../common/Avatar';
 
 function Discussion({ match }) {
