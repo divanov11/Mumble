@@ -28,22 +28,39 @@
 }
 .profile-update-btn {
   position: relative;
+  display: inline-block;
   overflow: hidden;
+  cursor: pointer;
 }
 .profile-update-btn input[type='file'] {
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: -23px;
   opacity: 0;
   left: 0;
-  width: fit-content;
+  bottom: 0;
+  cursor: pointer;
+  outline: none;
+}
+.profile-update-btn input[type=file]::-webkit-file-upload-button {
+  cursor: pointer; 
 }
 .profile-update-btn span i {
   margin-right: 5px;
   font-size: 14px;
+  cursor: pointer;
 }
 @media (min-width: 480px) {
   .profile-update-btn span i {
     font-size: 16px;
   }
+}
+
+.profile-pic--cropper-container {
+  max-height: 710px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.ReactCrop__image {
+  max-height: 710px;
 }
