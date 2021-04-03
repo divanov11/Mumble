@@ -15,17 +15,17 @@ function App() {
   return (
     <Router>
       <Header />
-      <Switch>
-        <Route exact path={'/login'} component={LoginPage} />
-        <main>
+      <main>
+        <Switch>
+          <Route exact path={'/login'} component={LoginPage} />
           <Route exact path={'/'} component={HomePage} />
           <Route exact path={'/profile/:username'} component={ProfilePage} />
           <Route exact path={'/settings'} component={UserSettingsPage} />
           <Route exact path={'/discussion/:slug'} component={Discussion} />
           <Route exact path={'/article/:slug'} component={ArticlePage} />
           <Route exact path={'/search'} component={SearchPage} />
-        </main>
-      </Switch>
+        </Switch>
+      </main>
     </Router>
   );
 }

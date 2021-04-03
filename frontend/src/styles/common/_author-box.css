@@ -1,0 +1,47 @@
+.author-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.author-box__info {
+  margin-left: 1rem;
+  line-height: 1.2;
+}
+
+.author-box--md .author-box__info {
+  margin-left: 1.5rem;
+  line-height: 1.4;
+}
+
+.author-box--lg .author-box__info {
+  margin-left: 2.5rem;
+  line-height: 1.6;
+}
+
+.author-box__name {
+  font-size: 1.65rem;
+  font-weight: var(--font-medium);
+  color: var(--color-sub);
+}
+
+.author-box--md .author-box__name {
+  font-size: 1.8rem;
+}
+
+.author-box--lg .author-box__name {
+  font-size: 2.4rem;
+}
+
+.author-box__handle {
+  font-size: 1.4rem;
+  color: var(--color-gray);
+}
+
+.author-box--md .author-box__handle {
+  font-size: 1.5rem;
+}
+
+.author-box--lg .author-box__handle {
+  font-size: 1.65rem;
+}

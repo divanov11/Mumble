@@ -59,7 +59,7 @@ function Feed({ posts }) {
                       <Avatar
                         src={comment.user.profile_pic}
                         alt="img-description"
-                        size="small"
+                        size="sm"
                       />
                       <Link
                         className="post-user-name"

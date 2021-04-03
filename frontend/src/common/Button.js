@@ -12,7 +12,7 @@ const Button = ({
   children,
   ...others
 }) => {
-  const btnClass = ['btn', className];
+  const btnClass = ['btn'];
 
   if (buttonStyle) {
     if (buttonStyle === 'main')
@@ -21,10 +21,8 @@ const Button = ({
       btnClass.push(outline === true ? 'btn--sub--outline' : 'btn--sub');
   }
 
-  if (size) {
-    if (size === 'small') btnClass.push('btn--sm');
-    else if (size === 'large') btnClass.push('btn--lg');
-  }
+  if (size) btnClass.push(`btn--${size}`);
+  if (className) btnClass.push(className);
 
   return (
     <button className={btnClass.join(' ')} {...others}>
@@ -41,7 +39,7 @@ const Button = ({
 
 Button.propTypes = {
   buttonStyle: PropTypes.oneOf(['main', 'sub']),
-  size: PropTypes.oneOf(['small', 'large']),
+  size: PropTypes.oneOf(['sm', 'lg']),
   className: PropTypes.string,
   outline: PropTypes.bool,
   iconName: PropTypes.string,

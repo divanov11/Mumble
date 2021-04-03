@@ -10,7 +10,7 @@ function UserCard({ user }) {
             alt="img-description"
             id="profile_pic"
             src={user.profile_pic}
-            size="larger"
+            size="lg"
           />
           <h1 id="user-profile-name">{user.name}</h1>
           <i>@{user.username}</i>

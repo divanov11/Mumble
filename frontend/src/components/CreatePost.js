@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import '../styles/components/CreatePost.css';
-import Avatar from '../common/Avatar';
 import Button from '../common/Button';
+import AuthorBox from '../common/AuthorBox';
 
 function PostForm() {
   const [message, setMessage] = useState('');
@@ -29,13 +29,12 @@ function PostForm() {
     <div className="card create-post">
       <div className="card__body">
         <div className="create-post__header">
-          <div className="author-box">
-            <Avatar size="small" />
-            <div className="author-box__info">
-              <p className="author-box__name">Dennis Ivy</p>
-              <small className="author-box__handle">@dennis_ivy</small>
-            </div>
-          </div>
+          <AuthorBox
+            name="Sam Wick"
+            handle="realsamwick"
+            url="/profile/realsamwick"
+            size="sm"
+          />
           <Link to="/create-article" className="btn btn--sm">
             <i className="far fa-file-alt" style={{ marginRight: '5px' }} />{' '}
             Write Article
@@ -58,7 +57,7 @@ function PostForm() {
                 id="post-btn"
                 type="submit"
                 buttonStyle="main"
-                size="large"
+                size="lg"
                 text="Create Post"
                 iconName="pencil-alt"
               />
