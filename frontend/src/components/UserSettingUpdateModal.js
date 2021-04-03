@@ -2,6 +2,7 @@ import Modal from './Modal';
 import useForm from '../hooks/useFormHook';
 import { useRef } from 'react';
 import TagInputField from './TagInputField';
+
 const ContentComponent = ({ closeModal, children, handleFormSubmit }) => {
   const HandlecloseModal = (e) => {
     e.preventDefault();
@@ -141,7 +142,10 @@ const UserSettingUpdateModal = ({
             </button>
             <button
               className="btn btn-1 btn-md"
-              onClick={() => setActive(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                setActive(false);
+              }}
             >
               Cancel
             </button>
