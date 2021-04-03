@@ -25,6 +25,7 @@ const UserSettingUpdateModal = ({
   const HandleTagFormSubmit = (e) => {
     e.preventDefault();
     const tags = tagList.current;
+    // fix error
     if (tags){
       setUserData((data) => {
         data.skills = tags;
