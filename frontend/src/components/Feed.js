@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Avatar from '../common/Avatar';
 
+import { distanceDate } from '../utilities/formatDate';
+
 function Feed({ posts }) {
   return (
     <section>
@@ -18,7 +20,7 @@ function Feed({ posts }) {
                   <h6>{post.user.name}</h6>
                 </Link>
                 <p className="post-meta">@{post.user.username} .</p>
-                <p className="post-meta">{post.created}</p>
+                <p className="post-meta">{distanceDate(post.created)}</p>
               </div>
               <div className="post-contents">
                 <div className="post-votes">
@@ -66,7 +68,9 @@ function Feed({ posts }) {
                         <strong>{comment.user.name}</strong>
                       </Link>
                       <p className="post-meta">@{comment.user.username} .</p>
-                      <p className="post-meta">{comment.created}</p>
+                      <p className="post-meta">
+                        {distanceDate(comment.created)}
+                      </p>
                     </div>
                     <i className="replying-to-text">
                       <small>

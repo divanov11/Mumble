@@ -5,28 +5,26 @@ const Avatar = ({
   src = 'https://randomuser.me/api/portraits/men/52.jpg',
   size = 'medium',
   alt = 'User Avatar',
-  className,
+  className = '',
   ...others
 }) => {
-  let avatarClass = 'md';
-  if (size === 'small') avatarClass = 'sm';
-  else if (size === 'large') avatarClass = 'lg';
-  else if (size === 'larger') avatarClass = 'xl';
+  let avatarSize = 'md';
+  if (size === 'small') avatarSize = 'sm';
+  else if (size === 'large') avatarSize = 'lg';
+  else if (size === 'larger') avatarSize = 'xl';
 
-  return (
-    <img
-      className={`avatar avatar--${avatarClass} ${className}`}
-      alt={alt}
-      src={src}
-      {...others}
-    />
-  );
+  const avatarClass = `${
+    className && className + ' '
+  }avatar avatar--${avatarSize}`;
+
+  return <img className={avatarClass} alt={alt} src={src} {...others} />;
 };
 
 Avatar.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large', 'larger']),
+  className: PropTypes.string,
 };
 
 export default Avatar;
