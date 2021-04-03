@@ -44,15 +44,18 @@ function Header() {
       </div>
 
       <div id="nav-wrapper">
-        <SearchBox/>
-        <i className="fas fa-bell nav-item nav-icon" onClick={toggleNotification}></i>
+        <SearchBox />
+        <i
+          className="fas fa-bell nav-item nav-icon"
+          onClick={toggleNotification}
+        ></i>
         <Avatar
           id="nav-toggle-icon"
           onClick={toggleDropdown}
           alt="img-description"
           src={user.profile_pic}
           className="nav-item"
-          size="small"
+          size="sm"
         />
       </div>
 
@@ -103,7 +106,7 @@ function Header() {
                 alt="img-description"
                 src={notification.user.profile_pic}
                 className="nav-item"
-                size="small"
+                size="sm"
               />
               <Link
                 to={`/notification/${notification.id}`}

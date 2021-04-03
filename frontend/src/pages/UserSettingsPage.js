@@ -40,7 +40,7 @@ function UserSettingsPage() {
             <h6>Account Settings</h6>
             <div className="line-break"></div>
             <div id="settings-pic-wrapper">
-              <Avatar size="larger" />
+              <Avatar size="lg" />
               <h5>{currentUser.name}</h5>
               <div className="line-break"></div>
               <Link to="" className="btn btn-1 btn-md">
