@@ -24,7 +24,7 @@ const Modal = ({ heading, children, active, setActive }) => {
     }
   };
   return ReactDom.createPortal(
-    <div className={`modal-backdrop`} ref={modalRef}>
+    <div className="modal-backdrop" ref={modalRef}>
       <div style={{ display: 'none' }}>
         {active ? toggleOn() : toggleOff()}
         {active ? setTimeout(toggleOn1, 30) : setTimeout(toggleOff1, 200)}

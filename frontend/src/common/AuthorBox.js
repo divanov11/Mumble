@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import Avatar from './Avatar';
 
@@ -14,12 +15,12 @@ const AuthorBox = ({
   children,
   ...others
 }) => {
-  const authorBoxClass = `${
-    className && className + ' '
-  }author-box author-box--${size}`;
-
   return (
-    <Link to={url} className={authorBoxClass} {...others}>
+    <Link
+      to={url}
+      className={classNames(className, 'author-box', `author-box--${size}`)}
+      {...others}
+    >
       <Avatar size={size} alt={name} src={avatarSrc} />
       <div className="author-box__info">
         <p className="author-box__name">{name}</p>

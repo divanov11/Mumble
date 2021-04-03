@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 const Button = ({
   buttonStyle = '',
@@ -12,20 +13,17 @@ const Button = ({
   children,
   ...others
 }) => {
-  const btnClass = ['btn'];
-
-  if (buttonStyle) {
-    if (buttonStyle === 'main')
-      btnClass.push(outline === true ? 'btn--main--outline' : 'btn--main');
-    else if (buttonStyle === 'sub')
-      btnClass.push(outline === true ? 'btn--sub--outline' : 'btn--sub');
-  }
-
-  if (size) btnClass.push(`btn--${size}`);
-  if (className) btnClass.push(className);
-
   return (
-    <button className={btnClass.join(' ')} {...others}>
+    <button
+      className={classNames(className, 'btn', {
+        'btn--main--outline': buttonStyle === 'main' && outline,
+        'btn--main': buttonStyle === 'main' && !outline,
+        'btn--sub--outline': buttonStyle === 'sub' && outline,
+        'btn--sub': buttonStyle === 'sub' && !outline,
+        [`btn--${size}`]: size,
+      })}
+      {...others}
+    >
       {iconName && (
         <i
           className={`${iconStyle} fa-${iconName}`}

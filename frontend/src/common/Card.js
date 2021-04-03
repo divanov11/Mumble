@@ -1,12 +1,16 @@
 import React from 'react';
+import classNames from 'classnames';
 
 const Card = ({ cardStyle = '', className, children, ...others }) => {
-  const cardClass = `${className && className + ' '}card ${
-    cardStyle === 'dark' && 'card--dark'
-  }`;
-
+  console.log(cardStyle);
+  console.log(cardStyle === 'dark');
   return (
-    <div className={cardClass} {...others}>
+    <div
+      className={classNames(className, 'card', {
+        'card--dark': cardStyle === 'dark',
+      })}
+      {...others}
+    >
       <div className="card__body">{children}</div>
     </div>
   );
