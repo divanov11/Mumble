@@ -25,10 +25,13 @@ const UserSettingUpdateModal = ({
   const HandleTagFormSubmit = (e) => {
     e.preventDefault();
     const tags = tagList.current;
-    setUserData((data) => {
-      data.skills = tags;
-      return data;
-    });
+    // fix error
+    if (tags){
+      setUserData((data) => {
+        data.skills = tags;
+        return data;
+      });
+    }
     setActive(false);
   };
   const preventSubmission = (e) => {
