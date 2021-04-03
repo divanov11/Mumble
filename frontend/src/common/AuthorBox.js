@@ -7,12 +7,11 @@ import Avatar from './Avatar';
 
 const AuthorBox = ({
   size = 'small',
-  avatarSrc = 'https://randomuser.me/api/portraits/men/52.jpg',
   url = '',
   name = '',
   handle = '@',
   className = '',
-  children,
+  avatarSrc = 'https://randomuser.me/api/portraits/men/52.jpg',
   ...others
 }) => {
   return (
@@ -25,7 +24,6 @@ const AuthorBox = ({
       <div className="author-box__info">
         <p className="author-box__name">{name}</p>
         <small className="author-box__handle">@{handle}</small>
-        {children}
       </div>
     </Link>
   );

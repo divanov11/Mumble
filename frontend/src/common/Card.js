@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const Card = ({ cardStyle = '', className, children, ...others }) => {
+const Card = ({ cardStyle = '', className = '', children, ...others }) => {
   return (
     <div
       className={classNames(className, 'card', {

@@ -6,8 +6,12 @@
   --color-text: #737373;
   --color-gray: #999;
   --color-light: #e5e7eb;
+  --color-light-gray: #bbb;
   --color-bg: #f4f6f9;
   --color-white: #fff;
+  --color-white-light: #fafafa;
+  --color-success: #3bc077;
+  --color-error: #fc4b0b;
 
   --font-base: 'Poppins', Arial, Helvetica, 'Segoe UI', Roboto, Ubuntu,
     sans-serif;
