@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AuthorBox from '../common/AuthorBox';
 import Avatar from '../common/Avatar';
+import Button from '../common/Button';
 
 import { distanceDate } from '../utilities/formatDate';
 
@@ -12,25 +14,30 @@ function Feed({ posts }) {
           <div className="card__body">
             <div className="post-wrapper">
               <div className="post-header-wrapper">
-                <Avatar src={post.user.profile_pic} alt="img-description" />
-                <Link
-                  className="post-user-name"
-                  to={`/profile/${post.user.username}`}
+                <AuthorBox
+                  avatarSrc={post.user.profile_pic}
+                  name={post.user.name}
+                  handle={post.user.username}
+                  url={`/profile/${post.user.username}`}
+                  size="md"
                 >
-                  <h6>{post.user.name}</h6>
-                </Link>
-                <p className="post-meta">@{post.user.username} .</p>
-                <p className="post-meta">{distanceDate(post.created)}</p>
+                  <p className="post-meta">{distanceDate(post.created)}</p>
+                </AuthorBox>
+                <Button
+                  buttonStyle="main"
+                  outline
+                  iconName="user-plus"
+                  text="Follow"
+                  size="sm"
+                />
               </div>
               <div className="post-contents">
                 <div className="post-votes">
-                  <i className="fas fa-arrow-alt-up vote-icon up-arrow"></i>
+                  <i className="fas fa-chevron-up vote-icon up-arrow"></i>
                   <p className="vote-count">{post.vote_rank}</p>
-                  <i className="fas fa-arrow-alt-down vote-icon down-arrow"></i>
+                  <i className="fas fa-chevron-down vote-icon down-arrow"></i>
                 </div>
-                <div className="post-body">
-                  <p>{post.content}</p>
-                </div>
+                <div className="post-body">{post.content}</div>
               </div>
 
               <div className="post-actions-wrapper">
@@ -47,7 +54,7 @@ function Feed({ posts }) {
                 </div>
 
                 <div className="action-wrapper">
-                  <i className="fas fa-megaphone"></i>
+                  <i className="fas fa-paper-plane"></i>
                   <span className="post-action-text">{post.share_count}</span>
                 </div>
               </div>
