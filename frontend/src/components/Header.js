@@ -37,6 +37,15 @@ function Header() {
     onTriggered: closeNotification,
   });
 
+  const getNotificationLink = (notification) => {
+    const notificationUrlMap = {
+      discussion: `/discussion/${notification.content_slug}`,
+      follow: `/profile/${notification.content_slug}`,
+      article: `/article/${notification.content_slug}`,
+    };
+    return notificationUrlMap[notification.notification_type];
+  };
+
   return (
     <div id="header">
       <div id="logo">
@@ -111,7 +120,7 @@ function Header() {
                 size="sm"
               />
               <Link
-                to={`/notification/${notification.id}`}
+                to={getNotificationLink(notification)}
                 onClick={closeNotification}
               >
                 <strong>{notification.user.name} </strong>
