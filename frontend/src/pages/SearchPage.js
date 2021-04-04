@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/components/SearchPage.css';
 
 //Dummy Data Files
@@ -35,21 +36,23 @@ function SearchPage() {
           {userData.map((user, index) => (
             <div key={index} className="card">
               <div className="card__body">
-                <div className="search--item--wrapper--1">
-                  <img
-                    alt=""
-                    className="avatar avatar--md"
-                    src={user.profile_pic}
-                  />
-                  <div>
-                    <strong>{user.name}</strong>
-                    <small>@{user.username}</small>
-                    <p>{user.bio}</p>
+                <Link to={`/profile/${user.username}`}>
+                  <div className="search--item--wrapper--1">
+                    <img
+                      alt=""
+                      className="avatar avatar--md"
+                      src={user.profile_pic}
+                    />
+                    <div>
+                      <strong>{user.name}</strong>
+                      <small>@{user.username}</small>
+                      <p>{user.bio}</p>
+                    </div>
+                    <a href="/" className="btn btn--main--outline btn--sm">
+                      Follow
+                    </a>
                   </div>
-                  <a href="/" className="btn btn--main--outline btn--sm">
-                    Follow
-                  </a>
-                </div>
+                </Link>
               </div>
             </div>
           ))}

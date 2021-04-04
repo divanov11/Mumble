@@ -4,8 +4,11 @@ import { Link } from 'react-router-dom';
 import '../styles/components/CreatePost.css';
 import Button from '../common/Button';
 import AuthorBox from '../common/AuthorBox';
+import userData from '../data/users';
 
 function PostForm() {
+  const user = userData.find((u) => Number(u.id) === 1);
+
   const [message, setMessage] = useState('');
   const [error, setError] = useState(null);
 
@@ -30,9 +33,10 @@ function PostForm() {
       <div className="card__body">
         <div className="create-post__header">
           <AuthorBox
-            name="Sam Wick"
-            handle="realsamwick"
-            url="/profile/realsamwick"
+            name={user.name}
+            handle={user.username}
+            url={`/profile/${user.username}`}
+            avatarSrc={user.profile_pic}
             size="sm"
           />
           <Link to="/create-article" className="btn btn--sm">
