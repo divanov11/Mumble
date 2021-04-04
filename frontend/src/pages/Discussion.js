@@ -10,6 +10,7 @@ import VotingWidget from '../common/VotingWidget';
 import Avatar from '../common/Avatar';
 
 function Discussion({ match }) {
+  let users = userData.slice(0, 3);
   let discussion = discussions.find((d) => d.slug === match.params.slug);
   let relatedQuestions = discussions.filter(
     (d) => d.slug !== match.params.slug,
@@ -85,7 +86,7 @@ function Discussion({ match }) {
         </div>
       </section>
       <section id="right-sidebar">
-        <Contributors users={userData} />
+        <Contributors users={users} />
         <DiscussionsCard discussions={relatedQuestions} />
       </section>
     </div>

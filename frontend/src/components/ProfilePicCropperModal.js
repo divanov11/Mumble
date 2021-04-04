@@ -2,7 +2,8 @@ import Modal from './Modal';
 import { useState } from 'react';
 import 'react-image-crop/dist/ReactCrop.css';
 import ReactCrop from 'react-image-crop';
-const ProfilePicCropperModel = ({
+import ModalContentAction from '../common/ModalContentAction';
+const ProfilePicCropperModal = ({
   heading,
   active,
   setActive,
@@ -29,9 +30,6 @@ const ProfilePicCropperModel = ({
     console.log(imageFile);
     // upload croppedImage to Server Here
   };
-  // get cropped image and draw it in canvas then convert it to base64 using canves.toDataUrl() and save it on croppedImageState to display cropped image as profile
-  // then extract file extension from file input state and convert the canves base64 to file using base64StringtoFile() so that we can upload cropped image to server
-  // or download it
 
   const extractImageFileExtensionFromBase64 = (base64Data) => {
     return base64Data.substring(
@@ -57,6 +55,10 @@ const ProfilePicCropperModel = ({
     // reset crop initial box
     setCrop({ aspect: 1 / 1, unit: 'px', x: 0, y: 0, width: 200, height: 200 });
   };
+
+  // get cropped image and draw it in canvas then convert it to base64 using canves.toDataUrl() and save it on croppedImageState to display cropped image as profile
+  // then extract file extension from file input state and convert the canves base64 to file using base64StringtoFile() so that we can upload cropped image to server
+  // or download it
   const getCroppedImage = () => {
     const canvas = document.createElement('canvas');
     const scaleX = image.naturalWidth / image.width;
@@ -114,22 +116,11 @@ const ProfilePicCropperModel = ({
           onImageLoaded={setImage}
         />
       </div>
-      <div className="modal-actions">
-        <button
-          className="btn btn-1 btn-md"
-          style={{ marginRight: '8px' }}
-          onClick={getCroppedImage}
-        >
-          Crop & Update
-        </button>
-        <button
-          className="btn btn-1 btn-md"
-          onClick={() => closeModelAndClearFileInput(false)}
-        >
-          Cancel
-        </button>
-      </div>
+      <ModalContentAction
+        setActive={closeModelAndClearFileInput}
+        successAction={getCroppedImage}
+      />
     </Modal>
   );
 };
-export default ProfilePicCropperModel;
+export default ProfilePicCropperModal;

@@ -7,6 +7,7 @@ function Contributors({ users }) {
     <div className="card">
       <div className="card__body">
         <h5>Top Contributors</h5>
+        <Link to={'/search'}>View More</Link>
         <div className="custom-spacer"></div>
 
         {users.map((user) => (

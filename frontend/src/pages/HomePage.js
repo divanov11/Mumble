@@ -17,7 +17,7 @@ import articles from '../data/articles';
 function HomePage() {
   let posts = postsData;
   let user = userData.find((u) => Number(u.id) === 1);
-  let contributors = userData;
+  let contributors = userData.slice(0, 3);
 
   return (
     <div className="container home--layout">

@@ -1,3 +1,18 @@
+/* eslint-disable */
+import defaultImg from './images/default.png';
+import sulamita from './images/sulamita.png';
+import dennis from './images/dennis.jpg';
+import shahriar from './images/shahriar.png';
+import cody from './images/cody.png';
+import mani from './images/mani.png';
+import mohammad from './images/mohammad.png';
+import abhijit from './images/abhijit.png';
+import mehdi from './images/mehdi.png';
+import samthefam from './images/samthefam.png';
+import peng from './images/peng.png';
+import zach from './images/zach.png';
+import ujjawal from './images/ujjawal.png';
+
 const notifications = [
   {
     id: '1',
@@ -5,10 +20,10 @@ const notifications = [
     notification_type: 'discussion',
     content_slug: 'How-do-you-configure-HttpOnly-cookies',
     user: {
-      id: '2',
-      name: 'Chandler Palm',
-      username: 'chands',
-      profile_pic: 'https://randomuser.me/api/portraits/men/56.jpg',
+      id: '3',
+      name: 'Sulamita Ivanov',
+      username: 'sulamtiaiva',
+      profile_pic: sulamita,
     },
     created: '2021-03-29 T19:04:25+00:00',
     isRead: true,
@@ -20,9 +35,9 @@ const notifications = [
     content_slug: 'article2',
     user: {
       id: '2',
-      name: 'John Doe',
-      username: 'johnny',
-      profile_pic: 'https://randomuser.me/api/portraits/men/53.jpg',
+      name: 'Shahriar Parvez',
+      username: 'mrspShuvo',
+      profile_pic: shahriar,
     },
     created: '2021-04-02 T19:04:25+00:00',
     isRead: false,
@@ -31,12 +46,11 @@ const notifications = [
     id: '3',
     content: 'Started following you',
     notification_type: 'follow',
-    content_slug: 'realsamwick',
+    content_slug: 'sulamtiaiva',
     user: {
-      id: '2',
-      name: 'John Doe',
-      username: 'johnny',
-      profile_pic: 'https://randomuser.me/api/portraits/men/58.jpg',
+      name: 'Sulamita Ivanov',
+      username: 'sulamtiaiva',
+      profile_pic: sulamita,
     },
     created: '2021-04-02 T19:04:25+00:00',
     isRead: true,
