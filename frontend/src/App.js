@@ -17,6 +17,7 @@ import SearchPage from './pages/SearchPage';
 import ArticlePage from './pages/ArticlePage';
 import CreateDiscussionPage from './pages/CreateDiscussionPage';
 import Error404 from './pages/Error404';
+import NotificationsPage from './pages/NotificationsPage';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             path={'/create-discussion'}
             component={CreateDiscussionPage}
           />
+          <Route exact path={'/notifications'} component={NotificationsPage} />
           <Route exact path={'/discussion/:slug'} component={Discussion} />
           <Route exact path={'/article/:slug'} component={ArticlePage} />
           <Route exact path={'/search'} component={SearchPage} />
