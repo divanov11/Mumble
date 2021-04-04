@@ -3,7 +3,7 @@ import { useState } from 'react';
 import 'react-image-crop/dist/ReactCrop.css';
 import ReactCrop from 'react-image-crop';
 import ModalContentAction from '../common/ModalContentAction';
-const ProfilePicCropperModel = ({
+const ProfilePicCropperModal = ({
   heading,
   active,
   setActive,
@@ -123,4 +123,4 @@ const ProfilePicCropperModel = ({
     </Modal>
   );
 };
-export default ProfilePicCropperModel;
+export default ProfilePicCropperModal;
