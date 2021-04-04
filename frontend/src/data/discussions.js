@@ -1,3 +1,4 @@
+/* eslint-disable */
 import defaultImg from './images/default.png';
 import sulamita from './images/sulamita.png';
 import dennis from './images/dennis.jpg';

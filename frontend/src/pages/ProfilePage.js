@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import '../styles/components/Profile.css';
 
 //Components
@@ -16,12 +16,13 @@ import articles from '../data/articles';
 import UserCard from '../components/UserCard';
 
 function Profile({ match }) {
-  let user = userData.find((u) => u.username === match.params.username);
-  let posts = postsData.filter(
-    (p) => p.user.username === match.params.username,
-  );
+  const user = userData.find((u) => u.username === match.params.username);
 
-  return (
+  let posts;
+  if (user)
+    posts = postsData.filter((p) => p.user.username === match.params.username);
+
+  return user ? (
     <div className="container profile--layout">
       <section id="sidebar--left--profile">
         <UserCard user={user} />
@@ -44,6 +45,8 @@ function Profile({ match }) {
         <ArticlesCard articles={articles} />
       </section>
     </div>
+  ) : (
+    <Redirect to="/404" />
   );
 }
 

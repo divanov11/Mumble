@@ -1,3 +1,4 @@
+/* eslint-disable */
 import defaultImg from './images/default.png';
 import sulamita from './images/sulamita.png';
 import dennis from './images/dennis.jpg';
@@ -45,7 +46,7 @@ const notifications = [
     id: '3',
     content: 'Started following you',
     notification_type: 'follow',
-    content_slug: 'realsamwick',
+    content_slug: 'sulamtiaiva',
     user: {
       name: 'Sulamita Ivanov',
       username: 'sulamtiaiva',
