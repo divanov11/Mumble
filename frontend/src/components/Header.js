@@ -40,7 +40,7 @@ function Header() {
   const getNotificationLink = (notification) => {
     const notificationUrlMap = {
       discussion: `/discussion/${notification.content_slug}`,
-      follow: `/profile/${notification.content_slug}`,
+      follow: `/profile/${notification.user.username}`,
       article: `/article/${notification.content_slug}`,
     };
     return notificationUrlMap[notification.notification_type];

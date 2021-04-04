@@ -3,6 +3,7 @@ import useForm from '../hooks/useFormHook';
 import { useRef } from 'react';
 import TagInputField from './TagInputField';
 import UserSettingModalContent from './UserSettingModalContent';
+import ModalContentAction from '../common/ModalContentAction';
 
 const UserSettingUpdateModal = ({
   heading,
@@ -115,20 +116,7 @@ const UserSettingUpdateModal = ({
             <label htmlFor="formInput#text">Tags</label>
             <TagInputField userData={userData} tagListRef={tagList} />
           </div>
-          <div className="modal-actions">
-            <button className="btn btn-1 btn-md" style={{ marginRight: '8px' }}>
-              Update
-            </button>
-            <button
-              className="btn btn-1 btn-md"
-              onClick={(e) => {
-                e.preventDefault();
-                setActive(false);
-              }}
-            >
-              Cancel
-            </button>
-          </div>
+          <ModalContentAction setActive={setActive} />
         </form>
       );
     }

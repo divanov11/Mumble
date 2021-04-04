@@ -11,6 +11,13 @@
   margin-bottom: 1.5rem;
 }
 
+.form__error {
+  color: var(--color-error);
+  font-weight: var(--font-medium);
+  display: block;
+  font-size: 1.4rem;
+}
+
 label {
   display: block;
   margin-bottom: 0.8rem;
@@ -71,7 +78,7 @@ textarea.input:active {
 
 .input--textarea {
   width: 100%;
-  min-height: 16rem;
+  min-height: 14rem;
   resize: none;
 }
 
