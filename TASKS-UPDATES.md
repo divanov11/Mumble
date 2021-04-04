@@ -7,7 +7,7 @@ Note: I am uploading the code before I feel ready but I will be traveling all da
 * Discussions Page (src/pages/Discussion.js) - Page design is mostly complete but the code is clunky. Needed a re-build to clean things up and keep format
 * Post Comments - Need to create a comment component for posts and discussions. Layout is 30% of the way there but needs work
 * CSS - I have been working with a few people on the UI kit along with adding styling to the website. At some point we will need to go back through and separate all the CSS code and clean up the formatting
--
+
 
 # Pages & Components Needed:
 * Users Search page - Find all users on platform by name, username & interests
