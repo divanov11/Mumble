@@ -23,7 +23,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint ./src",
-    "format": "prettier --write \"src/**/*.(js|jsx|ts|tsx|css|scss)\""
+    "format": "prettier --write \"src/**/*.(js|jsx|ts|tsx|css|scss)\"",
+    "format:check": "prettier -c \"src/**/*.(js|jsx|ts|tsx|css|scss)\""
   },
   "eslintConfig": {
     "extends": [
