@@ -5,7 +5,14 @@ import PostAction from './PostAction';
 import VotingWidget from './VotingWidget';
 import { distanceDate } from '../utilities/formatDate';
 
-const PostBox = ({ post, link, isComment = false, children, ...others }) => {
+const PostCard = ({
+  onMessageIconClick,
+  post,
+  link,
+  isComment = false,
+  children,
+  ...others
+}) => {
   const {
     user,
     created,
@@ -35,9 +42,14 @@ const PostBox = ({ post, link, isComment = false, children, ...others }) => {
         </div>
       </div>
 
-      <PostAction comments={comment_count} link={link} shares={share_count} />
+      <PostAction
+        onMessageIconClick={onMessageIconClick}
+        comments={comment_count}
+        link={link}
+        shares={share_count}
+      />
     </div>
   );
 };
 
-export default PostBox;
+export default PostCard;
