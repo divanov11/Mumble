@@ -24,7 +24,7 @@ function App() {
           <Route exact path={'/settings'} component={UserSettingsPage} />
           <Route
             exact
-            path={'/creatediscussion'}
+            path={'/create-discussion'}
             component={CreateDiscussionPage}
           />
           <Route exact path={'/discussion/:slug'} component={Discussion} />
