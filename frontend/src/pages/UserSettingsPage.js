@@ -5,7 +5,7 @@ import User from '../data/users';
 import UserSettingUpdateModal from '../components/UserSettingUpdateModal';
 import Avatar from '../common/Avatar';
 import Button from '../common/Button';
-import ProfilePicCropperModel from '../components/ProfilePicCropperModel';
+import ProfilePicCropperModal from '../components/ProfilePicCropperModal';
 import Card from '../common/Card';
 
 function UserSettingsPage() {
@@ -61,7 +61,7 @@ function UserSettingsPage() {
         active={updateModelActive}
         setActive={setUpdateModelActive}
       />
-      <ProfilePicCropperModel
+      <ProfilePicCropperModal
         heading="Change Profile Picture"
         active={profilePicModel}
         setActive={setProfilePicModel}
@@ -89,7 +89,7 @@ function UserSettingsPage() {
             <div className="settings-update__info">
               <Avatar size="lg" src={croppedImageBase64} />
               <h4>{currentUser.name}</h4>
-              <small>realsamwick@gmail.com</small>
+              <small>{currentUser.email}</small>
               <small>@{currentUser.username}</small>
               <p>Newyork, USA</p>
 

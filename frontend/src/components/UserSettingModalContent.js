@@ -1,12 +1,9 @@
+import ModalContentAction from '../common/ModalContentAction';
 const UserSettingModalContent = ({
   closeModal,
   children,
   handleFormSubmit,
 }) => {
-  const HandlecloseModal = (e) => {
-    e.preventDefault();
-    closeModal(false);
-  };
   const submit = (e) => {
     e.preventDefault();
     handleFormSubmit(e);
@@ -15,14 +12,7 @@ const UserSettingModalContent = ({
   return (
     <form onSubmit={submit}>
       {children}
-      <div className="modal-actions">
-        <button className="btn btn-1 btn-md" style={{ marginRight: '8px' }}>
-          Update
-        </button>
-        <button className="btn btn-1 btn-md" onClick={HandlecloseModal}>
-          Cancel
-        </button>
-      </div>
+      <ModalContentAction setActive={closeModal} />
     </form>
   );
 };
