@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import '../styles/components/Modal.css';
 
 const Modal = ({ heading, children, active, setActive }) => {
-  const modalRef = useRef();
+   const modalRef = useRef();
 
   const closeModal = () => {
     setActive(false);
