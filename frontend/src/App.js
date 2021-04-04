@@ -1,9 +1,5 @@
 import './styles/App.css';
-import {
-  Redirect,
-  Route,
-  Switch,
-} from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
@@ -19,28 +15,28 @@ import NotificationsPage from './pages/NotificationsPage';
 
 function App() {
   return (
-      <>
-        <Header />
-        <main>
-          <Switch>
-            <Route exact path={'/login'} component={LoginPage} />
-            <Route exact path={'/'} component={HomePage} />
-            <Route exact path={'/profile/:username'} component={ProfilePage} />
-            <Route exact path={'/settings'} component={UserSettingsPage} />
-            <Route
-              exact
-              path={'/create-discussion'}
-              component={CreateDiscussionPage}
-            />
-            <Route exact path={'/notifications'} component={NotificationsPage} />
-            <Route exact path={'/discussion/:slug'} component={Discussion} />
-            <Route exact path={'/article/:slug'} component={ArticlePage} />
-            <Route exact path={'/search'} component={SearchPage} />
-            <Route path="/404" component={Error404} />
-            <Redirect to="/404" />
-          </Switch>
-        </main>
-      </>
+    <>
+      <Header />
+      <main>
+        <Switch>
+          <Route exact path={'/login'} component={LoginPage} />
+          <Route exact path={'/'} component={HomePage} />
+          <Route exact path={'/profile/:username'} component={ProfilePage} />
+          <Route exact path={'/settings'} component={UserSettingsPage} />
+          <Route
+            exact
+            path={'/create-discussion'}
+            component={CreateDiscussionPage}
+          />
+          <Route exact path={'/notifications'} component={NotificationsPage} />
+          <Route exact path={'/discussion/:slug'} component={Discussion} />
+          <Route exact path={'/article/:slug'} component={ArticlePage} />
+          <Route exact path={'/search'} component={SearchPage} />
+          <Route path="/404" component={Error404} />
+          <Redirect to="/404" />
+        </Switch>
+      </main>
+    </>
   );
 }
 

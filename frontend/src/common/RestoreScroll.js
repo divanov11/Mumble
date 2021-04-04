@@ -2,13 +2,13 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const RestoreScroll = () => {
-    const pathname = useLocation().pathname;
+  const pathname = useLocation().pathname;
 
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [pathname])
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
-    return null
-}
+  return null;
+};
 
-export default RestoreScroll
+export default RestoreScroll;
