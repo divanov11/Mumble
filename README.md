@@ -3,7 +3,7 @@
 An Open Source Social Media Platform and Public Forum for Questions and Discussions, built for Developers.
 
 ## 🔗 Links
-- **Live Demo: (https://mumble-4yehl3f2a-divanov11.vercel.app/)**
+- **Live Demo: (https://mumble.vercel.app/)**
 - **UI Kit (Docs/Preview) 👉 [Here](http://mumble-lp.s3-website-us-west-2.amazonaws.com/)**
 - **Discord [Join here](https://discord.gg/TxgpyK8pzf)**
 
