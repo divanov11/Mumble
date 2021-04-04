@@ -15,7 +15,7 @@ const Modal = ({ heading, children, active, setActive }) => {
     el.style.display = 'flex';
     setTimeout(() => {
       el.style.opacity = '1';
-    }, 1);
+    }, 30);
   };
 
   const fadeOut = (el) => {
