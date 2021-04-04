@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import '../styles/components/CreatePost.css';
 import Button from '../common/Button';
 import AuthorBox from '../common/AuthorBox';
+import TextArea from '../common/TextArea';
 
 function PostForm() {
   const [message, setMessage] = useState('');
@@ -11,7 +12,7 @@ function PostForm() {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    if (!message) {
+    if (!message.trim()) {
       return setError('Post cannot be empty!');
     }
     alert(`Creating new post with message: ${message}`);
@@ -35,33 +36,26 @@ function PostForm() {
             url="/profile/realsamwick"
             size="sm"
           />
-          <Link to="/create-article" className="btn btn--sm">
-            <i className="far fa-file-alt" style={{ marginRight: '5px' }} />{' '}
-            Write Article
+          <Link to="/create-article">
+            <Button text="Write Article" size="sm" iconName="edit" />
           </Link>
         </div>
         <div className="create-post__body">
           <form className="form" onSubmit={onFormSubmit}>
-            <div className="form__field">
-              <textarea
-                className="input input--textarea"
-                name="message"
-                id="message"
-                placeholder="Share your brilliant thought!"
-                onChange={handleMessageChange}
-                value={message}
-              ></textarea>
-              {error && <small style={errorStyles}>{error}</small>}
-
-              <Button
-                id="post-btn"
-                type="submit"
-                color="main"
-                size="lg"
-                text="Create Post"
-                iconName="pencil-alt"
-              />
-            </div>
+            <TextArea
+              name="create-post"
+              placeholder="Share your brilliant thought!"
+              onChange={handleMessageChange}
+              value={message}
+              hideLabel={true}
+              error={error}
+            />
+            <Button
+              type="submit"
+              color="main"
+              text="Mumble Now"
+              iconName="comment-alt"
+            />
           </form>
         </div>
       </div>
@@ -70,9 +64,3 @@ function PostForm() {
 }
 
 export default PostForm;
-
-const errorStyles = {
-  color: 'rgb(220, 20, 60)',
-  fontWeight: 'bold',
-  display: 'block',
-};
