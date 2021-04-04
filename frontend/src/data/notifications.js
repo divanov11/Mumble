@@ -18,7 +18,8 @@ const notifications = [
     content: 'started discusion How to code better',
     notification_type: 'discussion',
     content_slug: 'How-do-you-configure-HttpOnly-cookies',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit..',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
     user: {
       id: '11',
       name: 'Peng Boris Akebuon',

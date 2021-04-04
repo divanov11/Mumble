@@ -44,6 +44,15 @@ function Notifications({ match }) {
                 <p>{notification.description}</p>
                 <p className="notification--meta">
                   {distanceDate(notification.created)}
+                  {'  '}
+                  {notification.isRead ? (
+                    <i className="fas fa-eye" style={{ color: '#3bc077' }}></i>
+                  ) : (
+                    <i
+                      className="fas fa-eye-slash"
+                      style={{ color: '#fc4b0b' }}
+                    ></i>
+                  )}
                 </p>
               </div>
             </div>
