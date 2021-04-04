@@ -2,6 +2,8 @@ const notifications = [
   {
     id: '1',
     content: 'started discusion How to code better',
+    notification_type: 'discussion',
+    content_slug: 'How-do-you-configure-HttpOnly-cookies',
     user: {
       id: '2',
       name: 'Chandler Palm',
@@ -14,6 +16,8 @@ const notifications = [
   {
     id: '2',
     content: 'wrote a new article',
+    notification_type: 'article',
+    content_slug: 'article2',
     user: {
       id: '2',
       name: 'John Doe',
@@ -26,6 +30,8 @@ const notifications = [
   {
     id: '3',
     content: 'Started following you',
+    notification_type: 'follow',
+    content_slug: 'realsamwick',
     user: {
       id: '2',
       name: 'John Doe',
