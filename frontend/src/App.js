@@ -15,6 +15,7 @@ import ProfilePage from './pages/ProfilePage';
 import UserSettingsPage from './pages/UserSettingsPage';
 import SearchPage from './pages/SearchPage';
 import ArticlePage from './pages/ArticlePage';
+import CreateDiscussionPage from './pages/CreateDiscussionPage';
 import Error404 from './pages/Error404';
 import NotificationsPage from './pages/NotificationsPage';
 
@@ -28,6 +29,11 @@ function App() {
           <Route exact path={'/'} component={HomePage} />
           <Route exact path={'/profile/:username'} component={ProfilePage} />
           <Route exact path={'/settings'} component={UserSettingsPage} />
+          <Route
+            exact
+            path={'/create-discussion'}
+            component={CreateDiscussionPage}
+          />
           <Route exact path={'/notifications'} component={NotificationsPage} />
           <Route exact path={'/discussion/:slug'} component={Discussion} />
           <Route exact path={'/article/:slug'} component={ArticlePage} />
