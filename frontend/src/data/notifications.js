@@ -1,4 +1,3 @@
-/* eslint-disable */
 import defaultImg from './images/default.png';
 import sulamita from './images/sulamita.png';
 import dennis from './images/dennis.jpg';
@@ -19,13 +18,14 @@ const notifications = [
     content: 'started discusion How to code better',
     notification_type: 'discussion',
     content_slug: 'How-do-you-configure-HttpOnly-cookies',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit..',
     user: {
       id: '3',
       name: 'Sulamita Ivanov',
       username: 'sulamtiaiva',
       profile_pic: sulamita,
     },
-    created: '2021-03-29 T19:04:25+00:00',
+    created: '2021-04-02 T19:04:25+00:00',
     isRead: true,
   },
   {
@@ -33,6 +33,8 @@ const notifications = [
     content: 'wrote a new article',
     notification_type: 'article',
     content_slug: 'article2',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
     user: {
       id: '2',
       name: 'Shahriar Parvez',
@@ -46,13 +48,16 @@ const notifications = [
     id: '3',
     content: 'Started following you',
     notification_type: 'follow',
-    content_slug: 'sulamtiaiva',
+    content_slug: 'realsamwick',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     user: {
-      name: 'Sulamita Ivanov',
-      username: 'sulamtiaiva',
-      profile_pic: sulamita,
+      id: '11',
+      name: 'Peng Boris Akebuon',
+      username: 'itzomen',
+      profile_pic: peng,
     },
-    created: '2021-04-02 T19:04:25+00:00',
+    created: '2021-03-29 T19:04:25+00:00',
     isRead: true,
   },
 ];
