@@ -10,6 +10,7 @@ import ProfilePage from './pages/ProfilePage';
 import UserSettingsPage from './pages/UserSettingsPage';
 import SearchPage from './pages/SearchPage';
 import ArticlePage from './pages/ArticlePage';
+import CreateDiscussionPage from './pages/CreateDiscussionPage';
 
 function App() {
   return (
@@ -21,6 +22,11 @@ function App() {
           <Route exact path={'/'} component={HomePage} />
           <Route exact path={'/profile/:username'} component={ProfilePage} />
           <Route exact path={'/settings'} component={UserSettingsPage} />
+          <Route
+            exact
+            path={'/creatediscussion'}
+            component={CreateDiscussionPage}
+          />
           <Route exact path={'/discussion/:slug'} component={Discussion} />
           <Route exact path={'/article/:slug'} component={ArticlePage} />
           <Route exact path={'/search'} component={SearchPage} />
