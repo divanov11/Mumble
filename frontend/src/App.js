@@ -12,10 +12,13 @@ import ArticlePage from './pages/ArticlePage';
 import CreateDiscussionPage from './pages/CreateDiscussionPage';
 import Error404 from './pages/Error404';
 import NotificationsPage from './pages/NotificationsPage';
+import { BrowserRouter as Router } from 'react-router-dom';
+import RestoreScroll from './common/RestoreScroll';
 
 function App() {
   return (
-    <>
+    <Router>
+      <RestoreScroll />
       <Header />
       <main>
         <Switch>
@@ -36,7 +39,7 @@ function App() {
           <Redirect to="/404" />
         </Switch>
       </main>
-    </>
+    </Router>
   );
 }
 
