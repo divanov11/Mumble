@@ -16,6 +16,7 @@ import UserSettingsPage from './pages/UserSettingsPage';
 import SearchPage from './pages/SearchPage';
 import ArticlePage from './pages/ArticlePage';
 import Error404 from './pages/Error404';
+import NotificationsPage from './pages/NotificationsPage';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route exact path={'/'} component={HomePage} />
           <Route exact path={'/profile/:username'} component={ProfilePage} />
           <Route exact path={'/settings'} component={UserSettingsPage} />
+          <Route exact path={'/notifications'} component={NotificationsPage} />
           <Route exact path={'/discussion/:slug'} component={Discussion} />
           <Route exact path={'/article/:slug'} component={ArticlePage} />
           <Route exact path={'/search'} component={SearchPage} />
