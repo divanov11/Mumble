@@ -11,7 +11,7 @@ const AuthorBox = ({
   name = '',
   handle = '@',
   className = '',
-  avatarSrc = 'https://randomuser.me/api/portraits/men/52.jpg',
+  avatarSrc = '',
   ...others
 }) => {
   return (

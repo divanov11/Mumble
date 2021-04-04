@@ -1,3 +1,17 @@
+import defaultImg from './images/default.png';
+import sulamita from './images/sulamita.png';
+import dennis from './images/dennis.jpg';
+import shahriar from './images/shahriar.png';
+import cody from './images/cody.png';
+import mani from './images/mani.png';
+import mohammad from './images/mohammad.png';
+import abhijit from './images/abhijit.png';
+import mehdi from './images/mehdi.png';
+import samthefam from './images/samthefam.png';
+import peng from './images/peng.png';
+import zach from './images/zach.png';
+import ujjawal from './images/ujjawal.png';
+
 const discussions = [
   {
     id: '1',
@@ -8,10 +22,9 @@ const discussions = [
     created: '2021-03-29 T19:04:25+00:00',
     vote_ratio: '26',
     user: {
-      id: '2',
-      name: 'Chandler Palm',
-      username: 'chands',
-      profile_pic: 'https://randomuser.me/api/portraits/men/56.jpg',
+      name: 'Sulamita Ivanov',
+      username: 'sulamtiaiva',
+      profile_pic: sulamita,
     },
     tags: ['Python', 'Django', 'React', 'Postgres', 'Security'],
     answers: [
@@ -23,9 +36,9 @@ const discussions = [
         created: '2021-03-29 T19:04:25+00:00',
         user: {
           id: '1',
-          name: 'Sam Wick',
-          username: 'realsamwick',
-          profile_pic: 'https://randomuser.me/api/portraits/men/52.jpg',
+          name: 'Dennis Ivy',
+          username: 'dennis',
+          profile_pic: dennis,
         },
       },
       {
@@ -36,9 +49,9 @@ const discussions = [
         created: '2021-03-29 T19:04:25+00:00',
         user: {
           id: '2',
-          name: 'Chandler Palm',
-          username: 'chands',
-          profile_pic: 'https://randomuser.me/api/portraits/men/56.jpg',
+          name: 'Shahriar Parvez',
+          username: 'mrspShuvo',
+          profile_pic: shahriar,
         },
       },
       {
@@ -48,10 +61,10 @@ const discussions = [
         vote_ratio: '1',
         created: '2021-03-29 T19:04:25+00:00',
         user: {
-          id: '3',
-          name: 'Janet Sours',
-          username: 'jsours',
-          profile_pic: 'https://randomuser.me/api/portraits/women/53.jpg',
+          id: '4',
+          name: 'Cody Seibert',
+          username: 'codyseibert',
+          profile_pic: cody,
         },
       },
     ],
@@ -65,10 +78,10 @@ const discussions = [
     created: '2021-03-29 T19:04:25+00:00',
     vote_ratio: '8',
     user: {
-      id: '2',
-      name: 'Chandler Palm',
-      username: 'chands',
-      profile_pic: 'https://randomuser.me/api/portraits/men/56.jpg',
+      id: '4',
+      name: 'Cody Seibert',
+      username: 'codyseibert',
+      profile_pic: cody,
     },
     tags: [
       'Python',
@@ -88,10 +101,10 @@ const discussions = [
         vote_ratio: '-8',
         created: '2021-03-29 T19:04:25+00:00',
         user: {
-          id: '1',
-          name: 'Sam Wick',
-          username: 'realsamwick',
-          profile_pic: 'https://randomuser.me/api/portraits/men/52.jpg',
+          id: '2',
+          name: 'Shahriar Parvez',
+          username: 'mrspShuvo',
+          profile_pic: shahriar,
         },
       },
       {
@@ -105,19 +118,6 @@ const discussions = [
           name: 'Chandler Palm',
           username: 'chands',
           profile_pic: 'https://randomuser.me/api/portraits/men/56.jpg',
-        },
-      },
-      {
-        id: '3',
-        content:
-          'In Django 3.0 you can set the following cookies to True in your settings.py',
-        vote_ratio: '1',
-        created: '2021-03-29 T19:04:25+00:00',
-        user: {
-          id: '3',
-          name: 'Janet Sours',
-          username: 'jsours',
-          profile_pic: 'https://randomuser.me/api/portraits/women/53.jpg',
         },
       },
     ],
@@ -130,9 +130,9 @@ const discussions = [
     vote_ratio: '31',
     user: {
       id: '1',
-      name: 'Sam Wick',
-      username: 'realsamwick',
-      profile_pic: 'https://randomuser.me/api/portraits/men/52.jpg',
+      name: 'Dennis Ivy',
+      username: 'dennis',
+      profile_pic: dennis,
     },
     tags: ['Python', 'Django', 'React'],
     answers: [
@@ -143,10 +143,10 @@ const discussions = [
         vote_ratio: '-8',
         created: '2021-03-29 T19:04:25+00:00',
         user: {
-          id: '1',
-          name: 'Sam Wick',
-          username: 'realsamwick',
-          profile_pic: 'https://randomuser.me/api/portraits/men/52.jpg',
+          id: '4',
+          name: 'Cody Seibert',
+          username: 'codyseibert',
+          profile_pic: cody,
         },
       },
       {
@@ -156,10 +156,10 @@ const discussions = [
         vote_ratio: '6',
         created: '2021-03-29 T19:04:25+00:00',
         user: {
-          id: '2',
-          name: 'Chandler Palm',
-          username: 'chands',
-          profile_pic: 'https://randomuser.me/api/portraits/men/56.jpg',
+          id: '6',
+          name: 'Manibharathi',
+          username: 'mani',
+          profile_pic: mani,
         },
       },
       {
@@ -169,10 +169,10 @@ const discussions = [
         vote_ratio: '1',
         created: '2021-03-29 T19:04:25+00:00',
         user: {
-          id: '3',
-          name: 'Janet Sours',
-          username: 'jsours',
-          profile_pic: 'https://randomuser.me/api/portraits/women/53.jpg',
+          id: '7',
+          name: 'Mohammad Khaled',
+          username: 'mohammad4kh',
+          profile_pic: mohammad,
         },
       },
     ],
