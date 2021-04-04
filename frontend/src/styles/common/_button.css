@@ -3,6 +3,7 @@
   position: relative;
   cursor: pointer;
   background-color: var(--color-light);
+  font-weight: var(--font-medium);
   color: var(--color-sub);
   text-decoration: none;
   padding: 1rem 2rem;
@@ -23,6 +24,10 @@
 }
 .btn:hover {
   opacity: 0.8;
+}
+
+.btn i {
+  pointer-events: none !important;
 }
 
 .btn--main {
@@ -55,6 +60,20 @@
 .btn--lg {
   padding: 1.2rem 4rem;
   font-size: 1.8rem;
+}
+
+.btn--main--link,
+.btn--sub--link {
+  padding: 0;
+  background: transparent;
+}
+
+.btn--main--link {
+  color: var(--color-main);
+}
+
+.btn--sub--link {
+  color: var(--color-sub);
 }
 
 /* Hover effects for outline buttons */

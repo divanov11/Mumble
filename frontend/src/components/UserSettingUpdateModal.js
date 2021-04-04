@@ -26,7 +26,7 @@ const UserSettingUpdateModal = ({
     e.preventDefault();
     const tags = tagList.current;
     // fix error
-    if (tags){
+    if (tags) {
       setUserData((data) => {
         data.skills = tags;
         return data;
@@ -40,26 +40,12 @@ const UserSettingUpdateModal = ({
     }
   };
   const renderFormFields = () => {
-    if (dataType === 'user-info') {
+    if (dataType === 'user-bio') {
       return (
         <UserSettingModalContent
           closeModal={setActive}
           handleFormSubmit={handleFormSubmit}
         >
-          <div className="form__field">
-            <label htmlFor="formInput#text">Full Name: </label>
-
-            <input
-              className="input input--text"
-              id="formInput#text"
-              type="text"
-              name="name"
-              placeholder="Enter your full name"
-              value={fields.name}
-              onChange={handleFieldChanges}
-              style={{ width: '100%', minWidth: 'auto' }}
-            />
-          </div>
           <div className="form__field">
             <label htmlFor="formInput#textarea">About: </label>
             <textarea
@@ -74,7 +60,7 @@ const UserSettingUpdateModal = ({
           </div>
         </UserSettingModalContent>
       );
-    } else if (dataType === 'user-detail') {
+    } else if (dataType === 'user-info') {
       return (
         <UserSettingModalContent
           closeModal={setActive}
@@ -89,6 +75,20 @@ const UserSettingUpdateModal = ({
               name="username"
               placeholder="Enter your full name"
               value={fields.username}
+              onChange={handleFieldChanges}
+              style={{ width: '100%', minWidth: 'auto' }}
+            />
+          </div>
+          <div className="form__field">
+            <label htmlFor="formInput#text">Full Name: </label>
+
+            <input
+              className="input input--text"
+              id="formInput#text"
+              type="text"
+              name="name"
+              placeholder="Enter your full name"
+              value={fields.name}
               onChange={handleFieldChanges}
               style={{ width: '100%', minWidth: 'auto' }}
             />

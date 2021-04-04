@@ -4,7 +4,10 @@ import { useState, useRef } from 'react';
 import User from '../data/users';
 import UserSettingUpdateModal from '../components/UserSettingUpdateModal';
 import Avatar from '../common/Avatar';
+import Button from '../common/Button';
 import ProfilePicCropperModel from '../components/ProfilePicCropperModel';
+import Card from '../common/Card';
+
 function UserSettingsPage() {
   const [currentUser, setCurrentUser] = useState(User[0]);
   const [updateModelActive, setUpdateModelActive] = useState(false);
@@ -49,7 +52,7 @@ function UserSettingsPage() {
     return skills;
   };
   return (
-    <div id="settings-page-container">
+    <div id="settings-page">
       <UserSettingUpdateModal
         heading="Update User Settings"
         dataType={modelContent}
@@ -69,100 +72,83 @@ function UserSettingsPage() {
         setCurrentUser={setCurrentUser}
       />
       <section>
-        <div className="card">
-          <div className="card__body">
-            <h6>Account Settings</h6>
-            <div className="line-break"></div>
-            <div id="settings-pic-wrapper">
-              <Avatar size="lg" src={currentUser.profile_pic} />
-              <h5>{currentUser.name}</h5>
-              <div className="line-break"></div>
-              {/* <Link to="" className="btn btn-1 btn-md">
-                Update Picture
-              </Link> */}
-              <div className="btn btn-1 btn-md profile-update-btn">
-                <div style={{ cursor: 'pointer' }}>
-                  <input
-                    type="file"
-                    accept="image/*"
-                    id="profile-pic"
-                    name="profile-pic"
-                    onChange={handleFileChange}
-                    ref={inputRef}
-                  />
-                </div>
-                <span>
-                  <i className="fas fa-camera" />
-                  Update Picture
-                </span>
+        <Card>
+          <div className="settings-update settings-update--profile">
+            <div className="settings-update__title">
+              <span>User Information</span>
+              <Button
+                iconName="pencil-alt"
+                text="Edit"
+                color="main"
+                link
+                onClick={update}
+                data-type="user-info"
+              />
+            </div>
+
+            <div className="settings-update__info">
+              <Avatar size="lg" src={croppedImageBase64} />
+              <h4>{currentUser.name}</h4>
+              <small>realsamwick@gmail.com</small>
+              <small>@{currentUser.username}</small>
+              <p>Newyork, USA</p>
+
+              <div className="settings-update__avatar">
+                <input
+                  type="file"
+                  accept="image/*"
+                  id="profile-pic"
+                  name="profile-pic"
+                  onChange={handleFileChange}
+                  ref={inputRef}
+                />
+                <Button
+                  style={{ pointerEvents: 'none' }}
+                  text="Update Avatar"
+                  iconName="camera"
+                />
               </div>
             </div>
           </div>
-        </div>
+        </Card>
       </section>
       <section>
-        <div className="card">
-          <div className="card__body">
-            <div className="card card--dark">
-              <div className="card__body">
-                <h6>
-                  User Information{' '}
-                  <span
-                    onClick={update}
-                    data-type="user-info"
-                    className="user-setting-edit"
-                  >
-                    Edit
-                  </span>
-                </h6>
-                <div className="line-break line-break-2"></div>
-                <p>Name: {currentUser.name}</p>
-                <p>Bio: {currentUser.bio}</p>
-                <p>Location: {currentUser.name}</p>
-              </div>
+        <Card>
+          <div className="settings-update">
+            <div className="settings-update__title">
+              <span>About</span>
+              <Button
+                iconName="pencil-alt"
+                text="Edit"
+                color="main"
+                link
+                onClick={update}
+                data-type="user-bio"
+              />
             </div>
-
-            <div className="card card--dark">
-              <div className="card__body">
-                <h6>
-                  Username{' '}
-                  <span
-                    data-type="user-detail"
-                    onClick={update}
-                    className="user-setting-edit"
-                  >
-                    Edit
-                  </span>
-                </h6>
-                <div className="line-break line-break-2"></div>
-                <p>Username: {currentUser.username}</p>
-                <p>Email: {currentUser.email}</p>
-              </div>
-            </div>
-
-            <div className="card card--dark">
-              <div className="card__body">
-                <h6>
-                  Skills{' '}
-                  <span
-                    data-type="user-skills"
-                    className="user-setting-edit"
-                    onClick={update}
-                  >
-                    Edit
-                  </span>
-                </h6>
-                <div className="line-break line-break-2"></div>
-                <div id="topics-wrapper" className="card__body">
-                  <div className="tags-wrapper">{renderSkills()}</div>
-                </div>
-              </div>
+            <div className="settings-update__info">
+              <p>{currentUser.bio}</p>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* <section></section> */}
+          <div className="settings-update">
+            <div className="settings-update__title">
+              <span>Skills</span>
+              <Button
+                iconName="pencil-alt"
+                text="Edit"
+                color="main"
+                link
+                onClick={update}
+                data-type="user-skills"
+              />
+            </div>
+            <div className="settings-update__info">
+              <div className="tags-wrapper">{renderSkills()}</div>
+            </div>
+          </div>
+        </Card>
+      </section>
     </div>
   );
 }

@@ -56,7 +56,7 @@ function PostForm() {
               <Button
                 id="post-btn"
                 type="submit"
-                buttonStyle="main"
+                color="main"
                 size="lg"
                 text="Create Post"
                 iconName="pencil-alt"
