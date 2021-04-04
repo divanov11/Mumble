@@ -75,6 +75,10 @@ textarea.input:active {
   resize: none;
 }
 
+.input--textarea--sm {
+  min-height: 8rem;
+}
+
 /* Custom Radio & Checkbox */
 
 .input.input--checkbox,
