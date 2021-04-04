@@ -39,6 +39,14 @@
   font-size: 2rem;
 }
 
+.action-wrapper {
+  cursor: pointer;
+}
+
+.action-wrapper--disabled {
+  pointer-events: none;
+}
+
 .action-wrapper:hover * {
   color: var(--color-main);
 }

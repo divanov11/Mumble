@@ -1,10 +1,16 @@
 import React from 'react';
+import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 
-const PostAction = ({ comments, shares, link }) => {
+const PostAction = ({ onMessageIconClick, comments, shares, link }) => {
   return (
     <div className="post-actions-wrapper">
-      <div className="action-wrapper">
+      <div
+        onClick={onMessageIconClick}
+        className={classNames('action-wrapper', {
+          'action-wrapper--disabled': parseInt(comments) === 0,
+        })}
+      >
         <i className="fas fa-comments"></i>
         <span className="post-action-text">{comments}</span>
       </div>

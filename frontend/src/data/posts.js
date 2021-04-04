@@ -7,7 +7,7 @@ const postsData = [
     vote_rank: '25',
     post_type: 'standard',
     created: '2021-03-29 T19:04:25+00:00',
-    comment_count: '6',
+    comment_count: '2',
     share_count: '2',
     comments: [
       {
@@ -90,7 +90,7 @@ const postsData = [
     vote_rank: '22',
     post_type: 'standard',
     created: '2021-03-27 T19:04:25+00:00',
-    comment_count: '13',
+    comment_count: '0',
     share_count: '0',
     comments: [],
     user: {
@@ -109,7 +109,7 @@ const postsData = [
     vote_rank: '6',
     post_type: 'standard',
     created: '2021-03-29 T19:02:25+00:00',
-    comment_count: '4',
+    comment_count: '0',
     share_count: '3',
     comments: [],
     user: {
@@ -128,7 +128,7 @@ const postsData = [
     vote_rank: '36',
     post_type: 'standard',
     created: '2021-03-29 T19:04:25+00:00',
-    comment_count: '1',
+    comment_count: '0',
     share_count: '3',
     comments: [],
     user: {
