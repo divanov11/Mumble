@@ -1,16 +1,16 @@
-import defaultImg from './images/default.png';
+// import defaultImg from './images/default.png';
 import sulamita from './images/sulamita.png';
-import dennis from './images/dennis.jpg';
+// import dennis from './images/dennis.jpg';
 import shahriar from './images/shahriar.png';
-import cody from './images/cody.png';
-import mani from './images/mani.png';
-import mohammad from './images/mohammad.png';
-import abhijit from './images/abhijit.png';
-import mehdi from './images/mehdi.png';
-import samthefam from './images/samthefam.png';
+// import cody from './images/cody.png';
+// import mani from './images/mani.png';
+// import mohammad from './images/mohammad.png';
+// import abhijit from './images/abhijit.png';
+// import mehdi from './images/mehdi.png';
+// import samthefam from './images/samthefam.png';
 import peng from './images/peng.png';
-import zach from './images/zach.png';
-import ujjawal from './images/ujjawal.png';
+// import zach from './images/zach.png';
+// import ujjawal from './images/ujjawal.png';
 
 const notifications = [
   {
