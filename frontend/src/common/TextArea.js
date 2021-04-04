@@ -8,6 +8,7 @@ const TextArea = ({
   placeholder = 'Share you mumble thoughts...',
   hideLabel = false,
   className = '',
+  defaultValue = '',
   error,
   ...others
 }) => {
@@ -25,9 +26,10 @@ const TextArea = ({
         className="input input--textarea"
         name={name}
         placeholder={placeholder}
+        value={value}
         {...others}
       >
-        {value}
+        {defaultValue}
       </textarea>
       {error && <small className="form__error">{error}</small>}
     </div>
@@ -37,6 +39,7 @@ const TextArea = ({
 TextArea.propTypes = {
   name: PropTypes.string,
   value: PropTypes.string,
+  defaultValue: PropTypes.string,
   placeholder: PropTypes.string,
   hideLabel: PropTypes.bool,
   className: PropTypes.string,

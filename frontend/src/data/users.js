@@ -16,8 +16,8 @@ const userData = [
   {
     id: '2',
     name: 'Shahriar Parvez',
-    username: 'mrspShuvo',
-    email: 'mrspShuvo@mumble.dev',
+    username: 'MrspShuvo',
+    email: 'mr.spshuvo@mumble.dev',
     profile_pic: shahriar,
     bio:
       'A self-taught coder specialized in web design and development. Love to play with different technologies.',
