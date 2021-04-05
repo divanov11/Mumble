@@ -1,11 +1,5 @@
 import './styles/App.css';
-
-import {
-  BrowserRouter as Router,
-  Redirect,
-  Route,
-  Switch,
-} from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
@@ -19,10 +13,13 @@ import CreateArticlePage from './pages/CreateArticlePage';
 import CreateDiscussionPage from './pages/CreateDiscussionPage';
 import Error404 from './pages/Error404';
 import NotificationsPage from './pages/NotificationsPage';
+import { BrowserRouter as Router } from 'react-router-dom';
+import RestoreScroll from './common/RestoreScroll';
 
 function App() {
   return (
     <Router>
+      <RestoreScroll />
       <Header />
       <main>
         <Switch>
