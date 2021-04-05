@@ -5,8 +5,8 @@
 }
 
 #left--column--login {
-  background-color: #3f4156;
-  color: #fff;
+  background-color: var(--color-sub);
+  color: var(--color-white);
   display: grid;
   justify-content: center;
   align-items: center;

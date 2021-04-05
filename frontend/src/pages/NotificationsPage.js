@@ -46,11 +46,14 @@ function Notifications({ match }) {
                   {distanceDate(notification.created)}
                   {'  '}
                   {notification.isRead ? (
-                    <i className="fas fa-eye" style={{ color: '#3bc077' }}></i>
+                    <i
+                      className="fas fa-eye"
+                      style={{ color: 'var(--color-success)' }}
+                    ></i>
                   ) : (
                     <i
                       className="fas fa-eye-slash"
-                      style={{ color: '#fc4b0b' }}
+                      style={{ color: 'var(--color-error)' }}
                     ></i>
                   )}
                 </p>

@@ -13,7 +13,7 @@
 }
 
 .tag > small {
-  color: var(--color-white);
+  color: var(--color-text);
 }
 
 .tag--outline {

@@ -1,6 +1,6 @@
 .notification {
   padding: 10px 20px;
-  border-bottom: 1px solid #eaedf3;
+  border-bottom: 1px solid var(--color-light);
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -8,7 +8,7 @@
 
 .notification--item {
   padding: 10px 20px;
-  border-bottom: 1px solid #eaedf3;
+  border-bottom: 1px solid var(--color-light);
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -16,7 +16,7 @@
 }
 
 .notification--item:hover {
-  background-color: #f2f2f2;
+  background-color: var(--color-light);
 }
 .notification--item--right {
   margin-left: 25px;

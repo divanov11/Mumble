@@ -20,3 +20,17 @@
   --font-medium: 500;
   --font-bold: 700;
 }
+
+.dark-theme {
+  --color-main: #5aa5b9;
+  --color-main-light: #304246;
+  --color-sub: #3f4156;
+  --color-sub-light: #1b1d2a;
+  --color-text: #efefef;
+  --color-gray: #999;
+  --color-light: #313131;
+  --color-light-gray: #bbb;
+  --color-bg: #212c35;
+  --color-white: #1f1f1f;
+  --color-white-light: #1f1f1f;
+}

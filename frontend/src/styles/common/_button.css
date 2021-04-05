@@ -30,12 +30,19 @@
   pointer-events: none !important;
 }
 
+/* Dark Theme */
+.dark-theme .btn,
+.dark-theme .btn.btn-sub,
+.dark-theme .btn.btn-main {
+  color: var(--color-text);
+}
+
 .btn--main {
   background-color: var(--color-main);
   color: var(--color-white);
 }
 
-.btn--main--outline {
+.btn.btn--main--outline {
   background-color: transparent;
   color: var(--color-main);
   border: 2px solid var(--color-main);
@@ -46,7 +53,7 @@
   color: var(--color-white);
 }
 
-.btn--sub--outline {
+.btn.btn--sub--outline {
   background-color: transparent;
   color: var(--color-sub);
   border: 2px solid var(--color-sub);
@@ -68,12 +75,20 @@
   background: transparent;
 }
 
-.btn--main--link {
+.btn.btn--main--link {
   color: var(--color-main);
 }
 
-.btn--sub--link {
+.btn.btn--main--link i {
+  color: var(--color-main) !important;
+}
+
+.btn.btn--sub--link {
   color: var(--color-sub);
+}
+
+.btn.btn--sub--link i {
+  color: var(--color-sub) !important;
 }
 
 /* Hover effects for outline buttons */

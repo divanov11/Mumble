@@ -25,6 +25,10 @@
   color: var(--color-sub);
 }
 
+.dark-theme .author-box__name {
+  color: var(--color-text);
+}
+
 .author-box--md .author-box__name {
   font-size: 1.65rem;
 }
@@ -37,6 +41,10 @@
   font-size: 1.4rem;
   color: var(--color-text);
   font-weight: var(--font-regular);
+}
+
+.dark-theme .author-box__handle {
+  color: var(--color-main);
 }
 
 .author-box--md .author-box__handle {

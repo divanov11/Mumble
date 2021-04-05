@@ -6,11 +6,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #3f4156;
-  color: #fff;
+  background-color: var(--color-sub);
+  color: var(--color-white);
   padding-left: 20px;
   padding-right: 20px;
   z-index: 100;
+}
+
+.dark-theme #header {
+  background-color: var(--color-sub-light);
 }
 
 #logo {
@@ -49,14 +53,14 @@
 
 .user-navigation--item {
   padding: 10px;
-  border-bottom: 1px solid #eaedf3;
+  border-bottom: 1px solid var(--color-light);
   display: flex;
   align-items: center;
   gap: 1rem;
   cursor: pointer;
 }
 .user-navigation--item:hover {
-  background-color: #f2f2f2;
+  background-color: var(--color-light);
 }
 
 .user--nav--icon {

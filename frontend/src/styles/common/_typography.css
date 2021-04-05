@@ -60,3 +60,8 @@ a {
   color: var(--color-main);
   font-weight: var(--font-medium);
 }
+
+.dark-theme i.fas,
+.dark-theme i.far {
+  color: var(--color-text) !important;
+}

@@ -43,6 +43,10 @@
   text-transform: uppercase;
 }
 
+.dark-theme .settings-update__title span {
+  color: var(--color-gray);
+}
+
 .settings-update--profile .settings-update__info h4 {
   margin-top: 1rem;
   color: var(--color-sub-light);
@@ -54,6 +58,11 @@
   color: var(--color-sub-light);
 }
 
+.dark-theme .settings-update--profile .settings-update__info h4,
+.dark-theme .settings-update--profile .settings-update__info small {
+  color: var(--color-text);
+}
+
 .settings-update--profile .settings-update__info small:nth-of-type(2) {
   font-weight: var(--font-bold);
   color: var(--color-main);
@@ -62,6 +71,10 @@
 .settings-update--profile .settings-update__info p {
   margin-top: 1.5rem;
   margin-bottom: 3rem;
+}
+
+.dark-theme .settings-update--profile .settings-update__info p {
+  color: var(--color-gray);
 }
 
 .settings-update__avatar {

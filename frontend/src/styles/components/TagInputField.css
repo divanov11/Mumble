@@ -2,7 +2,7 @@
   display: block;
   width: 100%;
   border-radius: 0.5rem;
-  border: 2px solid #e5e7eb;
+  border: 2px solid var(--color-light);
   padding: 0.6rem 0.8rem;
   display: flex;
   flex-wrap: wrap;
@@ -10,7 +10,7 @@
   cursor: text;
 }
 .input-tags:focus-within {
-  border: 2px solid #5aa5b9;
+  border: 2px solid var(--color-main);
 }
 .input-tags input {
   border: none;
@@ -34,6 +34,6 @@
   margin-right: 6px;
 }
 .input-tag-item i {
-  color: white;
+  color: var(--color-white);
   cursor: pointer;
 }

@@ -4,21 +4,17 @@
 }
 
 .line-break {
-  background-color: #eaedf3;
+  background-color: var(--color-light);
   height: 1px;
   margin-top: 20px;
   margin-bottom: 20px;
-}
-
-.line-break-2 {
-  background-color: #dadada;
 }
 
 #feed-post-form textarea {
   display: block;
   width: 90%;
   margin: 0 auto;
-  background-color: #f4f6f9;
+  background-color: var(--color-bg);
   border: none;
   padding: 20px;
   font-size: 18px;
@@ -36,7 +32,7 @@ textarea:focus-within {
   justify-content: flex-end;
   margin-top: 10px;
   padding-top: 10px;
-  border-top: 1px solid #eaedf3;
+  border-top: 1px solid var(--color-light);
 }
 
 #post-btn {
@@ -45,7 +41,7 @@ textarea:focus-within {
 
 .post-user-name {
   text-decoration: none;
-  color: #000;
+  color: var(--color-sub-light);
 }
 
 .contributor-wrapper {
@@ -55,7 +51,7 @@ textarea:focus-within {
   align-items: center;
   padding-top: 15px;
   padding-bottom: 15px;
-  border-top: 1px solid #eaedf3;
+  border-top: 1px solid var(--color-light);
 }
 
 .contributor-preview {
@@ -76,7 +72,7 @@ textarea:focus-within {
 
 .snippet-wrapper {
   display: flex;
-  border-top: 1px solid #dadada;
+  border-top: 1px solid var(--color-light);
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -90,17 +86,17 @@ textarea:focus-within {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #5eba7d;
-  color: #fff;
+  background-color: var(--color-success);
+  color: var(--color-text);
   min-width: 35px;
   padding: 5px;
   margin-right: 10px;
 }
 
 .snippet-engagement-count p {
-  color: #fff;
+  color: var(--color-light);
 }
 
 .snippet-text {
-  color: rgb(131, 130, 130);
+  color: var(--color-gray);
 }

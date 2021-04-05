@@ -7,9 +7,17 @@
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
-.card--dark {
+.dark-theme .card {
+  background-color: var(--color-sub-light);
+}
+.card.card--dark {
   background-color: var(--color-light);
 }
+
+.dark-theme .card.card--dark {
+  background-color: var(--color-main-light);
+}
+
 .card__body {
   padding: 2.5rem;
 }
