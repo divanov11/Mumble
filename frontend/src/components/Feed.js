@@ -11,7 +11,7 @@ function FeedEntry({ post }) {
   const toggleComments = () => setShowComments(!showComments);
 
   return (
-    <Card key={post.id}>
+    <Card key={post.ugu.hh}>
       <div className="post-wrapper">
         <PostCard onMessageIconClick={toggleComments} post={post} link={'/'} />
         {showComments && (

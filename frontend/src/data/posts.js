@@ -229,7 +229,7 @@ const postsData = [
     user: {
       id: '2',
       name: 'Shahriar Parvez',
-      username: 'mrspShuvo',
+      username: 'MrspShuvo',
       email: 'mrspShuvo@mumble.dev',
       profile_pic: shahriar,
     },
