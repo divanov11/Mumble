@@ -1,4 +1,4 @@
-.article--layout {
+.create-article--layout {
   display: grid;
   grid-template-columns: 3fr 1fr;
   column-gap: 1rem;
@@ -14,13 +14,13 @@
 }
 
 @media screen and (max-width: 1300px) {
-  .article--layout {
+  .create-article--layout {
     grid-template-columns: 2fr 1fr;
   }
 }
 
 @media screen and (max-width: 1000px) {
-  .article--layout {
+  .create-article--layout {
     grid-template-columns: 1fr;
   }
 }

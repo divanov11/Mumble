@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Button from '../common/Button';
 import ArticlesCard from '../components/ArticlesCard';
-import '../styles/components/CreateDiscussionPage.css';
+import '../styles/components/CreateArticlePage.css';
 import articles from '../data/articles';
 
 function CreateArticlePage() {
@@ -22,7 +22,7 @@ function CreateArticlePage() {
   };
 
   return (
-    <div className="container article--layout">
+    <div className="container create-article--layout">
       <section>
         <div className="card">
           <div className="card__body">
