@@ -48,9 +48,9 @@ function SearchPage() {
                       <small>@{user.username}</small>
                       <p>{user.bio}</p>
                     </div>
-                    <a href="/" className="btn btn--main--outline btn--sm">
+                    <button className="btn btn--main--outline btn--sm">
                       Follow
-                    </a>
+                    </button>
                   </div>
                 </Link>
               </div>

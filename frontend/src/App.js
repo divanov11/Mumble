@@ -17,14 +17,17 @@ import ProfilePage from './pages/ProfilePage';
 import UserSettingsPage from './pages/UserSettingsPage';
 import SearchPage from './pages/SearchPage';
 import ArticlePage from './pages/ArticlePage';
+import CreateArticlePage from './pages/CreateArticlePage';
 import CreateDiscussionPage from './pages/CreateDiscussionPage';
 import Error404 from './pages/Error404';
 import NotificationsPage from './pages/NotificationsPage';
+import RestoreScroll from './common/RestoreScroll';
 
 function App() {
   return (
     <Router>
       <ErrorBoundary FallbackComponent={Error500}>
+        <RestoreScroll />
         <Header />
         <main>
           <Switch>
