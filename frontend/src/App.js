@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import {
   BrowserRouter as Router,
   Redirect,
@@ -34,7 +34,6 @@ const App = () => {
 
   useEffect(() => {
     localStorage.setItem('mumble-theme', currentTheme);
-    toast('Worked');
   }, [currentTheme]);
 
   const toggleTheme = () => {
