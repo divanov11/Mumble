@@ -102,6 +102,7 @@ function Header({ theme, toggleTheme }) {
 
           <Link
             to="/settings"
+            id="user-settings"
             className="user-navigation--item"
             onClick={closeDropdown}
           >
