@@ -10,7 +10,7 @@
   --color-bg: #f8fafd; /*  #f4f6f9; */
   --color-white: #fffefd;
   --color-white-light: #fafafa;
-  --color-success: #4fbe81;
+  --color-success: #5dd693;
   --color-error: #fc4b0b;
 
   --font-base: 'Poppins', Arial, Helvetica, 'Segoe UI', Roboto, Ubuntu,
@@ -22,15 +22,15 @@
 }
 
 .dark-theme {
-  --color-main: #4196ad;
-  --color-sub-light: #151627;
-  --color-sub: #3f4156;
-  --color-main-light: #131326;
+  --color-main: #71c6dd;
+  --color-sub-light: #3f4156;
+  --color-sub: #696d97;
+  --color-main-light: #3f4156;
   --color-text: #f5f5f5;
   --color-gray: #c5c5c5;
   --color-light: #313131;
   --color-light-gray: #bbb;
-  --color-bg: #2c2d38;
+  --color-bg: #2d2d39;
   --color-white: #1f1f1f;
   --color-white-light: #1f1f1f;
 }

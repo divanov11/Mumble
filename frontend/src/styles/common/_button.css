@@ -32,8 +32,8 @@
 
 /* Dark Theme */
 .dark-theme .btn,
-.dark-theme .btn.btn-sub,
-.dark-theme .btn.btn-main {
+.dark-theme .btn.btn--sub,
+.dark-theme .btn.btn--main {
   color: var(--color-text);
 }
 
@@ -110,4 +110,13 @@
 
 .btn--sub--outline:hover::before {
   background: var(--color-sub);
+}
+
+/* Dark Theme */
+.dark-theme .btn.btn--main {
+  background-color: var(--color-sub);
+}
+
+.dark-theme .btn.btn--sub {
+  background-color: var(--color-main);
 }
