@@ -8,8 +8,7 @@
   align-items: center;
   background-color: var(--color-sub);
   color: var(--color-white);
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 0 5%;
   z-index: 100;
 }
 
@@ -18,12 +17,24 @@
 }
 
 #logo {
-  font-size: 32px;
+  text-transform: lowercase;
 }
 
 #logo a {
   text-decoration: none;
   color: #fff;
+}
+
+#logo img {
+  height: 4.2rem;
+}
+
+#logo h3 {
+  display: inline-block;
+  margin-left: 0.85rem;
+  font-size: 3.2rem;
+  font-weight: var(--font-bold);
+  color: var(--color-main);
 }
 
 #nav-wrapper {

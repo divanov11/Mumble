@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDetectClickOutside } from 'react-detect-click-outside';
 
+import logo from '../assets/logo/dark-logo.png';
+
 import SearchBox from '../components/SearchBox';
 
 import userData from '../data/users';
@@ -51,6 +53,7 @@ function Header({ theme, toggleTheme }) {
     <div id="header">
       <div id="logo">
         <Link to={'/'}>
+          <img src={logo} alt="Mumble Icon" />
           <h3>MUMBLE</h3>
         </Link>
       </div>
