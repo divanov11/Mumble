@@ -53,7 +53,7 @@ const App = () => {
             <Switch>
               <Route
                 exact
-                path={'/:perameter(login|signup)'}
+                path={'/:parameter(login|signup)'}
                 component={LoginOrSignupPage}
               />
               <Route exact path={'/'} component={HomePage} />
