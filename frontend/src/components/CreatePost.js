@@ -52,6 +52,7 @@ function PostForm() {
               placeholder="Share your brilliant thought!"
               onChange={handleMessageChange}
               value={message}
+              label="Create Post"
               hideLabel={true}
               error={error}
             />
