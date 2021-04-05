@@ -8,8 +8,9 @@ import userData from '../data/users';
 import notifications from '../data/notifications';
 import '../styles/components/HeaderBar.css';
 import Avatar from '../common/Avatar';
+import classnames from 'classnames';
 
-function Header() {
+function Header({ theme, toggleTheme }) {
   const user = userData.find((u) => Number(u.id) === 1);
   const [showNavigation, setShowNavigation] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
@@ -72,6 +73,24 @@ function Header() {
 
       {showNavigation && (
         <div ref={navigationRef} className="card" id="user--navigation">
+          <div
+            role="button"
+            className="user-navigation--item"
+            onClick={() => {
+              toggleTheme();
+              closeDropdown();
+            }}
+          >
+            <i
+              className={classnames(
+                'fas',
+                `fa-${theme === 'light' ? 'moon' : 'sun'}`,
+                ' user--nav--icon',
+              )}
+            ></i>
+            Enable {theme === 'light' ? 'dark' : 'light'} Mode
+          </div>
+
           <Link
             to={`/profile/${user.username}`}
             className="user-navigation--item"

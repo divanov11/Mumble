@@ -13,6 +13,10 @@
 }
 
 .tag > small {
+  color: var(--color-white);
+}
+
+.dark-theme .tag > small {
   color: var(--color-text);
 }
 

@@ -58,6 +58,8 @@
   align-items: center;
   gap: 1rem;
   cursor: pointer;
+  color: var(--color-text);
+  text-transform: capitalize;
 }
 .user-navigation--item:hover {
   background-color: var(--color-light);

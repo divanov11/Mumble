@@ -9,6 +9,10 @@
   transition: all 0.3s ease-in-out;
 }
 
+.dark-theme #search-form {
+  background-color: var(--color-sub);
+}
+
 #search-form:focus-within {
   outline: none;
   border: 2px solid var(--color-main);
