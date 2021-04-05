@@ -14,7 +14,7 @@
 }
 
 .dark-theme #header {
-  background-color: var(--color-sub-light);
+  background-color: var(--color-main-light);
 }
 
 #logo {

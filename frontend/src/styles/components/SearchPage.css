@@ -17,7 +17,7 @@
 }
 
 .category-link {
-  color: var(--color-sub);
+  color: var(--color-text);
   cursor: pointer;
 }
 
