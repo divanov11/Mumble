@@ -54,3 +54,9 @@ jobs:
       working-directory: ./frontend
       env:
         CI: true # so that the test prompt doesn't show up
+
+    - name: Cypress run
+      uses: cypress-io/github-action@v2
+      with:
+        working-directory: ./frontend
+        start: npm start

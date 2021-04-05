@@ -83,6 +83,7 @@ function Header() {
 
           <Link
             to="/settings"
+            id="user-settings"
             className="user-navigation--item"
             onClick={closeDropdown}
           >
