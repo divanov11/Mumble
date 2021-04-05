@@ -33,7 +33,7 @@
 @media screen and (max-width: 1300px) {
   #search-page-layout {
     grid-template-columns: 0fr 2fr 1fr;
-    justify-content:
+    justify-content: ;
   }
 }
 
@@ -41,8 +41,5 @@
   #search-page-layout {
     display: flex;
     flex-direction: column-reverse;
-
   }
-
-
 }
