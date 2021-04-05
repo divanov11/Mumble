@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Button from '../common/Button';
 import AuthorBox from '../common/AuthorBox';
 import TextArea from '../common/TextArea';
-import InputChoice from '../common/InputChoice';
 import userData from '../data/users';
 
 import '../styles/components/CreatePost.css';

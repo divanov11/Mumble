@@ -41,7 +41,14 @@ const Input = ({
 Input.propTypes = {
   name: PropTypes.string,
   value: PropTypes.string,
-  type: PropTypes.string,
+  type: PropTypes.oneOf([
+    'text',
+    'email',
+    'password',
+    'number',
+    'date',
+    'time',
+  ]),
   placeholder: PropTypes.string,
   label: PropTypes.string.isRequired,
   hideLabel: PropTypes.bool,
