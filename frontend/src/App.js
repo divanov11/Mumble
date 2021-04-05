@@ -12,7 +12,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import Error500 from './pages/Error500';
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
+import LoginOrSignupPage from './pages/LoginOrSignupPage';
 import Discussion from './pages/Discussion';
 import ProfilePage from './pages/ProfilePage';
 import UserSettingsPage from './pages/UserSettingsPage';
@@ -51,7 +51,11 @@ const App = () => {
           <Header theme={currentTheme} toggleTheme={toggleTheme} />
           <main>
             <Switch>
-              <Route exact path={'/login'} component={LoginPage} />
+              <Route
+                exact
+                path={'/:perameter(login|signup)'}
+                component={LoginOrSignupPage}
+              />
               <Route exact path={'/'} component={HomePage} />
               <Route
                 exact
