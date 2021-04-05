@@ -4,6 +4,8 @@ import Button from '../common/Button';
 import ArticlesCard from '../components/ArticlesCard';
 import '../styles/components/CreateDiscussionPage.css';
 import articles from '../data/articles';
+import Input from '../common/Input';
+import TextArea from '../common/TextArea';
 
 function CreateArticlePage() {
   const history = useHistory();
@@ -30,25 +32,15 @@ function CreateArticlePage() {
               <h1 className="article-headline">Create Article</h1>
             </div>
             <form onSubmit={handleFormSubmit}>
-              <div className="form__field">
-                <label>Title</label>
-                <input
-                  value={title}
-                  onChange={handleTitleChange}
-                  type="text"
-                  className="input"
-                  required
-                />
-              </div>
-              <div className="form__field">
-                <label>Body</label>
-                <textarea
-                  value={body}
-                  onChange={handleBodyChange}
-                  className="input input--textarea"
-                  required
-                ></textarea>
-              </div>
+              <Input
+                value={title}
+                onChange={handleTitleChange}
+                type="text"
+                className="input"
+                label="Title"
+                required
+              />
+              <TextArea value={body} onChange={handleBodyChange} required />
               <Button color="main" type="submit">
                 Submit
               </Button>
