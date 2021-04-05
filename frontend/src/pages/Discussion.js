@@ -28,7 +28,7 @@ function Discussion({ match }) {
                   src={discussion.user.profile_pic}
                 />
                 <div className="custom-spacer"></div>
-                <VotingWidget voteRatio={discussion.vote_ratio} />
+                <VotingWidget votes={discussion.vote_ratio} />
               </div>
               <div className="question-body">
                 <h1 className="discussion-headline">{discussion.headline}</h1>
@@ -63,7 +63,7 @@ function Discussion({ match }) {
                         src={answer.user.profile_pic}
                       />
                       {/* <div className="custom-spacer"></div> */}
-                      <VotingWidget voteRatio={answer.vote_ratio} />
+                      <VotingWidget votes={answer.vote_ratio} />
                     </div>
                     <div className="question-body">
                       <Link to={`/profile/${answer.user.username}`}>
