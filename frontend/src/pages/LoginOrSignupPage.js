@@ -5,7 +5,7 @@ import SignupForm from '../components/SignupForm';
 import Login from '../components/LoginForm';
 
 function LoginOrSignupPage(props) {
-  const params = props.match.params['perameter'];
+  const params = props.match.params['parameter'];
 
   return (
     <div id="login--page--container">
