@@ -44,6 +44,7 @@
 
 .nav-icon {
   font-size: 24px;
+  position: relative;
   cursor: pointer;
 }
 
@@ -79,4 +80,31 @@
 .user--nav--icon {
   color: var(--color-sub);
   margin-right: 10px;
+}
+
+.header-notification--unread {
+  font-weight: 500;
+}
+
+.header-notification {
+  font-weight: 300;
+}
+
+.header-notification__name {
+  margin-right: 6px;
+  font-weight: inherit;
+}
+
+.header-notification--read {
+  font-weight: 300;
+}
+
+.nav-icon--unread {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 0px;
+  right: 0px;
+  background: var(--color-error);
+  border-radius: 50%;
 }
