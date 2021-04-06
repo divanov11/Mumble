@@ -16,21 +16,21 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
     share_count,
   } = post;
 
-  let [comments, setComments] = useState([])
+  let [comments, setComments] = useState([]);
 
   let fetchComments = () => {
-    fetch(`/api/posts/${post.id}/comments`) 
-    .then(response =>  response.json())
-    .then((data) => { 
-      setComments(data)
-    })
-  }
+    fetch(`/api/posts/${post.id}/comments`)
+      .then((response) => response.json())
+      .then((data) => {
+        setComments(data);
+      });
+  };
 
   const [showComments, setShowComments] = useState(false);
 
   const toggleComments = () => {
-    setShowComments(!showComments)
-    fetchComments()
+    setShowComments(!showComments);
+    fetchComments();
   };
 
   return (

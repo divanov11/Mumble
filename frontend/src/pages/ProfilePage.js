@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import '../styles/components/Profile.css';
 
@@ -16,41 +16,41 @@ import articles from '../data/articles';
 import UserCard from '../components/UserCard';
 
 function Profile({ match }) {
- //const user = userData.find((u) => u.username === match.params.username);
- const username = match.params.username
+  //const user = userData.find((u) => u.username === match.params.username);
+  const username = match.params.username;
 
-  const [user, setUser] = useState({skills:[]})
-  let [posts, setPosts] = useState([])
+  const [user, setUser] = useState({ skills: [] });
+  let [posts, setPosts] = useState([]);
 
   let fetchPosts = () => {
     //Why is the proxy URL not workin here??
-    fetch(`/api/users/${username}/posts`) 
-    .then(response =>  response.json())
-    .then((data) => { 
-        setPosts(data)
-    })
-  }
+    fetch(`/api/users/${username}/posts`)
+      .then((response) => response.json())
+      .then((data) => {
+        setPosts(data);
+      });
+  };
 
   let fetchUser = () => {
-    fetch(`/api/users/${username}`) 
-    .then(response =>  response.json())
-    .then((data) => { 
-      setUser({
-        username:username,
-        profile_pic:data.profile.profile_pic,
-        skills:data.profile.skills,
-        name:data.profile.name,
-        bio:data.profile.bio,
-        vote_ratio:data.profile.vote_ratio,
-        followers_count:data.profile.followers_count,
-      })
-    })
-  }
-  
+    fetch(`/api/users/${username}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setUser({
+          username: username,
+          profile_pic: data.profile.profile_pic,
+          skills: data.profile.skills,
+          name: data.profile.name,
+          bio: data.profile.bio,
+          vote_ratio: data.profile.vote_ratio,
+          followers_count: data.profile.followers_count,
+        });
+      });
+  };
+
   useEffect(() => {
-    fetchUser()
-    fetchPosts()
-  }, [])
+    fetchUser();
+    fetchPosts();
+  }, []);
 
   // let posts;
   // if (user)

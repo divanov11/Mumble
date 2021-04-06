@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/components/SearchPage.css';
 
@@ -27,20 +27,19 @@ function SearchPage() {
     e.target.classList.add('category-link--active');
   };
 
-
-  let [userData, setUserdata] = useState([])
+  let [userData, setUserdata] = useState([]);
 
   let fetchUsers = () => {
-    fetch(`/api/users`) 
-    .then(response =>  response.json())
-    .then((data) => { 
-      setUserdata(data)
-    })
-  } 
+    fetch(`/api/users`)
+      .then((response) => response.json())
+      .then((data) => {
+        setUserdata(data);
+      });
+  };
 
   useEffect(() => {
-    fetchUsers()
-  }, [])
+    fetchUsers();
+  }, []);
 
   return (
     <div id="search-page-layout" className="container">

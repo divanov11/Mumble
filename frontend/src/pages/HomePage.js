@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/components/Home.css';
 //components
 import Contributors from '../components/Contributors';
@@ -19,30 +19,29 @@ function HomePage() {
   let user = userData.find((u) => Number(u.id) === 1);
   //let contributors = userData.slice(0, 3);
 
-  let [posts, setPosts] = useState([])
-  let [contributors, setContributors] = useState([])
+  let [posts, setPosts] = useState([]);
+  let [contributors, setContributors] = useState([]);
 
   let fetchUsers = () => {
-    fetch(`/api/users`) 
-    .then(response =>  response.json())
-    .then((data) => { 
-      setContributors(data.slice(0, 3))
-    })
-  } 
-
+    fetch(`/api/users`)
+      .then((response) => response.json())
+      .then((data) => {
+        setContributors(data.slice(0, 3));
+      });
+  };
 
   let fetchPosts = () => {
-      fetch(`/api/posts`) 
-      .then(response =>  response.json())
-      .then((data) => { 
-        setPosts(data)
-      })
-    }
+    fetch(`/api/posts`)
+      .then((response) => response.json())
+      .then((data) => {
+        setPosts(data);
+      });
+  };
 
-    useEffect(() => {
-        fetchPosts() 
-        fetchUsers() 
-    }, [])
+  useEffect(() => {
+    fetchPosts();
+    fetchUsers();
+  }, []);
 
   return (
     <div className="container home--layout">

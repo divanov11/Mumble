@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Contributors from '../components/Contributors';
 import DiscussionsCard from '../components/DiscussionsCard';
 
 import '../styles/components/Discussion.css';
-import userData from '../data/users';
+//import userData from '../data/users';
 import discussions from '../data/discussions';
 import VotingWidget from '../common/VotingWidget';
 import Avatar from '../common/Avatar';
@@ -16,19 +16,19 @@ function Discussion({ match }) {
     (d) => d.slug !== match.params.slug,
   );
 
-  let [users, setUsers] = useState([])
+  let [users, setUsers] = useState([]);
 
   let fetchUsers = () => {
-    fetch(`/api/users`) 
-    .then(response =>  response.json())
-    .then((data) => { 
-      setUsers(data.slice(0,3))
-    })
-  } 
+    fetch(`/api/users`)
+      .then((response) => response.json())
+      .then((data) => {
+        setUsers(data.slice(0, 3));
+      });
+  };
 
   useEffect(() => {
-    fetchUsers()
-  }, [])
+    fetchUsers();
+  }, []);
 
   return (
     <div className="container discussion--layout">

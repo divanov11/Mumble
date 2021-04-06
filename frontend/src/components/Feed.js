@@ -6,7 +6,6 @@ import PostCard from '../common/PostCard';
 import '../styles/components/Feed.css';
 
 function Feed({ posts }) {
-  
   return (
     <section>
       {posts.map((post) => (
