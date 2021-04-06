@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Avatar from '../common/Avatar';
 import { distanceDate } from '../utilities/formatDate';
 import { getNotificationLink } from './Header';
-import NotificationTitle from '../components/NotificationTitle';
+import NotificationTitle from './NotificationTitle';
 
 export const markAsRead = (notification) => {
   notification.isRead = true;

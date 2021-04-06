@@ -4,14 +4,14 @@ import { useDetectClickOutside } from 'react-detect-click-outside';
 
 import logo from '../assets/logo/dark-logo.png';
 
-import SearchBox from '../components/SearchBox';
+import SearchBox from './SearchBox';
 
 import userData from '../data/users';
 import notifications from '../data/notifications';
 import '../styles/components/HeaderBar.css';
 import Avatar from '../common/Avatar';
 import classNames from 'classnames';
-import { markAsRead } from '../components/Notification';
+import { markAsRead } from './Notification';
 import NotificationTitle from './NotificationTitle';
 
 export const getNotificationLink = (notification) => {
