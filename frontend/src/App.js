@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './styles/App.css';
-
+import classNames from 'classnames';
+import { ToastContainer } from 'react-toastify';
 import {
   BrowserRouter as Router,
   Redirect,
@@ -9,10 +9,13 @@ import {
 } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 
+import 'react-toastify/dist/ReactToastify.css';
+import './styles/App.css';
+
 import Error500 from './pages/Error500';
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
+import LoginOrSignupPage from './pages/LoginOrSignupPage';
 import Discussion from './pages/Discussion';
 import ProfilePage from './pages/ProfilePage';
 import UserSettingsPage from './pages/UserSettingsPage';
@@ -23,7 +26,6 @@ import CreateDiscussionPage from './pages/CreateDiscussionPage';
 import Error404 from './pages/Error404';
 import NotificationsPage from './pages/NotificationsPage';
 import RestoreScroll from './common/RestoreScroll';
-import classNames from 'classnames';
 
 const App = () => {
   const userTheme = localStorage.getItem('mumble-theme') ?? 'light';
@@ -47,11 +49,14 @@ const App = () => {
             `${currentTheme === 'dark' && 'dark-theme'}`,
           )}
         >
-          <RestoreScroll />
           <Header theme={currentTheme} toggleTheme={toggleTheme} />
           <main>
             <Switch>
-              <Route exact path={'/login'} component={LoginPage} />
+              <Route
+                exact
+                path={'/:parameter(login|signup)'}
+                component={LoginOrSignupPage}
+              />
               <Route exact path={'/'} component={HomePage} />
               <Route
                 exact
@@ -81,6 +86,16 @@ const App = () => {
               <Redirect to="/404" />
             </Switch>
           </main>
+
+          <RestoreScroll />
+          <ToastContainer
+            position="bottom-right"
+            autoClose={3000}
+            hideProgressBar={false}
+            closeOnClick
+            draggable
+            pauseOnHover
+          />
         </div>
       </ErrorBoundary>
     </Router>

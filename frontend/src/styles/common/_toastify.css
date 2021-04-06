@@ -1,0 +1,27 @@
+.Toastify__toast {
+  padding: 0.8rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.Toastify .Toastify__toast--default {
+  color: var(--color-main);
+}
+
+.dark-theme .Toastify .Toastify__toast--default {
+  background-color: var(--color-sub-light);
+}
+
+.Toastify .Toastify__close-button {
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  right: 2rem;
+}
+
+.Toastify .Toastify__close-button.Toastify__close-button--default > svg {
+  fill: var(--color-main);
+}
+
+.Toastify .Toastify__progress-bar--default {
+  background: var(--color-main);
+}

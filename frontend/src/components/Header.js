@@ -2,13 +2,26 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDetectClickOutside } from 'react-detect-click-outside';
 
+import logo from '../assets/logo/dark-logo.png';
+
 import SearchBox from '../components/SearchBox';
 
 import userData from '../data/users';
 import notifications from '../data/notifications';
 import '../styles/components/HeaderBar.css';
 import Avatar from '../common/Avatar';
-import classnames from 'classnames';
+import classNames from 'classnames';
+import { markAsRead } from '../components/Notification';
+import NotificationTitle from './NotificationTitle';
+
+export const getNotificationLink = (notification) => {
+  const notificationUrlMap = {
+    discussion: `/discussion/${notification.content_slug}`,
+    follow: `/profile/${notification.user.username}`,
+    article: `/article/${notification.content_slug}`,
+  };
+  return notificationUrlMap[notification.notification_type];
+};
 
 function Header({ theme, toggleTheme }) {
   const user = userData.find((u) => Number(u.id) === 1);
@@ -38,29 +51,25 @@ function Header({ theme, toggleTheme }) {
     onTriggered: closeNotification,
   });
 
-  const getNotificationLink = (notification) => {
-    const notificationUrlMap = {
-      discussion: `/discussion/${notification.content_slug}`,
-      follow: `/profile/${notification.user.username}`,
-      article: `/article/${notification.content_slug}`,
-    };
-    return notificationUrlMap[notification.notification_type];
-  };
+  const hasUnreadNotification = () =>
+    !!notifications.find((notification) => !notification.isRead);
 
   return (
     <div id="header">
       <div id="logo">
         <Link to={'/'}>
-          <h3>MUMBLE</h3>
+          <img src={logo} alt="Mumble Icon" />
         </Link>
       </div>
 
       <div id="nav-wrapper">
         <SearchBox />
         <i
-          className="fas fa-bell nav-item nav-icon"
+          className={classNames('fas', 'fa-bell', 'nav-item', 'nav-icon')}
           onClick={toggleNotification}
-        ></i>
+        >
+          {hasUnreadNotification() && <div className="nav-icon--unread"></div>}
+        </i>
         <Avatar
           id="nav-toggle-icon"
           onClick={toggleDropdown}
@@ -82,7 +91,7 @@ function Header({ theme, toggleTheme }) {
             }}
           >
             <i
-              className={classnames(
+              className={classNames(
                 'fas',
                 `fa-${theme === 'light' ? 'moon' : 'sun'}`,
                 ' user--nav--icon',
@@ -131,23 +140,27 @@ function Header({ theme, toggleTheme }) {
             <h6>All Notifications</h6>
           </Link>
 
-          {notifications.map((notification) => (
-            <div key={notification.id} className="user-navigation--item">
-              <Avatar
-                alt="img-description"
-                src={notification.user.profile_pic}
-                className="nav-item"
-                size="sm"
-              />
-              <Link
-                to={getNotificationLink(notification)}
-                onClick={closeNotification}
-              >
-                <strong>{notification.user.name} </strong>
-                {notification.content}
-              </Link>
-            </div>
-          ))}
+          {notifications
+            .filter((notification) => !notification.isRead)
+            .map((notification) => (
+              <div key={notification.id} className="user-navigation--item">
+                <Avatar
+                  alt="img-description"
+                  src={notification.user.profile_pic}
+                  className="nav-item"
+                  size="sm"
+                />
+                <Link
+                  to={getNotificationLink(notification)}
+                  onClick={() => {
+                    closeNotification();
+                    markAsRead(notification);
+                  }}
+                >
+                  <NotificationTitle notification={notification} />
+                </Link>
+              </div>
+            ))}
         </div>
       )}
     </div>

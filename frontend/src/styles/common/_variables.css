@@ -4,13 +4,13 @@
   --color-sub: #3f4156;
   --color-sub-light: #51546e;
   --color-text: #737373;
-  --color-gray: #999;
+  --color-gray: #8b8b8b;
   --color-light: #e5e7eb;
-  --color-light-gray: #bbb;
-  --color-bg: #f4f6f9;
-  --color-white: #fff;
+  --color-light-gray: ##767676;
+  --color-bg: #f8fafd; /*  #f4f6f9; */
+  --color-white: #fffefd;
   --color-white-light: #fafafa;
-  --color-success: #3bc077;
+  --color-success: #5dd693;
   --color-error: #fc4b0b;
 
   --font-base: 'Poppins', Arial, Helvetica, 'Segoe UI', Roboto, Ubuntu,
@@ -22,15 +22,15 @@
 }
 
 .dark-theme {
-  --color-main: #5aa5b9;
-  --color-main-light: #304246;
-  --color-sub: #3f4156;
-  --color-sub-light: #1b1d2a;
-  --color-text: #efefef;
-  --color-gray: #999;
+  --color-main: #71c6dd;
+  --color-sub-light: #3f4156;
+  --color-sub: #696d97;
+  --color-main-light: #3f4156;
+  --color-text: #f5f5f5;
+  --color-gray: #c5c5c5;
   --color-light: #313131;
   --color-light-gray: #bbb;
-  --color-bg: #212c35;
+  --color-bg: #2d2d39;
   --color-white: #1f1f1f;
   --color-white-light: #1f1f1f;
 }

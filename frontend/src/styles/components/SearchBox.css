@@ -10,7 +10,12 @@
 }
 
 .dark-theme #search-form {
+  color: var(--color-text);
   background-color: var(--color-sub);
+}
+
+.dark-theme #search-form > input {
+  color: var(--color-text);
 }
 
 #search-form:focus-within {

@@ -58,6 +58,9 @@
   #login--page--container {
     grid-template-columns: 1fr;
   }
+  #title {
+    padding-left: 0px;
+  }
 
   #sidebar--right--profile {
     display: none;

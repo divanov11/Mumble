@@ -1,0 +1,11 @@
+.notification-title span {
+  font-weight: 500;
+}
+
+.notification-title__name {
+  margin-right: 6px;
+}
+
+.notification-title__link {
+  color: var(--color-main);
+}

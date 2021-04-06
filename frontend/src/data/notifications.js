@@ -27,7 +27,7 @@ const notifications = [
       profile_pic: peng,
     },
     created: '2021-04-02 T19:04:25+00:00',
-    isRead: true,
+    isRead: false,
   },
   {
     id: '2',
@@ -59,7 +59,7 @@ const notifications = [
       profile_pic: sulamita,
     },
     created: '2021-03-29 T19:04:25+00:00',
-    isRead: true,
+    isRead: false,
   },
 ];
 

@@ -17,7 +17,7 @@
 }
 
 .category-link {
-  color: var(--color-sub);
+  color: var(--color-text);
   cursor: pointer;
 }
 
@@ -28,4 +28,18 @@
 
 .hidden {
   display: none;
+}
+
+@media screen and (max-width: 1300px) {
+  #search-page-layout {
+    grid-template-columns: 0fr 2fr 1fr;
+    justify-content: ;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #search-page-layout {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
