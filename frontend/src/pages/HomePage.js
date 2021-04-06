@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import '../styles/components/Home.css';
 //components
 import Contributors from '../components/Contributors';
@@ -15,9 +15,24 @@ import discussions from '../data/discussions';
 import articles from '../data/articles';
 
 function HomePage() {
-  let posts = postsData;
+  //let posts = postsData;
   let user = userData.find((u) => Number(u.id) === 1);
   let contributors = userData.slice(0, 3);
+
+  let [posts, setPosts]= useState([])
+
+
+  let fetchPosts = () => {
+      fetch('api/posts') 
+      .then(response =>  response.json())
+      .then((data) => { 
+        setPosts(data)
+      })
+    }
+
+    useEffect(() => {
+        fetchPosts()  
+    }, [])
 
   return (
     <div className="container home--layout">
