@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import Contributors from '../components/Contributors';
 import DiscussionsCard from '../components/DiscussionsCard';
@@ -10,11 +10,25 @@ import VotingWidget from '../common/VotingWidget';
 import Avatar from '../common/Avatar';
 
 function Discussion({ match }) {
-  let users = userData.slice(0, 3);
+  //let users = userData.slice(0, 3);
   let discussion = discussions.find((d) => d.slug === match.params.slug);
   let relatedQuestions = discussions.filter(
     (d) => d.slug !== match.params.slug,
   );
+
+  let [users, setUsers] = useState([])
+
+  let fetchUsers = () => {
+    fetch(`/api/users`) 
+    .then(response =>  response.json())
+    .then((data) => { 
+      setUsers(data.slice(0,3))
+    })
+  } 
+
+  useEffect(() => {
+    fetchUsers()
+  }, [])
 
   return (
     <div className="container discussion--layout">

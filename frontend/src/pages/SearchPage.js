@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/components/SearchPage.css';
 
 //Dummy Data Files
-import userData from '../data/users';
+//import userData from '../data/users';
 import articles from '../data/articles';
 import skills from '../data/skills';
 import interests from '../data/interests';
@@ -27,6 +27,21 @@ function SearchPage() {
     e.target.classList.add('category-link--active');
   };
 
+
+  let [userData, setUserdata] = useState([])
+
+  let fetchUsers = () => {
+    fetch(`/api/users`) 
+    .then(response =>  response.json())
+    .then((data) => { 
+      setUserdata(data)
+    })
+  } 
+
+  useEffect(() => {
+    fetchUsers()
+  }, [])
+
   return (
     <div id="search-page-layout" className="container">
       <div></div>
@@ -41,12 +56,12 @@ function SearchPage() {
                     <img
                       alt=""
                       className="avatar avatar--md"
-                      src={user.profile_pic}
+                      src={user.profile.profile_pic}
                     />
                     <div>
-                      <strong>{user.name}</strong>
+                      <strong>{user.profile.name}</strong>
                       <small>@{user.username}</small>
-                      <p>{user.bio}</p>
+                      <p>{user.profile.bio}</p>
                     </div>
                     <button className="btn btn--main--outline btn--sm">
                       Follow

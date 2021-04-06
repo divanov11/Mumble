@@ -13,9 +13,9 @@ function Contributors({ users }) {
         {users.map((user) => (
           <div key={user.id} className="contributor-wrapper">
             <div className="contributor-preview">
-              <Avatar src={user.profile_pic} alt="img-description" />
+              <Avatar src={user.profile.profile_pic} alt="img-description" />
               <Link to={`/profile/${user.username}`}>
-                <strong>{user.name}</strong>
+                <strong>{user.profile.name}</strong>
               </Link>
             </div>
             <Link className="btn btn--main--outline btn--sm" to="">

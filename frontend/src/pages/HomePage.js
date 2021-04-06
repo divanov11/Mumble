@@ -17,9 +17,18 @@ import articles from '../data/articles';
 function HomePage() {
   //let posts = postsData;
   let user = userData.find((u) => Number(u.id) === 1);
-  let contributors = userData.slice(0, 3);
+  //let contributors = userData.slice(0, 3);
 
-  let [posts, setPosts]= useState([])
+  let [posts, setPosts] = useState([])
+  let [contributors, setContributors] = useState([])
+
+  let fetchUsers = () => {
+    fetch(`/api/users`) 
+    .then(response =>  response.json())
+    .then((data) => { 
+      setContributors(data.slice(0, 3))
+    })
+  } 
 
 
   let fetchPosts = () => {
@@ -31,7 +40,8 @@ function HomePage() {
     }
 
     useEffect(() => {
-        fetchPosts()  
+        fetchPosts() 
+        fetchUsers() 
     }, [])
 
   return (
