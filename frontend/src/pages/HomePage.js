@@ -9,7 +9,7 @@ import DiscussionsCard from '../components/DiscussionsCard';
 import ArticlesCard from '../components/ArticlesCard';
 
 //Dummy Data Files
-import postsData from '../data/posts';
+//import postsData from '../data/posts';
 import userData from '../data/users';
 import discussions from '../data/discussions';
 import articles from '../data/articles';
@@ -23,7 +23,7 @@ function HomePage() {
 
 
   let fetchPosts = () => {
-      fetch('api/posts') 
+      fetch(`/api/posts`) 
       .then(response =>  response.json())
       .then((data) => { 
         setPosts(data)

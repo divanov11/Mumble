@@ -27,7 +27,7 @@ function UserCard({ user }) {
               <i>Vote Ratio</i>
             </div>
             <div>
-              <h6>{user.followers}</h6>
+              <h6>{user.followers_count}</h6>
               <i>Followers</i>
             </div>
           </div>

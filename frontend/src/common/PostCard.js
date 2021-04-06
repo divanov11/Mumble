@@ -19,7 +19,7 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
   let [comments, setComments] = useState([])
 
   let fetchComments = () => {
-    fetch(`api/posts/${post.id}/comments`) 
+    fetch(`/api/posts/${post.id}/comments`) 
     .then(response =>  response.json())
     .then((data) => { 
       setComments(data)
