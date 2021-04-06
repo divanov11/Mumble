@@ -85,12 +85,14 @@
 }
 
 .up-arrow:hover,
-.up-arrow.active {
+.up-arrow.active,
+.fa-chevron-up:hover:before {
   color: var(--color-success);
 }
 
 .down-arrow:hover,
-.down-arrow.active {
+.down-arrow.active,
+.fa-chevron-down:hover:before {
   color: var(--color-error);
 }
 
