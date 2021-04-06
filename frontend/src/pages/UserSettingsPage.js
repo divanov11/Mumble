@@ -7,8 +7,9 @@ import Avatar from '../common/Avatar';
 import Button from '../common/Button';
 import ProfilePicCropperModal from '../components/ProfilePicCropperModal';
 import Card from '../common/Card';
+import PropTypes from 'prop-types';
 
-function UserSettingsPage() {
+function UserSettingsPage({ theme, toggleTheme }) {
   const [currentUser, setCurrentUser] = useState(User[0]);
   const [updateModelActive, setUpdateModelActive] = useState(false);
   const [profilePicModel, setProfilePicModel] = useState(false);
@@ -147,10 +148,29 @@ function UserSettingsPage() {
               <div className="tags-wrapper">{renderSkills()}</div>
             </div>
           </div>
+
+          <div className="settings-update">
+            <div className="settings-update__title">
+              <span>Theme</span>
+            </div>
+            <label className="toggle-theme-switch">
+              <input
+                type="checkbox"
+                onClick={toggleTheme}
+                checked={theme === 'light'}
+              ></input>
+              <span className="theme-slider"></span>
+            </label>
+          </div>
         </Card>
       </section>
     </div>
   );
 }
+
+UserSettingsPage.propTypes = {
+  theme: PropTypes.string,
+  toggleTheme: PropTypes.func,
+};
 
 export default UserSettingsPage;
