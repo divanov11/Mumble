@@ -54,7 +54,6 @@ function Header({ theme, toggleTheme }) {
       <div id="logo">
         <Link to={'/'}>
           <img src={logo} alt="Mumble Icon" />
-          <h3>MUMBLE</h3>
         </Link>
       </div>
 
