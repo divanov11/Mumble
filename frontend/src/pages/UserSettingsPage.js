@@ -154,7 +154,11 @@ function UserSettingsPage({ theme, toggleTheme }) {
               <span>Theme</span>
             </div>
             <label className="toggle-theme-switch">
-              <input type="checkbox" onClick={toggleTheme} checked={theme === 'light'}></input>
+              <input
+                type="checkbox"
+                onClick={toggleTheme}
+                checked={theme === 'light'}
+              ></input>
               <span className="theme-slider"></span>
             </label>
           </div>

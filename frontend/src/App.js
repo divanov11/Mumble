@@ -63,7 +63,16 @@ const App = () => {
                 path={'/profile/:username'}
                 component={ProfilePage}
               />
-              <Route exact path={'/settings'} component={() => <UserSettingsPage theme={currentTheme} toggleTheme={toggleTheme} />} />
+              <Route
+                exact
+                path={'/settings'}
+                component={() => (
+                  <UserSettingsPage
+                    theme={currentTheme}
+                    toggleTheme={toggleTheme}
+                  />
+                )}
+              />
               <Route
                 exact
                 path={'/create-discussion'}
