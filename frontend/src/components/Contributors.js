@@ -14,12 +14,9 @@ const Contributors = () => {
   const {loading, error, users } = userList
 
   useEffect(() => {
-    console.log(loading)
-    if(loading){
       dispatch(listRecommenedUsers())
-    }
     
-  }, [loading])
+  }, [dispatch])
 
 
   return (
