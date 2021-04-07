@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function UserSettingsPage() {
     return (
-        <div id='settings-page-container'>
+        <div class='container setting--layout'>
             <section>
                 <div className='card'>
                     <div className='card__body'>
