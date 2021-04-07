@@ -21,10 +21,11 @@ function Profile({ match }) {
 
   const [user, setUser] = useState({ skills: [] });
   let [posts, setPosts] = useState([]);
+  let [loading, setLoading] = useState(true);
 
   let fetchPosts = useCallback(() => {
     //Why is the proxy URL not workin here??
-    fetch(`/api/users/${username}/posts`)
+    fetch(`https://mumbleapi.herokuapp.com/api/users/${username}/posts`)
       .then((response) => response.json())
       .then((data) => {
         setPosts(data);
@@ -32,7 +33,7 @@ function Profile({ match }) {
   }, [username]);
 
   let fetchUser = useCallback(() => {
-    fetch(`/api/users/${username}`)
+    fetch(`https://mumbleapi.herokuapp.com/api/users/${username}`)
       .then((response) => response.json())
       .then((data) => {
         setUser({
@@ -48,9 +49,12 @@ function Profile({ match }) {
   }, [username]);
 
   useEffect(() => {
-    fetchUser();
-    fetchPosts();
-  }, [fetchUser, fetchPosts]);
+    if (loading) {
+      fetchUser();
+      fetchPosts();
+      setLoading(false);
+    }
+  }, [fetchUser, fetchPosts, loading]);
 
   // let posts;
   // if (user)

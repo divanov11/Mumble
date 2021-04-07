@@ -28,9 +28,10 @@ function SearchPage() {
   };
 
   let [userData, setUserdata] = useState([]);
+  let [loading, setLoading] = useState(true);
 
   let fetchUsers = () => {
-    fetch(`/api/users`)
+    fetch(`https://mumbleapi.herokuapp.com/api/users`)
       .then((response) => response.json())
       .then((data) => {
         setUserdata(data);
@@ -38,8 +39,11 @@ function SearchPage() {
   };
 
   useEffect(() => {
-    fetchUsers();
-  }, []);
+    if (loading) {
+      fetchUsers();
+      setLoading(false);
+    }
+  }, [loading]);
 
   return (
     <div id="search-page-layout" className="container">

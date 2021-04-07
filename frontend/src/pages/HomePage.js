@@ -35,9 +35,10 @@ function HomePage() {
 
   let [posts, setPosts] = useState([]);
   let [contributors, setContributors] = useState([]);
+  let [loading, setLoading] = useState(true);
 
   const fetchUsers = useCallback(() => {
-    fetch(`/api/users`)
+    fetch(`https://mumbleapi.herokuapp.com/api/users`)
       .then((response) => response.json())
       .then((data) => {
         setContributors(data.slice(0, 3));
@@ -45,7 +46,7 @@ function HomePage() {
   }, []);
 
   const [isDoneFetchingPosts, fetchPosts] = useLoadingListener(() =>
-    fetch(`/api/posts`)
+    fetch(`https://mumbleapi.herokuapp.com/api/posts`)
       .then((response) => response.json())
       .then((data) => {
         setPosts(data);
@@ -53,9 +54,12 @@ function HomePage() {
   );
 
   useEffect(() => {
-    fetchPosts();
-    fetchUsers();
-  }, [fetchPosts, fetchUsers]);
+    if (loading) {
+      fetchPosts();
+      fetchUsers();
+      setLoading(false);
+    }
+  }, [fetchPosts, fetchUsers, loading]);
 
   return (
     <div className="container home--layout">
