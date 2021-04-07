@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import Button from '../common/Button';
-import AuthorBox from '../common/AuthorBox';
-import TextArea from '../common/TextArea';
-import userData from '../data/users';
-
 import '../styles/components/CreatePost.css';
 
-function PostForm() {
-  const user = userData.find((u) => Number(u.id) === 1);
+import { Button, AuthorBox, TextArea } from '../common';
+import { usersData } from '../data';
+
+const PostForm = () => {
+  const user = usersData.find((u) => Number(u.id) === 1);
 
   const [message, setMessage] = useState('');
   const [error, setError] = useState(null);
@@ -56,17 +54,12 @@ function PostForm() {
               hideLabel={true}
               error={error}
             />
-            <Button
-              type="submit"
-              color="main"
-              text="Mumble Now"
-              iconName="comment-alt"
-            />
+            <Button type="submit" color="main" text="Mumble Now" iconName="comment-alt" />
           </form>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default PostForm;

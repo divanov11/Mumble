@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
 import '../styles/components/SearchPage.css';
 
-//Dummy Data Files
-//import userData from '../data/users';
-import articles from '../data/articles';
-import skills from '../data/skills';
-import interests from '../data/interests';
+import { articles, interests, skills } from '../data';
 
-function SearchPage() {
+const SearchPage = () => {
   let toggleCategory = (e, category) => {
     let categories = document.getElementsByClassName('category-wrapper');
     let categoryButtons = document.getElementsByClassName('category-link');
@@ -56,19 +53,13 @@ function SearchPage() {
               <div className="card__body">
                 <Link to={`/profile/${user.username}`}>
                   <div className="search--item--wrapper--1">
-                    <img
-                      alt=""
-                      className="avatar avatar--md"
-                      src={user.profile.profile_pic}
-                    />
+                    <img alt="" className="avatar avatar--md" src={user.profile.profile_pic} />
                     <div>
                       <strong>{user.profile.name}</strong>
                       <small>@{user.username}</small>
                       <p>{user.profile.bio}</p>
                     </div>
-                    <button className="btn btn--main--outline btn--sm">
-                      Follow
-                    </button>
+                    <button className="btn btn--main--outline btn--sm">Follow</button>
                   </div>
                 </Link>
               </div>
@@ -166,6 +157,6 @@ function SearchPage() {
       </div>
     </div>
   );
-}
+};
 
 export default SearchPage;

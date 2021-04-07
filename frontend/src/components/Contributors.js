@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Avatar from '../common/Avatar';
 
-function Contributors({ users }) {
+import { Avatar } from '../common';
+
+const Contributors = ({ users }) => {
   return (
     <div className="card">
       <div className="card__body">
@@ -26,6 +27,6 @@ function Contributors({ users }) {
       </div>
     </div>
   );
-}
+};
 
 export default Contributors;

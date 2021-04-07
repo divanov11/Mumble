@@ -2,16 +2,11 @@ import React from 'react';
 import '../styles/components/Profile.css';
 import '../styles/components/Notification.css';
 
-//Components
-import Card from '../common/Card';
-import DiscussionsCard from '../components/DiscussionsCard';
+import { Card } from '../common';
+import { DiscussionsCard, Notification } from '../components';
+import { discussions, notifications } from '../data';
 
-//Dummy Data Files
-import notifications from '../data/notifications';
-import discussions from '../data/discussions';
-import Notification from '../components/Notification';
-
-function Notifications() {
+function NotificationsPage() {
   return (
     <div className="container notification--layout">
       <section id="center-content">
@@ -32,4 +27,4 @@ function Notifications() {
   );
 }
 
-export default Notifications;
+export default NotificationsPage;

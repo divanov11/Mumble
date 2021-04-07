@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import Button from '../common/Button';
-import DiscussionsCard from '../components/DiscussionsCard';
-import '../styles/components/CreateDiscussionPage.css';
-import discussions from '../data/discussions';
 
-function CreateDiscussionPage() {
+import '../styles/components/CreateDiscussionPage.css';
+
+import { Button } from '../common';
+import { DiscussionsCard } from '../components';
+import { discussions } from '../data';
+
+const CreateDiscussionPage = () => {
   const history = useHistory();
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
@@ -16,9 +18,7 @@ function CreateDiscussionPage() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     // use the form data and make a request to API
-    alert(
-      'Discussion Created!! \n Now you will be directed to the Discussion Page',
-    );
+    alert('Discussion Created!! \n Now you will be directed to the Discussion Page');
     // redirect to the discussion page, in the real request slug should be changed to created discussion's slug
     history.push(`/discussion/What-is-this-locking-pin-for-a-hinge-called`);
   };
@@ -63,6 +63,6 @@ function CreateDiscussionPage() {
       </section>
     </div>
   );
-}
+};
 
 export default CreateDiscussionPage;

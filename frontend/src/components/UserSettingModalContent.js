@@ -1,9 +1,8 @@
-import ModalContentAction from '../common/ModalContentAction';
-const UserSettingModalContent = ({
-  closeModal,
-  children,
-  handleFormSubmit,
-}) => {
+import React from 'react';
+
+import { ModalContentAction } from '../common';
+
+const UserSettingModalContent = ({ closeModal, children, handleFormSubmit }) => {
   const submit = (e) => {
     e.preventDefault();
     handleFormSubmit(e);

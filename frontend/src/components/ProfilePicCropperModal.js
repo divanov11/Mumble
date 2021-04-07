@@ -1,8 +1,10 @@
-import Modal from './Modal';
-import { useState } from 'react';
-import 'react-image-crop/dist/ReactCrop.css';
+import React, { useState } from 'react';
 import ReactCrop from 'react-image-crop';
-import ModalContentAction from '../common/ModalContentAction';
+
+import 'react-image-crop/dist/ReactCrop.css';
+
+import { Modal, ModalContentAction } from '../common';
+
 const ProfilePicCropperModal = ({
   heading,
   active,
@@ -13,9 +15,6 @@ const ProfilePicCropperModal = ({
   clearFileInputOnCancel,
   setCurrentUser,
 }) => {
-  // Cropped Image file To be uploaded to Django server
-  // const [croppedImage, setCroppedImage] = useState(null)
-  // React image crop set aspect ratio to 1 / 1 and default starting crop to 200x200px
   const [crop, setCrop] = useState({
     aspect: 1 / 1,
     unit: 'px',
@@ -24,18 +23,16 @@ const ProfilePicCropperModal = ({
     width: 200,
     height: 200,
   });
-  // React image crop image state
+
   const [image, setImage] = useState(null);
+
   const sendImageToServer = (imageFile) => {
     console.log(imageFile);
     // upload croppedImage to Server Here
   };
 
   const extractImageFileExtensionFromBase64 = (base64Data) => {
-    return base64Data.substring(
-      'data:image/'.length,
-      base64Data.indexOf(';base64'),
-    );
+    return base64Data.substring('data:image/'.length, base64Data.indexOf(';base64'));
   };
 
   const base64DatatoFile = (base64String, filename) => {
@@ -49,16 +46,13 @@ const ProfilePicCropperModal = ({
     }
     return new File([u8arr], filename, { type: mime });
   };
+
   const closeModelAndClearFileInput = (status) => {
     setActive(status);
     setTimeout(clearFileInputOnCancel, 200);
-    // reset crop initial box
     setCrop({ aspect: 1 / 1, unit: 'px', x: 0, y: 0, width: 200, height: 200 });
   };
 
-  // get cropped image and draw it in canvas then convert it to base64 using canves.toDataUrl() and save it on croppedImageState to display cropped image as profile
-  // then extract file extension from file input state and convert the canves base64 to file using base64StringtoFile() so that we can upload cropped image to server
-  // or download it
   const getCroppedImage = () => {
     const canvas = document.createElement('canvas');
     const scaleX = image.naturalWidth / image.width;
@@ -78,37 +72,23 @@ const ProfilePicCropperModal = ({
       crop.width,
       crop.height,
     );
-    // get Base64 of cropped image from canves to display preview save it in state
+
     const croppedBase64Image = canvas.toDataURL('image/jpeg');
     setCroppedImageBase64(croppedBase64Image);
-    // Extract Image file extension
-    const imageFileExtension = extractImageFileExtensionFromBase64(
-      profilePicSrc,
-    );
-    // append Image Extension to a unique filename using users data
+    const imageFileExtension = extractImageFileExtensionFromBase64(profilePicSrc);
     const filename = 'mumble_profile_pic.' + imageFileExtension;
-    // Convert cropped base64 to File using filename and send it to Django api to update users profile
     const croppedImageFile = base64DatatoFile(croppedBase64Image, filename);
-    // Send Image To Server
     sendImageToServer(croppedImageFile);
-    // Unmount Image Cropper and clear file input
     closeModelAndClearFileInput();
-    // use Base64Image to Update currentProfile Pic Preview
+
     setCurrentUser((state) => {
       return { ...state, profile_pic: croppedBase64Image };
     });
-    //
   };
+
   return (
-    <Modal
-      heading={heading}
-      active={active}
-      setActive={closeModelAndClearFileInput}
-    >
-      <div
-        className="profile-pic--cropper-container"
-        style={{ height: '90%', overflow: 'hidden' }}
-      >
+    <Modal heading={heading} active={active} setActive={closeModelAndClearFileInput}>
+      <div className="profile-pic--cropper-container" style={{ height: '90%', overflow: 'hidden' }}>
         <ReactCrop
           src={profilePicSrc}
           crop={crop}
@@ -116,10 +96,7 @@ const ProfilePicCropperModal = ({
           onImageLoaded={setImage}
         />
       </div>
-      <ModalContentAction
-        setActive={closeModelAndClearFileInput}
-        successAction={getCroppedImage}
-      />
+      <ModalContentAction setActive={closeModelAndClearFileInput} successAction={getCroppedImage} />
     </Modal>
   );
 };

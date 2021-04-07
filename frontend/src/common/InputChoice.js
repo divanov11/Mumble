@@ -13,12 +13,8 @@ const Input = ({
   ...others
 }) => {
   return (
-    <div
-      className={classNames(className, 'form__field', `form__field--${type}`)}
-    >
-      <p className={classNames(`${hideLabel && 'form__label--hidden'}`)}>
-        {label}:
-      </p>
+    <div className={classNames(className, 'form__field', `form__field--${type}`)}>
+      <p className={classNames(`${hideLabel && 'form__label--hidden'}`)}>{label}:</p>
       {options.map((option) => (
         <span key={option?.value}>
           <input
@@ -27,10 +23,9 @@ const Input = ({
             type={type}
             value={option?.value}
             name={name}
+            {...others}
           />
-          <label htmlFor={`input#${name}${option?.value}`}>
-            {option?.title}
-          </label>
+          <label htmlFor={`input#${name}${option?.value}`}>{option?.title}</label>
         </span>
       ))}
       {error && <small className="form__error">{error}</small>}

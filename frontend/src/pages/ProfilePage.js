@@ -1,22 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+
 import '../styles/components/Profile.css';
 
-//Components
-import Feed from '../components/Feed';
-import DiscussionsCard from '../components/DiscussionsCard';
-import ArticlesCard from '../components/ArticlesCard';
-import SkillTags from '../components/SkillTags';
+import { ArticlesCard, DiscussionsCard, FeedCard, SkillTags, UserCard } from '../components';
+import { articles, discussions } from '../data';
 
-//Dummy Data Files
-//import userData from '../data/users';
-//import postsData from '../data/posts';
-import discussions from '../data/discussions';
-import articles from '../data/articles';
-import UserCard from '../components/UserCard';
-
-function Profile({ match }) {
-  //const user = userData.find((u) => u.username === match.params.username);
+const Profile = ({ match }) => {
   const username = match.params.username;
 
   const [user, setUser] = useState({ skills: [] });
@@ -56,10 +46,6 @@ function Profile({ match }) {
     }
   }, [fetchUser, fetchPosts, loading]);
 
-  // let posts;
-  // if (user)
-  //   posts = postsData.filter((p) => p.user.username === match.params.username);
-
   return user ? (
     <div className="container profile--layout">
       <section id="sidebar--left--profile">
@@ -75,7 +61,7 @@ function Profile({ match }) {
             </Link>
           </div>
         </div>
-        <Feed posts={posts} />
+        <FeedCard posts={posts} />
       </section>
 
       <section id="sidebar--right--profile">
@@ -86,6 +72,6 @@ function Profile({ match }) {
   ) : (
     <Redirect to="/404" />
   );
-}
+};
 
 export default Profile;

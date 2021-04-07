@@ -1,14 +1,18 @@
+import React from 'react';
+
 const ModalContentAction = ({ setActive, successAction }) => {
   const handleCancel = (e) => {
     e.preventDefault();
     setActive(false);
   };
+
   const handleSuccess = () => {
     if (typeof successAction === 'function') {
       console.log('Success');
       successAction();
     }
   };
+
   return (
     <div className="modal-actions">
       <button

@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
-import useForm from '../hooks/useFormHook';
+
+import { useForm } from '../hooks';
+
 const LoginForm = () => {
   const [formValues, fieldChanges] = useForm({ email: '', password: '' });
   const onSubmit = (e) => {

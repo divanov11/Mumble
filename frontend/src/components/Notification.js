@@ -1,16 +1,18 @@
-import classNames from 'classnames';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Avatar from '../common/Avatar';
-import { distanceDate } from '../utilities/formatDate';
+import classNames from 'classnames';
+
+import '../styles/components/NotificationTitle.css';
+
+import { Avatar } from '../common';
+import { formatDate } from '../utilities';
 import { getNotificationLink } from './Header';
-import NotificationTitle from './NotificationTitle';
 
 export const markAsRead = (notification) => {
   notification.isRead = true;
 };
 
-function Notification({ notification }) {
+const Notification = ({ notification }) => {
   return (
     <Link
       className="notification-link"
@@ -32,13 +34,20 @@ function Notification({ notification }) {
         <div className="notification--item--right">
           <NotificationTitle notification={notification} />
           <p>{notification.description}</p>
-          <p className="notification--meta">
-            {distanceDate(notification.created)}
-          </p>
+          <p className="notification--meta">{formatDate.distanceDate(notification.created)}</p>
         </div>
       </div>
     </Link>
   );
-}
+};
+
+export const NotificationTitle = ({ notification }) => {
+  return (
+    <div className="notification-title">
+      <span className="notification-title__name">{notification.user.name}</span>
+      <span className="notification-title__link">{notification.content}</span>
+    </div>
+  );
+};
 
 export default Notification;

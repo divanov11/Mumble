@@ -1,7 +1,9 @@
+import React from 'react';
 import { RoundShape, TextBlock } from 'react-placeholder/lib/placeholders';
+
 import '../styles/components/PostCardPlaceholder.css';
 
-function PostCardPlaceholder() {
+const PostCardPlaceholder = () => {
   const cards = [1, 2, 3];
   return (
     <div className="show-loading-animation">
@@ -29,6 +31,6 @@ function PostCardPlaceholder() {
       ))}
     </div>
   );
-}
+};
 
 export default PostCardPlaceholder;

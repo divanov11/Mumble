@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+
 import '../styles/components/SearchBox.css';
 
-function SearchBox() {
+const SearchBox = () => {
   const [keyword, setKeyword] = useState('');
 
   let history = useHistory();
@@ -16,15 +17,13 @@ function SearchBox() {
       history.push(history.push(history.location.pathname));
     }
   };
+
   return (
     <form onSubmit={submitHandler} className="form" id="search-form">
       <i className="fas fa-search" id="search-icon"></i>
-      <input
-        onChange={(e) => setKeyword(e.target.value)}
-        placeholder="Search Mumble"
-      />
+      <input onChange={(e) => setKeyword(e.target.value)} placeholder="Search Mumble" />
     </form>
   );
-}
+};
 
 export default SearchBox;

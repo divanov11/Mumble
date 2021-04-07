@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDetectClickOutside } from 'react-detect-click-outside';
+import classNames from 'classnames';
 
+import '../styles/components/HeaderBar.css';
 import logo from '../assets/logo/dark-logo.png';
 
+import { Avatar } from '../common';
 import SearchBox from './SearchBox';
-
-import userData from '../data/users';
-import notifications from '../data/notifications';
-import '../styles/components/HeaderBar.css';
-import Avatar from '../common/Avatar';
-import classNames from 'classnames';
-import { markAsRead } from './Notification';
-import NotificationTitle from './NotificationTitle';
+import { markAsRead, NotificationTitle } from './Notification';
+import { usersData, notifications } from '../data';
 
 export const getNotificationLink = (notification) => {
   const notificationUrlMap = {
@@ -23,8 +20,8 @@ export const getNotificationLink = (notification) => {
   return notificationUrlMap[notification.notification_type];
 };
 
-function Header({ theme, toggleTheme }) {
-  const user = userData.find((u) => Number(u.id) === 1);
+const Header = ({ theme, toggleTheme }) => {
+  const user = usersData.find((u) => Number(u.id) === 1);
   const [showNavigation, setShowNavigation] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
 
@@ -51,8 +48,7 @@ function Header({ theme, toggleTheme }) {
     onTriggered: closeNotification,
   });
 
-  const hasUnreadNotification = () =>
-    !!notifications.find((notification) => !notification.isRead);
+  const hasUnreadNotification = () => !!notifications.find((notification) => !notification.isRead);
 
   return (
     <div id="header">
@@ -119,11 +115,7 @@ function Header({ theme, toggleTheme }) {
             Settings
           </Link>
 
-          <Link
-            to="/logout"
-            className="user-navigation--item"
-            onClick={closeDropdown}
-          >
+          <Link to="/logout" className="user-navigation--item" onClick={closeDropdown}>
             <i className="fas fa-sign-out-alt user--nav--icon"></i>
             Logout
           </Link>
@@ -131,11 +123,7 @@ function Header({ theme, toggleTheme }) {
       )}
       {showNotification && (
         <div ref={notificationRef} className="card" id="user--navigation">
-          <Link
-            to={`/notifications`}
-            className="user-navigation--item"
-            onClick={closeNotification}
-          >
+          <Link to={`/notifications`} className="user-navigation--item" onClick={closeNotification}>
             <i className="fas fa-envelope-open-text nav--icon"></i>
             <h6>All Notifications</h6>
           </Link>
@@ -165,6 +153,6 @@ function Header({ theme, toggleTheme }) {
       )}
     </div>
   );
-}
+};
 
 export default Header;
