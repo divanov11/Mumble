@@ -16,6 +16,9 @@ import articles from '../data/articles';
 import ReactPlaceholder from 'react-placeholder';
 import PostCardPlaceholder from '../components/PostCardPlaceholder';
 
+const apiEndpoint =
+  process.env.REACT_APP_API_URL || 'https://mumbleapi.herokuapp.com/api';
+
 function HomePage() {
   let user = userData.find((u) => Number(u.id) === 1);
   //let posts = postsData;
@@ -27,7 +30,7 @@ function HomePage() {
 
   useEffect(() => {
     // Get User Data
-    fetch(`https://mumbleapi.herokuapp.com/api/users`)
+    fetch(`${apiEndpoint}/users`)
       .then((response) => response.json())
       .then((data) => {
         setUsers(data);
@@ -35,7 +38,7 @@ function HomePage() {
       });
 
     // Get Post Data
-    fetch(`https://mumbleapi.herokuapp.com/api/posts`)
+    fetch(`${apiEndpoint}/posts`)
       .then((response) => response.json())
       .then((data) => {
         setPosts(data);
