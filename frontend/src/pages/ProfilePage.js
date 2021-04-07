@@ -1,50 +1,38 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux'
+
 import { Link, Redirect } from 'react-router-dom';
+
 
 import '../styles/components/Profile.css';
 
 import { ArticlesCard, DiscussionsCard, FeedCard, SkillTags, UserCard } from '../components';
 import { articles, discussions } from '../data';
 
+import { listUserDetails, listUserPosts } from '../actions/userActions' 
+
+
 const Profile = ({ match }) => {
   const username = match.params.username;
 
-  const [user, setUser] = useState({ skills: [] });
-  let [posts, setPosts] = useState([]);
   let [loading, setLoading] = useState(true);
+  
+  const dispatch = useDispatch()
 
-  let fetchPosts = useCallback(() => {
-    //Why is the proxy URL not workin here??
-    fetch(`https://mumbleapi.herokuapp.com/api/users/${username}/posts`)
-      .then((response) => response.json())
-      .then((data) => {
-        setPosts(data);
-      });
-  }, [username]);
+  const userProfileDetail = useSelector(state => state.userProfileDetail)
+  const userPostsList = useSelector(state => state.userPostsList)
 
-  let fetchUser = useCallback(() => {
-    fetch(`https://mumbleapi.herokuapp.com/api/users/${username}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setUser({
-          username: username,
-          profile_pic: data.profile.profile_pic,
-          skills: data.profile.skills,
-          name: data.profile.name,
-          bio: data.profile.bio,
-          vote_ratio: data.profile.vote_ratio,
-          followers_count: data.profile.followers_count,
-        });
-      });
-  }, [username]);
+  const {error, user } = userProfileDetail
+  const {errorPosts, posts } = userPostsList
+
 
   useEffect(() => {
     if (loading) {
-      fetchUser();
-      fetchPosts();
+      dispatch(listUserDetails(username))
+      dispatch(listUserPosts(username))
       setLoading(false);
     }
-  }, [fetchUser, fetchPosts, loading]);
+  }, [loading]);
 
   return user ? (
     <div className="container profile--layout">

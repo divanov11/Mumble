@@ -2,10 +2,17 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import { userListRecommendedReducer } from './reducers/userReducers'
+import { 
+  userListRecommendedReducer,
+  userProfileDetailReducer,
+  userPostsListReducer,
+} from './reducers/userReducers'
+
 
 const reducer = combineReducers({
     userListRecommended:userListRecommendedReducer,
+    userProfileDetail:userProfileDetailReducer,
+    userPostsList:userPostsListReducer,
 });
 
 const initialState = {};
