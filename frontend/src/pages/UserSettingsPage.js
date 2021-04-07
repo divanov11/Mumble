@@ -48,7 +48,7 @@ function UserSettingsPage({ theme, toggleTheme }) {
     return skills;
   };
   return (
-    <div id="settings-page">
+    <div className="container settings--layout">
       <UserSettingUpdateModal
         heading="Update User Settings"
         dataType={modelContent}
