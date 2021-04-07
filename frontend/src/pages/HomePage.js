@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/components/Home.css';
 //components
 import Contributors from '../components/Contributors';
@@ -53,6 +53,7 @@ function HomePage() {
   useEffect(() => {
     fetchPosts();
     fetchUsers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
