@@ -1,23 +1,23 @@
-#settings-page-container{
+
+.setting--layout {
     display: grid;
-    max-width: 1400px;
-    margin: 0 auto;
-    height: 100vh;
-    grid-template-columns:1fr 3fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
+    column-gap: 1rem;
 }
 
-
-#settings-pic-wrapper{
+#settings-pic-wrapper {
     text-align: center;
 }
 
-
-/* Media Queries for SMARTPHONE 320px */
-@media only screen and (min-width: 320px) and (max-width: 425px) {
-    #settings-page-container {
-        display: flex;
-        flex-flow: column nowrap;
+/* Media Queries for SMARTPHONE */
+@media screen and (max-width: 1300px) {
+    .setting--layout {
+        grid-template-columns: 1fr 2fr 0;
     }
 }
 
-
+@media screen and (max-width: 1000px) {
+    .setting--layout {
+        grid-template-columns: 1fr;
+    }
+}
