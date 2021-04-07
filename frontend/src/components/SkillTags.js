@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function SkillTags({ tags }) {
+const SkillTags = ({ tags }) => {
   return (
     <div className="card">
       <div id="topics-wrapper" className="card__body">
@@ -18,6 +18,6 @@ function SkillTags({ tags }) {
       </div>
     </div>
   );
-}
+};
 
 export default SkillTags;

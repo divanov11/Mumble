@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import Button from '../common/Button';
-import ArticlesCard from '../components/ArticlesCard';
-import '../styles/components/CreateArticlePage.css';
-import articles from '../data/articles';
-import Input from '../common/Input';
-import TextArea from '../common/TextArea';
 
-function CreateArticlePage() {
+import '../styles/components/CreateArticlePage.css';
+
+import { Button, Input, TextArea } from '../common';
+import { ArticlesCard } from '../components';
+import { articles } from '../data';
+
+const CreateArticlePage = () => {
   const history = useHistory();
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
@@ -53,6 +53,6 @@ function CreateArticlePage() {
       </section>
     </div>
   );
-}
+};
 
 export default CreateArticlePage;

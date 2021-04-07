@@ -17,10 +17,7 @@ const TextArea = ({
     <div className={classNames(className, 'form__field')}>
       <label
         htmlFor={`textarea#${name}`}
-        className={classNames(
-          'form__label',
-          `${hideLabel && 'form__label--hidden'}`,
-        )}
+        className={classNames('form__label', `${hideLabel && 'form__label--hidden'}`)}
       >
         {label}
       </label>

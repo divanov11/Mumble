@@ -1,14 +1,13 @@
+import React, { useState } from 'react';
 import '../styles/components/TagInputField.css';
-import { useState } from 'react';
+
 const TagInputField = ({ userData, tagListRef }) => {
   const [tagList, setTagList] = useState(userData.skills);
   const [input, setInput] = useState('');
   const addTags = (e) => {
     e.stopPropagation();
     const value =
-      e.key === ','
-        ? e.target.value.substring(0, e.target.value.length - 1)
-        : e.target.value;
+      e.key === ',' ? e.target.value.substring(0, e.target.value.length - 1) : e.target.value;
     if (e.key === 'Enter' || e.key === ',') {
       if (value) {
         setInput('');
@@ -37,10 +36,7 @@ const TagInputField = ({ userData, tagListRef }) => {
     );
   });
   return (
-    <div
-      className="input-tags"
-      onClick={() => document.querySelector('.tag-input').focus()}
-    >
+    <div className="input-tags" onClick={() => document.querySelector('.tag-input').focus()}>
       <div className="input-tag-list">{renderTags}</div>
       <input
         type="text"

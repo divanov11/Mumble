@@ -1,5 +1,7 @@
+import React from 'react';
 import ReactDom from 'react-dom';
 import { useEffect, useRef } from 'react';
+
 import '../styles/components/Modal.css';
 
 const Modal = ({ heading, children, active, setActive }) => {
@@ -9,7 +11,7 @@ const Modal = ({ heading, children, active, setActive }) => {
     setActive(false);
   };
 
-  const MODAL_TRANSITION_TIME = 200; // Because we used 0.2s transition on .modal-backdrop
+  const MODAL_TRANSITION_TIME = 200;
 
   const fadeIn = (el) => {
     el.style.display = 'flex';

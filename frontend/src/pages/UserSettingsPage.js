@@ -1,33 +1,28 @@
-import React from 'react';
-import '../styles/components/UserSettings.css';
-import { useState, useRef } from 'react';
-import User from '../data/users';
-import UserSettingUpdateModal from '../components/UserSettingUpdateModal';
-import Avatar from '../common/Avatar';
-import Button from '../common/Button';
-import ProfilePicCropperModal from '../components/ProfilePicCropperModal';
-import Card from '../common/Card';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
+import '../styles/components/UserSettings.css';
+
+import { Avatar, Button, Card } from '../common';
+import { ProfilePicCropperModal, UserSettingUpdateModal } from '../components';
+import { usersData } from '../data';
+
 function UserSettingsPage({ theme, toggleTheme }) {
-  const [currentUser, setCurrentUser] = useState(User[0]);
+  const [currentUser, setCurrentUser] = useState(usersData[0]);
   const [updateModelActive, setUpdateModelActive] = useState(false);
   const [profilePicModel, setProfilePicModel] = useState(false);
   const [modelContent, setModelContent] = useState(null);
-  // input File change value state convert file to Base64 to extract file extension
   const [profilePicSrc, setProfilePicSrc] = useState(null);
-  // CroppedImageBase64 to display profile change before uploading to server
-  const [croppedImageBase64, setCroppedImageBase64] = useState(
-    currentUser.profile_pic,
-  );
   const inputRef = useRef();
+
+  const [croppedImageBase64, setCroppedImageBase64] = useState(currentUser.profile_pic);
 
   const update = (e) => {
     const data_type = e.target.dataset.type;
     setModelContent(data_type);
     setUpdateModelActive(true);
   };
-  // On File change get first file and convert it into a Base64 Data and save it in state
+
   const handleFileChange = (e) => {
     const imageBlob = e.target.files[0];
     let reader = new FileReader();
@@ -103,11 +98,7 @@ function UserSettingsPage({ theme, toggleTheme }) {
                   onChange={handleFileChange}
                   ref={inputRef}
                 />
-                <Button
-                  style={{ pointerEvents: 'none' }}
-                  text="Update Avatar"
-                  iconName="camera"
-                />
+                <Button style={{ pointerEvents: 'none' }} text="Update Avatar" iconName="camera" />
               </div>
             </div>
           </div>
@@ -154,11 +145,7 @@ function UserSettingsPage({ theme, toggleTheme }) {
               <span>Theme</span>
             </div>
             <label className="toggle-theme-switch">
-              <input
-                type="checkbox"
-                onClick={toggleTheme}
-                checked={theme === 'light'}
-              ></input>
+              <input type="checkbox" onClick={toggleTheme} checked={theme === 'light'}></input>
               <span className="theme-slider"></span>
             </label>
           </div>

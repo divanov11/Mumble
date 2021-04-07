@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Error500 = ({ error }) => (
+const Error500Page = ({ error }) => (
   <div style={{ margin: '20rem' }}>
     <h1>🚨 500 - Internal Error!</h1>
     <h3>
-      Something went wrong. 🤷‍♂️ <Link to="/"> Click here</Link> to back to the 🏡
-      home page.
+      Something went wrong. 🤷‍♂️ <Link to="/"> Click here</Link> to back to the 🏡 home page.
       <h5>
         Also, you can 🙌 raise an issue&nbsp;
         <a href="https://github.com/divanov11/Mumble/issues"> here</a>.
@@ -25,4 +24,4 @@ const Error500 = ({ error }) => (
   </div>
 );
 
-export default Error500;
+export default Error500Page;

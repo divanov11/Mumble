@@ -2,15 +2,9 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 function UserSearchPage({ location }) {
-  // Using a ?query= parameter will add a lot of future flexibility, allowing us to make queries to this page as a redirect possibly.
-
-  // Will need to figure out how to remove the URL formatting, if necessary.
-
   const history = useHistory();
 
-  // Check query exists and is valid
   if (location.search.substring(0, 7) !== '?query=') {
-    // If invalid query format redirect to https://site.com/find-user?query=
     history.push({
       pathname: '/find-user',
       search: '?query=',

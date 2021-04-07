@@ -27,12 +27,7 @@ const Button = ({
       })}
       {...others}
     >
-      {iconName && (
-        <i
-          className={`${iconStyle} fa-${iconName}`}
-          style={{ marginRight: '8px' }}
-        ></i>
-      )}
+      {iconName && <i className={`${iconStyle} fa-${iconName}`} style={{ marginRight: '8px' }}></i>}
       {text} {children}
     </button>
   );

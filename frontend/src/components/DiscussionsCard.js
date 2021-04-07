@@ -11,10 +11,7 @@ function DiscussionsCard({ discussions }) {
         {discussions.map((discussion, index) => (
           <div key={index} className="snippet-wrapper">
             <div>
-              <Link
-                className="snippet-engagement-count"
-                to={`/discussion/${discussion.slug}`}
-              >
+              <Link className="snippet-engagement-count" to={`/discussion/${discussion.slug}`}>
                 <p>{discussion.vote_ratio}</p>
               </Link>
             </div>

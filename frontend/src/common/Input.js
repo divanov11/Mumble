@@ -1,6 +1,6 @@
 import React from 'react';
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 const Input = ({
   type = 'text',
@@ -17,10 +17,7 @@ const Input = ({
     <div className={classNames(className, 'form__field')}>
       <label
         htmlFor={`input#${name}`}
-        className={classNames(
-          'form__label',
-          `${hideLabel && 'form__label--hidden'}`,
-        )}
+        className={classNames('form__label', `${hideLabel && 'form__label--hidden'}`)}
       >
         {label}
       </label>
@@ -41,14 +38,7 @@ const Input = ({
 Input.propTypes = {
   name: PropTypes.string,
   value: PropTypes.string,
-  type: PropTypes.oneOf([
-    'text',
-    'email',
-    'password',
-    'number',
-    'date',
-    'time',
-  ]),
+  type: PropTypes.oneOf(['text', 'email', 'password', 'number', 'date', 'time']),
   placeholder: PropTypes.string,
   label: PropTypes.string.isRequired,
   hideLabel: PropTypes.bool,

@@ -1,12 +1,12 @@
 import React from 'react';
-import ArticlesCard from '../components/ArticlesCard';
 
-import articles from '../data/articles';
 import '../styles/components/Article.css';
 
-function ArticlePage({ match }) {
-  let article = articles.find((u) => u.slug === match.params.slug);
+import { ArticlesCard } from '../components';
+import { articles } from '../data';
 
+const ArticlePage = ({ match }) => {
+  let article = articles.find((u) => u.slug === match.params.slug);
   let relatedArticles = articles.filter((d) => d.slug !== match.params.slug);
 
   return (
@@ -34,6 +34,6 @@ function ArticlePage({ match }) {
       </section>
     </div>
   );
-}
+};
 
 export default ArticlePage;
