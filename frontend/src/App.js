@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'react-placeholder/lib/reactPlaceholder.css';
 import './styles/App.css';
 
+import { Header, RestoreScroll } from './components';
 import {
   HomePage,
   DiscussionPage,
@@ -22,8 +23,6 @@ import {
   Error404page,
   Error500page,
 } from './pages';
-import Header from './components/Header';
-import RestoreScroll from './components/RestoreScroll';
 
 const App = () => {
   const userTheme = localStorage.getItem('mumble-theme') ?? 'light';
@@ -57,11 +56,9 @@ const App = () => {
                 <UserSettingsPage theme={currentTheme} toggleTheme={toggleTheme} />
               </Route>
               <Route path="/404" component={Error404page} />
-
               <Redirect to="/404" />
             </Switch>
           </main>
-
           <RestoreScroll />
           <ToastContainer
             position="bottom-right"
