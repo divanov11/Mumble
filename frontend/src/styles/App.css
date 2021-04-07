@@ -100,3 +100,15 @@ textarea:focus-within {
 .snippet-text {
   color: var(--color-gray);
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #c4d0d3;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #5aa5b9;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #4d94a8;
+}
