@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { 
+  userListReducer,
   userListRecommendedReducer,
   userProfileDetailReducer,
   userPostsListReducer,
@@ -10,6 +11,7 @@ import {
 
 
 const reducer = combineReducers({
+    userList:userListReducer,
     userListRecommended:userListRecommendedReducer,
     userProfileDetail:userProfileDetailReducer,
     userPostsList:userPostsListReducer,

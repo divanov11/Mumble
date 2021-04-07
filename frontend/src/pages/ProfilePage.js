@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 
 import { Link, Redirect } from 'react-router-dom';
@@ -22,8 +22,8 @@ const Profile = ({ match }) => {
   const userProfileDetail = useSelector(state => state.userProfileDetail)
   const userPostsList = useSelector(state => state.userPostsList)
 
-  const {error, user } = userProfileDetail
-  const {errorPosts, posts } = userPostsList
+  const {user } = userProfileDetail
+  const {posts } = userPostsList
 
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const Profile = ({ match }) => {
       dispatch(listUserPosts(username))
       setLoading(false);
     }
-  }, [loading]);
+  }, [loading, dispatch, username]);
 
   return user ? (
     <div className="container profile--layout">

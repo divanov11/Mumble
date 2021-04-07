@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux'
+
 import { Link } from 'react-router-dom';
 
 import '../styles/components/SearchPage.css';
 
 import { articles, interests, skills } from '../data';
+
+import { listUsers } from '../actions/userActions' 
+
 
 const SearchPage = () => {
   let toggleCategory = (e, category) => {
@@ -24,23 +29,22 @@ const SearchPage = () => {
     e.target.classList.add('category-link--active');
   };
 
-  let [userData, setUserdata] = useState([]);
   let [loading, setLoading] = useState(true);
 
-  let fetchUsers = () => {
-    fetch(`https://mumbleapi.herokuapp.com/api/users`)
-      .then((response) => response.json())
-      .then((data) => {
-        setUserdata(data);
-      });
-  };
+
+  const dispatch = useDispatch()
+
+  const userList = useSelector(state => state.userList)
+  const { users } = userList
 
   useEffect(() => {
     if (loading) {
-      fetchUsers();
+      dispatch(listUsers())
       setLoading(false);
     }
-  }, [loading]);
+    
+  }, [dispatch, loading])
+
 
   return (
     <div id="search-page-layout" className="container">
@@ -48,7 +52,7 @@ const SearchPage = () => {
 
       <div>
         <div className="category-wrapper" id="category-people">
-          {userData.map((user, index) => (
+          {users.map((user, index) => (
             <div key={index} className="card">
               <div className="card__body">
                 <Link to={`/profile/${user.username}`}>
