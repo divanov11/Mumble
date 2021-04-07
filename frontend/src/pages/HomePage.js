@@ -19,13 +19,15 @@ import PostCardPlaceholder from '../components/PostCardPlaceholder';
 const useLoadingListener = (asyncFn) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
-  return [
-    isLoaded,
+  const wrappedFn = useCallback(
     () =>
       asyncFn().then(() => {
         setIsLoaded(true);
       }),
-  ];
+    [asyncFn],
+  );
+
+  return [isLoaded, wrappedFn];
 };
 
 function HomePage() {
@@ -35,7 +37,6 @@ function HomePage() {
 
   let [posts, setPosts] = useState([]);
   let [contributors, setContributors] = useState([]);
-  let [loading, setLoading] = useState(true);
 
   const fetchUsers = useCallback(() => {
     fetch(`https://mumbleapi.herokuapp.com/api/users`)
@@ -45,21 +46,22 @@ function HomePage() {
       });
   }, []);
 
-  const [isDoneFetchingPosts, fetchPosts] = useLoadingListener(() =>
-    fetch(`https://mumbleapi.herokuapp.com/api/posts`)
-      .then((response) => response.json())
-      .then((data) => {
-        setPosts(data);
-      }),
+  const [isDoneFetchingPosts, fetchPosts] = useLoadingListener(
+    useCallback(
+      () =>
+        fetch(`https://mumbleapi.herokuapp.com/api/posts`)
+          .then((response) => response.json())
+          .then((data) => {
+            setPosts(data);
+          }),
+      [],
+    ),
   );
 
   useEffect(() => {
-    if (loading) {
-      fetchPosts();
-      fetchUsers();
-      setLoading(false);
-    }
-  }, [fetchPosts, fetchUsers, loading]);
+    fetchPosts();
+    fetchUsers();
+  }, [fetchPosts, fetchUsers]);
 
   return (
     <div className="container home--layout">
