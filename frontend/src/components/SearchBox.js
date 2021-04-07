@@ -9,7 +9,6 @@ const SearchBox = () => {
   let history = useHistory();
 
   const submitHandler = (e) => {
-    console.log('Form was submitted');
     e.preventDefault();
     if (keyword) {
       history.push(`/search?q=${keyword}`);
@@ -19,9 +18,13 @@ const SearchBox = () => {
   };
 
   return (
-    <form onKeyUp={submitHandler} className="form" id="search-form">
+    <form onKeyUp={submitHandler} onSubmit={submitHandler} className="form" id="search-form">
       <i className="fas fa-search" id="search-icon"></i>
-      <input onChange={(e) => setKeyword(e.target.value)} placeholder="Search Mumble" />
+      <input
+        id="search-input"
+        onChange={(e) => setKeyword(e.target.value)}
+        placeholder="Search Mumble"
+      />
     </form>
   );
 };

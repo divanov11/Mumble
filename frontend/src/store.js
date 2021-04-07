@@ -9,11 +9,15 @@ import {
   userPostsListReducer,
 } from './reducers/userReducers';
 
+import { postSearchListReducer } from './reducers/postReducers';
+
 const reducer = combineReducers({
   userList: userListReducer,
   userListRecommended: userListRecommendedReducer,
   userProfileDetail: userProfileDetailReducer,
   userPostsList: userPostsListReducer,
+
+  postSearchList: postSearchListReducer,
 });
 
 const initialState = {};
