@@ -1,9 +1,27 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 
 import { Avatar } from '../common';
 
-const Contributors = ({ users }) => {
+import { listRecommenedUsers } from '../actions/userActions' 
+
+const Contributors = () => {
+
+  const dispatch = useDispatch()
+
+  const userList = useSelector(state => state.userListRecommended)
+  const {loading, error, users } = userList
+
+  useEffect(() => {
+    console.log(loading)
+    if(loading){
+      dispatch(listRecommenedUsers())
+    }
+    
+  }, [loading])
+
+
   return (
     <div className="card">
       <div className="card__body">

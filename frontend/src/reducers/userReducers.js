@@ -11,7 +11,7 @@ export const userListRecommendedReducer = (state = {users:[]}, action) => {
             return {loading:true, users:[]}
         
         case USER_LIST_SUCCESS:
-            return {loading:false, products:action.payload}
+            return {loading:false, users:action.payload}
 
         case USER_LIST_FAIL:
             return {loading:false, error: action.payload}
