@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import '../styles/components/SearchPage.css';
 
-import { articles, interests, skills, postsData } from '../data';
+import { articles, interests, skills } from '../data';
 
 import { Card, PostCard } from '../common';
 
