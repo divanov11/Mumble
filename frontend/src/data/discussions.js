@@ -18,8 +18,7 @@ const discussions = [
     id: '1',
     slug: 'How-do-I-set-HttpOnly-cookie-in-Django',
     headline: 'How do I set HttpOnly cookie in Django?',
-    body:
-      'How do I set HttpOnly cookie in Django? And is it worth the effort to prevent XSS?',
+    body: 'How do I set HttpOnly cookie in Django? And is it worth the effort to prevent XSS?',
     created: '2021-03-29 T19:04:25+00:00',
     vote_ratio: '26',
     user: {
@@ -57,8 +56,7 @@ const discussions = [
       },
       {
         id: '3',
-        content:
-          'In Django 3.0 you can set the following cookies to True in your settings.py',
+        content: 'In Django 3.0 you can set the following cookies to True in your settings.py',
         vote_ratio: '1',
         created: '2021-03-29 T19:04:25+00:00',
         user: {
@@ -165,8 +163,7 @@ const discussions = [
       },
       {
         id: '3',
-        content:
-          'In Django 3.0 you can set the following cookies to True in your settings.py',
+        content: 'In Django 3.0 you can set the following cookies to True in your settings.py',
         vote_ratio: '1',
         created: '2021-03-29 T19:04:25+00:00',
         user: {

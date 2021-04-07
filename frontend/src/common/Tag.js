@@ -4,10 +4,7 @@ import classNames from 'classnames';
 
 const Tag = ({ text, outline = false, className = '', ...others }) => {
   return (
-    <span
-      className={classNames(className, 'tag', { 'tag--outline': outline })}
-      {...others}
-    >
+    <span className={classNames(className, 'tag', { 'tag--outline': outline })} {...others}>
       <small>{text}</small>
     </span>
   );
