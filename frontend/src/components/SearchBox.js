@@ -19,7 +19,7 @@ const SearchBox = () => {
   };
 
   return (
-    <form onSubmit={submitHandler} className="form" id="search-form">
+    <form onKeyUp={submitHandler} className="form" id="search-form">
       <i className="fas fa-search" id="search-icon"></i>
       <input onChange={(e) => setKeyword(e.target.value)} placeholder="Search Mumble" />
     </form>
