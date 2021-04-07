@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/components/Home.css';
 //components
 import Contributors from '../components/Contributors';
@@ -16,50 +16,32 @@ import articles from '../data/articles';
 import ReactPlaceholder from 'react-placeholder';
 import PostCardPlaceholder from '../components/PostCardPlaceholder';
 
-const useLoadingListener = (asyncFn) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  return [
-    isLoaded,
-    () =>
-      asyncFn().then(() => {
-        setIsLoaded(true);
-      }),
-  ];
-};
-
 function HomePage() {
-  //let posts = postsData;
   let user = userData.find((u) => Number(u.id) === 1);
-  //let contributors = userData.slice(0, 3);
+  //let posts = postsData;
 
-  let [posts, setPosts] = useState([]);
-  let [contributors, setContributors] = useState([]);
-  let [loading, setLoading] = useState(true);
+  const [users, setUsers] = useState([]); //eslint-disable-line
+  const [posts, setPosts] = useState([]);
+  const [contributors, setContributors] = useState([]);
+  const [isLoaded, setLoaded] = useState(false);
 
-  const fetchUsers = useCallback(() => {
+  useEffect(() => {
+    // Get User Data
     fetch(`https://mumbleapi.herokuapp.com/api/users`)
       .then((response) => response.json())
       .then((data) => {
+        setUsers(data);
         setContributors(data.slice(0, 3));
       });
-  }, []);
 
-  const [isDoneFetchingPosts, fetchPosts] = useLoadingListener(() =>
+    // Get Post Data
     fetch(`https://mumbleapi.herokuapp.com/api/posts`)
       .then((response) => response.json())
       .then((data) => {
         setPosts(data);
-      }),
-  );
-
-  useEffect(() => {
-    if (loading) {
-      fetchPosts();
-      fetchUsers();
-      setLoading(false);
-    }
-  }, [fetchPosts, fetchUsers, loading]);
+      })
+      .then(() => setLoaded(true));
+  }, []);
 
   return (
     <div className="container home--layout">
@@ -73,7 +55,7 @@ function HomePage() {
         <ReactPlaceholder
           customPlaceholder={<PostCardPlaceholder />}
           showLoadingAnimation
-          ready={isDoneFetchingPosts}
+          ready={isLoaded}
         >
           <Feed posts={posts} />
         </ReactPlaceholder>
