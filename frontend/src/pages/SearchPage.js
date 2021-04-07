@@ -1,5 +1,5 @@
-import React, {useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Link } from 'react-router-dom';
 
@@ -7,12 +7,10 @@ import '../styles/components/SearchPage.css';
 
 import { articles, interests, skills } from '../data';
 
-import { listUsers } from '../actions/userActions' 
+import { listUsers } from '../actions/userActions';
 
-
-const SearchPage = ({history}) => {
-
-  let keyword = history.location.search
+const SearchPage = ({ history }) => {
+  let keyword = history.location.search;
 
   let toggleCategory = (e, category) => {
     let categories = document.getElementsByClassName('category-wrapper');
@@ -32,18 +30,14 @@ const SearchPage = ({history}) => {
     e.target.classList.add('category-link--active');
   };
 
+  const dispatch = useDispatch();
 
-
-  const dispatch = useDispatch()
-
-  const userList = useSelector(state => state.userList)
-  const { users } = userList
-  
+  const userList = useSelector((state) => state.userList);
+  const { users } = userList;
 
   useEffect(() => {
-    dispatch(listUsers(keyword))    
-  }, [dispatch, keyword])
-
+    dispatch(listUsers(keyword));
+  }, [dispatch, keyword]);
 
   return (
     <div id="search-page-layout" className="container">

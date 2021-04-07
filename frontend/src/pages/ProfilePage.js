@@ -1,35 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Link, Redirect } from 'react-router-dom';
-
 
 import '../styles/components/Profile.css';
 
 import { ArticlesCard, DiscussionsCard, FeedCard, SkillTags, UserCard } from '../components';
 import { articles, discussions } from '../data';
 
-import { listUserDetails, listUserPosts } from '../actions/userActions' 
-
+import { listUserDetails, listUserPosts } from '../actions/userActions';
 
 const Profile = ({ match }) => {
   const username = match.params.username;
 
   let [loading, setLoading] = useState(true);
-  
-  const dispatch = useDispatch()
 
-  const userProfileDetail = useSelector(state => state.userProfileDetail)
-  const userPostsList = useSelector(state => state.userPostsList)
+  const dispatch = useDispatch();
 
-  const {user } = userProfileDetail
-  const {posts } = userPostsList
+  const userProfileDetail = useSelector((state) => state.userProfileDetail);
+  const userPostsList = useSelector((state) => state.userPostsList);
 
+  const { user } = userProfileDetail;
+  const { posts } = userPostsList;
 
   useEffect(() => {
     if (loading) {
-      dispatch(listUserDetails(username))
-      dispatch(listUserPosts(username))
+      dispatch(listUserDetails(username));
+      dispatch(listUserPosts(username));
       setLoading(false);
     }
   }, [loading, dispatch, username]);

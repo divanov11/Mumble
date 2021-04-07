@@ -1,23 +1,20 @@
-import React, {useEffect} from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { Avatar } from '../common';
 
-import { listRecommenedUsers } from '../actions/userActions' 
+import { listRecommenedUsers } from '../actions/userActions';
 
 const Contributors = () => {
+  const dispatch = useDispatch();
 
-  const dispatch = useDispatch()
-
-  const userList = useSelector(state => state.userListRecommended)
-  const { users } = userList
+  const userList = useSelector((state) => state.userListRecommended);
+  const { users } = userList;
 
   useEffect(() => {
-      dispatch(listRecommenedUsers())
-    
-  }, [dispatch])
-
+    dispatch(listRecommenedUsers());
+  }, [dispatch]);
 
   return (
     <div className="card">
