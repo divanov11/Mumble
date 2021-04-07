@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import '../styles/components/Profile.css';
 
@@ -22,16 +22,16 @@ function Profile({ match }) {
   const [user, setUser] = useState({ skills: [] });
   let [posts, setPosts] = useState([]);
 
-  let fetchPosts = () => {
+  let fetchPosts = useCallback(() => {
     //Why is the proxy URL not workin here??
     fetch(`/api/users/${username}/posts`)
       .then((response) => response.json())
       .then((data) => {
         setPosts(data);
       });
-  };
+  }, [username]);
 
-  let fetchUser = () => {
+  let fetchUser = useCallback(() => {
     fetch(`/api/users/${username}`)
       .then((response) => response.json())
       .then((data) => {
@@ -45,12 +45,12 @@ function Profile({ match }) {
           followers_count: data.profile.followers_count,
         });
       });
-  };
+  }, [username]);
 
   useEffect(() => {
     fetchUser();
     fetchPosts();
-  }, []);
+  }, [fetchUser, fetchPosts]);
 
   // let posts;
   // if (user)

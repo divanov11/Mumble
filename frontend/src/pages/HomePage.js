@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import '../styles/components/Home.css';
 //components
 import Contributors from '../components/Contributors';
@@ -13,6 +13,20 @@ import ArticlesCard from '../components/ArticlesCard';
 import userData from '../data/users';
 import discussions from '../data/discussions';
 import articles from '../data/articles';
+import ReactPlaceholder from 'react-placeholder';
+import PostCardPlaceholder from '../components/PostCardPlaceholder';
+
+const useLoadingListener = (asyncFn) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return [
+    isLoaded,
+    () =>
+      asyncFn().then(() => {
+        setIsLoaded(true);
+      }),
+  ];
+};
 
 function HomePage() {
   //let posts = postsData;
@@ -22,26 +36,26 @@ function HomePage() {
   let [posts, setPosts] = useState([]);
   let [contributors, setContributors] = useState([]);
 
-  let fetchUsers = () => {
+  const fetchUsers = useCallback(() => {
     fetch(`/api/users`)
       .then((response) => response.json())
       .then((data) => {
         setContributors(data.slice(0, 3));
       });
-  };
+  }, []);
 
-  let fetchPosts = () => {
+  const [isDoneFetchingPosts, fetchPosts] = useLoadingListener(() =>
     fetch(`/api/posts`)
       .then((response) => response.json())
       .then((data) => {
         setPosts(data);
-      });
-  };
+      }),
+  );
 
   useEffect(() => {
     fetchPosts();
     fetchUsers();
-  }, []);
+  }, [fetchPosts, fetchUsers]);
 
   return (
     <div className="container home--layout">
@@ -52,7 +66,13 @@ function HomePage() {
 
       <section id="center-content">
         <PostForm />
-        <Feed posts={posts} />
+        <ReactPlaceholder
+          customPlaceholder={<PostCardPlaceholder />}
+          showLoadingAnimation
+          ready={isDoneFetchingPosts}
+        >
+          <Feed posts={posts} />
+        </ReactPlaceholder>
       </section>
 
       <section id="sidebar--right--home">

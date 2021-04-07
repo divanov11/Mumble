@@ -10,6 +10,7 @@ import {
 import { ErrorBoundary } from 'react-error-boundary';
 
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-placeholder/lib/reactPlaceholder.css';
 import './styles/App.css';
 
 import Error500 from './pages/Error500';
