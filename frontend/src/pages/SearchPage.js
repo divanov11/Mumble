@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 
 import { Link } from 'react-router-dom';
@@ -10,7 +10,10 @@ import { articles, interests, skills } from '../data';
 import { listUsers } from '../actions/userActions' 
 
 
-const SearchPage = () => {
+const SearchPage = ({history}) => {
+
+  let keyword = history.location.search
+
   let toggleCategory = (e, category) => {
     let categories = document.getElementsByClassName('category-wrapper');
     let categoryButtons = document.getElementsByClassName('category-link');
@@ -29,21 +32,17 @@ const SearchPage = () => {
     e.target.classList.add('category-link--active');
   };
 
-  let [loading, setLoading] = useState(true);
 
 
   const dispatch = useDispatch()
 
   const userList = useSelector(state => state.userList)
   const { users } = userList
+  
 
   useEffect(() => {
-    if (loading) {
-      dispatch(listUsers())
-      setLoading(false);
-    }
-    
-  }, [dispatch, loading])
+    dispatch(listUsers(keyword))    
+  }, [dispatch, keyword])
 
 
   return (
