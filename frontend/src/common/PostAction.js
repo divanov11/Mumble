@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Button from './Button';
 
-const PostAction = ({ onMessageIconClick, comments, shares, link }) => {
+const PostAction = ({ onMessageIconClick, comments, shares }) => {
   const [showCommentBox, setShowCommentBox] = useState(false);
   const [comment, setComment] = useState('');
 
@@ -32,7 +32,7 @@ const PostAction = ({ onMessageIconClick, comments, shares, link }) => {
         </div>
 
         <div className="action-wrapper" onClick={toggleCommentBox}>
-          <Link to={link} role="button" className="post-comment-wrapper">
+          <Link role="button" className="post-comment-wrapper">
             <i className="fas fa-comment-lines"> </i>
             <span className="post-action-text">Comment</span>
           </Link>
