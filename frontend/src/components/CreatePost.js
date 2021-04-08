@@ -6,7 +6,7 @@ import '../styles/components/CreatePost.css';
 import { Button, AuthorBox, TextArea } from '../common';
 import { usersData } from '../data';
 
-const PostForm = () => {
+const CreatePost = () => {
   const user = usersData.find((u) => Number(u.id) === 1);
 
   const [message, setMessage] = useState('');
@@ -62,4 +62,4 @@ const PostForm = () => {
   );
 };
 
-export default PostForm;
+export default CreatePost;
