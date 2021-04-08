@@ -1,31 +1,14 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-
-import {
-  userListReducer,
-  userListRecommendedReducer,
-  userProfileDetailReducer,
-  userPostsListReducer,
-} from './reducers/userReducers';
-
-import { postSearchListReducer } from './reducers/postReducers';
-
-const reducer = combineReducers({
-  userList: userListReducer,
-  userListRecommended: userListRecommendedReducer,
-  userProfileDetail: userProfileDetailReducer,
-  userPostsList: userPostsListReducer,
-
-  postSearchList: postSearchListReducer,
-});
+import thunk from 'redux-thunk';
+import rootReducer from './reducers';
 
 const initialState = {};
 
 const middleWare = [thunk];
 
 const store = createStore(
-  reducer,
+  rootReducer,
   initialState,
   composeWithDevTools(applyMiddleware(...middleWare)),
 );
