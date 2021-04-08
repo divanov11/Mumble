@@ -10,6 +10,11 @@
   margin-bottom: 20px;
 }
 
+textarea:focus-within {
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 0 3px;
+}
+
 #feed-post-form textarea {
   display: block;
   width: 90%;
@@ -20,11 +25,6 @@
   font-size: 18px;
   border-radius: 50px;
   resize: none;
-}
-
-textarea:focus-within {
-  outline: none;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
 }
 
 #post-btn-wrapper {
@@ -46,7 +46,6 @@ textarea:focus-within {
 
 .contributor-wrapper {
   display: flex;
-
   justify-content: space-between;
   align-items: center;
   padding-top: 15px;
@@ -105,10 +104,12 @@ textarea:focus-within {
   width: 8px;
   background-color: #c4d0d3;
 }
+
 ::-webkit-scrollbar-thumb {
   background-color: #5aa5b9;
   border-radius: 5px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background-color: #4d94a8;
 }

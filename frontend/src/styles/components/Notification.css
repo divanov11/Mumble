@@ -22,9 +22,11 @@
 .notification--item:hover {
   background-color: var(--color-light);
 }
+
 .notification--item--right {
   margin-left: 25px;
 }
+
 .notification--meta {
   line-height: 1;
   margin-bottom: 0.5rem;

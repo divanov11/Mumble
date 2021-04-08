@@ -16,11 +16,13 @@ html {
     font-size: 56.25%;
   }
 }
+
 @media only screen and (min-width: 1200px) {
   html {
     font-size: 62.5%;
   }
 }
+
 @media only screen and (min-width: 2100px) {
   html {
     font-size: 75%;

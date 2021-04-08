@@ -10,6 +10,7 @@
   transition: all 0.2s ease-in-out;
   z-index: 1000;
 }
+
 .model-backdrop.active {
   display: flex;
   opacity: 1;
@@ -21,7 +22,7 @@
 }
 
 .modal-backdrop .mumble-modal {
-  background: White;
+  background: white;
   border-radius: 6px;
   width: 100%;
   max-width: 600px;
@@ -29,16 +30,19 @@
   padding: 20px;
   margin: 0 15px;
 }
+
 .close-modal {
   position: absolute;
   top: 0;
   right: 0;
   cursor: pointer;
 }
+
 .close-icon {
   font-size: 14px;
   padding: 0;
 }
+
 @media (min-width: 400px) {
   .modal-backdrop .mumble-modal {
     margin: 0 25px;
@@ -49,6 +53,7 @@
     padding: 2px;
   }
 }
+
 @media (min-width: 1000px) {
   .close-icon {
     font-size: 18px;
@@ -59,6 +64,7 @@
 .mumble-modal .modal-header {
   position: relative;
 }
+
 .modal-header .modal-close {
   position: absolute;
   right: 0;

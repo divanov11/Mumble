@@ -12,9 +12,8 @@
   --color-white-light: #fafafa;
   --color-success: #5dd693;
   --color-error: #fc4b0b;
-
-  --font-base: 'Poppins', Arial, Helvetica, 'Segoe UI', Roboto, Ubuntu, sans-serif;
-  --font-monospace: 'Fira Code', 'Courier New', Courier, monospace;
+  --font-base: 'Poppins', arial, helvetica, 'Segoe UI', roboto, ubuntu, sans-serif;
+  --font-monospace: 'Fira Code', 'Courier New', courier, monospace;
   --font-regular: 300;
   --font-medium: 500;
   --font-bold: 700;
