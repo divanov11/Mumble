@@ -15,15 +15,17 @@
   width: 100%;
 }
 
-.search--item--info-1{
+.search--item--info-1 {
   flex: 1;
 }
-.search--item--info-1-top{
+
+.search--item--info-1-top {
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
 }
-.search--item--info-1-top-text{
+
+.search--item--info-1-top-text {
   flex: 1;
 }
 
@@ -62,7 +64,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .search--item--info-1-top-text{
+  .search--item--info-1-top-text {
     display: flex;
     flex-direction: column;
   }
