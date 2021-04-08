@@ -1,12 +1,19 @@
-# MUMBLE
+#
+
+<div align="center">
+  <img src="./frontend/public/android-chrome-512x512.png" width="8%">
+  <h1>
+    MUMBLE
+  </h1>
+</div>
 
 An Open Source Social Media Platform and Public Forum for Questions and Discussions, built for Developers.
 
 ## 🔗 Links
 
-- **Live Demo: (https://www.mumble.dev/)**
-- **UI Kit (Docs/Preview) 👉 [Here](http://mumble-lp.s3-website-us-west-2.amazonaws.com/)**
-- **Discord [Join here](https://discord.gg/TxgpyK8pzf)**
+- **[🔴 Live Demo](https://www.mumble.dev/)**
+- **[🎨 UI Kit Docs/Preview](http://mumble-lp.s3-website-us-west-2.amazonaws.com/)**
+- **[✅ Discord Server](https://discord.gg/TxgpyK8pzf)**
 
 ## Download & Setup Instructions
 
@@ -41,6 +48,8 @@ npm start
 ## Want to Contribute?
 
 Check out the [contributing guide](https://github.com/divanov11/Mumble/blob/master/CONTRIBUTING.md).
+Also if you are looking for a complete style guides, please refer to [**Mumble Style Guide**](STYLE_GUIDE.md).
+We highly recommend to go through the guideline before start contributing.
 
 > **_⚠ Those who wants to contribute on the repo, from now, before pushing/committing your changes, please make sure you run command `npm run format` or `yarn format` or use Prettier plugin to automatically format your code. We want to maintain consistency that's why we want to enforce the formatting. It's required!_**
 
