@@ -4,6 +4,10 @@ import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-d
 import { ErrorBoundary } from 'react-error-boundary';
 import classNames from 'classnames';
 
+import { Provider } from 'react-redux';
+import store from './store';
+
+import PrivateRoute from './utilities/PrivateRoute';
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-placeholder/lib/reactPlaceholder.css';
 import './styles/App.css';
@@ -37,40 +41,46 @@ const App = () => {
   };
 
   return (
-    <Router>
-      <ErrorBoundary FallbackComponent={Error500page}>
-        <div className={classNames('app', `${currentTheme === 'dark' && 'dark-theme'}`)}>
-          <Header theme={currentTheme} toggleTheme={toggleTheme} />
-          <main>
-            <Switch>
-              <Route exact path="/" component={HomePage} />
-              <Route exact path="/:parameter(login|signup)" component={LoginSignupPage} />
-              <Route exact path="/profile/:username" component={ProfilePage} />
-              <Route exact path="/create-discussion" component={CreateDiscussionPage} />
-              <Route exact path="/create-article" component={CreateArticlePage} />
-              <Route exact path="/notifications" component={NotificationsPage} />
-              <Route exact path="/discussion/:slug" component={DiscussionPage} />
-              <Route exact path="/article/:slug" component={ArticlePage} />
-              <Route exact path="/search" component={SearchPage} />
-              <Route exact path="/settings">
-                <UserSettingsPage theme={currentTheme} toggleTheme={toggleTheme} />
-              </Route>
-              <Route path="/404" component={Error404page} />
-              <Redirect to="/404" />
-            </Switch>
-          </main>
-          <RestoreScroll />
-          <ToastContainer
-            position="bottom-right"
-            autoClose={3000}
-            hideProgressBar={false}
-            closeOnClick
-            draggable
-            pauseOnHover
-          />
-        </div>
-      </ErrorBoundary>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <ErrorBoundary FallbackComponent={Error500page}>
+          <div className={classNames('app', `${currentTheme === 'dark' && 'dark-theme'}`)}>
+            <Header theme={currentTheme} toggleTheme={toggleTheme} />
+            <main>
+              <Switch>
+                <Route exact path="/" component={HomePage} />
+                <Route exact path="/:parameter(login|signup)" component={LoginSignupPage} />
+                <Route exact path="/profile/:username" component={ProfilePage} />
+                <PrivateRoute exact path="/create-discussion" component={CreateDiscussionPage} />
+                <PrivateRoute exact path="/create-article" component={CreateArticlePage} />
+                <Route exact path="/notifications" component={NotificationsPage} />
+                <Route exact path="/discussion/:slug" component={DiscussionPage} />
+                <Route exact path="/article/:slug" component={ArticlePage} />
+                <Route exact path="/search" component={SearchPage} />
+                <PrivateRoute
+                  exact
+                  path="/settings"
+                  component={() => (
+                    <UserSettingsPage theme={currentTheme} toggleTheme={toggleTheme} />
+                  )}
+                />
+                <Route path="/404" component={Error404page} />
+                <Redirect to="/404" />
+              </Switch>
+            </main>
+            <RestoreScroll />
+            <ToastContainer
+              position="bottom-right"
+              autoClose={3000}
+              hideProgressBar={false}
+              closeOnClick
+              draggable
+              pauseOnHover
+            />
+          </div>
+        </ErrorBoundary>
+      </Router>
+    </Provider>
   );
 };
 
