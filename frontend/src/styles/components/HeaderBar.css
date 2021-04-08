@@ -82,6 +82,10 @@
   margin-right: 10px;
 }
 
+.nav--icon {
+  margin-right: 10px;
+}
+
 .header-notification--unread {
   font-weight: 500;
 }
