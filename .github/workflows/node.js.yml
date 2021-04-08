@@ -36,6 +36,12 @@ jobs:
         env:
           CI: false
 
+      - name: Running Stylelint
+        run: npm run stylelint --if-present
+        working-directory: ./frontend
+        env:
+          CI: false
+
       - name: Running Prettier Code Formatter
         run: npm run format:check --if-present
         working-directory: ./frontend
