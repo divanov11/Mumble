@@ -12,8 +12,7 @@ import {
   PostCardPlaceholder,
 } from '../components';
 import { discussions, usersData } from '../data';
-import { getUsers } from '../services/usersService';
-import { getPosts } from '../services/postsService';
+import { PostsService, UsersService } from '../services';
 import { useLoadingListener } from '../hooks/useLoadingListener';
 
 const HomePage = () => {
@@ -21,10 +20,10 @@ const HomePage = () => {
 
   const [posts, setPosts] = useState([]);
   const [contributors, setContributors] = useState([]);
-  const [isPostsLoaded] = useLoadingListener({ effect: getPosts, onData: setPosts });
+  const [isPostsLoaded] = useLoadingListener({ effect: PostsService.getPosts, onData: setPosts });
 
   useEffect(() => {
-    getUsers().then((users) => {
+    UsersService.getUsers().then((users) => {
       setContributors(users.slice(0, 3));
     });
   }, []);

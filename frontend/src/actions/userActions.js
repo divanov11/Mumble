@@ -12,18 +12,13 @@ import {
   USER_POSTS_LIST_SUCCESS,
   USER_POSTS_LIST_FAIL,
 } from '../constants/userConstants';
-import {
-  getRecommendedUsers,
-  getUserByUsername,
-  getUserPosts,
-  getUsersByKeyword,
-} from '../services/usersService';
+import { UsersService } from '../services';
 
 export const listUsers = (keyword = '') => async (dispatch) => {
   try {
     dispatch({ type: USER_LIST_REQUEST });
 
-    const users = await getUsersByKeyword(keyword);
+    const users = await UsersService.getUsersByKeyword(keyword);
     dispatch({
       type: USER_LIST_SUCCESS,
       payload: users,
@@ -41,7 +36,7 @@ export const listRecommenedUsers = () => async (dispatch) => {
   try {
     dispatch({ type: USER_LIST_RECOMMENDED_REQUEST });
 
-    const users = await getRecommendedUsers();
+    const users = await UsersService.getRecommendedUsers();
     dispatch({
       type: USER_LIST_RECOMMENDED_SUCCESS,
       payload: users.slice(0, 5),
@@ -59,7 +54,7 @@ export const listUserDetails = (username) => async (dispatch) => {
   try {
     dispatch({ type: USER_DETAIL_REQUEST });
 
-    const user = await getUserByUsername(username);
+    const user = await UsersService.getUserByUsername(username);
     dispatch({
       type: USER_DETAIL_SUCCESS,
       payload: user.profile,
@@ -77,7 +72,7 @@ export const listUserPosts = (username) => async (dispatch) => {
   try {
     dispatch({ type: USER_POSTS_LIST_REQUEST });
 
-    const posts = await getUserPosts(username);
+    const posts = await UsersService.getUserPosts(username);
     dispatch({
       type: USER_POSTS_LIST_SUCCESS,
       payload: posts,

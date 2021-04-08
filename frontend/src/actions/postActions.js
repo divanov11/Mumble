@@ -3,13 +3,13 @@ import {
   POST_SEARCH_LIST_SUCCESS,
   POST_SEARCH_LIST_FAIL,
 } from '../constants/postConstants';
-import { getPostsByKeyword } from '../services/postsService';
+import { PostsService } from '../services';
 
 export const searchPosts = (keyword = '') => async (dispatch) => {
   try {
     dispatch({ type: POST_SEARCH_LIST_REQUEST });
 
-    const posts = await getPostsByKeyword(keyword);
+    const posts = await PostsService.getPostsByKeyword(keyword);
 
     dispatch({
       type: POST_SEARCH_LIST_SUCCESS,
