@@ -16,6 +16,10 @@
   color: var(--color-white);
 }
 
+.tag--outline > small {
+  color: var(--color-sub);
+}
+
 .dark-theme .tag > small {
   color: var(--color-text);
 }
@@ -24,8 +28,4 @@
   border: 2px solid var(--color-sub);
   background-color: transparent;
   padding: 0.4rem 1rem;
-}
-
-.tag--outline > small {
-  color: var(--color-sub);
 }

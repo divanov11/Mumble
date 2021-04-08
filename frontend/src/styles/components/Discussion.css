@@ -19,6 +19,7 @@
   color: var(--color-gray);
   font-style: italic;
 }
+
 .question-sidebar {
   margin-right: 10px;
   justify-self: center;
@@ -70,9 +71,5 @@
 @media screen and (max-width: 1000px) {
   .discussion--layout {
     grid-template-columns: 1fr;
-  }
-
-  TopicTags {
-    display: none;
   }
 }

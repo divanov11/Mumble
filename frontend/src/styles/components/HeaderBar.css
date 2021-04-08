@@ -1,5 +1,5 @@
 #header {
-  /* Change this to that sticky header I like*/
+  /* Change this to that sticky header I like */
   position: sticky;
   top: 0;
   width: 100%;
@@ -73,6 +73,7 @@
   color: var(--color-text);
   text-transform: capitalize;
 }
+
 .user-navigation--item:hover {
   background-color: var(--color-light);
 }
@@ -103,8 +104,8 @@
   position: absolute;
   width: 10px;
   height: 10px;
-  top: 0px;
-  right: 0px;
+  top: 0;
+  right: 0;
   background: var(--color-error);
   border-radius: 50%;
 }

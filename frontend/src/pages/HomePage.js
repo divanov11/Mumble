@@ -9,10 +9,9 @@ import {
   CreatePost,
   TopicTags,
   DiscussionsCard,
-  ArticlesCard,
   PostCardPlaceholder,
 } from '../components';
-import { articles, discussions, usersData } from '../data';
+import { discussions, usersData } from '../data';
 import { getUsers } from '../services/usersService';
 import { getPosts } from '../services/postsService';
 import { useLoadingListener } from '../hooks/useLoadingListener';
