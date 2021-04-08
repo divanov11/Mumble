@@ -8,6 +8,23 @@
   display: flex;
   gap: 1rem;
   justify-content: space-between;
+  width: 100%;
+}
+
+.search--item--wrapper-1-link {
+  width: 100%;
+}
+
+.search--item--info-1{
+  flex: 1;
+}
+.search--item--info-1-top{
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.search--item--info-1-top-text{
+  flex: 1;
 }
 
 .search--item--wrapper--2 {
@@ -41,5 +58,12 @@
   #search-page-layout {
     display: flex;
     flex-direction: column-reverse;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search--item--info-1-top-text{
+    display: flex;
+    flex-direction: column;
   }
 }
