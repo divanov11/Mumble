@@ -44,7 +44,7 @@ export const listRecommenedUsers = () => async (dispatch) => {
     const users = await getRecommendedUsers();
     dispatch({
       type: USER_LIST_RECOMMENDED_SUCCESS,
-      payload: users,
+      payload: users.slice(0, 5),
     });
   } catch (error) {
     dispatch({

@@ -34,7 +34,6 @@ const HomePage = () => {
     <div className="container home--layout">
       <section id="sidebar--left--home">
         <Contributors users={contributors} />
-        <TopicTags tags={user.interests} />
       </section>
 
       <section id="center-content">
@@ -49,8 +48,12 @@ const HomePage = () => {
       </section>
 
       <section id="sidebar--right--home">
+        <TopicTags tags={user.interests} />
         <DiscussionsCard discussions={discussions} />
-        <ArticlesCard articles={articles} />
+        {/* 
+        At some point I will add articles into rotation with disccssions. This will be in one card -- Dennis Ivy
+        <ArticlesCard articles={articles} /> 
+        */}
       </section>
     </div>
   );
