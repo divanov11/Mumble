@@ -1,5 +1,4 @@
-import axios from 'axios';
-import { getApiUrl } from './config';
+import { get, getApiUrl } from './config';
 
-export const getPostsByKeyword = (keyword) => axios.get(getApiUrl(`api/posts${keyword}`));
-export const getPosts = () => axios.get(getApiUrl(`api/posts`));
+export const getPostsByKeyword = (keyword) => get(getApiUrl(`api/posts${keyword}`));
+export const getPosts = () => get(getApiUrl(`api/posts`));

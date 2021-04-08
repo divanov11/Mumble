@@ -9,11 +9,11 @@ export const searchPosts = (keyword = '') => async (dispatch) => {
   try {
     dispatch({ type: POST_SEARCH_LIST_REQUEST });
 
-    const { data } = await getPostsByKeyword(keyword);
+    const posts = await getPostsByKeyword(keyword);
 
     dispatch({
       type: POST_SEARCH_LIST_SUCCESS,
-      payload: data,
+      payload: posts,
     });
   } catch (error) {
     dispatch({
