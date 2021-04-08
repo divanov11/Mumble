@@ -32,13 +32,14 @@ The main goal of this style guide is providing the contributors a set of instruc
 
 ## 🎭 Mumble CSS Style Guide
 
-### 🎹 Pattern and Naming :
+<u>🎹 Pattern and Naming :</u>
 
-### 📦 Modularity :
+<u>📦 Modularity :</u>
 
-### 🎨 Colors :
+</u>🎨 Colors :</u>
 
 ### 🧰 UI Kits :
+<br/>
 **---> Visit the Mumble UI Kit 👉 [website](http://mumble-lp.s3-website-us-west-2.amazonaws.com/)**
 <br/><br/>
 ---> Here is a preview ! 👇
@@ -48,20 +49,20 @@ The main goal of this style guide is providing the contributors a set of instruc
 
 ## ⚛ Mumble React/JSX Style Guide
 
-### 📖 Basic Rules :
+<u>📖 Basic Rules :</u>
 
-### ⛑ Function Components vs Class Components :
+<u>⛑ Function Components vs Class Components :</u>
 
-### 🎯 Importing and Exporting Modules :
+<u>🎯 Importing and Exporting Modules :</u>
 
-### 🎏 Declaration :
+<u>🎏 Declaration :</u>
 
-### 🔺🔻 Ordering :
+<u>🔺🔻 Ordering :</u>
 
-### ➰ Naming :
+<u>➰ Naming :</u>
 
-### ⭕ Parentheses, Spacing and Quotes :
+<u>⭕ Parentheses, Spacing and Quotes :</u>
 
-### 🔯 Props and PropTypes :
+<u>🔯 Props and PropTypes :</u>
 
-### 🪁 JSX :
+<u>🪁 JSX :</u>
