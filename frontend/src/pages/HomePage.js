@@ -15,24 +15,19 @@ import {
 import { articles, discussions, usersData } from '../data';
 import { getUsers } from '../services/usersService';
 import { getPosts } from '../services/postsService';
+import { useLoadingListener } from '../hooks/useLoadingListener';
 
 const HomePage = () => {
   const user = usersData.find((u) => Number(u.id) === 1);
 
   const [posts, setPosts] = useState([]);
   const [contributors, setContributors] = useState([]);
-  const [isLoaded, setLoaded] = useState(false);
+  const [isPostsLoaded] = useLoadingListener({ effect: getPosts, onData: setPosts });
 
   useEffect(() => {
-    getUsers().then(({ data }) => {
-      setContributors(data.slice(0, 3));
+    getUsers().then((users) => {
+      setContributors(users.slice(0, 3));
     });
-
-    getPosts()
-      .then(({ data }) => {
-        setPosts(data);
-      })
-      .then(() => setLoaded(true));
   }, []);
 
   return (
@@ -47,7 +42,7 @@ const HomePage = () => {
         <ReactPlaceholder
           customPlaceholder={<PostCardPlaceholder />}
           showLoadingAnimation
-          ready={isLoaded}
+          ready={isPostsLoaded}
         >
           <FeedCard posts={posts} />
         </ReactPlaceholder>

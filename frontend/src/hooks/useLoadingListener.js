@@ -9,12 +9,12 @@ import { useEffect, useState } from 'react';
  * @param {function} setterCb the function to invoke for setting the results into a state hook setter
  * @returns
  */
-export const useLoadingListener = (asyncFun, setterCb) => {
+export const useLoadingListener = ({ effect, onData }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-    asyncFun()
-      .then(setterCb)
+    effect()
+      .then(onData)
       .then(() => setIsLoaded(true));
-  }, [asyncFun, setterCb]);
+  }, [effect, onData]);
   return [isLoaded];
 };

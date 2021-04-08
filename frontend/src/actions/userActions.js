@@ -23,10 +23,10 @@ export const listUsers = (keyword = '') => async (dispatch) => {
   try {
     dispatch({ type: USER_LIST_REQUEST });
 
-    const { data } = await getUsersByKeyword(keyword);
+    const users = await getUsersByKeyword(keyword);
     dispatch({
       type: USER_LIST_SUCCESS,
-      payload: data,
+      payload: users,
     });
   } catch (error) {
     dispatch({
@@ -41,10 +41,10 @@ export const listRecommenedUsers = () => async (dispatch) => {
   try {
     dispatch({ type: USER_LIST_RECOMMENDED_REQUEST });
 
-    const { data } = await getRecommendedUsers();
+    const users = await getRecommendedUsers();
     dispatch({
       type: USER_LIST_RECOMMENDED_SUCCESS,
-      payload: data,
+      payload: users,
     });
   } catch (error) {
     dispatch({
@@ -59,10 +59,10 @@ export const listUserDetails = (username) => async (dispatch) => {
   try {
     dispatch({ type: USER_DETAIL_REQUEST });
 
-    const { data } = await getUserByUsername(username);
+    const user = await getUserByUsername(username);
     dispatch({
       type: USER_DETAIL_SUCCESS,
-      payload: data.profile,
+      payload: user.profile,
     });
   } catch (error) {
     dispatch({
@@ -77,10 +77,10 @@ export const listUserPosts = (username) => async (dispatch) => {
   try {
     dispatch({ type: USER_POSTS_LIST_REQUEST });
 
-    const { data } = await getUserPosts(username);
+    const posts = await getUserPosts(username);
     dispatch({
       type: USER_POSTS_LIST_SUCCESS,
-      payload: data,
+      payload: posts,
     });
   } catch (error) {
     dispatch({
