@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 import Button from './Button';
 
-function PostAction({ onMessageIconClick, comments, shares }) {
+const PostAction = ({ onMessageIconClick, comments, shares }) =>  {
+
   const [showCommentBox, setShowCommentBox] = useState(false);
   const [comment, setComment] = useState('');
 
