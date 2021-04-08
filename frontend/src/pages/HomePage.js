@@ -3,7 +3,6 @@ import ReactPlaceholder from 'react-placeholder';
 
 import '../styles/components/Home.css';
 
-import { apiEndpoint } from '../config';
 import {
   Contributors,
   FeedCard,
@@ -14,28 +13,23 @@ import {
   PostCardPlaceholder,
 } from '../components';
 import { articles, discussions, usersData } from '../data';
+import { getUsers } from '../services/usersService';
+import { getPosts } from '../services/postsService';
 
 const HomePage = () => {
   const user = usersData.find((u) => Number(u.id) === 1);
 
-  const [users, setUsers] = useState([]); //eslint-disable-line
   const [posts, setPosts] = useState([]);
   const [contributors, setContributors] = useState([]);
   const [isLoaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    // Get User Data
-    fetch(apiEndpoint.getUsers)
-      .then((response) => response.json())
-      .then((data) => {
-        setUsers(data);
-        setContributors(data.slice(0, 3));
-      });
+    getUsers().then(({ data }) => {
+      setContributors(data.slice(0, 3));
+    });
 
-    // Get Post Data
-    fetch(apiEndpoint.getPosts)
-      .then((response) => response.json())
-      .then((data) => {
+    getPosts()
+      .then(({ data }) => {
         setPosts(data);
       })
       .then(() => setLoaded(true));

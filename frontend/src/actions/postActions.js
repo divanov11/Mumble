@@ -1,15 +1,16 @@
-import axios from 'axios';
 import {
   POST_SEARCH_LIST_REQUEST,
   POST_SEARCH_LIST_SUCCESS,
   POST_SEARCH_LIST_FAIL,
 } from '../constants/postConstants';
+import { getPostsByKeyword } from '../services/postsService';
 
 export const searchPosts = (keyword = '') => async (dispatch) => {
   try {
     dispatch({ type: POST_SEARCH_LIST_REQUEST });
 
-    const { data } = await axios.get(`https://mumbleapi.herokuapp.com/api/posts${keyword}`);
+    const { data } = await getPostsByKeyword(keyword);
+
     dispatch({
       type: POST_SEARCH_LIST_SUCCESS,
       payload: data,

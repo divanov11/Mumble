@@ -1,4 +1,3 @@
-import axios from 'axios';
 import {
   USER_LIST_REQUEST,
   USER_LIST_SUCCESS,
@@ -13,12 +12,18 @@ import {
   USER_POSTS_LIST_SUCCESS,
   USER_POSTS_LIST_FAIL,
 } from '../constants/userConstants';
+import {
+  getRecommendedUsers,
+  getUserByUsername,
+  getUserPosts,
+  getUsersByKeyword,
+} from '../services/usersService';
 
 export const listUsers = (keyword = '') => async (dispatch) => {
   try {
     dispatch({ type: USER_LIST_REQUEST });
 
-    const { data } = await axios.get(`https://mumbleapi.herokuapp.com/api/users${keyword}`);
+    const { data } = await getUsersByKeyword(keyword);
     dispatch({
       type: USER_LIST_SUCCESS,
       payload: data,
@@ -36,7 +41,7 @@ export const listRecommenedUsers = () => async (dispatch) => {
   try {
     dispatch({ type: USER_LIST_RECOMMENDED_REQUEST });
 
-    const { data } = await axios.get('https://mumbleapi.herokuapp.com/api/users/recommended');
+    const { data } = await getRecommendedUsers();
     dispatch({
       type: USER_LIST_RECOMMENDED_SUCCESS,
       payload: data,
@@ -54,7 +59,7 @@ export const listUserDetails = (username) => async (dispatch) => {
   try {
     dispatch({ type: USER_DETAIL_REQUEST });
 
-    const { data } = await axios.get(`https://mumbleapi.herokuapp.com/api/users/${username}`);
+    const { data } = await getUserByUsername(username);
     dispatch({
       type: USER_DETAIL_SUCCESS,
       payload: data.profile,
@@ -72,7 +77,7 @@ export const listUserPosts = (username) => async (dispatch) => {
   try {
     dispatch({ type: USER_POSTS_LIST_REQUEST });
 
-    const { data } = await axios.get(`https://mumbleapi.herokuapp.com/api/users/${username}/posts`);
+    const { data } = await getUserPosts(username);
     dispatch({
       type: USER_POSTS_LIST_SUCCESS,
       payload: data,

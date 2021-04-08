@@ -13,8 +13,6 @@ import { listUserDetails, listUserPosts } from '../actions/userActions';
 const Profile = ({ match }) => {
   const username = match.params.username;
 
-  let [loading, setLoading] = useState(true);
-
   const dispatch = useDispatch();
 
   const userProfileDetail = useSelector((state) => state.userProfileDetail);
@@ -24,12 +22,9 @@ const Profile = ({ match }) => {
   const { posts } = userPostsList;
 
   useEffect(() => {
-    if (loading) {
-      dispatch(listUserDetails(username));
-      dispatch(listUserPosts(username));
-      setLoading(false);
-    }
-  }, [loading, dispatch, username]);
+    dispatch(listUserDetails(username));
+    dispatch(listUserPosts(username));
+  }, [dispatch, username]);
 
   return user ? (
     <div className="container profile--layout">
