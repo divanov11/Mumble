@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { Link } from 'react-router-dom';
+
 import '../styles/components/SearchPage.css';
 
-//Dummy Data Files
-import userData from '../data/users';
-import articles from '../data/articles';
-import skills from '../data/skills';
-import interests from '../data/interests';
+import { articles, interests, skills } from '../data';
 
-function SearchPage() {
+import { Card, PostCard } from '../common';
+
+import { listUsers } from '../actions/userActions';
+import { searchPosts } from '../actions/postActions';
+
+const SearchPage = ({ history }) => {
+  let keyword = history.location.search;
+
+  let [categorySelected, setCategorySelected] = useState('category-users');
+
   let toggleCategory = (e, category) => {
+    setCategorySelected(category);
+    history.push(`/search`);
+
     let categories = document.getElementsByClassName('category-wrapper');
     let categoryButtons = document.getElementsByClassName('category-link');
 
@@ -22,40 +33,63 @@ function SearchPage() {
     }
 
     let active = document.getElementById(category);
-    console.log(active);
     active.classList.remove('hidden');
     e.target.classList.add('category-link--active');
   };
+
+  const dispatch = useDispatch();
+
+  const userList = useSelector((state) => state.userList);
+  const { users } = userList;
+
+  const postSearchList = useSelector((state) => state.postSearchList);
+  const { posts } = postSearchList;
+
+  useEffect(() => {
+    if (categorySelected === 'category-users') {
+      dispatch(listUsers(keyword));
+    } else if (categorySelected === 'category-posts') {
+      dispatch(searchPosts(keyword));
+    } else if (categorySelected === 'category-articles') {
+      console.log('Load articles');
+    } else if (categorySelected === 'category-skills') {
+      console.log('Load skills');
+    } else if (categorySelected === 'category-interests') {
+      console.log('Load interests');
+    }
+  }, [dispatch, keyword, categorySelected]);
 
   return (
     <div id="search-page-layout" className="container">
       <div></div>
 
       <div>
-        <div className="category-wrapper" id="category-people">
-          {userData.map((user, index) => (
-            <div key={index} className="card">
-              <div className="card__body">
-                <Link to={`/profile/${user.username}`}>
-                  <div className="search--item--wrapper--1">
-                    <img
-                      alt=""
-                      className="avatar avatar--md"
-                      src={user.profile_pic}
-                    />
-                    <div>
-                      <strong>{user.name}</strong>
-                      <small>@{user.username}</small>
-                      <p>{user.bio}</p>
-                    </div>
-                    <button className="btn btn--main--outline btn--sm">
-                      Follow
-                    </button>
+        <div className="category-wrapper" id="category-users">
+          {users.length > 0 ? (
+            <div>
+              {users.map((user, index) => (
+                <div key={index} className="card">
+                  <div className="card__body">
+                    <Link to={`/profile/${user.username}`}>
+                      <div className="search--item--wrapper--1">
+                        <img alt="" className="avatar avatar--md" src={user.profile.profile_pic} />
+                        <div>
+                          <strong>{user.profile.name}</strong>
+                          <small>@{user.username}</small>
+                          <p>{user.profile.bio}</p>
+                        </div>
+                        <button className="btn btn--main--outline btn--sm">Follow</button>
+                      </div>
+                    </Link>
                   </div>
-                </Link>
-              </div>
+                </div>
+              ))}
             </div>
-          ))}
+          ) : (
+            <div>
+              <h5>No Results found..</h5>
+            </div>
+          )}
         </div>
 
         <div className="category-wrapper hidden" id="category-articles">
@@ -71,6 +105,22 @@ function SearchPage() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="category-wrapper hidden" id="category-posts">
+          {posts.length > 0 ? (
+            posts.map((post) => (
+              <Card key={post.id}>
+                <div className="post-wrapper">
+                  <PostCard post={post} link={'/'} />
+                </div>
+              </Card>
+            ))
+          ) : (
+            <div>
+              <h5>No Results found..</h5>
+            </div>
+          )}
         </div>
 
         <div className="category-wrapper hidden" id="category-skills">
@@ -113,12 +163,19 @@ function SearchPage() {
             <p
               className="category-link category-link--active"
               onClick={(e) => {
-                toggleCategory(e, 'category-people');
+                toggleCategory(e, 'category-users');
               }}
             >
-              People
+              Users
             </p>
-            {/* <p className="category-link" onClick={(e) => {toggleCategory(e, 'category-posts')}}>Posts</p> */}
+            <p
+              className="category-link"
+              onClick={(e) => {
+                toggleCategory(e, 'category-posts');
+              }}
+            >
+              Posts
+            </p>
             <p
               className="category-link"
               onClick={(e) => {
@@ -127,7 +184,8 @@ function SearchPage() {
             >
               Articles
             </p>
-            <p
+
+            {/* <p
               className="category-link"
               onClick={(e) => {
                 toggleCategory(e, 'category-skills');
@@ -142,12 +200,12 @@ function SearchPage() {
               }}
             >
               Interests
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default SearchPage;

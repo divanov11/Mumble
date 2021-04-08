@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Card from '../common/Card';
 
-function ArticlesCard({ articles }) {
+import { Card } from '../common';
+
+const ArticlesCard = ({ articles }) => {
   return (
     <Card cardStyle="dark">
       <h5>Popular Articles</h5>
@@ -25,6 +26,6 @@ function ArticlesCard({ articles }) {
       ))}
     </Card>
   );
-}
+};
 
 export default ArticlesCard;

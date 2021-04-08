@@ -13,7 +13,7 @@ import peng from './images/peng.png';
 import zach from './images/zach.png';
 import ujjawal from './images/ujjawal.png';
 
-const userData = [
+const usersData = [
   {
     id: '2',
     name: 'Shahriar Parvez',
@@ -23,7 +23,7 @@ const userData = [
     bio:
       'A self-taught coder specialized in web design and development. Love to play with different technologies.',
     vote_ratio: '35',
-    followers: '10323',
+    followers_count: '10323',
     skills: ['Python', 'C#', 'D3 Charts', 'Flutter'],
     interests: ['Python', 'C#', 'D3 Charts', 'Flutter'],
   },
@@ -36,7 +36,7 @@ const userData = [
     bio:
       'Ex Photographer | Graphic + Web Designer most of the time, learning Frontend the rest of the time.',
     vote_ratio: '4',
-    followers: '39',
+    followers_count: '39',
     skills: ['JavasScript', 'Blazer', 'Google Maps API', 'Flutter'],
     interests: ['JavasScript', 'Blazer', 'Google Maps API', 'Flutter'],
   },
@@ -48,7 +48,7 @@ const userData = [
     profile_pic: cody,
     bio: 'I write code and run an awesome youtube channel called WebDevJunkie',
     vote_ratio: '37',
-    followers: '23102',
+    followers_count: '23102',
     skills: ['JavasScript', 'Blazer', 'Google Maps API', 'Flutter'],
     interests: ['JavasScript', 'Blazer', 'Google Maps API', 'Flutter'],
   },
@@ -61,14 +61,8 @@ const userData = [
     bio:
       'I was a lead developer in a past life, now I enjoy teaching others how to build cool applications',
     vote_ratio: '23',
-    followers: '2723',
-    skills: [
-      'JavasScript',
-      'Python',
-      'Google Maps API',
-      'React Native',
-      'React JS',
-    ],
+    followers_count: '2723',
+    skills: ['JavasScript', 'Python', 'Google Maps API', 'React Native', 'React JS'],
     interests: [
       'JavasScript',
       'Python',
@@ -89,14 +83,8 @@ const userData = [
     bio:
       'I was a lead developer in a past life, now I enjoy teaching others how to build cool applications',
     vote_ratio: '23',
-    followers: '2723',
-    skills: [
-      'JavasScript',
-      'Python',
-      'Google Maps API',
-      'React Native',
-      'React JS',
-    ],
+    followers_count: '2723',
+    skills: ['JavasScript', 'Python', 'Google Maps API', 'React Native', 'React JS'],
     interests: [
       'JavasScript',
       'Python',
@@ -114,17 +102,10 @@ const userData = [
     username: 'mani',
     email: 'mani@mumble.dev',
     profile_pic: mani,
-    bio:
-      'I am a Computer Science student, who is currently exploring python and web development.',
+    bio: 'I am a Computer Science student, who is currently exploring python and web development.',
     vote_ratio: '14',
-    followers: '4323',
-    skills: [
-      'JavasScript',
-      'Python',
-      'Google Maps API',
-      'React Native',
-      'React JS',
-    ],
+    followers_count: '4323',
+    skills: ['JavasScript', 'Python', 'Google Maps API', 'React Native', 'React JS'],
     interests: [
       'JavasScript',
       'Python',
@@ -144,14 +125,8 @@ const userData = [
     profile_pic: mohammad,
     bio: 'Just an awesome developer!',
     vote_ratio: '56',
-    followers: '6323',
-    skills: [
-      'JavasScript',
-      'Python',
-      'Google Maps API',
-      'React Native',
-      'React JS',
-    ],
+    followers_count: '6323',
+    skills: ['JavasScript', 'Python', 'Google Maps API', 'React Native', 'React JS'],
     interests: [
       'JavasScript',
       'Python',
@@ -171,14 +146,8 @@ const userData = [
     profile_pic: abhijit,
     bio: 'An aspiring full stack developer and data scientist',
     vote_ratio: '56',
-    followers: '6323',
-    skills: [
-      'JavasScript',
-      'Python',
-      'Google Maps API',
-      'React Native',
-      'React JS',
-    ],
+    followers_count: '6323',
+    skills: ['JavasScript', 'Python', 'Google Maps API', 'React Native', 'React JS'],
     interests: [
       'JavasScript',
       'Python',
@@ -198,14 +167,8 @@ const userData = [
     profile_pic: mehdi,
     bio: 'I am a student developer',
     vote_ratio: '26',
-    followers: '67023',
-    skills: [
-      'JavasScript',
-      'Python',
-      'Google Maps API',
-      'React Native',
-      'React JS',
-    ],
+    followers_count: '67023',
+    skills: ['JavasScript', 'Python', 'Google Maps API', 'React Native', 'React JS'],
     interests: [
       'JavasScript',
       'Python',
@@ -225,14 +188,8 @@ const userData = [
     profile_pic: samthefam,
     bio: 'A frontend software engineer from the United Kingdom.',
     vote_ratio: '56',
-    followers: '97023',
-    skills: [
-      'JavasScript',
-      'Python',
-      'Google Maps API',
-      'React Native',
-      'React JS',
-    ],
+    followers_count: '97023',
+    skills: ['JavasScript', 'Python', 'Google Maps API', 'React Native', 'React JS'],
     interests: [
       'JavasScript',
       'Python',
@@ -253,14 +210,8 @@ const userData = [
     bio:
       'A Pythonista😍, Data scientist and Full-stack Web Engineer with backend focus. Aspiring Software engineer creating AI powered web-based Software.',
     vote_ratio: '23',
-    followers: '197326',
-    skills: [
-      'JavasScript',
-      'Python',
-      'Google Maps API',
-      'React Native',
-      'React JS',
-    ],
+    followers_count: '197326',
+    skills: ['JavasScript', 'Python', 'Google Maps API', 'React Native', 'React JS'],
     interests: [
       'JavasScript',
       'Python',
@@ -280,14 +231,8 @@ const userData = [
     profile_pic: zach,
     bio: 'I build cool things',
     vote_ratio: '47',
-    followers: '326',
-    skills: [
-      'JavasScript',
-      'Python',
-      'Google Maps API',
-      'React Native',
-      'React JS',
-    ],
+    followers_count: '326',
+    skills: ['JavasScript', 'Python', 'Google Maps API', 'React Native', 'React JS'],
     interests: [
       'JavasScript',
       'Python',
@@ -307,14 +252,8 @@ const userData = [
     profile_pic: ujjawal,
     bio: 'I build cool things',
     vote_ratio: '47',
-    followers: '326',
-    skills: [
-      'JavasScript',
-      'Python',
-      'Google Maps API',
-      'React Native',
-      'React JS',
-    ],
+    followers_count: '326',
+    skills: ['JavasScript', 'Python', 'Google Maps API', 'React Native', 'React JS'],
     interests: [
       'JavasScript',
       'Python',
@@ -328,4 +267,4 @@ const userData = [
   },
 ];
 
-export default userData;
+export default usersData;

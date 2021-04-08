@@ -1,35 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import classNames from 'classnames';
 import { ToastContainer } from 'react-toastify';
-import {
-  BrowserRouter as Router,
-  Redirect,
-  Route,
-  Switch,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
+import classNames from 'classnames';
 
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-placeholder/lib/reactPlaceholder.css';
 import './styles/App.css';
 
-import Error500 from './pages/Error500';
-import Header from './components/Header';
-import HomePage from './pages/HomePage';
-import LoginOrSignupPage from './pages/LoginOrSignupPage';
-import Discussion from './pages/Discussion';
-import ProfilePage from './pages/ProfilePage';
-import UserSettingsPage from './pages/UserSettingsPage';
-import SearchPage from './pages/SearchPage';
-import ArticlePage from './pages/ArticlePage';
-import CreateArticlePage from './pages/CreateArticlePage';
-import CreateDiscussionPage from './pages/CreateDiscussionPage';
-import Error404 from './pages/Error404';
-import NotificationsPage from './pages/NotificationsPage';
-import RestoreScroll from './common/RestoreScroll';
+import { Header, RestoreScroll } from './components';
+import {
+  HomePage,
+  DiscussionPage,
+  ArticlePage,
+  ProfilePage,
+  UserSettingsPage,
+  SearchPage,
+  CreateArticlePage,
+  CreateDiscussionPage,
+  NotificationsPage,
+  LoginSignupPage,
+  Error404page,
+  Error500page,
+} from './pages';
 
 const App = () => {
   const userTheme = localStorage.getItem('mumble-theme') ?? 'light';
-
   const [currentTheme, setCurrentTheme] = useState(userTheme);
 
   useEffect(() => {
@@ -42,51 +38,27 @@ const App = () => {
 
   return (
     <Router>
-      <ErrorBoundary FallbackComponent={Error500}>
-        <div
-          className={classNames(
-            'app',
-            `${currentTheme === 'dark' && 'dark-theme'}`,
-          )}
-        >
+      <ErrorBoundary FallbackComponent={Error500page}>
+        <div className={classNames('app', `${currentTheme === 'dark' && 'dark-theme'}`)}>
           <Header theme={currentTheme} toggleTheme={toggleTheme} />
           <main>
             <Switch>
-              <Route
-                exact
-                path={'/:parameter(login|signup)'}
-                component={LoginOrSignupPage}
-              />
-              <Route exact path={'/'} component={HomePage} />
-              <Route
-                exact
-                path={'/profile/:username'}
-                component={ProfilePage}
-              />
-              <Route exact path={'/settings'} component={UserSettingsPage} />
-              <Route
-                exact
-                path={'/create-discussion'}
-                component={CreateDiscussionPage}
-              />
-              <Route
-                exact
-                path={'/create-article'}
-                component={CreateArticlePage}
-              />
-              <Route
-                exact
-                path={'/notifications'}
-                component={NotificationsPage}
-              />
-              <Route exact path={'/discussion/:slug'} component={Discussion} />
-              <Route exact path={'/article/:slug'} component={ArticlePage} />
-              <Route exact path={'/search'} component={SearchPage} />
-              <Route path="/404" component={Error404} />
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/:parameter(login|signup)" component={LoginSignupPage} />
+              <Route exact path="/profile/:username" component={ProfilePage} />
+              <Route exact path="/create-discussion" component={CreateDiscussionPage} />
+              <Route exact path="/create-article" component={CreateArticlePage} />
+              <Route exact path="/notifications" component={NotificationsPage} />
+              <Route exact path="/discussion/:slug" component={DiscussionPage} />
+              <Route exact path="/article/:slug" component={ArticlePage} />
+              <Route exact path="/search" component={SearchPage} />
+              <Route exact path="/settings">
+                <UserSettingsPage theme={currentTheme} toggleTheme={toggleTheme} />
+              </Route>
+              <Route path="/404" component={Error404page} />
               <Redirect to="/404" />
             </Switch>
           </main>
-
           <RestoreScroll />
           <ToastContainer
             position="bottom-right"

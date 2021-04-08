@@ -13,8 +13,7 @@ const PostAction = ({ onMessageIconClick, comments, shares, link }) => {
 
   const handleCommentSubmit = (e) => {
     e.preventDefault();
-    alert(`${comment} \n comment Submited!`);
-    // do something with comment
+    alert(`${comment} \n comment Submitted!`);
     setComment('');
     toggleCommentBox();
   };

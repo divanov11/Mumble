@@ -1,9 +1,8 @@
 import React from 'react';
 
-import Card from '../common/Card';
-import PostCard from '../common/PostCard';
-
 import '../styles/components/Feed.css';
+
+import { Card, PostCard } from '../common';
 
 function Feed({ posts }) {
   return (
@@ -11,7 +10,7 @@ function Feed({ posts }) {
       {posts.map((post) => (
         <Card key={post.id}>
           <div className="post-wrapper">
-            <PostCard post={post} />
+            <PostCard post={post} link={'/'} />
           </div>
         </Card>
       ))}

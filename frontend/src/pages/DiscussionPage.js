@@ -1,20 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Contributors from '../components/Contributors';
-import DiscussionsCard from '../components/DiscussionsCard';
 
 import '../styles/components/Discussion.css';
-import userData from '../data/users';
-import discussions from '../data/discussions';
-import VotingWidget from '../common/VotingWidget';
-import Avatar from '../common/Avatar';
 
-function Discussion({ match }) {
-  let users = userData.slice(0, 3);
+import { Avatar, VotingWidget } from '../common';
+import { Contributors, DiscussionsCard } from '../components';
+import { discussions } from '../data';
+
+const Discussion = ({ match }) => {
   let discussion = discussions.find((d) => d.slug === match.params.slug);
-  let relatedQuestions = discussions.filter(
-    (d) => d.slug !== match.params.slug,
-  );
+  let relatedQuestions = discussions.filter((d) => d.slug !== match.params.slug);
+
+  let [users, setUsers] = useState([]);
+
+  let fetchUsers = () => {
+    fetch(`/api/users`)
+      .then((response) => response.json())
+      .then((data) => {
+        setUsers(data.slice(0, 3));
+      });
+  };
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
 
   return (
     <div className="container discussion--layout">
@@ -23,10 +32,7 @@ function Discussion({ match }) {
           <div className="card__body">
             <div className="question-wrapper">
               <div className="question-sidebar">
-                <Avatar
-                  alt="img-description"
-                  src={discussion.user.profile_pic}
-                />
+                <Avatar alt="img-description" src={discussion.user.profile_pic} />
                 <div className="custom-spacer"></div>
                 <VotingWidget votes={discussion.vote_ratio} />
               </div>
@@ -34,9 +40,7 @@ function Discussion({ match }) {
                 <h1 className="discussion-headline">{discussion.headline}</h1>
                 <p className="asked-by">
                   Asked by{' '}
-                  <Link to={`/profile/${discussion.user.username}`}>
-                    {discussion.user.name}
-                  </Link>{' '}
+                  <Link to={`/profile/${discussion.user.username}`}>{discussion.user.name}</Link>{' '}
                   {discussion.created}
                 </p>
 
@@ -58,10 +62,7 @@ function Discussion({ match }) {
                 {discussion.answers.map((answer) => (
                   <div key={answer.id} className="question-wrapper">
                     <div className="question-sidebar">
-                      <Avatar
-                        alt="img-description"
-                        src={answer.user.profile_pic}
-                      />
+                      <Avatar alt="img-description" src={answer.user.profile_pic} />
                       {/* <div className="custom-spacer"></div> */}
                       <VotingWidget votes={answer.vote_ratio} />
                     </div>
@@ -91,6 +92,6 @@ function Discussion({ match }) {
       </section>
     </div>
   );
-}
+};
 
 export default Discussion;

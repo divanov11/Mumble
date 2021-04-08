@@ -1,32 +1,28 @@
-import React from 'react';
-import '../styles/components/UserSettings.css';
-import { useState, useRef } from 'react';
-import User from '../data/users';
-import UserSettingUpdateModal from '../components/UserSettingUpdateModal';
-import Avatar from '../common/Avatar';
-import Button from '../common/Button';
-import ProfilePicCropperModal from '../components/ProfilePicCropperModal';
-import Card from '../common/Card';
+import React, { useState, useRef } from 'react';
+import PropTypes from 'prop-types';
 
-function UserSettingsPage() {
-  const [currentUser, setCurrentUser] = useState(User[0]);
+import '../styles/components/UserSettings.css';
+
+import { Avatar, Button, Card } from '../common';
+import { ProfilePicCropperModal, UserSettingUpdateModal } from '../components';
+import { usersData } from '../data';
+
+function UserSettingsPage({ theme, toggleTheme }) {
+  const [currentUser, setCurrentUser] = useState(usersData[0]);
   const [updateModelActive, setUpdateModelActive] = useState(false);
   const [profilePicModel, setProfilePicModel] = useState(false);
   const [modelContent, setModelContent] = useState(null);
-  // input File change value state convert file to Base64 to extract file extension
   const [profilePicSrc, setProfilePicSrc] = useState(null);
-  // CroppedImageBase64 to display profile change before uploading to server
-  const [croppedImageBase64, setCroppedImageBase64] = useState(
-    currentUser.profile_pic,
-  );
   const inputRef = useRef();
+
+  const [croppedImageBase64, setCroppedImageBase64] = useState(currentUser.profile_pic);
 
   const update = (e) => {
     const data_type = e.target.dataset.type;
     setModelContent(data_type);
     setUpdateModelActive(true);
   };
-  // On File change get first file and convert it into a Base64 Data and save it in state
+
   const handleFileChange = (e) => {
     const imageBlob = e.target.files[0];
     let reader = new FileReader();
@@ -52,7 +48,7 @@ function UserSettingsPage() {
     return skills;
   };
   return (
-    <div id="settings-page">
+    <div className="container settings--layout">
       <UserSettingUpdateModal
         heading="Update User Settings"
         dataType={modelContent}
@@ -102,11 +98,7 @@ function UserSettingsPage() {
                   onChange={handleFileChange}
                   ref={inputRef}
                 />
-                <Button
-                  style={{ pointerEvents: 'none' }}
-                  text="Update Avatar"
-                  iconName="camera"
-                />
+                <Button style={{ pointerEvents: 'none' }} text="Update Avatar" iconName="camera" />
               </div>
             </div>
           </div>
@@ -147,10 +139,25 @@ function UserSettingsPage() {
               <div className="tags-wrapper">{renderSkills()}</div>
             </div>
           </div>
+
+          <div className="settings-update">
+            <div className="settings-update__title">
+              <span>Theme</span>
+            </div>
+            <label className="toggle-theme-switch">
+              <input type="checkbox" onClick={toggleTheme} checked={theme === 'light'}></input>
+              <span className="theme-slider"></span>
+            </label>
+          </div>
         </Card>
       </section>
     </div>
   );
 }
+
+UserSettingsPage.propTypes = {
+  theme: PropTypes.string,
+  toggleTheme: PropTypes.func,
+};
 
 export default UserSettingsPage;

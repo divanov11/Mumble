@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import AuthorBox from './AuthorBox';
 import PostAction from './PostAction';
 import VotingWidget from './VotingWidget';
-import { distanceDate } from '../utilities/formatDate';
+import { formatDate } from '../utilities/';
 
 const PostCard = ({ post, link, isComment = false, children, ...others }) => {
   const {
@@ -11,14 +11,28 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
     created,
     vote_rank,
     content,
-    comments,
+    //comments,
     comment_count,
     share_count,
   } = post;
 
+  let [comments, setComments] = useState([]);
+
+  // TODO: Chunk this file to a Comment Card
+  let fetchComments = () => {
+    fetch(`https://mumbleapi.herokuapp.com/api/posts/${post.id}/comments`)
+      .then((response) => response.json())
+      .then((data) => {
+        setComments(data);
+      });
+  };
+
   const [showComments, setShowComments] = useState(false);
 
-  const toggleComments = () => setShowComments(!showComments);
+  const toggleComments = () => {
+    setShowComments(!showComments);
+    fetchComments();
+  };
 
   return (
     <div className={`${isComment && 'post-card--comment'}`} {...others}>
@@ -30,7 +44,7 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
           url={`/profile/${user.username}`}
           size={isComment ? 'sm' : 'md'}
         />
-        <p className="post-meta">{distanceDate(created)}</p>
+        <p className="post-meta">{formatDate.distanceDate(created)}</p>
       </div>
       <div className="post-contents">
         <VotingWidget votes={vote_rank} />

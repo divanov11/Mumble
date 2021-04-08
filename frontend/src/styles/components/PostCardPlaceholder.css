@@ -1,0 +1,22 @@
+.post-card-placeholder {
+  padding: 2.5rem;
+}
+
+.post-card-placeholder__header {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.post-card-placeholder__header-author-box {
+  padding-left: 10px;
+  padding-top: 20px;
+  width: 120px;
+}
+
+.post-card-placeholder__body {
+  margin-bottom: 60px;
+}
+.post-card-placeholder__actions {
+  display: flex;
+  justify-content: space-between;
+}

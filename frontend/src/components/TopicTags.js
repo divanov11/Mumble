@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Tag from '../common/Tag';
 
-function TopicTags({ tags }) {
+import { Tag } from '../common';
+
+const TopicTags = ({ tags }) => {
   return (
     <div className="card">
       <div id="topics-wrapper" className="card__body">
@@ -17,6 +18,6 @@ function TopicTags({ tags }) {
       </div>
     </div>
   );
-}
+};
 
 export default TopicTags;

@@ -1,9 +1,8 @@
-import Modal from './Modal';
-import useForm from '../hooks/useFormHook';
 import { useRef } from 'react';
-import TagInputField from './TagInputField';
+
 import UserSettingModalContent from './UserSettingModalContent';
-import ModalContentAction from '../common/ModalContentAction';
+import { Modal, ModalContentAction, TagInput } from '../common';
+import { useForm } from '../hooks';
 
 const UserSettingUpdateModal = ({
   heading,
@@ -15,6 +14,7 @@ const UserSettingUpdateModal = ({
 }) => {
   const [fields, handleFieldChanges] = useForm(userData);
   const tagList = useRef();
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (!e.target.firstChild.dataset.error) {
@@ -23,10 +23,11 @@ const UserSettingUpdateModal = ({
       });
     }
   };
+
   const HandleTagFormSubmit = (e) => {
     e.preventDefault();
     const tags = tagList.current;
-    // fix error
+
     if (tags) {
       setUserData((data) => {
         data.skills = tags;
@@ -35,18 +36,17 @@ const UserSettingUpdateModal = ({
     }
     setActive(false);
   };
+
   const preventSubmission = (e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
     }
   };
+
   const renderFormFields = () => {
     if (dataType === 'user-bio') {
       return (
-        <UserSettingModalContent
-          closeModal={setActive}
-          handleFormSubmit={handleFormSubmit}
-        >
+        <UserSettingModalContent closeModal={setActive} handleFormSubmit={handleFormSubmit}>
           <div className="form__field">
             <label htmlFor="formInput#textarea">About: </label>
             <textarea
@@ -63,10 +63,7 @@ const UserSettingUpdateModal = ({
       );
     } else if (dataType === 'user-info') {
       return (
-        <UserSettingModalContent
-          closeModal={setActive}
-          handleFormSubmit={handleFormSubmit}
-        >
+        <UserSettingModalContent closeModal={setActive} handleFormSubmit={handleFormSubmit}>
           <div className="form__field">
             <label htmlFor="formInput#text">Username: </label>
             <input
@@ -114,7 +111,7 @@ const UserSettingUpdateModal = ({
         <form onSubmit={HandleTagFormSubmit} onKeyPress={preventSubmission}>
           <div className="form__field" data-error={dataType}>
             <label htmlFor="formInput#text">Tags</label>
-            <TagInputField userData={userData} tagListRef={tagList} />
+            <TagInput userData={userData} tagListRef={tagList} />
           </div>
           <ModalContentAction setActive={setActive} />
         </form>
