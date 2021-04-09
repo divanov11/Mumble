@@ -70,15 +70,19 @@ const SearchPage = ({ history }) => {
               {users.map((user, index) => (
                 <div key={index} className="card">
                   <div className="card__body">
-                    <Link to={`/profile/${user.username}`}>
-                      <div className="search--item--wrapper--1">
+                    <Link to={`/profile/${user.username}`} className="searchitem__link ">
+                      <div className="searchitem__wrapper--1">
                         <img alt="" className="avatar avatar--md" src={user.profile.profile_pic} />
-                        <div>
-                          <strong>{user.profile.name}</strong>
-                          <small>@{user.username}</small>
+                        <div className="searchitem__info">
+                          <div className="searchitem__info--top">
+                            <div className="searchitem__info--top-text">
+                              <strong>{user.profile.name}&nbsp;</strong>
+                              <small>@{user.username}</small>
+                            </div>
+                            <button className="btn btn--main--outline btn--sm">Follow</button>
+                          </div>
                           <p>{user.profile.bio}</p>
                         </div>
-                        <button className="btn btn--main--outline btn--sm">Follow</button>
                       </div>
                     </Link>
                   </div>

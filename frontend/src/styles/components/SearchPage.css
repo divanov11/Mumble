@@ -4,10 +4,29 @@
   column-gap: 1rem;
 }
 
-.search--item--wrapper--1 {
+.searchitem__wrapper--1 {
   display: flex;
   gap: 1rem;
   justify-content: space-between;
+  width: 100%;
+}
+
+.searchitem__link {
+  width: 100%;
+}
+
+.searchitem__info {
+  flex: 1;
+}
+
+.searchitem__info--top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.searchitem__info--top-text {
+  flex: 1;
 }
 
 .search--item--wrapper--2 {
@@ -40,5 +59,12 @@
   #search-page-layout {
     display: flex;
     flex-direction: column-reverse;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search--item--info-1-top-text {
+    display: flex;
+    flex-direction: column;
   }
 }
