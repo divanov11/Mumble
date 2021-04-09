@@ -12,21 +12,25 @@ import {
   PostCardPlaceholder,
 } from '../components';
 import { discussions, usersData } from '../data';
-import { PostsService, UsersService } from '../services';
-import { useLoadingListener } from '../hooks/useLoadingListener';
+import { UsersService } from '../services';
+import { getPostsForDashboard } from '../actions/postActions';
+import { useDispatch, useSelector } from 'react-redux';
 
 const HomePage = () => {
   const user = usersData.find((u) => Number(u.id) === 1);
 
-  const [posts, setPosts] = useState([]);
   const [contributors, setContributors] = useState([]);
-  const [isPostsLoaded] = useLoadingListener({ effect: PostsService.getPosts, onData: setPosts });
+  const dispatch = useDispatch();
+  const posts = useSelector((state) => state.dashboard.posts);
+  const isPostsLoading = useSelector((state) => state.dashboard.loading);
 
   useEffect(() => {
     UsersService.getUsers().then((users) => {
       setContributors(users.slice(0, 3));
     });
-  }, []);
+
+    dispatch(getPostsForDashboard());
+  }, [dispatch]);
 
   return (
     <div className="container home--layout">
@@ -39,7 +43,7 @@ const HomePage = () => {
         <ReactPlaceholder
           customPlaceholder={<PostCardPlaceholder />}
           showLoadingAnimation
-          ready={isPostsLoaded}
+          ready={!isPostsLoading}
         >
           <FeedCard posts={posts} />
         </ReactPlaceholder>
