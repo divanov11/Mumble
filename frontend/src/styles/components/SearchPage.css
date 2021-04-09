@@ -4,28 +4,28 @@
   column-gap: 1rem;
 }
 
-.search--item--wrapper--1 {
+.searchitem__wrapper--1 {
   display: flex;
   gap: 1rem;
   justify-content: space-between;
   width: 100%;
 }
 
-.search--item--wrapper-1-link {
+.searchitem__link {
   width: 100%;
 }
 
-.search--item--info-1 {
+.searchitem__info {
   flex: 1;
 }
 
-.search--item--info-1-top {
+.searchitem__info--top {
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
 }
 
-.search--item--info-1-top-text {
+.searchitem__info--top-text {
   flex: 1;
 }
 
