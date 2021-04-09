@@ -1,8 +1,16 @@
-import axios from 'axios';
-import { getApiUrl } from './config';
+import { get, getApiUrl } from './config';
 
-export const getRecommendedUsers = () => axios.get(getApiUrl(`api/users/recommended`));
-export const getUsersByKeyword = (keyword) => axios.get(getApiUrl(`api/users${keyword}`));
-export const getUserByUsername = (username) => axios.get(getApiUrl(`api/users/${username}`));
-export const getUserPosts = (username) => axios.get(getApiUrl(`api/users/${username}/posts`));
-export const getUsers = () => axios.get(getApiUrl(`api/users`));
+const getRecommendedUsers = () => get(getApiUrl(`api/users/recommended`));
+const getUsersByKeyword = (keyword) => get(getApiUrl(`api/users${keyword}`));
+const getUserByUsername = (username) => get(getApiUrl(`api/users/${username}`));
+const getUserPosts = (username) => get(getApiUrl(`api/users/${username}/posts`));
+const getUsers = () => get(getApiUrl(`api/users`));
+
+const usersService = {
+  getRecommendedUsers,
+  getUsersByKeyword,
+  getUserByUsername,
+  getUserPosts,
+  getUsers,
+};
+export default usersService;

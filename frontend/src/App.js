@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-d
 import { ErrorBoundary } from 'react-error-boundary';
 import classNames from 'classnames';
 
+import PrivateRoute from './utilities/PrivateRoute';
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-placeholder/lib/reactPlaceholder.css';
 import './styles/App.css';
@@ -46,15 +47,19 @@ const App = () => {
               <Route exact path="/" component={HomePage} />
               <Route exact path="/:parameter(login|signup)" component={LoginSignupPage} />
               <Route exact path="/profile/:username" component={ProfilePage} />
-              <Route exact path="/create-discussion" component={CreateDiscussionPage} />
-              <Route exact path="/create-article" component={CreateArticlePage} />
+              <PrivateRoute exact path="/create-discussion" component={CreateDiscussionPage} />
+              <PrivateRoute exact path="/create-article" component={CreateArticlePage} />
               <Route exact path="/notifications" component={NotificationsPage} />
               <Route exact path="/discussion/:slug" component={DiscussionPage} />
               <Route exact path="/article/:slug" component={ArticlePage} />
               <Route exact path="/search" component={SearchPage} />
-              <Route exact path="/settings">
-                <UserSettingsPage theme={currentTheme} toggleTheme={toggleTheme} />
-              </Route>
+              <PrivateRoute
+                exact
+                path="/settings"
+                component={() => (
+                  <UserSettingsPage theme={currentTheme} toggleTheme={toggleTheme} />
+                )}
+              />
               <Route path="/404" component={Error404page} />
               <Redirect to="/404" />
             </Switch>

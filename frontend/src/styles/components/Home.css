@@ -8,6 +8,7 @@
   .home--layout {
     grid-template-columns: 1fr 2fr 0;
   }
+
   #sidebar--right--home {
     display: none;
   }
@@ -17,6 +18,7 @@
   .home--layout {
     grid-template-columns: 1fr;
   }
+
   #sidebar--left--home {
     display: none;
   }

@@ -5,13 +5,12 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -20,43 +19,50 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Installing node dependencies
-      run: npm ci
-      working-directory: ./frontend
-      
-    - name: Running ESLint Linter
-      run: npm run lint --if-present
-      working-directory: ./frontend
-      env:
-          CI: false
-
-    - name: Running Prettier Code Formatter
-      run: npm run format:check --if-present
-      working-directory: ./frontend
-      env:
-          CI: false
-    
-    - name: Performing React build 
-      run: npm run build --if-present
-      working-directory: ./frontend
-      env:
-        CI: false # causes warnings to become errors, and there are tons of pa11y errors to fix
-
-    - name: Performing React tests if any defined 
-      run: npm test
-      working-directory: ./frontend
-      env:
-        CI: true # so that the test prompt doesn't show up
-
-    - name: Cypress run
-      uses: cypress-io/github-action@v2
-      with:
+      - name: Installing node dependencies
+        run: npm ci
         working-directory: ./frontend
-        start: npm start
+
+      - name: Running ESLint Linter
+        run: npm run lint --if-present
+        working-directory: ./frontend
+        env:
+          CI: false
+
+      - name: Running Stylelint
+        run: npm run stylelint --if-present
+        working-directory: ./frontend
+        env:
+          CI: false
+
+      - name: Running Prettier Code Formatter
+        run: npm run format:check --if-present
+        working-directory: ./frontend
+        env:
+          CI: false
+
+      - name: Performing React build
+        run: npm run build --if-present
+        working-directory: ./frontend
+        env:
+          CI: false # causes warnings to become errors, and there are tons of pa11y errors to fix
+
+      - name: Performing React tests if any defined
+        run: npm test
+        working-directory: ./frontend
+        env:
+          CI: true # so that the test prompt doesn't show up
+
+
+      # - name: Cypress run
+      #   uses: cypress-io/github-action@v2
+      #   with:
+      #     working-directory: ./frontend
+      #     start: npm start

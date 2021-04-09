@@ -14,6 +14,15 @@
   background-color: var(--color-sub);
 }
 
+#search-form input {
+  color: var(--color-light);
+  background-color: transparent;
+  outline: none;
+  border: 2px solid transparent;
+  width: 100%;
+  margin-left: 1rem;
+}
+
 .dark-theme #search-form > input {
   color: var(--color-text);
 }
@@ -23,15 +32,6 @@
   border: 2px solid var(--color-main);
 }
 
-#search-form input {
-  color: var(--color-light);
-  background-color: transparent;
-  border: none;
-  outline: none;
-  border: 2px solid transparent;
-  width: 100%;
-  margin-left: 1rem;
-}
 #search-form input::placeholder {
   color: var(--color-gray);
 }

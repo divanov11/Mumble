@@ -9,37 +9,33 @@ import {
   CreatePost,
   TopicTags,
   DiscussionsCard,
-  ArticlesCard,
   PostCardPlaceholder,
 } from '../components';
-import { articles, discussions, usersData } from '../data';
-import { getUsers } from '../services/usersService';
-import { getPosts } from '../services/postsService';
+import { discussions, usersData } from '../data';
+import { UsersService } from '../services';
+import { getPostsForDashboard } from '../actions/postActions';
+import { useDispatch, useSelector } from 'react-redux';
 
 const HomePage = () => {
   const user = usersData.find((u) => Number(u.id) === 1);
 
-  const [posts, setPosts] = useState([]);
   const [contributors, setContributors] = useState([]);
-  const [isLoaded, setLoaded] = useState(false);
+  const dispatch = useDispatch();
+  const posts = useSelector((state) => state.dashboard.posts);
+  const isPostsLoading = useSelector((state) => state.dashboard.loading);
 
   useEffect(() => {
-    getUsers().then(({ data }) => {
-      setContributors(data.slice(0, 3));
+    UsersService.getUsers().then((users) => {
+      setContributors(users.slice(0, 3));
     });
 
-    getPosts()
-      .then(({ data }) => {
-        setPosts(data);
-      })
-      .then(() => setLoaded(true));
-  }, []);
+    dispatch(getPostsForDashboard());
+  }, [dispatch]);
 
   return (
     <div className="container home--layout">
       <section id="sidebar--left--home">
         <Contributors users={contributors} />
-        <TopicTags tags={user.interests} />
       </section>
 
       <section id="center-content">
@@ -47,15 +43,19 @@ const HomePage = () => {
         <ReactPlaceholder
           customPlaceholder={<PostCardPlaceholder />}
           showLoadingAnimation
-          ready={isLoaded}
+          ready={!isPostsLoading}
         >
           <FeedCard posts={posts} />
         </ReactPlaceholder>
       </section>
 
       <section id="sidebar--right--home">
+        <TopicTags tags={user.interests} />
         <DiscussionsCard discussions={discussions} />
-        <ArticlesCard articles={articles} />
+        {/* 
+        At some point I will add articles into rotation with disccssions. This will be in one card -- Dennis Ivy
+        <ArticlesCard articles={articles} /> 
+        */}
       </section>
     </div>
   );
