@@ -7,7 +7,7 @@ import {
   userPostsListReducer,
 } from './userReducers';
 
-import { postSearchListReducer } from './postReducers';
+import { postDashboardReducer, postSearchListReducer } from './postReducers';
 
 export default combineReducers({
   auth,
@@ -18,4 +18,5 @@ export default combineReducers({
   userPostsList: userPostsListReducer,
 
   postSearchList: postSearchListReducer,
+  dashboard: postDashboardReducer,
 });
