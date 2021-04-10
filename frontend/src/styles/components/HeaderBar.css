@@ -52,6 +52,11 @@
   margin: 10px;
 }
 
+.nav-avatar {
+  width: 45px;
+  height: 45px;
+}
+
 #user--navigation {
   position: fixed;
   width: 300px;

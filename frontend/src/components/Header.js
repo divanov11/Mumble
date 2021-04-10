@@ -132,7 +132,12 @@ const Header = ({ theme, toggleTheme }) => {
             .filter((notification) => !notification.isRead)
             .map((notification) => (
               <div key={notification.id} className="user-navigation--item">
-                <Avatar alt="img-description" src={notification.user.profile_pic} size="sm" />
+                <Avatar
+                  alt="img-description"
+                  src={notification.user.profile_pic}
+                  className="nav-avatar"
+                  size="sm"
+                />
                 <Link
                   to={getNotificationLink(notification)}
                   onClick={() => {
