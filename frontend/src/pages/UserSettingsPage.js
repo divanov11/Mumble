@@ -1,13 +1,17 @@
 import React, { useState, useRef } from 'react';
-import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
 
 import '../styles/components/UserSettings.css';
 
 import { Avatar, Button, Card } from '../common';
 import { ProfilePicCropperModal, UserSettingUpdateModal } from '../components';
 import { usersData } from '../data';
+import { toggleTheme as DarkLightTheme } from '../actions/local';
 
-function UserSettingsPage({ theme, toggleTheme }) {
+function UserSettingsPage() {
+  const isDarkTheme = useSelector((state) => state.local.darkTheme);
+  const toggleTheme = useDispatch();
+
   const [currentUser, setCurrentUser] = useState(usersData[0]);
   const [updateModelActive, setUpdateModelActive] = useState(false);
   const [profilePicModel, setProfilePicModel] = useState(false);
@@ -145,7 +149,13 @@ function UserSettingsPage({ theme, toggleTheme }) {
               <span>Theme</span>
             </div>
             <label className="toggle-theme-switch">
-              <input type="checkbox" onClick={toggleTheme} checked={theme === 'light'}></input>
+              <input
+                type="checkbox"
+                onClick={() => {
+                  toggleTheme(DarkLightTheme());
+                }}
+                checked={isDarkTheme}
+              ></input>
               <span className="theme-slider"></span>
             </label>
           </div>
@@ -154,10 +164,5 @@ function UserSettingsPage({ theme, toggleTheme }) {
     </div>
   );
 }
-
-UserSettingsPage.propTypes = {
-  theme: PropTypes.string,
-  toggleTheme: PropTypes.func,
-};
 
 export default UserSettingsPage;
