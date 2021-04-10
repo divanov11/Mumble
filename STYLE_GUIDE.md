@@ -126,7 +126,7 @@ The main goal of this style guide is providing the contributors a set of instruc
 <br /><br />
 <p align="center">
   <img src="./images/mumble-ui-kit1.png" width="80%">
-  <img src="./images/mumble-ui-kit2.png" width="80%">
+  <img src="./images/mumble-ui-kit2.PNG" width="80%">
   <img src="./images/mumble-ui-kit3.png" width="80%">
 </p>
 <br />
