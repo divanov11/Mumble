@@ -13,6 +13,23 @@
   border-bottom: 1px solid var(--color-light);
 }
 
+/* WYSIWYG CKEDITOR */
+.ck-editor__editable_inline {
+  min-height: 150px;
+  margin-bottom: 1.5rem;
+  padding-left: 30px;
+}
+
+.ck-content li {
+  margin-left: 50px;
+}
+
+:root .dark-theme {
+  /* ck-editor content area */
+  --ck-color-base-background: var(--color-bg);
+}
+
+
 @media screen and (max-width: 1300px) {
   .create-article--layout {
     grid-template-columns: 2fr 1fr;
@@ -21,6 +38,10 @@
 
 @media screen and (max-width: 1000px) {
   .create-article--layout {
-    grid-template-columns: 1fr;
+    display: block;
+  }
+
+  #right-sidebar {
+    margin-top: 1rem;
   }
 }
