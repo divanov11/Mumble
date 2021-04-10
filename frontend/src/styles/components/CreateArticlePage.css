@@ -4,6 +4,17 @@
   column-gap: 1rem;
 }
 
+/* WYSIWYG CKEDITOR */
+.ck-editor__editable_inline {
+  min-height: 150px;
+  margin-bottom: 1.5rem;
+  padding-left: 30px;
+}
+
+.ck-content li {
+  margin-left: 50px;
+}
+
 .article-headline {
   font-size: 32px;
 }

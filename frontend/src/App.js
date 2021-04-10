@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { ToastContainer } from 'react-toastify';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
+import { useSelector } from 'react-redux';
 import classNames from 'classnames';
 
 import PrivateRoute from './utilities/PrivateRoute';
@@ -26,22 +27,13 @@ import {
 } from './pages';
 
 const App = () => {
-  const userTheme = localStorage.getItem('mumble-theme') ?? 'light';
-  const [currentTheme, setCurrentTheme] = useState(userTheme);
-
-  useEffect(() => {
-    localStorage.setItem('mumble-theme', currentTheme);
-  }, [currentTheme]);
-
-  const toggleTheme = () => {
-    setCurrentTheme(currentTheme === 'light' ? 'dark' : 'light');
-  };
+  const isDarkTheme = useSelector((state) => state.local.darkTheme);
 
   return (
     <Router>
       <ErrorBoundary FallbackComponent={Error500page}>
-        <div className={classNames('app', `${currentTheme === 'dark' && 'dark-theme'}`)}>
-          <Header theme={currentTheme} toggleTheme={toggleTheme} />
+        <div className={classNames('app', `${isDarkTheme && 'dark-theme'}`)}>
+          <Header />
           <main>
             <Switch>
               <Route exact path="/" component={HomePage} />
@@ -53,13 +45,7 @@ const App = () => {
               <Route exact path="/discussion/:slug" component={DiscussionPage} />
               <Route exact path="/article/:slug" component={ArticlePage} />
               <Route exact path="/search" component={SearchPage} />
-              <PrivateRoute
-                exact
-                path="/settings"
-                component={() => (
-                  <UserSettingsPage theme={currentTheme} toggleTheme={toggleTheme} />
-                )}
-              />
+              <PrivateRoute exact path="/settings" component={() => <UserSettingsPage />} />
               <Route path="/404" component={Error404page} />
               <Redirect to="/404" />
             </Switch>

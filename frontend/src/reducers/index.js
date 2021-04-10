@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import auth from './auth';
+import local from './local';
 import {
   userListReducer,
   userListRecommendedReducer,
@@ -10,8 +11,8 @@ import {
 import { postDashboardReducer, postSearchListReducer } from './postReducers';
 
 export default combineReducers({
+  local,
   auth,
-
   userList: userListReducer,
   userListRecommended: userListRecommendedReducer,
   userProfileDetail: userProfileDetailReducer,
