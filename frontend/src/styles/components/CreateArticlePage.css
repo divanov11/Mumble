@@ -25,10 +25,9 @@
 }
 
 :root .dark-theme {
-  /* ck-editor content area */
+  /* CKEditor content area */
   --ck-color-base-background: var(--color-bg);
 }
-
 
 @media screen and (max-width: 1300px) {
   .create-article--layout {
