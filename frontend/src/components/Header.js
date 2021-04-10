@@ -140,7 +140,7 @@ const Header = () => {
                 <Avatar
                   alt="img-description"
                   src={notification.user.profile_pic}
-                  className="nav-item"
+                  className="nav-avatar"
                   size="sm"
                 />
                 <Link
