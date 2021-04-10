@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDetectClickOutside } from 'react-detect-click-outside';
+import { useSelector, useDispatch } from 'react-redux';
 import classNames from 'classnames';
 
 import '../styles/components/HeaderBar.css';
@@ -10,6 +11,7 @@ import { Avatar } from '../common';
 import SearchBox from './SearchBox';
 import { markAsRead, NotificationTitle } from './Notification';
 import { usersData, notifications } from '../data';
+import { toggleTheme as DarkLightTheme } from '../actions/local';
 
 export const getNotificationLink = (notification) => {
   const notificationUrlMap = {
@@ -20,7 +22,10 @@ export const getNotificationLink = (notification) => {
   return notificationUrlMap[notification.notification_type];
 };
 
-const Header = ({ theme, toggleTheme }) => {
+const Header = () => {
+  const isDarkTheme = useSelector((state) => state.local.darkTheme);
+  const toggleTheme = useDispatch();
+
   const user = usersData.find((u) => Number(u.id) === 1);
   const [showNavigation, setShowNavigation] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
@@ -82,18 +87,18 @@ const Header = ({ theme, toggleTheme }) => {
             role="button"
             className="user-navigation--item"
             onClick={() => {
-              toggleTheme();
+              toggleTheme(DarkLightTheme());
               closeDropdown();
             }}
           >
             <i
               className={classNames(
                 'fas',
-                `fa-${theme === 'light' ? 'moon' : 'sun'}`,
+                `fa-${isDarkTheme ? 'sun' : 'moon'}`,
                 ' user--nav--icon',
               )}
             ></i>
-            Enable {theme === 'light' ? 'dark' : 'light'} Mode
+            Enable {isDarkTheme ? 'light' : 'dark'} Mode
           </div>
 
           <Link
