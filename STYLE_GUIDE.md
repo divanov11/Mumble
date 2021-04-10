@@ -81,7 +81,7 @@ The main goal of this style guide is providing the contributors a set of instruc
 *-> Preview :* <br/>
 
 <p align="center">
-<img src="./images/Mumble_Dark_Mode.jpg" width="95%"><br/>
+<img src="./images/Mumble_Dark_Mode.jpg" width="80%"><br/>
 </p>
 
 *-> Colors for the Dark Mode :*
@@ -102,7 +102,7 @@ The main goal of this style guide is providing the contributors a set of instruc
 
 *-> Dark Mode Pallette :*
 <p align="center">
-<img src="./images/dark_mode_color_pallette.jpg" width="80%">
+<img src="./images/dark_mode_color_pallette.jpg" width="70%">
 </p>
 
 #
@@ -120,13 +120,18 @@ The main goal of this style guide is providing the contributors a set of instruc
 #
 
 #### 🧰 UI Kits : 
-**---> Visit the Mumble UI Kit 👉 [website](http://mumble-lp.s3-website-us-west-2.amazonaws.com/)**
-<br/><br/>
----> Here is a preview ! 👇
-<p align="center">
-  <img src="./images/mumble-ui-kit.png" width="90%">
-</p>
 
+<br/>
+---> Here is a preview ! 👇
+<br /><br />
+<p align="center">
+  <img src="./images/mumble-ui-kit1.png" width="80%">
+  <img src="./images/mumble-ui-kit2.png" width="80%">
+  <img src="./images/mumble-ui-kit3.png" width="80%">
+</p>
+<br />
+
+**---> Visit the Mumble UI Kit 👉 [website](http://mumble-lp.s3-website-us-west-2.amazonaws.com/)**
 #
 
 <h2 align="center">⚛ Mumble React/JSX Style Guide</h2>
