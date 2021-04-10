@@ -18,6 +18,7 @@ The main goal of this style guide is providing the contributors a set of instruc
       - 🎹 Pattern and Naming
       - 📦 Modularity
       - 🎨 Colors
+      - ✍ Fonts
       - 🧰 UI Kits
 
 - ⚛ Mumble React/JSX Style Guide
@@ -39,6 +40,7 @@ The main goal of this style guide is providing the contributors a set of instruc
 |.github|......   	|
 
 > ⚠ Under Construction by @MidouWebDev !
+<br/><br/>
 
 <h2 align="center">🎭 Mumble CSS Style Guide</h2>
 
