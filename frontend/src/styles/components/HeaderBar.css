@@ -53,8 +53,7 @@
 }
 
 .nav-avatar {
-  width: 45px;
-  height: 45px;
+  min-width: 5rem;
 }
 
 #user--navigation {
