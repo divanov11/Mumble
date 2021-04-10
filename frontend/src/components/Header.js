@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useDetectClickOutside } from 'react-detect-click-outside';
 import { useSelector, useDispatch } from 'react-redux';
 import classNames from 'classnames';
+
+import { logout } from '../actions/authActions';
 
 import '../styles/components/HeaderBar.css';
 import logo from '../assets/logo/dark-logo.png';
@@ -23,12 +25,20 @@ export const getNotificationLink = (notification) => {
 };
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
   const toggleTheme = useDispatch();
 
   const user = usersData.find((u) => Number(u.id) === 1);
   const [showNavigation, setShowNavigation] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
+
+  const logoutUser = () => {
+    dispatch(logout());
+    closeDropdown();
+    history.push('/login');
+  };
 
   const toggleDropdown = (e) => {
     e.stopPropagation();
@@ -120,7 +130,7 @@ const Header = () => {
             Settings
           </Link>
 
-          <Link to="/logout" className="user-navigation--item" onClick={closeDropdown}>
+          <Link className="user-navigation--item" onClick={logoutUser}>
             <i className="fas fa-sign-out-alt user--nav--icon"></i>
             Logout
           </Link>
