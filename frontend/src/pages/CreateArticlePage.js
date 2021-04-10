@@ -18,7 +18,6 @@ const CreateArticlePage = () => {
   const handleTitleChange = (e) => setTitle(e.target.value);
   const handleBodyChange = (e, editor) => {
     const data = editor.getData();
-    console.log(data);
     setBody(data);
   };
 
