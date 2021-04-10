@@ -4,6 +4,15 @@
   column-gap: 1rem;
 }
 
+.article-headline {
+  font-size: 32px;
+}
+
+.article-header {
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--color-light);
+}
+
 /* WYSIWYG CKEDITOR */
 .ck-editor__editable_inline {
   min-height: 150px;
@@ -15,13 +24,9 @@
   margin-left: 50px;
 }
 
-.article-headline {
-  font-size: 32px;
-}
-
-.article-header {
-  margin-bottom: 20px;
-  border-bottom: 1px solid var(--color-light);
+:root .dark-theme {
+  /* CKEditor content area */
+  --ck-color-base-background: var(--color-bg);
 }
 
 @media screen and (max-width: 1300px) {
