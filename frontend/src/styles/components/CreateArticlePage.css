@@ -32,6 +32,10 @@
 
 @media screen and (max-width: 1000px) {
   .create-article--layout {
-    grid-template-columns: 1fr;
+    display: block;
+  }
+
+  #right-sidebar {
+    margin-top: 1rem;
   }
 }
