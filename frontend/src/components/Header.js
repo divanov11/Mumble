@@ -11,7 +11,7 @@ import logo from '../assets/logo/dark-logo.png';
 
 import { Avatar } from '../common';
 import SearchBox from './SearchBox';
-import { markAsRead, NotificationTitle } from './Notification';
+import { markAsRead } from './Notification';
 import { usersData, notifications } from '../data';
 import { toggleTheme as DarkLightTheme } from '../actions/local';
 
@@ -160,7 +160,8 @@ const Header = () => {
                     markAsRead(notification);
                   }}
                 >
-                  <NotificationTitle notification={notification} />
+                  <strong>{notification.user.name} </strong>
+                {notification.content}
                 </Link>
               </div>
             ))}
