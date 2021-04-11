@@ -39,11 +39,12 @@ const LoginForm = () => {
       </form>
       <div id="bottom-content">
         <p>
-          Dont have and Account? <Link to="/signup">Sign up</Link>
+          <Link to="#">Forgot Password ?</Link>
         </p>
         <p>
-          <Link to="#">Forgot Password?</Link>
+          Don't have an account? <Link to="/signup">Sign up</Link>
         </p>
+        
       </div>
     </>
   );
