@@ -161,7 +161,7 @@ const Header = () => {
                   }}
                 >
                   <strong>{notification.user.name} </strong>
-                {notification.content}
+                  {notification.content}
                 </Link>
               </div>
             ))}
