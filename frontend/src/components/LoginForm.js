@@ -31,6 +31,7 @@ const LoginForm = () => {
             placeholder="e.g. dennisivy"
             value={formValues.username}
             onChange={fieldChanges}
+            required
           />
         </div>
         <div className="form__field">
@@ -43,6 +44,7 @@ const LoginForm = () => {
             placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
             value={formValues.password}
             onChange={fieldChanges}
+            required
           />
         </div>
         <input className="submit btn btn--main" type="submit" value="Login" />

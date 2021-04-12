@@ -11,6 +11,7 @@ import { toggleTheme as DarkLightTheme } from '../actions/local';
 function UserSettingsPage() {
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
   const toggleTheme = useDispatch();
+  
 
   const [currentUser, setCurrentUser] = useState(usersData[0]);
   const [updateModelActive, setUpdateModelActive] = useState(false);
