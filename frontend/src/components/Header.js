@@ -30,7 +30,10 @@ const Header = () => {
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
   const toggleTheme = useDispatch();
 
-  const user = usersData.find((u) => Number(u.id) === 1);
+  const auth = useSelector((state) => state.auth);
+  const {user} = auth
+
+  //const user = usersData.find((u) => Number(u.id) === 1);
   const [showNavigation, setShowNavigation] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
 
