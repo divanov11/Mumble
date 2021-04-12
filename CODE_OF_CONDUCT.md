@@ -1,4 +1,9 @@
-# Contributor Code of Conduct
+#
+<p align="center">
+  <img src="./frontend/public/android-chrome-512x512.png" width="10%">
+  <h1 align="center">
+    Contributor Code of Conduct
+  </h1>
 
 ## Our Pledge
 
@@ -55,7 +60,7 @@ further defined and clarified by project maintainers.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team on the [Discord Server](https://discord.gg/Q5j8gBhsqQ). All
+reported by contacting the project team on the <a href="https://discord.gg/TxgpyK8pzf"><img align="center" width="28%" src="https://img.shields.io/discord/825371211399692308?label=Discord%20Server&style=for-the-badge&logo=Discord"></a>. All
 complaints will be reviewed and investigated and will result in a response that
 is deemed necessary and appropriate to the circumstances. The project team is
 obligated to maintain confidentiality with regard to the reporter of an incident.
