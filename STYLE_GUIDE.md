@@ -1,7 +1,7 @@
 #
 
 <p align="center">
-  <img src="./frontend/public/android-chrome-512x512.png" width="8%">
+  <img src="./frontend/public/android-chrome-512x512.png" width="15%">
   <h1 align="center"> 🎨 | Mumble Style Guide </h1>
 </p>
 
@@ -40,7 +40,8 @@ The main goal of this style guide is providing the contributors a set of instruc
 |.github|......   	|
 
 > ⚠ Under Construction by @MidouWebDev !
-<br/><br/>
+
+<br/>
 
 <h2 align="center">🎭 Mumble CSS Style Guide</h2>
 
@@ -77,6 +78,14 @@ The main goal of this style guide is providing the contributors a set of instruc
 
 **---> For the Dark Mode :**
 
+*-> Preview :* <br/>
+
+<p align="center">
+<img src="./images/Mumble_Dark_Mode.jpg" width="80%"><br/>
+</p>
+
+*-> Colors for the Dark Mode :*
+
   |Types |Informations|
   |:-:|:-:|
   |main| #71c6dd|
@@ -91,6 +100,11 @@ The main goal of this style guide is providing the contributors a set of instruc
   |white| #1f1f1f|
   |white-light| #1f1f1f|
 
+*-> Dark Mode Pallette :*
+<p align="center">
+<img src="./images/dark_mode_color_pallette.jpg" width="70%">
+</p>
+
 #
 
 #### ✍️ Fonts :
@@ -104,14 +118,20 @@ The main goal of this style guide is providing the contributors a set of instruc
   |font-bold| 700|
 
 #
-#### 🧰 UI Kits : 
-**---> Visit the Mumble UI Kit 👉 [website](http://mumble-lp.s3-website-us-west-2.amazonaws.com/)**
-<br/><br/>
----> Here is a preview ! 👇
-<p align="center">
-  <img align="center" src="./images/mumble-ui-kit.png">
-</p>
 
+#### 🧰 UI Kits : 
+
+<br/>
+---> Here is a preview ! 👇
+<br /><br />
+<p align="center">
+  <img src="./images/mumble-ui-kit1.png" width="80%">
+  <img src="./images/mumble-ui-kit2.PNG" width="80%">
+  <img src="./images/mumble-ui-kit3.png" width="80%">
+</p>
+<br />
+
+**---> Visit the Mumble UI Kit 👉 [website](http://mumble-lp.s3-website-us-west-2.amazonaws.com/)**
 #
 
 <h2 align="center">⚛ Mumble React/JSX Style Guide</h2>
@@ -151,4 +171,3 @@ The main goal of this style guide is providing the contributors a set of instruc
 #### 🪁 JSX :
 
 #
-
