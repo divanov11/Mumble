@@ -1,21 +1,21 @@
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
 
-import { login } from '../actions/authActions'
-import Message from '../common/Message'
+import { login } from '../actions/authActions';
+import Message from '../common/Message';
 
 import { useForm } from '../hooks';
 
 const LoginForm = () => {
-  let dispatch = useDispatch()
+  let dispatch = useDispatch();
 
-  let auth = useSelector(state => state.auth)
-  let {error} = auth
+  let auth = useSelector((state) => state.auth);
+  let { error } = auth;
 
   const [formValues, fieldChanges] = useForm({ username: '', password: '' });
   const onSubmit = (e) => {
     e.preventDefault();
-    dispatch(login(formValues))
+    dispatch(login(formValues));
   };
   return (
     <>

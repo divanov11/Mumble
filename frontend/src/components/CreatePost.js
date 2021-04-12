@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 
 import '../styles/components/CreatePost.css';
 
 import { Button, AuthorBox, TextArea } from '../common';
 
 const CreatePost = () => {
-  let auth = useSelector(state => state.auth)
-  let {user} = auth
+  let auth = useSelector((state) => state.auth);
+  let { user } = auth;
 
   const [message, setMessage] = useState('');
   const [error, setError] = useState(null);

@@ -26,22 +26,17 @@ import {
   Error500page,
 } from './pages';
 
-
-
 const App = () => {
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
 
   const user = useSelector((state) => state.auth);
-
 
   return (
     <Router>
       <ErrorBoundary FallbackComponent={Error500page}>
         <div className={classNames('app', `${isDarkTheme && 'dark-theme'}`)}>
           {/* Header bar should not be displayed in login page. Temporary fix. -- Dennis Ivanov */}
-          {user.isAuthenticated && (
-            <Header />
-          )}
+          {user.isAuthenticated && <Header />}
           <main>
             <Switch>
               <PrivateRoute path="/" exact component={HomePage} />

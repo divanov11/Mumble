@@ -1,26 +1,22 @@
-import React, {useEffect} from 'react';
-import {useSelector } from 'react-redux'
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 import screenshot from '../assets/images/screenshot.PNG';
 import '../styles/components/LoginOrSignUp.css';
 
 import { LoginForm, SignupForm } from '../components';
 
-const LoginSignupPage = ({match, history}) => {
-
+const LoginSignupPage = ({ match, history }) => {
   const params = match.params['parameter'];
 
-
-  let auth = useSelector(state => state.auth)
-  let {user} = auth
-
-
+  let auth = useSelector((state) => state.auth);
+  let { user } = auth;
 
   useEffect(() => {
     if (user) {
-      history.push('/')
-  }
-  }, [user, history])
+      history.push('/');
+    }
+  }, [user, history]);
 
   return (
     <div id="login--page--container">

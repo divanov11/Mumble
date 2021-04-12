@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useForm } from '../hooks';
-import Message from '../common/Message'
+import Message from '../common/Message';
 
 const SignupForm = () => {
   const [inputs, fieldChanges] = useForm({

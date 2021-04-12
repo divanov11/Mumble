@@ -31,7 +31,7 @@ const Header = () => {
   const toggleTheme = useDispatch();
 
   const auth = useSelector((state) => state.auth);
-  const {user} = auth
+  const { user } = auth;
 
   //const user = usersData.find((u) => Number(u.id) === 1);
   const [showNavigation, setShowNavigation] = useState(false);

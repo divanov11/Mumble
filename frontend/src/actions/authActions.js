@@ -6,36 +6,28 @@ import {
   LOGOUT_SUCCESS,
   LOGOUT_FAIL,
 } from '../constants/authConstants';
-import axios from 'axios'
-
+import axios from 'axios';
 
 export const login = (loginCredentials) => async (dispatch) => {
-
   try {
-
     dispatch({ type: LOGIN_REQUEST });
 
     // Do the Request to server and Handle the login process
     const config = {
       headers: {
-          'Content-type': 'application/json'
-      }
-  }
+        'Content-type': 'application/json',
+      },
+    };
 
-  console.log('PRE_DATA')
-  const { data } = await axios.post(
-      'api/users/token/',
-      loginCredentials,
-      config
-  )
+    console.log('PRE_DATA');
+    const { data } = await axios.post('api/users/token/', loginCredentials, config);
 
-  console.log('DATA:', data)
+    console.log('DATA:', data);
 
     dispatch({
       type: LOGIN_SUCCESS,
       payload: data,
     });
-
   } catch (error) {
     dispatch({
       type: LOGIN_FAIL,

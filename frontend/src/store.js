@@ -2,32 +2,24 @@ import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
-import jwt_decode from "jwt-decode";
+import jwt_decode from 'jwt-decode';
 
-
-
-const accessToken = localStorage.getItem('access') ?
-    localStorage.getItem('access') : null
-
-
+const accessToken = localStorage.getItem('access') ? localStorage.getItem('access') : null;
 
 let authState = {
-  access:accessToken,
-  isAuthenticated:false,
-  user:null
-}
+  access: accessToken,
+  isAuthenticated: false,
+  user: null,
+};
 
-
-if (accessToken){
-  authState['isAuthenticated'] = true
+if (accessToken) {
+  authState['isAuthenticated'] = true;
   //Decode Token Here
   authState['user'] = jwt_decode(accessToken);
 }
 
-
-
 const initialState = {
-  auth:authState,
+  auth: authState,
 };
 
 const middleWare = [thunk];
