@@ -10,8 +10,9 @@ import axios from 'axios'
 
 
 export const login = (loginCredentials) => async (dispatch) => {
-  console.log('loginCredintials:', loginCredentials)
+
   try {
+
     dispatch({ type: LOGIN_REQUEST });
 
     // Do the Request to server and Handle the login process
@@ -21,16 +22,20 @@ export const login = (loginCredentials) => async (dispatch) => {
       }
   }
 
+  console.log('PRE_DATA')
   const { data } = await axios.post(
       'api/users/token/',
       loginCredentials,
       config
   )
 
+  console.log('DATA:', data)
+
     dispatch({
       type: LOGIN_SUCCESS,
       payload: data,
     });
+
   } catch (error) {
     dispatch({
       type: LOGIN_FAIL,

@@ -1,13 +1,16 @@
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { login } from '../actions/authActions'
-
+import Message from '../common/Message'
 
 import { useForm } from '../hooks';
 
 const LoginForm = () => {
   let dispatch = useDispatch()
+
+  let auth = useSelector(state => state.auth)
+  let {error} = auth
 
   const [formValues, fieldChanges] = useForm({ username: '', password: '' });
   const onSubmit = (e) => {
@@ -16,6 +19,7 @@ const LoginForm = () => {
   };
   return (
     <>
+      {error && <Message variant="error">{error}</Message>}
       <form className="form" onSubmit={onSubmit}>
         <div className="form__field">
           <label htmlFor="formInput#email">Username: </label>
