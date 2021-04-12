@@ -20,11 +20,11 @@ let authState = {
 
 if (accessToken){
   authState['isAuthenticated'] = true
+  //Decode Token Here
   authState['user'] = jwt_decode(accessToken);
 }
 
 
-//Decode Token Here
 
 const initialState = {
   auth:authState,

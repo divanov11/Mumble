@@ -12,7 +12,7 @@ import logo from '../assets/logo/dark-logo.png';
 import { Avatar } from '../common';
 import SearchBox from './SearchBox';
 import { markAsRead } from './Notification';
-import { usersData, notifications } from '../data';
+import { notifications } from '../data';
 import { toggleTheme as DarkLightTheme } from '../actions/local';
 
 export const getNotificationLink = (notification) => {

@@ -1,25 +1,31 @@
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux'
+
+import { login } from '../actions/authActions'
+
 
 import { useForm } from '../hooks';
 
 const LoginForm = () => {
-  const [formValues, fieldChanges] = useForm({ email: '', password: '' });
+  let dispatch = useDispatch()
+
+  const [formValues, fieldChanges] = useForm({ username: '', password: '' });
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(formValues);
+    dispatch(login(formValues))
   };
   return (
     <>
       <form className="form" onSubmit={onSubmit}>
         <div className="form__field">
-          <label htmlFor="formInput#email">Email: </label>
+          <label htmlFor="formInput#email">Username: </label>
           <input
             className="input input--email"
             id="formInput#email"
-            type="email"
-            name="email"
-            placeholder="e.g. user@domain.com"
-            value={formValues.email}
+            type="text"
+            name="username"
+            placeholder="e.g. dennisivy"
+            value={formValues.username}
             onChange={fieldChanges}
           />
         </div>
