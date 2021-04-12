@@ -1,10 +1,15 @@
-# Contributing to Mumble
+#
+<p align="center">
+  <img src="./frontend/public/android-chrome-512x512.png" width="10%">
+  <h1 align="center">
+    Contributing to MUMBLE :
+  </h1>
 
 A big welcome and thank you for considering contributing to Mumble! It’s people like you that make it a reality for users in our community.
 
 Reading and following these guidelines will help us make the contribution process easy and effective for everyone involved. It also communicates that you agree to respect the time of the developers managing and developing these open source projects. In return, we will reciprocate that respect by addressing your issue, assessing changes, and helping you finalize your pull requests.
 
-Also if you are looking for a complete style guides, please refer to [**Mumble Style Guide**](STYLE_GUIDE.md).
+Also if you are looking for a complete style guides, please refer to [**🎨 | Mumble Style Guide**](STYLE_GUIDE.md).
 We highly recommend to go through the guideline before start contributing.
 
 > **_⚠ Those who wants to contribute on the repo, from now, before pushing/committing your changes, please make sure you run command `npm run format` or `yarn format` or use Prettier plugin to automatically format your code. We want to maintain consistency that's why we want to enforce the formatting. It's required!_**
@@ -141,4 +146,4 @@ You can follow along with this video, [Contributing to Mumble](https://youtu.be/
 
 ## Getting Help
 
-Join us in the [Mumble Community](https://discord.com/invite/Tfr67ehuJH) and post your question there in the correct category with a descriptive tag.
+Join us in the <a href="https://discord.gg/TxgpyK8pzf"><img align="center" width="28%" src="https://img.shields.io/discord/825371211399692308?label=Mumble%20Community&style=for-the-badge&logo=Discord"></a> and post your question there in the correct category with a descriptive tag.
