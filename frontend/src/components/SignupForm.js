@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useForm } from '../hooks';
+import Message from '../common/Message'
 
 const SignupForm = () => {
   const [inputs, fieldChanges] = useForm({
@@ -14,6 +15,9 @@ const SignupForm = () => {
   };
   return (
     <>
+      <Message variant="warning">
+        <p>Registration not availible yet</p>
+      </Message>
       <form className="form" onSubmit={onSubmit}>
         <div className="form__field">
           <label htmlFor="formInput#email">Email: </label>
