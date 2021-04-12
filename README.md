@@ -1,19 +1,20 @@
 #
 
 <p align="center">
-  <img src="./frontend/public/android-chrome-512x512.png" width="8%">
+  <img src="./frontend/public/android-chrome-512x512.png" width="10%">
   <h1 align="center">
     MUMBLE
   </h1>
 <p align="center">An Open Source Social Media Platform and Public Forum for Questions and Discussions, built for Developers.</p>
 </p>
 
+<div align="center">
 
-## 🔗 Links :
+<a href="https://www.mumble.dev">![Mumble](https://img.shields.io/badge/Mumble-Live%20Demo-9cf?style=for-the-badge)</a>
+<a href="http://mumble-lp.s3-website-us-west-2.amazonaws.com/">![Mumble UI Kit](https://img.shields.io/badge/Mumble-UI%20Kit-orange?style=for-the-badge)</a>
+<a href="https://discord.gg/TxgpyK8pzf">![Mumble Community](https://img.shields.io/discord/825371211399692308?label=Mumble%20Community&style=for-the-badge&logo=Discord)</a>
 
-- **[🔴 Live Demo](https://www.mumble.dev/)**
-- **[🎨 UI Kit Docs/Preview](http://mumble-lp.s3-website-us-west-2.amazonaws.com/)**
-- **[✅ Join The Discord Server](https://discord.gg/TxgpyK8pzf)**
+</div>
 
 ## Download & Setup Instructions :
 
