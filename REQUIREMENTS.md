@@ -21,7 +21,7 @@ For development, you will need Node.js and a node global package, NPM or Yarn, i
   website and download the installer.
   Also, be sure to have `git` available in your PATH, <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" align="center" width="6%"> might need it<br/>
 
-  (You can download <a href="https://nodejs.org/"><img align="center" width="6%" src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"></a> by clicking on the badge)
+  (You can download <a href="https://git-scm.com"><img align="center" width="6%" src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"></a> by clicking on the badge)
 
 <br/>
 
