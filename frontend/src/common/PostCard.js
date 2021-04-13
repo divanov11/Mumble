@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getApiUrl } from '../services/config';
 
 import AuthorBox from './AuthorBox';
 import PostAction from './PostAction';
@@ -20,7 +21,7 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
 
   // TODO: Chunk this file to a Comment Card
   let fetchComments = () => {
-    fetch(`https://mumbleapi.herokuapp.com/api/posts/${post.id}/comments`)
+    fetch(getApiUrl(`api/posts/${post.id}/comments`))
       .then((response) => response.json())
       .then((data) => {
         setComments(data);
@@ -38,7 +39,7 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
     <div className={`${isComment && 'post-card--comment'}`} {...others}>
       <div className="post-header-wrapper">
         <AuthorBox
-          avatarSrc={user.profile_pic}
+          avatarSrc={getApiUrl(user.profile_pic)}
           name={user.name}
           handle={user.username}
           url={`/profile/${user.username}`}
