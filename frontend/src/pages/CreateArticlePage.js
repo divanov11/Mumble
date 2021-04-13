@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useHistory, Prompt } from 'react-router-dom';
 
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
@@ -13,7 +13,8 @@ import { articles } from '../data';
 const CreateArticlePage = () => {
   const history = useHistory();
   const [title, setTitle] = useState('');
-  const [body, setBody] = useState('Share your mumble thoughts...');
+  const [body, setBody] = useState('');
+  const [isArticleSubmitted, setIsArticleSubmitted] = useState(false);
 
   const handleTitleChange = (e) => setTitle(e.target.value);
   const handleBodyChange = (e, editor) => {
@@ -23,11 +24,29 @@ const CreateArticlePage = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    window.onbeforeunload = null;
     // use the form data and make a request to API
     alert('Article Created! \n Now you will be directed to the Articles Page');
-    // redirect to the articles page, in the real request slug should be changed to created article's slug
-    history.push(`/article/article1`);
+    // set isArticleSubmitted variables
+    setIsArticleSubmitted(true);
+    // reset title and body variables
+    setTitle('');
+    setBody('');
   };
+
+  window.onbeforeunload = function (e) {
+    e.preventDefault();
+    if (title.trim() || body.trim()) {
+      return "Discard changes?";
+    }
+  };
+
+  useEffect(() => {
+    if(isArticleSubmitted) {
+      // redirect to the articles page, in the real request slug should be changed to created article's slug
+      history.push(`/article/article1`);
+    }
+  }, [history, isArticleSubmitted]);
 
   return (
     <div className="container create-article--layout">
@@ -61,11 +80,16 @@ const CreateArticlePage = () => {
                     return prevState;
                   });
                 }}
+                config={{placeholder: "Share your mumble thoughts..."}}
               />
               <Button color="main" type="submit">
                 Submit
               </Button>
             </form>
+            <Prompt
+            when={title.length > 0 || body.length > 0}
+            message="Are you sure you want to leave without finishing your article?"
+            />
           </div>
         </div>
       </section>
