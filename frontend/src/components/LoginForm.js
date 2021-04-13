@@ -1,26 +1,41 @@
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { login } from '../actions/authActions';
+import Message from '../common/Message';
 
 import { useForm } from '../hooks';
 
 const LoginForm = () => {
-  const [formValues, fieldChanges] = useForm({ email: '', password: '' });
+  let dispatch = useDispatch();
+
+  let auth = useSelector((state) => state.auth);
+  let { error } = auth;
+
+  const [formValues, fieldChanges] = useForm({ username: '', password: '' });
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(formValues);
+    dispatch(login(formValues));
   };
   return (
     <>
+      {error && <Message variant="error">{error}</Message>}
+      <Message variant="warning">
+        <p>Username: mumble</p>
+        <p>Password: welcomemumble</p>
+      </Message>
       <form className="form" onSubmit={onSubmit}>
         <div className="form__field">
-          <label htmlFor="formInput#email">Email: </label>
+          <label htmlFor="formInput#email">Username: </label>
           <input
             className="input input--email"
             id="formInput#email"
-            type="email"
-            name="email"
-            placeholder="e.g. user@domain.com"
-            value={formValues.email}
+            type="text"
+            name="username"
+            placeholder="e.g. dennisivy"
+            value={formValues.username}
             onChange={fieldChanges}
+            required={true}
           />
         </div>
         <div className="form__field">
@@ -33,6 +48,7 @@ const LoginForm = () => {
             placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
             value={formValues.password}
             onChange={fieldChanges}
+            required={true}
           />
         </div>
         <input className="submit btn btn--main" type="submit" value="Login" />

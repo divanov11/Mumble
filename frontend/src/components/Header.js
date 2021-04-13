@@ -12,7 +12,7 @@ import logo from '../assets/logo/dark-logo.png';
 import { Avatar } from '../common';
 import SearchBox from './SearchBox';
 import { markAsRead } from './Notification';
-import { usersData, notifications } from '../data';
+import { notifications } from '../data';
 import { toggleTheme as DarkLightTheme } from '../actions/local';
 
 export const getNotificationLink = (notification) => {
@@ -30,7 +30,10 @@ const Header = () => {
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
   const toggleTheme = useDispatch();
 
-  const user = usersData.find((u) => Number(u.id) === 1);
+  const auth = useSelector((state) => state.auth);
+  const { user } = auth;
+
+  //const user = usersData.find((u) => Number(u.id) === 1);
   const [showNavigation, setShowNavigation] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
 

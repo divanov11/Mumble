@@ -1,32 +1,36 @@
-import { LOGIN_SUCCESS, LOGOUT_REQUEST, LOGOUT_SUCCESS } from '../constants/authConstants';
+import {
+  LOGIN_REQUEST,
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
+  LOGOUT_REQUEST,
+  LOGOUT_SUCCESS,
+} from '../constants/authConstants';
+import jwt_decode from 'jwt-decode';
 
-import users from '../data/users';
-const mockUser = users[3];
+//import users from '../data/users';
+//const mockUser = users[3];
 
-const initialState = {
-  access: localStorage.getItem('access'),
-  refresh: localStorage.getItem('refresh'),
-  isLoading: false,
-  // User has been set by manually from the `src\data\users.js` for the development purpose
-  // For now manually set. Once functionality done with authentication set "isAuthenticated: false"
-  isAuthenticated: true,
-  user: mockUser,
-};
-
-export default function authReducer(state = initialState, action) {
+export default function authReducer(state = {}, action) {
   const { type, payload } = action;
   switch (type) {
+    case LOGIN_REQUEST: {
+      return { isLoading: true };
+    }
+
     case LOGIN_SUCCESS: {
-      localStorage.setItem('access', payload.tokens.access);
-      localStorage.setItem('refresh', payload.tokens.refresh);
+      localStorage.setItem('access', payload.access);
+      localStorage.setItem('refresh', payload.refresh);
+
       return {
         ...state,
         isAuthenticated: true,
-        access: payload.tokens.access,
-        refresh: payload.tokens.refresh,
         isLoading: false,
+        user: jwt_decode(payload.access),
       };
     }
+
+    case LOGIN_FAIL:
+      return { isLoading: false, error: payload };
 
     case LOGOUT_REQUEST: {
       return {

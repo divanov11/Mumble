@@ -1,0 +1,22 @@
+.message {
+  border: 5px;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 2px;
+}
+
+.message--error {
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+  color: #842029;
+}
+
+.message--warning {
+  background-color: #fff3cd;
+  border-color: #ffecb5;
+  color: #664d03;
+}
+
+.message--warning p {
+  color: #664d03;
+}

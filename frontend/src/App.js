@@ -29,14 +29,17 @@ import {
 const App = () => {
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
 
+  const user = useSelector((state) => state.auth);
+
   return (
     <Router>
       <ErrorBoundary FallbackComponent={Error500page}>
         <div className={classNames('app', `${isDarkTheme && 'dark-theme'}`)}>
-          <Header />
+          {/* Header bar should not be displayed in login page. Temporary fix. -- Dennis Ivanov */}
+          {user.isAuthenticated && <Header />}
           <main>
             <Switch>
-              <Route exact path="/" component={HomePage} />
+              <PrivateRoute path="/" exact component={HomePage} />
               <Route exact path="/:parameter(login|signup)" component={LoginSignupPage} />
               <Route exact path="/profile/:username" component={ProfilePage} />
               <PrivateRoute exact path="/create-discussion" component={CreateDiscussionPage} />
