@@ -5,6 +5,7 @@ import {
   POST_DASHBOARD_REQUEST,
   POST_DASHBOARD_SUCCESS,
   POST_DASHBOARD_FAIL,
+  POST_CREATE_SUCCESS,
 } from '../constants/postConstants';
 
 export const postSearchListReducer = (state = { posts: [] }, action) => {
@@ -30,6 +31,12 @@ export const postDashboardReducer = (state = { loading: false, posts: [] }, acti
 
     case POST_DASHBOARD_SUCCESS:
       return { loading: false, posts: action.payload };
+
+    case POST_CREATE_SUCCESS:
+      return {
+        ...state,
+        posts: [action.payload, ...state.posts],
+      };
 
     case POST_DASHBOARD_FAIL:
       return { loading: false, error: action.payload };

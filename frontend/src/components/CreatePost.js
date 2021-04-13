@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { getApiUrl } from '../services/config';
-
+import { createPost } from '../actions/postActions';
 import '../styles/components/CreatePost.css';
 
 import { Button, AuthorBox, TextArea } from '../common';
@@ -10,16 +10,19 @@ import { Button, AuthorBox, TextArea } from '../common';
 const CreatePost = () => {
   let auth = useSelector((state) => state.auth);
   let { user } = auth;
+  let dispatch = useDispatch();
 
   const [message, setMessage] = useState('');
   const [error, setError] = useState(null);
 
   const onFormSubmit = (e) => {
     e.preventDefault();
+
     if (!message.trim()) {
       return setError('Post cannot be empty!');
+    } else {
+      dispatch(createPost({ content: message }));
     }
-    alert(`Creating new post with message: ${message}`);
     setMessage('');
   };
 

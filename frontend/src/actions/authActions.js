@@ -13,7 +13,6 @@ export const login = (loginCredentials) => async (dispatch) => {
   try {
     dispatch({ type: LOGIN_REQUEST });
     loginCredentials['username'] = loginCredentials['username'].toLowerCase();
-    console.log(loginCredentials);
 
     // Do the Request to server and Handle the login process
     const config = {
