@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { RoundShape, TextBlock } from 'react-placeholder/lib/placeholders';
 import { Link, useLocation } from 'react-router-dom';
 import { listUsers } from '../actions/userActions';
 import { getApiUrl } from '../services/config';
@@ -11,11 +12,15 @@ const SearchByUsersList = () => {
   const location = useLocation();
   const keyword = location.search;
   const userList = useSelector((state) => state.userList);
-  const { users } = userList;
+  const { users, loading } = userList;
 
   useEffect(() => {
     dispatch(listUsers(keyword));
   }, [dispatch, keyword]);
+
+  if (loading) {
+    return [0, 1, 2, 3].map((key) => <SearchByUsersListPlaceholder key={key} />);
+  }
 
   return (
     <div className="category-wrapper" id="category-users">
@@ -47,13 +52,34 @@ const SearchByUsersList = () => {
             </div>
           ))}
         </div>
-      ) : (
+      ) : users.length === 0 ? (
         <div>
-          <h5>No Results found..</h5>
+          <h5>No Results found...</h5>
         </div>
-      )}
+      ) : null}
     </div>
   );
 };
 
 export default SearchByUsersList;
+
+const SearchByUsersListPlaceholder = () => {
+  return (
+    <div className="card">
+      <div className="card__body">
+        <div className="searchitem__wrapper--1">
+          <RoundShape color="#c5c5c5" style={{ width: 70, height: 70 }} />
+          <div className="searchitem__info">
+            <div className="searchitem__info--top">
+              <div className="searchitem__info--top-text">
+                <TextBlock rows={1} color="#c5c5c5" style={{ width: 100 }} />
+                <TextBlock rows={1} color="#c5c5c5" style={{ width: 100 }} />
+              </div>
+            </div>
+            <TextBlock rows={2} color="#c5c5c5" style={{ width: 200 }} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
