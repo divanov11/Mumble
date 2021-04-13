@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { getApiUrl } from '../services/config';
 
 import { Avatar } from '../common';
 
@@ -26,7 +27,7 @@ const Contributors = () => {
         {users.map((user) => (
           <div key={user.id} className="contributor-wrapper">
             <div className="contributor-preview">
-              <Avatar src={user.profile.profile_pic} alt="img-description" />
+              <Avatar src={getApiUrl(user.profile.profile_pic)} alt="img-description" />
               <Link to={`/profile/${user.username}`}>
                 <strong>{user.profile.name}</strong>
               </Link>
