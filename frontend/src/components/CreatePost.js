@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Prompt } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import '../styles/components/CreatePost.css';
@@ -15,6 +15,7 @@ const CreatePost = () => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
+    window.onbeforeunload = null;
     if (!message.trim()) {
       return setError('Post cannot be empty!');
     }
@@ -26,6 +27,13 @@ const CreatePost = () => {
     setMessage(e.target.value);
     if (error && e.target.value) {
       setError(null);
+    }
+  };
+
+  window.onbeforeunload = function (e) {
+    e.preventDefault();
+    if (message.trim()) {
+      return "Discard changes?";
     }
   };
 
@@ -54,6 +62,10 @@ const CreatePost = () => {
               label="Create Post"
               hideLabel={true}
               error={error}
+            />
+            <Prompt
+            when={message.length > 0}
+            message="Are you sure you want to leave without posting?"
             />
             <Button type="submit" color="main" text="Mumble Now" iconName="comment-alt" />
           </form>

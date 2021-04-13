@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
+import { Prompt } from 'react-router-dom';
 
 import Button from './Button';
 
@@ -13,9 +13,17 @@ const PostAction = ({ onMessageIconClick, comments, shares }) => {
 
   const handleCommentSubmit = (e) => {
     e.preventDefault();
+    window.onbeforeunload = null;
     alert(`${comment} \n comment Submitted!`);
     setComment('');
     toggleCommentBox();
+  };
+
+  window.onbeforeunload = function (e) {
+    e.preventDefault();
+    if (comment.trim()) {
+      return "Discard changes?";
+    }
   };
 
   return (
@@ -32,10 +40,8 @@ const PostAction = ({ onMessageIconClick, comments, shares }) => {
         </div>
 
         <div className="action-wrapper" onClick={toggleCommentBox}>
-          <Link role="button" className="post-comment-wrapper">
-            <i className="fas fa-comment-lines"> </i>
-            <span className="post-action-text">Comment</span>
-          </Link>
+          <i className="fas fa-comment-lines"> </i>
+          <span className="post-action-text">Comment</span>
         </div>
 
         <div className="action-wrapper">
@@ -58,6 +64,10 @@ const PostAction = ({ onMessageIconClick, comments, shares }) => {
           </Button>
         </form>
       )}
+      <Prompt
+      when={comment.length > 0}
+      message="Do you want to leave without finishing your comment?"
+      />
     </div>
   );
 };
