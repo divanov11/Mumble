@@ -7,7 +7,7 @@ import {
   LOGOUT_FAIL,
 } from '../constants/authConstants';
 import axios from 'axios';
-import { get, getApiUrl } from '../services/config';
+import { getApiUrl } from '../services/config';
 
 export const login = (loginCredentials) => async (dispatch) => {
   try {
