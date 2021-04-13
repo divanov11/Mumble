@@ -17,7 +17,7 @@ const CreatePost = () => {
     if (!message.trim()) {
       return setError('Post cannot be empty!');
     } else {
-      dispatch(createPost({ content: message }));
+      dispatch(createPost({ content: message, isComment:false }));
     }
     setMessage('');
   };

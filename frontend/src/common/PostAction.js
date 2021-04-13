@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
+import { createPost } from '../actions/postActions';
 
 import Button from './Button';
 
-const PostAction = ({ onMessageIconClick, comments, shares }) => {
+const PostAction = ({ onMessageIconClick, comments, shares, postId }) => {
+  
+  let dispatch = useDispatch();
+
   const [showCommentBox, setShowCommentBox] = useState(false);
   const [comment, setComment] = useState('');
 
@@ -13,7 +19,8 @@ const PostAction = ({ onMessageIconClick, comments, shares }) => {
 
   const handleCommentSubmit = (e) => {
     e.preventDefault();
-    alert(`${comment} \n comment Submitted!`);
+    //Need a way to get the parent ID
+    dispatch(createPost({ content: comment, isComment:true, postId:postId}));
     setComment('');
     toggleCommentBox();
   };

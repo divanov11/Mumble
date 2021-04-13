@@ -58,6 +58,7 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
         onMessageIconClick={toggleComments}
         comments={comment_count}
         link={link}
+        postId={post.id}
         shares={share_count}
       />
       {showComments && (
