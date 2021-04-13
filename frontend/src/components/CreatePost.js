@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { getApiUrl } from '../services/config';
 
 import '../styles/components/CreatePost.css';
 
@@ -37,7 +38,7 @@ const CreatePost = () => {
             name={user.name}
             handle={user.username}
             url={`/profile/${user.username}`}
-            avatarSrc={user.profile_pic}
+            avatarSrc={getApiUrl(user.profile_pic)}
             size="sm"
           />
           <Link to="/create-article">
