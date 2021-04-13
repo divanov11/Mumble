@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 import { listUsers } from '../actions/userActions';
+import { getApiUrl } from '../services/config';
 
 import '../styles/components/SearchBox.css';
 
@@ -25,7 +26,11 @@ const SearchByUsersList = () => {
               <div className="card__body">
                 <Link to={`/profile/${user.username}`} className="searchitem__link ">
                   <div className="searchitem__wrapper--1">
-                    <img alt="" className="avatar avatar--md" src={user.profile.profile_pic} />
+                    <img
+                      alt=""
+                      className="avatar avatar--md"
+                      src={getApiUrl(user.profile.profile_pic)}
+                    />
                     <div className="searchitem__info">
                       <div className="searchitem__info--top">
                         <div className="searchitem__info--top-text">
