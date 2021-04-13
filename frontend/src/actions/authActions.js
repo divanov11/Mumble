@@ -12,6 +12,8 @@ import { getApiUrl } from '../services/config';
 export const login = (loginCredentials) => async (dispatch) => {
   try {
     dispatch({ type: LOGIN_REQUEST });
+    loginCredentials['username'] = loginCredentials['username'].toLowerCase();
+    console.log(loginCredentials);
 
     // Do the Request to server and Handle the login process
     const config = {
@@ -21,8 +23,6 @@ export const login = (loginCredentials) => async (dispatch) => {
     };
 
     const { data } = await axios.post(getApiUrl('api/users/token/'), loginCredentials, config);
-
-    console.log('DATA:', data);
 
     dispatch({
       type: LOGIN_SUCCESS,

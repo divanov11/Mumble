@@ -19,6 +19,7 @@ export const listUsers = (keyword = '') => async (dispatch) => {
     dispatch({ type: USER_LIST_REQUEST });
 
     const users = await UsersService.getUsersByKeyword(keyword);
+
     dispatch({
       type: USER_LIST_SUCCESS,
       payload: users,
@@ -32,11 +33,22 @@ export const listUsers = (keyword = '') => async (dispatch) => {
   }
 };
 
-export const listRecommenedUsers = () => async (dispatch) => {
+export const listRecommenedUsers = () => async (dispatch, getState) => {
   try {
     dispatch({ type: USER_LIST_RECOMMENDED_REQUEST });
 
-    const users = await UsersService.getRecommendedUsers();
+    const {
+      auth: { access },
+    } = getState();
+
+    const config = {
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${access}`,
+      },
+    };
+
+    const users = await UsersService.getRecommendedUsers(config);
     dispatch({
       type: USER_LIST_RECOMMENDED_SUCCESS,
       payload: users.slice(0, 5),

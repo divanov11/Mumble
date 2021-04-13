@@ -23,6 +23,7 @@ export default function authReducer(state = {}, action) {
 
       return {
         ...state,
+        access: payload.access,
         isAuthenticated: true,
         isLoading: false,
         user: jwt_decode(payload.access),
