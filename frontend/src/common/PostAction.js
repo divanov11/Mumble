@@ -22,7 +22,7 @@ const PostAction = ({ onMessageIconClick, comments, shares }) => {
   window.onbeforeunload = function (e) {
     e.preventDefault();
     if (comment.trim()) {
-      return "Discard changes?";
+      return 'Discard changes?';
     }
   };
 
@@ -65,8 +65,8 @@ const PostAction = ({ onMessageIconClick, comments, shares }) => {
         </form>
       )}
       <Prompt
-      when={comment.length > 0}
-      message="Do you want to leave without finishing your comment?"
+        when={comment.length > 0}
+        message="Do you want to leave without finishing your comment?"
       />
     </div>
   );

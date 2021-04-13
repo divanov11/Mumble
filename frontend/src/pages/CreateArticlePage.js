@@ -37,12 +37,12 @@ const CreateArticlePage = () => {
   window.onbeforeunload = function (e) {
     e.preventDefault();
     if (title.trim() || body.trim()) {
-      return "Discard changes?";
+      return 'Discard changes?';
     }
   };
 
   useEffect(() => {
-    if(isArticleSubmitted) {
+    if (isArticleSubmitted) {
       // redirect to the articles page, in the real request slug should be changed to created article's slug
       history.push(`/article/article1`);
     }
@@ -80,15 +80,15 @@ const CreateArticlePage = () => {
                     return prevState;
                   });
                 }}
-                config={{placeholder: "Share your mumble thoughts..."}}
+                config={{ placeholder: 'Share your mumble thoughts...' }}
               />
               <Button color="main" type="submit">
                 Submit
               </Button>
             </form>
             <Prompt
-            when={title.length > 0 || body.length > 0}
-            message="Are you sure you want to leave without finishing your article?"
+              when={title.length > 0 || body.length > 0}
+              message="Are you sure you want to leave without finishing your article?"
             />
           </div>
         </div>

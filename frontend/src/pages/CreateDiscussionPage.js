@@ -31,12 +31,12 @@ const CreateDiscussionPage = () => {
   window.onbeforeunload = function (e) {
     e.preventDefault();
     if (title.trim() || body.trim()) {
-      return "Discard changes?";
+      return 'Discard changes?';
     }
   };
 
   useEffect(() => {
-    if(isDiscussionSubmitted) {
+    if (isDiscussionSubmitted) {
       // redirect to the articles page, in the real request slug should be changed to created article's slug
       history.push(`/article/article1`);
     }
@@ -75,8 +75,8 @@ const CreateDiscussionPage = () => {
               </Button>
             </form>
             <Prompt
-            when={title.length > 0 || body.length > 0}
-            message="Are you sure you want to leave without finishing your discussion?"
+              when={title.length > 0 || body.length > 0}
+              message="Are you sure you want to leave without finishing your discussion?"
             />
           </div>
         </div>

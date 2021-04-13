@@ -34,7 +34,7 @@ const CreatePost = () => {
   window.onbeforeunload = function (e) {
     e.preventDefault();
     if (message.trim()) {
-      return "Discard changes?";
+      return 'Discard changes?';
     }
   };
 
@@ -65,8 +65,8 @@ const CreatePost = () => {
               error={error}
             />
             <Prompt
-            when={message.length > 0}
-            message="Are you sure you want to leave without posting?"
+              when={message.length > 0}
+              message="Are you sure you want to leave without posting?"
             />
             <Button type="submit" color="main" text="Mumble Now" iconName="comment-alt" />
           </form>
