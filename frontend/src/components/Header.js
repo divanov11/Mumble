@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { useDetectClickOutside } from 'react-detect-click-outside';
 import { useSelector, useDispatch } from 'react-redux';
 import classNames from 'classnames';
+import { getApiUrl } from '../services/config';
 
 import { logout } from '../actions/authActions';
 
@@ -88,7 +89,7 @@ const Header = () => {
           id="nav-toggle-icon"
           onClick={toggleDropdown}
           alt="img-description"
-          src={user.profile_pic}
+          src={getApiUrl(user.profile_pic)}
           className="nav-item"
           size="sm"
         />

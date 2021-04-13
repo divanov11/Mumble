@@ -7,6 +7,7 @@ import {
   LOGOUT_FAIL,
 } from '../constants/authConstants';
 import axios from 'axios';
+import { getApiUrl } from '../services/config';
 
 export const login = (loginCredentials) => async (dispatch) => {
   try {
@@ -19,8 +20,7 @@ export const login = (loginCredentials) => async (dispatch) => {
       },
     };
 
-    console.log('PRE_DATA');
-    const { data } = await axios.post('api/users/token/', loginCredentials, config);
+    const { data } = await axios.post(getApiUrl('api/users/token/'), loginCredentials, config);
 
     console.log('DATA:', data);
 

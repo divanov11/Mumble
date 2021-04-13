@@ -13,9 +13,15 @@ let authState = {
 };
 
 if (accessToken) {
-  authState['isAuthenticated'] = true;
-  //Decode Token Here
-  authState['user'] = jwt_decode(accessToken);
+  try {
+    //Decode Token Here
+    authState['user'] = jwt_decode(accessToken);
+    authState['isAuthenticated'] = true;
+  } catch (error) {
+    authState['access'] = null;
+    localStorage.removeItem('access');
+    localStorage.removeItem('refresh');
+  }
 }
 
 const initialState = {
