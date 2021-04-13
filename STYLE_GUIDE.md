@@ -64,6 +64,15 @@ The main goal of this style guide is providing the contributors a set of instruc
       - Dark Mode
 
 **---> For the Light Mode :**
+
+*-> Preview :* <br/>
+
+<p align="center">
+<img src="./images/Lightmode.jpg" width="80%"><br/>
+</p>
+
+*-> Colors for the light mode :*
+
   |Types |Informations|
   |:--:|:--:|
   |**main**|**#5aa5b9**|
@@ -79,6 +88,11 @@ The main goal of this style guide is providing the contributors a set of instruc
   |**white-light**|**#fafafa**|
   |**success-msg**|**#5dd693**|
   |**error-msg**|**#fc4b0b**|
+  
+*-> Light Mode Pallette:*
+<p align="center">
+<img src="./images/light_mode_color_pallette.jpg" width="70%">
+</p>
 
 **---> For the Dark Mode :**
 
