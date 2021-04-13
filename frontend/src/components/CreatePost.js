@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { getApiUrl } from '../services/config';
+import { useDispatch } from 'react-redux';
 import { createPost } from '../actions/postActions';
 import '../styles/components/CreatePost.css';
 
-import { Button, AuthorBox, TextArea } from '../common';
+import { Button, TextArea } from '../common';
 
 const CreatePost = () => {
-  let auth = useSelector((state) => state.auth);
-  let { user } = auth;
   let dispatch = useDispatch();
 
   const [message, setMessage] = useState('');
@@ -36,7 +32,7 @@ const CreatePost = () => {
   return (
     <div className="card create-post">
       <div className="card__body">
-        <div className="create-post__header">
+        {/* <div className="create-post__header">
           <AuthorBox
             name={user.name}
             handle={user.username}
@@ -47,7 +43,7 @@ const CreatePost = () => {
           <Link to="/create-article">
             <Button text="Write Article" size="sm" iconName="edit" />
           </Link>
-        </div>
+        </div> */}
         <div className="create-post__body">
           <form className="form" onSubmit={onFormSubmit}>
             <TextArea
@@ -59,7 +55,7 @@ const CreatePost = () => {
               hideLabel={true}
               error={error}
             />
-            <Button type="submit" color="main" text="Mumble Now" iconName="comment-alt" />
+            <Button type="submit" color="main" text="Mumble Now" size="sm" iconName="comment-alt" />
           </form>
         </div>
       </div>
