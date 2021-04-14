@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { followUser } from '../actions/userActions';
 
 const FollowButton = ({ userProfile }) => {
-  console.log('USER:', userProfile);
   let dispatch = useDispatch();
 
   const auth = useSelector((state) => state.auth);
