@@ -21,9 +21,8 @@ const Contributors = () => {
   }, [dispatch]);
 
   const toggleFollow = (username) => {
-    dispatch(followUser(username))
-  }
-
+    dispatch(followUser(username));
+  };
 
   return (
     <div className="card">
@@ -41,9 +40,23 @@ const Contributors = () => {
               </Link>
             </div>
             {i.profile.followers.includes(user.id) ? (
-              <button onClick={() => {toggleFollow(i.username)}} className="btn btn--sub btn--sm">Following</button>
+              <button
+                onClick={() => {
+                  toggleFollow(i.username);
+                }}
+                className="btn btn--sub btn--sm"
+              >
+                Following
+              </button>
             ) : (
-              <button onClick={() => {toggleFollow(i.username)}} className="btn btn--main--outline btn--sm">Follow</button>
+              <button
+                onClick={() => {
+                  toggleFollow(i.username);
+                }}
+                className="btn btn--main--outline btn--sm"
+              >
+                Follow
+              </button>
             )}
           </div>
         ))}

@@ -19,8 +19,8 @@ const SearchByUsersList = () => {
   const { user } = auth;
 
   const toggleFollow = (username) => {
-    dispatch(followUser(username))
-  }
+    dispatch(followUser(username));
+  };
 
   useEffect(() => {
     dispatch(listUsers(keyword));
@@ -37,33 +37,45 @@ const SearchByUsersList = () => {
           {users.map((i, index) => (
             <div key={index} className="card">
               <div className="card__body">
-               
-                  <div className="searchitem__wrapper--1">
-                    <img
-                      alt=""
-                      className="avatar avatar--md"
-                      src={getApiUrl(i.profile.profile_pic)}
-                    />
-                   
-                    <div className="searchitem__info">
-                      <div className="searchitem__info--top">
-                        <div className="searchitem__info--top-text">
-                          <strong>{i.profile.name}&nbsp;</strong>
-                          <Link to={`/profile/${i.username}`} className="searchitem__link ">
-                          <small>@{i.username}</small>
-                          </Link>
-                        </div>
+                <div className="searchitem__wrapper--1">
+                  <img
+                    alt=""
+                    className="avatar avatar--md"
+                    src={getApiUrl(i.profile.profile_pic)}
+                  />
 
-                        {i.profile.followers.includes(user.id) ? (
-                          <button onClick={() => {toggleFollow(i.username)}} className="btn btn--sub btn--sm">Following</button>
-                        ) : (
-                          <button onClick={() => {toggleFollow(i.username)}} className="btn btn--main--outline btn--sm">Follow</button>
-                        )}
+                  <div className="searchitem__info">
+                    <div className="searchitem__info--top">
+                      <div className="searchitem__info--top-text">
+                        <strong>{i.profile.name}&nbsp;</strong>
+                        <Link to={`/profile/${i.username}`} className="searchitem__link ">
+                          <small>@{i.username}</small>
+                        </Link>
                       </div>
-                      <p>{i.profile.bio}</p>
+
+                      {i.profile.followers.includes(user.id) ? (
+                        <button
+                          onClick={() => {
+                            toggleFollow(i.username);
+                          }}
+                          className="btn btn--sub btn--sm"
+                        >
+                          Following
+                        </button>
+                      ) : (
+                        <button
+                          onClick={() => {
+                            toggleFollow(i.username);
+                          }}
+                          className="btn btn--main--outline btn--sm"
+                        >
+                          Follow
+                        </button>
+                      )}
                     </div>
+                    <p>{i.profile.bio}</p>
                   </div>
-               
+                </div>
               </div>
             </div>
           ))}
