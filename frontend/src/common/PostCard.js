@@ -13,15 +13,18 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
     user,
     created,
     vote_rank,
-    content,
+    // content,
     //comments,
-    comment_count,
-    share_count,
-    remumble,
+    // comment_count,
+    // share_count,
+    origional_mumble,
   } = post;
-  if (remumble) {
-    console.log(remumble.content);
+
+  if(origional_mumble){
+    post = origional_mumble
   }
+  
+
   let dispatch = useDispatch();
 
   let [comments, setComments] = useState([]);
@@ -30,23 +33,27 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
 
   const toggleComments = () => {
     setShowComments(!showComments);
-    dispatch(getPostComments(setComments, post.id));
+      dispatch(getPostComments(setComments, post.id));
   };
 
   return (
     <div className={`${isComment && 'post-card--comment'}`} {...others}>
-      {remumble ? (
+      
+        
         <div className={`${isComment && 'post-card--comment'}`} {...others}>
+        {origional_mumble && (
           <div className="remumbled-note">
             <i className="fas fa-paper-plane"></i>
             <i>{user.username} remumbled</i>
           </div>
+          )}
+          
           <div className="post-header-wrapper">
             <AuthorBox
-              avatarSrc={getApiUrl(remumble.user.profile_pic)}
-              name={remumble.user.name}
-              handle={remumble.user.username}
-              url={`/profile/${remumble.user.username}`}
+              avatarSrc={getApiUrl(post.user.profile_pic)}
+              name={post.user.name}
+              handle={post.user.username}
+              url={`/profile/${post.user.username}`}
               size={isComment ? 'sm' : 'md'}
             />
             <p className="post-meta">{formatDate.distanceDate(created)}</p>
@@ -56,60 +63,15 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
             <div className="post-body">
               {children}
 
-              {remumble.content}
+              {post.content}
             </div>
           </div>
           <PostAction
             onMessageIconClick={toggleComments}
-            comments={remumble.comment_count}
-            link={link}
-            postId={remumble.id}
-            shares={remumble.share_count}
-            setComments={setComments}
-          />
-          {showComments && (
-            <div className="post-comments-wrapper">
-              {remumble.comments.map((comment) => (
-                <div key={comment.id} className="post-comment">
-                  <PostCard post={comment} link={'/'} isComment={true}>
-                    <div className="comment__mentioned">
-                      Replying to
-                      {comment.reply_at?.map((user) => (
-                        <span key={user.id}> @{user.username}</span>
-                      ))}
-                    </div>
-                  </PostCard>
-                </div>
-              ))}
-            </div>
-          )}{' '}
-        </div>
-      ) : (
-        <div className={`${isComment && 'post-card--comment'}`} {...others}>
-          <div className="post-header-wrapper">
-            <AuthorBox
-              avatarSrc={getApiUrl(user.profile_pic)}
-              name={user.name}
-              handle={user.username}
-              url={`/profile/${user.username}`}
-              size={isComment ? 'sm' : 'md'}
-            />
-            <p className="post-meta">{formatDate.distanceDate(created)}</p>
-          </div>
-          <div className="post-contents">
-            <VotingWidget votes={vote_rank} />
-            <div className="post-body">
-              {children}
-
-              {content}
-            </div>
-          </div>
-          <PostAction
-            onMessageIconClick={toggleComments}
-            comments={comment_count}
+            comments={post.comment_count}
             link={link}
             postId={post.id}
-            shares={share_count}
+            shares={post.share_count}
             setComments={setComments}
           />
           {showComments && (
@@ -129,7 +91,7 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
             </div>
           )}{' '}
         </div>
-      )}
+    
     </div>
   );
 };
