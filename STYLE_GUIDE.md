@@ -50,8 +50,23 @@ The main goal of this style guide is providing the contributors a set of instruc
 <h2 align="center">🎭 Mumble CSS Style Guide</h2>
 
 #### 🎹 Pattern and Naming :
+The Mumble frontend uses the Block, Element, Modifier methodology (commonly referred to as BEM) which is a popular naming convention for classes in HTML and CSS. It helps developers better understand the relationship between the HTML and CSS in a given project. An example of Bem is shown below:
+```
+/* Block component: Standalone entity that is meaningful on its own */
 
-#
+.card {}
+
+/* Element: An entity that depends upon the block */ 
+
+.card__image {}
+.card__item {}
+.card__button {}
+
+/* Modifier that changes the style of the block or block element*/
+
+.card__item--active {} 
+.card__button--active {} 
+```
 
 #### 📦 Modularity :
 
