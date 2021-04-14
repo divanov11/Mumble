@@ -3,11 +3,11 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import { createPost } from '../actions/postActions';
+import { createComment } from '../actions/postActions';
 
 import Button from './Button';
 
-const PostAction = ({ onMessageIconClick, comments, shares, postId }) => {
+const PostAction = ({ onMessageIconClick, comments, shares, postId, setComments}) => {
   
   let dispatch = useDispatch();
 
@@ -17,10 +17,10 @@ const PostAction = ({ onMessageIconClick, comments, shares, postId }) => {
   const toggleCommentBox = () => setShowCommentBox((prev) => !prev);
   const handleCommentChange = (e) => setComment(e.target.value);
 
-  const handleCommentSubmit = (e) => {
+  const handleCommentSubmit = (e) =>  {
     e.preventDefault();
-    //Need a way to get the parent ID
-    dispatch(createPost({ content: comment, isComment:true, postId:postId}));
+    dispatch(createComment(setComments, postId, { content: comment, isComment:true, postId:postId}));
+    onMessageIconClick()
     setComment('');
     toggleCommentBox();
   };

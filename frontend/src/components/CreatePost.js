@@ -32,18 +32,6 @@ const CreatePost = () => {
   return (
     <div className="card create-post">
       <div className="card__body">
-        {/* <div className="create-post__header">
-          <AuthorBox
-            name={user.name}
-            handle={user.username}
-            url={`/profile/${user.username}`}
-            avatarSrc={getApiUrl(user.profile_pic)}
-            size="sm"
-          />
-          <Link to="/create-article">
-            <Button text="Write Article" size="sm" iconName="edit" />
-          </Link>
-        </div> */}
         <div className="create-post__body">
           <form className="form" onSubmit={onFormSubmit}>
             <TextArea

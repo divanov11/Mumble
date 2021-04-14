@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux'
 import { getApiUrl } from '../services/config';
 
 import AuthorBox from './AuthorBox';
 import PostAction from './PostAction';
 import VotingWidget from './VotingWidget';
 import { formatDate } from '../utilities/';
+import { getPostComments } from '../actions/postActions'
 
 const PostCard = ({ post, link, isComment = false, children, ...others }) => {
   const {
@@ -17,22 +19,15 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
     share_count,
   } = post;
 
-  let [comments, setComments] = useState([]);
+  let dispatch = useDispatch()
 
-  // TODO: Chunk this file to a Comment Card
-  let fetchComments = () => {
-    fetch(getApiUrl(`api/posts/${post.id}/comments`))
-      .then((response) => response.json())
-      .then((data) => {
-        setComments(data);
-      });
-  };
+  let [comments, setComments] = useState([]);
 
   const [showComments, setShowComments] = useState(false);
 
   const toggleComments = () => {
     setShowComments(!showComments);
-    fetchComments();
+    dispatch(getPostComments(setComments, post.id))
   };
 
   return (
@@ -60,6 +55,7 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
         link={link}
         postId={post.id}
         shares={share_count}
+        setComments={setComments}
       />
       {showComments && (
         <div className="post-comments-wrapper">
