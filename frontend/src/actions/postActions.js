@@ -97,6 +97,35 @@ export const createPost = (postData) => async (dispatch, getState) => {
   }
 };
 
+export const createRemumble = (postId) => async (dispatch, getState) => {
+  try {
+    dispatch({ type: POST_CREATE_REQUEST });
+
+    const {
+      auth: { access },
+    } = getState();
+
+    const config = {
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${access}`,
+      },
+    };
+    const { data } = await axios.post(getApiUrl(`api/posts/remumble/`), { id: postId }, config);
+
+    dispatch({
+      type: POST_CREATE_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: POST_CREATE_FAIL,
+      payload:
+        error.response && error.response.data.detail ? error.response.data.detail : error.message,
+    });
+  }
+};
+
 export const createComment = (setComments, postId, postData) => async (dispatch, getState) => {
   try {
     dispatch({ type: COMMENT_CREATE_REQUEST });

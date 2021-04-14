@@ -3,7 +3,7 @@ import classNames from 'classnames';
 //import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import { createComment } from '../actions/postActions';
+import { createComment, createRemumble } from '../actions/postActions';
 
 import Button from './Button';
 
@@ -14,7 +14,7 @@ const PostAction = ({ onMessageIconClick, comments, shares, postId, setComments 
   const [comment, setComment] = useState('');
 
   const toggleCommentBox = () => {
-    setShowCommentBox((prev) => !prev)
+    setShowCommentBox((prev) => !prev);
   };
   const handleCommentChange = (e) => setComment(e.target.value);
 
@@ -23,10 +23,14 @@ const PostAction = ({ onMessageIconClick, comments, shares, postId, setComments 
     dispatch(
       createComment(setComments, postId, { content: comment, isComment: true, postId: postId }),
     );
-    let newComment = true
+    let newComment = true;
     onMessageIconClick(newComment);
     setComment('');
     toggleCommentBox();
+  };
+
+  let toggleRemumble = () => {
+    dispatch(createRemumble(postId));
   };
 
   return (
@@ -50,8 +54,10 @@ const PostAction = ({ onMessageIconClick, comments, shares, postId, setComments 
         </div>
 
         <div className="action-wrapper">
-          <i className="fas fa-paper-plane"></i>
-          <span className="post-action-text">{shares}</span>
+          <i onClick={toggleRemumble} className="fas fa-paper-plane"></i>
+          <span onClick={toggleRemumble} className="post-action-text">
+            {shares}
+          </span>
         </div>
       </div>
       {/* comment Textarea */}
