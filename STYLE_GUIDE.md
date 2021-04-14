@@ -67,6 +67,21 @@ The Mumble frontend uses the Block, Element, Modifier methodology (commonly refe
 .card__item--active {} 
 .card__button--active {} 
 ```
+The markup might then look like this:
+```
+  <div class="card">
+      <span class="card__image"></span>
+      <div class="card__content">
+          <ul class="card__list">
+              <li class="card__item card__item--active">Item 1</li>
+              <li class="card__item">Item 2</li>
+          </ul>
+          <p class="card__description">Lorem Ipsum excet tera ..</p>
+          <a class="card__button" href="/">Click Here</a>
+      </div>
+  </div>
+
+```
 
 #### 📦 Modularity :
 
