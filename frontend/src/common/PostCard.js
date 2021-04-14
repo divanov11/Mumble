@@ -23,8 +23,6 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
 
   const auth = useSelector((state) => state.auth);
 
-  //user.id = auth.user.id;
-
   let [comments, setComments] = useState([]);
 
   const [showComments, setShowComments] = useState(false);
@@ -89,7 +87,15 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
             <>
               <div role="button" className="dropmenu__menuitem">
                 <i className="fas fa-minus-circle post__dropmenu--navicon"></i>
-                Hide Post
+                Hide
+              </div>
+              <div role="button" className="dropmenu__menuitem">
+                <i className="fas fa-user-times post__dropmenu--navicon"></i>
+                Unfollow {user.name}
+              </div>
+              <div role="button" className="dropmenu__menuitem">
+                <i className="fas fa-ban post__dropmenu--navicon"></i>
+                Block {user.name}
               </div>
             </>
             }

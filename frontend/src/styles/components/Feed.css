@@ -149,7 +149,7 @@
 }
 
 .dropmenu {
-  width: 15rem;
+  width: 16em;
   transform-origin: top right;
   transition: all 0.05s ease-in-out 0s;
   transform: scaleY(0);
