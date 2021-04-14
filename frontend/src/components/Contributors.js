@@ -5,7 +5,7 @@ import { getApiUrl } from '../services/config';
 
 import { Avatar } from '../common';
 
-import { listRecommenedUsers } from '../actions/userActions';
+import { listRecommenedUsers, followUser } from '../actions/userActions';
 
 const Contributors = () => {
   const dispatch = useDispatch();
@@ -13,9 +13,17 @@ const Contributors = () => {
   const userList = useSelector((state) => state.userListRecommended);
   const { users } = userList;
 
+  const auth = useSelector((state) => state.auth);
+  const { user } = auth;
+
   useEffect(() => {
     dispatch(listRecommenedUsers());
   }, [dispatch]);
+
+  const toggleFollow = (username) => {
+    dispatch(followUser(username))
+  }
+
 
   return (
     <div className="card">
@@ -24,17 +32,19 @@ const Contributors = () => {
         <Link to={'/search'}>View More</Link>
         <div className="custom-spacer"></div>
 
-        {users.map((user) => (
-          <div key={user.id} className="contributor-wrapper">
+        {users.map((i) => (
+          <div key={i.id} className="contributor-wrapper">
             <div className="contributor-preview">
-              <Avatar src={getApiUrl(user.profile.profile_pic)} alt="img-description" />
-              <Link to={`/profile/${user.username}`}>
-                <strong>{user.profile.name}</strong>
+              <Avatar src={getApiUrl(i.profile.profile_pic)} alt="img-description" />
+              <Link to={`/profile/${i.username}`}>
+                <strong>{i.profile.name}</strong>
               </Link>
             </div>
-            <Link className="btn btn--main--outline btn--sm" to="">
-              Follow
-            </Link>
+            {i.profile.followers.includes(user.id) ? (
+              <button onClick={() => {toggleFollow(i.username)}} className="btn btn--sub btn--sm">Following</button>
+            ) : (
+              <button onClick={() => {toggleFollow(i.username)}} className="btn btn--main--outline btn--sm">Follow</button>
+            )}
           </div>
         ))}
       </div>

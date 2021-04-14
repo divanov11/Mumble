@@ -38,11 +38,22 @@ export const searchPosts = (keyword = '') => async (dispatch) => {
   }
 };
 
-export const getPostsForDashboard = () => async (dispatch) => {
+export const getPostsForDashboard = () => async (dispatch, getState) => {
   try {
     dispatch({ type: POST_DASHBOARD_REQUEST });
 
-    const posts = await PostsService.getPosts();
+    const {
+      auth: { access },
+    } = getState();
+
+    const config = {
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${access}`,
+      },
+    };
+
+    const posts = await PostsService.getPosts(config);
 
     dispatch({
       type: POST_DASHBOARD_SUCCESS,

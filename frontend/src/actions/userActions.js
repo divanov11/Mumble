@@ -11,8 +11,14 @@ import {
   USER_POSTS_LIST_REQUEST,
   USER_POSTS_LIST_SUCCESS,
   USER_POSTS_LIST_FAIL,
+
+  FOLLOW_USER_REQUEST,
+  FOLLOW_USER_SUCCESS,
+  FOLLOW_USER_FAIL,
 } from '../constants/userConstants';
 import { UsersService } from '../services';
+import axios from 'axios'
+import { getApiUrl } from '../services/config';
 
 export const listUsers = (keyword = '') => async (dispatch) => {
   try {
@@ -92,6 +98,41 @@ export const listUserPosts = (username) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: USER_POSTS_LIST_FAIL,
+      payload:
+        error.response && error.response.data.detail ? error.response.data.detail : error.message,
+    });
+  }
+};
+
+
+export const followUser = (username) => async (dispatch, getState) => {
+  try {
+    dispatch({ type: FOLLOW_USER_REQUEST });
+
+    const {
+      auth: { access },
+    } = getState();
+
+    const config = {
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${access}`,
+      },
+    };
+
+
+    await axios.post(getApiUrl(`api/users/${username}/follow/`), {},config);
+
+    dispatch({
+      type: FOLLOW_USER_SUCCESS
+    });
+
+    dispatch(listUsers());
+    dispatch(listRecommenedUsers());
+
+  } catch (error) {
+    dispatch({
+      type: FOLLOW_USER_FAIL,
       payload:
         error.response && error.response.data.detail ? error.response.data.detail : error.message,
     });
