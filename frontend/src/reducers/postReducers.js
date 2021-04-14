@@ -38,7 +38,6 @@ export const postDashboardReducer = (state = { loading: false, posts: [] }, acti
         posts: [action.payload, ...state.posts],
       };
 
-
     case POST_DASHBOARD_FAIL:
       return { loading: false, error: action.payload };
 

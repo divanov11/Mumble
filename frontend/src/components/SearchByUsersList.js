@@ -11,8 +11,12 @@ const SearchByUsersList = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const keyword = location.search;
+
   const userList = useSelector((state) => state.userList);
   const { users, loading } = userList;
+
+  const auth = useSelector((state) => state.auth);
+  const { user } = auth;
 
   useEffect(() => {
     dispatch(listUsers(keyword));
@@ -26,25 +30,30 @@ const SearchByUsersList = () => {
     <div className="category-wrapper" id="category-users">
       {users.length > 0 ? (
         <div>
-          {users.map((user, index) => (
+          {users.map((i, index) => (
             <div key={index} className="card">
               <div className="card__body">
-                <Link to={`/profile/${user.username}`} className="searchitem__link ">
+                <Link to={`/profile/${i.username}`} className="searchitem__link ">
                   <div className="searchitem__wrapper--1">
                     <img
                       alt=""
                       className="avatar avatar--md"
-                      src={getApiUrl(user.profile.profile_pic)}
+                      src={getApiUrl(i.profile.profile_pic)}
                     />
                     <div className="searchitem__info">
                       <div className="searchitem__info--top">
                         <div className="searchitem__info--top-text">
-                          <strong>{user.profile.name}&nbsp;</strong>
-                          <small>@{user.username}</small>
+                          <strong>{i.profile.name}&nbsp;</strong>
+                          <small>@{i.username}</small>
                         </div>
-                        <button className="btn btn--main--outline btn--sm">Follow</button>
+
+                        {i.profile.followers.includes(user.id) ? (
+                          <button className="btn btn--sub btn--sm">Following</button>
+                        ) : (
+                          <button className="btn btn--main--outline btn--sm">Follow</button>
+                        )}
                       </div>
-                      <p>{user.profile.bio}</p>
+                      <p>{i.profile.bio}</p>
                     </div>
                   </div>
                 </Link>

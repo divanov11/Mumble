@@ -76,8 +76,7 @@ export const createPost = (postData) => async (dispatch, getState) => {
     dispatch({
       type: POST_CREATE_SUCCESS,
       payload: data,
-    })
-
+    });
   } catch (error) {
     dispatch({
       type: POST_CREATE_FAIL,
@@ -86,8 +85,6 @@ export const createPost = (postData) => async (dispatch, getState) => {
     });
   }
 };
-
-
 
 export const createComment = (setComments, postId, postData) => async (dispatch, getState) => {
   try {
@@ -108,10 +105,9 @@ export const createComment = (setComments, postId, postData) => async (dispatch,
     dispatch({
       type: COMMENT_CREATE_SUCCESS,
       payload: data,
-    })
+    });
 
-    dispatch(getPostComments(setComments, postId))
-
+    dispatch(getPostComments(setComments, postId));
   } catch (error) {
     dispatch({
       type: COMMENT_CREATE_FAIL,
@@ -120,8 +116,6 @@ export const createComment = (setComments, postId, postData) => async (dispatch,
     });
   }
 };
-
-
 
 export const getPostComments = (setComments, postId) => async (dispatch, getState) => {
   try {
@@ -139,11 +133,10 @@ export const getPostComments = (setComments, postId) => async (dispatch, getStat
     };
 
     const { data } = await axios.get(getApiUrl(`api/posts/${postId}/comments/`), config);
-    setComments(data)
+    setComments(data);
     dispatch({
       type: POST_COMMENTS_SUCCESS,
-    })
-
+    });
   } catch (error) {
     dispatch({
       type: POST_COMMENTS_FAIL,

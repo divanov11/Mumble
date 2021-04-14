@@ -7,8 +7,7 @@ import { createComment } from '../actions/postActions';
 
 import Button from './Button';
 
-const PostAction = ({ onMessageIconClick, comments, shares, postId, setComments}) => {
-  
+const PostAction = ({ onMessageIconClick, comments, shares, postId, setComments }) => {
   let dispatch = useDispatch();
 
   const [showCommentBox, setShowCommentBox] = useState(false);
@@ -17,10 +16,12 @@ const PostAction = ({ onMessageIconClick, comments, shares, postId, setComments}
   const toggleCommentBox = () => setShowCommentBox((prev) => !prev);
   const handleCommentChange = (e) => setComment(e.target.value);
 
-  const handleCommentSubmit = (e) =>  {
+  const handleCommentSubmit = (e) => {
     e.preventDefault();
-    dispatch(createComment(setComments, postId, { content: comment, isComment:true, postId:postId}));
-    onMessageIconClick()
+    dispatch(
+      createComment(setComments, postId, { content: comment, isComment: true, postId: postId }),
+    );
+    onMessageIconClick();
     setComment('');
     toggleCommentBox();
   };

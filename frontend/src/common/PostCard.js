@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux';
 import { getApiUrl } from '../services/config';
 
 import AuthorBox from './AuthorBox';
 import PostAction from './PostAction';
 import VotingWidget from './VotingWidget';
 import { formatDate } from '../utilities/';
-import { getPostComments } from '../actions/postActions'
+import { getPostComments } from '../actions/postActions';
 
 const PostCard = ({ post, link, isComment = false, children, ...others }) => {
   const {
@@ -19,7 +19,7 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
     share_count,
   } = post;
 
-  let dispatch = useDispatch()
+  let dispatch = useDispatch();
 
   let [comments, setComments] = useState([]);
 
@@ -27,7 +27,7 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
 
   const toggleComments = () => {
     setShowComments(!showComments);
-    dispatch(getPostComments(setComments, post.id))
+    dispatch(getPostComments(setComments, post.id));
   };
 
   return (
