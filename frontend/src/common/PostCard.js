@@ -31,9 +31,13 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
 
   const [showComments, setShowComments] = useState(false);
 
-  const toggleComments = () => {
-    setShowComments(!showComments);
-      dispatch(getPostComments(setComments, post.id));
+  const toggleComments = (newComment = false) => {
+    if (newComment === true){
+      setShowComments(true)
+    }else{
+      setShowComments(!showComments);
+    }
+    dispatch(getPostComments(setComments, post.id));    
   };
 
   return (
@@ -62,7 +66,6 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
             <VotingWidget votes={vote_rank} />
             <div className="post-body">
               {children}
-
               {post.content}
             </div>
           </div>

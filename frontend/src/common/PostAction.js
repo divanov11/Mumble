@@ -13,7 +13,9 @@ const PostAction = ({ onMessageIconClick, comments, shares, postId, setComments 
   const [showCommentBox, setShowCommentBox] = useState(false);
   const [comment, setComment] = useState('');
 
-  const toggleCommentBox = () => setShowCommentBox((prev) => !prev);
+  const toggleCommentBox = () => {
+    setShowCommentBox((prev) => !prev)
+  };
   const handleCommentChange = (e) => setComment(e.target.value);
 
   const handleCommentSubmit = (e) => {
@@ -21,7 +23,8 @@ const PostAction = ({ onMessageIconClick, comments, shares, postId, setComments 
     dispatch(
       createComment(setComments, postId, { content: comment, isComment: true, postId: postId }),
     );
-    onMessageIconClick();
+    let newComment = true
+    onMessageIconClick(newComment);
     setComment('');
     toggleCommentBox();
   };
