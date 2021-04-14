@@ -124,8 +124,8 @@ export const followUser = (username) => async (dispatch, getState) => {
       type: FOLLOW_USER_SUCCESS,
     });
 
-    dispatch(listUsers());
-    dispatch(listRecommenedUsers());
+    //dispatch(listUsers());
+    //dispatch(listRecommenedUsers());
   } catch (error) {
     dispatch({
       type: FOLLOW_USER_FAIL,

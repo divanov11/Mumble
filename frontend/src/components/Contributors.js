@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getApiUrl } from '../services/config';
 
-import { Avatar } from '../common';
+import { Avatar, FollowButton } from '../common';
 
-import { listRecommenedUsers, followUser } from '../actions/userActions';
+import { listRecommenedUsers } from '../actions/userActions';
 
 const Contributors = () => {
   const dispatch = useDispatch();
@@ -13,16 +13,9 @@ const Contributors = () => {
   const userList = useSelector((state) => state.userListRecommended);
   const { users } = userList;
 
-  const auth = useSelector((state) => state.auth);
-  const { user } = auth;
-
   useEffect(() => {
     dispatch(listRecommenedUsers());
   }, [dispatch]);
-
-  const toggleFollow = (username) => {
-    dispatch(followUser(username));
-  };
 
   return (
     <div className="card">
@@ -39,25 +32,7 @@ const Contributors = () => {
                 <strong>{i.profile.name}</strong>
               </Link>
             </div>
-            {i.profile.followers.includes(user.id) ? (
-              <button
-                onClick={() => {
-                  toggleFollow(i.username);
-                }}
-                className="btn btn--sub btn--sm"
-              >
-                Following
-              </button>
-            ) : (
-              <button
-                onClick={() => {
-                  toggleFollow(i.username);
-                }}
-                className="btn btn--main--outline btn--sm"
-              >
-                Follow
-              </button>
-            )}
+            <FollowButton userProfile={i} />
           </div>
         ))}
       </div>

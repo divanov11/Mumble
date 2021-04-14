@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RoundShape, TextBlock } from 'react-placeholder/lib/placeholders';
 import { Link, useLocation } from 'react-router-dom';
-import { listUsers, followUser } from '../actions/userActions';
+import { listUsers } from '../actions/userActions';
 import { getApiUrl } from '../services/config';
 
 import '../styles/components/SearchBox.css';
+import { FollowButton } from '../common';
 
 const SearchByUsersList = () => {
   const dispatch = useDispatch();
@@ -14,13 +15,6 @@ const SearchByUsersList = () => {
 
   const userList = useSelector((state) => state.userList);
   const { users, loading } = userList;
-
-  const auth = useSelector((state) => state.auth);
-  const { user } = auth;
-
-  const toggleFollow = (username) => {
-    dispatch(followUser(username));
-  };
 
   useEffect(() => {
     dispatch(listUsers(keyword));
@@ -53,25 +47,7 @@ const SearchByUsersList = () => {
                         </Link>
                       </div>
 
-                      {i.profile.followers.includes(user.id) ? (
-                        <button
-                          onClick={() => {
-                            toggleFollow(i.username);
-                          }}
-                          className="btn btn--sub btn--sm"
-                        >
-                          Following
-                        </button>
-                      ) : (
-                        <button
-                          onClick={() => {
-                            toggleFollow(i.username);
-                          }}
-                          className="btn btn--main--outline btn--sm"
-                        >
-                          Follow
-                        </button>
-                      )}
+                      <FollowButton userProfile={i} />
                     </div>
                     <p>{i.profile.bio}</p>
                   </div>

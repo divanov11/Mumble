@@ -41,8 +41,8 @@ const PostAction = ({ onMessageIconClick, comments, shares, postId, setComments 
 
         <div className="action-wrapper" onClick={toggleCommentBox}>
           {/* <Link role="button" className="post-comment-wrapper"> */}
-            <i className="fas fa-comment-lines"> </i>
-            <span className="post-action-text">Comment</span>
+          <i className="fas fa-comment-lines"> </i>
+          <span className="post-action-text">Comment</span>
           {/* </Link> */}
         </div>
 
