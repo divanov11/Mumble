@@ -54,11 +54,12 @@ const LoginForm = () => {
         <input className="submit btn btn--main" type="submit" value="Login" />
       </form>
       <div id="bottom-content">
-        <p>
-          Dont have and Account? <Link to="/signup">Sign up</Link>
-        </p>
-        <p>
+      <p>
           <Link to="#">Forgot Password?</Link>
+        </p>
+        <br/>
+        <p>
+          Don't have an account? <Link to="/signup">Sign up</Link>
         </p>
       </div>
     </>
