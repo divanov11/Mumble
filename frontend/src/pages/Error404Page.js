@@ -5,10 +5,11 @@ import '../styles/components/Error404Page.css';
 
 const Error404Page = () => (
   <div className="main404page">
-    <h1>4<span><img src="./frontend/public/apple-touch-icon.png" alt="Mumble Logo"/></span>4</h1>
+    <h1>4<span><img src="https://mumble.dev/apple-touch-icon.png" alt="Mumble Logo (0)"/></span>4</h1>
     <h2>Page Not Found !</h2>
     <br/>
     <p>Looks like you got lost</p>
+    <br/>
     <Link to="/">Go Home</Link>
   </div>
 );
