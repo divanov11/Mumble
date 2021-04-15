@@ -60,7 +60,7 @@ const SearchByUsersList = () => {
           ))}
         </div>
       ) : users.length === 0 ? (
-        <div className="card">
+          <div className="card">
             <div className="card__body">
                 <div className="not__found">
                   <Fade bottom>
