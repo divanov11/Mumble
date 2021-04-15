@@ -42,7 +42,7 @@ h2 {
 }
 
 p {
-  color: var(--color-main);
+  color: var(--color-text);
   margin-top: 0;
 }
 
