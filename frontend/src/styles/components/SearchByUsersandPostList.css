@@ -1,0 +1,19 @@
+.not__found h2{
+    color: #73af8d;
+    font-size: 6rem;
+}
+.not__found span img{
+    height: 4.2rem;
+}
+.not__found h2,
+.not__found h3,
+.not__found p{
+    text-align: center;
+}
+.not__found h3{
+    color: #3f4156;
+    font-size: 28px;
+}
+.not__found {
+    text-align: center;
+}

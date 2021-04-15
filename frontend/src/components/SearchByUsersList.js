@@ -4,8 +4,11 @@ import { RoundShape, TextBlock } from 'react-placeholder/lib/placeholders';
 import { Link, useLocation } from 'react-router-dom';
 import { listUsers } from '../actions/userActions';
 import { getApiUrl } from '../services/config';
+import Fade from 'react-reveal/Fade';
 
 import '../styles/components/SearchBox.css';
+import '../styles/components/SearchByUsersandPostList.css';
+import logo from '../assets/logo/dark-logo.png';
 import { FollowButton } from '../common';
 
 const SearchByUsersList = () => {
@@ -57,9 +60,20 @@ const SearchByUsersList = () => {
           ))}
         </div>
       ) : users.length === 0 ? (
-        <div>
-          <h5>No Results found...</h5>
-        </div>
+        <div className="card">
+            <div className="card__body">
+                <div className="not__found">
+                  <Fade bottom>
+                    <h2>4 <span><img src={logo} alt="Mumble Icon" /></span> 4</h2>
+                  </Fade>
+                  <h3>Mumble contributor not found!</h3>
+                <p>Nunc a tellus in mauris imperdiet tincidunt. Aenean dui urna</p>
+                <Link to="/">
+                  &#x2190; Go Home
+                </Link>
+                </div>
+            </div>
+          </div>
       ) : null}
     </div>
   );
