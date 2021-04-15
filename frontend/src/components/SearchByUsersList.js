@@ -60,20 +60,24 @@ const SearchByUsersList = () => {
           ))}
         </div>
       ) : users.length === 0 ? (
-          <div className="card">
-            <div className="card__body">
-                <div className="not__found">
-                    <Fade bottom>
-                      <h2>4 <span><img src={logo} alt="Mumble Icon" /></span> 4</h2>
-                    </Fade>
-                    <h3>Mumble contributor not found!</h3>
-                  <p>Seems you forgot the contributor name or contributor is not in the list</p>
-                  <Link to="/">
-                    &#x2190; Go Home
-                  </Link>
-                </div>
+        <div className="card">
+          <div className="card__body">
+            <div className="not__found">
+              <Fade bottom>
+                <h2>
+                  4{' '}
+                  <span>
+                    <img src={logo} alt="Mumble Icon" />
+                  </span>{' '}
+                  4
+                </h2>
+              </Fade>
+              <h3>Mumble contributor not found!</h3>
+              <p>Seems you forgot the contributor name or contributor is not in the list</p>
+              <Link to="/">&#x2190; Go Home</Link>
             </div>
           </div>
+        </div>
       ) : null}
     </div>
   );
