@@ -8,7 +8,7 @@
 
 link {
   text-decoration: none;
-  color: #71c6dd !important;
+  color: var(--color-main);
 }
 
 .main404page {
@@ -32,17 +32,17 @@ h1 {
 
 span {
   animation: spooky 2s alternate infinite linear;
-  color: #528cce;
+  color: var(--color-main);
   display: inline-block;
 }
 
 h2 {
-  color: #e7ebf2;
+  color: var(--color-main);
   margin-bottom: 0.4em;
 }
 
 p {
-  color: #ccc;
+  color: var(--color-main);
   margin-top: 0;
 }
 
