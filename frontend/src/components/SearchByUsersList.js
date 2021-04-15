@@ -67,7 +67,7 @@ const SearchByUsersList = () => {
                       <h2>4 <span><img src={logo} alt="Mumble Icon" /></span> 4</h2>
                     </Fade>
                     <h3>Mumble contributor not found!</h3>
-                  <p>Nunc a tellus in mauris imperdiet tincidunt. Aenean dui urna</p>
+                  <p>Seems you forgot the contributor name or contributor is not in the list</p>
                   <Link to="/">
                     &#x2190; Go Home
                   </Link>

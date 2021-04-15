@@ -39,7 +39,7 @@ const SearchByPostsList = () => {
                     <h2>4 <span><img src={logo} alt="Mumble Icon" /></span> 4</h2>
                   </Fade>
                   <h3>Mumble post not found!</h3>
-                <p>Nunc a tellus in mauris imperdiet tincidunt. Aenean dui urna</p>
+                <p>Seems you forgot the post title or removed the post</p>
                 <Link to="/">
                   &#x2190; Go Home
                 </Link>
