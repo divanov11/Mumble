@@ -36,6 +36,7 @@ function UserSettingsPage() {
     };
     setProfilePicModel(true);
   };
+
   const clearFileInputOnCancel = () => {
     setProfilePicSrc(null);
     inputRef.current.value = null;
@@ -51,6 +52,7 @@ function UserSettingsPage() {
     });
     return skills;
   };
+
   return (
     <div className="container settings--layout">
       <UserSettingUpdateModal
@@ -150,11 +152,11 @@ function UserSettingsPage() {
             </div>
             <label className="toggle-theme-switch">
               <input
+                defaultChecked={isDarkTheme}
                 type="checkbox"
                 onClick={() => {
                   toggleTheme(DarkLightTheme());
                 }}
-                checked={isDarkTheme}
               ></input>
               <span className="theme-slider"></span>
             </label>
