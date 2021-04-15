@@ -6,10 +6,10 @@ const VotingWidget = ({ votes }) => {
       <i className="fas fa-chevron-up vote-icon up-arrow"></i>
       {votes > 1 ? (
         <p className="vote-count">{votes}</p>
-      ):(
+      ) : (
         <p className="vote-count vote-count__negative">{votes}</p>
       )}
-      
+
       <i className="fas fa-chevron-down vote-icon down-arrow"></i>
     </div>
   );

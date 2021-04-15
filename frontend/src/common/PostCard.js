@@ -8,10 +8,7 @@ import { getPostComments } from '../actions/postActions';
 import PostCardOptions from './PostCardOptions';
 
 const PostCard = ({ post, link, isComment = false, children, ...others }) => {
-  const {
-    user,
-    origional_mumble,
-  } = post;
+  const { user, origional_mumble } = post;
   if (origional_mumble) {
     post = origional_mumble;
   }

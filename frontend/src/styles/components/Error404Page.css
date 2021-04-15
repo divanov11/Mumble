@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins");
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
 
 *,
 *:after,
@@ -6,9 +6,9 @@
   box-sizing: border-box;
 }
 
-link{
-  text-decoration : none;
-  color :  #71c6dd !important;
+link {
+  text-decoration: none;
+  color: #71c6dd !important;
 }
 
 .main404page {
@@ -25,20 +25,20 @@ link{
 h1 {
   color: #e7ebf2;
   font-size: 18rem;
-  margin: .025em 0;
-  text-shadow: .05em .05em 0 rgba(0,0,0,.25);
+  margin: 0.025em 0;
+  text-shadow: 0.05em 0.05em 0 rgba(0, 0, 0, 0.25);
   white-space: nowrap;
 }
-  
+
 span {
-    animation: spooky 2s alternate infinite linear;
-    color: #528cce;
-    display: inline-block;
+  animation: spooky 2s alternate infinite linear;
+  color: #528cce;
+  display: inline-block;
 }
 
 h2 {
   color: #e7ebf2;
-  margin-bottom: .40em;
+  margin-bottom: 0.4em;
 }
 
 p {
@@ -48,10 +48,10 @@ p {
 
 @keyframes spooky {
   from {
-    transform: translatey(.15em) scaley(.95);
+    transform: translatey(0.15em) scaley(0.95);
   }
-  
+
   to {
-    transform: translatey(-.15em);
+    transform: translatey(-0.15em);
   }
 }
