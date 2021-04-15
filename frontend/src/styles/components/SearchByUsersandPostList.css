@@ -7,20 +7,6 @@
   height: 4.2rem;
 }
 
-.not__found h2,
-.not__found h3,
-.not__found p {
-  text-align: center;
-}
-
-.not__found h3 {
-  font-size: 28px;
-}
-
-.not__found {
-  text-align: center;
-}
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -34,8 +20,23 @@
     transform: none;
   }
 }
-h2 {
+
+.fade__404__logo {
   opacity: 0;
   animation: fadeInUp 1s ease-in-out 0s forwards;
   animation-delay: 0.2s;
+}
+
+.not__found h2,
+.not__found h3,
+.not__found p {
+  text-align: center;
+}
+
+.not__found h3 {
+  font-size: 28px;
+}
+
+.not__found {
+  text-align: center;
 }
