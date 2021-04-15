@@ -12,10 +12,10 @@ const Error500Page = ({ error }) => (
     <br/>
     <Link to="/">Click here to go back to the 🏡 home page</Link>
     <br/><br/>
-  </div>
-  <h5>Also, you can 🙌 raise an issue&nbsp;
+    <h5>Also, you can 🙌 raise an issue&nbsp;
     <a href="https://github.com/divanov11/Mumble/issues"> here</a>.
     </h5>
+  </div>
 );
 
 export default Error500Page;
