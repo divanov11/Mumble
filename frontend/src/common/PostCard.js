@@ -10,15 +10,8 @@ import PostCardOptions from './PostCardOptions';
 const PostCard = ({ post, link, isComment = false, children, ...others }) => {
   const {
     user,
-    vote_rank,
-    content,
-    // content,
-    //comments,
-    // comment_count,
-    // share_count,
     origional_mumble,
   } = post;
-
   if (origional_mumble) {
     post = origional_mumble;
   }
@@ -57,10 +50,10 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
         <PostCardOptions post={post} />
       </div>
       <div className="post-contents">
-        <VotingWidget votes={vote_rank} />
+        <VotingWidget votes={post.vote_rank} />
         <div className="post-body">
           {children}
-          {content}
+          {post.content}
         </div>
       </div>
       <PostAction
