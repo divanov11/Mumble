@@ -149,7 +149,8 @@ The main goal of this style guide is providing the contributors a set of instruc
 </p>
 <br />
 
-**---> Visit the Mumble UI Kit 👉 [website](http://mumble-lp.s3-website-us-west-2.amazonaws.com/)**
+**---> Visit the Mumble UI Kit 👉** <a href="http://mumble-lp.s3-website-us-west-2.amazonaws.com/"><img align="center" src="https://img.shields.io/badge/Mumble-UI%20Kit-orange?style=for-the-badge"></a>
+
 #
 
 <h2 align="center">⚛ Mumble React/JSX Style Guide</h2>
