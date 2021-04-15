@@ -33,19 +33,19 @@ const SearchByPostsList = () => {
         ))
       ) : (
         <div className="card">
-            <div className="card__body">
-                <div className="not__found">
+          <div className="card__body">
+              <div className="not__found">
                   <Fade bottom>
                     <h2>4 <span><img src={logo} alt="Mumble Icon" /></span> 4</h2>
                   </Fade>
-                  <h3>Mumble contributor not found!</h3>
+                  <h3>Mumble post not found!</h3>
                 <p>Nunc a tellus in mauris imperdiet tincidunt. Aenean dui urna</p>
                 <Link to="/">
                   &#x2190; Go Home
                 </Link>
-                </div>
-            </div>
+              </div>
           </div>
+        </div>
       )}
     </div>
   );
