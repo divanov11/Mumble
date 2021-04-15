@@ -120,12 +120,6 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
           <p className="post-meta">{formatDate.distanceDate(created)}</p>
         </div>
       </div>
-      <div className="post-contents">
-        <VotingWidget votes={vote_rank} />
-        <div className="post-body">
-          {children}
-          {content}
-        </div>
         <div className="post-contents">
           <VotingWidget votes={vote_rank} />
           <div className="post-body">
@@ -157,7 +151,6 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
             ))}
           </div>
         )}{' '}
-      </div>
     </div>
   );
 };
