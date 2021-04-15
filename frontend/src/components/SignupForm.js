@@ -1,15 +1,14 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux';
 import { useForm } from '../hooks';
 import Message from '../common/Message';
-import { register } from '../actions/authActions'
+import { register } from '../actions/authActions';
 
 const SignupForm = () => {
+  let dispatch = useDispatch();
 
-  let dispatch = useDispatch()
-
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState('');
 
   const [inputs, fieldChanges] = useForm({
     email: '',
@@ -21,15 +20,13 @@ const SignupForm = () => {
     e.preventDefault();
 
     if (inputs['password'] !== inputs['password1']) {
-        setMessage('Passwords do not match')
+      setMessage('Passwords do not match');
     } else {
-        dispatch(register(inputs))
+      dispatch(register(inputs));
     }
-   
   };
   return (
     <>
-
       {message && <Message variant="error">{message}</Message>}
 
       <form className="form" onSubmit={onSubmit}>
