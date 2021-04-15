@@ -23,7 +23,7 @@ link{
 }
 
 h1 {
-  color: #e7ebf2;
+  color: #e7ebf2 !important;
   font-size: 18rem;
   margin: .025em 0;
   text-shadow: .05em .05em 0 rgba(0,0,0,.25);
@@ -37,7 +37,7 @@ span {
 }
 
 h5 {
-  color: #e7ebf2;
+  color: #e7ebf2 !important;
   margin-bottom: .40em;
 }
 
