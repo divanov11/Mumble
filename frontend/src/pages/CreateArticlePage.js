@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { CKEditor } from '@ckeditor/ckeditor5-react';
@@ -9,25 +9,23 @@ import '../styles/components/CreateArticlePage.css';
 import { Button, Input } from '../common';
 import { ArticlesCard } from '../components';
 import { articles } from '../data';
+import { useValidationForm } from '../hooks/useValidationForm';
 
 const CreateArticlePage = () => {
   const history = useHistory();
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('Share your mumble thoughts...');
 
-  const handleTitleChange = (e) => setTitle(e.target.value);
-  const handleBodyChange = (e, editor) => {
-    const data = editor.getData();
-    setBody(data);
-  };
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    // use the form data and make a request to API
+  const handleFormSubmit = () => {
     alert('Article Created! \n Now you will be directed to the Articles Page');
-    // redirect to the articles page, in the real request slug should be changed to created article's slug
     history.push(`/article/article1`);
   };
+
+  const [form, errors, onSubmit, onChange] = useValidationForm({
+    validation: {
+      title: (value) => value,
+      body: (value) => value,
+    },
+    onSubmit: handleFormSubmit,
+  });
 
   return (
     <div className="container create-article--layout">
@@ -37,31 +35,32 @@ const CreateArticlePage = () => {
             <div className="article-header">
               <h1 className="article-headline">Create Article</h1>
             </div>
-            <form onSubmit={handleFormSubmit}>
+            <form onSubmit={onSubmit}>
               <Input
-                value={title}
-                onChange={handleTitleChange}
+                placeholder="Your title goes here..."
+                value={form.title}
+                onChange={onChange}
                 type="text"
                 className="input"
+                name="title"
                 label="Title"
-                required
+                error={errors.title && 'Title is required'}
               />
               <CKEditor
+                config={{ placeholder: 'Share your mumble thoughts...' }}
                 editor={ClassicEditor}
-                data={body}
-                onChange={handleBodyChange}
-                onFocus={(event, editor) => {
-                  setBody((prevState) => {
-                    // Strips html tags from prevState
-                    // So gets blank even if user clicked any ckeditor option (list, quotes, etc.)
-                    // before clicking content area
-                    if (prevState.replace(/<[^>]*>?/gm, '') === 'Share your mumble thoughts...') {
-                      return '';
-                    }
-                    return prevState;
+                data={form.body}
+                onChange={(e, editor) => {
+                  onChange({
+                    target: {
+                      name: 'body',
+                      value: editor.getData(),
+                    },
                   });
                 }}
               />
+              {errors.body && <small className="form__error">{'Body is required'}</small>}
+
               <Button color="main" type="submit">
                 Submit
               </Button>
