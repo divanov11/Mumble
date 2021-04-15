@@ -13,11 +13,16 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
     user,
     created,
     vote_rank,
-    content,
+    // content,
     //comments,
-    comment_count,
-    share_count,
+    // comment_count,
+    // share_count,
+    origional_mumble,
   } = post;
+
+  if (origional_mumble) {
+    post = origional_mumble;
+  }
 
   let dispatch = useDispatch();
 
@@ -29,8 +34,13 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
 
   const [showPostMenu, setShowPostMenu] = useState(false);
 
-  const toggleComments = () => {
-    setShowComments(!showComments);
+
+  const toggleComments = (newComment = false) => {
+    if (newComment === true) {
+      setShowComments(true);
+    } else {
+      setShowComments(!showComments);
+    }
     dispatch(getPostComments(setComments, post.id));
   };
 
@@ -57,14 +67,20 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
 
   return (
     <div className={`${isComment && 'post-card--comment'}`} {...others}>
+         {origional_mumble && (
+          <div className="remumbled-note">
+            <i className="fas fa-paper-plane"></i>
+            <i>{user.username} remumbled</i>
+          </div>
+        )}
       <div className="post-header-wrapper">
-        <AuthorBox
-          avatarSrc={getApiUrl(user.profile_pic)}
-          name={user.name}
-          handle={user.username}
-          url={`/profile/${user.username}`}
-          size={isComment ? 'sm' : 'md'}
-        />
+          <AuthorBox
+            avatarSrc={getApiUrl(post.user.profile_pic)}
+            name={post.user.name}
+            handle={post.user.username}
+            url={`/profile/${post.user.username}`}
+            size={isComment ? 'sm' : 'md'}
+          />
         <div className="post--options">
           <div className="post__dropmenu">
             <p className="post__dropmenu--icon" onClick={handlePostDropdownMenu}>
@@ -110,31 +126,38 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
           {children}
           {content}
         </div>
-      </div>
-      <PostAction
-        onMessageIconClick={toggleComments}
-        comments={comment_count}
-        link={link}
-        postId={post.id}
-        shares={share_count}
-        setComments={setComments}
-      />
-      {showComments && (
-        <div className="post-comments-wrapper">
-          {comments.map((comment) => (
-            <div key={comment.id} className="post-comment">
-              <PostCard post={comment} link={'/'} isComment={true}>
-                <div className="comment__mentioned">
-                  Replying to
-                  {comment.reply_at?.map((user) => (
-                    <span key={user.id}> @{user.username}</span>
-                  ))}
-                </div>
-              </PostCard>
-            </div>
-          ))}
+        <div className="post-contents">
+          <VotingWidget votes={vote_rank} />
+          <div className="post-body">
+            {children}
+            {post.content}
+          </div>
         </div>
-      )}{' '}
+        <PostAction
+          onMessageIconClick={toggleComments}
+          comments={post.comment_count}
+          link={link}
+          postId={post.id}
+          shares={post.share_count}
+          setComments={setComments}
+        />
+        {showComments && (
+          <div className="post-comments-wrapper">
+            {comments.map((comment) => (
+              <div key={comment.id} className="post-comment">
+                <PostCard post={comment} link={'/'} isComment={true}>
+                  <div className="comment__mentioned">
+                    Replying to
+                    {comment.reply_at?.map((user) => (
+                      <span key={user.id}> @{user.username}</span>
+                    ))}
+                  </div>
+                </PostCard>
+              </div>
+            ))}
+          </div>
+        )}{' '}
+      </div>
     </div>
   );
 };

@@ -30,6 +30,7 @@ const Profile = ({ match }) => {
     <div className="container profile--layout">
       <section id="sidebar--left--profile">
         <UserCard user={user} />
+        {console.log('USER:', user)}
         <SkillTags tags={user.skills} />
       </section>
 

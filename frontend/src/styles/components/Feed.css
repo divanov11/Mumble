@@ -9,6 +9,20 @@
   margin-left: 65px;
 }
 
+.remumbled-note {
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.remumbled-note i {
+  margin-right: 1rem;
+  color: #c5c5c5;
+}
+
 .post-meta {
   line-height: 1;
   margin-bottom: 0.5rem;
