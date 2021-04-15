@@ -14,10 +14,28 @@
 }
 
 .not__found h3 {
-  color: #3f4156;
   font-size: 28px;
 }
 
 .not__found {
   text-align: center;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+h2 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out 0s forwards;
+  animation-delay: 0.2s;
 }

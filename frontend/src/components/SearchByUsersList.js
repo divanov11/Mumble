@@ -4,7 +4,6 @@ import { RoundShape, TextBlock } from 'react-placeholder/lib/placeholders';
 import { Link, useLocation } from 'react-router-dom';
 import { listUsers } from '../actions/userActions';
 import { getApiUrl } from '../services/config';
-import Fade from 'react-reveal/Fade';
 
 import '../styles/components/SearchBox.css';
 import '../styles/components/SearchByUsersandPostList.css';
@@ -63,18 +62,18 @@ const SearchByUsersList = () => {
         <div className="card">
           <div className="card__body">
             <div className="not__found">
-              <Fade bottom>
-                <h2>
-                  4{' '}
+              <div>
+                <h2 className="fade__404__logo">
+                  4
                   <span>
                     <img src={logo} alt="Mumble Icon" />
-                  </span>{' '}
+                  </span>
                   4
                 </h2>
-              </Fade>
-              <h3>Mumble contributor not found!</h3>
-              <p>Seems you forgot the contributor name or contributor is not in the list</p>
-              <Link to="/">&#x2190; Go Home</Link>
+                <h3>Mumble contributor not found!</h3>
+                <p>Seems you forgot the contributor name or contributor is not in the list</p>
+                <Link to="/">&#x2190; Go Home</Link>
+              </div>
             </div>
           </div>
         </div>
