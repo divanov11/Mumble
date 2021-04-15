@@ -23,7 +23,7 @@ link {
 }
 
 h1 {
-  color: #e7ebf2;
+  color: var(--color-main);
   font-size: 18rem;
   margin: 0.025em 0;
   text-shadow: 0.05em 0.05em 0 rgba(0, 0, 0, 0.25);
