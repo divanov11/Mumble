@@ -14,10 +14,14 @@ import {
   POST_COMMENTS_REQUEST,
   POST_COMMENTS_SUCCESS,
   POST_COMMENTS_FAIL,
+  POST_VOTE_REQUEST,
+  POST_VOTE_SUCCESS,
+  POST_VOTE_FAIL,
 } from '../constants/postConstants';
 import { PostsService } from '../services';
 import axios from 'axios';
 import { getApiUrl } from '../services/config';
+import { listUserPosts } from './userActions';
 
 export const searchPosts = (keyword = '') => async (dispatch) => {
   try {
@@ -180,6 +184,38 @@ export const getPostComments = (setComments, postId) => async (dispatch, getStat
   } catch (error) {
     dispatch({
       type: POST_COMMENTS_FAIL,
+      payload:
+        error.response && error.response.data.detail ? error.response.data.detail : error.message,
+    });
+  }
+};
+
+export const modifyVote = (voteData) => async (dispatch, getState) => {
+  try {
+    dispatch({ type: POST_VOTE_REQUEST });
+
+    const {
+      auth: { access },
+    } = getState();
+
+    const config = {
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${access}`,
+      },
+    };
+    const { data } = await axios.post(getApiUrl(`api/posts/vote/`), voteData, config);
+
+    dispatch({
+      type: POST_VOTE_SUCCESS,
+      payload: data,
+    });
+
+    dispatch(getPostsForDashboard());
+    dispatch(listUserPosts(voteData.post_username));
+  } catch (error) {
+    dispatch({
+      type: POST_VOTE_FAIL,
       payload:
         error.response && error.response.data.detail ? error.response.data.detail : error.message,
     });

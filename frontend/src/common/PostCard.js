@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getApiUrl } from '../services/config';
 import AuthorBox from './AuthorBox';
 import PostAction from './PostAction';
@@ -14,6 +14,9 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
   }
 
   let dispatch = useDispatch();
+
+  let auth = useSelector((state) => state.auth);
+  let authUser = auth.user;
 
   let [comments, setComments] = useState([]);
 
@@ -47,7 +50,16 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
         <PostCardOptions post={post} />
       </div>
       <div className="post-contents">
-        <VotingWidget votes={post.vote_rank} />
+        <VotingWidget
+          votes={post.vote_rank}
+          post_id={post.id}
+          post_username={post.user.username}
+          upVoters={post.upVoters}
+          downVoters={post.downVoters}
+          post_userid={post.user.id}
+          authUser={authUser}
+        />
+
         <div className="post-body">
           {children}
           {post.content}

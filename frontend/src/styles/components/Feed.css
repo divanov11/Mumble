@@ -91,14 +91,15 @@
   margin: 1.6rem 0;
 }
 
+/* Bolds a voting arrow if user has already voted on a particular post */
+
 .vote-count__negative {
   color: var(--color-gray);
 }
 
 .vote-icon {
-  color: var(--color-gray);
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .up-arrow:hover,
