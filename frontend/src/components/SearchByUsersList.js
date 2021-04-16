@@ -6,6 +6,8 @@ import { listUsers } from '../actions/userActions';
 import { getApiUrl } from '../services/config';
 
 import '../styles/components/SearchBox.css';
+import '../styles/components/SearchByUsersandPostList.css';
+import logo from '../assets/logo/dark-logo.png';
 import { FollowButton } from '../common';
 
 const SearchByUsersList = () => {
@@ -57,8 +59,23 @@ const SearchByUsersList = () => {
           ))}
         </div>
       ) : users.length === 0 ? (
-        <div>
-          <h5>No Results found...</h5>
+        <div className="card">
+          <div className="card__body">
+            <div className="not__found">
+              <div>
+                <h2 className="fade__404__logo">
+                  4
+                  <span>
+                    <img src={logo} alt="Mumble Icon" />
+                  </span>
+                  4
+                </h2>
+                <h3>Mumble contributor not found!</h3>
+                <p>Seems you forgot the contributor name or contributor is not in the list</p>
+                <Link to="/">&#x2190; Go Home</Link>
+              </div>
+            </div>
+          </div>
         </div>
       ) : null}
     </div>
