@@ -88,7 +88,7 @@
   font-weight: var(--font-medium);
   color: var(--color-success);
   line-height: 0;
-  margin: 1.6rem 0;
+  margin: 1rem 0;
 }
 
 /* Bolds a voting arrow if user has already voted on a particular post */

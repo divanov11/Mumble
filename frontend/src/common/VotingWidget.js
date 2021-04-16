@@ -27,7 +27,7 @@ const VotingWidget = ({
 
       {votes === 0 ? (
         <p className="vote-count vote-count__negative">{votes}</p>
-      ) : votes > 1 ? (
+      ) : votes > 0 ? (
         <p className="vote-count">+{votes}</p>
       ) : (
         <p className="vote-count vote-count__negative">{votes}</p>
