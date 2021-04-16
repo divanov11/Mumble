@@ -8,11 +8,11 @@
 
 link {
   text-decoration: none;
-  color: #71c6dd !important;
+  color: var(--color-main);
 }
 
-.main404page {
-  background-color: #2d2d39;
+.main500page {
+  background-color: var(--color-bg);
   font-family: 'Poppins', sans-serif;
   align-items: center;
   display: flex;
@@ -23,7 +23,7 @@ link {
 }
 
 h1 {
-  color: #e7ebf2;
+  color: var(--color-text);
   font-size: 18rem;
   margin: 0.025em 0;
   text-shadow: 0.05em 0.05em 0 rgba(0, 0, 0, 0.25);
@@ -32,17 +32,17 @@ h1 {
 
 span {
   animation: spooky 2s alternate infinite linear;
-  color: #528cce;
+  color: var(--color-main);
   display: inline-block;
 }
 
 h2 {
-  color: #e7ebf2;
+  color: var(--color-text);
   margin-bottom: 0.4em;
 }
 
 p {
-  color: #ccc;
+  color: var(--color-text);
   margin-top: 0;
 }
 
