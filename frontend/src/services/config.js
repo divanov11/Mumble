@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiEndpointURL = process.env.REACT_APP_API_ENDPOINT || 'https://mumbleapi.herokuapp.com';//'http://127.0.0.1:8000';
+const apiEndpointURL = process.env.REACT_APP_API_ENDPOINT || 'https://mumbleapi.herokuapp.com'; //'http://127.0.0.1:8000';
 
 export const getApiUrl = (path) => `${apiEndpointURL}/${path}`;
 

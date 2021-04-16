@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 import '../styles/components/Error500Page.css';
 
 const Error500Page = ({ error }) => (
@@ -9,17 +8,18 @@ const Error500Page = ({ error }) => (
     <h1>
       5
       <span>
-        <img src="https://mumble.dev/apple-touch-icon.png" alt="Mumble Logo (0)"/>
+        <img src="https://mumble.dev/apple-touch-icon.png" alt="Mumble Logo (0)" />
       </span>
       <span>
-        <img src="https://mumble.dev/apple-touch-icon.png" alt="Mumble Logo (0)"/>
-      </span> 
+        <img src="https://mumble.dev/apple-touch-icon.png" alt="Mumble Logo (0)" />
+      </span>
     </h1>
     <h2>Internal Server Error !</h2>
     <p>Something went wrong</p>
-    <br/>
+    <br />
     <Link to="/">Click here to go back to the 🏡 home page</Link>
-    <br/><br/>
+    <br />
+    <br />
   </div>
 );
 

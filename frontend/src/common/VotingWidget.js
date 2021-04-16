@@ -25,8 +25,10 @@ const VotingWidget = ({
         className={`${upVote ? 'fas' : 'far'} fa-caret-up vote-icon up-arrow`}
       ></i>
 
-      {votes > 0 ? (
-        <p className="vote-count">{votes}</p>
+      {votes === 0 ? (
+        <p className="vote-count vote-count__negative">{votes}</p>
+      ) : votes > 1 ? (
+        <p className="vote-count">+{votes}</p>
       ) : (
         <p className="vote-count vote-count__negative">{votes}</p>
       )}
