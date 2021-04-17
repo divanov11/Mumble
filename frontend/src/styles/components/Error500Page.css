@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins');
 
 *,
-*:after,
-*:before {
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -48,10 +48,10 @@ p {
 
 @keyframes spooky {
   from {
-    transform: translatey(0.15em) scaley(0.95);
+    transform: translateY(0.15em) scaleY(0.95);
   }
 
   to {
-    transform: translatey(-0.15em);
+    transform: translateY(-0.15em);
   }
 }

@@ -31,17 +31,6 @@
   pointer-events: none !important;
 }
 
-/* Dark Theme */
-.dark-theme .btn,
-.dark-theme .btn.btn--sub,
-.dark-theme .btn.btn--main {
-  color: var(--color-text);
-}
-
-.dark-theme .btn.btn--main--outline > i {
-  color: var(--color-main) !important;
-}
-
 .btn--main {
   background-color: var(--color-main);
   color: var(--color-white);
@@ -115,6 +104,17 @@
 
 .btn--sub--outline:hover::before {
   background: var(--color-sub);
+}
+
+/* Dark Theme */
+.dark-theme .btn,
+.dark-theme .btn.btn--sub,
+.dark-theme .btn.btn--main {
+  color: var(--color-text);
+}
+
+.dark-theme .btn.btn--main--outline > i {
+  color: var(--color-main) !important;
 }
 
 /* Dark Theme */
