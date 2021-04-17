@@ -107,6 +107,17 @@
 }
 
 /* Dark Theme */
+.dark-theme .btn,
+.dark-theme .btn.btn--sub,
+.dark-theme .btn.btn--main {
+  color: var(--color-text);
+}
+
+.dark-theme .btn.btn--main--outline > i {
+  color: var(--color-main) !important;
+}
+
+/* Dark Theme */
 .dark-theme .btn.btn--main {
   background-color: var(--color-sub);
 }
