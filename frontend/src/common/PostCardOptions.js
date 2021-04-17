@@ -30,9 +30,13 @@ const PostCardOptions = ({ post }) => {
   return (
     <div className="post--options">
       <div className="post__dropmenu">
-        <p className="post__dropmenu--icon" onClick={handlePostDropdownMenu}>
-          ...
-        </p>
+        <div className="post-meta">
+          <span>{formatDate.distanceDate(created)}</span>
+          <span className="post__dropmenu--icon" onClick={handlePostDropdownMenu}>
+            <i className="fas fa-ellipsis-v"></i>
+          </span>
+        </div>
+
         <div
           ref={navigationRef}
           className={classNames('card', 'dropmenu', {
@@ -69,7 +73,6 @@ const PostCardOptions = ({ post }) => {
           )}
         </div>
       </div>
-      <p className="post-meta">{formatDate.distanceDate(created)}</p>
     </div>
   );
 };
