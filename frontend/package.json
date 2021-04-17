@@ -38,8 +38,8 @@
     "cypress:open": "cypress open",
     "format": "prettier --write \"src/**/*.(js|jsx|ts|tsx|css|scss)\"",
     "format:check": "prettier -c \"src/**/*.(js|jsx|ts|tsx|css|scss)\"",
-    "stylelint": "stylelint 'src/**/*.css'",
-    "stylelint:fix": "stylelint 'src/**/*.css' --fix"
+    "stylelint": "stylelint \"src/**/*.css\"",
+    "stylelint:fix": "stylelint \"src/**/*.css\" --fix"
   },
   "eslintConfig": {
     "extends": [
