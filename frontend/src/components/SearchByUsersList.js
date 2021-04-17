@@ -2,13 +2,14 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RoundShape, TextBlock } from 'react-placeholder/lib/placeholders';
 import { Link, useLocation } from 'react-router-dom';
-import { listUsers } from '../actions/userActions';
-import { getApiUrl } from '../services/config';
 
 import '../styles/components/SearchBox.css';
 import '../styles/components/SearchByUsersandPostList.css';
 import logo from '../assets/logo/dark-logo.png';
-import { FollowButton } from '../common';
+
+import { AuthorBox, FollowButton } from '../common';
+import { listUsers } from '../actions/userActions';
+import { getApiUrl } from '../services/config';
 
 const SearchByUsersList = () => {
   const dispatch = useDispatch();
@@ -28,37 +29,7 @@ const SearchByUsersList = () => {
 
   return (
     <div className="category-wrapper" id="category-users">
-      {users.length > 0 ? (
-        <div>
-          {users.map((i, index) => (
-            <div key={index} className="card">
-              <div className="card__body">
-                <div className="searchitem__wrapper--1">
-                  <img
-                    alt=""
-                    className="avatar avatar--md"
-                    src={getApiUrl(i.profile.profile_pic)}
-                  />
-
-                  <div className="searchitem__info">
-                    <div className="searchitem__info--top">
-                      <div className="searchitem__info--top-text">
-                        <strong>{i.profile.name}&nbsp;</strong>
-                        <Link to={`/profile/${i.username}`} className="searchitem__link ">
-                          <small>@{i.username}</small>
-                        </Link>
-                      </div>
-
-                      <FollowButton userProfile={i} />
-                    </div>
-                    <p>{i.profile.bio}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      ) : users.length === 0 ? (
+      {users.length === 0 ? (
         <div className="card">
           <div className="card__body">
             <div className="not__found">
@@ -77,7 +48,29 @@ const SearchByUsersList = () => {
             </div>
           </div>
         </div>
-      ) : null}
+      ) : (
+        <div>
+          {users.map((user, index) => (
+            <div key={index} className="card">
+              <div className="card__body">
+                <div className="searchItem">
+                  <div className="searchItem__top">
+                    <AuthorBox
+                      avatarSrc={getApiUrl(user.profile.profile_pic)}
+                      url={`/profile/${user.username}`}
+                      name={user.profile.name}
+                      handle={user.username}
+                      size="md"
+                    />
+                    <FollowButton userProfile={user} />
+                  </div>
+                  <p className="searchItem__bottom">{user.profile.bio}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
