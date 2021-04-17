@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins');
 
 *,
-*:after,
-*:before {
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -17,7 +17,6 @@ link {
   align-items: center;
   display: flex;
   flex-direction: column;
-  /* height: 100vh; */
   justify-content: center;
   text-align: center;
 }
@@ -46,17 +45,17 @@ p {
   margin-top: 0;
 }
 
-.image__500{
+.image__500 {
   height: 145px;
   width: 145px;
 }
 
 @keyframes spooky {
   from {
-    transform: translatey(0.15em) scaley(0.95);
+    transform: translateY(0.15em) scaleY(0.95);
   }
 
   to {
-    transform: translatey(-0.15em);
+    transform: translateY(-0.15em);
   }
 }
