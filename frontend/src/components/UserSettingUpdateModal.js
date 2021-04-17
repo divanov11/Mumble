@@ -13,7 +13,7 @@ const UserSettingUpdateModal = ({
   setActive,
 }) => {
   const [fields, handleFieldChanges] = useForm(userData);
-  const tagList = useRef();
+  const tagListRef = useRef();
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ const UserSettingUpdateModal = ({
 
   const HandleTagFormSubmit = (e) => {
     e.preventDefault();
-    const tags = tagList.current;
+    const tags = tagListRef.current;
 
     if (tags) {
       setUserData((data) => {
@@ -111,7 +111,7 @@ const UserSettingUpdateModal = ({
         <form onSubmit={HandleTagFormSubmit} onKeyPress={preventSubmission}>
           <div className="form__field" data-error={dataType}>
             <label htmlFor="formInput#text">Tags</label>
-            <TagInput userData={userData} tagListRef={tagList} />
+            <TagInput tagList={userData.skills} tagListRef={tagListRef} />
           </div>
           <ModalContentAction setActive={setActive} />
         </form>

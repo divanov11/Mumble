@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const Avatar = ({
-  src = 'https://randomuser.me/api/portraits/men/52.jpg',
-  size = 'md',
   alt = 'User Avatar',
   className = '',
+  size = 'md',
+  src = 'https://randomuser.me/api/portraits/men/52.jpg',
   ...others
 }) => {
   return (
@@ -20,10 +20,10 @@ const Avatar = ({
 };
 
 Avatar.propTypes = {
-  src: PropTypes.string,
   alt: PropTypes.string,
-  size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl']),
   className: PropTypes.string,
+  size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl']),
+  src: PropTypes.string,
 };
 
 export default Avatar;

@@ -2,12 +2,14 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
-import { searchPosts } from '../actions/postActions';
-import { Card, PostCard } from '../common';
 
 import '../styles/components/SearchBox.css';
 import '../styles/components/SearchByUsersandPostList.css';
 import logo from '../assets/logo/dark-logo.png';
+
+import { searchPosts } from '../actions/postActions';
+import { Card } from '../common';
+import PostCard from './PostCard';
 
 const SearchByPostsList = () => {
   const dispatch = useDispatch();

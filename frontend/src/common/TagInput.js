@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import '../styles/components/TagInputField.css';
+import PropTypes from 'prop-types';
+import Input from './Input';
 
-const TagInputField = ({ userData, tagListRef }) => {
-  const [tagList, setTagList] = useState(userData.skills);
+const TagInput = ({ tagList, tagListRef }) => {
+  const [tags, setTags] = useState(tagList);
   const [input, setInput] = useState('');
+
   const addTags = (e) => {
     e.stopPropagation();
     const value =
@@ -11,7 +13,7 @@ const TagInputField = ({ userData, tagListRef }) => {
     if (e.key === 'Enter' || e.key === ',') {
       if (value) {
         setInput('');
-        setTagList((state) => {
+        setTags((state) => {
           const newState = [...state, value];
           tagListRef.current = newState;
           return newState;
@@ -19,15 +21,17 @@ const TagInputField = ({ userData, tagListRef }) => {
       }
     }
   };
+
   const removeTag = (e) => {
     const value = e.target.previousSibling.textContent;
-    setTagList((tags) => {
+    setTags((tags) => {
       const newState = [...tags.filter((x) => x !== value)];
       tagListRef.current = newState;
       return newState;
     });
   };
-  const renderTags = tagList.map((x, i) => {
+
+  const renderTags = tags.map((x, i) => {
     return (
       <div className="tag input-tag-item" key={i}>
         <small>{x}</small>
@@ -35,20 +39,27 @@ const TagInputField = ({ userData, tagListRef }) => {
       </div>
     );
   });
+  // TODO: Improve codes here
   return (
     <div className="input-tags" onClick={() => document.querySelector('.tag-input').focus()}>
       <div className="input-tag-list">{renderTags}</div>
-      <input
-        type="text"
+      <Input
+        className="tag-input"
         placeholder="Press enter to add a tag"
         onKeyUp={addTags}
-        onChange={(e) => setInput(e.target.value)}
         name="skills"
-        value={input}
-        className="tag-input"
+        onChange={(e) => setInput(e.target.value)}
+        label="Add Skills"
+        hideLabel
       />
+      <input type="text" value={input} className="tag-input" />
     </div>
   );
 };
 
-export default TagInputField;
+TagInput.propTypes = {
+  tagList: PropTypes.arrayOf(PropTypes.string).isRequired,
+  tagListRef: PropTypes.object.isRequired,
+};
+
+export default TagInput;

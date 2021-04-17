@@ -3,14 +3,14 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 const TextArea = ({
-  name = 'textarea',
-  value = '',
-  placeholder = 'Share you mumble thoughts...',
-  label = '',
-  hideLabel = false,
   className = '',
   defaultValue = '',
-  error,
+  error = '',
+  hideLabel = false,
+  label = '',
+  name,
+  placeholder = 'Share you mumble thoughts...',
+  value = '',
   ...others
 }) => {
   return (
@@ -38,14 +38,14 @@ const TextArea = ({
 };
 
 TextArea.propTypes = {
-  name: PropTypes.string,
-  value: PropTypes.string,
-  defaultValue: PropTypes.string,
-  placeholder: PropTypes.string,
-  label: PropTypes.string.isRequired,
-  hideLabel: PropTypes.bool,
   className: PropTypes.string,
+  defaultValue: PropTypes.string,
   error: PropTypes.string,
+  hideLabel: PropTypes.bool,
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  value: PropTypes.string,
 };
 
 export default TextArea;

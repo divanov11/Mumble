@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-//import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import { createComment, createRemumble } from '../actions/postActions';
 
-import Button from './Button';
+import Button from '../common/Button';
 
 const PostAction = ({ onMessageIconClick, comments, shares, postId, setComments }) => {
   let dispatch = useDispatch();

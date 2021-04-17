@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const Tag = ({ text, outline = false, className = '', ...others }) => {
+const Tag = ({ className = '', text, outline = false, ...others }) => {
   return (
     <span className={classNames(className, 'tag', { 'tag--outline': outline })} {...others}>
       <small>{text}</small>
@@ -11,9 +11,9 @@ const Tag = ({ text, outline = false, className = '', ...others }) => {
 };
 
 Tag.propTypes = {
-  text: PropTypes.string.isRequired,
-  outline: PropTypes.bool,
   className: PropTypes.string,
+  outline: PropTypes.bool,
+  text: PropTypes.string.isRequired,
 };
 
 export default Tag;
