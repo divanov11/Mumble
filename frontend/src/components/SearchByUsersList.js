@@ -7,10 +7,9 @@ import '../styles/components/SearchBox.css';
 import '../styles/components/SearchByUsersandPostList.css';
 import logo from '../assets/logo/dark-logo.png';
 
-import { AuthorBox } from '../common';
+import { AuthorBox, FollowButton } from '../common';
 import { listUsers } from '../actions/userActions';
 import { getApiUrl } from '../services/config';
-import FollowButton from './FollowButton';
 
 const SearchByUsersList = () => {
   const dispatch = useDispatch();
@@ -42,8 +41,10 @@ const SearchByUsersList = () => {
                   </span>
                   4
                 </h2>
-                <h3>Mumble contributor not found!</h3>
-                <p>Seems you forgot the contributor name or contributor is not in the list</p>
+                <h3>Mumble user not found !</h3>
+                <br />
+                <p>Looks like the username was misspelled or there is no account linked to that username !</p>
+                <br />  
                 <Link to="/">&#x2190; Go Home</Link>
               </div>
             </div>
