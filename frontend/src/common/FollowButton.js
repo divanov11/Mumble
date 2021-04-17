@@ -1,44 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { followUser } from '../actions/userActions';
+import Button from './Button';
 
 const FollowButton = ({ userProfile }) => {
-  let dispatch = useDispatch();
-
   const auth = useSelector((state) => state.auth);
   const { user } = auth;
 
+  const [isFollowing, setIsFollowing] = useState(() =>
+    userProfile.profile.followers.includes(user.id),
+  );
+
+  const dispatch = useDispatch();
+
   const toggleFollow = (e, username) => {
-    if (e.target.classList.contains('btn--sub')) {
-      e.target.className = 'btn btn--main--outline btn--sm';
-      e.target.innerText = 'Follow';
-    } else {
-      e.target.className = 'btn btn--sub btn--sm';
-      e.target.innerText = 'Following';
-    }
+    setIsFollowing(!isFollowing);
     dispatch(followUser(username));
   };
 
   return (
     <div>
-      {userProfile.profile.followers.includes(user.id) ? (
-        <button
-          onClick={(e) => {
-            toggleFollow(e, userProfile.username);
-          }}
-          className="btn btn--sub btn--sm"
-        >
-          Following
-        </button>
+      {isFollowing ? (
+        <Button
+          onClick={(e) => toggleFollow(userProfile.username)}
+          color="main"
+          size="sm"
+          iconName="user-check"
+          text="Following"
+        />
       ) : (
-        <button
-          onClick={(e) => {
-            toggleFollow(e, userProfile.username);
-          }}
-          className="btn btn--main--outline btn--sm"
-        >
-          Follow
-        </button>
+        <Button
+          onClick={(e) => toggleFollow(userProfile.username)}
+          color="main"
+          size="sm"
+          iconName="user-plus"
+          text="Follow"
+          outline
+        />
       )}
     </div>
   );

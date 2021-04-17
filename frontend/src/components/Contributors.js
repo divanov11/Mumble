@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getApiUrl } from '../services/config';
 
-import { Avatar, FollowButton } from '../common';
+import { AuthorBox, FollowButton } from '../common';
 
 import { listRecommenedUsers } from '../actions/userActions';
 
@@ -24,15 +24,17 @@ const Contributors = () => {
         <Link to={'/search'}>View More</Link>
         <div className="custom-spacer"></div>
 
-        {users.map((i) => (
-          <div key={i.id} className="contributor-wrapper">
+        {users.map((user) => (
+          <div key={user.id} className="contributor-wrapper">
             <div className="contributor-preview">
-              <Avatar src={getApiUrl(i.profile.profile_pic)} alt="img-description" />
-              <Link to={`/profile/${i.username}`}>
-                <strong>{i.profile.name}</strong>
-              </Link>
+              <AuthorBox
+                avatarSrc={getApiUrl(user.profile.profile_pic)}
+                url={`/profile/${user.username}`}
+                name={user.profile.name}
+                // handle={user.username}
+              />
             </div>
-            <FollowButton userProfile={i} />
+            <FollowButton userProfile={user} />
           </div>
         ))}
       </div>

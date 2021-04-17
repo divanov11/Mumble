@@ -1,5 +1,6 @@
 .container {
-  width: 140rem;
+  width: 80%;
+  max-width: 165rem;
   margin: 0 auto;
   padding: 1rem;
   box-sizing: border-box;

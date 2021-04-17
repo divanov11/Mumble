@@ -38,6 +38,10 @@
   color: var(--color-text);
 }
 
+.dark-theme .btn.btn--main--outline > i {
+  color: var(--color-main) !important;
+}
+
 .btn--main {
   background-color: var(--color-main);
   color: var(--color-white);

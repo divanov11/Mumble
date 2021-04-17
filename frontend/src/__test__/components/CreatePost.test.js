@@ -1,8 +1,8 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import CreatePost from './CreatePost';
-import store from '../store';
+import CreatePost from '../../components/CreatePost';
+import store from '../../store';
 
 test('renders MUMBLE link', () => {
   render(
