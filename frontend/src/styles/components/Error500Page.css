@@ -4,7 +4,6 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   justify-content: center;
   text-align: center;
 }
@@ -18,7 +17,6 @@
 }
 
 .main500page span {
-  animation: spooky 2s alternate infinite linear;
   color: var(--color-main);
   display: inline-block;
 }
@@ -33,12 +31,7 @@
   margin-top: 0;
 }
 
-@keyframes spooky {
-  from {
-    transform: translateY(0.15em) scaleY(0.95);
-  }
-
-  to {
-    transform: translateY(-0.15em);
-  }
+.image__500 {
+  height: 140px;
+  width: 140px;
 }
