@@ -134,10 +134,10 @@ const Header = () => {
             Settings
           </Link>
 
-          <Link className="user-navigation--item" onClick={logoutUser}>
+          <div role="button" className="user-navigation--item" onClick={logoutUser}>
             <i className="fas fa-sign-out-alt user--nav--icon"></i>
             Logout
-          </Link>
+          </div>
         </div>
       )}
       {showNotification && (

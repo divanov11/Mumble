@@ -33,8 +33,8 @@ const App = () => {
 
   return (
     <Router>
-      <ErrorBoundary FallbackComponent={Error500page}>
-        <div className={classNames('app', `${isDarkTheme && 'dark-theme'}`)}>
+      <div className={classNames('app', `${isDarkTheme && 'dark-theme'}`)}>
+        <ErrorBoundary FallbackComponent={Error500page}>
           {/* Header bar should not be displayed in login page. Temporary fix. -- Dennis Ivanov */}
           {user.isAuthenticated && <Header />}
           <main>
@@ -62,8 +62,8 @@ const App = () => {
             draggable
             pauseOnHover
           />
-        </div>
-      </ErrorBoundary>
+        </ErrorBoundary>
+      </div>
     </Router>
   );
 };

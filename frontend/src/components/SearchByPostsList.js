@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router';
+import { Link } from 'react-router-dom';
 import { searchPosts } from '../actions/postActions';
 import { Card, PostCard } from '../common';
 
 import '../styles/components/SearchBox.css';
+import '../styles/components/SearchByUsersandPostList.css';
+import logo from '../assets/logo/dark-logo.png';
 
 const SearchByPostsList = () => {
   const dispatch = useDispatch();
@@ -28,8 +31,23 @@ const SearchByPostsList = () => {
           </Card>
         ))
       ) : (
-        <div>
-          <h5>No Results found..</h5>
+        <div className="card">
+          <div className="card__body">
+            <div className="not__found">
+              <div>
+                <h2 className="fade__404__logo">
+                  4
+                  <span>
+                    <img src={logo} alt="Mumble Icon" />
+                  </span>
+                  4
+                </h2>
+                <h3>Mumble post not found!</h3>
+                <p>Seems you forgot the post title or removed </p>
+                <Link to="/">&#x2190; Go Home</Link>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>

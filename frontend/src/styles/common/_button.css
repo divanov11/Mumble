@@ -31,13 +31,6 @@
   pointer-events: none !important;
 }
 
-/* Dark Theme */
-.dark-theme .btn,
-.dark-theme .btn.btn--sub,
-.dark-theme .btn.btn--main {
-  color: var(--color-text);
-}
-
 .btn--main {
   background-color: var(--color-main);
   color: var(--color-white);
@@ -120,4 +113,14 @@
 
 .dark-theme .btn.btn--sub {
   background-color: var(--color-main);
+}
+
+.dark-theme .btn,
+.dark-theme .btn.btn--sub,
+.dark-theme .btn.btn--main {
+  color: var(--color-text);
+}
+
+.dark-theme .btn.btn--main--outline > i {
+  color: var(--color-main) !important;
 }

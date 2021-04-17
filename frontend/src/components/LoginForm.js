@@ -55,10 +55,11 @@ const LoginForm = () => {
       </form>
       <div id="bottom-content">
         <p>
-          Dont have and Account? <Link to="/signup">Sign up</Link>
-        </p>
-        <p>
           <Link to="#">Forgot Password?</Link>
+        </p>
+        <br />
+        <p>
+          Dont have an account? <Link to="/signup">Sign up</Link>
         </p>
       </div>
     </>

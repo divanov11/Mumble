@@ -12,3 +12,4 @@ export { default as Tag } from './Tag';
 export { default as TagInput } from './TagInput';
 export { default as TextArea } from './TextArea';
 export { default as VotingWidget } from './VotingWidget';
+export { default as FollowButton } from './FollowButton';

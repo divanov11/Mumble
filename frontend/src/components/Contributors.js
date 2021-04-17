@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { getApiUrl } from '../services/config';
 
-import { Avatar } from '../common';
+import { AuthorBox, FollowButton } from '../common';
 
 import { listRecommenedUsers } from '../actions/userActions';
 
@@ -26,14 +27,14 @@ const Contributors = () => {
         {users.map((user) => (
           <div key={user.id} className="contributor-wrapper">
             <div className="contributor-preview">
-              <Avatar src={user.profile.profile_pic} alt="img-description" />
-              <Link to={`/profile/${user.username}`}>
-                <strong>{user.profile.name}</strong>
-              </Link>
+              <AuthorBox
+                avatarSrc={getApiUrl(user.profile.profile_pic)}
+                url={`/profile/${user.username}`}
+                name={user.profile.name}
+                // handle={user.username}
+              />
             </div>
-            <Link className="btn btn--main--outline btn--sm" to="">
-              Follow
-            </Link>
+            <FollowButton userProfile={user} />
           </div>
         ))}
       </div>

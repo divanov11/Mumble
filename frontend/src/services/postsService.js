@@ -1,7 +1,7 @@
 import { get, getApiUrl } from './config';
 
 const getPostsByKeyword = (keyword) => get(getApiUrl(`api/posts${keyword}`));
-const getPosts = () => get(getApiUrl(`api/posts`));
+const getPosts = (config) => get(getApiUrl(`api/posts`), config);
 
 const postsService = {
   getPostsByKeyword,

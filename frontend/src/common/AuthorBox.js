@@ -6,10 +6,10 @@ import classNames from 'classnames';
 import Avatar from './Avatar';
 
 const AuthorBox = ({
-  size = 'small',
+  size = 'sm',
   url = '',
   name = '',
-  handle = '@',
+  handle = '',
   className = '',
   avatarSrc = '',
   ...others
@@ -23,7 +23,7 @@ const AuthorBox = ({
       <Avatar size={size} alt={name} src={avatarSrc} />
       <div className="author-box__info">
         <p className="author-box__name">{name}</p>
-        <small className="author-box__handle">@{handle}</small>
+        {handle && <small className="author-box__handle">@{handle}</small>}
       </div>
     </Link>
   );

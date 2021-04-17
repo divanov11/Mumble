@@ -1,29 +1,37 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { Prompt } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
+import { createComment, createRemumble } from '../actions/postActions';
 
 import Button from './Button';
 
-const PostAction = ({ onMessageIconClick, comments, shares }) => {
+const PostAction = ({ onMessageIconClick, comments, shares, postId, setComments }) => {
+  let dispatch = useDispatch();
+
   const [showCommentBox, setShowCommentBox] = useState(false);
   const [comment, setComment] = useState('');
 
-  const toggleCommentBox = () => setShowCommentBox((prev) => !prev);
+  const toggleCommentBox = () => {
+    setShowCommentBox((prev) => !prev);
+  };
   const handleCommentChange = (e) => setComment(e.target.value);
 
   const handleCommentSubmit = (e) => {
     e.preventDefault();
-    window.onbeforeunload = null;
-    alert(`${comment} \n comment Submitted!`);
+    dispatch(
+      createComment(setComments, postId, { content: comment, isComment: true, postId: postId }),
+    );
+    let newComment = true;
+    onMessageIconClick(newComment);
     setComment('');
     toggleCommentBox();
   };
 
-  window.onbeforeunload = function (e) {
-    e.preventDefault();
-    if (comment.trim()) {
-      return 'Discard changes?';
-    }
+  let toggleRemumble = () => {
+    dispatch(createRemumble(postId));
   };
 
   return (
@@ -40,13 +48,17 @@ const PostAction = ({ onMessageIconClick, comments, shares }) => {
         </div>
 
         <div className="action-wrapper" onClick={toggleCommentBox}>
+          {/* <Link role="button" className="post-comment-wrapper"> */}
           <i className="fas fa-comment-lines"> </i>
           <span className="post-action-text">Comment</span>
+          {/* </Link> */}
         </div>
 
         <div className="action-wrapper">
-          <i className="fas fa-paper-plane"></i>
-          <span className="post-action-text">{shares}</span>
+          <i onClick={toggleRemumble} className="fas fa-paper-plane"></i>
+          <span onClick={toggleRemumble} className="post-action-text">
+            {shares}
+          </span>
         </div>
       </div>
       {/* comment Textarea */}

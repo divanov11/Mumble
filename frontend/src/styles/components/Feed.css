@@ -9,12 +9,17 @@
   margin-left: 65px;
 }
 
-.post-meta {
-  line-height: 1;
-  margin-bottom: 0.5rem;
-  font-weight: var(--font-medium);
-  font-size: 1.3rem;
-  color: var(--color-light-gray);
+.remumbled-note {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.remumbled-note i {
+  margin-right: 1rem;
+  color: #c5c5c5;
 }
 
 .post-contents {
@@ -75,13 +80,18 @@
   font-weight: var(--font-medium);
   color: var(--color-success);
   line-height: 0;
-  margin: 1.6rem 0;
+  margin: 1rem 0;
+}
+
+/* Bolds a voting arrow if user has already voted on a particular post */
+
+.vote-count__negative {
+  color: var(--color-gray);
 }
 
 .vote-icon {
-  color: var(--color-gray);
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .up-arrow:hover,
@@ -128,4 +138,19 @@
 .comment__mentioned span:not(:last-child)::after {
   content: ',';
   margin-right: 0.3rem;
+}
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-meta span:first-child {
+  line-height: 1;
+  margin-right: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: var(--font-medium);
+  font-size: 1.3rem;
+  color: var(--color-light-gray);
 }

@@ -1,26 +1,25 @@
 import React, { useState } from 'react';
-import { Link, Prompt } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { getApiUrl } from '../services/config';
-
+import { Prompt } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { createPost } from '../actions/postActions';
 import '../styles/components/CreatePost.css';
 
-import { Button, AuthorBox, TextArea } from '../common';
+import { Button, TextArea } from '../common';
 
 const CreatePost = () => {
-  let auth = useSelector((state) => state.auth);
-  let { user } = auth;
+  let dispatch = useDispatch();
 
   const [message, setMessage] = useState('');
   const [error, setError] = useState(null);
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    window.onbeforeunload = null;
+
     if (!message.trim()) {
       return setError('Post cannot be empty!');
+    } else {
+      dispatch(createPost({ content: message, isComment: false }));
     }
-    alert(`Creating new post with message: ${message}`);
     setMessage('');
   };
 
@@ -31,28 +30,9 @@ const CreatePost = () => {
     }
   };
 
-  window.onbeforeunload = function (e) {
-    e.preventDefault();
-    if (message.trim()) {
-      return 'Discard changes?';
-    }
-  };
-
   return (
     <div className="card create-post">
       <div className="card__body">
-        <div className="create-post__header">
-          <AuthorBox
-            name={user.name}
-            handle={user.username}
-            url={`/profile/${user.username}`}
-            avatarSrc={getApiUrl(user.profile_pic)}
-            size="sm"
-          />
-          <Link to="/create-article">
-            <Button text="Write Article" size="sm" iconName="edit" />
-          </Link>
-        </div>
         <div className="create-post__body">
           <form className="form" onSubmit={onFormSubmit}>
             <TextArea
@@ -64,12 +44,12 @@ const CreatePost = () => {
               hideLabel={true}
               error={error}
             />
-            <Prompt
-              when={message.length > 0}
-              message="Are you sure you want to leave without posting?"
-            />
-            <Button type="submit" color="main" text="Mumble Now" iconName="comment-alt" />
+            <Button type="submit" color="main" text="Mumble Now" size="sm" iconName="comment-alt" />
           </form>
+          <Prompt
+            when={message.length > 0}
+            message="Are you sure you want to leave without posting?"
+          />
         </div>
       </div>
     </div>

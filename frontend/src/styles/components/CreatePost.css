@@ -11,5 +11,4 @@
 
 .create-post__body > .form > .form__field > .input.input--textarea {
   background-color: var(--color-bg);
-  margin: 1rem 0;
 }
