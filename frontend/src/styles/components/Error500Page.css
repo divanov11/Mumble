@@ -17,7 +17,7 @@ link {
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  /* height: 100vh; */
   justify-content: center;
   text-align: center;
 }
@@ -44,6 +44,11 @@ h2 {
 p {
   color: var(--color-text);
   margin-top: 0;
+}
+
+.image__500{
+  height: 145px;
+  width: 145px;
 }
 
 @keyframes spooky {

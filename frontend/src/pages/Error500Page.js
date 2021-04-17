@@ -8,10 +8,10 @@ const Error500Page = ({ error }) => (
     <h1>
       5
       <span>
-        <img src="https://mumble.dev/apple-touch-icon.png" alt="Mumble Logo (0)" />
+        <img className="image__500" src="https://mumble.dev/apple-touch-icon.png" alt="Mumble Logo (0)" />
       </span>
       <span>
-        <img src="https://mumble.dev/apple-touch-icon.png" alt="Mumble Logo (0)" />
+        <img className="image__500" src="https://mumble.dev/apple-touch-icon.png" alt="Mumble Logo (0)" />
       </span>
     </h1>
     <h2>Internal Server Error !</h2>
