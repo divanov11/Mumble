@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
+import { Prompt } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import { createComment, createRemumble } from '../actions/postActions';
@@ -74,6 +75,10 @@ const PostAction = ({ onMessageIconClick, comments, shares, postId, setComments 
           </Button>
         </form>
       )}
+      <Prompt
+        when={comment.length > 0}
+        message="Do you want to leave without finishing your comment?"
+      />
     </div>
   );
 };

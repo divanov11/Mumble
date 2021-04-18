@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useHistory, Prompt } from 'react-router-dom';
 
 import '../styles/components/CreateDiscussionPage.css';
 
@@ -11,17 +11,36 @@ const CreateDiscussionPage = () => {
   const history = useHistory();
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
+  const [isDiscussionSubmitted, setIsDiscussionSubmitted] = useState(false);
 
   const handleTitleChange = (e) => setTitle(e.target.value);
   const handleBodyChange = (e) => setBody(e.target.value);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    window.onbeforeunload = null;
     // use the form data and make a request to API
     alert('Discussion Created!! \n Now you will be directed to the Discussion Page');
-    // redirect to the discussion page, in the real request slug should be changed to created discussion's slug
-    history.push(`/discussion/What-is-this-locking-pin-for-a-hinge-called`);
+    // set isArticleSubmitted variables
+    setIsDiscussionSubmitted(true);
+    // reset title and body variables
+    setTitle('');
+    setBody('');
   };
+
+  window.onbeforeunload = function (e) {
+    e.preventDefault();
+    if (title.trim() || body.trim()) {
+      return 'Discard changes?';
+    }
+  };
+
+  useEffect(() => {
+    if (isDiscussionSubmitted) {
+      // redirect to the articles page, in the real request slug should be changed to created article's slug
+      history.push(`/article/article1`);
+    }
+  }, [history, isDiscussionSubmitted]);
 
   return (
     <div className="container two-column-layout">
@@ -55,6 +74,10 @@ const CreateDiscussionPage = () => {
                 Submit
               </Button>
             </form>
+            <Prompt
+              when={title.length > 0 || body.length > 0}
+              message="Are you sure you want to leave without finishing your discussion?"
+            />
           </div>
         </div>
       </section>

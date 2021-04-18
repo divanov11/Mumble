@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Prompt } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { createPost } from '../actions/postActions';
 import '../styles/components/CreatePost.css';
@@ -45,6 +46,10 @@ const CreatePost = () => {
             />
             <Button type="submit" color="main" text="Mumble Now" size="md" iconName="comment-alt" />
           </form>
+          <Prompt
+            when={message.length > 0}
+            message="Are you sure you want to leave without posting?"
+          />
         </div>
       </div>
     </div>
