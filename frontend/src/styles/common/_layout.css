@@ -1,0 +1,11 @@
+.two-column-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .two-column-layout {
+    grid-template-columns: 1fr;
+  }
+}

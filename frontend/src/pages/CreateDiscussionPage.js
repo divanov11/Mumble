@@ -24,7 +24,7 @@ const CreateDiscussionPage = () => {
   };
 
   return (
-    <div className="container discussion--layout">
+    <div className="container two-column-layout">
       <section>
         <div className="card">
           <div className="card__body">
@@ -58,7 +58,7 @@ const CreateDiscussionPage = () => {
           </div>
         </div>
       </section>
-      <section id="right-sidebar">
+      <section>
         <DiscussionsCard discussions={discussions} />
       </section>
     </div>

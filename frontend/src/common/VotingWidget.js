@@ -6,8 +6,8 @@ import { modifyVote } from '../actions/postActions';
 
 const VotingWidget = ({ votes, postId, postUsername, upVoters, downVoters, authUserId }) => {
   const dispatch = useDispatch();
-  const upVote = upVoters.includes(authUserId);
-  const downVote = downVoters.includes(authUserId);
+  const isUpVoted = upVoters?.includes(authUserId);
+  const isDownVoted = downVoters?.includes(authUserId);
 
   return (
     <div className="post-votes">
@@ -15,7 +15,7 @@ const VotingWidget = ({ votes, postId, postUsername, upVoters, downVoters, authU
         onClick={() =>
           dispatch(modifyVote({ post_id: postId, value: 'upvote', post_username: postUsername }))
         }
-        className={`${upVote ? 'fas' : 'far'} fa-caret-up vote-icon up-arrow`}
+        className={`${isUpVoted ? 'fas' : 'far'} fa-caret-up vote-icon up-arrow`}
       ></i>
 
       {votes === 0 ? (
@@ -30,7 +30,7 @@ const VotingWidget = ({ votes, postId, postUsername, upVoters, downVoters, authU
         onClick={() =>
           dispatch(modifyVote({ post_id: postId, value: 'downvote', post_username: postUsername }))
         }
-        className={`${downVote ? 'fas' : 'far'} fa-caret-down vote-icon down-arrow`}
+        className={`${isDownVoted ? 'fas' : 'far'} fa-caret-down vote-icon down-arrow`}
       ></i>
     </div>
   );

@@ -12,6 +12,7 @@
 @import url('./common/_base.css');
 @import url('./common/_typography.css');
 @import url('./common/_utilities.css');
+@import url('./common/_layout.css');
 @import url('./common/_avatar.css');
 @import url('./common/_button.css');
 @import url('./common/_card.css');
@@ -20,4 +21,4 @@
 @import url('./common/_tag-input.css');
 @import url('./common/_author-box.css');
 @import url('./common/_toastify.css');
-@import url('./common//_message.css');
+@import url('./common/_message.css');

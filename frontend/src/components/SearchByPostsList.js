@@ -15,8 +15,7 @@ const SearchByPostsList = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const keyword = location.search;
-  const postSearchList = useSelector((state) => state.postSearchList);
-  const { posts } = postSearchList;
+  const { posts } = useSelector((state) => state.postSearchList);
 
   useEffect(() => {
     dispatch(searchPosts(keyword));

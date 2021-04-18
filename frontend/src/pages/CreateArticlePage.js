@@ -28,7 +28,7 @@ const CreateArticlePage = () => {
   });
 
   return (
-    <div className="container create-article--layout">
+    <div className="container two-column-layout">
       <section>
         <div className="card">
           <div className="card__body">
@@ -68,7 +68,7 @@ const CreateArticlePage = () => {
           </div>
         </div>
       </section>
-      <section id="right-sidebar">
+      <section>
         <ArticlesCard articles={articles} />
       </section>
     </div>
