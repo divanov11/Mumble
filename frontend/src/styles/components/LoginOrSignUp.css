@@ -43,6 +43,7 @@
   display: grid;
   align-items: center;
   padding: 20px;
+  background-color: var(--color-bg);
 }
 
 #title {
@@ -52,6 +53,7 @@
 
 #bottom-content {
   margin-top: 40px;
+  background-color: var(--color-bg);
 }
 
 @media screen and (max-width: 1300px) {
