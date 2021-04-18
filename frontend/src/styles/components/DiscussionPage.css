@@ -28,10 +28,6 @@
   align-items: center;
 }
 
-.question-sidebar .user-thumbnail {
-  margin-right: 0;
-}
-
 .big-vote-count {
   font-size: 16px;
   font-weight: 900;

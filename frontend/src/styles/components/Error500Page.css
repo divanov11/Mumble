@@ -1,6 +1,4 @@
 .main500page {
-  background-color: var(--color-bg);
-  font-family: 'Poppins', sans-serif;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -8,30 +6,22 @@
   text-align: center;
 }
 
-.main500page h1 {
-  color: var(--color-text);
+.main500page__banner {
   font-size: 18rem;
   margin: 0.025em 0;
   text-shadow: 0.05em 0.05em 0 rgba(0, 0, 0, 0.25);
   white-space: nowrap;
 }
 
-.main500page span {
-  color: var(--color-main);
-  display: inline-block;
+.main500page__logo {
+  height: 140px;
+  width: 140px;
 }
 
-.main500page h2 {
-  color: var(--color-text);
+.main500page__title {
   margin-bottom: 0.4em;
 }
 
-.main500page p {
-  color: var(--color-text);
-  margin-top: 0;
-}
-
-.image__500 {
-  height: 140px;
-  width: 140px;
+.main500page__info {
+  margin-bottom: 0.8em;
 }
