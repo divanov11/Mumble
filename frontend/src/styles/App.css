@@ -27,6 +27,10 @@ textarea:focus-within {
   resize: none;
 }
 
+Link:hover{
+text-decoration: underline 1px var(--color-text);
+}
+
 #post-btn-wrapper {
   display: flex;
   justify-content: flex-end;
