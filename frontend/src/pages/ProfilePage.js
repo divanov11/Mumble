@@ -26,7 +26,7 @@ const Profile = ({ match }) => {
     dispatch(listUserPosts(username));
   }, [dispatch, username]);
 
-  return user ? (
+  return (
     <div className="container three-column-layout">
       <section>
         <UserCard user={user} />
@@ -49,8 +49,6 @@ const Profile = ({ match }) => {
         <ArticlesCard articles={articles} />
       </section>
     </div>
-  ) : (
-    <Redirect to="/404" />
   );
 };
 

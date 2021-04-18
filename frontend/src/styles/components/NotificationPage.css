@@ -35,21 +35,3 @@
   color: var(--color-light-gray);
   margin-left: 80%;
 }
-
-.notification--layout {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  column-gap: 1rem;
-}
-
-@media screen and (max-width: 1300px) {
-  .notification--layout {
-    grid-template-columns: 2fr 1fr;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .notification--layout {
-    grid-template-columns: 1fr;
-  }
-}

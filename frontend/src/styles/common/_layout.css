@@ -28,6 +28,10 @@
   .three-column-layout__right-column {
     display: none;
   }
+
+  .three-column-layout__condense {
+    grid-template-columns: 0fr 2fr 1fr;
+  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -37,5 +41,12 @@
 
   .three-column-layout__left-column {
     display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .three-column-layout__condense {
+    display: flex;
+    flex-direction: column-reverse;
   }
 }

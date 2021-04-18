@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/components/Notification.css';
+import '../styles/components/NotificationPage.css';
 
 import { Card } from '../common';
 import { DiscussionsCard, Notification } from '../components';
@@ -7,8 +7,8 @@ import { discussions, notifications } from '../data';
 
 function NotificationsPage() {
   return (
-    <div className="container notification--layout">
-      <section id="center-content">
+    <div className="container two-column-layout">
+      <section>
         <Card>
           <div className="notification">
             <h5>All Notifications</h5>
@@ -19,7 +19,7 @@ function NotificationsPage() {
         </Card>
       </section>
 
-      <section id="sidebar--right--profile">
+      <section className="two-column-layout__right-column">
         <DiscussionsCard discussions={discussions} />
       </section>
     </div>

@@ -1,9 +1,9 @@
-.not__found h2 {
+.not-found h2 {
   color: #73af8d;
   font-size: 6rem;
 }
 
-.not__found span img {
+.not-found span img {
   height: 4.2rem;
 }
 
@@ -21,22 +21,22 @@
   }
 }
 
-.fade__404__logo {
+.not-found__logo {
   opacity: 0;
   animation: fadeInUp 1s ease-in-out 0s forwards;
   animation-delay: 0.2s;
 }
 
-.not__found h2,
-.not__found h3,
-.not__found p {
+.not-found h2,
+.not-found h3,
+.not-found p {
   text-align: center;
 }
 
-.not__found h3 {
+.not-found h3 {
   font-size: 28px;
 }
 
-.not__found {
+.not-found {
   text-align: center;
 }

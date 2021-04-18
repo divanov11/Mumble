@@ -24,8 +24,9 @@ const SearchPage = () => {
   let [category, setCategory] = useState(CATEGORY_USERS);
 
   return (
-    <div id="search-page-layout" className="container">
+    <div className="container three-column-layout three-column-layout__condense">
       <div></div>
+
       <div>
         {category === CATEGORY_USERS && <SearchByUsersList />}
         {category === CATEGORY_POSTS && <SearchByPostsList />}

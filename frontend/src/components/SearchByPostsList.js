@@ -4,7 +4,7 @@ import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 
 import '../styles/components/SearchBox.css';
-import '../styles/components/SearchByUsersandPostList.css';
+import '../styles/components/SearchByUsersAndPostList.css';
 import logo from '../assets/logo/dark-logo.png';
 
 import { searchPosts } from '../actions/postActions';
@@ -21,22 +21,16 @@ const SearchByPostsList = () => {
     dispatch(searchPosts(keyword));
   }, [dispatch, keyword]);
 
+  const showResultsNotFound = posts.length === 0;
+
   return (
     <div className="category-wrapper" id="category-posts">
-      {posts.length > 0 ? (
-        posts.map((post) => (
-          <Card key={post.id}>
-            <div className="post-wrapper">
-              <PostCard post={post} link={'/'} />
-            </div>
-          </Card>
-        ))
-      ) : (
+      {showResultsNotFound && (
         <div className="card">
           <div className="card__body">
-            <div className="not__found">
+            <div className="not-found">
               <div>
-                <h2 className="fade__404__logo">
+                <h2 className="not-found__logo">
                   4
                   <span>
                     <img src={logo} alt="Mumble Icon" />
@@ -53,6 +47,14 @@ const SearchByPostsList = () => {
           </div>
         </div>
       )}
+      {!showResultsNotFound &&
+        posts.map((post) => (
+          <Card key={post.id}>
+            <div className="post-wrapper">
+              <PostCard post={post} link={'/'} />
+            </div>
+          </Card>
+        ))}
     </div>
   );
 };
