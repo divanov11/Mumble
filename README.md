@@ -52,7 +52,7 @@ Check out the [contributing guide](https://github.com/divanov11/Mumble/blob/mast
 Also if you are looking for a complete style guides, please refer to [**Mumble Style Guide**](STYLE_GUIDE.md).
 We highly recommend to go through the guideline before start contributing.
 
-> **_⚠ Those who wants to contribute on the repo, from now, before pushing/committing your changes, please make sure you run command `npm run format` or `yarn format` or use Prettier plugin to automatically format your code. We want to maintain consistency that's why we want to enforce the formatting. It's required!_**
+> **_⚠ Those who wants to contribute on the repo, from now, before pushing/committing your changes, please make sure you run command `npm run format` or `yarn format` or use Prettier plugin to automatically format your code. We want to maintain consistency that's why we want to enforce the formatting. It's required! _**
 
 ## 📸 Screenshots :
 
