@@ -44,8 +44,10 @@ const SearchByPostsList = () => {
                   </span>
                   4
                 </h2>
-                <h3>Mumble post not found!</h3>
-                <p>Seems you forgot the post title or removed </p>
+                <h3>Mumble post not found !</h3>
+                <br />
+                <p>Looks like the post title was spelled wrong or the post has been deleted !</p>
+                <br />
                 <Link to="/">&#x2190; Go Home</Link>
               </div>
             </div>
