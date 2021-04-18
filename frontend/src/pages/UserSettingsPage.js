@@ -148,7 +148,7 @@ function UserSettingsPage() {
 
           <div className="settings-update">
             <div className="settings-update__title">
-              <span>Dark Theme ({ isDarkTheme ? "enabled" : "disabled" })</span>
+              <span>Dark Theme ({isDarkTheme ? 'enabled' : 'disabled'})</span>
             </div>
             <label className="toggle-theme-switch">
               <input
