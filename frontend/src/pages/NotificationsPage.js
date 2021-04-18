@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/components/Profile.css';
 import '../styles/components/Notification.css';
 
 import { Card } from '../common';

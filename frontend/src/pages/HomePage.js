@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactPlaceholder from 'react-placeholder';
 
-import '../styles/components/Home.css';
+import '../styles/components/HomePage.css';
 
 import {
   Contributors,
@@ -33,12 +33,12 @@ const HomePage = () => {
   }, [dispatch]);
 
   return (
-    <div className="container home--layout">
-      <section id="sidebar--left--home">
+    <div className="container three-column-layout">
+      <section className="three-column-layout__left-column">
         <Contributors users={contributors} />
       </section>
 
-      <section id="center-content">
+      <section>
         <CreatePost />
         <ReactPlaceholder
           customPlaceholder={<PostCardPlaceholder />}
@@ -49,7 +49,7 @@ const HomePage = () => {
         </ReactPlaceholder>
       </section>
 
-      <section id="sidebar--right--home">
+      <section className="three-column-layout__right-column">
         <TopicTags tags={user.interests} />
         <DiscussionsCard discussions={discussions} />
         {/* 

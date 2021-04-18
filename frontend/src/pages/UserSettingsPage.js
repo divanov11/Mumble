@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import '../styles/components/UserSettings.css';
+import '../styles/components/UserSettingsPage.css';
 
 import { Avatar, Button, Card } from '../common';
 import { ProfilePicCropperModal, UserSettingUpdateModal } from '../components';
@@ -54,7 +54,7 @@ function UserSettingsPage() {
   };
 
   return (
-    <div className="container settings--layout">
+    <div className="container two-column-layout two-column-layout--reverse">
       <UserSettingUpdateModal
         heading="Update User Settings"
         dataType={modelContent}

@@ -15,7 +15,7 @@
   cursor: pointer;
 }
 
-.notification--unread p {
+.notification__content--unread {
   font-weight: 500;
 }
 
@@ -23,7 +23,7 @@
   background-color: var(--color-light);
 }
 
-.notification--item--right {
+.notification__right-content {
   margin-left: 25px;
 }
 
