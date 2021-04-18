@@ -1,14 +1,1 @@
-.create-post .btn--sm {
-  font-size: 1.35rem;
-  padding: 0.8rem 2rem;
-}
-
-.create-post__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.create-post__body > .form > .form__field > .input.input--textarea {
-  background-color: var(--color-bg);
-}
+/* until we need it, leaving this file */

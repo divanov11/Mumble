@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const Button = ({
-  color = '',
-  size = '',
-  outline = false,
-  link = false,
-  className = '',
-  text = '',
-  iconStyle = 'fas',
-  iconName = '',
   children,
+  className = '',
+  color = '',
+  iconName = '',
+  iconStyle = 'fas',
+  link = false,
+  outline = false,
+  size = '',
+  text = '',
   ...others
 }) => {
   return (
@@ -34,13 +34,13 @@ const Button = ({
 };
 
 Button.propTypes = {
-  color: PropTypes.oneOf(['main', 'sub']),
-  size: PropTypes.oneOf(['sm', 'lg']),
   className: PropTypes.string,
-  outline: PropTypes.bool,
-  link: PropTypes.bool,
+  color: PropTypes.oneOf(['main', 'sub']),
   iconName: PropTypes.string,
   iconStyle: PropTypes.string,
+  link: PropTypes.bool,
+  outline: PropTypes.bool,
+  size: PropTypes.oneOf(['sm', 'lg']),
   text: PropTypes.string,
 };
 

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { getApiUrl } from '../services/config';
-import AuthorBox from './AuthorBox';
 import PostAction from './PostAction';
-import VotingWidget from './VotingWidget';
+import { AuthorBox, VotingWidget } from '../common';
 import { getPostComments } from '../actions/postActions';
 import PostCardOptions from './PostCardOptions';
 
@@ -52,14 +52,12 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
       <div className="post-contents">
         <VotingWidget
           votes={post.vote_rank}
-          post_id={post.id}
-          post_username={post.user.username}
+          postId={post.id}
+          postUsername={post.user.username}
           upVoters={post.upVoters}
           downVoters={post.downVoters}
-          post_userid={post.user.id}
-          authUser={authUser}
+          authUserId={authUser.id}
         />
-
         <div className="post-body">
           {children}
           {post.content}

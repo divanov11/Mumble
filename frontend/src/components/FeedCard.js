@@ -2,7 +2,8 @@ import React from 'react';
 
 import '../styles/components/Feed.css';
 
-import { Card, PostCard } from '../common';
+import { Card } from '../common';
+import PostCard from './PostCard';
 
 function Feed({ posts }) {
   return (

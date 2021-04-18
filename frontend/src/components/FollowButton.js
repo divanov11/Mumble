@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { followUser } from '../actions/userActions';
-import Button from './Button';
+import Button from '../common/Button';
 
 const FollowButton = ({ userProfile }) => {
   const auth = useSelector((state) => state.auth);

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import '../styles/components/Profile.css';
+import '../styles/components/ProfilePage.css';
 
 import { ArticlesCard, DiscussionsCard, FeedCard, SkillTags, UserCard } from '../components';
 import { articles, discussions } from '../data';
@@ -26,15 +26,14 @@ const Profile = ({ match }) => {
     dispatch(listUserPosts(username));
   }, [dispatch, username]);
 
-  return user ? (
-    <div className="container profile--layout">
-      <section id="sidebar--left--profile">
+  return (
+    <div className="container three-column-layout">
+      <section>
         <UserCard user={user} />
-        {console.log('USER:', user)}
         <SkillTags tags={user.skills} />
       </section>
 
-      <section id="center-content">
+      <section>
         <div className="card">
           <div className="card__body">
             <Link className="btn btn--main--outline" to={'/'}>
@@ -45,13 +44,11 @@ const Profile = ({ match }) => {
         <FeedCard posts={posts} />
       </section>
 
-      <section id="sidebar--right--profile">
+      <section className="three-column-layout__right-column">
         <DiscussionsCard discussions={discussions} />
         <ArticlesCard articles={articles} />
       </section>
     </div>
-  ) : (
-    <Redirect to="/404" />
   );
 };
 

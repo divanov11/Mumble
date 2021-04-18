@@ -7,7 +7,7 @@ import '../styles/components/LoginOrSignUp.css';
 import { LoginForm, SignupForm } from '../components';
 
 const LoginSignupPage = ({ match, history }) => {
-  const params = match.params['parameter'];
+  const { parameter } = match.params;
 
   let auth = useSelector((state) => state.auth);
   let { user } = auth;
@@ -36,7 +36,7 @@ const LoginSignupPage = ({ match, history }) => {
       <div id="right--column--login">
         <div id="form-wrapper">
           <h1 id="title">Mumble</h1>
-          {params === 'login' ? <LoginForm /> : <SignupForm />}
+          {parameter === 'login' ? <LoginForm /> : <SignupForm />}
         </div>
       </div>
     </div>

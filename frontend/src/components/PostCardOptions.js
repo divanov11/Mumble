@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDetectClickOutside } from 'react-detect-click-outside';
-import { formatDate } from '../utilities/';
+import { formatDate } from '../utilities';
 import classNames from 'classnames';
+
 import '../styles/components/PostCardOptions.css';
 
 const PostCardOptions = ({ post }) => {

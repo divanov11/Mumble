@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 import { getApiUrl } from '../services/config';
-
-import { AuthorBox, FollowButton } from '../common';
-
+import { AuthorBox } from '../common';
+import FollowButton from './FollowButton';
 import { listRecommenedUsers } from '../actions/userActions';
 
 const Contributors = () => {

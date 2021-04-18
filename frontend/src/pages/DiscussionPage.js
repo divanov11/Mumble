@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import '../styles/components/Discussion.css';
+import '../styles/components/DiscussionPage.css';
 
 import { Avatar, VotingWidget } from '../common';
 import { Contributors, DiscussionsCard } from '../components';

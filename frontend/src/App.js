@@ -48,7 +48,7 @@ const App = () => {
               <Route exact path="/discussion/:slug" component={DiscussionPage} />
               <Route exact path="/article/:slug" component={ArticlePage} />
               <Route exact path="/search" component={SearchPage} />
-              <PrivateRoute exact path="/settings" component={() => <UserSettingsPage />} />
+              <PrivateRoute exact path="/settings" component={UserSettingsPage} />
               <Route path="/404" component={Error404page} />
               <Redirect to="/404" />
             </Switch>

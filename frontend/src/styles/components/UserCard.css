@@ -1,0 +1,20 @@
+.user-card__profile-stats-wrapper {
+  margin: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.user-card__profile-name {
+  font-size: 28px;
+}
+
+.user-card__profile-pic {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.user-card__profile-summary {
+  text-align: center;
+}

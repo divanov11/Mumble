@@ -6,12 +6,12 @@ import classNames from 'classnames';
 import Avatar from './Avatar';
 
 const AuthorBox = ({
+  avatarSrc = '',
+  className = '',
+  handle = '',
+  name = '',
   size = 'sm',
   url = '',
-  name = '',
-  handle = '',
-  className = '',
-  avatarSrc = '',
   ...others
 }) => {
   return (
@@ -30,12 +30,12 @@ const AuthorBox = ({
 };
 
 AuthorBox.propTypes = {
-  size: PropTypes.oneOf(['sm', 'md', 'lg']),
   avatarSrc: PropTypes.string,
-  url: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  handle: PropTypes.string.isRequired,
   className: PropTypes.string,
+  handle: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  url: PropTypes.string.isRequired,
 };
 
 export default AuthorBox;

@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Requirements
 
-For development, you will need Node.js and a node global package, NPM or Yarn, installed in your environement along with a text editor of your choice.
+For development, you will need Node.js and a node global package, NPM or Yarn, installed in your environment along with a text editor of your choice.
 
 ### Node
 - #### Node installation on Windows or MacOS
@@ -43,7 +43,7 @@ Also, be sure to have `git` available in your PATH, `npm` might need it (You can
 
 ## Download & Setup Instructions
 
-Clone the project. This will download the GitHub respository files onto your local machine.
+Clone the project. This will download the GitHub repository files onto your local machine.
 
     git clone https://github.com/divanov11/mumble
 

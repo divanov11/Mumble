@@ -20,6 +20,7 @@
   padding-left: 30px;
 }
 
+/* TODO: Figure out why we need this?  This seems like a bug in CK Editor with bullet lists not indenting. */
 .ck-content li {
   margin-left: 50px;
 }
@@ -27,20 +28,4 @@
 :root .dark-theme {
   /* CKEditor content area */
   --ck-color-base-background: var(--color-bg);
-}
-
-@media screen and (max-width: 1300px) {
-  .create-article--layout {
-    grid-template-columns: 2fr 1fr;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .create-article--layout {
-    display: block;
-  }
-
-  #right-sidebar {
-    margin-top: 1rem;
-  }
 }

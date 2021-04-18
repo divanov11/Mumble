@@ -1,20 +1,20 @@
 import React from 'react';
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 const Input = ({
-  type = 'radio',
-  name = '',
-  label = '',
-  hideLabel = false,
   className = '',
-  options = [],
   error,
+  hideLabel = false,
+  label = '',
+  name,
+  options = [],
+  type = 'radio',
   ...others
 }) => {
   return (
     <div className={classNames(className, 'form__field', `form__field--${type}`)}>
-      <p className={classNames(`${hideLabel && 'form__label--hidden'}`)}>{label}:</p>
+      <p className={classNames({ 'form__label--hidden': hideLabel })}>{label}:</p>
       {options.map((option) => (
         <span key={option?.value}>
           <input
@@ -34,18 +34,18 @@ const Input = ({
 };
 
 Input.propTypes = {
+  className: PropTypes.string,
+  error: PropTypes.string,
+  hideLabel: PropTypes.bool,
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   options: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       value: PropTypes.string.isRequired,
     }),
   ).isRequired,
-  name: PropTypes.string.isRequired,
   type: PropTypes.oneOf(['checkbox', 'radio']),
-  label: PropTypes.string.isRequired,
-  hideLabel: PropTypes.bool,
-  className: PropTypes.string,
-  error: PropTypes.string,
 };
 
 export default Input;

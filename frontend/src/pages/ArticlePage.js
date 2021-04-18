@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../styles/components/Article.css';
+import '../styles/components/ArticlePage.css';
 
 import { ArticlesCard } from '../components';
 import { articles } from '../data';
@@ -10,7 +10,7 @@ const ArticlePage = ({ match }) => {
   let relatedArticles = articles.filter((d) => d.slug !== match.params.slug);
 
   return (
-    <div id="article--layout" className="container">
+    <div className="two-column-layout container">
       <section>
         <div className="card">
           <div className="card__body">
@@ -29,7 +29,7 @@ const ArticlePage = ({ match }) => {
         </div>
       </section>
 
-      <section id="sidebar--right--article">
+      <section>
         <ArticlesCard articles={relatedArticles} />
       </section>
     </div>

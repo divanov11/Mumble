@@ -8,7 +8,7 @@ const SearchByArticlesList = ({ articles }) => {
       {articles.map((article, index) => (
         <div key={index} className="card">
           <div className="card__body">
-            <div className="search--item--wrapper--2">
+            <div className="article-item">
               <img alt="" className="avatar--md" src={article.thumbnail} />
               <div>
                 <strong>{article.title}</strong>

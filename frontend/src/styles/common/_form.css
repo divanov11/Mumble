@@ -40,13 +40,13 @@ input.input[type='email'],
 input.input[type='password'],
 input.input[type='number'],
 textarea.input {
-  background-color: var(--color-white);
   min-width: 24rem;
   width: 100%;
   padding: 1.2rem 1.5rem;
   border-radius: 0.5rem;
   border: 2px solid var(--color-light);
   transition: all 0.3s ease-in-out;
+  background-color: var(--color-bg);
 }
 
 input.input[type='text']:focus,

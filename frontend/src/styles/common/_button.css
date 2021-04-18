@@ -54,13 +54,18 @@
 }
 
 .btn--sm {
-  padding: 0.5rem 1.2rem;
   font-size: 1.3rem;
+  padding: 0.5rem 1.2rem;
+}
+
+.btn--md {
+  font-size: 1.35rem;
+  padding: 0.8rem 2rem;
 }
 
 .btn--lg {
-  padding: 1.2rem 4rem;
   font-size: 1.8rem;
+  padding: 1.2rem 4rem;
 }
 
 .btn--main--link,

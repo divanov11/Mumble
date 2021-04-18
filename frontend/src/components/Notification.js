@@ -19,11 +19,7 @@ const Notification = ({ notification }) => {
       onClick={() => markAsRead(notification)}
       to={getNotificationLink(notification)}
     >
-      <div
-        className={classNames('notification--item', {
-          'notification--unread': !notification.isRead,
-        })}
-      >
+      <div className={classNames('notification--item')}>
         <Avatar
           src={notification.user.profile_pic}
           name={notification.user.name}
@@ -31,9 +27,15 @@ const Notification = ({ notification }) => {
           url={`/profile/${notification.user.username}`}
           size="sm"
         />
-        <div className="notification--item--right">
+        <div className="notification__right-content">
           <NotificationTitle notification={notification} />
-          <p>{notification.description}</p>
+          <p
+            className={classNames('notification__content', {
+              'notification__content--unread': !notification.isRead,
+            })}
+          >
+            {notification.description}
+          </p>
           <p className="notification--meta">{formatDate.distanceDate(notification.created)}</p>
         </div>
       </div>

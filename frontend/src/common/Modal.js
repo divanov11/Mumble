@@ -4,6 +4,8 @@ import { useEffect, useRef } from 'react';
 
 import '../styles/components/Modal.css';
 
+// TODO: Make it universal and modular
+
 const Modal = ({ heading, children, active, setActive }) => {
   const modalRef = useRef();
 
@@ -48,4 +50,5 @@ const Modal = ({ heading, children, active, setActive }) => {
     document.getElementById('modal'),
   );
 };
+
 export default Modal;
