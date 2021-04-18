@@ -15,8 +15,8 @@ The main goal of this style guide is providing the contributors a set of instruc
 
 - 🎭 Mumble CSS Style Guide
 
-      - 🎹 Pattern and Naming
       - 📦 Modularity
+      - 🎹 Pattern and Naming
       - 🎨 Colors
       - ✍ Fonts
       - 🧰 UI Kits
@@ -48,6 +48,21 @@ The main goal of this style guide is providing the contributors a set of instruc
 
 
 <h2 align="center">🎭 Mumble CSS Style Guide</h2>
+
+
+#### 📦 Modularity :
+
+    Modular CSS is:
+
+    - A guideline-based approach for breaking down pages into generic reusable CSS code.
+    - Based on classes and consistent naming conventions.
+    - Easy to read and maintain.
+
+That's why in Mumble, we use **BEM** : *one of the CSS Modules* !
+
+    Discover BEM in the section below 👇
+#
+
 
 #### 🎹 Pattern and Naming :
 The Mumble frontend uses the Block, Element, Modifier methodology (commonly referred to as BEM) which is a popular naming convention for classes in HTML and CSS. It helps developers better understand the relationship between the HTML and CSS in a given project. An example of Bem is shown below:
@@ -82,10 +97,6 @@ The markup might then look like this:
 </div>
 
 ```
-
-#### 📦 Modularity :
-
-#
 
 #### 🎨 Colors :
 **---> The website has two themes :**
