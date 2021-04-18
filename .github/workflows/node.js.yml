@@ -33,33 +33,22 @@ jobs:
       - name: Running ESLint Linter
         run: npm run lint --if-present
         working-directory: ./frontend
-        env:
-          CI: false
 
       - name: Running Stylelint
         run: npm run stylelint --if-present
         working-directory: ./frontend
-        env:
-          CI: false
 
       - name: Running Prettier Code Formatter
         run: npm run format:check --if-present
         working-directory: ./frontend
-        env:
-          CI: false
 
       - name: Performing React build
         run: npm run build --if-present
         working-directory: ./frontend
-        env:
-          CI: false # causes warnings to become errors, and there are tons of pa11y errors to fix
 
       - name: Performing React tests if any defined
         run: npm test
         working-directory: ./frontend
-        env:
-          CI: true # so that the test prompt doesn't show up
-
 
       # - name: Cypress run
       #   uses: cypress-io/github-action@v2
