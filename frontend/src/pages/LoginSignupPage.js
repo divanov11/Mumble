@@ -11,6 +11,7 @@ import '../styles/components/LoginOrSignUp.css';
 import { LoginForm, SignupForm } from '../components';
 import { toggleTheme as DarkLightTheme } from '../actions/local';
 import { Link } from 'react-router-dom';
+import { Button } from '../common';
 
 const LoginSignupPage = ({ match, history }) => {
   const { parameter } = match.params;
@@ -31,12 +32,9 @@ const LoginSignupPage = ({ match, history }) => {
       <div className="loginSignup__header">
         <div className="container">
           <div className="loginSignup__headerLeft">
-            <Link to="/">
-              <img
-                className="loginSignup__headerLogo"
-                src={isDarkTheme ? logoDark : logoLight}
-                alt="Logo"
-              />
+            <Link className="loginSignup__headerLogo" to="/">
+              <img src={isDarkTheme ? logoDark : logoLight} alt="Logo" />
+              <h1>Mumble</h1>
             </Link>
             <h2 className="loginSignup__headerTitle">A place for developers to</h2>
             <h5 className="loginSignup__headerSubtitle">
@@ -61,6 +59,23 @@ const LoginSignupPage = ({ match, history }) => {
         <div className="loginSignup__body">
           <div className="loginSignup__bodyLeft">
             {parameter === 'login' ? <LoginForm /> : <SignupForm />}
+            <div className="loginSignup__social">
+              <Button
+                color="main"
+                outline
+                iconStyle="fab"
+                iconName="github"
+                text="Continue with Github"
+              />
+              <p>or</p>
+              <Button
+                color="sub"
+                outline
+                iconStyle="fab"
+                iconName="google"
+                text="Continue with Google"
+              />
+            </div>
           </div>
           <div className="loginSignup__bodyRight">
             <img
@@ -74,6 +89,21 @@ const LoginSignupPage = ({ match, history }) => {
           <div className="container">
             <div className="loginSignup__footerLeft">
               <p>&copy; Mumble Community {new Date().getFullYear()}</p>
+              <span style={{ marginLeft: '1.5rem' }}>&bull;</span>
+              <a className="loginSignup__footerIcon" href="/" target="_blank">
+                <i className="fab fa-facebook"></i>
+              </a>
+              <a className="loginSignup__footerIcon" href="/" rel="noreferrer" target="_blank">
+                <i className="fab fa-twitter"></i>
+              </a>
+              <a
+                className="loginSignup__footerIcon"
+                href="https://discord.com/invite/TxgpyK8pzf"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <i className="fab fa-discord"></i>
+              </a>
             </div>
             <div className="loginSignup__footerRight">
               <p>
@@ -81,7 +111,7 @@ const LoginSignupPage = ({ match, history }) => {
               </p>
               <a
                 className="loginSignup__footerIcon"
-                href="https://github.com/denis11/Mumble"
+                href="https://github.com/divanov11/Mumble"
                 rel="noreferrer"
                 target="_blank"
               >
