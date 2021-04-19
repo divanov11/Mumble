@@ -1,71 +1,84 @@
-#login--page--container {
-  display: grid;
-  grid-template-columns: 5fr 4fr;
+.loginSignup {
   height: 100vh;
 }
 
-#left--column--login {
-  background-color: var(--color-sub);
-  color: var(--color-white);
-  display: grid;
-  justify-content: center;
+.loginSignup__header {
+  padding: 3rem 0;
+  background-color: var(--color-light);
+}
+
+.dark-theme .loginSignup__header {
+  background-color: var(--color-main-light);
+}
+
+.loginSignup__header > .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.loginSignup__headerLogo {
+  height: 6rem;
+}
+
+.loginSignup__headerTitle {
+  margin-top: 4rem;
+  color: var(--color-sub);
+  font-size: 4.5rem;
+  text-transform: uppercase;
+}
+
+.loginSignup__headerSubtitle {
+  font-size: 2rem;
+}
+
+.loginSignup__themeIcon,
+.loginSignup__footerIcon {
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.loginSignup__body {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.loginSignup__heroImage {
+  height: 33vw;
+  position: absolute;
+  top: -15vh;
+  right: 0;
+}
+
+.loginSignup__footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.loginSignup__footer {
+  padding: 0.5rem 0;
+  background-color: var(--color-main-light);
+}
+
+.loginSignup__footer > .container {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
-#left-column-content {
-  padding: 20px;
-  text-align: center;
+.loginSignup__footer p {
+  font-size: 1.3rem;
 }
 
-#headline {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-#subheadline {
-  font-size: 22px;
-  color: var(--color-light);
-}
-
-#screenshot {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 90%;
-  -webkit-box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 55%);
-  box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 55%);
-}
-
-.login--summary {
-  color: var(--color-light);
-}
-
-#right--column--login {
-  display: grid;
+.loginSignup__footerRight {
+  line-height: 1.3;
+  display: flex;
   align-items: center;
-  padding: 20px;
-  background-color: var(--color-bg);
+  text-align: right;
 }
 
-#title {
-  font-size: 72px;
-  padding-left: 40px;
-}
-
-#bottom-content {
-  margin-top: 40px;
-  background-color: var(--color-bg);
-}
-
-@media screen and (max-width: 1300px) {
-  #login--page--container {
-    grid-template-columns: 1fr;
-  }
-
-  #title {
-    padding-left: 0;
-  }
-
-  #sidebar--right--profile {
-    display: none;
-  }
+.loginSignup__footerIcon {
+  margin-left: 1.5rem;
 }
