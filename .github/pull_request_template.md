@@ -8,9 +8,9 @@
 Make sure to answer to these questions :
 
      - Why is this change required ?
-     - Does it solve a problem ? (please link the issue)
+     
+- Does it solve a problem ? (please link the issue)
  
-
 ## Type of change :
 
 Please delete options that are not relevant and delete this message.
@@ -22,13 +22,15 @@ Please delete options that are not relevant and delete this message.
 
 ## Preview (Screenshots) :
 
-    If it is possible, please link screenshots of your changes preview !
-    (GIF, JPEG, PNG ...)
+If it is possible, please link screenshots of your changes (Before & After)
+<br />
+(GIF, JPEG, PNG ...)
 
 
-# Checklist:
+## Checklist :
 
 Keep the things that you have done and delete the others 
+<br />
 Don't forget to delete this message !
 
 - [ ] I have read the **CONTRIBUTING** document.
