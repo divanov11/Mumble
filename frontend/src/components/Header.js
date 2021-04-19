@@ -3,9 +3,6 @@ import { Link, useHistory } from 'react-router-dom';
 import { useDetectClickOutside } from 'react-detect-click-outside';
 import { useSelector, useDispatch } from 'react-redux';
 import classNames from 'classnames';
-import { getApiUrl } from '../services/config';
-
-import { logout } from '../actions/authActions';
 
 import '../styles/components/HeaderBar.css';
 import logo from '../assets/logo/dark-logo.png';
@@ -14,6 +11,8 @@ import { Avatar } from '../common';
 import SearchBox from './SearchBox';
 import { markAsRead } from './Notification';
 import { notifications } from '../data';
+import { getApiUrl } from '../services/config';
+import { logout } from '../actions/authActions';
 import { toggleTheme as DarkLightTheme } from '../actions/local';
 
 export const getNotificationLink = (notification) => {

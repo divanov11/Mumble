@@ -24,7 +24,7 @@
 }
 
 .btn:hover {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .btn i {
@@ -65,7 +65,7 @@
 
 .btn--lg {
   font-size: 1.8rem;
-  padding: 1.2rem 4rem;
+  padding: 0.9rem 4.5rem;
 }
 
 .btn--main--link,
@@ -90,24 +90,15 @@
   color: var(--color-sub) !important;
 }
 
-/* Hover effects for outline buttons */
-.btn--main--outline:hover::before,
-.btn--sub--outline:hover::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  border-radius: 0.5rem;
-  opacity: 0.1;
-}
-
-.btn--main--outline:hover::before {
+.btn--main--outline:hover {
+  opacity: 1;
+  color: var(--color-white);
   background: var(--color-main);
 }
 
-.btn--sub--outline:hover::before {
+.btn--sub--outline:hover {
+  opacity: 1;
+  color: var(--color-white);
   background: var(--color-sub);
 }
 
@@ -126,6 +117,6 @@
   color: var(--color-text);
 }
 
-.dark-theme .btn.btn--main--outline > i {
+/* .dark-theme .btn.btn--main--outline {
   color: var(--color-main) !important;
-}
+} */

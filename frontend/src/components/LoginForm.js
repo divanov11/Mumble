@@ -2,9 +2,8 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { login } from '../actions/authActions';
-import Message from '../common/Message';
-
 import { useForm } from '../hooks';
+import { Button, Input, Message } from '../common';
 
 const LoginForm = () => {
   let dispatch = useDispatch();
@@ -24,44 +23,32 @@ const LoginForm = () => {
         <p>Username: mumble</p>
         <p>Password: welcomemumble</p>
       </Message>
-      <form className="form" onSubmit={onSubmit}>
-        <div className="form__field">
-          <label htmlFor="formInput#email">Username: </label>
-          <input
-            className="input input--email"
-            id="formInput#email"
-            type="text"
-            name="username"
-            placeholder="e.g. dennisivy"
-            value={formValues.username}
-            onChange={fieldChanges}
-            required={true}
-          />
-        </div>
-        <div className="form__field">
-          <label htmlFor="formInput#password">Password: </label>
-          <input
-            className="input input--password"
-            id="formInput#passowrd"
-            type="password"
-            name="password"
-            placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
-            value={formValues.password}
-            onChange={fieldChanges}
-            required={true}
-          />
-        </div>
-        <input className="submit btn btn--main" type="submit" value="Login" />
+      <form className="form" onSubmit={onSubmit} style={{ width: '100%' }}>
+        <Input
+          name="username"
+          placeholder="e.g. dennisivy"
+          value={formValues.username}
+          onChange={fieldChanges}
+          required={true}
+          label="Username:"
+        />
+        <Input
+          name="password"
+          placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
+          value={formValues.password}
+          onChange={fieldChanges}
+          required={true}
+          label="Password:"
+        />
+        <Button color="main" type="submit" text="Login" size="lg" />
+        <span style={{ marginLeft: '1rem' }}>
+          New here? <Link to="/signup">Sign up</Link>
+        </span>
       </form>
-      <div id="bottom-content">
-        <p>
-          <Link to="#">Forgot Password?</Link>
-        </p>
-        <br />
-        <p>
-          Dont have an account? <Link to="/signup">Sign up</Link>
-        </p>
-      </div>
+
+      <Link style={{ marginTop: '1.5rem' }} to="#">
+        Forgot Password?
+      </Link>
     </>
   );
 };
