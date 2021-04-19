@@ -51,6 +51,7 @@
 }
 
 .loginSignup__body {
+  margin-bottom: 12rem;
   margin-top: 2rem;
   display: flex;
   justify-content: space-between;
@@ -82,9 +83,6 @@
   bottom: 0;
   left: 0;
   width: 100%;
-}
-
-.loginSignup__footer {
   padding: 0.5rem 0;
   background-color: var(--color-main-light);
 }
@@ -98,6 +96,10 @@
 .loginSignup__footerLeft {
   display: flex;
   align-items: center;
+}
+
+.loginSignup__footerIcon {
+  margin-left: 1.5rem;
 }
 
 .loginSignup__footerLeft .loginSignup__footerIcon {
@@ -114,12 +116,9 @@
   align-items: center;
   text-align: right;
 }
+
 .loginSignup__footerRight p {
   font-size: 1.25rem;
-}
-
-.loginSignup__footerIcon {
-  margin-left: 1.5rem;
 }
 
 /* Dark Theme */
@@ -129,7 +128,57 @@
 
 /* Media Queries */
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 1440px) {
+  .loginSignup__heroImage {
+    height: 38vw;
+    top: -0.5vh;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .loginSignup__headerTitle {
+    font-size: 4rem;
+  }
+
+  .loginSignup__bodyLeft {
+    flex-basis: 45%;
+  }
+
+  .loginSignup__heroImage {
+    height: 44vw;
+    top: -20vh;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .loginSignup__headerTitle {
+    margin-top: 4rem;
+    font-size: 3rem;
+    line-height: 1.3;
+  }
+
+  .loginSignup__body {
+    margin-bottom: 12rem;
+  }
+
+  .loginSignup__bodyRight {
+    display: none;
+  }
+
+  .loginSignup__bodyLeft {
+    flex-basis: 100%;
+  }
+
+  .loginSignup__social {
+    justify-content: flex-start;
+  }
+
+  .loginSignup__footerRight p {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
   .loginSignup__headerTitle {
     margin-top: 3rem;
     font-size: 2rem;
@@ -142,54 +191,5 @@
   .loginSignup__footerLeft p,
   .loginSignup__footerLeft span {
     display: none;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .loginSignup__headerTitle {
-    margin-top: 4rem;
-    font-size: 3rem;
-    max-width: 80%;
-    line-height: 1.3;
-  }
-
-  .loginSignup__bodyRight {
-    display: none;
-  }
-
-  .loginSignup__bodyLeft {
-    flex-basis: 100%;
-  }
-
-  .loginSignup__footer {
-    position: relative;
-  }
-
-  .loginSignup__footerRight p {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .loginSignup__headerTitle {
-    font-size: 4rem;
-  }
-}
-
-@media screen and (max-width: 1400px) {
-  .loginSignup__heroImage {
-    height: 25vw;
-    position: absolute;
-    top: -18vh;
-    right: 0;
-  }
-}
-
-@media screen and (max-width: 1800px) {
-  .loginSignup__heroImage {
-    height: 25vw;
-    position: absolute;
-    top: -18vh;
-    right: 0;
   }
 }

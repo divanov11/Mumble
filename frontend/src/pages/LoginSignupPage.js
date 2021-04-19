@@ -67,7 +67,7 @@ const LoginSignupPage = ({ match, history }) => {
                 iconName="github"
                 text="Continue with Github"
               />
-              <p>or</p>
+              <span style={{ margin: '0 0.8rem' }}>or</span>
               <Button
                 color="sub"
                 outline
