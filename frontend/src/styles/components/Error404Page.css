@@ -27,8 +27,8 @@
 }
 
 @media screen and (max-width: 480px) {
-    .main404page__logo{
-        height: 100px;
-        width: 100px;
-    }
+.main404page__logo{
+  height: 100px;
+  width: 100px;
+}
 }
