@@ -19,6 +19,7 @@ const SignupForm = () => {
   });
   const onSubmit = (e) => {
     e.preventDefault();
+    setMessage('');
     dispatch(register(inputs));
   };
   return (
