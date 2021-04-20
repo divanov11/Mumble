@@ -36,6 +36,7 @@ const LoginForm = () => {
           name="password"
           placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
           value={formValues.password}
+          type="password"
           onChange={fieldChanges}
           required={true}
           label="Password:"

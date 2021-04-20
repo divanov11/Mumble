@@ -19,12 +19,7 @@ const SignupForm = () => {
   });
   const onSubmit = (e) => {
     e.preventDefault();
-
-    if (inputs['password'] !== inputs['password1']) {
-      setMessage('Passwords do not match');
-    } else {
-      dispatch(register(inputs));
-    }
+    dispatch(register(inputs));
   };
   return (
     <>
@@ -38,6 +33,7 @@ const SignupForm = () => {
           onChange={fieldChanges}
           required={true}
           label="Email:"
+          type="email"
         />
         <Input
           name="username"
@@ -54,6 +50,7 @@ const SignupForm = () => {
           onChange={fieldChanges}
           required={true}
           label="Password:"
+          type="password"
         />
         <Button color="main" type="submit" text="Sign Up" size="lg" />
         <span style={{ marginLeft: '1rem' }}>
