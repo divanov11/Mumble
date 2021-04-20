@@ -27,8 +27,8 @@
 }
 
 @media screen and (max-width: 480px){
-    .main500page__logo{
-        height: 100px;
-        width: 100px;
-    }
+.main500page__logo {
+  height: 100px;
+  width: 100px;
+}
 }
