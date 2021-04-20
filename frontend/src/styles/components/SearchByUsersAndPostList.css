@@ -1,5 +1,5 @@
 .not-found h2 {
-  color: #73af8d;
+  color: var(--color-text);
   font-size: 6rem;
 }
 

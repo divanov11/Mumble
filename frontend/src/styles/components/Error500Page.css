@@ -25,3 +25,10 @@
 .main500page__info {
   margin-bottom: 0.8em;
 }
+
+@media screen and (max-width: 480px){
+    .main500page__logo{
+        height: 100px;
+        width: 100px;
+    }
+}
