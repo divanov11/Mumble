@@ -18,9 +18,15 @@ const Error500Page = ({ error }) => (
         alt="Mumble Logo (0)"
       />
     </h1>
-    <h2 className="main500page__title">Internal Server Error !</h2>
-    <p className="main500page__info">Something went wrong</p>
-    <Link to="/">Click here to go back to the 🏡 home page</Link>
+    <h2 className="main500page__title">
+      Internal Server Error !
+    </h2>
+    <br />
+    <p className="main500page__info">
+      Something went wrong
+    </p>
+    <br />
+    <Link to="/">&#x2190; Go Home</Link>
   </div>
 );
 
