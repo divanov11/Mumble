@@ -8,7 +8,9 @@ const TopicTags = ({ tags }) => {
     <div className="card">
       <div id="topics-wrapper" className="card__body">
         <h5>Topics you follow</h5>
-        <Link to="#">More Topics</Link>
+        <Link className="card-link" to="#">
+          More Topics
+        </Link>
         <div className="line-break"></div>
         <div className="tags-wrapper">
           {tags.map((tag, index) => (

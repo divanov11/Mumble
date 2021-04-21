@@ -6,7 +6,9 @@ function DiscussionsCard({ discussions }) {
     <div className="card card--dark">
       <div className="card__body">
         <h5>Discussions</h5>
-        <Link to="/create-discussion">Start a Discussion</Link>
+        <Link className="card-link" to="/create-discussion">
+          Start a Discussion
+        </Link>
         <div className="custom-spacer" />
         {discussions.map((discussion, index) => (
           <div key={index} className="snippet-wrapper">

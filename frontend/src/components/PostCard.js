@@ -17,8 +17,8 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
 
   let auth = useSelector((state) => state.auth);
   let authUser = auth.user;
-  let authUserId = authUser.id + '';
-  let postId = post.id + '';
+  let authUserId = String(authUser.id);
+  let postId = String(post.id);
 
   let [comments, setComments] = useState([]);
 

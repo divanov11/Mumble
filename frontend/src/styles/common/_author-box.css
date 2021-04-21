@@ -43,6 +43,10 @@
   font-weight: var(--font-regular);
 }
 
+.author-box__handle:hover {
+  border-bottom: 1px solid var(--color-main);
+}
+
 .dark-theme .author-box__handle {
   color: var(--color-main);
 }

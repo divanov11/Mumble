@@ -61,7 +61,7 @@
 .snippet-wrapper:hover {
   transition: 0.2s;
   border-radius: 5px;
-  background-color: #313131;
+  background-color: var(--color-white);
 }
 
 @media screen and (max-width: 1300px) {

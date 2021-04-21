@@ -113,3 +113,7 @@ textarea:focus-within {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #4d94a8;
 }
+
+.card-link:hover {
+  border-bottom: 1px solid var(--color-main);
+}
