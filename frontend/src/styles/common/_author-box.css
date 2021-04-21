@@ -25,6 +25,10 @@
   color: var(--color-sub);
 }
 
+.author-box__name:hover {
+  text-decoration: underline;
+}
+
 .dark-theme .author-box__name {
   color: var(--color-text);
 }
@@ -44,7 +48,7 @@
 }
 
 .author-box__handle:hover {
-  border-bottom: 1px solid var(--color-main);
+  text-decoration: underline;
 }
 
 .dark-theme .author-box__handle {

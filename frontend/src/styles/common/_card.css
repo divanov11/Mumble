@@ -23,3 +23,7 @@
 .card__body {
   padding: 2.5rem;
 }
+
+.expand-skills__link:hover {
+  text-decoration: underline;
+}
