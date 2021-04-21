@@ -25,3 +25,10 @@
   height: 130px;
   width: 130px;
 }
+
+@media screen and (max-width: 480px) {
+  .main404page__logo {
+    height: 100px;
+    width: 100px;
+  }
+}

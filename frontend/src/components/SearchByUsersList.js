@@ -46,7 +46,7 @@ const SearchByUsersList = () => {
                     </span>
                     4
                   </h2>
-                  <h3>Mumble user not found !</h3>
+                  <h3>Mumble user not found</h3>
                   <p>
                     Looks like the username was misspelled or there is no account linked to that
                     username !
