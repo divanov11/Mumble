@@ -7,7 +7,9 @@ const ArticlesCard = ({ articles }) => {
   return (
     <Card cardStyle="dark">
       <h5>Popular Articles</h5>
-      <Link to="/create-article">Write a Post</Link>
+      <Link className="card-link" to="/create-article">
+        Write a Post
+      </Link>
       <div className="custom-spacer" />
 
       {articles.map((article) => (

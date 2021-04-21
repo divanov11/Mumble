@@ -17,6 +17,8 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
 
   let auth = useSelector((state) => state.auth);
   let authUser = auth.user;
+  let authUserId = String(authUser.id);
+  let postId = String(post.id);
 
   let [comments, setComments] = useState([]);
 
@@ -52,11 +54,11 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
       <div className="post-contents">
         <VotingWidget
           votes={post.vote_rank}
-          postId={post.id}
+          postId={postId}
           postUsername={post.user.username}
           upVoters={post.upVoters}
           downVoters={post.downVoters}
-          authUserId={authUser.id}
+          authUserId={authUserId}
         />
         <div className="post-body">
           {children}

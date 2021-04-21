@@ -21,7 +21,9 @@ const Contributors = () => {
     <div className="card">
       <div className="card__body">
         <h5>Top Contributors</h5>
-        <Link to={'/search'}>View More</Link>
+        <Link className="card-link" to={'/search'}>
+          View More
+        </Link>
         <div className="custom-spacer"></div>
 
         {users.map((user) => (
