@@ -20,7 +20,7 @@ const Error500Page = ({ error }) => (
     </h1>
     <h2 className="main500page__title">Internal Server Error !</h2>
     <p className="main500page__info">Something went wrong</p>
-    <Link to="/">Click here to go back to the 🏡 home page</Link>
+    <Link to="/">&#x2190; Go Home</Link>
   </div>
 );
 

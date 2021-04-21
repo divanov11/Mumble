@@ -35,7 +35,7 @@
 
 .loginSignup__headerTitle {
   margin-top: 4rem;
-  color: var(--color-sub);
+  color: var(--color-text);
   font-size: 4.5rem;
   text-transform: uppercase;
 }
