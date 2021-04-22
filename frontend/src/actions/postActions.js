@@ -91,7 +91,9 @@ export const createRemumble = (postId) => async (dispatch, getState) => {
 export const createComment = (setComments, postId, postData) => async (dispatch, getState) => {
   try {
     dispatch({ type: COMMENT_CREATE_REQUEST });
-    const comment = await createComment(postData);
+    const comment = postsService.createComment(postData);
+    console.log('COMMENT:', comment);
+    console.log('POST DATA:', postData);
     dispatch({
       type: COMMENT_CREATE_SUCCESS,
       payload: comment,

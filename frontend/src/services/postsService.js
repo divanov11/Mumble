@@ -1,32 +1,32 @@
 import { get, post, getApiUrl } from './config';
 
-const getPostsByKeyword = (keyword) => get({ url: getApiUrl(`api/posts${keyword}`) });
+const getPostsByKeyword = (keyword) => get({ url: getApiUrl(`api/mumbles${keyword}`) });
 const getPosts = () =>
   get({
-    url: getApiUrl(`api/posts`),
+    url: getApiUrl(`api/mumbles`),
   });
 const getPostsComments = (postId) =>
   get({
-    url: getApiUrl(`api/posts/${postId}/comments`),
+    url: getApiUrl(`api/mumbles/${postId}/comments`),
   });
 const createPost = (postContent) =>
   post({
-    url: getApiUrl(`api/posts/create`),
+    url: getApiUrl(`api/mumbles/create/`),
     payload: postContent,
   });
 const modifyVote = (voteData) =>
   post({
-    url: getApiUrl(`api/posts/vote/`),
+    url: getApiUrl(`api/mumbles/vote/`),
     payload: voteData,
   });
 const createComment = (postData) =>
   post({
-    url: getApiUrl(`api/posts/create/`),
+    url: getApiUrl(`api/mumbles/create/`),
     payload: postData,
   });
 const remumble = (postData) =>
   post({
-    url: getApiUrl(`api/posts/remumble/`),
+    url: getApiUrl(`api/mumbles/remumble/`),
     payload: postData,
   });
 
