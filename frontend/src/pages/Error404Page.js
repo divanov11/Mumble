@@ -17,7 +17,7 @@ const Error404Page = () => (
     <h2 className="main404page__sub-title">Page Not Found !</h2>
     <p className="main404page__info">Looks like you got lost</p>
     <br />
-    <Link to="/">Go Home</Link>
+    <Link to="/">&#x2190; Go Home</Link>
   </div>
 );
 
