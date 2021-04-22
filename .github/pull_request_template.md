@@ -1,19 +1,37 @@
+<!---- This is the PR Template !-->
+
+<!-- Make sure to follow each step so that your PR is explained and easy to read !-->
+
+<!-- It may take from your time, but think that collaborators and contributors will get your changes in a good way !-->
+
+<!--- Thanks for considering that !-->
+
 ## Well detailed description of the change :
+
+<!-- Explain what you have done !-->
 
      I worked on the .....
 
 
 ## Context of the change :
 
-Make sure to answer to these questions :
+<!-- Make sure to answer to these questions !-->
 
      - Why is this change required ?
-     - Does it solve a problem ? (please link the issue)
+ 
+<!-- Link the issue below if you are resolving an issue !-->
+
+- Does it solve a problem ? (please link the issue)
  
 
 ## Type of change :
 
-Please delete options that are not relevant and delete this message.
+<!-- You should choice 1 option -->
+
+<!-- add a x in [ ] if true !-->
+
+<!-- Delete options that aren't revelant!-->
+
 
 - [ ] Bug fix
 - [ ] New feature
@@ -22,14 +40,22 @@ Please delete options that are not relevant and delete this message.
 
 ## Preview (Screenshots) :
 
-    If it is possible, please link screenshots of your changes preview !
-    (GIF, JPEG, PNG ...)
+<!-- While providing screenshots, delete the text below !-->
+
+<!-- try as much as possible to explain each change in each screenshot !-->
+
+<p align="center">If it is possible, please link screenshots of your changes preview !
+</p>
 
 
-# Checklist:
 
-Keep the things that you have done and delete the others 
-Don't forget to delete this message !
+## Checklist:
+
+<!-- Check your work !-->
+
+<!-- add a x in [] if done !-->
+
+<!-- let things that you didn't do !-->
 
 - [ ] I have read the **CONTRIBUTING** document.
 - [ ] My code follows the **STYLE_GUIDE** of this project
@@ -38,3 +64,6 @@ Don't forget to delete this message !
 - [ ] My changes generate no new warnings
 - [ ] I have added tests that prove my fix is effective or that my feature works
 - [ ] All new and existing tests passed.
+
+
+<!--- Mumble Community thank you a lot for explaining each detail !-->

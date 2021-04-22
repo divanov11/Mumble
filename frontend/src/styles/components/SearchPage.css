@@ -36,6 +36,10 @@
   cursor: pointer;
 }
 
+.category-link:hover {
+  text-decoration: underline;
+}
+
 .category-link--active {
   color: var(--color-main);
   font-weight: 900;
