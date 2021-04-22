@@ -77,7 +77,7 @@ export const createRemumble = (postId) => async (dispatch, getState) => {
   try {
     dispatch({ type: POST_CREATE_REQUEST });
 
-    const { data } = await postsService.remumble({ id: postId });
+    const data = await postsService.remumble({ id: postId });
 
     dispatch({
       type: POST_CREATE_SUCCESS,
