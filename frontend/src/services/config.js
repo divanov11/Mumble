@@ -2,10 +2,7 @@ import axios from 'axios';
 
 import store from '../store';
 
-const getAccessToken = () => {
-  console.log('store', store);
-  return store.getState().auth.access;
-};
+const getAccessToken = () => store.getState().auth.access;
 
 const apiEndpointURL = process.env.REACT_APP_API_ENDPOINT || 'https://mumbleapi.herokuapp.com'; //'http://127.0.0.1:8000';
 

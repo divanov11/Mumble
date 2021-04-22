@@ -25,7 +25,7 @@ const FollowButton = ({ userProfile }) => {
           onClick={(e) => toggleFollow(userProfile.username)}
           color="main"
           size="sm"
-          iconName="user-check"
+          // iconName="user-check"
           text="Following"
         />
       ) : (
@@ -33,7 +33,7 @@ const FollowButton = ({ userProfile }) => {
           onClick={(e) => toggleFollow(userProfile.username)}
           color="main"
           size="sm"
-          iconName="user-plus"
+          // iconName="user-plus"
           text="Follow"
           outline
         />
