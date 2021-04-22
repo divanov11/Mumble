@@ -19,9 +19,14 @@ import {
   POST_VOTE_FAIL,
 } from '../constants/postConstants';
 import { PostsService } from '../services';
-import axios from 'axios';
-import { getApiUrl } from '../services/config';
 import { listUserPosts } from './userActions';
+import postsService from '../services/postsService';
+
+export const createActionPayload = (type, error) => ({
+  type: type,
+  payload:
+    error.response && error.response.data.detail ? error.response.data.detail : error.message,
+});
 
 export const searchPosts = (keyword = '') => async (dispatch) => {
   try {
@@ -34,11 +39,7 @@ export const searchPosts = (keyword = '') => async (dispatch) => {
       payload: posts,
     });
   } catch (error) {
-    dispatch({
-      type: POST_SEARCH_LIST_FAIL,
-      payload:
-        error.response && error.response.data.detail ? error.response.data.detail : error.message,
-    });
+    dispatch(createActionPayload(POST_SEARCH_LIST_FAIL, error));
   }
 };
 
@@ -46,29 +47,14 @@ export const getPostsForDashboard = () => async (dispatch, getState) => {
   try {
     dispatch({ type: POST_DASHBOARD_REQUEST });
 
-    const {
-      auth: { access },
-    } = getState();
-
-    const config = {
-      headers: {
-        'Content-type': 'application/json',
-        Authorization: `Bearer ${access}`,
-      },
-    };
-
-    const posts = await PostsService.getPosts(config);
+    const posts = await PostsService.getPosts();
 
     dispatch({
       type: POST_DASHBOARD_SUCCESS,
       payload: posts,
     });
   } catch (error) {
-    dispatch({
-      type: POST_DASHBOARD_FAIL,
-      payload:
-        error.response && error.response.data.detail ? error.response.data.detail : error.message,
-    });
+    dispatch(createActionPayload(POST_DASHBOARD_FAIL, error));
   }
 };
 
@@ -76,28 +62,14 @@ export const createPost = (postData) => async (dispatch, getState) => {
   try {
     dispatch({ type: POST_CREATE_REQUEST });
 
-    const {
-      auth: { access },
-    } = getState();
-
-    const config = {
-      headers: {
-        'Content-type': 'application/json',
-        Authorization: `Bearer ${access}`,
-      },
-    };
-    const { data } = await axios.post(getApiUrl(`api/posts/create/`), postData, config);
+    const post = await postsService.createPost(postData);
 
     dispatch({
       type: POST_CREATE_SUCCESS,
-      payload: data,
+      payload: post,
     });
   } catch (error) {
-    dispatch({
-      type: POST_CREATE_FAIL,
-      payload:
-        error.response && error.response.data.detail ? error.response.data.detail : error.message,
-    });
+    dispatch(createActionPayload(POST_CREATE_FAIL, error));
   }
 };
 
@@ -105,88 +77,42 @@ export const createRemumble = (postId) => async (dispatch, getState) => {
   try {
     dispatch({ type: POST_CREATE_REQUEST });
 
-    const {
-      auth: { access },
-    } = getState();
-
-    const config = {
-      headers: {
-        'Content-type': 'application/json',
-        Authorization: `Bearer ${access}`,
-      },
-    };
-    const { data } = await axios.post(getApiUrl(`api/posts/remumble/`), { id: postId }, config);
+    const { data } = await postsService.remumble({ id: postId });
 
     dispatch({
       type: POST_CREATE_SUCCESS,
       payload: data,
     });
   } catch (error) {
-    dispatch({
-      type: POST_CREATE_FAIL,
-      payload:
-        error.response && error.response.data.detail ? error.response.data.detail : error.message,
-    });
+    dispatch(createActionPayload(POST_CREATE_FAIL, error));
   }
 };
 
 export const createComment = (setComments, postId, postData) => async (dispatch, getState) => {
   try {
     dispatch({ type: COMMENT_CREATE_REQUEST });
-
-    const {
-      auth: { access },
-    } = getState();
-
-    const config = {
-      headers: {
-        'Content-type': 'application/json',
-        Authorization: `Bearer ${access}`,
-      },
-    };
-    const { data } = await axios.post(getApiUrl(`api/posts/create/`), postData, config);
-
+    const comment = await createComment(postData);
     dispatch({
       type: COMMENT_CREATE_SUCCESS,
-      payload: data,
+      payload: comment,
     });
 
     dispatch(getPostComments(setComments, postId));
   } catch (error) {
-    dispatch({
-      type: COMMENT_CREATE_FAIL,
-      payload:
-        error.response && error.response.data.detail ? error.response.data.detail : error.message,
-    });
+    dispatch(createActionPayload(COMMENT_CREATE_FAIL, error));
   }
 };
 
 export const getPostComments = (setComments, postId) => async (dispatch, getState) => {
   try {
     dispatch({ type: POST_COMMENTS_REQUEST });
-
-    const {
-      auth: { access },
-    } = getState();
-
-    const config = {
-      headers: {
-        'Content-type': 'application/json',
-        Authorization: `Bearer ${access}`,
-      },
-    };
-
-    const { data } = await axios.get(getApiUrl(`api/posts/${postId}/comments/`), config);
-    setComments(data);
+    const posts = await postsService.getPostsComments(postId);
+    setComments(posts);
     dispatch({
       type: POST_COMMENTS_SUCCESS,
     });
   } catch (error) {
-    dispatch({
-      type: POST_COMMENTS_FAIL,
-      payload:
-        error.response && error.response.data.detail ? error.response.data.detail : error.message,
-    });
+    dispatch(createActionPayload(POST_COMMENTS_FAIL, error));
   }
 };
 
@@ -194,17 +120,7 @@ export const modifyVote = (voteData) => async (dispatch, getState) => {
   try {
     dispatch({ type: POST_VOTE_REQUEST });
 
-    const {
-      auth: { access },
-    } = getState();
-
-    const config = {
-      headers: {
-        'Content-type': 'application/json',
-        Authorization: `Bearer ${access}`,
-      },
-    };
-    const { data } = await axios.post(getApiUrl(`api/posts/vote/`), voteData, config);
+    const { data } = await postsService.modifyVote(voteData);
 
     dispatch({
       type: POST_VOTE_SUCCESS,
@@ -214,10 +130,6 @@ export const modifyVote = (voteData) => async (dispatch, getState) => {
     dispatch(getPostsForDashboard());
     dispatch(listUserPosts(voteData.post_username));
   } catch (error) {
-    dispatch({
-      type: POST_VOTE_FAIL,
-      payload:
-        error.response && error.response.data.detail ? error.response.data.detail : error.message,
-    });
+    dispatch(createActionPayload(POST_VOTE_FAIL, error));
   }
 };

@@ -16,8 +16,8 @@ import {
   FOLLOW_USER_FAIL,
 } from '../constants/userConstants';
 import { UsersService } from '../services';
-import axios from 'axios';
-import { getApiUrl } from '../services/config';
+import usersService from '../services/usersService';
+import { createActionPayload } from './postActions';
 
 export const listUsers = (keyword = '') => async (dispatch) => {
   try {
@@ -30,11 +30,7 @@ export const listUsers = (keyword = '') => async (dispatch) => {
       payload: users,
     });
   } catch (error) {
-    dispatch({
-      type: USER_LIST_FAIL,
-      payload:
-        error.response && error.response.data.detail ? error.response.data.detail : error.message,
-    });
+    dispatch(createActionPayload(USER_LIST_FAIL, error));
   }
 };
 
@@ -59,11 +55,7 @@ export const listRecommenedUsers = () => async (dispatch, getState) => {
       payload: users.slice(0, 5),
     });
   } catch (error) {
-    dispatch({
-      type: USER_LIST_RECOMMENDED_FAIL,
-      payload:
-        error.response && error.response.data.detail ? error.response.data.detail : error.message,
-    });
+    dispatch(createActionPayload(USER_LIST_RECOMMENDED_FAIL, error));
   }
 };
 
@@ -77,11 +69,7 @@ export const listUserDetails = (username) => async (dispatch) => {
       payload: user.profile,
     });
   } catch (error) {
-    dispatch({
-      type: USER_DETAIL_FAIL,
-      payload:
-        error.response && error.response.data.detail ? error.response.data.detail : error.message,
-    });
+    dispatch(createActionPayload(USER_DETAIL_FAIL, error));
   }
 };
 
@@ -95,31 +83,14 @@ export const listUserPosts = (username) => async (dispatch) => {
       payload: posts,
     });
   } catch (error) {
-    dispatch({
-      type: USER_POSTS_LIST_FAIL,
-      payload:
-        error.response && error.response.data.detail ? error.response.data.detail : error.message,
-    });
+    dispatch(createActionPayload(USER_POSTS_LIST_FAIL, error));
   }
 };
 
 export const followUser = (username) => async (dispatch, getState) => {
   try {
     dispatch({ type: FOLLOW_USER_REQUEST });
-
-    const {
-      auth: { access },
-    } = getState();
-
-    const config = {
-      headers: {
-        'Content-type': 'application/json',
-        Authorization: `Bearer ${access}`,
-      },
-    };
-
-    await axios.post(getApiUrl(`api/users/${username}/follow/`), {}, config);
-
+    await usersService.followUser(username);
     dispatch({
       type: FOLLOW_USER_SUCCESS,
     });
@@ -127,10 +98,6 @@ export const followUser = (username) => async (dispatch, getState) => {
     //dispatch(listUsers());
     //dispatch(listRecommenedUsers());
   } catch (error) {
-    dispatch({
-      type: FOLLOW_USER_FAIL,
-      payload:
-        error.response && error.response.data.detail ? error.response.data.detail : error.message,
-    });
+    dispatch(createActionPayload(FOLLOW_USER_FAIL, error));
   }
 };

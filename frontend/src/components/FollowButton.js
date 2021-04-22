@@ -13,7 +13,7 @@ const FollowButton = ({ userProfile }) => {
 
   const dispatch = useDispatch();
 
-  const toggleFollow = (e, username) => {
+  const toggleFollow = (username) => {
     setIsFollowing(!isFollowing);
     dispatch(followUser(username));
   };
