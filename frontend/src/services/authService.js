@@ -2,7 +2,7 @@ import { post, getApiUrl } from './config';
 
 const login = (credentials) =>
   post({
-    url: getApiUrl(`api/users/login`),
+    url: getApiUrl(`api/users/login/`),
     payload: credentials,
   });
 const register = (inputs) =>
