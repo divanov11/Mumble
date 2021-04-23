@@ -38,18 +38,7 @@ export const listRecommenedUsers = () => async (dispatch, getState) => {
   try {
     dispatch({ type: USER_LIST_RECOMMENDED_REQUEST });
 
-    const {
-      auth: { access },
-    } = getState();
-
-    const config = {
-      headers: {
-        'Content-type': 'application/json',
-        Authorization: `Bearer ${access}`,
-      },
-    };
-
-    const users = await UsersService.getRecommendedUsers(config);
+    const users = await UsersService.getRecommendedUsers();
     dispatch({
       type: USER_LIST_RECOMMENDED_SUCCESS,
       payload: users.slice(0, 5),
