@@ -7,6 +7,7 @@ import {
   USER_LIST_RECOMMENDED_FAIL,
   USER_DETAIL_REQUEST,
   USER_DETAIL_SUCCESS,
+  USER_DETAIL_RESET,
   USER_DETAIL_FAIL,
   USER_POSTS_LIST_REQUEST,
   USER_POSTS_LIST_SUCCESS,
@@ -45,10 +46,16 @@ export const userListRecommendedReducer = (state = { users: [] }, action) => {
   }
 };
 
-export const userProfileDetailReducer = (state = { user: { skills: [] } }, action) => {
+export const userProfileDetailReducer = (
+  state = { user: { skills: [] }, loading: true },
+  action,
+) => {
   switch (action.type) {
     case USER_DETAIL_REQUEST:
-      return { loading: true, ...state };
+      return { ...state, user: { skills: [] }, loading: true };
+
+    case USER_DETAIL_RESET:
+      return { loading: false, user: null };
 
     case USER_DETAIL_SUCCESS:
       return { loading: false, user: action.payload };
@@ -61,7 +68,7 @@ export const userProfileDetailReducer = (state = { user: { skills: [] } }, actio
   }
 };
 
-export const userPostsListReducer = (state = { posts: [] }, action) => {
+export const userPostsListReducer = (state = { posts: [], loading: true }, action) => {
   switch (action.type) {
     case USER_POSTS_LIST_REQUEST:
       return { loading: true, posts: [] };
