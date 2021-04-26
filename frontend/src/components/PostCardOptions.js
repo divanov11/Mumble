@@ -26,7 +26,7 @@ const PostCardOptions = ({ post }) => {
     onTriggered: closePostMenu,
   });
 
-  const userCreatedPost = auth.user.id === user.id;
+  const userCreatedPost = auth.user.id === user.user;
 
   return (
     <div className="post--options">
