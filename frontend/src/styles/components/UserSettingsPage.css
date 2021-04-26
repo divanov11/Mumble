@@ -264,7 +264,7 @@ input:checked + .theme-slider::before {
     width: 180px !important;
     height: 180px !important;
   }
-  
+
   .settings-update-tag_placeholder {
     font-size: 36.22px !important;
   }
