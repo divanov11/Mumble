@@ -5,7 +5,7 @@ import '../styles/components/UserSettingsPage.css';
 import { listUserDetails } from '../actions/userActions';
 import { Avatar, Button, Card } from '../common';
 import { ProfilePicCropperModal, UserSettingUpdateModal } from '../components';
-
+import { apiEndpointURL } from '../services/config';
 import { toggleTheme as DarkLightTheme } from '../actions/local';
 
 function UserSettingsPage() {
@@ -24,14 +24,14 @@ function UserSettingsPage() {
   const [profilePicSrc, setProfilePicSrc] = useState(null);
   const inputRef = useRef();
 
-  const [croppedImageBase64, setCroppedImageBase64] = useState(profilePic);
+  const [croppedImageBase64, setCroppedImageBase64] = useState(apiEndpointURL + '/' + profilePic);
 
   useEffect(() => {
     dispatch(listUserDetails(username));
   }, [dispatch, username]);
 
   useEffect(() => {
-    setCroppedImageBase64(profilePic);
+    setCroppedImageBase64(apiEndpointURL + '/' + profilePic);
   }, [profilePic]);
 
   const update = (e) => {
