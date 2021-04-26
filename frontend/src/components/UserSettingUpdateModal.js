@@ -12,29 +12,36 @@ const UserSettingUpdateModal = ({
   active,
   setActive,
 }) => {
-  const [fields, handleFieldChanges] = useForm(userData);
+  const [fields, handleFieldChanges] = useForm({
+    name: userData.name,
+    username: userData.username,
+    bio: userData.bio,
+    email: userData.email || 'tempemail@mumble.dev',
+  });
   const tagListRef = useRef();
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    if (!e.target.firstChild.dataset.error) {
-      setUserData((state) => {
-        return { ...state, ...fields };
-      });
-    }
+    // if (!e.target.firstChild.dataset.error) {
+    //   setUserData((state) => {
+    //     return { ...state, ...fields };
+    //   });
+    // }
+    console.log(fields);
   };
 
   const HandleTagFormSubmit = (e) => {
     e.preventDefault();
     const tags = tagListRef.current;
 
-    if (tags) {
-      setUserData((data) => {
-        data.skills = tags;
-        return data;
-      });
-    }
-    setActive(false);
+    // if (tags) {
+    //   setUserData((data) => {
+    //     data.skills = tags;
+    //     return data;
+    //   });
+    // }
+    // setActive(false);
+    console.log(tags);
   };
 
   const preventSubmission = (e) => {
