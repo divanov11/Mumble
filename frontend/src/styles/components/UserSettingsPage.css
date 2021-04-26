@@ -242,6 +242,7 @@ input:checked + .theme-slider::before {
     width: 130px !important;
     height: 130px !important;
   }
+
   .settings-update-tag_placeholder {
     font-size: 28.9px !important;
   }
@@ -252,6 +253,7 @@ input:checked + .theme-slider::before {
     width: 150px !important;
     height: 150px !important;
   }
+
   .settings-update-tag_placeholder {
     font-size: 32.22px !important;
   }
@@ -262,6 +264,7 @@ input:checked + .theme-slider::before {
     width: 180px !important;
     height: 180px !important;
   }
+  
   .settings-update-tag_placeholder {
     font-size: 36.22px !important;
   }
