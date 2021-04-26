@@ -30,3 +30,13 @@ export const post = ({ url, payload }) =>
       },
     }),
   );
+
+export const patch = ({ url, payload }) =>
+  pullData(
+    axios.patch(url, payload, {
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${getAccessToken()}`,
+      },
+    }),
+  );

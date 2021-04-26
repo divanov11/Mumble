@@ -1,8 +1,9 @@
 import { useRef } from 'react';
-
+import { useDispatch } from 'react-redux';
 import UserSettingModalContent from './UserSettingModalContent';
 import { Modal, ModalContentAction, TagInput } from '../common';
 import { useForm } from '../hooks';
+import { updateUserProfile } from '../actions/userActions';
 
 const UserSettingUpdateModal = ({
   heading,
@@ -12,6 +13,8 @@ const UserSettingUpdateModal = ({
   active,
   setActive,
 }) => {
+  let dispatch = useDispatch();
+
   const [fields, handleFieldChanges] = useForm({
     name: userData.name,
     username: userData.username,
@@ -22,6 +25,7 @@ const UserSettingUpdateModal = ({
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    dispatch(updateUserProfile(fields));
     // if (!e.target.firstChild.dataset.error) {
     //   setUserData((state) => {
     //     return { ...state, ...fields };
