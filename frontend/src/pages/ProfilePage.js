@@ -5,10 +5,18 @@ import { Link } from 'react-router-dom';
 
 import '../styles/components/ProfilePage.css';
 
-import { ArticlesCard, DiscussionsCard, FeedCard, SkillTags, UserCard } from '../components';
+import {
+  ArticlesCard,
+  DiscussionsCard,
+  FeedCard,
+  PostCardPlaceholder,
+  SkillTags,
+  UserCard,
+  UserCardPlaceholder,
+} from '../components';
 import { articles, discussions } from '../data';
 
-import { listUserDetails, listUserPosts } from '../actions/userActions';
+import { listUserDetails, listUserPosts, resetUserDetails } from '../actions/userActions';
 
 const Profile = ({ match }) => {
   const username = match.params.username;
@@ -18,19 +26,28 @@ const Profile = ({ match }) => {
   const userProfileDetail = useSelector((state) => state.userProfileDetail);
   const userPostsList = useSelector((state) => state.userPostsList);
 
-  const { user } = userProfileDetail;
-  const { posts } = userPostsList;
+  const { user, loading: isUserLoading } = userProfileDetail;
+  const { posts, loading: isPostsLoading } = userPostsList;
 
   useEffect(() => {
     dispatch(listUserDetails(username));
     dispatch(listUserPosts(username));
+
+    // clear the userDetails when user goes out this page
+    return () => dispatch(resetUserDetails());
   }, [dispatch, username]);
 
   return (
     <div className="container three-column-layout">
       <section>
-        <UserCard user={user} />
-        <SkillTags tags={user.skills} />
+        {!isUserLoading && user ? (
+          <>
+            <UserCard user={user} />
+            <SkillTags tags={user.skills} />
+          </>
+        ) : (
+          <UserCardPlaceholder />
+        )}
       </section>
 
       <section>
@@ -41,7 +58,7 @@ const Profile = ({ match }) => {
             </Link>
           </div>
         </div>
-        <FeedCard posts={posts} />
+        {!isPostsLoading ? <FeedCard posts={posts} /> : <PostCardPlaceholder />}
       </section>
 
       <section className="three-column-layout__right-column">

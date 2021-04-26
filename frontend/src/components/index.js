@@ -14,6 +14,7 @@ export { default as SignupForm } from './SignupForm';
 export { default as SkillTags } from './SkillTags';
 export { default as TopicTags } from './TopicTags';
 export { default as UserCard } from './UserCard';
+export { default as UserCardPlaceholder } from './UserCardPlaceholder';
 export { default as UserSettingModalContent } from './UserSettingModalContent';
 export { default as UserSettingUpdateModal } from './UserSettingUpdateModal';
 export { default as SearchByPanel } from './SearchByPanel';

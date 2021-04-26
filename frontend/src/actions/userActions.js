@@ -7,6 +7,7 @@ import {
   USER_LIST_RECOMMENDED_FAIL,
   USER_DETAIL_REQUEST,
   USER_DETAIL_SUCCESS,
+  USER_DETAIL_RESET,
   USER_DETAIL_FAIL,
   USER_POSTS_LIST_REQUEST,
   USER_POSTS_LIST_SUCCESS,
@@ -60,6 +61,10 @@ export const listUserDetails = (username) => async (dispatch) => {
   } catch (error) {
     dispatch(createActionPayload(USER_DETAIL_FAIL, error));
   }
+};
+
+export const resetUserDetails = () => async (dispatch) => {
+  dispatch({ type: USER_DETAIL_RESET });
 };
 
 export const listUserPosts = (username) => async (dispatch) => {
