@@ -8,9 +8,9 @@ import { getPostComments } from '../actions/postActions';
 import PostCardOptions from './PostCardOptions';
 
 const PostCard = ({ post, link, isComment = false, children, ...others }) => {
-  const { user, origional_mumble } = post;
-  if (origional_mumble) {
-    post = origional_mumble;
+  const { user, original_mumble } = post;
+  if (original_mumble) {
+    post = original_mumble;
   }
 
   let dispatch = useDispatch();
@@ -35,7 +35,7 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
 
   return (
     <div className={`${isComment && 'post-card--comment'}`} {...others}>
-      {origional_mumble && (
+      {original_mumble && (
         <div className="remumbled-note">
           <i className="fas fa-paper-plane"></i>
           <i>{user.username} remumbled</i>
