@@ -221,6 +221,7 @@ input:checked + .theme-slider::before {
   row-gap: 20px;
   margin-bottom: 15px;
 }
+
 .settings-update-image__infoplaceholder {
   width: 120px !important;
   height: 120px !important;
@@ -245,6 +246,7 @@ input:checked + .theme-slider::before {
     font-size: 28.9px !important;
   }
 }
+
 @media (min-width: 1080px) {
   .settings-update-image__infoplaceholder {
     width: 150px !important;
@@ -254,6 +256,7 @@ input:checked + .theme-slider::before {
     font-size: 32.22px !important;
   }
 }
+
 @media (min-width: 1700px) {
   .settings-update-image__infoplaceholder {
     width: 180px !important;
