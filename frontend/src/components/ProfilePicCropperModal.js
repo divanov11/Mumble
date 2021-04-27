@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import ReactCrop from 'react-image-crop';
-
+import { useDispatch } from 'react-redux';
 import 'react-image-crop/dist/ReactCrop.css';
-
+import { updateProfilePic } from '../actions/userActions';
 import { Modal, ModalContentAction } from '../common';
 
 const ProfilePicCropperModal = ({
@@ -15,6 +15,7 @@ const ProfilePicCropperModal = ({
   clearFileInputOnCancel,
   setCurrentUser,
 }) => {
+  const dispatch = useDispatch();
   const [crop, setCrop] = useState({
     aspect: 1 / 1,
     unit: 'px',
@@ -28,7 +29,9 @@ const ProfilePicCropperModal = ({
 
   const sendImageToServer = (imageFile) => {
     console.log(imageFile);
-    // upload croppedImage to Server Here
+    let formData = new FormData();
+    formData.append('profile_pic', imageFile);
+    dispatch(updateProfilePic(formData));
   };
 
   const extractImageFileExtensionFromBase64 = (base64Data) => {

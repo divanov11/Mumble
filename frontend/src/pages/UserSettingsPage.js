@@ -11,9 +11,9 @@ import { toggleTheme as DarkLightTheme } from '../actions/local';
 function UserSettingsPage() {
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
   const dispatch = useDispatch();
-  const { username, profile_pic: profilePic } = useSelector((state) => state.auth.user);
-
+  const { username } = useSelector((state) => state.auth.user);
   const currentUser = useSelector((state) => state.userProfileDetail);
+  const profilePic = currentUser?.user?.profile_pic;
   const [updateModelActive, setUpdateModelActive] = useState(false);
   const [profilePicModel, setProfilePicModel] = useState(false);
   const [modelContent, setModelContent] = useState(null);
@@ -48,7 +48,7 @@ function UserSettingsPage() {
 
   const clearFileInputOnCancel = () => {
     setProfilePicSrc(null);
-    inputRef.current.value = null;
+    // inputRef.current.value = null;
   };
 
   const renderSkills = () => {

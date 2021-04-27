@@ -5,6 +5,8 @@ import {
   LOGOUT_REQUEST,
   LOGOUT_SUCCESS,
 } from '../constants/authConstants';
+
+import { UPDATE_USER_PHOTO_SUCCESS } from '../constants/userConstants';
 import jwt_decode from 'jwt-decode';
 
 //import users from '../data/users';
@@ -12,6 +14,7 @@ import jwt_decode from 'jwt-decode';
 
 export default function authReducer(state = {}, action) {
   const { type, payload } = action;
+
   switch (type) {
     case LOGIN_REQUEST: {
       return { isLoading: true };
@@ -20,7 +23,6 @@ export default function authReducer(state = {}, action) {
     case LOGIN_SUCCESS: {
       localStorage.setItem('access', payload.access);
       localStorage.setItem('refresh', payload.refresh);
-
       return {
         ...state,
         access: payload.access,
@@ -29,7 +31,10 @@ export default function authReducer(state = {}, action) {
         user: jwt_decode(payload.access),
       };
     }
-
+    case UPDATE_USER_PHOTO_SUCCESS:
+      const newState = { ...state };
+      newState.user.profile_pic = payload.profile_pic;
+      return newState;
     case LOGIN_FAIL:
       return { isLoading: false, error: payload };
 
