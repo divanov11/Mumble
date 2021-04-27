@@ -13,8 +13,6 @@
 <a href="https://www.mumble.dev">![Mumble](https://img.shields.io/badge/Mumble-Live%20Demo-9cf?style=for-the-badge)</a>
 <a href="http://mumble-lp.s3-website-us-west-2.amazonaws.com/">![Mumble UI Kit](https://img.shields.io/badge/Mumble-UI%20Kit-orange?style=for-the-badge)</a>
 <a href="https://discord.gg/TxgpyK8pzf">![Mumble Community](https://img.shields.io/discord/825371211399692308?label=Mumble%20Community&style=for-the-badge&logo=Discord)</a>
-<a href="https://github.com/divanov11/mumbleapi">![Mumble API](https://img.shields.io/badge/Mumble-%20API-blue?style=for-the-badge&logo=Django)</a>
-<a href="https://github.com/PraveenMalethia/mumble-vue">![Mumble Vue](https://img.shields.io/badge/Mumble-%20Vue-teal?style=for-the-badge&logo=Vue.js)</a>
 
 </div>
 
