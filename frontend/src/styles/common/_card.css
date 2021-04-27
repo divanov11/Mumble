@@ -1,29 +1,55 @@
 .card {
   border-radius: 1rem;
   background-color: var(--color-white);
-  border: 2px solid var(--color-light);
+  border: 1.5px solid var(--color-light);
+  //box-shadow: 1px -1px 5px rgba(0, 0, 0, 0.05);
   width: auto;
   height: auto;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
-.dark-theme .card {
-  background-color: var(--color-sub-light);
+.card__link {
+  transition: all 0.3s ease-in;
+}
+
+.card__link:hover {
+  text-decoration: none;
+}
+
+.card__body,
+.card__header {
+  padding: 2.5rem;
+}
+
+.card__header {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1.5px solid var(--color-light);
+}
+
+.card__headerTitle {
+  font-size: 2.2rem;
+  font-weight: var(--font-medium);
+}
+
+.card__header .card__link:hover {
+  text-decoration: underline;
+  color: var(--color-main);
 }
 
 .card.card--dark {
   background-color: var(--color-light);
 }
 
+.card.card--dark .card__header {
+  box-shadow: var(--generic-shadow);
+}
+
+.dark-theme .card {
+  background-color: var(--color-sub-light);
+}
+
 .dark-theme .card.card--dark {
   background-color: var(--color-main-light);
-}
-
-.card__body {
-  padding: 2.5rem;
-}
-
-.expand-skills__link:hover {
-  text-decoration: underline;
 }

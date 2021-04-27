@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import FollowButton from './FollowButton';
 import { getApiUrl } from '../services/config';
 import { AuthorBox } from '../common';
-import FollowButton from './FollowButton';
 import { listRecommenedUsers } from '../actions/userActions';
 
 const Contributors = () => {
@@ -19,13 +19,13 @@ const Contributors = () => {
 
   return (
     <div className="card">
-      <div className="card__body">
-        <h5>Top Contributors</h5>
-        <Link className="card-link" to={'/search'}>
+      <div className="card__header">
+        <h5 className="card__headerTitle">Top Contributors</h5>
+        <Link className="card__link" to={'/search'}>
           View More
         </Link>
-        <div className="custom-spacer"></div>
-
+      </div>
+      <div className="card__body">
         {users.map((user) => (
           <div key={user.id} className="contributor-wrapper">
             <div className="contributor-preview">

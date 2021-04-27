@@ -6,7 +6,7 @@
   --color-text: #737373;
   --color-gray: #8b8b8b;
   --color-light: #e5e7eb;
-  --color-light-gray: ##767676;
+  --color-light-gray: #767676;
   --color-bg: #f8fafd;
   --color-white: #fffefd;
   --color-white-light: #fafafa;
@@ -17,6 +17,7 @@
   --font-regular: 300;
   --font-medium: 500;
   --font-bold: 700;
+  --generic-shadow: 0 1px 5px #00000010;
 }
 
 .dark-theme {
