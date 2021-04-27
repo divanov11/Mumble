@@ -59,7 +59,6 @@ We highly recommend to go through the guideline before start contributing.
 ## 📸 Screenshots :
 
 **User Feed** : <br/><br/>
-
 <img src="./images/home-page.PNG" width=600 />
 
 **User Profile Page** : <br/><br/>
