@@ -2,6 +2,7 @@ import React from 'react';
 import { getApiUrl } from '../services/config';
 import '../styles/components/UserCard.css';
 
+import FollowButton from './FollowButton';
 import { Avatar } from '../common';
 
 const UserCard = ({ user }) => {
@@ -33,6 +34,9 @@ const UserCard = ({ user }) => {
               <h6>{user.followers_count}</h6>
               <i>Followers</i>
             </div>
+          </div>
+          <div className="followbutton__profilepage">
+            <FollowButton userProfile={user} />
           </div>
         </div>
       </div>
