@@ -25,10 +25,6 @@
   color: var(--color-sub);
 }
 
-.author-box__name:hover {
-  text-decoration: underline;
-}
-
 .dark-theme .author-box__name {
   color: var(--color-text);
 }
@@ -45,10 +41,6 @@
   font-size: 1.4rem;
   color: var(--color-text);
   font-weight: var(--font-regular);
-}
-
-.author-box__handle:hover {
-  text-decoration: underline;
 }
 
 .dark-theme .author-box__handle {
