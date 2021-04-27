@@ -31,7 +31,7 @@
   margin-top: 3rem;
 }
 
-error500page__code @media screen and (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .error500page__logo {
     height: 100px;
     width: 100px;
