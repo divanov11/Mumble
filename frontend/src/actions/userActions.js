@@ -15,6 +15,9 @@ import {
   FOLLOW_USER_REQUEST,
   FOLLOW_USER_SUCCESS,
   FOLLOW_USER_FAIL,
+  UPDATE_USER_REQUEST,
+  UPDATE_USER_SUCCESS,
+  UPDATE_USER_FAIL,
 } from '../constants/userConstants';
 import { UsersService } from '../services';
 import usersService from '../services/usersService';
@@ -88,10 +91,27 @@ export const followUser = (username) => async (dispatch, getState) => {
     dispatch({
       type: FOLLOW_USER_SUCCESS,
     });
-
-    //dispatch(listUsers());
-    //dispatch(listRecommenedUsers());
   } catch (error) {
     dispatch(createActionPayload(FOLLOW_USER_FAIL, error));
+  }
+};
+
+export const updateUserProfile = (userData) => async (dispatch, getState) => {
+  try {
+    dispatch({ type: UPDATE_USER_REQUEST });
+    let { user } = await usersService.updateUserProfile(userData);
+
+    dispatch({
+      type: UPDATE_USER_SUCCESS,
+    });
+
+    dispatch(listUserDetails(user.username));
+
+    // dispatch({
+    //   type: USER_DETAIL_SUCCESS,
+    //   payload:user,
+    // });
+  } catch (error) {
+    dispatch(createActionPayload(UPDATE_USER_FAIL, error));
   }
 };

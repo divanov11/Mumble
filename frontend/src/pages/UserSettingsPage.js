@@ -1,25 +1,38 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
+import { RoundShape, TextBlock } from 'react-placeholder/lib/placeholders';
 import '../styles/components/UserSettingsPage.css';
-
+import { listUserDetails } from '../actions/userActions';
 import { Avatar, Button, Card } from '../common';
 import { ProfilePicCropperModal, UserSettingUpdateModal } from '../components';
-import { usersData } from '../data';
+import { apiEndpointURL } from '../services/config';
 import { toggleTheme as DarkLightTheme } from '../actions/local';
 
 function UserSettingsPage() {
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
-  const toggleTheme = useDispatch();
-
-  const [currentUser, setCurrentUser] = useState(usersData[0]);
+  const dispatch = useDispatch();
+  const { username, profile_pic: profilePic } = useSelector((state) => state.auth.user);
+  const currentUser = useSelector((state) =>
+    state.userProfileDetail.user.username === username
+      ? state.userProfileDetail
+      : { loading: true },
+  );
+  // const [currentUser, setCurrentUser] = useState(usersData[0]);
   const [updateModelActive, setUpdateModelActive] = useState(false);
   const [profilePicModel, setProfilePicModel] = useState(false);
   const [modelContent, setModelContent] = useState(null);
   const [profilePicSrc, setProfilePicSrc] = useState(null);
   const inputRef = useRef();
 
-  const [croppedImageBase64, setCroppedImageBase64] = useState(currentUser.profile_pic);
+  const [croppedImageBase64, setCroppedImageBase64] = useState(apiEndpointURL + '/' + profilePic);
+
+  useEffect(() => {
+    dispatch(listUserDetails(username));
+  }, [dispatch, username]);
+
+  useEffect(() => {
+    setCroppedImageBase64(apiEndpointURL + '/' + profilePic);
+  }, [profilePic]);
 
   const update = (e) => {
     const data_type = e.target.dataset.type;
@@ -43,7 +56,7 @@ function UserSettingsPage() {
   };
 
   const renderSkills = () => {
-    const skills = currentUser.skills.map((x, i) => {
+    const skills = currentUser?.user?.skills.map((x, i) => {
       return (
         <div className="tag" key={i}>
           <small>{x}</small>
@@ -55,24 +68,28 @@ function UserSettingsPage() {
 
   return (
     <div className="container two-column-layout two-column-layout--reverse">
-      <UserSettingUpdateModal
-        heading="Update User Settings"
-        dataType={modelContent}
-        userData={currentUser}
-        setUserData={setCurrentUser}
-        active={updateModelActive}
-        setActive={setUpdateModelActive}
-      />
-      <ProfilePicCropperModal
-        heading="Change Profile Picture"
-        active={profilePicModel}
-        setActive={setProfilePicModel}
-        profilePicSrc={profilePicSrc}
-        setProfilePicSrc={setProfilePicSrc}
-        setCroppedImageBase64={setCroppedImageBase64}
-        clearFileInputOnCancel={clearFileInputOnCancel}
-        setCurrentUser={setCurrentUser}
-      />
+      {currentUser?.user?.name && (
+        <>
+          <UserSettingUpdateModal
+            heading="Update User Settings"
+            dataType={modelContent}
+            userData={currentUser?.user}
+            // setUserData={setCurrentUser}
+            active={updateModelActive}
+            setActive={setUpdateModelActive}
+          />
+          <ProfilePicCropperModal
+            heading="Change Profile Picture"
+            active={profilePicModel}
+            setActive={setProfilePicModel}
+            profilePicSrc={profilePicSrc}
+            setProfilePicSrc={setProfilePicSrc}
+            setCroppedImageBase64={setCroppedImageBase64}
+            clearFileInputOnCancel={clearFileInputOnCancel}
+            // setCurrentUser={setCurrentUser}
+          />
+        </>
+      )}
       <section>
         <Card>
           <div className="settings-update settings-update--profile">
@@ -89,11 +106,32 @@ function UserSettingsPage() {
             </div>
 
             <div className="settings-update__info">
-              <Avatar size="lg" src={croppedImageBase64} />
-              <h4>{currentUser.name}</h4>
-              <small>{currentUser.email}</small>
-              <small>@{currentUser.username}</small>
-              <p>Newyork, USA</p>
+              {!currentUser?.loading && croppedImageBase64 !== undefined ? (
+                <>
+                  <Avatar size="lg" src={croppedImageBase64} />
+                  <h4>{currentUser?.user.name}</h4>
+                  <small>{currentUser?.user.email || 'tempemail@mumble.dev'}</small>
+                  <small>@{currentUser?.user?.username}</small>
+                  <p>Newyork, USA</p>
+                </>
+              ) : (
+                <div className="settings-update__infoplaceholder">
+                  <RoundShape
+                    color="#c5c5c5"
+                    className="avatar settings-update-image__infoplaceholder"
+                  />
+                  <TextBlock rows={1} color="#c5c5c5" style={{ fontSize: '30px', width: 150 }} />
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <TextBlock
+                      rows={1}
+                      color="#c5c5c5"
+                      style={{ width: 250, marginBottom: '10px' }}
+                    />
+                    <TextBlock rows={1} color="#c5c5c5" style={{ width: 150 }} />
+                  </div>
+                  <TextBlock rows={1} color="#c5c5c5" style={{ width: 170 }} />
+                </div>
+              )}
 
               <div className="settings-update__avatar">
                 <input
@@ -125,7 +163,11 @@ function UserSettingsPage() {
               />
             </div>
             <div className="settings-update__info">
-              <p>{currentUser.bio}</p>
+              {!currentUser?.loading ? (
+                <p>{currentUser?.user.bio}</p>
+              ) : (
+                <TextBlock rows={2} color="#c5c5c5" />
+              )}
             </div>
           </div>
 
@@ -142,7 +184,38 @@ function UserSettingsPage() {
               />
             </div>
             <div className="settings-update__info">
-              <div className="tags-wrapper">{renderSkills()}</div>
+              <div className="tags-wrapper">
+                {currentUser?.loading ? (
+                  <div className="settings-update-tag-placeholder__info">
+                    <TextBlock
+                      rows={1}
+                      color="#c5c5c5"
+                      style={{ width: 55 }}
+                      className="settings-update-tag_placeholder"
+                    />
+                    <TextBlock
+                      rows={1}
+                      color="#c5c5c5"
+                      style={{ width: 70 }}
+                      className="settings-update-tag_placeholder"
+                    />
+                    <TextBlock
+                      rows={1}
+                      color="#c5c5c5"
+                      style={{ width: 60 }}
+                      className="settings-update-tag_placeholder"
+                    />
+                    <TextBlock
+                      rows={1}
+                      color="#c5c5c5"
+                      style={{ width: 75 }}
+                      className="settings-update-tag_placeholder"
+                    />
+                  </div>
+                ) : (
+                  renderSkills()
+                )}
+              </div>
             </div>
           </div>
 
@@ -155,7 +228,7 @@ function UserSettingsPage() {
                 defaultChecked={isDarkTheme}
                 type="checkbox"
                 onClick={() => {
-                  toggleTheme(DarkLightTheme());
+                  dispatch(DarkLightTheme());
                 }}
               ></input>
               <span className="theme-slider"></span>

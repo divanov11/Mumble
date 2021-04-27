@@ -81,9 +81,9 @@ const ProfilePicCropperModal = ({
     sendImageToServer(croppedImageFile);
     closeModelAndClearFileInput();
 
-    setCurrentUser((state) => {
-      return { ...state, profile_pic: croppedBase64Image };
-    });
+    // setCurrentUser((state) => {
+    //   return { ...state, profile_pic: croppedBase64Image };
+    // });
   };
 
   return (

@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Input from './Input';
 
 const TagInput = ({ tagList, tagListRef }) => {
   const [tags, setTags] = useState(tagList);
   const [input, setInput] = useState('');
-
   const addTags = (e) => {
     e.stopPropagation();
     const value =
@@ -43,16 +41,14 @@ const TagInput = ({ tagList, tagListRef }) => {
   return (
     <div className="input-tags" onClick={() => document.querySelector('.tag-input').focus()}>
       <div className="input-tag-list">{renderTags}</div>
-      <Input
+      <input
         className="tag-input"
-        placeholder="Press enter to add a tag"
-        onKeyUp={addTags}
-        name="skills"
+        type="text"
+        value={input}
         onChange={(e) => setInput(e.target.value)}
-        label="Add Skills"
-        hideLabel
+        onKeyUp={addTags}
+        placeholder="Press enter to add a tag"
       />
-      <input type="text" value={input} className="tag-input" />
     </div>
   );
 };
