@@ -24,6 +24,7 @@ import {
   LoginSignupPage,
   Error404page,
   Error500page,
+  ForgetPasswordPage,
 } from './pages';
 
 const App = () => {
@@ -48,6 +49,7 @@ const App = () => {
               <Route exact path="/discussion/:slug" component={DiscussionPage} />
               <Route exact path="/article/:slug" component={ArticlePage} />
               <Route exact path="/search" component={SearchPage} />
+              <Route exact path="/forget-password" component={ForgetPasswordPage} />
               <PrivateRoute exact path="/settings" component={UserSettingsPage} />
               <Route path="/404" component={Error404page} />
               <Redirect to="/404" />

@@ -10,3 +10,4 @@ export { default as SearchPage } from './SearchPage';
 export { default as UserSettingsPage } from './UserSettingsPage';
 export { default as Error404page } from './Error404Page';
 export { default as Error500page } from './Error500Page';
+export { default as ForgetPasswordPage } from './ForgetPasswordPage';
