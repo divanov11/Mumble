@@ -1,33 +1,38 @@
-.main500page {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.error500page {
   text-align: center;
 }
 
-.main500page__banner {
+.error500page__banner {
   font-size: 18rem;
-  margin: 0.025em 0;
-  text-shadow: 0.05em 0.05em 0 rgba(0, 0, 0, 0.25);
+  text-shadow: var(--generic-shadow);
   white-space: nowrap;
 }
 
-.main500page__logo {
+.error500page__logo {
   height: 140px;
   width: 140px;
 }
 
-.main500page__title {
+.error500page__title {
   margin-bottom: 0.4em;
 }
 
-.main500page__info {
-  margin-bottom: 0.8em;
+.error500page__info {
+  font-size: 2.4rem;
 }
 
-@media screen and (max-width: 480px) {
-  .main500page__logo {
+.error500page__link {
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+.error500page__code,
+.error500page__code pre {
+  margin-top: 3rem;
+}
+
+error500page__code @media screen and (max-width: 480px) {
+  .error500page__logo {
     height: 100px;
     width: 100px;
   }

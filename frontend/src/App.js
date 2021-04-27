@@ -36,7 +36,6 @@ const App = () => {
     <Router>
       <div className={classNames('app', `${isDarkTheme && 'dark-theme'}`)}>
         <ErrorBoundary FallbackComponent={Error500page}>
-          {/* Header bar should not be displayed in login page. Temporary fix. -- Dennis Ivanov */}
           {user.isAuthenticated && <Header />}
           <main>
             <Switch>
