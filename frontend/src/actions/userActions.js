@@ -15,7 +15,7 @@ import {
   FOLLOW_USER_REQUEST,
   FOLLOW_USER_SUCCESS,
   FOLLOW_USER_FAIL,
-  UPDATE_USER_REQUEST,
+  // UPDATE_USER_REQUEST,
   UPDATE_USER_SUCCESS,
   UPDATE_USER_FAIL,
 } from '../constants/userConstants';
@@ -52,9 +52,11 @@ export const listRecommenedUsers = () => async (dispatch, getState) => {
   }
 };
 
-export const listUserDetails = (username) => async (dispatch) => {
+export const listUserDetails = (username, update = null) => async (dispatch) => {
   try {
-    dispatch({ type: USER_DETAIL_REQUEST });
+    if (!update) {
+      dispatch({ type: USER_DETAIL_REQUEST });
+    }
 
     const user = await UsersService.getUserByUsername(username);
     dispatch({
@@ -98,14 +100,14 @@ export const followUser = (username) => async (dispatch, getState) => {
 
 export const updateUserProfile = (userData) => async (dispatch, getState) => {
   try {
-    dispatch({ type: UPDATE_USER_REQUEST });
+    // dispatch({ type: UPDATE_USER_REQUEST });
     let { user } = await usersService.updateUserProfile(userData);
 
     dispatch({
       type: UPDATE_USER_SUCCESS,
     });
 
-    dispatch(listUserDetails(user.username));
+    dispatch(listUserDetails(user.username, true));
 
     // dispatch({
     //   type: USER_DETAIL_SUCCESS,

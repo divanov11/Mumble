@@ -12,12 +12,8 @@ function UserSettingsPage() {
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
   const dispatch = useDispatch();
   const { username, profile_pic: profilePic } = useSelector((state) => state.auth.user);
-  const currentUser = useSelector((state) =>
-    state.userProfileDetail.user.username === username
-      ? state.userProfileDetail
-      : { loading: true },
-  );
-  // const [currentUser, setCurrentUser] = useState(usersData[0]);
+
+  const currentUser = useSelector((state) => state.userProfileDetail);
   const [updateModelActive, setUpdateModelActive] = useState(false);
   const [profilePicModel, setProfilePicModel] = useState(false);
   const [modelContent, setModelContent] = useState(null);
@@ -109,8 +105,8 @@ function UserSettingsPage() {
               {!currentUser?.loading && croppedImageBase64 !== undefined ? (
                 <>
                   <Avatar size="lg" src={croppedImageBase64} />
-                  <h4>{currentUser?.user.name}</h4>
-                  <small>{currentUser?.user.email || 'tempemail@mumble.dev'}</small>
+                  <h4>{currentUser?.user?.name}</h4>
+                  <small>{currentUser?.user?.email || 'tempemail@mumble.dev'}</small>
                   <small>@{currentUser?.user?.username}</small>
                   <p>Newyork, USA</p>
                 </>
@@ -164,7 +160,7 @@ function UserSettingsPage() {
             </div>
             <div className="settings-update__info">
               {!currentUser?.loading ? (
-                <p>{currentUser?.user.bio}</p>
+                <p>{currentUser?.user?.bio}</p>
               ) : (
                 <TextBlock rows={2} color="#c5c5c5" />
               )}
