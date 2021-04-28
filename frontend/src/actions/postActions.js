@@ -17,6 +17,9 @@ import {
   POST_VOTE_REQUEST,
   POST_VOTE_SUCCESS,
   POST_VOTE_FAIL,
+  POST_DELETE_REQUEST,
+  POST_DELETE_SUCCESS,
+  POST_DELETE_FAIL,
 } from '../constants/postConstants';
 import { PostsService } from '../services';
 import { listUserPosts } from './userActions';
@@ -70,6 +73,22 @@ export const createPost = (postData) => async (dispatch, getState) => {
     });
   } catch (error) {
     dispatch(createActionPayload(POST_CREATE_FAIL, error));
+  }
+};
+
+export const deletePost = (postId) => async (dispatch, getState) => {
+  try {
+    dispatch({ type: POST_DELETE_REQUEST });
+
+    const post = await postsService.deletePost(postId);
+
+    dispatch({
+      type: POST_DELETE_SUCCESS,
+      payload: post,
+    });
+    dispatch(getPostsForDashboard());
+  } catch (error) {
+    dispatch(createActionPayload(POST_DELETE_FAIL, error));
   }
 };
 

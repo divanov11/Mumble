@@ -10,7 +10,7 @@ const Error404Page = () => (
       <img
         className="main404page__logo"
         src="https://mumble.dev/apple-touch-icon.png"
-        alt="Mumble Logo (0)"
+        alt="Mumble Logo"
       />
       4
     </h1>
