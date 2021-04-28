@@ -1,23 +1,26 @@
 import {
-  USER_LIST_REQUEST,
-  USER_LIST_SUCCESS,
-  USER_LIST_FAIL,
-  USER_LIST_RECOMMENDED_REQUEST,
-  USER_LIST_RECOMMENDED_SUCCESS,
-  USER_LIST_RECOMMENDED_FAIL,
-  USER_DETAIL_REQUEST,
-  USER_DETAIL_SUCCESS,
-  USER_DETAIL_RESET,
-  USER_DETAIL_FAIL,
-  USER_POSTS_LIST_REQUEST,
-  USER_POSTS_LIST_SUCCESS,
-  USER_POSTS_LIST_FAIL,
+  FOLLOW_USER_FAIL,
   FOLLOW_USER_REQUEST,
   FOLLOW_USER_SUCCESS,
-  FOLLOW_USER_FAIL,
-  UPDATE_USER_REQUEST,
-  UPDATE_USER_SUCCESS,
   UPDATE_USER_FAIL,
+  UPDATE_USER_PHOTO_SUCCESS,
+  UPDATE_USER_SUCCESS,
+  USER_ARTICLES_LIST_FAIL,
+  USER_ARTICLES_LIST_REQUEST,
+  USER_ARTICLES_LIST_SUCCESS,
+  USER_DETAIL_FAIL,
+  USER_DETAIL_REQUEST,
+  USER_DETAIL_RESET,
+  USER_DETAIL_SUCCESS,
+  USER_LIST_FAIL,
+  USER_LIST_RECOMMENDED_FAIL,
+  USER_LIST_RECOMMENDED_REQUEST,
+  USER_LIST_RECOMMENDED_SUCCESS,
+  USER_LIST_REQUEST,
+  USER_LIST_SUCCESS,
+  USER_POSTS_LIST_FAIL,
+  USER_POSTS_LIST_REQUEST,
+  USER_POSTS_LIST_SUCCESS,
 } from '../constants/userConstants';
 import { UsersService } from '../services';
 import usersService from '../services/usersService';
@@ -52,11 +55,14 @@ export const listRecommenedUsers = () => async (dispatch, getState) => {
   }
 };
 
-export const listUserDetails = (username) => async (dispatch) => {
+export const listUserDetails = (username, update = null) => async (dispatch) => {
   try {
-    dispatch({ type: USER_DETAIL_REQUEST });
+    if (!update) {
+      dispatch({ type: USER_DETAIL_REQUEST });
+    }
 
     const user = await UsersService.getUserByUsername(username);
+    user.profile.email = user.email;
     dispatch({
       type: USER_DETAIL_SUCCESS,
       payload: user.profile,
@@ -84,6 +90,20 @@ export const listUserPosts = (username) => async (dispatch) => {
   }
 };
 
+export const listUserArticles = (username) => async (dispatch) => {
+  try {
+    dispatch({ type: USER_ARTICLES_LIST_REQUEST });
+
+    const articles = await UsersService.getUserArticles(username);
+    dispatch({
+      type: USER_ARTICLES_LIST_SUCCESS,
+      payload: articles,
+    });
+  } catch (error) {
+    dispatch(createActionPayload(USER_ARTICLES_LIST_FAIL, error));
+  }
+};
+
 export const followUser = (username) => async (dispatch, getState) => {
   try {
     dispatch({ type: FOLLOW_USER_REQUEST });
@@ -98,14 +118,15 @@ export const followUser = (username) => async (dispatch, getState) => {
 
 export const updateUserProfile = (userData) => async (dispatch, getState) => {
   try {
-    dispatch({ type: UPDATE_USER_REQUEST });
+    // dispatch({ type: UPDATE_USER_REQUEST });
     let { user } = await usersService.updateUserProfile(userData);
-
+    user.profile.email = user.email;
     dispatch({
       type: UPDATE_USER_SUCCESS,
+      payload: user.profile,
     });
 
-    dispatch(listUserDetails(user.username));
+    // dispatch(listUserDetails(user.username, true));
 
     // dispatch({
     //   type: USER_DETAIL_SUCCESS,
@@ -113,5 +134,19 @@ export const updateUserProfile = (userData) => async (dispatch, getState) => {
     // });
   } catch (error) {
     dispatch(createActionPayload(UPDATE_USER_FAIL, error));
+  }
+};
+
+export const updateProfilePic = (formData) => async (dispatch) => {
+  try {
+    let { user } = await usersService.updateUserProfilePic(formData);
+    user.profile.email = user.email;
+    dispatch({
+      type: UPDATE_USER_PHOTO_SUCCESS,
+      payload: user.profile,
+    });
+  } catch (error) {
+    alert('Endpoint Currently Not available');
+    // dispatch(createActionPayload(UPDATE_USER_PHOTO_FAIL, error));
   }
 };

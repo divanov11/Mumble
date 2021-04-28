@@ -6,19 +6,28 @@ const getUserByUsername = (username) => get({ url: getApiUrl(`api/users/${userna
 const getUserPosts = (username) => get({ url: getApiUrl(`api/users/${username}/mumbles`) });
 const getUsers = () => get({ url: getApiUrl(`api/users`) });
 const followUser = (username) => post({ url: getApiUrl(`api/users/${username}/follow/`) }, {});
+const getUserArticles = (username) => get({ url: getApiUrl(`api/users/${username}/articles`) });
+
 const updateUserProfile = (userData) =>
   patch({
     url: getApiUrl(`api/users/profile_update/`),
     payload: userData,
   });
+const updateUserProfilePic = (formData) =>
+  post({
+    url: getApiUrl('api/users/profile_update/photo/'),
+    payload: formData,
+  });
 
 const usersService = {
   getRecommendedUsers,
+  getUserArticles,
   getUsersByKeyword,
   getUserByUsername,
   getUserPosts,
   getUsers,
   followUser,
   updateUserProfile,
+  updateUserProfilePic,
 };
 export default usersService;

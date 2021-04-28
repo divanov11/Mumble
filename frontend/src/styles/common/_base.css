@@ -38,3 +38,14 @@ body,
   background-color: var(--color-bg);
   min-height: 100vh;
 }
+
+code {
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  background-color: var(--color-sub);
+  color: var(--color-white);
+}
+
+.dark-theme code {
+  color: var(--color-text);
+}

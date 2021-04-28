@@ -1,4 +1,4 @@
-import { get, post, getApiUrl } from './config';
+import { get, post, remove, getApiUrl } from './config';
 
 const getPostsByKeyword = (keyword) => get({ url: getApiUrl(`api/mumbles${keyword}`) });
 const getPosts = () =>
@@ -29,6 +29,10 @@ const remumble = (postData) =>
     url: getApiUrl(`api/mumbles/remumble/`),
     payload: postData,
   });
+const deletePost = (postId) =>
+  remove({
+    url: getApiUrl(`api/mumbles/${postId}/`),
+  });
 
 const postsService = {
   getPostsByKeyword,
@@ -36,6 +40,7 @@ const postsService = {
   getPostsComments,
   createPost,
   createComment,
+  deletePost,
   modifyVote,
   remumble,
 };

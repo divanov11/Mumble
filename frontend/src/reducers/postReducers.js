@@ -11,13 +11,13 @@ import {
 export const postSearchListReducer = (state = { posts: [] }, action) => {
   switch (action.type) {
     case POST_SEARCH_LIST_REQUEST:
-      return { loading: true, posts: [] };
+      return { ...state, loading: true, posts: [] };
 
     case POST_SEARCH_LIST_SUCCESS:
-      return { loading: false, posts: action.payload };
+      return { ...state, loading: false, posts: action.payload };
 
     case POST_SEARCH_LIST_FAIL:
-      return { loading: false, posts: [], error: action.payload };
+      return { ...state, loading: false, error: action.payload };
 
     default:
       return state;
@@ -27,10 +27,10 @@ export const postSearchListReducer = (state = { posts: [] }, action) => {
 export const postDashboardReducer = (state = { loading: false, posts: [] }, action) => {
   switch (action.type) {
     case POST_DASHBOARD_REQUEST:
-      return { loading: true, posts: [] };
+      return { ...state, loading: true };
 
     case POST_DASHBOARD_SUCCESS:
-      return { loading: false, posts: action.payload };
+      return { ...state, loading: false, posts: action.payload };
 
     case POST_CREATE_SUCCESS:
       return {
@@ -39,7 +39,7 @@ export const postDashboardReducer = (state = { loading: false, posts: [] }, acti
       };
 
     case POST_DASHBOARD_FAIL:
-      return { loading: false, error: action.payload };
+      return { ...state, loading: false, error: action.payload };
 
     default:
       return state;

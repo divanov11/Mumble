@@ -50,7 +50,14 @@ textarea:focus-within {
   align-items: center;
   padding-top: 15px;
   padding-bottom: 15px;
-  border-top: 1px solid var(--color-light);
+}
+
+.contributor-wrapper:first-child {
+  padding-top: 0;
+}
+
+.contributor-wrapper:last-child {
+  padding-bottom: 0;
 }
 
 .contributor-preview {
@@ -71,7 +78,6 @@ textarea:focus-within {
 
 .snippet-wrapper {
   display: flex;
-  border-top: 1px solid var(--color-light);
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -93,11 +99,21 @@ textarea:focus-within {
 }
 
 .snippet-engagement-count p {
-  color: var(--color-light);
+  font-size: 1.8rem;
+  color: var(--color-bg);
+  font-weight: var(--font-medium);
 }
 
 .snippet-text {
-  color: var(--color-gray);
+  color: var(--color-light-gray);
+  font-weight: var(--color-medium);
+  font-size: 1.4rem;
+  line-height: 1.35;
+  transition: all 0.3s ease-out;
+}
+
+.snippet-text:hover {
+  color: var(--color-main);
 }
 
 ::-webkit-scrollbar {
@@ -112,8 +128,4 @@ textarea:focus-within {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #4d94a8;
-}
-
-.card-link:hover {
-  text-decoration: underline;
 }
