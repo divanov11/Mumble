@@ -14,9 +14,14 @@ import {
   UserCard,
   UserCardPlaceholder,
 } from '../components';
-import { articles, discussions } from '../data';
+import { discussions } from '../data';
 
-import { listUserDetails, listUserPosts, resetUserDetails } from '../actions/userActions';
+import {
+  listUserArticles,
+  listUserDetails,
+  listUserPosts,
+  resetUserDetails,
+} from '../actions/userActions';
 
 const Profile = ({ match }) => {
   const username = match.params.username;
@@ -25,13 +30,16 @@ const Profile = ({ match }) => {
 
   const userProfileDetail = useSelector((state) => state.userProfileDetail);
   const userPostsList = useSelector((state) => state.userPostsList);
+  const userArticleList = useSelector((state) => state.userArticleList);
 
   const { user, loading: isUserLoading } = userProfileDetail;
   const { posts, loading: isPostsLoading } = userPostsList;
+  const { articles } = userArticleList;
 
   useEffect(() => {
     dispatch(listUserDetails(username));
     dispatch(listUserPosts(username));
+    dispatch(listUserArticles(username));
 
     // clear the userDetails when user goes out this page
     return () => dispatch(resetUserDetails());

@@ -16,6 +16,9 @@ import {
   UPDATE_USER_SUCCESS,
   UPDATE_USER_PHOTO_FAIL,
   UPDATE_USER_FAIL,
+  USER_ARTICLES_LIST_FAIL,
+  USER_ARTICLES_LIST_SUCCESS,
+  USER_ARTICLES_LIST_REQUEST,
 } from '../constants/userConstants';
 
 export const userListReducer = (state = { users: [] }, action) => {
@@ -43,6 +46,22 @@ export const userListRecommendedReducer = (state = { users: [] }, action) => {
       return { ...state, loading: false, users: action.payload };
 
     case USER_LIST_RECOMMENDED_FAIL:
+      return { ...state, loading: false, error: action.payload };
+
+    default:
+      return state;
+  }
+};
+
+export const userArticleListReducer = (state = { articles: [] }, action) => {
+  switch (action.type) {
+    case USER_ARTICLES_LIST_REQUEST:
+      return { ...state, loading: true };
+
+    case USER_ARTICLES_LIST_SUCCESS:
+      return { ...state, loading: false, articles: action.payload };
+
+    case USER_ARTICLES_LIST_FAIL:
       return { ...state, loading: false, error: action.payload };
 
     default:

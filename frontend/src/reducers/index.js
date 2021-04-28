@@ -6,6 +6,7 @@ import {
   userListRecommendedReducer,
   userProfileDetailReducer,
   userPostsListReducer,
+  userArticleListReducer,
 } from './userReducers';
 
 import { postDashboardReducer, postSearchListReducer } from './postReducers';
@@ -27,4 +28,5 @@ export default combineReducers({
   articleSearchList: articleSearchListReducer,
   articlePage: articlePageReducer,
   dashboard: postDashboardReducer,
+  userArticleList: userArticleListReducer,
 });
