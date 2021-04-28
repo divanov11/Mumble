@@ -10,19 +10,21 @@ import { Button, Input } from '../common';
 import { ArticlesCard } from '../components';
 import { articles } from '../data';
 import { useValidationForm } from '../hooks/useValidationForm';
+import { useDispatch } from 'react-redux';
+import { createArticle } from '../actions/articleActions';
 
 const CreateArticlePage = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const handleFormSubmit = () => {
-    alert('Article Created! \n Now you will be directed to the Articles Page');
-    history.push(`/article/article1`);
+    dispatch(createArticle(form, history));
   };
 
   const [form, errors, onSubmit, onChange] = useValidationForm({
     validation: {
       title: (value) => value,
-      body: (value) => value,
+      content: (value) => value,
     },
     onSubmit: handleFormSubmit,
   });
@@ -49,17 +51,17 @@ const CreateArticlePage = () => {
               <CKEditor
                 config={{ placeholder: 'Share your mumble thoughts...' }}
                 editor={ClassicEditor}
-                data={form.body}
+                data={form.content}
                 onChange={(e, editor) => {
                   onChange({
                     target: {
-                      name: 'body',
+                      name: 'content',
                       value: editor.getData(),
                     },
                   });
                 }}
               />
-              {errors.body && <small className="form__error">{'Body is required'}</small>}
+              {errors.content && <small className="form__error">{'Body is required'}</small>}
 
               <Button color="main" type="submit">
                 Submit
