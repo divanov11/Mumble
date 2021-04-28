@@ -40,3 +40,13 @@ export const patch = ({ url, payload }) =>
       },
     }),
   );
+
+export const remove = ({ url }) =>
+  pullData(
+    axios.delete(url, {
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${getAccessToken()}`,
+      },
+    }),
+  );
