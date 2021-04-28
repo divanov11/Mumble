@@ -4,8 +4,7 @@ import store from '../store';
 
 const getAccessToken = () => store.getState().auth.access;
 
-export const apiEndpointURL =
-  process.env.REACT_APP_API_ENDPOINT || 'https://mumbleapi.herokuapp.com'; //'http://127.0.0.1:8000';
+export const apiEndpointURL = process.env.REACT_APP_API_ENDPOINT || 'http://127.0.0.1:8000';
 
 export const getApiUrl = (path) => `${apiEndpointURL}/${path}`;
 
@@ -34,6 +33,16 @@ export const post = ({ url, payload }) =>
 export const patch = ({ url, payload }) =>
   pullData(
     axios.patch(url, payload, {
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${getAccessToken()}`,
+      },
+    }),
+  );
+
+export const remove = ({ url }) =>
+  pullData(
+    axios.delete(url, {
       headers: {
         'Content-type': 'application/json',
         Authorization: `Bearer ${getAccessToken()}`,
