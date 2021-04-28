@@ -11,6 +11,11 @@ const updateUserProfile = (userData) =>
     url: getApiUrl(`api/users/profile_update/`),
     payload: userData,
   });
+const updateUserProfilePic = (formData) =>
+  post({
+    url: getApiUrl('api/users/profile_update/photo/'),
+    payload: formData,
+  });
 
 const usersService = {
   getRecommendedUsers,
@@ -20,5 +25,6 @@ const usersService = {
   getUsers,
   followUser,
   updateUserProfile,
+  updateUserProfilePic,
 };
 export default usersService;
