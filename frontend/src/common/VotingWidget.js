@@ -10,7 +10,7 @@ const VotingWidget = ({ votes, postId, postUsername, upVoters, downVoters, authU
   let searchVoters = (nameKey, myArray) => {
     //Search array of voters for users id
     nameKey = Number(nameKey);
-    for (var i = 0; i < myArray.length; i++) {
+    for (var i = 0; i < myArray?.length; i++) {
       if (myArray[i].id === nameKey) {
         return true;
       }
