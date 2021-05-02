@@ -6,14 +6,15 @@
 
 <!--- Thanks for considering that !-->
 
-## Well detailed description of the change :
+### Well detailed description of the change :
 
 <!-- Explain what you have done !-->
 
      I worked on the .....
 
+#
 
-## Context of the change :
+### Context of the change :
 
 <!-- Make sure to answer to these questions !-->
 
@@ -23,8 +24,9 @@
 
 - Does it solve a problem ? (please link the issue)
  
+#
 
-## Type of change :
+### Type of change :
 
 <!-- You should choice 1 option -->
 
@@ -34,11 +36,14 @@
 
 
 - [ ] Bug fix
+
 - [ ] New feature
+
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 
+#
 
-## Preview (Screenshots) :
+### Preview (Screenshots) :
 
 <!-- While providing screenshots, delete the text below !-->
 
@@ -47,9 +52,9 @@
 <p align="center">If it is possible, please link screenshots of your changes preview !
 </p>
 
+#
 
-
-## Checklist:
+### Checklist:
 
 <!-- Check your work !-->
 
@@ -66,4 +71,4 @@
 - [ ] All new and existing tests passed.
 
 
-<!--- Mumble Community thank you a lot for explaining each detail !-->
+<!--- Thanks a lot for explaining each detail !-->

@@ -162,10 +162,10 @@ const usersData = [
   {
     id: '9',
     name: 'Mehdi',
-    username: 'midouWebDev',
-    email: 'amidouWebDev@mumble.dev',
+    username: 'MidouWebDev',
+    email: 'MidouWebDev@mumble.dev',
     profile_pic: mehdi,
-    bio: 'I am a student developer',
+    bio: 'I am a Student and Full-Stack Developer',
     vote_ratio: '26',
     followers_count: '67023',
     skills: ['JavasScript', 'Python', 'Google Maps API', 'React Native', 'React JS'],
