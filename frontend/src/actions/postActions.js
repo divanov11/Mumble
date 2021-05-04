@@ -35,11 +35,10 @@ export const searchPosts = (keyword = '') => async (dispatch) => {
   try {
     dispatch({ type: POST_SEARCH_LIST_REQUEST });
 
-    const posts = await PostsService.getPostsByKeyword(keyword);
-
+    const {results} = await PostsService.getPostsByKeyword(keyword);
     dispatch({
       type: POST_SEARCH_LIST_SUCCESS,
-      payload: posts,
+      payload: results,
     });
   } catch (error) {
     dispatch(createActionPayload(POST_SEARCH_LIST_FAIL, error));
@@ -50,11 +49,12 @@ export const getPostsForDashboard = () => async (dispatch, getState) => {
   try {
     dispatch({ type: POST_DASHBOARD_REQUEST });
 
-    const posts = await PostsService.getPosts();
+    const {results} = await PostsService.getPosts();
+
 
     dispatch({
       type: POST_DASHBOARD_SUCCESS,
-      payload: posts,
+      payload: results,
     });
   } catch (error) {
     dispatch(createActionPayload(POST_DASHBOARD_FAIL, error));
@@ -127,6 +127,7 @@ export const getPostComments = (setComments, postId) => async (dispatch, getStat
   try {
     dispatch({ type: POST_COMMENTS_REQUEST });
     const posts = await postsService.getPostsComments(postId);
+
     setComments(posts);
     dispatch({
       type: POST_COMMENTS_SUCCESS,
