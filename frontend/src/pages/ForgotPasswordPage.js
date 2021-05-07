@@ -46,15 +46,15 @@ const ForgotPasswordPage = () => {
       <div className="container">
         <div className="forgotpwd__body">
           <div className="forgotpwd__bodyLeft">
-          <form className="form" style={{ width: '100%' }}>
-          <Input
-          name="email"
-          placeholder="e.g user@domain.com"
-          required={true}
-          label="Email Address:"
-        />
-        <Button color="main" text="Reset my password" size="lg"></Button>
-        </form>
+            <form className="form" style={{ width: '100%' }}>
+              <Input
+                name="email"
+                placeholder="e.g user@domain.com"
+                required={true}
+                label="Email Address:"
+              />
+              <Button color="main" text="Reset my password" size="lg"></Button>
+            </form>
           </div>
           <div className="forgotpwd__bodyRight">
             <img
