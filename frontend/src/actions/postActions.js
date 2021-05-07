@@ -35,7 +35,7 @@ export const searchPosts = (keyword = '') => async (dispatch) => {
   try {
     dispatch({ type: POST_SEARCH_LIST_REQUEST });
 
-    const {results} = await PostsService.getPostsByKeyword(keyword);
+    const { results } = await PostsService.getPostsByKeyword(keyword);
     dispatch({
       type: POST_SEARCH_LIST_SUCCESS,
       payload: results,
@@ -49,8 +49,7 @@ export const getPostsForDashboard = () => async (dispatch, getState) => {
   try {
     dispatch({ type: POST_DASHBOARD_REQUEST });
 
-    const {results} = await PostsService.getPosts();
-
+    const { results } = await PostsService.getPosts();
 
     dispatch({
       type: POST_DASHBOARD_SUCCESS,

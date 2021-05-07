@@ -16,7 +16,7 @@ export const searchArticles = (keyword = '') => async (dispatch) => {
   try {
     dispatch({ type: ARTICLE_SEARCH_REQUEST });
 
-    const {results} = await ArticlesService.getArticlesByKeyword(keyword);
+    const { results } = await ArticlesService.getArticlesByKeyword(keyword);
 
     dispatch({
       type: ARTICLE_SEARCH_SUCCESS,
