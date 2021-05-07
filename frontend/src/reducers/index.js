@@ -15,6 +15,7 @@ import {
   createArticleReducer,
   articleSearchListReducer,
 } from './articleReducer';
+import { notificationsReducer } from './notificationsReducer';
 
 export default combineReducers({
   local,
@@ -29,4 +30,5 @@ export default combineReducers({
   articlePage: articlePageReducer,
   dashboard: postDashboardReducer,
   userArticleList: userArticleListReducer,
+  notifications: notificationsReducer,
 });

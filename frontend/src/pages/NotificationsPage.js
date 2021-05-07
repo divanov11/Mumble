@@ -3,9 +3,11 @@ import '../styles/components/NotificationPage.css';
 
 import { Card } from '../common';
 import { DiscussionsCard, Notification } from '../components';
-import { discussions, notifications } from '../data';
+import { discussions } from '../data';
+import { useSelector } from 'react-redux';
 
 function NotificationsPage() {
+  const { notifications } = useSelector((state) => state.notifications);
   return (
     <div className="container two-column-layout">
       <section>

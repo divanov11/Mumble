@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ToastContainer } from 'react-toastify';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import classNames from 'classnames';
 
 import PrivateRoute from './utilities/PrivateRoute';
@@ -26,11 +26,27 @@ import {
   Error500page,
   ForgetPasswordPage,
 } from './pages';
+import { getNotifications } from './actions/notificationsActions';
 
 const App = () => {
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
 
   const user = useSelector((state) => state.auth);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const refreshNotifications = () => {
+      if (user.isAuthenticated) {
+        dispatch(getNotifications());
+      }
+    };
+    refreshNotifications();
+    const interval = setInterval(refreshNotifications, 30000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [user.isAuthenticated, dispatch]);
 
   return (
     <Router>
