@@ -31,12 +31,10 @@ const UserSettingUpdateModal = ({
     //     return { ...state, ...fields };
     //   });
     // }
-    console.log(fields);
   };
 
   const HandleTagFormSubmit = (e) => {
     e.preventDefault();
-    const tags = tagListRef.current;
 
     // if (tags) {
     //   setUserData((data) => {
@@ -45,7 +43,6 @@ const UserSettingUpdateModal = ({
     //   });
     // }
     // setActive(false);
-    console.log(tags);
   };
 
   const preventSubmission = (e) => {
