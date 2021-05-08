@@ -24,7 +24,7 @@ import {
   LoginSignupPage,
   Error404page,
   Error500page,
-  ForgetPasswordPage,
+  ForgotPasswordPage,
 } from './pages';
 import { getNotifications } from './actions/notificationsActions';
 
@@ -48,6 +48,21 @@ const App = () => {
     };
   }, [isAuthenticated, dispatch]);
 
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const refreshNotifications = () => {
+      if (user.isAuthenticated) {
+        dispatch(getNotifications());
+      }
+    };
+    refreshNotifications();
+    const interval = setInterval(refreshNotifications, 30000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [user.isAuthenticated, dispatch]);
+
   return (
     <Router>
       <div className={classNames('app', `${isDarkTheme && 'dark-theme'}`)}>
@@ -64,7 +79,7 @@ const App = () => {
               <Route exact path="/discussion/:slug" component={DiscussionPage} />
               <Route exact path="/article/:slug" component={ArticlePage} />
               <Route exact path="/search" component={SearchPage} />
-              <Route exact path="/forget-password" component={ForgetPasswordPage} />
+              <Route exact path="/forgot-password" component={ForgotPasswordPage} />
               <PrivateRoute exact path="/settings" component={UserSettingsPage} />
               <Route path="/404" component={Error404page} />
               <Redirect to="/404" />
