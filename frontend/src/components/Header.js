@@ -153,7 +153,7 @@ const Header = () => {
               <div key={notification.id} className="user-navigation--item">
                 <Avatar
                   alt="img-description"
-                  src={`/${notification.created_by.profile_pic}`}
+                  src={getApiUrl(notification.created_by.profile_pic)}
                   className="nav-avatar"
                   size="sm"
                 />
