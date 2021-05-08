@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import heroLight from '../assets/images/hero-light.svg';
 import heroDark from '../assets/images/hero-dark.svg';
-import logoDark from '../assets/logo/dark-logo.png';
+import logoDark from '../assets/logo/light-logo.png';
 import logoLight from '../assets/logo/light-logo.png';
 import '../styles/components/LoginOrSignUp.css';
 

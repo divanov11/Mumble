@@ -47,7 +47,7 @@ const LoginForm = () => {
         </span>
       </form>
 
-      <Link style={{ marginTop: '1.5rem' }} to="/forget-password">
+      <Link style={{ marginTop: '1.5rem' }} to="/forgot-password">
         Forgot Password?
       </Link>
     </>
