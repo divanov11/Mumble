@@ -32,3 +32,8 @@ export default combineReducers({
   userArticleList: userArticleListReducer,
   notifications: notificationsReducer,
 });
+
+export const replaceItem = (collection, item) => {
+  const index = collection.findIndex((entry) => entry.id === item.id);
+  return [...collection.slice(0, index), item, ...collection.slice(index + 1)];
+};

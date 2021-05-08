@@ -1,3 +1,4 @@
+import { replaceItem } from './index';
 import {
   POST_SEARCH_LIST_REQUEST,
   POST_SEARCH_LIST_SUCCESS,
@@ -6,6 +7,7 @@ import {
   POST_DASHBOARD_SUCCESS,
   POST_DASHBOARD_FAIL,
   POST_CREATE_SUCCESS,
+  POST_VOTE_SUCCESS,
 } from '../constants/postConstants';
 
 export const postSearchListReducer = (state = { posts: [] }, action) => {
@@ -40,6 +42,12 @@ export const postDashboardReducer = (state = { loading: false, posts: [] }, acti
 
     case POST_DASHBOARD_FAIL:
       return { ...state, loading: false, error: action.payload };
+
+    case POST_VOTE_SUCCESS:
+      return {
+        ...state,
+        posts: replaceItem(state.posts, action.payload),
+      };
 
     default:
       return state;
