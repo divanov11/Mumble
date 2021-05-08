@@ -41,6 +41,16 @@ export const patch = ({ url, payload }) =>
     }),
   );
 
+export const put = ({ url, payload }) =>
+  pullData(
+    axios.put(url, payload, {
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${getAccessToken()}`,
+      },
+    }),
+  );
+
 export const remove = ({ url }) =>
   pullData(
     axios.delete(url, {

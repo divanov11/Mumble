@@ -7,34 +7,34 @@ import '../styles/components/NotificationTitle.css';
 import { Avatar } from '../common';
 import { formatDate } from '../utilities';
 import { getNotificationLink } from './Header';
-
-export const markAsRead = (notification) => {
-  notification.isRead = true;
-};
+import { markAsRead } from '../actions/notificationsActions';
+import { useDispatch } from 'react-redux';
 
 const Notification = ({ notification }) => {
+  const dispatch = useDispatch();
+
   return (
     <Link
       className="notification-link"
-      onClick={() => markAsRead(notification)}
+      onClick={() => dispatch(markAsRead(notification.id))}
       to={getNotificationLink(notification)}
     >
       <div className={classNames('notification--item')}>
         <Avatar
-          src={notification.user.profile_pic}
-          name={notification.user.name}
-          handle={notification.user.username}
-          url={`/profile/${notification.user.username}`}
+          src={`/${notification.created_by.profile_pic}`}
+          name={notification.created_by.name}
+          handle={notification.created_by.username}
+          url={`/profile/${notification.created_by.username}`}
           size="sm"
         />
         <div className="notification__right-content">
           <NotificationTitle notification={notification} />
           <p
             className={classNames('notification__content', {
-              'notification__content--unread': !notification.isRead,
+              'notification__content--unread': !notification.is_read,
             })}
           >
-            {notification.description}
+            {notification.content}
           </p>
           <p className="notification--meta">{formatDate.distanceDate(notification.created)}</p>
         </div>
@@ -46,7 +46,7 @@ const Notification = ({ notification }) => {
 export const NotificationTitle = ({ notification }) => {
   return (
     <div className="notification-title">
-      <span className="notification-title__name">{notification.user.name}</span>
+      <span className="notification-title__name">{notification.created_by.username}</span>
       <span className="notification-title__link">{notification.content}</span>
     </div>
   );
