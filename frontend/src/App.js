@@ -31,7 +31,22 @@ import { getNotifications } from './actions/notificationsActions';
 const App = () => {
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
 
-  const user = useSelector((state) => state.auth);
+  const { isAuthenticated } = useSelector((state) => state.auth);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const refreshNotifications = () => {
+      if (isAuthenticated) {
+        dispatch(getNotifications());
+      }
+    };
+    refreshNotifications();
+    const interval = setInterval(refreshNotifications, 30000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [isAuthenticated, dispatch]);
 
   const dispatch = useDispatch();
 
@@ -52,7 +67,7 @@ const App = () => {
     <Router>
       <div className={classNames('app', `${isDarkTheme && 'dark-theme'}`)}>
         <ErrorBoundary FallbackComponent={Error500page}>
-          {user.isAuthenticated && <Header />}
+          {isAuthenticated && <Header />}
           <main>
             <Switch>
               <PrivateRoute path="/" exact component={HomePage} />

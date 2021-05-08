@@ -36,7 +36,7 @@ const Contributors = () => {
                 // handle={user.username}
               />
             </div>
-            <FollowButton userProfile={user} />
+            <FollowButton userProfile={user.profile} />
           </div>
         ))}
       </div>

@@ -31,7 +31,6 @@ const UserSettingUpdateModal = ({
     //     return { ...state, ...fields };
     //   });
     // }
-    console.log(fields);
   };
 
   const HandleTagFormSubmit = (e) => {
@@ -45,7 +44,6 @@ const UserSettingUpdateModal = ({
     //   });
     // }
     // setActive(false);
-    console.log(tags);
   };
 
   const preventSubmission = (e) => {

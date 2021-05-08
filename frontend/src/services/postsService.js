@@ -1,13 +1,13 @@
 import { get, post, remove, getApiUrl } from './config';
 
-const getPostsByKeyword = (keyword) => get({ url: getApiUrl(`api/mumbles${keyword}`) });
+const getPostsByKeyword = (keyword) => get({ url: getApiUrl(`api/mumbles/${keyword}`) });
 const getPosts = () =>
   get({
-    url: getApiUrl(`api/mumbles`),
+    url: getApiUrl(`api/mumbles/`),
   });
 const getPostsComments = (postId) =>
   get({
-    url: getApiUrl(`api/mumbles/${postId}/comments`),
+    url: getApiUrl(`api/mumbles/${postId}/comments/`),
   });
 const createPost = (postContent) =>
   post({
