@@ -10,7 +10,6 @@ const ModalContentAction = ({ setActive, successAction }) => {
 
   const handleSuccess = () => {
     if (typeof successAction === 'function') {
-      console.log('Success');
       successAction();
     }
   };

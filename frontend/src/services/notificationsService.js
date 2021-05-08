@@ -2,7 +2,7 @@ import { get, put, getApiUrl } from './config';
 
 const getNotifications = () =>
   get({
-    url: getApiUrl(`api/notifications`),
+    url: getApiUrl(`api/notifications/`),
   });
 
 const markAsRead = (notificationId) =>

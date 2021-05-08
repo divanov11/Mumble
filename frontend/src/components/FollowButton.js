@@ -7,9 +7,7 @@ const FollowButton = ({ userProfile }) => {
   const auth = useSelector((state) => state.auth);
   const { user } = auth;
 
-  const [isFollowing, setIsFollowing] = useState(() =>
-    userProfile.profile.followers.includes(user.id),
-  );
+  const [isFollowing, setIsFollowing] = useState(() => userProfile.followers.includes(user.id));
 
   const dispatch = useDispatch();
 

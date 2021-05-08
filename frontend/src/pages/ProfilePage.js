@@ -32,7 +32,7 @@ const Profile = ({ match }) => {
   const userPostsList = useSelector((state) => state.userPostsList);
   const userArticleList = useSelector((state) => state.userArticleList);
 
-  const { user, loading: isUserLoading } = userProfileDetail;
+  const { user: userProfile, loading: isUserLoading } = userProfileDetail;
   const { posts, loading: isPostsLoading } = userPostsList;
   const { articles } = userArticleList;
 
@@ -48,10 +48,10 @@ const Profile = ({ match }) => {
   return (
     <div className="container three-column-layout">
       <section>
-        {!isUserLoading && user ? (
+        {!isUserLoading && userProfile ? (
           <>
-            <UserCard user={user} />
-            <SkillTags tags={user.skills} />
+            <UserCard userProfile={userProfile} />
+            <SkillTags tags={userProfile.skills} />
           </>
         ) : (
           <UserCardPlaceholder />

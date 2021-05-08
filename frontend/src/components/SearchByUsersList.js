@@ -71,7 +71,7 @@ const SearchByUsersList = () => {
                         handle={user.username}
                         size="md"
                       />
-                      <FollowButton userProfile={user} />
+                      <FollowButton userProfile={user.profile} />
                     </div>
                     <p className="searchItem__bottom">{user.profile.bio}</p>
                   </div>

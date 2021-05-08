@@ -28,7 +28,6 @@ const ProfilePicCropperModal = ({
   const [image, setImage] = useState(null);
 
   const sendImageToServer = (imageFile) => {
-    console.log(imageFile);
     let formData = new FormData();
     formData.append('profile_pic', imageFile);
     dispatch(updateProfilePic(formData));
