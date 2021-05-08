@@ -48,21 +48,6 @@ const App = () => {
     };
   }, [isAuthenticated, dispatch]);
 
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const refreshNotifications = () => {
-      if (user.isAuthenticated) {
-        dispatch(getNotifications());
-      }
-    };
-    refreshNotifications();
-    const interval = setInterval(refreshNotifications, 30000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, [user.isAuthenticated, dispatch]);
-
   return (
     <Router>
       <div className={classNames('app', `${isDarkTheme && 'dark-theme'}`)}>

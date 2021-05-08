@@ -35,7 +35,6 @@ const UserSettingUpdateModal = ({
 
   const HandleTagFormSubmit = (e) => {
     e.preventDefault();
-    const tags = tagListRef.current;
 
     // if (tags) {
     //   setUserData((data) => {
