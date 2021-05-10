@@ -23,7 +23,7 @@ import {
   Error500page,
   ForgotPasswordPage,
 } from './pages';
-import { getNotifications } from './actions/notificationsActions';
+import { getNotifications, getUnreadNotifications } from './actions/notificationsActions';
 
 /**
  * React Router v5 will keep pushing history when you try to click a link that navigates
@@ -61,11 +61,11 @@ const Routes = () => {
   useEffect(() => {
     const refreshNotifications = () => {
       if (isAuthenticated) {
-        dispatch(getNotifications());
+        dispatch(getUnreadNotifications());
       }
     };
     refreshNotifications();
-    const interval = setInterval(refreshNotifications, 30000);
+    const interval = setInterval(refreshNotifications, 60000);
     return () => {
       clearInterval(interval);
     };

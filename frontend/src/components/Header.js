@@ -28,7 +28,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
-  const { notifications } = useSelector((state) => state.notifications);
+  const { notifications } = useSelector((state) => state.unreadNotifications);
   const toggleTheme = useDispatch();
 
   const auth = useSelector((state) => state.auth);

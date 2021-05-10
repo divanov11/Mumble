@@ -15,7 +15,7 @@ import {
   createArticleReducer,
   articleSearchListReducer,
 } from './articleReducer';
-import { notificationsReducer } from './notificationsReducer';
+import { notificationsReducer, unreadNotificationsReducer } from './notificationsReducer';
 
 export default combineReducers({
   local,
@@ -31,6 +31,7 @@ export default combineReducers({
   dashboard: postDashboardReducer,
   userArticleList: userArticleListReducer,
   notifications: notificationsReducer,
+  unreadNotifications: unreadNotificationsReducer,
 });
 
 export const replaceItem = (collection, item) => {
