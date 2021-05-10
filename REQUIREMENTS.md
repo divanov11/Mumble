@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./frontend/public/android-chrome-512x512.png" width="10%">
+  <img src="./frontend/public/android-chrome-512x512.png" width="20%">
   <h1 align="center">
     MUMBLE
   </h1>
@@ -52,3 +52,28 @@ For development, you will need Node.js and a node global package, NPM or Yarn, i
       $ npm --version
       6.14.8
 
+
+## Reviewers :
+
+After submitting your PR, please tag reviewer(s) in your PR message. You can tag anyone below for the following.
+
+<br/>
+
+- **Markdown, Documentation changes :** 
+
+     Request [@Mehdi - MidouWebDev](https://github.com/MidouWebDev)'s review !
+
+#
+
+- **Frontend, Design :**
+
+     --> *Choose two reviewers :*
+
+    [@Dennis Ivy](https://github.com/divanov11)
+
+    [@Shahriar Parvez](https://github.com/Mr-spShuvo)
+
+    [@Cody Seibert](https://github.com/codyseibert)
+
+    [@Mehdi - MidouWebDev](https://github.com/MidouWebDev)
+    
