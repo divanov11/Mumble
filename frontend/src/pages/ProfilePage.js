@@ -47,12 +47,12 @@ const Profile = ({ match }) => {
 
   return (
     <div className="container three-column-layout">
-      <section>
+      <section className="three-column-layout__left-column">
         {!isUserLoading && userProfile ? (
-          <>
+          <div>
             <UserCard userProfile={userProfile} />
             <SkillTags tags={userProfile.skills} />
-          </>
+          </div>
         ) : (
           <UserCardPlaceholder />
         )}
