@@ -23,7 +23,7 @@ import {
   Error500page,
   ForgotPasswordPage,
 } from './pages';
-import { getNotifications, getUnreadNotifications } from './actions/notificationsActions';
+import { getUnreadNotifications } from './actions/notificationsActions';
 
 /**
  * React Router v5 will keep pushing history when you try to click a link that navigates
