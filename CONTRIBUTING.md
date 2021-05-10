@@ -14,23 +14,33 @@ We highly recommend to go through the guideline before start contributing.
 
 > **_⚠ Those who wants to contribute on the repo, from now, before pushing/committing your changes, please make sure you run command `npm run format` or `yarn format` or use Prettier plugin to automatically format your code. We want to maintain consistency that's why we want to enforce the formatting. It's required!_**
 
-## Quicklinks
+#
 
-- [Contributing to Mumble](#contributing-to-mumble)
-  - [Quicklinks](#quicklinks)
-  - [Code of Conduct](#code-of-conduct)
-  - [Getting Started](#getting-started)
-    - [Issues](#issues)
-    - [Pull Requests](#pull-requests)
-      - [NB](#nb)
-    - [Minor Updates and Pull Requests](#minor-updates-and-pull-requests)
-  - [Getting Help](#getting-help)
+### Table of contents
 
-## Code of Conduct
+- Contributing to Mumble
+
+      - Code of Conduct
+      - Getting Started
+      - Issues
+      - Pull Requests
+      - Project board
+
+- NB  
+
+      - Fork-and-Pull
+      - Minor Updates
+      - Getting Help
+
+#
+
+### Code of Conduct
 
 We take our open source community seriously and hold ourselves and other contributors to high standards of communication. By participating and contributing to this project, you agree to uphold our [Code of Conduct](https://github.com/divanov11/Mumble/blob/master/CODE_OF_CONDUCT.md).
 
-## Getting Started
+#
+
+### Getting Started
 
 Contributions are made to this repo via Issues and Pull Requests (PRs). A few general guidelines that cover both:
 
@@ -39,11 +49,15 @@ Contributions are made to this repo via Issues and Pull Requests (PRs). A few ge
 - We work hard to makes sure issues are handled in a timely manner but, depending on the impact, it could take a while to investigate the root cause. A friendly ping in the comment thread to the submitter or a contributor can help draw attention if your issue is blocking.
 - If you've never contributed before, see [the first timer's guide on Auth0 blog](https://auth0.com/blog/a-first-timers-guide-to-an-open-source-project/) for resources and tips on how to get started.
 
+#
+
 ### Issues
 
 Issues should be used to report problems with the library, request a new feature, or to discuss potential changes before a PR is created.
 
 If you find an Issue that addresses the problem you're having, please add your own reproduction information to the existing issue rather than creating a new one. Adding a [reaction](https://github.blog/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) can also help be indicating to our maintainers that a particular problem is affecting more than just the reporter.
+
+#
 
 ### Pull Requests
 
@@ -56,16 +70,45 @@ PRs to our libraries are always welcome and can be a quick way to get your fix o
 
 For changes that address core functionality or would require breaking changes (e.g. a major release), it's best to open an Issue to discuss your proposal first. This is not required but can save time creating and reviewing changes.
 
-In general, we follow the ["fork-and-pull" Git workflow](https://github.com/susam/gitpr)
+#
 
-1. Fork the repository to your own Github account
-2. Clone the forked project to your machine
+### Project Board 
+
+In our repository, there is a project board named Tasks - Mumble, it helps moderators to see how is the work going.
+<br/>
+
+*Preview :*
+<img align="center" src="./images/projects-icon.PNG"/>
+
+<img align="center" src="./images/project-board.gif">
+
+<br />
+<br />
+
+**So please, while submitting a PR or Issue, make sure to :**
+
+<br/>
+
+<img src="./images/activate-project.gif">
+
+#
+
+### Fork & Pull
+
+In general, we follow the **fork-and-pull**
+
+
+#### Steps :
+
+**1. Fork the repository to your own Github account**
+
+**2. Clone the forked project to your machine**
 
    ```bash
     git clone https://github.com/<your-github-username>/Mumble.git
    ```
 
-3. Add Upstream or the remote of the original project to your local repository
+**3. Add Upstream or the remote of the original project to your local repository**
 
    ```bash
    # check remotes
@@ -73,7 +116,7 @@ In general, we follow the ["fork-and-pull" Git workflow](https://github.com/susa
    git remote add upstream https://github.com/divanov11/Mumble.git
    ```
 
-4. Make sure you update the local repository
+**4. Make sure you update the local repository**
 
    ```bash
    # Get updates
@@ -86,13 +129,13 @@ In general, we follow the ["fork-and-pull" Git workflow](https://github.com/susa
    git push origin master
    ```
 
-5. Create a branch locally with a succinct but descriptive name
+**5. Create a branch locally with a succinct but descriptive name**
 
    ```bash
    git checkout -b branch-name
    ```
 
-6. Commit changes to the branch
+**6. Commit changes to the branch**
 
    ```bash
    # Stage changes for commit i.e add all modified files to commit
@@ -104,22 +147,26 @@ In general, we follow the ["fork-and-pull" Git workflow](https://github.com/susa
    git status
    ```
 
-7. Following any formatting and testing guidelines specific to this repository
-8. Push changes to your fork
+**7. Following any formatting and testing guidelines specific to this repository**
+
+**8. Push changes to your fork**
 
    ```bash
    git push origin branch-name
    ```
 
-9. Open a PR in our repository and follow the PR template so that we can efficiently review the changes.
-10. After the pull request was merged, fetch the upstream and update the default branch of your fork
+**9. Open a PR in our repository and follow the PR template so that we can efficiently review the changes.**
+
+**10. After the pull request was merged, fetch the upstream and update the default branch of your fork**
 
 You can follow along with this video, [Contributing to Mumble](https://youtu.be/UZzYEA5UqN8)
 
 #### NB
 
 1. You have to install [Git for your operating system](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
 2. Never Commit on the default branch, commit on branches then make a pull request
+
 3. After making changes, if you want to make another change make sure you branch from the default branch because if you branch from branch-name, this will contain the changes from the 1st pull request except for the new pull request you working on requires the changes from the first pull request
 
    ```bash
@@ -144,6 +191,8 @@ You can follow along with this video, [Contributing to Mumble](https://youtu.be/
 - Create a pull request and wait for review
 - Once your pull request has been merge, make sure to update your master branch.
 
-## Getting Help
+#
+
+### Getting Help
 
 Join us in the <a href="https://discord.gg/TxgpyK8pzf"><img align="center" width="28%" src="https://img.shields.io/discord/825371211399692308?label=Mumble%20Community&style=for-the-badge&logo=Discord"></a> and post your question there in the correct category with a descriptive tag.

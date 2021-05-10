@@ -1,3 +1,5 @@
+import { POST_VOTE_SUCCESS } from '../constants/postConstants';
+import { replaceItem } from './index';
 import {
   USER_LIST_REQUEST,
   USER_LIST_SUCCESS,
@@ -104,7 +106,13 @@ export const userPostsListReducer = (state = { posts: [], loading: true }, actio
       return { loading: false, posts: action.payload };
 
     case USER_POSTS_LIST_FAIL:
-      return { loading: false, error: action.payload };
+      return { ...state, loading: false, error: action.payload };
+
+    case POST_VOTE_SUCCESS:
+      return {
+        ...state,
+        posts: replaceItem(state.posts, action.payload),
+      };
 
     default:
       return state;

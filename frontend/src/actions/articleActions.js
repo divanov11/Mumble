@@ -16,11 +16,11 @@ export const searchArticles = (keyword = '') => async (dispatch) => {
   try {
     dispatch({ type: ARTICLE_SEARCH_REQUEST });
 
-    const posts = await ArticlesService.getArticlesByKeyword(keyword);
+    const { results } = await ArticlesService.getArticlesByKeyword(keyword);
 
     dispatch({
       type: ARTICLE_SEARCH_SUCCESS,
-      payload: posts,
+      payload: results,
     });
   } catch (error) {
     dispatch(createActionPayload(ARTICLE_SEARCH_FAIL, error));

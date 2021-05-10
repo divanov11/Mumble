@@ -8,10 +8,10 @@ const createArticle = (postContent) =>
 
 const getArticle = (articleId) =>
   get({
-    url: getApiUrl(`api/articles/${articleId}`),
+    url: getApiUrl(`api/articles/${articleId}/`),
   });
 
-const getArticlesByKeyword = (keyword) => get({ url: getApiUrl(`api/articles${keyword}`) });
+const getArticlesByKeyword = (keyword) => get({ url: getApiUrl(`api/articles/${keyword}`) });
 
 const articlesService = {
   createArticle,

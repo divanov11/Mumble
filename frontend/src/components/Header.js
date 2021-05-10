@@ -9,17 +9,17 @@ import logo from '../assets/logo/dark-logo.png';
 
 import { Avatar } from '../common';
 import SearchBox from './SearchBox';
-import { markAsRead } from './Notification';
-import { notifications } from '../data';
 import { getApiUrl } from '../services/config';
 import { logout } from '../actions/authActions';
 import { toggleTheme as DarkLightTheme } from '../actions/local';
+import { markAsRead } from '../actions/notificationsActions';
 
 export const getNotificationLink = (notification) => {
   const notificationUrlMap = {
-    discussion: `/discussion/${notification.content_slug}`,
-    follow: `/profile/${notification.user.username}`,
-    article: `/article/${notification.content_slug}`,
+    mumble: `/profile/${notification.created_by.username}`,
+    discussion: `/discussion/${notification.content_id}`,
+    follow: `/profile/${notification.created_by.username}`,
+    article: `/article/${notification.content_id}`,
   };
   return notificationUrlMap[notification.notification_type];
 };
@@ -28,6 +28,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
+  const { notifications } = useSelector((state) => state.notifications);
   const toggleTheme = useDispatch();
 
   const auth = useSelector((state) => state.auth);
@@ -66,7 +67,7 @@ const Header = () => {
     onTriggered: closeNotification,
   });
 
-  const hasUnreadNotification = () => !!notifications.find((notification) => !notification.isRead);
+  const hasUnreadNotification = () => !!notifications.find((notification) => !notification.is_read);
 
   return (
     <div id="header">
@@ -147,12 +148,12 @@ const Header = () => {
           </Link>
 
           {notifications
-            .filter((notification) => !notification.isRead)
+            .filter((notification) => !notification.is_read)
             .map((notification) => (
               <div key={notification.id} className="user-navigation--item">
                 <Avatar
                   alt="img-description"
-                  src={notification.user.profile_pic}
+                  src={getApiUrl(notification.created_by.profile_pic)}
                   className="nav-avatar"
                   size="sm"
                 />
@@ -160,10 +161,9 @@ const Header = () => {
                   to={getNotificationLink(notification)}
                   onClick={() => {
                     closeNotification();
-                    markAsRead(notification);
+                    dispatch(markAsRead(notification.id));
                   }}
                 >
-                  <strong>{notification.user.name} </strong>
                   {notification.content}
                 </Link>
               </div>

@@ -47,10 +47,12 @@ const SearchByUsersList = () => {
                     4
                   </h2>
                   <h3>Mumble user not found</h3>
+                  <br />
                   <p>
                     Looks like the username was misspelled or there is no account linked to that
                     username !
                   </p>
+                  <br />
                   <Link to="/">&#x2190; Go Home</Link>
                 </div>
               </div>
@@ -71,7 +73,7 @@ const SearchByUsersList = () => {
                         handle={user.username}
                         size="md"
                       />
-                      <FollowButton userProfile={user} />
+                      <FollowButton userProfile={user.profile} />
                     </div>
                     <p className="searchItem__bottom">{user.profile.bio}</p>
                   </div>
