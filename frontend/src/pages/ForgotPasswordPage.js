@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import classNames from 'classnames';
 
@@ -14,6 +14,15 @@ import { Button, Input } from '../common';
 const ForgotPasswordPage = () => {
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
   const toggleTheme = useDispatch();
+  const [email, setEmail] = useState('');
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log('email:', email);
+    // Include the logic for sending request here
+    alert(`we'll send you password reset link to your email`);
+    setEmail('');
+  };
 
   return (
     <div className="forgotpwd">
@@ -46,12 +55,15 @@ const ForgotPasswordPage = () => {
       <div className="container">
         <div className="forgotpwd__body">
           <div className="forgotpwd__bodyLeft">
-            <form className="form" style={{ width: '100%' }}>
+            <form className="form" onSubmit={onSubmit} style={{ width: '100%' }}>
               <Input
                 name="email"
                 placeholder="e.g user@domain.com"
                 required={true}
+                type="email"
                 label="Email Address:"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <Button color="main" text="Reset my password" size="lg"></Button>
             </form>
