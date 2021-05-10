@@ -1,6 +1,6 @@
 #
 <p align="center">
-  <img src="./frontend/public/android-chrome-512x512.png" width="10%">
+  <img src="./frontend/public/android-chrome-512x512.png" width="20%">
   <h1 align="center">
     Contributing to MUMBLE :
   </h1>
@@ -24,7 +24,9 @@ We highly recommend to go through the guideline before start contributing.
       - Getting Started
       - Issues
       - Pull Requests
+      - Merging PRs
       - Project board
+      - Reviewers
 
 - NB  
 
@@ -67,8 +69,20 @@ PRs to our libraries are always welcome and can be a quick way to get your fix o
 - Add unit or integration tests for fixed or changed functionality (if a test suite already exists).
 - Address a single concern in the least number of changed lines as possible.
 - Be accompanied by a complete Pull Request template (loaded automatically when a PR is created).
+- **Tag 2 Reviewers !**
+
+> ⚠ [Reviewers](https://github.com/divanov11/mumble/blob/master/Reviewers.md)
 
 For changes that address core functionality or would require breaking changes (e.g. a major release), it's best to open an Issue to discuss your proposal first. This is not required but can save time creating and reviewing changes.
+
+#
+
+### Merging Pull Requests
+
+
+1. It's mandatory that the PR author adds reviewers prior to submitting the PR. Tag reviewers in the message. A collaborator of the repo will officially add them in PR as reviewer(s). 
+2. All PRs will require the approval of both reviewers prior to the branch merge. Once the last reviewer approves the changes, they can merge the branch.
+3. The PR author should **add two reviewers; unless the change is so minor (think documentation, code formatting)**. A collaborator will choose a label "Review: Needs 1" **OR** "Review: Needs 2" to further organize the repo and review system.
 
 #
 
@@ -91,6 +105,32 @@ In our repository, there is a project board named Tasks - Mumble, it helps moder
 
 <img src="./images/activate-project.gif">
 
+#
+
+### Reviewers :
+
+After submitting your PR, please tag reviewer(s) in your PR message. You can tag anyone below for the following.
+
+<br/>
+
+- **Markdown, Documentation changes :** 
+
+     Request [@Mehdi - MidouWebDev](https://github.com/MidouWebDev)'s review !
+
+#
+
+- **Frontend, Design :**
+
+     --> *Choose two reviewers :*
+
+    [@Dennis Ivy](https://github.com/divanov11)
+
+    [@Shahriar Parvez](https://github.com/Mr-spShuvo)
+
+    [@Cody Seibert](https://github.com/codyseibert)
+
+    [@Mehdi - MidouWebDev](https://github.com/MidouWebDev)
+    
 #
 
 ### Fork & Pull
