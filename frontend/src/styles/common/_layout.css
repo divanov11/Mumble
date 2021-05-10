@@ -21,10 +21,6 @@
   gap: 1rem;
 }
 
-.three-column-layout > section:nth-child(2) {
-  flex-basis: 47.5%;
-}
-
 .three-column-layout__left-column,
 .three-column-layout__right-column {
   flex-basis: 25%;
@@ -42,6 +38,10 @@
   position: fixed;
   width: 20%;
   max-width: 40rem;
+}
+
+.three-column-layout > section:nth-child(2) {
+  flex-basis: 47.5%;
 }
 
 .three-column-layout__right-column {
