@@ -70,5 +70,20 @@
 - [ ] I have added tests that prove my fix is effective or that my feature works
 - [ ] All new and existing tests passed.
 
+#
+
+### Reviewers
+
+<!-- Please see the contributing guidelines and then add your reviewer(s) !-->
+
+
+<!--- If you are unsure of people to review your work, you can add anyone of these developers :) !-->
+
+
+<!--- Documentation: @MidouWebDev -->
+
+<!--- Frontend: @codyseibert , @Mr-spShuvo, @divanov11 -->
+
+
 
 <!--- Thanks a lot for explaining each detail !-->

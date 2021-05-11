@@ -1,7 +1,7 @@
 #
 
 <p align="center">
-  <img src="./frontend/public/android-chrome-512x512.png" width="10%">
+  <img src="./frontend/public/android-chrome-512x512.png" width="20%">
   <h1 align="center">
     MUMBLE
   </h1>
@@ -53,6 +53,31 @@ Also if you are looking for a complete style guides, please refer to [**Mumble S
 We highly recommend to go through the guideline before start contributing.
 
 > **_⚠ Those who wants to contribute on the repo, from now, before pushing/committing your changes, please make sure you run command `npm run format` or `yarn format` or use Prettier plugin to automatically format your code. We want to maintain consistency that's why we want to enforce the formatting. It's required! _**
+
+## Reviewers :
+
+After submitting your PR, please tag reviewer(s) in your PR message. You can tag anyone below for the following.
+
+<br/>
+
+- **Markdown, Documentation changes :** 
+
+     Request [@Mehdi - MidouWebDev](https://github.com/MidouWebDev)'s review !
+
+#
+
+- **Frontend, Design :**
+
+     --> *Choose two reviewers :*
+
+    [@Dennis Ivy](https://github.com/divanov11)
+
+    [@Shahriar Parvez](https://github.com/Mr-spShuvo)
+
+    [@Cody Seibert](https://github.com/codyseibert)
+
+    [@Mehdi - MidouWebDev](https://github.com/MidouWebDev)
+    
 
 ## 📸 Screenshots :
 
