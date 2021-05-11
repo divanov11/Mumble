@@ -25,6 +25,7 @@
 
 .notification__right-content {
   margin-left: 25px;
+  flex-grow: 1;
 }
 
 .notification--meta {
@@ -34,4 +35,8 @@
   font-size: 1.3rem;
   color: var(--color-light-gray);
   margin-left: 80%;
+}
+
+.notification-link {
+  width: 100%;
 }
