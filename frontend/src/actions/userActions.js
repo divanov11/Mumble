@@ -31,6 +31,7 @@ export const listUsers = (keyword = '') => async (dispatch) => {
     dispatch({ type: USER_LIST_REQUEST });
 
     const { results } = await UsersService.getUsersByKeyword(keyword);
+
     dispatch({
       type: USER_LIST_SUCCESS,
       payload: results,
