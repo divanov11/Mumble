@@ -1,7 +1,7 @@
 import { get, getApiUrl, post, patch } from './config';
 
 const getRecommendedUsers = () => get({ url: getApiUrl(`api/users/recommended/`) });
-const getUsersByKeyword = (keyword) => get({ url: getApiUrl(`api/users${keyword}/`) });
+const getUsersByKeyword = (keyword) => get({ url: getApiUrl(`api/users/?q=${keyword}`) });
 const getUserByUsername = (username) => get({ url: getApiUrl(`api/users/${username}/`) });
 const getUserPosts = (username) => get({ url: getApiUrl(`api/users/${username}/mumbles/`) });
 const getUsers = () => get({ url: getApiUrl(`api/users/`) });

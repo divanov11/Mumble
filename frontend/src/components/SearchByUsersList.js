@@ -15,13 +15,14 @@ import ReactPlaceholder from 'react-placeholder/lib';
 
 const SearchByUsersList = () => {
   const dispatch = useDispatch();
-  const location = useLocation();
-  const keyword = location.search;
+  const query = new URLSearchParams(useLocation().search);
+  const keyword = query.get('q');
 
   const userList = useSelector((state) => state.userList);
   const { users, loading } = userList;
 
   useEffect(() => {
+    if (!keyword) return;
     dispatch(listUsers(keyword));
   }, [dispatch, keyword]);
 
