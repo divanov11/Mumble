@@ -14,7 +14,7 @@ const updateUserProfile = (userData) =>
     payload: userData,
   });
 const updateUserProfilePic = (formData) =>
-  post({
+  patch({
     url: getApiUrl('api/users/profile_update/photo/'),
     payload: formData,
   });
