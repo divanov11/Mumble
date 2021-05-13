@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import ReactPlaceholder from 'react-placeholder';
 
 import '../styles/components/HomePage.css';
@@ -12,30 +12,24 @@ import {
   PostCardPlaceholder,
 } from '../components';
 import { discussions, usersData } from '../data';
-import { UsersService } from '../services';
 import { getPostsForDashboard } from '../actions/postActions';
 import { useDispatch, useSelector } from 'react-redux';
 
 const HomePage = () => {
   const user = usersData.find((u) => Number(u.id) === 1);
 
-  const [contributors, setContributors] = useState([]);
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.dashboard.posts);
   const isPostsLoading = useSelector((state) => state.dashboard.loading);
 
   useEffect(() => {
-    UsersService.getUsers().then((users) => {
-      setContributors(users.slice(0, 3));
-    });
-
     dispatch(getPostsForDashboard());
   }, [dispatch]);
 
   return (
     <div className="container three-column-layout">
       <section className="three-column-layout__left-column">
-        <Contributors users={contributors} />
+        <Contributors />
       </section>
 
       <section>

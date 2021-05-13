@@ -30,11 +30,11 @@ export const listUsers = (keyword = '') => async (dispatch) => {
   try {
     dispatch({ type: USER_LIST_REQUEST });
 
-    const users = await UsersService.getUsersByKeyword(keyword);
+    const { results } = await UsersService.getUsersByKeyword(keyword);
 
     dispatch({
       type: USER_LIST_SUCCESS,
-      payload: users,
+      payload: results,
     });
   } catch (error) {
     dispatch(createActionPayload(USER_LIST_FAIL, error));
@@ -140,6 +140,7 @@ export const updateUserProfile = (userData) => async (dispatch, getState) => {
 export const updateProfilePic = (formData) => async (dispatch) => {
   try {
     let { user } = await usersService.updateUserProfilePic(formData);
+
     user.profile.email = user.email;
     dispatch({
       type: UPDATE_USER_PHOTO_SUCCESS,
@@ -147,6 +148,7 @@ export const updateProfilePic = (formData) => async (dispatch) => {
     });
   } catch (error) {
     alert('Endpoint Currently Not available');
+    console.log('Endpoint Currently Not available');
     // dispatch(createActionPayload(UPDATE_USER_PHOTO_FAIL, error));
   }
 };

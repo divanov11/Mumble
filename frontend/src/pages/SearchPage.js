@@ -25,17 +25,19 @@ const SearchPage = () => {
 
   return (
     <div className="container three-column-layout three-column-layout__condense">
-      <div></div>
+      <section className="three-column-layout__left-column"></section>
 
-      <div>
+      <section>
         {category === CATEGORY_USERS && <SearchByUsersList />}
         {category === CATEGORY_POSTS && <SearchByPostsList />}
         {category === CATEGORY_ARTICLES && <SearchByArticlesList articles={articles} />}
         {category === CATEGORY_SKILLS && <SearchBySkillsList skills={skills} />}
         {category === CATEGORY_INTERESTS && <SearchByInterestsList interests={interests} />}
-      </div>
+      </section>
 
-      <SearchByPanel category={category} setCategory={setCategory} />
+      <section className="three-column-layout__right-column">
+        <SearchByPanel category={category} setCategory={setCategory} />
+      </section>
     </div>
   );
 };
