@@ -18,6 +18,7 @@ import {
   USER_LIST_RECOMMENDED_SUCCESS,
   USER_LIST_REQUEST,
   USER_LIST_SUCCESS,
+  USER_LIST_RESET,
   USER_POSTS_LIST_FAIL,
   USER_POSTS_LIST_REQUEST,
   USER_POSTS_LIST_SUCCESS,
@@ -30,8 +31,7 @@ export const listUsers = (keyword = '') => async (dispatch) => {
   try {
     dispatch({ type: USER_LIST_REQUEST });
 
-    const { results } = await UsersService.getUsersByKeyword(keyword);
-
+    const results = await UsersService.getUsersByKeyword(keyword);
     dispatch({
       type: USER_LIST_SUCCESS,
       payload: results,
@@ -39,6 +39,10 @@ export const listUsers = (keyword = '') => async (dispatch) => {
   } catch (error) {
     dispatch(createActionPayload(USER_LIST_FAIL, error));
   }
+};
+
+export const resetListUsers = () => async (dispatch) => {
+  dispatch({ type: USER_LIST_RESET });
 };
 
 export const listRecommenedUsers = () => async (dispatch, getState) => {

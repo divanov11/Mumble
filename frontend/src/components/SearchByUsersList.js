@@ -7,8 +7,8 @@ import '../styles/components/SearchBox.css';
 import '../styles/components/SearchByUsersAndPostList.css';
 import logo from '../assets/logo/dark-logo.png';
 
-import { AuthorBox } from '../common';
-import { listUsers } from '../actions/userActions';
+import { AuthorBox, Button } from '../common';
+import { listUsers, resetListUsers } from '../actions/userActions';
 import { getApiUrl } from '../services/config';
 import FollowButton from './FollowButton';
 import ReactPlaceholder from 'react-placeholder/lib';
@@ -19,20 +19,31 @@ const SearchByUsersList = () => {
   const keyword = location.search;
 
   const userList = useSelector((state) => state.userList);
-  const { users, loading } = userList;
+  const { loading, data } = userList;
 
   useEffect(() => {
+    dispatch(resetListUsers());
     dispatch(listUsers(keyword));
   }, [dispatch, keyword]);
 
-  const showResultsNotFound = users.length === 0;
+  const handleLoadMore = () => {
+    if (!data.next) return;
+    const keywordWithPageNo = new URL(data.next).search;
+    // keywordWithPageNo looks like this ?page=2&q=as
+    // const nextPage = new URLSearchParams(search).get('page');
+    console.log('keywordWithPageNo: ', keywordWithPageNo);
+    dispatch(listUsers(keywordWithPageNo));
+  };
+
+  const showResultsNotFound = data?.results?.length === 0;
+  console.log('showResultsNotFound', showResultsNotFound);
 
   return (
     <div className="category-wrapper" id="category-users">
       <ReactPlaceholder
         customPlaceholder={<SearchByUsersListPlaceholder />}
         showLoadingAnimation
-        ready={!loading}
+        ready={!loading || data.results.length > 0}
       >
         {showResultsNotFound && (
           <div className="card">
@@ -61,7 +72,7 @@ const SearchByUsersList = () => {
         )}
         {!showResultsNotFound && (
           <div>
-            {users.map((user, index) => (
+            {data.results.map((user, index) => (
               <div key={index} className="card">
                 <div className="card__body">
                   <div className="searchItem">
@@ -80,6 +91,14 @@ const SearchByUsersList = () => {
                 </div>
               </div>
             ))}
+            <div>
+              <Button
+                size="lg"
+                disabled={!data?.next || loading}
+                onClick={handleLoadMore}
+                text={!loading ? 'Load More' : 'Loading...'}
+              />
+            </div>
           </div>
         )}
       </ReactPlaceholder>
