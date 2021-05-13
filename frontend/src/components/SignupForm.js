@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from '../hooks';
 import Message from '../common/Message';
 import { register } from '../actions/authActions';
@@ -10,6 +10,9 @@ const SignupForm = () => {
   let dispatch = useDispatch();
 
   const [message, setMessage] = useState('');
+
+  let auth = useSelector((state) => state.auth);
+  let { error } = auth;
 
   const [inputs, fieldChanges] = useForm({
     email: '',
@@ -24,6 +27,7 @@ const SignupForm = () => {
   };
   return (
     <>
+      {error && <Message variant="error">{error}</Message>}
       {message && <Message variant="error">{message}</Message>}
 
       <form className="form" onSubmit={onSubmit}>
