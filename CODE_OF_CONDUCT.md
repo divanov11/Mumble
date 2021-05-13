@@ -1,6 +1,6 @@
 #
 <p align="center">
-  <img src="./frontend/public/android-chrome-512x512.png" width="10%">
+  <img src="./frontend/public/android-chrome-512x512.png" width="20%">
   <h1 align="center">
     Contributor Code of Conduct
   </h1>

@@ -5,6 +5,9 @@ import {
   READ_REQUEST,
   READ_SUCCESS,
   READ_FAIL,
+  NOTIFICATIONS_UNREAD_REQUEST,
+  NOTIFICATIONS_UNREAD_SUCCESS,
+  NOTIFICATIONS_UNREAD_FAIL,
 } from '../constants/notificationsConstants';
 import { NotificationsService } from '../services';
 
@@ -28,6 +31,20 @@ export const getNotifications = () => async (dispatch) => {
   }
 };
 
+export const getUnreadNotifications = () => async (dispatch) => {
+  try {
+    dispatch({ type: NOTIFICATIONS_UNREAD_REQUEST });
+
+    const unreadNotifications = await NotificationsService.getUnreadNotifications();
+    dispatch({
+      type: NOTIFICATIONS_UNREAD_SUCCESS,
+      payload: unreadNotifications,
+    });
+  } catch (error) {
+    dispatch(createActionPayload(NOTIFICATIONS_UNREAD_FAIL, error));
+  }
+};
+
 export const markAsRead = (notificationId) => async (dispatch) => {
   try {
     dispatch({ type: READ_REQUEST });
@@ -37,7 +54,7 @@ export const markAsRead = (notificationId) => async (dispatch) => {
       type: READ_SUCCESS,
     });
 
-    dispatch(getNotifications());
+    dispatch(getUnreadNotifications());
   } catch (error) {
     dispatch(createActionPayload(READ_FAIL, error));
   }
