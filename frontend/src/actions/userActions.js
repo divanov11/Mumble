@@ -140,6 +140,7 @@ export const updateUserProfile = (userData) => async (dispatch, getState) => {
 export const updateProfilePic = (formData) => async (dispatch) => {
   try {
     let { user } = await usersService.updateUserProfilePic(formData);
+
     user.profile.email = user.email;
     dispatch({
       type: UPDATE_USER_PHOTO_SUCCESS,
@@ -147,6 +148,7 @@ export const updateProfilePic = (formData) => async (dispatch) => {
     });
   } catch (error) {
     alert('Endpoint Currently Not available');
+    console.log('Endpoint Currently Not available');
     // dispatch(createActionPayload(UPDATE_USER_PHOTO_FAIL, error));
   }
 };

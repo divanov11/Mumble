@@ -19,10 +19,7 @@ const LoginForm = () => {
   return (
     <>
       {error && <Message variant="error">{error}</Message>}
-      <Message variant="warning">
-        <p>Username: mumble</p>
-        <p>Password: welcomemumble</p>
-      </Message>
+
       <form className="form" onSubmit={onSubmit} style={{ width: '100%' }}>
         <Input
           name="username"
