@@ -30,11 +30,10 @@ export const listUsers = (keyword = '') => async (dispatch) => {
   try {
     dispatch({ type: USER_LIST_REQUEST });
 
-    const users = await UsersService.getUsersByKeyword(keyword);
-
+    const { results } = await UsersService.getUsersByKeyword(keyword);
     dispatch({
       type: USER_LIST_SUCCESS,
-      payload: users,
+      payload: results,
     });
   } catch (error) {
     dispatch(createActionPayload(USER_LIST_FAIL, error));
