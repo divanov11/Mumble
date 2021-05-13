@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import ReactPlaceholder from 'react-placeholder';
 
 import '../styles/components/HomePage.css';
@@ -12,7 +12,6 @@ import {
   PostCardPlaceholder,
 } from '../components';
 import { discussions, usersData } from '../data';
-import { UsersService } from '../services';
 import { getPostsForDashboard } from '../actions/postActions';
 import { useDispatch, useSelector } from 'react-redux';
 
