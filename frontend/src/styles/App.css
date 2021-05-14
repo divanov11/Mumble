@@ -131,8 +131,8 @@ textarea:focus-within {
 }
 
 .spinner-sm {
-  border: 3px solid #dddddd;
-  border-top: 3px solid #ffffff;
+  border: 3px solid #ddd;
+  border-top: 3px solid #fff;
   border-radius: 50%;
   width: 24px;
   height: 24px;
@@ -143,6 +143,7 @@ textarea:focus-within {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -150,8 +151,8 @@ textarea:focus-within {
 
 button:disabled,
 button[disabled] {
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
+  border: 1px solid #999;
+  background-color: #ccc;
+  color: #666;
   cursor: unset;
 }
