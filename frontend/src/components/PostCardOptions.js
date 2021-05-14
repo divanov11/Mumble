@@ -6,15 +6,15 @@ import classNames from 'classnames';
 
 import '../styles/components/PostCardOptions.css';
 import { deletePost } from '../actions/postActions';
+import { deleteUserPost } from '../actions/userActions';
+import { useLocation } from 'react-router';
 
-const PostCardOptions = ({ post }) => {
-  const auth = useSelector((state) => state.auth);
-
-  const { user, created } = post;
-
+const PostCardOptions = ({ post, remumble }) => {
   const dispatch = useDispatch();
-
+  const currentPath = useLocation().pathname;
+  const auth = useSelector((state) => state.auth);
   const [showPostMenu, setShowPostMenu] = useState(false);
+  const { user, created } = post;
 
   const handlePostDropdownMenu = (e) => {
     e.stopPropagation();
@@ -30,6 +30,30 @@ const PostCardOptions = ({ post }) => {
   });
 
   const userCreatedPost = auth.user.id === user.user;
+
+  /* function:  handleDeleteMumble  (or)  handleDeleteRemumble
+    when user deletes his/her mumble or remumble
+    * 1. check the current path from the URL to know whether user is deleting from homepage or profile page
+    * 2. if deleting from home page then dispatch delete action via postActions to postDashboardReducer
+    * 3. if deleting from profile page then dispatch delete action via userActions to userPostsListReducer
+    */
+  const handleDeleteMumble = () => {
+    if (currentPath === '/') {
+      dispatch(deletePost(post.id));
+    } else if (currentPath.startsWith('/profile')) {
+      dispatch(deleteUserPost(post.id));
+    }
+    closePostMenu();
+  };
+
+  const handleDeleteRemumble = () => {
+    if (currentPath === '/') {
+      dispatch(deletePost(remumble.remumbleId));
+    } else if (currentPath.startsWith('/profile')) {
+      dispatch(deleteUserPost(remumble.remumbleId));
+    }
+    closePostMenu();
+  };
 
   return (
     <div className="post--options">
@@ -54,7 +78,8 @@ const PostCardOptions = ({ post }) => {
                 Edit
               </div>
               <div
-                onClick={() => dispatch(deletePost(post.id))}
+                onClick={handleDeleteMumble}
+                // onClick={() => dispatch(deletePost(post.id))}
                 role="button"
                 className="dropmenu__menuitem"
               >
@@ -77,6 +102,12 @@ const PostCardOptions = ({ post }) => {
                 <i className="fas fa-ban post__dropmenu--navicon"></i>
                 Block {user.name}
               </div>
+              {remumble?.isMyRemumble && (
+                <div onClick={handleDeleteRemumble} role="button" className="dropmenu__menuitem">
+                  <i className="fas fa-trash post__dropmenu--navicon"></i>
+                  Delete
+                </div>
+              )}
             </>
           )}
         </div>
