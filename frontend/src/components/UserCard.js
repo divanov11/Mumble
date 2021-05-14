@@ -8,7 +8,6 @@ import { useSelector } from 'react-redux';
 
 const UserCard = ({ userProfile }) => {
   const { isAuthenticated, user } = useSelector((state) => state.auth);
-  console.log("---user", user)
 
   return (
     <div className="user-card card">
