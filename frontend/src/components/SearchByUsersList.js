@@ -16,27 +16,29 @@ import ReactPlaceholder from 'react-placeholder/lib';
 const SearchByUsersList = () => {
   const dispatch = useDispatch();
   const location = useLocation();
+  /* keyword looks like this `?q=john` */
   const keyword = location.search;
-
   const userList = useSelector((state) => state.userList);
   const { loading, data } = userList;
 
   useEffect(() => {
+    /* Everytime the user changes the search term,
+     * 1. Clear the previous results in store
+     * 2. And then make request for the new search term
+     */
     dispatch(resetListUsers());
     dispatch(listUsers(keyword));
   }, [dispatch, keyword]);
 
   const handleLoadMore = () => {
     if (!data.next) return;
+
+    /* keywordWithPageNo looks like this `?page=2&q=john` */
     const keywordWithPageNo = new URL(data.next).search;
-    // keywordWithPageNo looks like this ?page=2&q=as
-    // const nextPage = new URLSearchParams(search).get('page');
-    console.log('keywordWithPageNo: ', keywordWithPageNo);
     dispatch(listUsers(keywordWithPageNo));
   };
 
   const showResultsNotFound = data?.results?.length === 0;
-  console.log('showResultsNotFound', showResultsNotFound);
 
   return (
     <div className="category-wrapper" id="category-users">
@@ -97,6 +99,7 @@ const SearchByUsersList = () => {
                 disabled={!data?.next || loading}
                 onClick={handleLoadMore}
                 text={!loading ? 'Load More' : 'Loading...'}
+                iconName={loading && 'spinner fa-spin'}
               />
             </div>
           </div>
