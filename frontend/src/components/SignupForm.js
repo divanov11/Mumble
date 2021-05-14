@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from '../hooks';
 import Message from '../common/Message';
 import { register } from '../actions/authActions';
@@ -11,19 +11,30 @@ const SignupForm = () => {
 
   const [message, setMessage] = useState('');
 
+  let auth = useSelector((state) => state.auth);
+  let { error } = auth;
+
   const [inputs, fieldChanges] = useForm({
     email: '',
     username: '',
     password: '',
     password1: '',
   });
+
   const onSubmit = (e) => {
     e.preventDefault();
-    setMessage('');
-    dispatch(register(inputs));
+
+    if (inputs.password !== inputs.password1) {
+      setMessage('Passwords do not match');
+    } else {
+      setMessage('');
+      dispatch(register(inputs));
+    }
   };
+
   return (
     <>
+      {error && <Message variant="error">{error}</Message>}
       {message && <Message variant="error">{message}</Message>}
 
       <form className="form" onSubmit={onSubmit}>
@@ -53,6 +64,17 @@ const SignupForm = () => {
           label="Password:"
           type="password"
         />
+
+        <Input
+          name="password1"
+          placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
+          value={inputs.password1}
+          onChange={fieldChanges}
+          required={true}
+          label="Confirm Password:"
+          type="password"
+        />
+
         <Button color="main" type="submit" text="Sign Up" size="lg" />
         <span style={{ marginLeft: '1rem' }}>
           Have an account? <Link to="/login">Login</Link>

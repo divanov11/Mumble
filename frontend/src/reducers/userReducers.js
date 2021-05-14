@@ -3,6 +3,7 @@ import { replaceItem } from './index';
 import {
   USER_LIST_REQUEST,
   USER_LIST_SUCCESS,
+  USER_LIST_RESET,
   USER_LIST_FAIL,
   USER_LIST_RECOMMENDED_REQUEST,
   USER_LIST_RECOMMENDED_SUCCESS,
@@ -23,16 +24,26 @@ import {
   USER_ARTICLES_LIST_REQUEST,
 } from '../constants/userConstants';
 
-export const userListReducer = (state = { users: [] }, action) => {
+export const userListReducer = (
+  state = { data: { results: [], next: null, previous: null, count: 0 } },
+  action,
+) => {
   switch (action.type) {
     case USER_LIST_REQUEST:
       return { ...state, loading: true };
 
     case USER_LIST_SUCCESS:
-      return { ...state, loading: false, users: action.payload };
+      return {
+        ...state,
+        loading: false,
+        data: { ...action.payload, results: [...state.data.results, ...action.payload.results] },
+      };
 
     case USER_LIST_FAIL:
       return { ...state, loading: false, error: action.payload };
+
+    case USER_LIST_RESET:
+      return { data: { results: [], next: null, previous: null, count: 0 } };
 
     default:
       return state;
