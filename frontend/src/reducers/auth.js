@@ -5,6 +5,7 @@ import {
   LOGOUT_REQUEST,
   LOGOUT_SUCCESS,
   REGISTER_FAIL,
+  REGISTER_REQUEST,
 } from '../constants/authConstants';
 
 import { UPDATE_USER_PHOTO_SUCCESS } from '../constants/userConstants';
@@ -17,6 +18,10 @@ export default function authReducer(state = {}, action) {
   const { type, payload } = action;
 
   switch (type) {
+    case REGISTER_REQUEST: {
+      return { isLoading: true };
+    }
+
     case LOGIN_REQUEST: {
       return { isLoading: true };
     }

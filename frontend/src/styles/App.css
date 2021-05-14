@@ -129,3 +129,29 @@ textarea:focus-within {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #4d94a8;
 }
+
+.spinner-sm {
+  border: 3px solid #dddddd;
+  border-top: 3px solid #ffffff;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: unset;
+}

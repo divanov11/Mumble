@@ -12,6 +12,7 @@ const Button = ({
   outline = false,
   size = '',
   text = '',
+  loading = false,
   ...others
 }) => {
   return (
@@ -26,9 +27,16 @@ const Button = ({
         [`btn--${size}`]: size,
       })}
       {...others}
+      disabled={loading}
     >
       {iconName && <i className={`${iconStyle} fa-${iconName}`} style={{ marginRight: '8px' }}></i>}
-      {text} {children}
+      {loading ? (
+        <div className="spinner-sm"></div>
+      ) : (
+        <>
+          {text} {children}
+        </>
+      )}
     </button>
   );
 };
