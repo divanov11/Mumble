@@ -4,6 +4,7 @@ import {
   LOGIN_FAIL,
   LOGOUT_REQUEST,
   LOGOUT_SUCCESS,
+  REGISTER_FAIL,
 } from '../constants/authConstants';
 
 import { UPDATE_USER_PHOTO_SUCCESS } from '../constants/userConstants';
@@ -57,6 +58,9 @@ export default function authReducer(state = {}, action) {
         user: null,
       };
     }
+
+    case REGISTER_FAIL:
+      return { isLoading: false, error: payload };
 
     default:
       return state;

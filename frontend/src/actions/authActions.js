@@ -55,6 +55,7 @@ export const register = (inputs) => async (dispatch) => {
       payload: data,
     });
   } catch (error) {
+    console.log('ERROR:', error);
     dispatch(createActionPayload(REGISTER_FAIL, error));
   }
 };
