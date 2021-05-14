@@ -1,15 +1,17 @@
 #header {
-  /* Change this to that sticky header I like */
   position: sticky;
   top: 0;
   width: 100%;
+  background-color: var(--color-sub);
+  color: var(--color-white);
+  z-index: 100;
+  box-shadow: 0 1px 6px 3px #00000015;
+}
+
+#header > .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--color-sub);
-  color: var(--color-white);
-  padding: 0 5%;
-  z-index: 100;
 }
 
 .dark-theme #header {
@@ -50,6 +52,10 @@
 
 .nav-item {
   margin: 10px;
+}
+
+.nav-item:last-child {
+  margin-right: 0;
 }
 
 .nav-avatar {

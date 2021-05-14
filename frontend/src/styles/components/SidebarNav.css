@@ -1,0 +1,59 @@
+.sidebarNav {
+  position: fixed;
+  display: none;
+}
+
+@media screen and (min-width: 650px) {
+  .sidebarNav {
+    display: block;
+  }
+}
+
+.sidebarNav__menu {
+  list-style: none;
+}
+
+.sidebarNav__menuItem {
+  display: flex;
+  align-items: center;
+  font-size: 1.65rem;
+  margin-bottom: 3.5rem;
+}
+
+.sidebarNav__menuItem > a {
+  color: var(--color-text);
+  display: block;
+}
+
+.sidebarNav__menuItem > a {
+  color: var(--color-text);
+  display: block;
+}
+
+.sidebarNav__menuItem > a > i.fas {
+  display: inline-block;
+  margin-right: 2.5rem;
+}
+
+.sidebarNav__menuItem > a.active {
+  border-radius: 0.5rem;
+  color: var(--color-main);
+  position: relative;
+}
+
+.sidebarNav__menuItem > a.active::before {
+  content: '';
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  position: absolute;
+  left: -2rem;
+  top: 1rem;
+  z-index: 111;
+  background-color: var(--color-main);
+}
+
+.sidebarNav__menuItem > a.active > i.fas {
+  color: var(--color-main) !important;
+}

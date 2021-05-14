@@ -71,105 +71,111 @@ const Header = () => {
 
   return (
     <div id="header">
-      <div id="logo">
-        <Link to={'/'}>
-          <img src={logo} alt="Mumble Icon" />
-        </Link>
-      </div>
-
-      <div id="nav-wrapper">
-        <SearchBox />
-        <i
-          className={classNames('fas', 'fa-bell', 'nav-item', 'nav-icon')}
-          onClick={toggleNotification}
-        >
-          {hasUnreadNotification() && <div className="nav-icon--unread"></div>}
-        </i>
-        <Avatar
-          id="nav-toggle-icon"
-          onClick={toggleDropdown}
-          alt="img-description"
-          src={getApiUrl(user.profile_pic)}
-          className="nav-item"
-          size="sm"
-        />
-      </div>
-
-      {showNavigation && (
-        <div ref={navigationRef} className="card" id="user--navigation">
-          <div
-            role="button"
-            className="user-navigation--item"
-            onClick={() => {
-              toggleTheme(DarkLightTheme());
-              closeDropdown();
-            }}
-          >
-            <i
-              className={classNames(
-                'fas',
-                `fa-${isDarkTheme ? 'sun' : 'moon'}`,
-                ' user--nav--icon',
-              )}
-            ></i>
-            Enable {isDarkTheme ? 'light' : 'dark'} Mode
-          </div>
-
-          <Link
-            to={`/profile/${user.username}`}
-            className="user-navigation--item"
-            onClick={closeDropdown}
-          >
-            <i className="fas fa-user user--nav--icon"></i>
-            Profile
+      <div className="container">
+        <div id="logo">
+          <Link to={'/'}>
+            <img src={logo} alt="Mumble Icon" />
           </Link>
-
-          <Link
-            to="/settings"
-            id="user-settings"
-            className="user-navigation--item"
-            onClick={closeDropdown}
-          >
-            <i className="fas fa-cog user--nav--icon"></i>
-            Settings
-          </Link>
-
-          <div role="button" className="user-navigation--item" onClick={logoutUser}>
-            <i className="fas fa-sign-out-alt user--nav--icon"></i>
-            Logout
-          </div>
         </div>
-      )}
-      {showNotification && (
-        <div ref={notificationRef} className="card" id="user--navigation">
-          <Link to={`/notifications`} className="user-navigation--item" onClick={closeNotification}>
-            <i className="fas fa-envelope-open-text nav--icon"></i>
-            <h6>All Notifications</h6>
-          </Link>
 
-          {notifications
-            .filter((notification) => !notification.is_read)
-            .map((notification) => (
-              <div key={notification.id} className="user-navigation--item">
-                <Avatar
-                  alt="img-description"
-                  src={getApiUrl(notification.created_by.profile_pic)}
-                  className="nav-avatar"
-                  size="sm"
-                />
-                <Link
-                  to={getNotificationLink(notification)}
-                  onClick={() => {
-                    closeNotification();
-                    dispatch(markAsRead(notification.id));
-                  }}
-                >
-                  {notification.content}
-                </Link>
-              </div>
-            ))}
+        <div id="nav-wrapper">
+          <SearchBox />
+          <i
+            className={classNames('fas', 'fa-bell', 'nav-item', 'nav-icon')}
+            onClick={toggleNotification}
+          >
+            {hasUnreadNotification() && <div className="nav-icon--unread"></div>}
+          </i>
+          <Avatar
+            id="nav-toggle-icon"
+            onClick={toggleDropdown}
+            alt="img-description"
+            src={getApiUrl(user.profile_pic)}
+            className="nav-item"
+            size="sm"
+          />
         </div>
-      )}
+
+        {showNavigation && (
+          <div ref={navigationRef} className="card" id="user--navigation">
+            <div
+              role="button"
+              className="user-navigation--item"
+              onClick={() => {
+                toggleTheme(DarkLightTheme());
+                closeDropdown();
+              }}
+            >
+              <i
+                className={classNames(
+                  'fas',
+                  `fa-${isDarkTheme ? 'sun' : 'moon'}`,
+                  ' user--nav--icon',
+                )}
+              ></i>
+              Enable {isDarkTheme ? 'light' : 'dark'} Mode
+            </div>
+
+            <Link
+              to={`/profile/${user.username}`}
+              className="user-navigation--item"
+              onClick={closeDropdown}
+            >
+              <i className="fas fa-user user--nav--icon"></i>
+              Profile
+            </Link>
+
+            <Link
+              to="/settings"
+              id="user-settings"
+              className="user-navigation--item"
+              onClick={closeDropdown}
+            >
+              <i className="fas fa-cog user--nav--icon"></i>
+              Settings
+            </Link>
+
+            <div role="button" className="user-navigation--item" onClick={logoutUser}>
+              <i className="fas fa-sign-out-alt user--nav--icon"></i>
+              Logout
+            </div>
+          </div>
+        )}
+        {showNotification && (
+          <div ref={notificationRef} className="card" id="user--navigation">
+            <Link
+              to={`/notifications`}
+              className="user-navigation--item"
+              onClick={closeNotification}
+            >
+              <i className="fas fa-envelope-open-text nav--icon"></i>
+              <h6>All Notifications</h6>
+            </Link>
+
+            {notifications
+              .filter((notification) => !notification.is_read)
+              .map((notification) => (
+                <div key={notification.id} className="user-navigation--item">
+                  <Avatar
+                    alt="img-description"
+                    src={getApiUrl(notification.created_by.profile_pic)}
+                    className="nav-avatar"
+                    size="sm"
+                  />
+                  <Link
+                    to={getNotificationLink(notification)}
+                    onClick={() => {
+                      closeNotification();
+                      dispatch(markAsRead(notification.id));
+                    }}
+                  >
+                    {notification.content}
+                  </Link>
+                </div>
+              ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

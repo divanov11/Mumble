@@ -47,7 +47,7 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
           name={post.user.name}
           handle={post.user.username}
           url={`/profile/${post.user.username}`}
-          size={isComment ? 'sm' : 'md'}
+          size="sm"
         />
         <PostCardOptions post={post} />
       </div>

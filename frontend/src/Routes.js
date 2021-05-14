@@ -74,7 +74,6 @@ const Routes = () => {
   return (
     <div className={classNames('app', `${isDarkTheme && 'dark-theme'}`)}>
       <ErrorBoundary FallbackComponent={Error500page}>
-        {isAuthenticated && <Header />}
         <main>
           <Switch>
             <PrivateRoute path="/" exact component={HomePage} />
