@@ -7,7 +7,8 @@ import FollowButton from './FollowButton';
 import { useSelector } from 'react-redux';
 
 const UserCard = ({ userProfile }) => {
-  const { isAuthenticated } = useSelector((state) => state.auth);
+  const { isAuthenticated, user } = useSelector((state) => state.auth);
+  console.log("---user", user)
 
   return (
     <div className="user-card card">
@@ -39,7 +40,7 @@ const UserCard = ({ userProfile }) => {
             </div>
           </div>
 
-          {isAuthenticated && (
+          {isAuthenticated && userProfile?.username !== user?.username && (
             <div>
               <FollowButton userProfile={userProfile} />
             </div>
