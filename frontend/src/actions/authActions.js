@@ -15,7 +15,9 @@ import { createActionPayload } from './postActions';
 export const login = (loginCredentials) => async (dispatch) => {
   try {
     dispatch({ type: LOGIN_REQUEST });
-    loginCredentials['username'] = loginCredentials['username'].toLowerCase();
+
+    // Need API Implementation first
+    // loginCredentials['username'] = loginCredentials['username'].toLowerCase();
 
     const tokens = await authService.login(loginCredentials);
 
