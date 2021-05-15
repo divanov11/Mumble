@@ -34,7 +34,6 @@
 .post-actions-wrapper {
   display: flex;
   padding-top: 10px;
-
   justify-content: space-between;
   transition: all 0.1s ease;
 }

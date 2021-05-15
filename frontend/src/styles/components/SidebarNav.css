@@ -10,7 +10,6 @@
 }
 
 .sidebarNav--full {
-  display: block;
   background: var(--color-main-light);
   left: 0;
   right: 0;
@@ -32,11 +31,6 @@
   align-items: center;
   font-size: 1.65rem;
   margin-bottom: 3.5rem;
-}
-
-.sidebarNav__menuItem > a {
-  color: var(--color-text);
-  display: block;
 }
 
 .sidebarNav__menuItem > a {

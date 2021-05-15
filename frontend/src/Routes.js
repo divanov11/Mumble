@@ -7,7 +7,7 @@ import classNames from 'classnames';
 
 import PrivateRoute from './utilities/PrivateRoute';
 
-import { Header, RestoreScroll } from './components';
+import { RestoreScroll } from './components';
 import {
   HomePage,
   DiscussionPage,

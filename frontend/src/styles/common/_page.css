@@ -24,6 +24,7 @@
   .contentArea {
     width: 81%;
   }
+
   .contentArea > *:first-of-type {
     margin-left: auto;
     flex-basis: 85%;
