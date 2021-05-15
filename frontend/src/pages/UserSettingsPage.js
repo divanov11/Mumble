@@ -63,9 +63,9 @@ function UserSettingsPage() {
   };
 
   return (
-    <Page>
+    <>
       {currentUser?.user?.name && (
-        <section>
+        <>
           <UserSettingUpdateModal
             heading="Update User Settings"
             dataType={modelContent}
@@ -84,155 +84,162 @@ function UserSettingsPage() {
             clearFileInputOnCancel={clearFileInputOnCancel}
             // setCurrentUser={setCurrentUser}
           />
-        </section>
+        </>
       )}
-      <section>
-        <Card>
-          <div className="settings-update settings-update--profile">
-            <div className="settings-update__title">
-              <span>User Information</span>
-              <Button
-                iconName="pencil-alt"
-                text="Edit"
-                color="main"
-                link
-                onClick={update}
-                data-type="user-info"
-              />
-            </div>
 
-            <div className="settings-update__info">
-              {!currentUser?.loading && croppedImageBase64 !== undefined ? (
-                <>
-                  <Avatar size="lg" src={croppedImageBase64} />
-                  <h4>{currentUser?.user?.name}</h4>
-                  <small>{currentUser?.user?.email || 'tempemail@mumble.dev'}</small>
-                  <small>@{currentUser?.user?.username}</small>
-                  <p>Newyork, USA</p>
-                </>
-              ) : (
-                <div className="settings-update__infoplaceholder">
-                  <RoundShape
-                    color="#c5c5c5"
-                    className="avatar settings-update-image__infoplaceholder"
-                  />
-                  <TextBlock rows={1} color="#c5c5c5" style={{ fontSize: '30px', width: 150 }} />
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <TextBlock
-                      rows={1}
-                      color="#c5c5c5"
-                      style={{ width: 250, marginBottom: '10px' }}
-                    />
-                    <TextBlock rows={1} color="#c5c5c5" style={{ width: 150 }} />
-                  </div>
-                  <TextBlock rows={1} color="#c5c5c5" style={{ width: 170 }} />
-                </div>
-              )}
-
-              <div className="settings-update__avatar">
-                <input
-                  type="file"
-                  accept="image/*"
-                  id="profile-pic"
-                  name="profile-pic"
-                  onChange={handleFileChange}
-                  ref={inputRef}
+      <Page>
+        <section>
+          <Card>
+            <div className="settings-update">
+              <div className="settings-update__title">
+                <span>About</span>
+                <Button
+                  iconName="pencil-alt"
+                  text="Edit"
+                  color="main"
+                  link
+                  onClick={update}
+                  data-type="user-bio"
                 />
-                <Button style={{ pointerEvents: 'none' }} text="Update Avatar" iconName="camera" />
               </div>
-            </div>
-          </div>
-        </Card>
-      </section>
-      <section>
-        <Card>
-          <div className="settings-update">
-            <div className="settings-update__title">
-              <span>About</span>
-              <Button
-                iconName="pencil-alt"
-                text="Edit"
-                color="main"
-                link
-                onClick={update}
-                data-type="user-bio"
-              />
-            </div>
-            <div className="settings-update__info">
-              {!currentUser?.loading ? (
-                <p>{currentUser?.user?.bio}</p>
-              ) : (
-                <TextBlock rows={2} color="#c5c5c5" />
-              )}
-            </div>
-          </div>
-
-          <div className="settings-update">
-            <div className="settings-update__title">
-              <span>Skills</span>
-              <Button
-                iconName="pencil-alt"
-                text="Edit"
-                color="main"
-                link
-                onClick={update}
-                data-type="user-skills"
-              />
-            </div>
-            <div className="settings-update__info">
-              <div className="tags-wrapper">
-                {currentUser?.loading ? (
-                  <div className="settings-update-tag-placeholder__info">
-                    <TextBlock
-                      rows={1}
-                      color="#c5c5c5"
-                      style={{ width: 55 }}
-                      className="settings-update-tag_placeholder"
-                    />
-                    <TextBlock
-                      rows={1}
-                      color="#c5c5c5"
-                      style={{ width: 70 }}
-                      className="settings-update-tag_placeholder"
-                    />
-                    <TextBlock
-                      rows={1}
-                      color="#c5c5c5"
-                      style={{ width: 60 }}
-                      className="settings-update-tag_placeholder"
-                    />
-                    <TextBlock
-                      rows={1}
-                      color="#c5c5c5"
-                      style={{ width: 75 }}
-                      className="settings-update-tag_placeholder"
-                    />
-                  </div>
+              <div className="settings-update__info">
+                {!currentUser?.loading ? (
+                  <p>{currentUser?.user?.bio}</p>
                 ) : (
-                  renderSkills()
+                  <TextBlock rows={2} color="#c5c5c5" />
                 )}
               </div>
             </div>
-          </div>
 
-          <div className="settings-update">
-            <div className="settings-update__title">
-              <span>Dark Theme ({isDarkTheme ? 'enabled' : 'disabled'})</span>
+            <div className="settings-update">
+              <div className="settings-update__title">
+                <span>Skills</span>
+                <Button
+                  iconName="pencil-alt"
+                  text="Edit"
+                  color="main"
+                  link
+                  onClick={update}
+                  data-type="user-skills"
+                />
+              </div>
+              <div className="settings-update__info">
+                <div className="tags-wrapper">
+                  {currentUser?.loading ? (
+                    <div className="settings-update-tag-placeholder__info">
+                      <TextBlock
+                        rows={1}
+                        color="#c5c5c5"
+                        style={{ width: 55 }}
+                        className="settings-update-tag_placeholder"
+                      />
+                      <TextBlock
+                        rows={1}
+                        color="#c5c5c5"
+                        style={{ width: 70 }}
+                        className="settings-update-tag_placeholder"
+                      />
+                      <TextBlock
+                        rows={1}
+                        color="#c5c5c5"
+                        style={{ width: 60 }}
+                        className="settings-update-tag_placeholder"
+                      />
+                      <TextBlock
+                        rows={1}
+                        color="#c5c5c5"
+                        style={{ width: 75 }}
+                        className="settings-update-tag_placeholder"
+                      />
+                    </div>
+                  ) : (
+                    renderSkills()
+                  )}
+                </div>
+              </div>
             </div>
-            <label className="toggle-theme-switch">
-              <input
-                defaultChecked={isDarkTheme}
-                type="checkbox"
-                onClick={() => {
-                  dispatch(DarkLightTheme());
-                }}
-              ></input>
-              <span className="theme-slider"></span>
-            </label>
-          </div>
-        </Card>
-      </section>
-    </Page>
+
+            <div className="settings-update">
+              <div className="settings-update__title">
+                <span>Dark Theme ({isDarkTheme ? 'enabled' : 'disabled'})</span>
+              </div>
+              <label className="toggle-theme-switch">
+                <input
+                  defaultChecked={isDarkTheme}
+                  type="checkbox"
+                  onClick={() => {
+                    dispatch(DarkLightTheme());
+                  }}
+                ></input>
+                <span className="theme-slider"></span>
+              </label>
+            </div>
+          </Card>
+        </section>
+        <section>
+          <Card>
+            <div className="settings-update settings-update--profile">
+              <div className="settings-update__title">
+                <span>User Information</span>
+                <Button
+                  iconName="pencil-alt"
+                  text="Edit"
+                  color="main"
+                  link
+                  onClick={update}
+                  data-type="user-info"
+                />
+              </div>
+
+              <div className="settings-update__info">
+                {!currentUser?.loading && croppedImageBase64 !== undefined ? (
+                  <>
+                    <Avatar size="lg" src={croppedImageBase64} />
+                    <h4>{currentUser?.user?.name}</h4>
+                    <small>{currentUser?.user?.email || 'tempemail@mumble.dev'}</small>
+                    <small>@{currentUser?.user?.username}</small>
+                    <p>Newyork, USA</p>
+                  </>
+                ) : (
+                  <div className="settings-update__infoplaceholder">
+                    <RoundShape
+                      color="#c5c5c5"
+                      className="avatar settings-update-image__infoplaceholder"
+                    />
+                    <TextBlock rows={1} color="#c5c5c5" style={{ fontSize: '30px', width: 150 }} />
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                      <TextBlock
+                        rows={1}
+                        color="#c5c5c5"
+                        style={{ width: 250, marginBottom: '10px' }}
+                      />
+                      <TextBlock rows={1} color="#c5c5c5" style={{ width: 150 }} />
+                    </div>
+                    <TextBlock rows={1} color="#c5c5c5" style={{ width: 170 }} />
+                  </div>
+                )}
+
+                <div className="settings-update__avatar">
+                  <input
+                    type="file"
+                    accept="image/*"
+                    id="profile-pic"
+                    name="profile-pic"
+                    onChange={handleFileChange}
+                    ref={inputRef}
+                  />
+                  <Button
+                    style={{ pointerEvents: 'none' }}
+                    text="Update Avatar"
+                    iconName="camera"
+                  />
+                </div>
+              </div>
+            </div>
+          </Card>
+        </section>
+      </Page>
+    </>
   );
 }
 
