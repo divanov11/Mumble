@@ -4,7 +4,7 @@ import { RoundShape, TextBlock } from 'react-placeholder/lib/placeholders';
 import '../styles/components/UserSettingsPage.css';
 import { listUserDetails } from '../actions/userActions';
 import { Avatar, Button, Card } from '../common';
-import { ProfilePicCropperModal, UserSettingUpdateModal } from '../components';
+import { Page, ProfilePicCropperModal, UserSettingUpdateModal } from '../components';
 import { apiEndpointURL } from '../services/config';
 import { toggleTheme as DarkLightTheme } from '../actions/local';
 
@@ -63,9 +63,9 @@ function UserSettingsPage() {
   };
 
   return (
-    <div className="container two-column-layout two-column-layout--reverse">
+    <Page>
       {currentUser?.user?.name && (
-        <>
+        <section>
           <UserSettingUpdateModal
             heading="Update User Settings"
             dataType={modelContent}
@@ -84,7 +84,7 @@ function UserSettingsPage() {
             clearFileInputOnCancel={clearFileInputOnCancel}
             // setCurrentUser={setCurrentUser}
           />
-        </>
+        </section>
       )}
       <section>
         <Card>
@@ -232,7 +232,7 @@ function UserSettingsPage() {
           </div>
         </Card>
       </section>
-    </div>
+    </Page>
   );
 }
 

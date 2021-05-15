@@ -20,7 +20,7 @@ const SidebarNav = ({ isSidebarNav, isResponsiveSidebarNav }) => (
     <ul className="sidebarNav__menu">
       {menu.map((item, index) => (
         <li key={index} className="sidebarNav__menuItem">
-          <NavLink to={item.path}>
+          <NavLink to={item.path} exact>
             <i className={`fas fa-${item.icon}`}></i>
             {item.title}
           </NavLink>

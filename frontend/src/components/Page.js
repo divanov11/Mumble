@@ -1,9 +1,9 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Header from './Header';
 import SidebarNav from './SidebarNav';
 
-const Page = ({ children, header = true, sidebarNav = true }) => {
+const Page = ({ children, header = true, sidebarNav = true, singleContent = false }) => {
   const { isAuthenticated } = useSelector((state) => state.auth);
   const [isSidebarNav, setIsSidebarNav] = useState(false);
   const [isResponsiveSidebarNav, setIsResponsiveSidebarNav] = useState(true);
@@ -17,7 +17,7 @@ const Page = ({ children, header = true, sidebarNav = true }) => {
       setIsResponsiveSidebarNav(false);
     });
 
-    return () => window.removeEventListener(resizeListener);
+    return () => window.removeEventListener('resize', resizeListener);
   }, []);
 
   return (
@@ -29,7 +29,13 @@ const Page = ({ children, header = true, sidebarNav = true }) => {
         {sidebarNav && (
           <SidebarNav isSidebarNav={isSidebarNav} isResponsiveSidebarNav={isResponsiveSidebarNav} />
         )}
-        <div className="content-area">{children}</div>
+        <div
+          className={`contentArea ${!sidebarNav ? 'contentArea--fullWidth' : ''} ${
+            singleContent ? 'contentArea--singleContent' : ''
+          }`}
+        >
+          {children}
+        </div>
       </div>
     </>
   );

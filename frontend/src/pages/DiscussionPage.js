@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import '../styles/components/DiscussionPage.css';
 
 import { Avatar, VotingWidget } from '../common';
-import { Contributors, DiscussionsCard } from '../components';
+import { Contributors, DiscussionsCard, Page } from '../components';
 import { discussions } from '../data';
 
 const Discussion = ({ match }) => {
@@ -26,7 +26,7 @@ const Discussion = ({ match }) => {
   }, []);
 
   return (
-    <div className="container discussion--layout">
+    <Page>
       <section>
         <div className="card">
           <div className="card__body">
@@ -90,7 +90,7 @@ const Discussion = ({ match }) => {
         <Contributors users={users} />
         <DiscussionsCard discussions={relatedQuestions} />
       </section>
-    </div>
+    </Page>
   );
 };
 
