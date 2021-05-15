@@ -1,7 +1,7 @@
 #
 
 <p align="center">
-  <img src="./frontend/public/android-chrome-512x512.png" width="20%">
+  <img src="./frontend/public/android-chrome-512x512.png" width="15%">
   <h1 align="center">
     MUMBLE
   </h1>
@@ -10,9 +10,9 @@
 
 <div align="center">
   
+<a href="https://discord.gg/9Du4KUY3dE">![Mumble Community](https://img.shields.io/discord/825371211399692308?label=Mumble%20Community&style=for-the-badge&logo=Discord)</a>
 <a href="https://www.mumble.dev">![Mumble](https://img.shields.io/badge/Mumble-Live%20Demo-9cf?style=for-the-badge)</a>
 <a href="http://mumble-lp.s3-website-us-west-2.amazonaws.com/">![Mumble UI Kit](https://img.shields.io/badge/Mumble-UI%20Kit-orange?style=for-the-badge)</a>
-<a href="https://discord.gg/9Du4KUY3dE">![Mumble Community](https://img.shields.io/discord/825371211399692308?label=Mumble%20Community&style=for-the-badge&logo=Discord)</a>
 
 </div>
 
@@ -81,14 +81,79 @@ After submitting your PR, please tag reviewer(s) in your PR message. You can tag
 
 ## 📸 Screenshots :
 
-**User Feed** : <br/><br/>
-<img src="./images/home-page.PNG" width=600 />
+**User Feed** : <br/>
 
-**User Profile Page** : <br/><br/>
-<img src="./images/profile-page.PNG" width=600 />
+<table width="100%"> 
+<tr>
+<td width="50%">      
+&nbsp; 
+<br>
+<p align="center">
+  Light Mode
+</p>
+<img src="./images/user-feed-lightmode.png">
+</td> 
+<td width="50%">
+<br>
+<p align="center">
+Dark Mode
+</p>
+<img src="./images/user-feed-darkmode.png">  
+</td>
+</table>
+<br/>
 
-**Discussion/Question Page** : <br/><br/>
-<img src="./images/discussion-page.PNG" width=600 />
+**User Profile Page** : <br/>
 
-**Login Page** : <br/><br/>
-<img src="./images/login-page.PNG" width=600 />
+<table width="100%"> 
+<tr>
+<td width="50%">
+&nbsp; 
+<br>
+<p align="center">
+  Light Mode
+</p>
+<img src="./images/profile-page-lightmode.PNG">
+</td>
+</table> 
+<!-- i will upload the Dark Mode screenshots soon !-->
+<br/>
+
+**Discussion/Question Page** : <br/>
+
+<table width="100%"> 
+<tr>
+<td width="50%">
+&nbsp; 
+<br>
+<p align="center">
+  Light Mode
+</p>
+<img src="./images/discussion-page-lightmode.PNG">
+</td> 
+<!-- i will upload the Dark Mode screenshots soon !-->
+<br/>
+</table>
+
+**Login Page** : <br/>
+
+<table width="100%"> 
+<tr>
+<td width="50%">
+&nbsp; 
+<br>
+<p align="center">
+  Light Mode
+</p>
+<img src="./images/login-page-lightmode.PNG">
+</td> 
+<td width="50%">
+<br>
+<p align="center">
+Dark Mode
+</p>
+<img src="./images/login-page-darkmode.png">  
+</td>
+</table>
+<br/>
+

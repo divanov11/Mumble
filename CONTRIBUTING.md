@@ -1,9 +1,13 @@
 #
-<p align="center">
-  <img src="./frontend/public/android-chrome-512x512.png" width="20%">
+<div align="center">
+  <img src="./frontend/public/android-chrome-512x512.png" width="15%">
   <h1 align="center">
     Contributing to MUMBLE :
   </h1>
+
+<a href="https://discord.gg/9Du4KUY3dE">![Mumble Community](https://img.shields.io/discord/825371211399692308?label=Mumble%20Community&style=for-the-badge&logo=Discord)</a>
+<a href="https://www.mumble.dev">![Mumble](https://img.shields.io/badge/Mumble-Live%20Demo-9cf?style=for-the-badge)</a>
+<a href="http://mumble-lp.s3-website-us-west-2.amazonaws.com/">![Mumble UI Kit](https://img.shields.io/badge/Mumble-UI%20Kit-orange?style=for-the-badge)</a>
 
 A big welcome and thank you for considering contributing to Mumble! It’s people like you that make it a reality for users in our community.
 
@@ -46,7 +50,7 @@ We take our open source community seriously and hold ourselves and other contrib
 
 Contributions are made to this repo via Issues and Pull Requests (PRs). A few general guidelines that cover both:
 
-- To report security vulnerabilities, please send a message in our discord server [Join here](https://discord.com/invite/Tfr67ehuJH).
+- To report security vulnerabilities, please send a message in our discord server [Join here](https://discord.gg/9Du4KUY3dE).
 - Search for existing Issues and PRs before creating your own.
 - We work hard to makes sure issues are handled in a timely manner but, depending on the impact, it could take a while to investigate the root cause. A friendly ping in the comment thread to the submitter or a contributor can help draw attention if your issue is blocking.
 - If you've never contributed before, see [the first timer's guide on Auth0 blog](https://auth0.com/blog/a-first-timers-guide-to-an-open-source-project/) for resources and tips on how to get started.
@@ -235,4 +239,4 @@ You can follow along with this video, [Contributing to Mumble](https://youtu.be/
 
 ### Getting Help
 
-Join us in the <a href="https://discord.gg/TxgpyK8pzf"><img align="center" width="28%" src="https://img.shields.io/discord/825371211399692308?label=Mumble%20Community&style=for-the-badge&logo=Discord"></a> and post your question there in the correct category with a descriptive tag.
+Join us in the <a href="https://discord.gg/9Du4KUY3dE"><img align="center" width="28%" src="https://img.shields.io/discord/825371211399692308?label=Mumble%20Community&style=for-the-badge&logo=Discord"></a> and post your question there in the correct category with a descriptive tag.
