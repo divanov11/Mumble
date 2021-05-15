@@ -22,6 +22,9 @@ import {
   USER_ARTICLES_LIST_FAIL,
   USER_ARTICLES_LIST_SUCCESS,
   USER_ARTICLES_LIST_REQUEST,
+  LOAD_MORE_USER_REQUEST,
+  LOAD_MORE_USER_SUCCESS,
+  LOAD_MORE_USER_FAIL
 } from '../constants/userConstants';
 
 export const userListReducer = (
@@ -36,10 +39,23 @@ export const userListReducer = (
       return {
         ...state,
         loading: false,
+        data: { ...action.payload, results: [...action.payload.results] },
+      };
+      
+    case USER_LIST_FAIL:
+      return { ...state, loading: false, error: action.payload };
+
+    case LOAD_MORE_USER_REQUEST:
+      return { ...state, loading: true };
+
+    case LOAD_MORE_USER_SUCCESS:
+      return {
+        ...state,
+        loading: false,
         data: { ...action.payload, results: [...state.data.results, ...action.payload.results] },
       };
 
-    case USER_LIST_FAIL:
+    case LOAD_MORE_USER_FAIL:
       return { ...state, loading: false, error: action.payload };
 
     case USER_LIST_RESET:

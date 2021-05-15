@@ -8,7 +8,7 @@ import '../styles/components/SearchByUsersAndPostList.css';
 import logo from '../assets/logo/dark-logo.png';
 
 import { AuthorBox, Button } from '../common';
-import { listUsers, resetListUsers } from '../actions/userActions';
+import { listUsers, resetListUsers,listMoreUsers } from '../actions/userActions';
 import { getApiUrl } from '../services/config';
 import FollowButton from './FollowButton';
 import ReactPlaceholder from 'react-placeholder/lib';
@@ -16,11 +16,10 @@ import ReactPlaceholder from 'react-placeholder/lib';
 const SearchByUsersList = () => {
   const dispatch = useDispatch();
   const location = useLocation();
+
   /* keyword looks like this `?q=john` */
   const keyword = location.search;
-  const userList = useSelector((state) => state.userList);
-  const { loading, data } = userList;
-
+  
   useEffect(() => {
     /* Everytime the user changes the search term,
      * 1. Clear the previous results in store
@@ -30,12 +29,15 @@ const SearchByUsersList = () => {
     dispatch(listUsers(keyword));
   }, [dispatch, keyword]);
 
+  const userList = useSelector((state) => state.userList);
+  const { loading, data } = userList;
+
   const handleLoadMore = () => {
     if (!data.next) return;
 
     /* keywordWithPageNo looks like this `?page=2&q=john` */
     const keywordWithPageNo = new URL(data.next).search;
-    dispatch(listUsers(keywordWithPageNo));
+    dispatch(listMoreUsers(keywordWithPageNo));
   };
 
   const showResultsNotFound = data?.results?.length === 0;
@@ -74,7 +76,7 @@ const SearchByUsersList = () => {
         )}
         {!showResultsNotFound && (
           <div>
-            {data.results.map((user, index) => (
+            {data.results && data.results.map((user, index) => (
               <div key={index} className="card">
                 <div className="card__body">
                   <div className="searchItem">

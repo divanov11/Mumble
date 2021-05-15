@@ -22,6 +22,9 @@ import {
   USER_POSTS_LIST_FAIL,
   USER_POSTS_LIST_REQUEST,
   USER_POSTS_LIST_SUCCESS,
+  LOAD_MORE_USER_REQUEST,
+  LOAD_MORE_USER_SUCCESS,
+  LOAD_MORE_USER_FAIL
 } from '../constants/userConstants';
 import { UsersService } from '../services';
 import usersService from '../services/usersService';
@@ -30,17 +33,32 @@ import { createActionPayload } from './postActions';
 export const listUsers = (keyword = '') => async (dispatch) => {
   try {
     dispatch({ type: USER_LIST_REQUEST });
-
+    
     const results = await UsersService.getUsersByKeyword(keyword);
     dispatch({
       type: USER_LIST_SUCCESS,
       payload: results,
     });
+    
   } catch (error) {
     dispatch(createActionPayload(USER_LIST_FAIL, error));
   }
 };
 
+export const listMoreUsers = (keyword = '') => async (dispatch) => {
+  try {
+    //dispatch({ type: USER_LIST_REQUEST });
+    
+    const results = await UsersService.getUsersByKeyword(keyword);
+    dispatch({
+      type: LOAD_MORE_USER_SUCCESS,
+      payload: results,
+    });
+    
+  } catch (error) {
+    dispatch(createActionPayload(LOAD_MORE_USER_FAIL, error));
+  }
+};
 export const resetListUsers = () => async (dispatch) => {
   dispatch({ type: USER_LIST_RESET });
 };
