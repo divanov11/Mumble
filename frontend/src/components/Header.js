@@ -24,7 +24,7 @@ export const getNotificationLink = (notification) => {
   return notificationUrlMap[notification.notification_type];
 };
 
-const Header = () => {
+const Header = ({ isSidebarNav, toggleSidebarNav }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
@@ -70,15 +70,18 @@ const Header = () => {
   const hasUnreadNotification = () => !!notifications.find((notification) => !notification.is_read);
 
   return (
-    <div id="header">
+    <div className="header">
       <div className="container">
-        <div id="logo">
+        <div className="header__logo">
+          <button className="header__menubar" onClick={toggleSidebarNav}>
+            <i className={`fas fa-${!isSidebarNav ? 'bars' : 'times'}`}></i>
+          </button>
           <Link to={'/'}>
             <img src={logo} alt="Mumble Icon" />
           </Link>
         </div>
 
-        <div id="nav-wrapper">
+        <div className="header__nav">
           <SearchBox />
           <i
             className={classNames('fas', 'fa-bell', 'nav-item', 'nav-icon')}

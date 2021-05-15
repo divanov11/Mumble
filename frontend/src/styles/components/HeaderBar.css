@@ -1,4 +1,4 @@
-#header {
+.header {
   position: sticky;
   top: 0;
   width: 100%;
@@ -8,30 +8,34 @@
   box-shadow: 0 1px 6px 3px #00000015;
 }
 
-#header > .container {
+.header > .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.dark-theme #header {
+.dark-theme .header {
   background-color: var(--color-main-light);
 }
 
-#logo {
+.header__logo {
   text-transform: lowercase;
+  display: flex;
+  justify-content: center;
 }
 
-#logo a {
+.header__logo a {
   text-decoration: none;
   color: #fff;
 }
 
-#logo img {
+.header__logo img {
+  position: relative;
   height: 4.2rem;
+  left: -0.6rem;
 }
 
-#logo h3 {
+.header__logo h3 {
   display: inline-block;
   margin-left: 0.85rem;
   font-size: 3.2rem;
@@ -39,7 +43,23 @@
   color: var(--color-main);
 }
 
-#nav-wrapper {
+.header__menubar {
+  font-size: 1.8rem;
+  background-color: transparent;
+  margin-right: 2.5rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+@media screen and (min-width: 650px) {
+  .header__menubar {
+    display: none;
+  }
+}
+
+.header__nav {
   display: flex;
   align-items: center;
 }

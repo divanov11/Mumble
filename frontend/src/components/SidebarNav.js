@@ -12,30 +12,22 @@ const menu = [
   { title: 'Settings', icon: 'tools', path: '/settings' },
 ];
 
-const SidebarNav = () => {
-  return (
-    <div className="sidebarNav">
-      <ul className="sidebarNav__menu">
-        {menu.map((item, index) => (
-          <li key={index} className="sidebarNav__menuItem">
-            <NavLink to={item.path}>
-              <i className={`fas fa-${item.icon}`}></i>
-              {item.title}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+const SidebarNav = ({ isSidebarNav, isResponsiveSidebarNav }) => (
+  <div
+    className={`sidebarNav
+    ${isSidebarNav && isResponsiveSidebarNav ? 'sidebarNav--full' : ''}`}
+  >
+    <ul className="sidebarNav__menu">
+      {menu.map((item, index) => (
+        <li key={index} className="sidebarNav__menuItem">
+          <NavLink to={item.path}>
+            <i className={`fas fa-${item.icon}`}></i>
+            {item.title}
+          </NavLink>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
 
 export default SidebarNav;
-
-/*
-- Home,
-- Articles
-- Discussions
-- Topics
-- Contributors
-- Settings
-*/
