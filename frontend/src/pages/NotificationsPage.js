@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import '../styles/components/NotificationPage.css';
 
 import { Card } from '../common';
-import { DiscussionsCard, Notification } from '../components';
-import { discussions } from '../data';
+import { Notification, Page } from '../components';
 import { useDispatch, useSelector } from 'react-redux';
 import { getNotifications } from '../actions/notificationsActions';
 
@@ -16,7 +15,7 @@ function NotificationsPage() {
   }, [dispatch]);
 
   return (
-    <div className="container two-column-layout">
+    <Page singleContent={true}>
       <section>
         <Card>
           <div className="notification">
@@ -27,11 +26,7 @@ function NotificationsPage() {
           ))}
         </Card>
       </section>
-
-      <section className="two-column-layout__right-column">
-        <DiscussionsCard discussions={discussions} />
-      </section>
-    </div>
+    </Page>
   );
 }
 

@@ -10,6 +10,7 @@ import {
   TopicTags,
   DiscussionsCard,
   PostCardPlaceholder,
+  Page,
 } from '../components';
 import { discussions, usersData } from '../data';
 import { getPostsForDashboard } from '../actions/postActions';
@@ -27,14 +28,11 @@ const HomePage = () => {
   }, [dispatch]);
 
   return (
-    <div className="container three-column-layout">
-      <section className="three-column-layout__left-column">
-        <Contributors />
-      </section>
-
+    <Page>
       <section>
         <CreatePost />
         <ReactPlaceholder
+          style={{ width: '100%' }}
           customPlaceholder={<PostCardPlaceholder />}
           showLoadingAnimation
           ready={!isPostsLoading}
@@ -43,7 +41,8 @@ const HomePage = () => {
         </ReactPlaceholder>
       </section>
 
-      <section className="three-column-layout__right-column">
+      <section>
+        <Contributors />
         <TopicTags tags={user.interests} />
         <DiscussionsCard discussions={discussions} />
         {/* 
@@ -51,7 +50,7 @@ const HomePage = () => {
         <ArticlesCard articles={articles} /> 
         */}
       </section>
-    </div>
+    </Page>
   );
 };
 

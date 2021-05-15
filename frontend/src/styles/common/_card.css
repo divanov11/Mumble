@@ -6,6 +6,7 @@
   height: auto;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  overflow: hidden;
 }
 
 .card__link {
@@ -18,7 +19,7 @@
 
 .card__body,
 .card__header {
-  padding: 2.5rem;
+  padding: 2rem 2.5rem;
 }
 
 .card__header {

@@ -17,7 +17,7 @@
   --font-regular: 300;
   --font-medium: 500;
   --font-bold: 700;
-  --generic-shadow: 0 1px 5px #00000010;
+  --generic-shadow: 0 1px 3px #00000015;
 }
 
 .dark-theme {

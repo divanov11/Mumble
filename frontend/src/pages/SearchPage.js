@@ -10,6 +10,7 @@ import {
   SearchByUsersList,
   SearchByArticlesList,
   SearchByPostsList,
+  Page,
 } from '../components';
 import {
   CATEGORY_ARTICLES,
@@ -24,9 +25,7 @@ const SearchPage = () => {
   let [category, setCategory] = useState(CATEGORY_USERS);
 
   return (
-    <div className="container three-column-layout three-column-layout__condense">
-      <section className="three-column-layout__left-column"></section>
-
+    <Page>
       <section>
         {category === CATEGORY_USERS && <SearchByUsersList />}
         {category === CATEGORY_POSTS && <SearchByPostsList />}
@@ -38,7 +37,7 @@ const SearchPage = () => {
       <section className="three-column-layout__right-column">
         <SearchByPanel category={category} setCategory={setCategory} />
       </section>
-    </div>
+    </Page>
   );
 };
 
