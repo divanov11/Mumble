@@ -31,7 +31,7 @@ const Button = ({
     >
       {iconName && <i className={`${iconStyle} fa-${iconName}`} style={{ marginRight: '8px' }}></i>}
       {loading ? (
-        <div className="spinner-sm"></div>
+        <div className="button--spinner"></div>
       ) : (
         <>
           {text} {children}
