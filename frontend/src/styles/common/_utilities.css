@@ -1,14 +1,24 @@
 .container {
-  width: 80%;
+  width: 92%;
   max-width: 165rem;
   margin: 0 auto;
-  padding: 1rem;
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (min-width: 1000px) {
   .container {
-    width: 100%;
-    padding: 2rem;
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 72%;
   }
 }

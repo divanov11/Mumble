@@ -7,7 +7,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import '../styles/components/CreateArticlePage.css';
 
 import { Button, Input } from '../common';
-import { ArticlesCard } from '../components';
+import { ArticlesCard, Page } from '../components';
 import { articles } from '../data';
 import { useValidationForm } from '../hooks/useValidationForm';
 import { useDispatch } from 'react-redux';
@@ -30,7 +30,7 @@ const CreateArticlePage = () => {
   });
 
   return (
-    <div className="container two-column-layout">
+    <Page sidebarNav={false}>
       <section>
         <div className="card">
           <div className="card__body">
@@ -73,7 +73,7 @@ const CreateArticlePage = () => {
       <section>
         <ArticlesCard articles={articles} />
       </section>
-    </div>
+    </Page>
   );
 };
 

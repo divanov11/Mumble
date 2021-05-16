@@ -36,6 +36,7 @@ const CreatePost = () => {
         <div className="create-post__body">
           <form className="form" onSubmit={onFormSubmit}>
             <TextArea
+              style={{ minHeight: '10rem' }}
               name="create-post"
               placeholder="Share your brilliant thought!"
               onChange={handleMessageChange}
@@ -44,7 +45,7 @@ const CreatePost = () => {
               hideLabel={true}
               error={error}
             />
-            <Button type="submit" color="main" text="Mumble Now" iconName="comment-alt" />
+            <Button type="submit" size="md" color="main" text="Mumble Now" iconName="comment-alt" />
           </form>
           <Prompt
             when={message.length > 0}

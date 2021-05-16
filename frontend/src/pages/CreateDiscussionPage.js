@@ -4,7 +4,7 @@ import { useHistory, Prompt } from 'react-router-dom';
 import '../styles/components/CreateDiscussionPage.css';
 
 import { Button } from '../common';
-import { DiscussionsCard } from '../components';
+import { DiscussionsCard, Page } from '../components';
 import { discussions } from '../data';
 
 const CreateDiscussionPage = () => {
@@ -43,7 +43,7 @@ const CreateDiscussionPage = () => {
   }, [history, isDiscussionSubmitted]);
 
   return (
-    <div className="container two-column-layout">
+    <Page>
       <section>
         <div className="card">
           <div className="card__body">
@@ -84,7 +84,7 @@ const CreateDiscussionPage = () => {
       <section>
         <DiscussionsCard discussions={discussions} />
       </section>
-    </div>
+    </Page>
   );
 };
 

@@ -107,6 +107,33 @@
   background: var(--color-sub);
 }
 
+.button--spinner {
+  border: 3px solid #ddd;
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+button:disabled,
+button[disabled] {
+  border: 1px solid var(--color-gray);
+  background-color: var(--color-light);
+  color: var(--color-gray);
+  cursor: unset;
+}
+
 /* Dark Theme */
 .dark-theme .btn.btn--main {
   background-color: var(--color-sub);
