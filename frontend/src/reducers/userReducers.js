@@ -25,7 +25,7 @@ import {
 } from '../constants/userConstants';
 
 export const userListReducer = (
-  state = { data: { results: [], next: null, previous: null, count: 0 } },
+  state = { data: { results: [], next: null, previous: null, count: 0 }, loading: false },
   action,
 ) => {
   switch (action.type) {

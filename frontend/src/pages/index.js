@@ -11,3 +11,4 @@ export { default as UserSettingsPage } from './UserSettingsPage';
 export { default as Error404page } from './Error404Page';
 export { default as Error500page } from './Error500Page';
 export { default as ForgotPasswordPage } from './ForgotPasswordPage';
+export { default as ArticlesPage } from './ArticlesPage';
