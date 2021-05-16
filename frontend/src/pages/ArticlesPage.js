@@ -7,7 +7,7 @@ import { Avatar, Button } from '../common';
 import { getApiUrl } from '../services/config';
 import { Link } from 'react-router-dom';
 
-const ArticlesPage = ({}) => {
+const ArticlesPage = () => {
   const { data, loading } = useSelector((state) => state.articleSearchList);
   const dispatch = useDispatch();
 
