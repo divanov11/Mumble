@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 
-// import '../styles/components/ArticlesPage.css';
-
-import { ArticlesCard, Page } from '../components';
+import { Page } from '../components';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetSearchArticles, searchArticles } from '../actions/articleActions';
 import { Avatar, Button } from '../common';
