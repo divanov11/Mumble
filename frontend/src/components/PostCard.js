@@ -8,21 +8,29 @@ import { getPostComments } from '../actions/postActions';
 import PostCardOptions from './PostCardOptions';
 
 const PostCard = ({ post, link, isComment = false, children, ...others }) => {
-  const { user, original_mumble } = post;
-  if (original_mumble) {
-    post = original_mumble;
-  }
-
+  let auth = useSelector((state) => state.auth);
   let dispatch = useDispatch();
 
-  let auth = useSelector((state) => state.auth);
   let authUser = auth.user;
   let authUserId = String(authUser.id);
   let postId = String(post.id);
 
   let [comments, setComments] = useState([]);
-
   const [showComments, setShowComments] = useState(false);
+
+  const { user, original_mumble } = post;
+  let remumble;
+
+  if (original_mumble) {
+    remumble = {
+      isMyRemumble: authUser.id === post.user.user,
+      remumbleId: post.id,
+      remumbleUserId: post.user.user,
+      originalMumbleId: original_mumble.id,
+      originalUserId: original_mumble.user.user,
+    };
+    post = original_mumble;
+  }
 
   const toggleComments = (newComment = false) => {
     if (newComment === true) {
@@ -49,7 +57,7 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
           url={`/profile/${post.user.username}`}
           size="sm"
         />
-        <PostCardOptions post={post} />
+        <PostCardOptions post={post} remumble={remumble} />
       </div>
       <div className="post-contents">
         <VotingWidget
