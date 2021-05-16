@@ -42,7 +42,7 @@ export const userListReducer = (
         loading: false,
         data: { ...action.payload, results: [...action.payload.results] },
       };
-      
+
     case USER_LIST_FAIL:
       return { ...state, loading: false, error: action.payload };
 

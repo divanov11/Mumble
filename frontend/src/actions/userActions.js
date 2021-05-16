@@ -37,13 +37,12 @@ import { createActionPayload } from './postActions';
 export const listUsers = (keyword = '') => async (dispatch) => {
   try {
     dispatch({ type: USER_LIST_REQUEST });
-    
+
     const results = await UsersService.getUsersByKeyword(keyword);
     dispatch({
       type: USER_LIST_SUCCESS,
       payload: results,
     });
-    
   } catch (error) {
     dispatch(createActionPayload(USER_LIST_FAIL, error));
   }
@@ -52,13 +51,12 @@ export const listUsers = (keyword = '') => async (dispatch) => {
 export const listMoreUsers = (keyword = '') => async (dispatch) => {
   try {
     //dispatch({ type: USER_LIST_REQUEST });
-    
+
     const results = await UsersService.getUsersByKeyword(keyword);
     dispatch({
       type: LOAD_MORE_USER_SUCCESS,
       payload: results,
     });
-    
   } catch (error) {
     dispatch(createActionPayload(LOAD_MORE_USER_FAIL, error));
   }
@@ -158,7 +156,7 @@ export const followUser = (username) => async (dispatch, getState) => {
 
 export const updateUserProfile = (userData) => async (dispatch, getState) => {
   try {
-    // dispatch({ type: UPDATE_USER_REQUEST });
+    dispatch({ type: LOAD_MORE_USER_REQUEST });
     let { user } = await usersService.updateUserProfile(userData);
     user.profile.email = user.email;
     dispatch({

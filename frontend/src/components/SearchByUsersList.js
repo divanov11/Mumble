@@ -8,7 +8,7 @@ import '../styles/components/SearchByUsersAndPostList.css';
 import logo from '../assets/logo/dark-logo.png';
 
 import { AuthorBox, Button } from '../common';
-import { listUsers, resetListUsers,listMoreUsers } from '../actions/userActions';
+import { listUsers, resetListUsers, listMoreUsers } from '../actions/userActions';
 import { getApiUrl } from '../services/config';
 import FollowButton from './FollowButton';
 import ReactPlaceholder from 'react-placeholder/lib';
@@ -19,7 +19,9 @@ const SearchByUsersList = () => {
 
   /* keyword looks like this `?q=john` */
   const keyword = location.search;
-  
+  const userList = useSelector((state) => state.userList);
+  const { loading, data } = userList;
+
   useEffect(() => {
     /* Everytime the user changes the search term,
      * 1. Clear the previous results in store
@@ -28,9 +30,6 @@ const SearchByUsersList = () => {
     dispatch(resetListUsers());
     dispatch(listUsers(keyword));
   }, [dispatch, keyword]);
-
-  const userList = useSelector((state) => state.userList);
-  const { loading, data } = userList;
 
   const handleLoadMore = () => {
     if (!data.next) return;
@@ -76,25 +75,26 @@ const SearchByUsersList = () => {
         )}
         {!showResultsNotFound && (
           <div>
-            {data.results && data.results.map((user, index) => (
-              <div key={index} className="card">
-                <div className="card__body">
-                  <div className="searchItem">
-                    <div className="searchItem__top">
-                      <AuthorBox
-                        avatarSrc={getApiUrl(user.profile.profile_pic)}
-                        url={`/profile/${user.username}`}
-                        name={user.profile.name}
-                        handle={user.username}
-                        size="md"
-                      />
-                      <FollowButton userProfile={user.profile} />
+            {data.results &&
+              data.results.map((user, index) => (
+                <div key={index} className="card">
+                  <div className="card__body">
+                    <div className="searchItem">
+                      <div className="searchItem__top">
+                        <AuthorBox
+                          avatarSrc={getApiUrl(user.profile.profile_pic)}
+                          url={`/profile/${user.username}`}
+                          name={user.profile.name}
+                          handle={user.username}
+                          size="md"
+                        />
+                        <FollowButton userProfile={user.profile} />
+                      </div>
+                      <p className="searchItem__bottom">{user.profile.bio}</p>
                     </div>
-                    <p className="searchItem__bottom">{user.profile.bio}</p>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
             <div>
               <Button
                 size="lg"
