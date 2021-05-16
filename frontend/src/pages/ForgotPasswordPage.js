@@ -89,7 +89,7 @@ const ForgotPasswordPage = () => {
               </a>
               <a
                 className="forgotpwd__footerIcon"
-                href="https://discord.com/invite/TxgpyK8pzf"
+                href="https://discord.com/invite/9Du4KUY3dE"
                 rel="noreferrer"
                 target="_blank"
               >

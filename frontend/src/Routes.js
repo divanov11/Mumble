@@ -7,7 +7,7 @@ import classNames from 'classnames';
 
 import PrivateRoute from './utilities/PrivateRoute';
 
-import { Header, RestoreScroll } from './components';
+import { RestoreScroll } from './components';
 import {
   HomePage,
   DiscussionPage,
@@ -74,7 +74,6 @@ const Routes = () => {
   return (
     <div className={classNames('app', `${isDarkTheme && 'dark-theme'}`)}>
       <ErrorBoundary FallbackComponent={Error500page}>
-        {isAuthenticated && <Header />}
         <main>
           <Switch>
             <PrivateRoute path="/" exact component={HomePage} />

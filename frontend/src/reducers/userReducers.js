@@ -25,6 +25,7 @@ import {
   LOAD_MORE_USER_REQUEST,
   LOAD_MORE_USER_SUCCESS,
   LOAD_MORE_USER_FAIL
+  USER_POST_DELETE_SUCCESS,
 } from '../constants/userConstants';
 
 export const userListReducer = (
@@ -131,6 +132,12 @@ export const userPostsListReducer = (state = { posts: [], loading: true }, actio
 
     case USER_POSTS_LIST_SUCCESS:
       return { loading: false, posts: action.payload };
+
+    case USER_POST_DELETE_SUCCESS:
+      return {
+        ...state,
+        posts: state.posts.filter((p) => p.id !== action.payload),
+      };
 
     case USER_POSTS_LIST_FAIL:
       return { ...state, loading: false, error: action.payload };

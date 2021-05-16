@@ -1,3 +1,7 @@
+.feed > .card {
+  margin-bottom: 1.5rem;
+}
+
 .post-header-wrapper {
   display: flex;
   justify-content: space-between;
@@ -10,7 +14,6 @@
 }
 
 .remumbled-note {
-  margin-top: 10px;
   margin-bottom: 10px;
   font-size: 12px;
   display: flex;
@@ -19,19 +22,18 @@
 
 .remumbled-note i {
   margin-right: 1rem;
-  color: #c5c5c5;
+  color: var(--color-gray);
 }
 
 .post-contents {
   display: flex;
-  padding-bottom: 20px;
   border-bottom: 1px solid var(--color-light);
   align-items: center;
 }
 
 .post-actions-wrapper {
   display: flex;
-  padding: 10px;
+  padding-top: 10px;
   justify-content: space-between;
   transition: all 0.1s ease;
 }

@@ -7,7 +7,7 @@ import PostCard from './PostCard';
 
 function Feed({ posts }) {
   return (
-    <section>
+    <section className="feed">
       {posts.map((post) => (
         <Card key={post.id}>
           <div className="post-wrapper">
