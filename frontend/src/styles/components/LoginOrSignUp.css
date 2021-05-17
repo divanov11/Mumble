@@ -75,13 +75,10 @@
   height: 34vw;
   position: absolute;
   top: -18vh;
-  right: 0;
+  right: -8vw;
 }
 
 .loginSignup__footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
   padding: 0.5rem 0;
   background-color: var(--color-main-light);
@@ -128,10 +125,11 @@
 
 /* Media Queries */
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1439px) {
   .loginSignup__heroImage {
     height: 38vw;
-    top: -0.5vh;
+    top: -20vh;
+    right: -8vw;
   }
 }
 
@@ -145,8 +143,22 @@
   }
 
   .loginSignup__heroImage {
-    height: 44vw;
-    top: -20vh;
+    height: 38vw;
+    right: -9vw;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .loginSignup__heroImage {
+    height: 36vw;
+    right: -9.5vw;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .loginSignup__heroImage {
+    height: 40vw;
+    right: -3vw;
   }
 }
 
