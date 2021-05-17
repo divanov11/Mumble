@@ -22,10 +22,11 @@ import {
   USER_ARTICLES_LIST_FAIL,
   USER_ARTICLES_LIST_SUCCESS,
   USER_ARTICLES_LIST_REQUEST,
+  USER_POST_DELETE_SUCCESS,
 } from '../constants/userConstants';
 
 export const userListReducer = (
-  state = { data: { results: [], next: null, previous: null, count: 0 } },
+  state = { data: { results: [], next: null, previous: null, count: 0 }, loading: false },
   action,
 ) => {
   switch (action.type) {
@@ -115,6 +116,12 @@ export const userPostsListReducer = (state = { posts: [], loading: true }, actio
 
     case USER_POSTS_LIST_SUCCESS:
       return { loading: false, posts: action.payload };
+
+    case USER_POST_DELETE_SUCCESS:
+      return {
+        ...state,
+        posts: state.posts.filter((p) => p.id !== action.payload),
+      };
 
     case USER_POSTS_LIST_FAIL:
       return { ...state, loading: false, error: action.payload };

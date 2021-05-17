@@ -8,6 +8,7 @@ import {
   ARTICLE_SEARCH_REQUEST,
   ARTICLE_SEARCH_SUCCESS,
   ARTICLE_SEARCH_FAIL,
+  ARTICLE_SEARCH_RESET,
 } from '../constants/articleConstants';
 
 export const createArticleReducer = (state = { articles: [] }, action) => {
@@ -42,16 +43,26 @@ export const articlePageReducer = (state = { article: { tags: '' } }, action) =>
   }
 };
 
-export const articleSearchListReducer = (state = { articles: [] }, action) => {
+export const articleSearchListReducer = (
+  state = { data: { results: [], next: null, previous: null, count: 0 } },
+  action,
+) => {
   switch (action.type) {
     case ARTICLE_SEARCH_REQUEST:
       return { ...state, loading: true };
 
     case ARTICLE_SEARCH_SUCCESS:
-      return { ...state, loading: false, articles: action.payload };
+      return {
+        ...state,
+        loading: false,
+        data: { ...action.payload, results: [...state.data.results, ...action.payload.results] },
+      };
 
     case ARTICLE_SEARCH_FAIL:
       return { ...state, loading: false, error: action.payload };
+
+    case ARTICLE_SEARCH_RESET:
+      return { data: { results: [], next: null, previous: null, count: 0 } };
 
     default:
       return state;

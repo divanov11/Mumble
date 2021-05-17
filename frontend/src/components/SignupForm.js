@@ -75,7 +75,7 @@ const SignupForm = () => {
           type="password"
         />
 
-        <Button color="main" type="submit" text="Sign Up" size="lg" />
+        <Button color="main" type="submit" text="Sign Up" size="lg" loading={auth?.isLoading} />
         <span style={{ marginLeft: '1rem' }}>
           Have an account? <Link to="/login">Login</Link>
         </span>
