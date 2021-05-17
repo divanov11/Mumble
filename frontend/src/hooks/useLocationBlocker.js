@@ -1,6 +1,4 @@
 import { useEffect } from 'react';
-import { useHistory } from 'react-router';
-
 /**
  * React Router v5 will keep pushing history when you try to click a link that navigates
  * the user to the same page they are currently on.  This will cause the user to have to
@@ -9,9 +7,7 @@ import { useHistory } from 'react-router';
  *
  * See https://github.com/divanov11/Mumble/issues/315 for more issue
  */
-const useLocationBlocker = () => {
-  const history = useHistory();
-
+const useLocationBlocker = (history) => {
   const getLocationId = ({ pathname, search, hash }) => {
     return pathname + (search ? '?' + search : '') + (hash ? '#' + hash : '');
   };
