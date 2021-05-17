@@ -1,14 +1,15 @@
-import { replaceItem } from './index';
 import {
-  POST_SEARCH_LIST_REQUEST,
-  POST_SEARCH_LIST_SUCCESS,
-  POST_SEARCH_LIST_FAIL,
+  POST_CREATE_SUCCESS,
+  POST_DASHBOARD_FAIL,
   POST_DASHBOARD_REQUEST,
   POST_DASHBOARD_SUCCESS,
-  POST_DASHBOARD_FAIL,
-  POST_CREATE_SUCCESS,
+  POST_DELETE_SUCCESS,
+  POST_SEARCH_LIST_FAIL,
+  POST_SEARCH_LIST_REQUEST,
+  POST_SEARCH_LIST_SUCCESS,
   POST_VOTE_SUCCESS,
 } from '../constants/postConstants';
+import { replaceItem } from './index';
 
 export const postSearchListReducer = (state = { posts: [] }, action) => {
   switch (action.type) {
@@ -39,7 +40,11 @@ export const postDashboardReducer = (state = { loading: false, posts: [] }, acti
         ...state,
         posts: [action.payload, ...state.posts],
       };
-
+    case POST_DELETE_SUCCESS:
+      return {
+        ...state,
+        posts: state.posts.filter((p) => p.id !== action.payload),
+      };
     case POST_DASHBOARD_FAIL:
       return { ...state, loading: false, error: action.payload };
 

@@ -19,6 +19,7 @@ const SearchByUsersList = () => {
   /* keyword looks like this `?q=john` */
   const keyword = location.search;
   const userList = useSelector((state) => state.userList);
+  const { isAuthenticated, user: currentUser } = useSelector((state) => state.auth);
   const { loading, data } = userList;
 
   useEffect(() => {
@@ -75,23 +76,27 @@ const SearchByUsersList = () => {
         {!showResultsNotFound && (
           <div>
             {data.results.map((user, index) => (
-              <div key={index} className="card">
-                <div className="card__body">
-                  <div className="searchItem">
-                    <div className="searchItem__top">
-                      <AuthorBox
-                        avatarSrc={getApiUrl(user.profile.profile_pic)}
-                        url={`/profile/${user.username}`}
-                        name={user.profile.name}
-                        handle={user.username}
-                        size="md"
-                      />
-                      <FollowButton userProfile={user.profile} />
+              <>
+                {isAuthenticated && currentUser?.username !== user?.username && (
+                  <div key={index} className="card">
+                    <div className="card__body">
+                      <div className="searchItem">
+                        <div className="searchItem__top">
+                          <AuthorBox
+                            avatarSrc={getApiUrl(user.profile.profile_pic)}
+                            url={`/profile/${user.username}`}
+                            name={user.profile.name}
+                            handle={user.username}
+                            size="md"
+                          />
+                          <FollowButton userProfile={user.profile} />
+                        </div>
+                        <p className="searchItem__bottom">{user.profile.bio}</p>
+                      </div>
                     </div>
-                    <p className="searchItem__bottom">{user.profile.bio}</p>
                   </div>
-                </div>
-              </div>
+                )}
+              </>
             ))}
             <div>
               <Button

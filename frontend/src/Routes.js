@@ -7,12 +7,13 @@ import classNames from 'classnames';
 
 import PrivateRoute from './utilities/PrivateRoute';
 
-import { Header, RestoreScroll } from './components';
+import { RestoreScroll } from './components';
 import {
   HomePage,
   DiscussionPage,
   ArticlePage,
   ProfilePage,
+  ArticlesPage,
   UserSettingsPage,
   SearchPage,
   CreateArticlePage,
@@ -74,7 +75,6 @@ const Routes = () => {
   return (
     <div className={classNames('app', `${isDarkTheme && 'dark-theme'}`)}>
       <ErrorBoundary FallbackComponent={Error500page}>
-        {isAuthenticated && <Header />}
         <main>
           <Switch>
             <PrivateRoute path="/" exact component={HomePage} />
@@ -86,6 +86,7 @@ const Routes = () => {
             <Route exact path="/discussion/:slug" component={DiscussionPage} />
             <Route exact path="/article/:slug" component={ArticlePage} />
             <Route exact path="/search" component={SearchPage} />
+            <Route exact path="/articles" component={ArticlesPage} />
             <Route exact path="/forgot-password" component={ForgotPasswordPage} />
             <PrivateRoute exact path="/settings" component={UserSettingsPage} />
             <Route path="/404" component={Error404page} />

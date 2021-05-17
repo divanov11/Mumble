@@ -1,25 +1,25 @@
 import {
-  POST_SEARCH_LIST_REQUEST,
-  POST_SEARCH_LIST_SUCCESS,
-  POST_SEARCH_LIST_FAIL,
-  POST_DASHBOARD_REQUEST,
-  POST_DASHBOARD_SUCCESS,
-  POST_DASHBOARD_FAIL,
-  POST_CREATE_REQUEST,
-  POST_CREATE_SUCCESS,
-  POST_CREATE_FAIL,
+  COMMENT_CREATE_FAIL,
   COMMENT_CREATE_REQUEST,
   COMMENT_CREATE_SUCCESS,
-  COMMENT_CREATE_FAIL,
+  POST_COMMENTS_FAIL,
   POST_COMMENTS_REQUEST,
   POST_COMMENTS_SUCCESS,
-  POST_COMMENTS_FAIL,
-  POST_VOTE_REQUEST,
-  POST_VOTE_SUCCESS,
-  POST_VOTE_FAIL,
+  POST_CREATE_FAIL,
+  POST_CREATE_REQUEST,
+  POST_CREATE_SUCCESS,
+  POST_DASHBOARD_FAIL,
+  POST_DASHBOARD_REQUEST,
+  POST_DASHBOARD_SUCCESS,
+  POST_DELETE_FAIL,
   POST_DELETE_REQUEST,
   POST_DELETE_SUCCESS,
-  POST_DELETE_FAIL,
+  POST_SEARCH_LIST_FAIL,
+  POST_SEARCH_LIST_REQUEST,
+  POST_SEARCH_LIST_SUCCESS,
+  POST_VOTE_FAIL,
+  POST_VOTE_REQUEST,
+  POST_VOTE_SUCCESS,
 } from '../constants/postConstants';
 import { PostsService } from '../services';
 import postsService from '../services/postsService';
@@ -78,13 +78,11 @@ export const deletePost = (postId) => async (dispatch, getState) => {
   try {
     dispatch({ type: POST_DELETE_REQUEST });
 
-    const post = await postsService.deletePost(postId);
-
+    await postsService.deletePost(postId);
     dispatch({
       type: POST_DELETE_SUCCESS,
-      payload: post,
+      payload: postId,
     });
-    dispatch(getPostsForDashboard());
   } catch (error) {
     dispatch(createActionPayload(POST_DELETE_FAIL, error));
   }

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import '../styles/components/ArticlePage.css';
 
-import { ArticlesCard } from '../components';
+import { ArticlesCard, Page } from '../components';
 import { articles } from '../data';
 import { useDispatch, useSelector } from 'react-redux';
 import { getArticle } from '../actions/articleActions';
@@ -17,7 +17,7 @@ const ArticlePage = ({ match }) => {
   }, [dispatch, match.params.slug]);
 
   return (
-    <div className="two-column-layout container">
+    <Page>
       <section>
         <div className="card">
           <div className="card__body">
@@ -29,7 +29,6 @@ const ArticlePage = ({ match }) => {
                 </div>
               ))} */}
             </div>
-
             <div className="line-break"></div>
             <p>{article.content}</p>
           </div>
@@ -39,7 +38,7 @@ const ArticlePage = ({ match }) => {
       <section>
         <ArticlesCard articles={relatedArticles} />
       </section>
-    </div>
+    </Page>
   );
 };
 

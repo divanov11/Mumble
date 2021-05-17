@@ -22,9 +22,13 @@ import {
   USER_POSTS_LIST_FAIL,
   USER_POSTS_LIST_REQUEST,
   USER_POSTS_LIST_SUCCESS,
+  USER_POST_DELETE_REQUEST,
+  USER_POST_DELETE_SUCCESS,
+  USER_POST_DELETE_FAIL,
 } from '../constants/userConstants';
 import { UsersService } from '../services';
 import usersService from '../services/usersService';
+import postsService from '../services/postsService';
 import { createActionPayload } from './postActions';
 
 export const listUsers = (keyword = '') => async (dispatch) => {
@@ -91,6 +95,20 @@ export const listUserPosts = (username) => async (dispatch) => {
     });
   } catch (error) {
     dispatch(createActionPayload(USER_POSTS_LIST_FAIL, error));
+  }
+};
+
+export const deleteUserPost = (postId) => async (dispatch, getState) => {
+  try {
+    dispatch({ type: USER_POST_DELETE_REQUEST });
+
+    await postsService.deletePost(postId);
+    dispatch({
+      type: USER_POST_DELETE_SUCCESS,
+      payload: postId,
+    });
+  } catch (error) {
+    dispatch(createActionPayload(USER_POST_DELETE_FAIL, error));
   }
 };
 

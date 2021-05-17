@@ -38,7 +38,7 @@ const LoginForm = () => {
           required={true}
           label="Password:"
         />
-        <Button color="main" type="submit" text="Login" size="lg" />
+        <Button color="main" type="submit" text="Login" size="lg" loading={auth?.isLoading} />
         <span style={{ marginLeft: '1rem' }}>
           New here? <Link to="/signup">Sign up</Link>
         </span>
