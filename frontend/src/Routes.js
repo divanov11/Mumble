@@ -13,6 +13,7 @@ import {
   DiscussionPage,
   ArticlePage,
   ProfilePage,
+  ArticlesPage,
   UserSettingsPage,
   SearchPage,
   CreateArticlePage,
@@ -85,6 +86,7 @@ const Routes = () => {
             <Route exact path="/discussion/:slug" component={DiscussionPage} />
             <Route exact path="/article/:slug" component={ArticlePage} />
             <Route exact path="/search" component={SearchPage} />
+            <Route exact path="/articles" component={ArticlesPage} />
             <Route exact path="/forgot-password" component={ForgotPasswordPage} />
             <PrivateRoute exact path="/settings" component={UserSettingsPage} />
             <Route path="/404" component={Error404page} />
