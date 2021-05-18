@@ -8,6 +8,7 @@ import {
   ARTICLE_SEARCH_REQUEST,
   ARTICLE_SEARCH_SUCCESS,
   ARTICLE_SEARCH_FAIL,
+  ARTICLE_SEARCH_RESET,
 } from '../constants/articleConstants';
 import { ArticlesService } from '../services';
 import { createActionPayload } from './postActions';
@@ -16,11 +17,11 @@ export const searchArticles = (keyword = '') => async (dispatch) => {
   try {
     dispatch({ type: ARTICLE_SEARCH_REQUEST });
 
-    const { results } = await ArticlesService.getArticlesByKeyword(keyword);
+    const data = await ArticlesService.getArticlesByKeyword(keyword);
 
     dispatch({
       type: ARTICLE_SEARCH_SUCCESS,
-      payload: results,
+      payload: data,
     });
   } catch (error) {
     dispatch(createActionPayload(ARTICLE_SEARCH_FAIL, error));
@@ -43,6 +44,12 @@ export const createArticle = (articleData, history) => async (dispatch, getState
   } catch (error) {
     dispatch(createActionPayload(ARTICLE_CREATE_FAIL, error));
   }
+};
+
+export const resetSearchArticles = () => async (dispatch) => {
+  dispatch({
+    type: ARTICLE_SEARCH_RESET,
+  });
 };
 
 export const getArticle = (articleId) => async (dispatch, getState) => {

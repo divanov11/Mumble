@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router';
-import { searchArticles } from '../actions/articleActions';
+import { resetSearchArticles, searchArticles } from '../actions/articleActions';
 
 import '../styles/components/SearchBox.css';
 
@@ -9,13 +9,16 @@ const SearchByArticlesList = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const keyword = location.search;
-  const { articles } = useSelector((state) => state.articleSearchList);
+
+  const { data } = useSelector((state) => state.articleSearchList);
+  const { results: articles } = data;
 
   useEffect(() => {
     dispatch(searchArticles(keyword));
+    return () => {
+      dispatch(resetSearchArticles());
+    };
   }, [dispatch, keyword]);
-
-  // const showResultsNotFound = articles.length === 0;
 
   return (
     <div className="category-wrapper" id="category-articles">

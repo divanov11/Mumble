@@ -85,39 +85,39 @@ const LoginSignupPage = ({ match, history }) => {
             />
           </div>
         </div>
-        <div className="loginSignup__footer">
-          <div className="container">
-            <div className="loginSignup__footerLeft">
-              <p>&copy; Mumble Community {new Date().getFullYear()}</p>
-              <span style={{ marginLeft: '1.5rem' }}>&bull;</span>
-              <a className="loginSignup__footerIcon" href="/" target="_blank">
-                <i className="fab fa-facebook"></i>
-              </a>
-              <a className="loginSignup__footerIcon" href="/" rel="noreferrer" target="_blank">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a
-                className="loginSignup__footerIcon"
-                href="https://discord.com/invite/9Du4KUY3dE"
-                rel="noreferrer"
-                target="_blank"
-              >
-                <i className="fab fa-discord"></i>
-              </a>
-            </div>
-            <div className="loginSignup__footerRight">
-              <p>
-                An open source project. <br /> For the community, by the community
-              </p>
-              <a
-                className="loginSignup__footerIcon"
-                href="https://github.com/divanov11/Mumble"
-                rel="noreferrer"
-                target="_blank"
-              >
-                <i className="fab fa-github"></i>
-              </a>
-            </div>
+      </div>
+      <div className="loginSignup__footer">
+        <div className="container">
+          <div className="loginSignup__footerLeft">
+            <p>&copy; Mumble Community {new Date().getFullYear()}</p>
+            <span style={{ marginLeft: '1.5rem' }}>&bull;</span>
+            <a className="loginSignup__footerIcon" href="/" target="_blank">
+              <i className="fab fa-facebook"></i>
+            </a>
+            <a className="loginSignup__footerIcon" href="/" rel="noreferrer" target="_blank">
+              <i className="fab fa-twitter"></i>
+            </a>
+            <a
+              className="loginSignup__footerIcon"
+              href="https://discord.com/invite/9Du4KUY3dE"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <i className="fab fa-discord"></i>
+            </a>
+          </div>
+          <div className="loginSignup__footerRight">
+            <p>
+              An open source project. <br /> For the community, by the community
+            </p>
+            <a
+              className="loginSignup__footerIcon"
+              href="https://github.com/divanov11/Mumble"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <i className="fab fa-github"></i>
+            </a>
           </div>
         </div>
       </div>

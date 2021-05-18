@@ -8,6 +8,7 @@ import {
   REGISTER_REQUEST,
   REGISTER_SUCCESS,
   REGISTER_FAIL,
+  REFRESH_TOKEN_SUCCESS,
 } from '../constants/authConstants';
 import authService from '../services/authService';
 import { createActionPayload } from './postActions';
@@ -59,5 +60,20 @@ export const register = (inputs) => async (dispatch) => {
   } catch (error) {
     console.log('ERROR:', error);
     dispatch(createActionPayload(REGISTER_FAIL, error));
+  }
+};
+
+export const refreshToken = () => async (dispatch, getState) => {
+  try {
+    const { auth } = getState();
+
+    let { access } = await authService.refreshToken(auth.refresh);
+
+    dispatch({
+      type: REFRESH_TOKEN_SUCCESS,
+      payload: { access },
+    });
+  } catch (error) {
+    dispatch(logout());
   }
 };
