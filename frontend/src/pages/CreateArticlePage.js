@@ -9,7 +9,7 @@ import '../styles/components/CreateArticlePage.css';
 import { Button, Input } from '../common';
 import { ArticlesCard, Page } from '../components';
 import { articles } from '../data';
-import { useValidationForm } from '../hooks/useValidationForm';
+import { useValidationForm } from '../hooks';
 import { useDispatch } from 'react-redux';
 import { createArticle } from '../actions/articleActions';
 

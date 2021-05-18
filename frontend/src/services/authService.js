@@ -11,9 +11,18 @@ const register = (inputs) =>
     payload: inputs,
   });
 
+const refreshToken = (refresh) =>
+  post({
+    url: getApiUrl('api/users/refresh_token/'),
+    payload: {
+      refresh,
+    },
+  });
+
 const loginService = {
   login,
   register,
+  refreshToken,
 };
 
 export default loginService;

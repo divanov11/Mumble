@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const useValidationForm = ({ validation, onSubmit }) => {
+const useValidationForm = ({ validation, onSubmit }) => {
   const [form, setForm] = useState({});
   const [errors, setErrors] = useState({});
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -37,3 +37,5 @@ export const useValidationForm = ({ validation, onSubmit }) => {
 
   return [form, errors, _onSubmit, onInputChange];
 };
+
+export default useValidationForm;
