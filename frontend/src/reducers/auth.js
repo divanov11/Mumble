@@ -6,6 +6,7 @@ import {
   LOGOUT_SUCCESS,
   REGISTER_FAIL,
   REGISTER_REQUEST,
+  REFRESH_TOKEN_SUCCESS,
 } from '../constants/authConstants';
 
 import { UPDATE_USER_PHOTO_SUCCESS } from '../constants/userConstants';
@@ -32,15 +33,26 @@ export default function authReducer(state = {}, action) {
       return {
         ...state,
         access: payload.access,
+        refresh: payload.refresh,
         isAuthenticated: true,
         isLoading: false,
         user: jwt_decode(payload.access),
       };
     }
+
+    case REFRESH_TOKEN_SUCCESS: {
+      localStorage.setItem('access', payload.access);
+      return {
+        ...state,
+        access: payload.access,
+      };
+    }
+
     case UPDATE_USER_PHOTO_SUCCESS:
       const newState = { ...state };
       newState.user.profile_pic = payload.profile_pic;
       return newState;
+
     case LOGIN_FAIL:
       return { isLoading: false, error: payload };
 

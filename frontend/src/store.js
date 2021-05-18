@@ -5,9 +5,11 @@ import rootReducer from './reducers';
 import jwt_decode from 'jwt-decode';
 
 const accessToken = localStorage.getItem('access') ? localStorage.getItem('access') : null;
+const refreshToken = localStorage.getItem('refresh') ? localStorage.getItem('refresh') : null;
 
 let authState = {
   access: accessToken,
+  refresh: refreshToken,
   isAuthenticated: false,
   user: null,
 };

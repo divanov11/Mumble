@@ -28,6 +28,8 @@ import {
   Error500Page,
   ForgotPasswordPage,
 } from './pages';
+import ArticlesPage from './pages/ArticlesPage';
+import { refreshToken as refreshTokenAction } from './actions/authActions';
 
 const App = () => {
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
@@ -47,6 +49,22 @@ const App = () => {
     };
   }, [isAuthenticated, dispatch]);
 
+  useEffect(() => {
+    const fiveMinutes = 1000 * 60 * 5;
+
+    const refreshToken = () => {
+      if (isAuthenticated) {
+        dispatch(refreshTokenAction());
+      }
+    };
+
+    const interval = setInterval(refreshToken, fiveMinutes);
+    refreshToken();
+    return () => {
+      clearInterval(interval);
+    };
+  }, [isAuthenticated, dispatch]);
+
   return (
     <div className={classNames('app', `${isDarkTheme && 'dark-theme'}`)}>
       <ErrorBoundary FallbackComponent={Error500Page}>
@@ -61,6 +79,7 @@ const App = () => {
             <Route exact path="/discussion/:slug" component={DiscussionPage} />
             <Route exact path="/article/:slug" component={ArticlePage} />
             <Route exact path="/search" component={SearchPage} />
+            <Route exact path="/articles" component={ArticlesPage} />
             <Route exact path="/forgot-password" component={ForgotPasswordPage} />
             <PrivateRoute exact path="/settings" component={UserSettingsPage} />
             <Route path="/404" component={Error404Page} />
