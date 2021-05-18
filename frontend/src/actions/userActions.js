@@ -22,7 +22,6 @@ import {
   USER_POSTS_LIST_FAIL,
   USER_POSTS_LIST_REQUEST,
   USER_POSTS_LIST_SUCCESS,
-  LOAD_MORE_USER_REQUEST,
   LOAD_MORE_USER_SUCCESS,
   LOAD_MORE_USER_FAIL,
   USER_POST_DELETE_REQUEST,
@@ -156,7 +155,6 @@ export const followUser = (username) => async (dispatch, getState) => {
 
 export const updateUserProfile = (userData) => async (dispatch, getState) => {
   try {
-    dispatch({ type: LOAD_MORE_USER_REQUEST });
     let { user } = await usersService.updateUserProfile(userData);
     user.profile.email = user.email;
     dispatch({
