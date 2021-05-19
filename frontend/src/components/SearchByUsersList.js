@@ -8,7 +8,7 @@ import '../styles/components/SearchByUsersAndPostList.css';
 import logo from '../assets/logo/dark-logo.png';
 
 import { AuthorBox, Button } from '../common';
-import { listUsers, resetListUsers } from '../actions/userActions';
+import { listUsers, resetListUsers, listMoreUsers } from '../actions/userActions';
 import { getApiUrl } from '../services/config';
 import FollowButton from './FollowButton';
 import ReactPlaceholder from 'react-placeholder/lib';
@@ -16,6 +16,7 @@ import ReactPlaceholder from 'react-placeholder/lib';
 const SearchByUsersList = () => {
   const dispatch = useDispatch();
   const location = useLocation();
+
   /* keyword looks like this `?q=john` */
   const keyword = location.search;
   const userList = useSelector((state) => state.userList);
@@ -36,7 +37,7 @@ const SearchByUsersList = () => {
 
     /* keywordWithPageNo looks like this `?page=2&q=john` */
     const keywordWithPageNo = new URL(data.next).search;
-    dispatch(listUsers(keywordWithPageNo));
+    dispatch(listMoreUsers(keywordWithPageNo));
   };
 
   const showResultsNotFound = data?.results?.length === 0;
