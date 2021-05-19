@@ -31,7 +31,7 @@ const remumble = (postData) =>
   });
 const deletePost = (postId) =>
   remove({
-    url: getApiUrl(`api/mumbles/${postId}/`),
+    url: getApiUrl(`api/mumbles/delete/${postId}/`),
   });
 
 const postsService = {
