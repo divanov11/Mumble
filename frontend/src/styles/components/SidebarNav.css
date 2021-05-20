@@ -38,6 +38,11 @@
   display: block;
 }
 
+.sidebarNav__menuItem--disabled > a {
+  pointer-events: none;
+  color: var(--color-light);
+}
+
 .sidebarNav__menuItem > a > i.fas {
   display: inline-block;
   margin-right: 2.5rem;
