@@ -70,18 +70,18 @@ const App = () => {
       <ErrorBoundary FallbackComponent={Error500Page}>
         <Suspense fallback={<Loading />}>
           <Switch>
-            <PrivateRoute path="/" exact component={HomePage} />
-            <Route exact path="/:parameter(login|signup)" component={LoginSignupPage} />
-            <Route exact path="/profile/:username" component={ProfilePage} />
+            <PrivateRoute exact path="/" component={HomePage} />
+            <PrivateRoute exact path="/settings" component={UserSettingsPage} />
             <PrivateRoute exact path="/create-discussion" component={CreateDiscussionPage} />
             <PrivateRoute exact path="/create-article" component={CreateArticlePage} />
+            <Route exact path="/:parameter(login|signup)" component={LoginSignupPage} />
+            <Route exact path="/profile/:username" component={ProfilePage} />
             <Route exact path="/notifications" component={NotificationsPage} />
             <Route exact path="/discussion/:slug" component={DiscussionPage} />
             <Route exact path="/article/:slug" component={ArticlePage} />
             <Route exact path="/search" component={SearchPage} />
             <Route exact path="/articles" component={ArticlesPage} />
             <Route exact path="/forgot-password" component={ForgotPasswordPage} />
-            <PrivateRoute exact path="/settings" component={UserSettingsPage} />
             <Route path="/404" component={Error404Page} />
             <Redirect to="/404" />
           </Switch>
