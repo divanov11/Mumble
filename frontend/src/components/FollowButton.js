@@ -1,37 +1,38 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { followUser } from '../actions/userActions';
 import Button from '../common/Button';
 
 const FollowButton = ({ userProfile }) => {
-  const auth = useSelector((state) => state.auth);
-  const { user } = auth;
+  const isFollowingThisUser = useSelector(
+    (state) => !!state.following.following.find((userIFollow) => userIFollow.id === userProfile.id),
+  );
 
-  const [isFollowing, setIsFollowing] = useState(() => userProfile.followers.includes(user.id));
+  const isFollowLoading = useSelector((state) => state.follow.loading[userProfile.username]);
+  const isLoading = isFollowLoading;
 
   const dispatch = useDispatch();
 
   const toggleFollow = (username) => {
-    setIsFollowing(!isFollowing);
     dispatch(followUser(username));
   };
 
   return (
     <div>
-      {isFollowing ? (
+      {isFollowingThisUser ? (
         <Button
           onClick={(e) => toggleFollow(userProfile.username)}
           color="main"
           size="sm"
-          // iconName="user-check"
+          loading={isLoading}
           text="Following"
         />
       ) : (
         <Button
           onClick={(e) => toggleFollow(userProfile.username)}
           color="main"
+          loading={isLoading}
           size="sm"
-          // iconName="user-plus"
           text="Follow"
           outline
         />

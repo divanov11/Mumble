@@ -26,6 +26,12 @@ import {
   LOAD_MORE_USER_SUCCESS,
   LOAD_MORE_USER_FAIL,
   USER_POST_DELETE_SUCCESS,
+  LIST_FOLLOWING_REQUEST,
+  LIST_FOLLOWING_SUCCESS,
+  LIST_FOLLOWING_FAIL,
+  FOLLOW_USER_SUCCESS,
+  FOLLOW_USER_FAIL,
+  FOLLOW_USER_REQUEST,
 } from '../constants/userConstants';
 
 export const userListReducer = (
@@ -93,6 +99,57 @@ export const userArticleListReducer = (state = { articles: [] }, action) => {
 
     case USER_ARTICLES_LIST_FAIL:
       return { ...state, loading: false, error: action.payload };
+
+    default:
+      return state;
+  }
+};
+
+export const followingReducer = (state = { following: [], loading: false }, action) => {
+  switch (action.type) {
+    case LIST_FOLLOWING_REQUEST:
+      return { ...state, loading: true };
+
+    case LIST_FOLLOWING_SUCCESS:
+      return { ...state, loading: false, following: action.payload };
+
+    case LIST_FOLLOWING_FAIL:
+      return { ...state, loading: false, error: action.payload };
+
+    default:
+      return state;
+  }
+};
+
+export const followReducer = (state = { loading: {}, error: null }, action) => {
+  switch (action.type) {
+    case FOLLOW_USER_REQUEST:
+      return {
+        ...state,
+        loading: {
+          ...state.loading,
+          [action.payload]: true,
+        },
+      };
+
+    case FOLLOW_USER_SUCCESS:
+      return {
+        ...state,
+        loading: {
+          ...state.loading,
+          [action.payload]: false,
+        },
+      };
+
+    case FOLLOW_USER_FAIL:
+      return {
+        ...state,
+        loading: {
+          ...state.loading,
+          [action.payload.username]: false,
+        },
+        error: action.payload,
+      };
 
     default:
       return state;

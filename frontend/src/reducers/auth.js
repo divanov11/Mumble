@@ -9,11 +9,7 @@ import {
   REFRESH_TOKEN_SUCCESS,
 } from '../constants/authConstants';
 
-import { UPDATE_USER_PHOTO_SUCCESS } from '../constants/userConstants';
-import jwt_decode from 'jwt-decode';
-
-//import users from '../data/users';
-//const mockUser = users[3];
+import { LOAD_PROFILE_SUCCESS, UPDATE_USER_PHOTO_SUCCESS } from '../constants/userConstants';
 
 export default function authReducer(state = {}, action) {
   const { type, payload } = action;
@@ -36,7 +32,17 @@ export default function authReducer(state = {}, action) {
         refresh: payload.refresh,
         isAuthenticated: true,
         isLoading: false,
-        user: jwt_decode(payload.access),
+        user: payload,
+      };
+    }
+
+    case LOAD_PROFILE_SUCCESS: {
+      return {
+        ...state,
+        user: {
+          ...payload,
+          ...state.user,
+        },
       };
     }
 
@@ -49,8 +55,13 @@ export default function authReducer(state = {}, action) {
     }
 
     case UPDATE_USER_PHOTO_SUCCESS:
-      const newState = { ...state };
-      newState.user.profile_pic = payload.profile_pic;
+      const newState = {
+        ...state,
+        user: {
+          ...state.user,
+          profile_pic: payload.profile_pic,
+        },
+      };
       return newState;
 
     case LOGIN_FAIL:

@@ -30,11 +30,19 @@ import {
 } from './pages';
 import ArticlesPage from './pages/ArticlesPage';
 import { refreshToken as refreshTokenAction } from './actions/authActions';
+import { getProfile, listFollowing } from './actions/userActions';
 
 const App = () => {
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
   const { isAuthenticated } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      dispatch(listFollowing());
+      dispatch(getProfile());
+    }
+  }, [isAuthenticated, dispatch]);
 
   useEffect(() => {
     const refreshNotifications = () => {

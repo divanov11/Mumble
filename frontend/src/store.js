@@ -35,7 +35,7 @@ const middleWare = [thunk];
 const store = createStore(
   rootReducer,
   initialState,
-  composeWithDevTools(applyMiddleware(...middleWare)),
+  composeWithDevTools({ mageAge: 200 })(applyMiddleware(...middleWare)),
 );
 
 export default store;

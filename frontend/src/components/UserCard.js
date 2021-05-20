@@ -39,7 +39,7 @@ const UserCard = ({ userProfile }) => {
             </div>
           </div>
 
-          {isAuthenticated && userProfile?.username !== user?.username && (
+          {isAuthenticated && userProfile?.user !== user?.id && (
             <div>
               <FollowButton userProfile={userProfile} />
             </div>

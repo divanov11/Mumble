@@ -40,7 +40,6 @@ const SignupForm = () => {
       <form className="form" onSubmit={onSubmit}>
         <Input
           name="email"
-          placeholder="e.g. user@domain.com"
           value={inputs.email}
           onChange={fieldChanges}
           required={true}
@@ -49,7 +48,6 @@ const SignupForm = () => {
         />
         <Input
           name="username"
-          placeholder="e.g. dennisivy"
           value={inputs.username}
           onChange={fieldChanges}
           required={true}
@@ -57,7 +55,6 @@ const SignupForm = () => {
         />
         <Input
           name="password"
-          placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
           value={inputs.password}
           onChange={fieldChanges}
           required={true}
@@ -67,7 +64,6 @@ const SignupForm = () => {
 
         <Input
           name="password1"
-          placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
           value={inputs.password1}
           onChange={fieldChanges}
           required={true}
