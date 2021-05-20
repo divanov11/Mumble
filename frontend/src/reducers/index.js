@@ -7,6 +7,8 @@ import {
   userProfileDetailReducer,
   userPostsListReducer,
   userArticleListReducer,
+  followingReducer,
+  followReducer,
 } from './userReducers';
 
 import { postDashboardReducer, postSearchListReducer } from './postReducers';
@@ -21,6 +23,8 @@ export default combineReducers({
   local,
   auth,
   userList: userListReducer,
+  following: followingReducer,
+  follow: followReducer,
   userListRecommended: userListRecommendedReducer,
   userProfileDetail: userProfileDetailReducer,
   userPostsList: userPostsListReducer,

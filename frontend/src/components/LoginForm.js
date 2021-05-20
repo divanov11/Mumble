@@ -23,7 +23,6 @@ const LoginForm = () => {
       <form className="form" onSubmit={onSubmit} style={{ width: '100%' }}>
         <Input
           name="username"
-          placeholder="e.g. dennisivy"
           value={formValues.username}
           onChange={fieldChanges}
           required={true}
@@ -31,7 +30,6 @@ const LoginForm = () => {
         />
         <Input
           name="password"
-          placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
           value={formValues.password}
           type="password"
           onChange={fieldChanges}
