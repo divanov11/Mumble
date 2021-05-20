@@ -1,14 +1,15 @@
 import { NavLink } from 'react-router-dom';
+import classNames from 'classnames';
 
 import '../styles/components/SidebarNav.css';
 
 const menu = [
   { title: 'Home', icon: 'home', path: '/' },
-  { title: 'Inbox', icon: 'inbox', path: '/inbox' },
-  { title: 'Contributors', icon: 'users', path: '/contributors' },
+  { title: 'Inbox', icon: 'inbox', path: '/inbox', disabled: true },
+  { title: 'Contributors', icon: 'users', path: '/search' },
   { title: 'Articles', icon: 'file', path: '/articles' },
-  { title: 'Discussions', icon: 'book-reader', path: '/discussions' },
-  { title: 'Topics', icon: 'tags', path: '/topics' },
+  { title: 'Discussions', icon: 'book-reader', path: '/discussions', disabled: true },
+  { title: 'Topics', icon: 'tags', path: '/topics', disabled: true },
   { title: 'Settings', icon: 'tools', path: '/settings' },
 ];
 
@@ -19,7 +20,12 @@ const SidebarNav = ({ isSidebarNav, isResponsiveSidebarNav }) => (
   >
     <ul className="sidebarNav__menu">
       {menu.map((item, index) => (
-        <li key={index} className="sidebarNav__menuItem">
+        <li
+          key={index}
+          className={classNames('sidebarNav__menuItem', {
+            'sidebarNav__menuItem--disabled': item.disabled,
+          })}
+        >
           <NavLink to={item.path} exact>
             <i className={`fas fa-${item.icon}`}></i>
             {item.title}

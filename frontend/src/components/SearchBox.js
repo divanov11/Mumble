@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { searchBarTyped } from '../actions/appActions';
 
 import '../styles/components/SearchBox.css';
 
 const SearchBox = () => {
-  const [keyword, setKeyword] = useState('');
+  const keyword = useSelector((state) => state.searchBar.input);
+  const dispatch = useDispatch();
 
   let history = useHistory();
 
@@ -22,7 +25,9 @@ const SearchBox = () => {
       <i className="fas fa-search" id="search-icon"></i>
       <input
         id="search-input"
-        onChange={(e) => setKeyword(e.target.value)}
+        autoFocus={true}
+        value={keyword}
+        onChange={(e) => dispatch(searchBarTyped(e.target.value))}
         placeholder="Search Mumble"
       />
     </form>

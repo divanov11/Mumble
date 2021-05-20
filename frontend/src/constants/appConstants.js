@@ -1,0 +1,1 @@
+export const SEARCH_BAR_TYPED = 'SEARCH_BAR_TYPED';
