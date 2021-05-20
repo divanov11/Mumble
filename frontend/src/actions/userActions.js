@@ -22,6 +22,8 @@ import {
   USER_POSTS_LIST_FAIL,
   USER_POSTS_LIST_REQUEST,
   USER_POSTS_LIST_SUCCESS,
+  LOAD_MORE_USER_SUCCESS,
+  LOAD_MORE_USER_FAIL,
   USER_POST_DELETE_REQUEST,
   USER_POST_DELETE_SUCCESS,
   USER_POST_DELETE_FAIL,
@@ -45,6 +47,19 @@ export const listUsers = (keyword = '') => async (dispatch) => {
   }
 };
 
+export const listMoreUsers = (keyword = '') => async (dispatch) => {
+  try {
+    //dispatch({ type: USER_LIST_REQUEST });
+
+    const results = await UsersService.getUsersByKeyword(keyword);
+    dispatch({
+      type: LOAD_MORE_USER_SUCCESS,
+      payload: results,
+    });
+  } catch (error) {
+    dispatch(createActionPayload(LOAD_MORE_USER_FAIL, error));
+  }
+};
 export const resetListUsers = () => async (dispatch) => {
   dispatch({ type: USER_LIST_RESET });
 };
@@ -140,7 +155,6 @@ export const followUser = (username) => async (dispatch, getState) => {
 
 export const updateUserProfile = (userData) => async (dispatch, getState) => {
   try {
-    // dispatch({ type: UPDATE_USER_REQUEST });
     let { user } = await usersService.updateUserProfile(userData);
     user.profile.email = user.email;
     dispatch({
