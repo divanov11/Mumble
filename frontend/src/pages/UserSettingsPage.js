@@ -23,7 +23,9 @@ function UserSettingsPage() {
   const [croppedImageBase64, setCroppedImageBase64] = useState(apiEndpointURL + '/' + profilePic);
 
   useEffect(() => {
-    dispatch(listUserDetails(username));
+    if (username) {
+      dispatch(listUserDetails(username));
+    }
   }, [dispatch, username]);
 
   useEffect(() => {
