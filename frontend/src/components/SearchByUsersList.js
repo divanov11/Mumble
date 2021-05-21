@@ -23,6 +23,8 @@ const SearchByUsersList = () => {
   const { isAuthenticated, user: currentUser } = useSelector((state) => state.auth);
   const { loading, data } = userList;
 
+  const showLoadMoreButton = data.next;
+
   useEffect(() => {
     /* Everytime the user changes the search term,
      * 1. Clear the previous results in store
@@ -100,13 +102,15 @@ const SearchByUsersList = () => {
               </>
             ))}
             <div>
-              <Button
-                size="lg"
-                disabled={!data?.next || loading}
-                onClick={handleLoadMore}
-                text={!loading ? 'Load More' : 'Loading...'}
-                iconName={loading && 'spinner fa-spin'}
-              />
+              {showLoadMoreButton && (
+                <Button
+                  size="lg"
+                  disabled={!data?.next || loading}
+                  onClick={handleLoadMore}
+                  text={!loading ? 'Load More' : 'Loading...'}
+                  iconName={loading && 'spinner fa-spin'}
+                />
+              )}
             </div>
           </div>
         )}
