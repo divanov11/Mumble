@@ -25,3 +25,4 @@ export { default as SearchByArticlesList } from './SearchByArticlesList';
 export { default as SearchBySkillsList } from './SearchBySkillsList';
 export { default as SearchByPostsList } from './SearchByPostsList';
 export { default as SidebarNav } from './SidebarNav';
+export { default as Tabs } from './Tabs';

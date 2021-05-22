@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { useHistory } from 'react-router';
 
 const Button = ({
   children,
@@ -13,8 +14,16 @@ const Button = ({
   size = '',
   text = '',
   loading = false,
+  to = null,
   ...others
 }) => {
+  const histry = useHistory();
+
+  const onClick = () => {
+    to && histry.push(to);
+    others.onClick?.();
+  };
+
   return (
     <button
       className={classNames(className, 'btn', {
@@ -27,6 +36,7 @@ const Button = ({
         [`btn--${size}`]: size,
       })}
       {...others}
+      onClick={onClick}
       disabled={loading}
     >
       {iconName && <i className={`${iconStyle} fa-${iconName}`} style={{ marginRight: '8px' }}></i>}

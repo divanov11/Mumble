@@ -45,10 +45,6 @@ const HomePage = () => {
         <Contributors />
         <TopicTags tags={user.interests} />
         <DiscussionsCard discussions={discussions} />
-        {/* 
-        At some point I will add articles into rotation with disccssions. This will be in one card -- Dennis Ivy
-        <ArticlesCard articles={articles} /> 
-        */}
       </section>
     </Page>
   );

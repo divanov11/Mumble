@@ -1,0 +1,19 @@
+.tabs__titles {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.tabs__title {
+  margin-right: 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.tabs__title:hover {
+  color: var(--color-gray);
+}
+
+.tabs__title--selected {
+  color: var(--color-main);
+  border-bottom: 2px solid var(--color-main);
+}
