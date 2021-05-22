@@ -48,7 +48,11 @@ const Profile = ({ match }) => {
 
   const AllPosts = (
     <div className="profile__no-data">
-      <img className="profile__not-found-image" src={constructionImage} />
+      <img
+        alt="all posts is under construction"
+        className="profile__not-found-image"
+        src={constructionImage}
+      />
       Coming Soon!
     </div>
   );
@@ -58,7 +62,7 @@ const Profile = ({ match }) => {
       {!isPostsLoading ? (
         posts.length === 0 ? (
           <div className="profile__no-data">
-            <img className="profile__not-found-image" src={justSaying} />
+            <img alt="there are no mumbles" className="profile__not-found-image" src={justSaying} />
             Oh no.. there are no mumbles!
           </div>
         ) : (
@@ -82,7 +86,11 @@ const Profile = ({ match }) => {
         <div>
           {articles.length === 0 && (
             <div className="profile__no-data">
-              <img className="profile__not-found-image" src={postsImage} />
+              <img
+                alt="there are no articles"
+                className="profile__not-found-image"
+                src={postsImage}
+              />
               Oh no.. there are no articles!
             </div>
           )}
@@ -90,7 +98,7 @@ const Profile = ({ match }) => {
             articles.map((article) => (
               <Card key={article.id}>
                 <div className="profile-article">
-                  <img src={banner} className="profile-article__image" />
+                  <img alt="the article" src={banner} className="profile-article__image" />
                   <div className="profile-article__title">{article.title}</div>
                   <div className="profile-article__description">{article.content}</div>
 
@@ -107,7 +115,11 @@ const Profile = ({ match }) => {
 
   const Discussions = (
     <div className="profile__no-data">
-      <img className="profile__not-found-image" src={constructionImage} />
+      <img
+        alt="the discussions are coming soon"
+        className="profile__not-found-image"
+        src={constructionImage}
+      />
       Coming Soon!
     </div>
   );
