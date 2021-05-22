@@ -7,18 +7,8 @@ import { modifyVote } from '../actions/postActions';
 const VotingWidget = ({ votes, postId, postUsername, upVoters, downVoters, authUserId }) => {
   const dispatch = useDispatch();
 
-  let searchVoters = (nameKey, myArray) => {
-    //Search array of voters for users id
-    nameKey = Number(nameKey);
-    for (var i = 0; i < myArray?.length; i++) {
-      if (myArray[i].id === nameKey) {
-        return true;
-      }
-    }
-  };
-
-  const isUpVoted = searchVoters(authUserId, upVoters);
-  const isDownVoted = searchVoters(authUserId, downVoters);
+  const isUpVoted = upVoters.find((vote) => vote.id === authUserId);
+  const isDownVoted = downVoters.find((vote) => vote.id === authUserId);
 
   return (
     <div className="post-votes">

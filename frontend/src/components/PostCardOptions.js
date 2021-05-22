@@ -6,7 +6,7 @@ import classNames from 'classnames';
 
 import '../styles/components/PostCardOptions.css';
 import { deletePost } from '../actions/postActions';
-import { deleteUserPost } from '../actions/userActions';
+import { deleteUserPost, followUser } from '../actions/userActions';
 import { useLocation } from 'react-router';
 
 const PostCardOptions = ({ post, remumble }) => {
@@ -55,6 +55,20 @@ const PostCardOptions = ({ post, remumble }) => {
     closePostMenu();
   };
 
+  const handleFollowUser = () => {
+    dispatch(followUser(post.user.username));
+    closePostMenu();
+  };
+
+  const handleUnfollowUser = () => {
+    dispatch(followUser(post.user.username));
+    closePostMenu();
+  };
+
+  const isFollowingUser = useSelector((state) =>
+    state.following.following.find((user) => user.id === post.user.id),
+  );
+
   return (
     <div className="post--options">
       <div className="post__dropmenu">
@@ -94,10 +108,18 @@ const PostCardOptions = ({ post, remumble }) => {
                 <i className="fas fa-minus-circle post__dropmenu--navicon"></i>
                 Hide
               </div>
-              <div role="button" className="dropmenu__menuitem">
-                <i className="fas fa-user-times post__dropmenu--navicon"></i>
-                Unfollow {user.name}
-              </div>
+              {isFollowingUser && (
+                <div onClick={handleUnfollowUser} role="button" className="dropmenu__menuitem">
+                  <i className="fas fa-user-times post__dropmenu--navicon"></i>
+                  Unfollow {user.name}
+                </div>
+              )}
+              {!isFollowingUser && (
+                <div onClick={handleFollowUser} role="button" className="dropmenu__menuitem">
+                  <i className="fas fa-user-times post__dropmenu--navicon"></i>
+                  Follow {user.name}
+                </div>
+              )}
               <div role="button" className="dropmenu__menuitem">
                 <i className="fas fa-ban post__dropmenu--navicon"></i>
                 Block {user.name}

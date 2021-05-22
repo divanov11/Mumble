@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Linkify from 'react-linkify';
 
 import { getApiUrl } from '../services/config';
 import PostAction from './PostAction';
@@ -42,62 +43,64 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
   };
 
   return (
-    <div className={`${isComment && 'post-card--comment'}`} {...others}>
-      {original_mumble && (
-        <div className="remumbled-note">
-          <i className="fas fa-paper-plane"></i>
-          <i>{user.username} remumbled</i>
+    <Linkify>
+      <div className={`${isComment && 'post-card--comment'}`} {...others}>
+        {original_mumble && (
+          <div className="remumbled-note">
+            <i className="fas fa-paper-plane"></i>
+            <i>{user.username} remumbled</i>
+          </div>
+        )}
+        <div className="post-header-wrapper">
+          <AuthorBox
+            avatarSrc={getApiUrl(post.user.profile_pic)}
+            name={post.user.name}
+            handle={post.user.username}
+            url={`/profile/${post.user.username}`}
+            size="sm"
+          />
+          <PostCardOptions post={post} remumble={remumble} />
         </div>
-      )}
-      <div className="post-header-wrapper">
-        <AuthorBox
-          avatarSrc={getApiUrl(post.user.profile_pic)}
-          name={post.user.name}
-          handle={post.user.username}
-          url={`/profile/${post.user.username}`}
-          size="sm"
+        <div className="post-contents">
+          <VotingWidget
+            votes={post.vote_rank}
+            postId={postId}
+            postUsername={post.user.username}
+            upVoters={post.upVoters}
+            downVoters={post.downVoters}
+            authUserId={authUserId}
+          />
+          <div className="post-body">
+            {children}
+            {post.content}
+          </div>
+        </div>
+        <PostAction
+          onMessageIconClick={toggleComments}
+          comments={post.comment_count}
+          link={link}
+          postId={post.id}
+          shares={post.share_count}
+          setComments={setComments}
         />
-        <PostCardOptions post={post} remumble={remumble} />
+        {showComments && (
+          <div className="post-comments-wrapper">
+            {comments.map((comment) => (
+              <div key={comment.id} className="post-comment">
+                <PostCard post={comment} link={'/'} isComment={true}>
+                  <div className="comment__mentioned">
+                    Replying to
+                    {comment.reply_at?.map((user) => (
+                      <span key={user.id}> @{user.username}</span>
+                    ))}
+                  </div>
+                </PostCard>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
-      <div className="post-contents">
-        <VotingWidget
-          votes={post.vote_rank}
-          postId={postId}
-          postUsername={post.user.username}
-          upVoters={post.upVoters}
-          downVoters={post.downVoters}
-          authUserId={authUserId}
-        />
-        <div className="post-body">
-          {children}
-          {post.content}
-        </div>
-      </div>
-      <PostAction
-        onMessageIconClick={toggleComments}
-        comments={post.comment_count}
-        link={link}
-        postId={post.id}
-        shares={post.share_count}
-        setComments={setComments}
-      />
-      {showComments && (
-        <div className="post-comments-wrapper">
-          {comments.map((comment) => (
-            <div key={comment.id} className="post-comment">
-              <PostCard post={comment} link={'/'} isComment={true}>
-                <div className="comment__mentioned">
-                  Replying to
-                  {comment.reply_at?.map((user) => (
-                    <span key={user.id}> @{user.username}</span>
-                  ))}
-                </div>
-              </PostCard>
-            </div>
-          ))}
-        </div>
-      )}{' '}
-    </div>
+    </Linkify>
   );
 };
 

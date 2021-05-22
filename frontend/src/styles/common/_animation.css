@@ -13,3 +13,13 @@
     width: 100%;
   }
 }
+
+@keyframes loading {
+  from {
+    transform: scale(0, 0);
+  }
+
+  to {
+    transform: scale(1, 1);
+  }
+}

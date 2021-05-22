@@ -7,6 +7,8 @@ import {
   userProfileDetailReducer,
   userPostsListReducer,
   userArticleListReducer,
+  followingReducer,
+  followReducer,
 } from './userReducers';
 
 import { postDashboardReducer, postSearchListReducer } from './postReducers';
@@ -16,11 +18,15 @@ import {
   articleSearchListReducer,
 } from './articleReducer';
 import { notificationsReducer, unreadNotificationsReducer } from './notificationsReducer';
+import { searchBarReducer } from './searchBarReducer';
 
 export default combineReducers({
   local,
   auth,
+  searchBar: searchBarReducer,
   userList: userListReducer,
+  following: followingReducer,
+  follow: followReducer,
   userListRecommended: userListRecommendedReducer,
   userProfileDetail: userProfileDetailReducer,
   userPostsList: userPostsListReducer,

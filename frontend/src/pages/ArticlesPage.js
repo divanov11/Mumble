@@ -40,8 +40,10 @@ const ArticlesPage = () => {
                   </div>
                 </Link>
                 <Link to={`/profile/${article.user.username}`}>
-                  <Avatar src={getApiUrl(article.user.profile_pic)} />
-                  {article.user.username}
+                  <div className="article-item__profile">
+                    <Avatar src={getApiUrl(article.user.profile_pic)} />
+                    {article.user.username}
+                  </div>
                 </Link>
               </div>
             </div>

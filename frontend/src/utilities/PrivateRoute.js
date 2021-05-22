@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { Loading } from '../common';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -8,15 +9,15 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   return (
     <Route
       {...rest}
-      render={(props) => {
-        if (isLoading) {
-          return <h2>Loading...</h2>;
-        } else if (!isAuthenticated) {
-          return <Redirect to="/login" />;
-        } else {
-          return <Component {...props} />;
-        }
-      }}
+      render={(props) =>
+        isLoading ? (
+          <Loading />
+        ) : !isAuthenticated ? (
+          <Redirect to="/login" />
+        ) : (
+          <Component {...props} />
+        )
+      }
     />
   );
 };
