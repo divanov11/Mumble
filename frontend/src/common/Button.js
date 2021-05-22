@@ -48,7 +48,7 @@ Button.propTypes = {
   iconStyle: PropTypes.string,
   link: PropTypes.bool,
   outline: PropTypes.bool,
-  size: PropTypes.oneOf(['sm', 'lg']),
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
   text: PropTypes.string,
 };
 
