@@ -23,7 +23,9 @@ function UserSettingsPage() {
   const [croppedImageBase64, setCroppedImageBase64] = useState(apiEndpointURL + '/' + profilePic);
 
   useEffect(() => {
-    dispatch(listUserDetails(username));
+    if (username) {
+      dispatch(listUserDetails(username));
+    }
   }, [dispatch, username]);
 
   useEffect(() => {
@@ -48,14 +50,13 @@ function UserSettingsPage() {
 
   const clearFileInputOnCancel = () => {
     setProfilePicSrc(null);
-    // inputRef.current.value = null;
   };
 
   const renderSkills = () => {
-    const skills = currentUser?.user?.skills.map((x, i) => {
+    const skills = currentUser?.user?.skills.map(({ name }, i) => {
       return (
         <div className="tag" key={i}>
-          <small>{x}</small>
+          <small>{name}</small>
         </div>
       );
     });
@@ -66,14 +67,15 @@ function UserSettingsPage() {
     <>
       {currentUser?.user?.name && (
         <>
-          <UserSettingUpdateModal
-            heading="Update User Settings"
-            dataType={modelContent}
-            userData={currentUser?.user}
-            // setUserData={setCurrentUser}
-            active={updateModelActive}
-            setActive={setUpdateModelActive}
-          />
+          {updateModelActive && (
+            <UserSettingUpdateModal
+              heading="Update User Settings"
+              dataType={modelContent}
+              userData={currentUser?.user}
+              active={updateModelActive}
+              setActive={setUpdateModelActive}
+            />
+          )}
           <ProfilePicCropperModal
             heading="Change Profile Picture"
             active={profilePicModel}
@@ -82,7 +84,6 @@ function UserSettingsPage() {
             setProfilePicSrc={setProfilePicSrc}
             setCroppedImageBase64={setCroppedImageBase64}
             clearFileInputOnCancel={clearFileInputOnCancel}
-            // setCurrentUser={setCurrentUser}
           />
         </>
       )}

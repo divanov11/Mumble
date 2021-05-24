@@ -51,13 +51,15 @@ const ArticlesPage = () => {
         ))}
 
         <div>
-          <Button
-            size="lg"
-            disabled={!data?.next || loading}
-            onClick={handleLoadMore}
-            text={!loading ? 'Load More' : 'Loading...'}
-            iconName={loading && 'spinner fa-spin'}
-          />
+          {data.next && (
+            <Button
+              size="lg"
+              disabled={!data?.next || loading}
+              onClick={handleLoadMore}
+              text={!loading ? 'Load More' : 'Loading...'}
+              iconName={loading && 'spinner fa-spin'}
+            />
+          )}
         </div>
       </section>
 

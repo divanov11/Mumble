@@ -33,6 +33,7 @@ import {
   UPDATE_USER_PHOTO_FAIL,
   LOAD_PROFILE_SUCCESS,
   LOAD_PROFILE_FAIL,
+  UPDATE_USER_TAGS_FAIL,
 } from '../constants/userConstants';
 import { UsersService } from '../services';
 import usersService from '../services/usersService';
@@ -214,5 +215,17 @@ export const updateProfilePic = (formData) => async (dispatch) => {
     });
   } catch (error) {
     dispatch(createActionPayload(UPDATE_USER_PHOTO_FAIL, error));
+  }
+};
+
+export const updateUserProfileSkills = (skills) => async (dispatch) => {
+  try {
+    let profile = await usersService.updateUserProfileSkills(skills);
+    dispatch({
+      type: UPDATE_USER_SUCCESS,
+      payload: profile,
+    });
+  } catch (error) {
+    dispatch(createActionPayload(UPDATE_USER_TAGS_FAIL, error));
   }
 };
