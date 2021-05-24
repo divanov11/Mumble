@@ -13,7 +13,7 @@ const SkillTags = ({ tags }) => {
         <div className="tags-wrapper">
           {tags.map((tag, index) => (
             <div key={index} className="tag">
-              <small>{tag}</small>
+              <small>{tag.name}</small>
             </div>
           ))}
         </div>

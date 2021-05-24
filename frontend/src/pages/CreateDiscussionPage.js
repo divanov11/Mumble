@@ -4,8 +4,7 @@ import { useHistory, Prompt } from 'react-router-dom';
 import '../styles/components/CreateDiscussionPage.css';
 
 import { Button } from '../common';
-import { DiscussionsCard, Page } from '../components';
-import { discussions } from '../data';
+import { Page } from '../components';
 
 const CreateDiscussionPage = () => {
   const history = useHistory();
@@ -81,9 +80,7 @@ const CreateDiscussionPage = () => {
           </div>
         </div>
       </section>
-      <section>
-        <DiscussionsCard discussions={discussions} />
-      </section>
+      <section></section>
     </Page>
   );
 };

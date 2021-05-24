@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import debounce from 'lodash/debounce';
 import { searchBarTyped } from '../actions/appActions';
+
 import '../styles/components/SearchBox.css';
 
 const SearchBox = () => {
