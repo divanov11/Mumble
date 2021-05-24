@@ -1,43 +1,34 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const TagInput = ({ tagList, tagListRef }) => {
-  const [tags, setTags] = useState(tagList);
+const TagInput = ({ tags, setTags }) => {
   const [input, setInput] = useState('');
+
   const addTags = (e) => {
     e.stopPropagation();
-    const value =
-      e.key === ',' ? e.target.value.substring(0, e.target.value.length - 1) : e.target.value;
-    if (e.key === 'Enter' || e.key === ',') {
-      if (value) {
-        setInput('');
-        setTags((state) => {
-          const newState = [...state, value];
-          tagListRef.current = newState;
-          return newState;
-        });
-      }
+    const value = e.key === ',' ? input.substring(0, input.length - 1) : input;
+    if (value && (e.key === 'Enter' || e.key === ',')) {
+      setInput('');
+      setTags([...tags, { name: value }]);
     }
   };
 
-  const removeTag = (e) => {
-    const value = e.target.previousSibling.textContent;
+  const removeTag = (tagToRemove) => {
     setTags((tags) => {
-      const newState = [...tags.filter((x) => x !== value)];
-      tagListRef.current = newState;
+      const newState = [...tags.filter((tag) => tag !== tagToRemove)];
       return newState;
     });
   };
 
-  const renderTags = tags.map((x, i) => {
+  const renderTags = tags.map((tag) => {
     return (
-      <div className="tag input-tag-item" key={i}>
-        <small>{x}</small>
-        <i className="fa fa-times" aria-hidden="true" onClick={removeTag} />
+      <div className="tag input-tag-item" key={tag.name}>
+        <small>{tag.name}</small>
+        <i className="fa fa-times" aria-hidden="true" onClick={() => removeTag(tag)} />
       </div>
     );
   });
-  // TODO: Improve codes here
+
   return (
     <div className="input-tags" onClick={() => document.querySelector('.tag-input').focus()}>
       <div className="input-tag-list">{renderTags}</div>
@@ -54,8 +45,8 @@ const TagInput = ({ tagList, tagListRef }) => {
 };
 
 TagInput.propTypes = {
-  tagList: PropTypes.arrayOf(PropTypes.string).isRequired,
-  tagListRef: PropTypes.object.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.array).isRequired,
+  setTags: PropTypes.arrayOf(PropTypes.func).isRequired,
 };
 
 export default TagInput;

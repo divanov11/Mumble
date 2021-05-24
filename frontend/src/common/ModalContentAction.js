@@ -1,7 +1,5 @@
 import React from 'react';
 
-// TODO: Make it universal and modular
-
 const ModalContentAction = ({ setActive, successAction }) => {
   const handleCancel = (e) => {
     e.preventDefault();
