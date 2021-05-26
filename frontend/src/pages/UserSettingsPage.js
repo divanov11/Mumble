@@ -20,7 +20,7 @@ function UserSettingsPage() {
   const [profilePicSrc, setProfilePicSrc] = useState(null);
   const inputRef = useRef();
 
-  const [croppedImageBase64, setCroppedImageBase64] = useState(apiEndpointURL + '/' + profilePic);
+  const [croppedImageBase64, setCroppedImageBase64] = useState(profilePic);
 
   useEffect(() => {
     if (username) {
@@ -29,7 +29,7 @@ function UserSettingsPage() {
   }, [dispatch, username]);
 
   useEffect(() => {
-    setCroppedImageBase64(apiEndpointURL + '/' + profilePic);
+    setCroppedImageBase64(profilePic);
   }, [profilePic]);
 
   const update = (e) => {

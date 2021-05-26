@@ -16,7 +16,7 @@ const UserCard = ({ userProfile }) => {
           <Avatar
             alt="img-description"
             className="user-card__profile-pic"
-            src={getApiUrl(userProfile.profile_pic)}
+            src={userProfile.profile_pic}
             size="lg"
           />
           <h1 className="user-card__profile-name">{userProfile.name}</h1>

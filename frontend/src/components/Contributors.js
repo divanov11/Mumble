@@ -30,10 +30,10 @@ const Contributors = () => {
           <div key={user.id} className="contributor-wrapper">
             <div className="contributor-preview">
               <AuthorBox
-                avatarSrc={getApiUrl(user.profile.profile_pic)}
+                avatarSrc={user.profile.profile_pic}
                 url={`/profile/${user.username}`}
                 name={user.profile.name}
-                // handle={user.username}
+              // handle={user.username}
               />
             </div>
             <FollowButton userProfile={user.profile} />
