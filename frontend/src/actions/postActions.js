@@ -10,6 +10,7 @@ import {
   POST_CREATE_SUCCESS,
   POST_DASHBOARD_FAIL,
   POST_DASHBOARD_REQUEST,
+  POST_DASHBOARD_RESET,
   POST_DASHBOARD_SUCCESS,
   POST_DELETE_FAIL,
   POST_DELETE_REQUEST,
@@ -44,19 +45,24 @@ export const searchPosts = (keyword = '') => async (dispatch) => {
   }
 };
 
-export const getPostsForDashboard = () => async (dispatch, getState) => {
+export const getPostsForDashboard = (page = 1) => async (dispatch, getState) => {
   try {
     dispatch({ type: POST_DASHBOARD_REQUEST });
 
-    const { results } = await PostsService.getPosts();
+    const response = await PostsService.getPosts(page);
+    console.log(response);
 
     dispatch({
       type: POST_DASHBOARD_SUCCESS,
-      payload: results,
+      payload: response,
     });
   } catch (error) {
     dispatch(createActionPayload(POST_DASHBOARD_FAIL, error));
   }
+};
+
+export const resetPostDashboard = () => async (dispatch, getState) => {
+  dispatch({ type: POST_DASHBOARD_RESET });
 };
 
 export const createPost = (postData) => async (dispatch, getState) => {
