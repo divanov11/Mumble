@@ -9,7 +9,6 @@ import logo from '../assets/logo/dark-logo.png';
 
 import { AuthorBox, Button } from '../common';
 import { listUsers, resetListUsers, listMoreUsers } from '../actions/userActions';
-import { getApiUrl } from '../services/config';
 import FollowButton from './FollowButton';
 import ReactPlaceholder from 'react-placeholder/lib';
 

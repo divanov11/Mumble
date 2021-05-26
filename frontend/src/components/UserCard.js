@@ -1,5 +1,4 @@
 import React from 'react';
-import { getApiUrl } from '../services/config';
 import '../styles/components/UserCard.css';
 
 import { Avatar } from '../common';

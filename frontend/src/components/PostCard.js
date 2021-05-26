@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Linkify from 'react-linkify';
 
-import { getApiUrl } from '../services/config';
 import PostAction from './PostAction';
 import { AuthorBox, VotingWidget } from '../common';
 import { getPostComments } from '../actions/postActions';
@@ -91,8 +90,8 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
                   <div className="comment__mentioned">
                     Replying to
                     {comment.reply_at?.map((user) => (
-                      <span key={user.id}> @{user.username}</span>
-                    ))}
+                    <span key={user.id}> @{user.username}</span>
+                  ))}
                   </div>
                 </PostCard>
               </div>

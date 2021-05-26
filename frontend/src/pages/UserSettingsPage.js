@@ -5,7 +5,6 @@ import '../styles/components/UserSettingsPage.css';
 import { listUserDetails } from '../actions/userActions';
 import { Avatar, Button, Card } from '../common';
 import { Page, ProfilePicCropperModal, UserSettingUpdateModal } from '../components';
-import { apiEndpointURL } from '../services/config';
 import { toggleTheme as DarkLightTheme } from '../actions/local';
 
 function UserSettingsPage() {

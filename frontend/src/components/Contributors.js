@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import FollowButton from './FollowButton';
-import { getApiUrl } from '../services/config';
 import { AuthorBox } from '../common';
 import { listRecommenedUsers } from '../actions/userActions';
 
