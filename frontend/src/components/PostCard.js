@@ -53,7 +53,7 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
         )}
         <div className="post-header-wrapper">
           <AuthorBox
-            avatarSrc={getApiUrl(post.user.profile_pic)}
+            avatarSrc={post.user.profile_pic}
             name={post.user.name}
             handle={post.user.username}
             url={`/profile/${post.user.username}`}
