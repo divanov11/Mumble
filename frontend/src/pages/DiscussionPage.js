@@ -4,12 +4,11 @@ import { Link } from 'react-router-dom';
 import '../styles/components/DiscussionPage.css';
 
 import { Avatar, VotingWidget } from '../common';
-import { Contributors, DiscussionsCard, Page } from '../components';
+import { Contributors, Page } from '../components';
 import { discussions } from '../data';
 
 const Discussion = ({ match }) => {
   let discussion = discussions.find((d) => d.slug === match.params.slug);
-  let relatedQuestions = discussions.filter((d) => d.slug !== match.params.slug);
 
   let [users, setUsers] = useState([]);
 
@@ -88,7 +87,6 @@ const Discussion = ({ match }) => {
       </section>
       <section id="right-sidebar">
         <Contributors users={users} />
-        <DiscussionsCard discussions={relatedQuestions} />
       </section>
     </Page>
   );

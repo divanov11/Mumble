@@ -8,7 +8,6 @@ const menu = [
   { title: 'Inbox', icon: 'inbox', path: '/inbox', disabled: true },
   { title: 'Contributors', icon: 'users', path: '/search' },
   { title: 'Articles', icon: 'file', path: '/articles' },
-  { title: 'Discussions', icon: 'book-reader', path: '/discussions', disabled: true },
   { title: 'Topics', icon: 'tags', path: '/topics', disabled: true },
   { title: 'Settings', icon: 'tools', path: '/settings' },
 ];

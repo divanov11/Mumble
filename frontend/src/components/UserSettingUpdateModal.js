@@ -1,19 +1,14 @@
-import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import UserSettingModalContent from './UserSettingModalContent';
 import { Modal, ModalContentAction, TagInput } from '../common';
 import { useForm } from '../hooks';
-import { updateUserProfile } from '../actions/userActions';
+import { updateUserProfile, updateUserProfileSkills } from '../actions/userActions';
+import { useState } from 'react';
 
-const UserSettingUpdateModal = ({
-  heading,
-  dataType,
-  userData,
-  setUserData,
-  active,
-  setActive,
-}) => {
+const UserSettingUpdateModal = ({ heading, dataType, userData, active, setActive }) => {
   let dispatch = useDispatch();
+
+  const [skills, setSkills] = useState(userData.skills);
 
   const [fields, handleFieldChanges] = useForm({
     name: userData.name,
@@ -21,28 +16,19 @@ const UserSettingUpdateModal = ({
     bio: userData.bio,
     email: userData.email || 'tempemail@mumble.dev',
   });
-  const tagListRef = useRef();
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
     dispatch(updateUserProfile(fields));
-    // if (!e.target.firstChild.dataset.error) {
-    //   setUserData((state) => {
-    //     return { ...state, ...fields };
-    //   });
-    // }
+  };
+
+  const handleUpdateSkills = () => {
+    dispatch(updateUserProfileSkills(skills));
+    setActive(false);
   };
 
   const HandleTagFormSubmit = (e) => {
     e.preventDefault();
-
-    // if (tags) {
-    //   setUserData((data) => {
-    //     data.skills = tags;
-    //     return data;
-    //   });
-    // }
-    // setActive(false);
   };
 
   const preventSubmission = (e) => {
@@ -119,9 +105,9 @@ const UserSettingUpdateModal = ({
         <form onSubmit={HandleTagFormSubmit} onKeyPress={preventSubmission}>
           <div className="form__field" data-error={dataType}>
             <label htmlFor="formInput#text">Tags</label>
-            <TagInput tagList={userData.skills} tagListRef={tagListRef} />
+            <TagInput tags={skills} setTags={setSkills} />
           </div>
-          <ModalContentAction setActive={setActive} />
+          <ModalContentAction successAction={handleUpdateSkills} setActive={setActive} />
         </form>
       );
     }

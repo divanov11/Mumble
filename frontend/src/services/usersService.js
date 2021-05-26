@@ -17,6 +17,12 @@ const getUserArticles = (username) => get({ url: getApiUrl(`api/users/${username
 const getFollowing = () => get({ url: getApiUrl(`api/users/following/`) });
 const getProfile = () => get({ url: getApiUrl(`api/users/profile/`) });
 
+const updateUserProfileSkills = (skills) =>
+  patch({
+    url: getApiUrl(`api/users/profile_update/skills/`),
+    payload: skills,
+  });
+
 const updateUserProfile = (userData) =>
   patch({
     url: getApiUrl(`api/users/profile_update/`),
@@ -38,6 +44,7 @@ const usersService = {
   followUser,
   updateUserProfile,
   updateUserProfilePic,
+  updateUserProfileSkills,
   getProfile,
   getFollowing,
 };
