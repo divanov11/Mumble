@@ -9,7 +9,7 @@ import { deletePost } from '../actions/postActions';
 import { deleteUserPost, followUser } from '../actions/userActions';
 import { useLocation } from 'react-router';
 
-const PostCardOptions = ({ post, remumble }) => {
+const PostCardOptions = ({ post, ancestors, remumble }) => {
   const dispatch = useDispatch();
   const currentPath = useLocation().pathname;
   const auth = useSelector((state) => state.auth);
@@ -42,6 +42,9 @@ const PostCardOptions = ({ post, remumble }) => {
       dispatch(deletePost(post.id));
     } else if (currentPath.startsWith('/profile')) {
       dispatch(deleteUserPost(post.id));
+    }
+    for(let ancestor of ancestors){
+      ancestor((count) => count-1);
     }
     closePostMenu();
   };
