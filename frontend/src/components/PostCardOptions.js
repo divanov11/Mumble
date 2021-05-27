@@ -43,8 +43,8 @@ const PostCardOptions = ({ post, ancestors, remumble }) => {
     } else if (currentPath.startsWith('/profile')) {
       dispatch(deleteUserPost(post.id));
     }
-    for(let ancestor of ancestors){
-      ancestor((count) => count-1);
+    for (let ancestor of ancestors) {
+      ancestor((count) => count - 1);
     }
     closePostMenu();
   };

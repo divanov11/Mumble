@@ -25,8 +25,8 @@ const PostAction = ({ onMessageIconClick, comments, shares, postId, setComments,
     );
     let newComment = true;
     onMessageIconClick(newComment);
-    for(let ancestor of ancestors){
-      ancestor((count) => count+1);
+    for (let ancestor of ancestors) {
+      ancestor((count) => count + 1);
     }
     setComment('');
     toggleCommentBox();

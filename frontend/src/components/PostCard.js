@@ -84,13 +84,18 @@ const PostCard = ({ post, ancestors, link, isComment = false, children, ...other
           shares={post.share_count}
           setComments={setComments}
           setCommentCount={setCommentCount}
-          ancestors={[...ancestors,setCommentCount]}
+          ancestors={[...ancestors, setCommentCount]}
         />
         {showComments && (
           <div className="post-comments-wrapper">
             {comments.map((comment) => (
               <div key={comment.id} className="post-comment">
-                <PostCard post={comment} ancestors={[...ancestors,setCommentCount]} link={'/'} isComment={true}>
+                <PostCard
+                  post={comment}
+                  ancestors={[...ancestors, setCommentCount]}
+                  link={'/'}
+                  isComment={true}
+                >
                   <div className="comment__mentioned">
                     Replying to
                     {comment.reply_at?.map((user) => (
