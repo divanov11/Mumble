@@ -101,7 +101,7 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
               id="nav-toggle-icon"
               onClick={toggleDropdown}
               alt="img-description"
-              src={getApiUrl(user.profile.profile_pic)}
+              src={user.profile.profile_pic}
               className="nav-item"
               size="sm"
             />
