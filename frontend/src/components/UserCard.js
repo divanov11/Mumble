@@ -1,5 +1,4 @@
 import React from 'react';
-import { getApiUrl } from '../services/config';
 import '../styles/components/UserCard.css';
 
 import { Avatar } from '../common';
@@ -16,7 +15,7 @@ const UserCard = ({ userProfile }) => {
           <Avatar
             alt="img-description"
             className="user-card__profile-pic"
-            src={getApiUrl(userProfile.profile_pic)}
+            src={userProfile.profile_pic}
             size="lg"
           />
           <h1 className="user-card__profile-name">{userProfile.name}</h1>
