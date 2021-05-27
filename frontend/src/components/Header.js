@@ -9,7 +9,6 @@ import logo from '../assets/logo/dark-logo.png';
 
 import { Avatar } from '../common';
 import SearchBox from './SearchBox';
-import { getApiUrl } from '../services/config';
 import { logout } from '../actions/authActions';
 import { toggleTheme as DarkLightTheme } from '../actions/local';
 import { markAsRead } from '../actions/notificationsActions';
@@ -170,7 +169,7 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
                 <div key={notification.id} className="user-navigation--item">
                   <Avatar
                     alt="img-description"
-                    src={getApiUrl(notification.created_by.profile_pic)}
+                    src={notification.created_by.profile_pic}
                     className="nav-avatar"
                     size="sm"
                   />
