@@ -7,6 +7,12 @@
   background-color: var(--color-sub-light);
   border: 2px solid transparent;
   transition: all 0.3s ease-in-out;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .dark-theme #search-form {
@@ -21,6 +27,7 @@
   border: 2px solid transparent;
   width: 100%;
   margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .dark-theme #search-form > input {
@@ -34,4 +41,14 @@
 
 #search-form input::placeholder {
   color: var(--color-gray);
+}
+
+.shortcutText {
+  font-size: 8px;
+}
+
+.shortcutKey {
+  font-size: 10px;
+  background-color: #303030;
+  color: #fff;
 }
