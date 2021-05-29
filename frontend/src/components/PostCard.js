@@ -7,7 +7,7 @@ import { AuthorBox, VotingWidget } from '../common';
 import { getPostComments } from '../actions/postActions';
 import PostCardOptions from './PostCardOptions';
 
-const PostCard = ({ post, link, isComment = false, children, ...others }) => {
+const PostCard = ({ post, ancestors, link, isComment = false, children, ...others }) => {
   let auth = useSelector((state) => state.auth);
   let dispatch = useDispatch();
 
@@ -16,6 +16,7 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
   let postId = String(post.id);
 
   let [comments, setComments] = useState([]);
+  let [commentCount, setCommentCount] = useState(post.comment_count);
   const [showComments, setShowComments] = useState(false);
 
   const { user, original_mumble } = post;
@@ -58,7 +59,7 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
             url={`/profile/${post.user.username}`}
             size="sm"
           />
-          <PostCardOptions post={post} remumble={remumble} />
+          <PostCardOptions post={post} ancestors={ancestors} remumble={remumble} />
         </div>
         <div className="post-contents">
           <VotingWidget
@@ -76,17 +77,24 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
         </div>
         <PostAction
           onMessageIconClick={toggleComments}
-          comments={post.comment_count}
+          comments={commentCount}
           link={link}
           postId={post.id}
           shares={post.share_count}
           setComments={setComments}
+          setCommentCount={setCommentCount}
+          ancestors={[...ancestors, setCommentCount]}
         />
         {showComments && (
           <div className="post-comments-wrapper">
             {comments.map((comment) => (
               <div key={comment.id} className="post-comment">
-                <PostCard post={comment} link={'/'} isComment={true}>
+                <PostCard
+                  post={comment}
+                  ancestors={[...ancestors, setCommentCount]}
+                  link={'/'}
+                  isComment={true}
+                >
                   <div className="comment__mentioned">
                     Replying to
                     {comment.reply_at?.map((user) => (
