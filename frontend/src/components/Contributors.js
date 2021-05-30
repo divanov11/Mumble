@@ -32,7 +32,7 @@ const Contributors = () => {
                 avatarSrc={user.profile.profile_pic}
                 url={`/profile/${user.username}`}
                 name={user.profile.name}
-              // handle={user.username}
+                // handle={user.username}
               />
             </div>
             <FollowButton userProfile={user.profile} />
