@@ -5,7 +5,6 @@ import '../styles/components/UserSettingsPage.css';
 import { listUserDetails } from '../actions/userActions';
 import { Avatar, Button, Card } from '../common';
 import { Page, ProfilePicCropperModal, UserSettingUpdateModal } from '../components';
-import { apiEndpointURL } from '../services/config';
 import { toggleTheme as DarkLightTheme } from '../actions/local';
 
 function UserSettingsPage() {
@@ -20,7 +19,7 @@ function UserSettingsPage() {
   const [profilePicSrc, setProfilePicSrc] = useState(null);
   const inputRef = useRef();
 
-  const [croppedImageBase64, setCroppedImageBase64] = useState(apiEndpointURL + '/' + profilePic);
+  const [croppedImageBase64, setCroppedImageBase64] = useState(profilePic);
 
   useEffect(() => {
     if (username) {
@@ -29,7 +28,7 @@ function UserSettingsPage() {
   }, [dispatch, username]);
 
   useEffect(() => {
-    setCroppedImageBase64(apiEndpointURL + '/' + profilePic);
+    setCroppedImageBase64(profilePic);
   }, [profilePic]);
 
   const update = (e) => {
@@ -50,14 +49,13 @@ function UserSettingsPage() {
 
   const clearFileInputOnCancel = () => {
     setProfilePicSrc(null);
-    // inputRef.current.value = null;
   };
 
   const renderSkills = () => {
-    const skills = currentUser?.user?.skills.map((x, i) => {
+    const skills = currentUser?.user?.skills.map(({ name }, i) => {
       return (
         <div className="tag" key={i}>
-          <small>{x}</small>
+          <small>{name}</small>
         </div>
       );
     });
@@ -68,14 +66,15 @@ function UserSettingsPage() {
     <>
       {currentUser?.user?.name && (
         <>
-          <UserSettingUpdateModal
-            heading="Update User Settings"
-            dataType={modelContent}
-            userData={currentUser?.user}
-            // setUserData={setCurrentUser}
-            active={updateModelActive}
-            setActive={setUpdateModelActive}
-          />
+          {updateModelActive && (
+            <UserSettingUpdateModal
+              heading="Update User Settings"
+              dataType={modelContent}
+              userData={currentUser?.user}
+              active={updateModelActive}
+              setActive={setUpdateModelActive}
+            />
+          )}
           <ProfilePicCropperModal
             heading="Change Profile Picture"
             active={profilePicModel}
@@ -84,7 +83,6 @@ function UserSettingsPage() {
             setProfilePicSrc={setProfilePicSrc}
             setCroppedImageBase64={setCroppedImageBase64}
             clearFileInputOnCancel={clearFileInputOnCancel}
-            // setCurrentUser={setCurrentUser}
           />
         </>
       )}

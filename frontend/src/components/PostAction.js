@@ -7,7 +7,7 @@ import { createComment, createRemumble } from '../actions/postActions';
 
 import Button from '../common/Button';
 
-const PostAction = ({ onMessageIconClick, comments, shares, postId, setComments }) => {
+const PostAction = ({ onMessageIconClick, comments, shares, postId, setComments, ancestors }) => {
   let dispatch = useDispatch();
 
   const [showCommentBox, setShowCommentBox] = useState(false);
@@ -25,6 +25,9 @@ const PostAction = ({ onMessageIconClick, comments, shares, postId, setComments 
     );
     let newComment = true;
     onMessageIconClick(newComment);
+    for (let ancestor of ancestors) {
+      ancestor((count) => count + 1);
+    }
     setComment('');
     toggleCommentBox();
   };

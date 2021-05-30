@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import FollowButton from './FollowButton';
-import { getApiUrl } from '../services/config';
 import { AuthorBox } from '../common';
 import { listRecommenedUsers } from '../actions/userActions';
 
@@ -30,10 +29,10 @@ const Contributors = () => {
           <div key={user.id} className="contributor-wrapper">
             <div className="contributor-preview">
               <AuthorBox
-                avatarSrc={getApiUrl(user.profile.profile_pic)}
+                avatarSrc={user.profile.profile_pic}
                 url={`/profile/${user.username}`}
                 name={user.profile.name}
-                // handle={user.username}
+              // handle={user.username}
               />
             </div>
             <FollowButton userProfile={user.profile} />

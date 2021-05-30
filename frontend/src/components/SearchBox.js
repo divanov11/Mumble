@@ -1,24 +1,56 @@
-import React from 'react';
+import React, { useMemo, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import debounce from 'lodash/debounce';
 import { searchBarTyped } from '../actions/appActions';
-
 import '../styles/components/SearchBox.css';
 
 const SearchBox = () => {
   const keyword = useSelector((state) => state.searchBar.input);
   const dispatch = useDispatch();
-
   let history = useHistory();
+
+  /* useMemo() makes sures that debounce function is not recreated everytime the component re-renders */
+  const pushKeyword = useMemo(() => {
+    return debounce((searchTerm) => {
+      if (searchTerm) {
+        history.push(`/search?q=${searchTerm}`);
+      } else {
+        history.push(history.push(history.location.pathname));
+      }
+    }, 500); // end of debounce
+  }, [history]);
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if (keyword) {
-      history.push(`/search?q=${keyword}`);
-    } else {
-      history.push(history.push(history.location.pathname));
-    }
+    pushKeyword(keyword);
   };
+
+  // defining the function of the shortcut for the searh bar
+  const ShortcutKey = (key, callback) => {
+    const callbackRef = useRef(callback);
+    useEffect(() => {
+      callbackRef.current = callback;
+    });
+
+    useEffect(() => {
+      function handle(event) {
+        if (event.code === key) callbackRef.current(event);
+      }
+      document.addEventListener('keyup', handle);
+      return () => document.removeEventListener('keyup', handle);
+    }, [key]);
+  };
+
+  // Applying the functionality of the shortcut to the search bar
+  ShortcutKey('Slash', (event) => {
+    // if event occured in an input or textarea do nothing
+    if (event.target.closest('input, textarea')) return;
+    // else focus on the searchbox
+    else {
+      document.getElementById('search-input').focus();
+    }
+  });
 
   return (
     <form onKeyUp={submitHandler} onSubmit={submitHandler} className="form" id="search-form">
@@ -30,6 +62,9 @@ const SearchBox = () => {
         onChange={(e) => dispatch(searchBarTyped(e.target.value))}
         placeholder="Search Mumble"
       />
+      <small className="shortcutText">
+        Press <span className="shortcutKey">/</span> to jump to the searh bar
+      </small>
     </form>
   );
 };

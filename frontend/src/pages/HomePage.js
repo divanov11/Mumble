@@ -8,11 +8,10 @@ import {
   FeedCard,
   CreatePost,
   TopicTags,
-  DiscussionsCard,
   PostCardPlaceholder,
   Page,
 } from '../components';
-import { discussions, usersData } from '../data';
+import { usersData } from '../data';
 import { getPostsForDashboard } from '../actions/postActions';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -44,11 +43,6 @@ const HomePage = () => {
       <section>
         <Contributors />
         <TopicTags tags={user.interests} />
-        <DiscussionsCard discussions={discussions} />
-        {/* 
-        At some point I will add articles into rotation with disccssions. This will be in one card -- Dennis Ivy
-        <ArticlesCard articles={articles} /> 
-        */}
       </section>
     </Page>
   );

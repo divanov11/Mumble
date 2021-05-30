@@ -40,7 +40,7 @@
 
 .sidebarNav__menuItem--disabled > a {
   pointer-events: none;
-  color: var(--color-light);
+  color: rgb(141, 141, 141);
 }
 
 .sidebarNav__menuItem > a > i.fas {

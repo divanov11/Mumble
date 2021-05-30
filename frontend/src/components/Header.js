@@ -9,7 +9,6 @@ import logo from '../assets/logo/dark-logo.png';
 
 import { Avatar } from '../common';
 import SearchBox from './SearchBox';
-import { getApiUrl } from '../services/config';
 import { logout } from '../actions/authActions';
 import { toggleTheme as DarkLightTheme } from '../actions/local';
 import { markAsRead } from '../actions/notificationsActions';
@@ -33,7 +32,6 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
 
   const auth = useSelector((state) => state.auth);
   const { user } = auth;
-
   //const user = usersData.find((u) => Number(u.id) === 1);
   const [showNavigation, setShowNavigation] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
@@ -89,14 +87,24 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
           >
             {hasUnreadNotification() && <div className="nav-icon--unread"></div>}
           </i>
-          <Avatar
-            id="nav-toggle-icon"
-            onClick={toggleDropdown}
-            alt="img-description"
-            src={getApiUrl(user.profile_pic)}
-            className="nav-item"
-            size="sm"
-          />
+          {!user.profile ? (
+            <Avatar
+              id="nav-toggle-icon"
+              onClick={toggleDropdown}
+              alt="img-description"
+              className="nav-item"
+              size="sm"
+            />
+          ) : (
+            <Avatar
+              id="nav-toggle-icon"
+              onClick={toggleDropdown}
+              alt="img-description"
+              src={user.profile.profile_pic}
+              className="nav-item"
+              size="sm"
+            />
+          )}
         </div>
 
         {showNavigation && (
@@ -161,7 +169,7 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
                 <div key={notification.id} className="user-navigation--item">
                   <Avatar
                     alt="img-description"
-                    src={getApiUrl(notification.created_by.profile_pic)}
+                    src={notification.created_by.profile_pic}
                     className="nav-avatar"
                     size="sm"
                   />

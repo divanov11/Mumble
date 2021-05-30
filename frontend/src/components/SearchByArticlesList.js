@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router';
+import { Link } from 'react-router-dom';
 import { resetSearchArticles, searchArticles } from '../actions/articleActions';
 
 import '../styles/components/SearchBox.css';
@@ -26,10 +27,12 @@ const SearchByArticlesList = () => {
         <div key={index} className="card">
           <div className="card__body">
             <div className="article-item">
-              <img alt="" className="avatar--md" src={article.thumbnail} />
-              <div>
-                <strong>{article.title}</strong>
-              </div>
+              <Link to={`/article/${article.id}`}>
+                <img alt="" className="avatar--md" src={article.thumbnail} />
+                <div>
+                  <strong>{article.title}</strong>
+                </div>
+              </Link>
             </div>
           </div>
         </div>

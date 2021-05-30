@@ -105,7 +105,7 @@ In our repository, there is a project board named Tasks - Mumble, it helps moder
 <br />
 <br />
 
-**So please, while submitting a PR or Issue, make sure to :**
+**So please, while submitting a PR or Issue, make sure to add it to the board :**
 
 <br/>
 

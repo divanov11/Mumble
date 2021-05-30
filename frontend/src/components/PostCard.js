@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Linkify from 'react-linkify';
 
-import { getApiUrl } from '../services/config';
 import PostAction from './PostAction';
 import { AuthorBox, VotingWidget } from '../common';
 import { getPostComments } from '../actions/postActions';
 import PostCardOptions from './PostCardOptions';
 
-const PostCard = ({ post, link, isComment = false, children, ...others }) => {
+const PostCard = ({ post, ancestors, link, isComment = false, children, ...others }) => {
   let auth = useSelector((state) => state.auth);
   let dispatch = useDispatch();
 
@@ -17,6 +16,7 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
   let postId = String(post.id);
 
   let [comments, setComments] = useState([]);
+  let [commentCount, setCommentCount] = useState(post.comment_count);
   const [showComments, setShowComments] = useState(false);
 
   const { user, original_mumble } = post;
@@ -53,13 +53,13 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
         )}
         <div className="post-header-wrapper">
           <AuthorBox
-            avatarSrc={getApiUrl(post.user.profile_pic)}
+            avatarSrc={post.user.profile_pic}
             name={post.user.name}
             handle={post.user.username}
             url={`/profile/${post.user.username}`}
             size="sm"
           />
-          <PostCardOptions post={post} remumble={remumble} />
+          <PostCardOptions post={post} ancestors={ancestors} remumble={remumble} />
         </div>
         <div className="post-contents">
           <VotingWidget
@@ -77,22 +77,29 @@ const PostCard = ({ post, link, isComment = false, children, ...others }) => {
         </div>
         <PostAction
           onMessageIconClick={toggleComments}
-          comments={post.comment_count}
+          comments={commentCount}
           link={link}
           postId={post.id}
           shares={post.share_count}
           setComments={setComments}
+          setCommentCount={setCommentCount}
+          ancestors={[...ancestors, setCommentCount]}
         />
         {showComments && (
           <div className="post-comments-wrapper">
             {comments.map((comment) => (
               <div key={comment.id} className="post-comment">
-                <PostCard post={comment} link={'/'} isComment={true}>
+                <PostCard
+                  post={comment}
+                  ancestors={[...ancestors, setCommentCount]}
+                  link={'/'}
+                  isComment={true}
+                >
                   <div className="comment__mentioned">
                     Replying to
                     {comment.reply_at?.map((user) => (
-                      <span key={user.id}> @{user.username}</span>
-                    ))}
+                    <span key={user.id}> @{user.username}</span>
+                  ))}
                   </div>
                 </PostCard>
               </div>
