@@ -179,8 +179,7 @@ textarea.input:active {
   margin-right: 1rem;
 }
 
-
-/* dark theme styles*/
+/* dark theme styles */
 
 .dark-theme input.input[type='text']:focus,
 .dark-theme input.input[type='email']:focus,
