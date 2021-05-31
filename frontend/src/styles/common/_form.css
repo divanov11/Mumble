@@ -178,3 +178,20 @@ textarea.input:active {
 .form__field--action > *:not(:last-child) {
   margin-right: 1rem;
 }
+
+
+/* dark theme styles*/
+
+.dark-theme input.input[type='text']:focus,
+.dark-theme input.input[type='email']:focus,
+.dark-theme input.input[type='password']:focus,
+.dark-theme input.input[type='number']:focus,
+.dark-theme input.input[type='text']:active,
+.dark-theme input.input[type='email']:active,
+.dark-theme input.input[type='password']:active,
+.dark-theme input.input[type='number']:active,
+.dark-theme textarea.input:focus,
+.dark-theme textarea.input:active {
+  outline: none;
+  border: 2px solid var(--color-main);
+}
