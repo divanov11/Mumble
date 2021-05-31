@@ -98,8 +98,8 @@ const PostCard = ({ post, ancestors, link, isComment = false, children, ...other
                   <div className="comment__mentioned">
                     Replying to
                     {comment.reply_at?.map((user) => (
-                    <span key={user.id}> @{user.username}</span>
-                  ))}
+                      <span key={user.id}> @{user.username}</span>
+                    ))}
                   </div>
                 </PostCard>
               </div>
