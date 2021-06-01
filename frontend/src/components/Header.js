@@ -53,15 +53,14 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
     setShowNotification(!showNotification);
   };
 
-  const toggleLogoutMessage = (e) => {
-    e.stopPropagation();
-    setShowComponent(true); // if the avator dropdown is open then close it
-    e.closeDropdown()
-    setShowComponent(!showNotification);
-  };
   const closeDropdown = () => setShowNavigation(false);
   const closeNotification = () => setShowNotification(false);
-
+  
+  const toggleLogoutMessage = (e) => {
+    e.stopPropagation();
+    setShowComponent(true); 
+    setShowComponent(!showNotification);
+  };
   const navigationRef = useDetectClickOutside({
     onTriggered: closeDropdown,
   });
