@@ -38,7 +38,6 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
 
   const logoutUser = () => {
     dispatch(logout());
-    closeDropdown();
     history.push('/login');
   };
 
@@ -57,6 +56,7 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
   const toggleLogoutMessage = (e) => {
     e.stopPropagation();
     setShowComponent(true); // if the avator dropdown is open then close it
+    e.closeDropdown()
     setShowComponent(!showNotification);
   };
   const closeDropdown = () => setShowNavigation(false);
