@@ -56,7 +56,7 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
   const closeDropdown = () => setShowNavigation(false);
   const closeNotification = () => setShowNotification(false);
   
-  const toggleLogoutMessage = (e) => {
+  const toggleLogoutMessage = () => {
     setShowComponent(true); 
     setShowComponent(!showNotification);
   };
