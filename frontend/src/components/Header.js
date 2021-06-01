@@ -55,7 +55,7 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
 
   const closeDropdown = () => setShowNavigation(false);
   const closeNotification = () => setShowNotification(false);
-  
+
   let [showComponent, setShowComponent] = useState(false);
 
   const navigationRef = useDetectClickOutside({
@@ -67,7 +67,6 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
   });
 
   const hasUnreadNotification = () => !!notifications.find((notification) => !notification.is_read);
-
 
   // functin for removing the message after pressing cancel
   const handleClick = () => setShowComponent(!showComponent);
@@ -103,12 +102,12 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
             </i>
             {!user.profile ? (
               <Avatar
-              id="nav-toggle-icon"
+                id="nav-toggle-icon"
                 onClick={toggleDropdown}
                 alt="img-description"
                 className="nav-item"
                 size="sm"
-                />
+              />
             ) : (
               <Avatar
                 id="nav-toggle-icon"
@@ -130,14 +129,14 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
                   toggleTheme(DarkLightTheme());
                   closeDropdown();
                 }}
-                >
+              >
                 <i
                   className={classNames(
                     'fas',
                     `fa-${isDarkTheme ? 'sun' : 'moon'}`,
                     ' user--nav--icon',
                   )}
-                  ></i>
+                ></i>
                 Enable {isDarkTheme ? 'light' : 'dark'} Mode
               </div>
 
@@ -172,7 +171,7 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
                 to={`/notifications`}
                 className="user-navigation--item"
                 onClick={closeNotification}
-                >
+              >
                 <i className="fas fa-envelope-open-text nav--icon"></i>
                 <h6>All Notifications</h6>
               </Link>
@@ -202,20 +201,20 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
           )}
         </div>
       </div>
-          {/* showing the logout confirmation message */}
-          {showComponent && (
-            <div className="logoutConfirmation">
-              <h5 className="cdlogoutConfirmation__message">Do you really want to log out?</h5>
-              <div className="button">
-              <button onClick={handleClick} className="logoutConfirmation__cancelbtn">
-                cancel
-              </button>
-              <button onClick={logoutUser} className="logoutConfirmation__logoutbtn">
-                Logout
-              </button>
-              </div>
-            </div>
-          )}
+      {/* showing the logout confirmation message */}
+      {showComponent && (
+        <div className="logoutConfirmation">
+          <h5 className="cdlogoutConfirmation__message">Do you really want to log out?</h5>
+          <div className="button">
+            <button onClick={handleClick} className="logoutConfirmation__cancelbtn">
+              cancel
+            </button>
+            <button onClick={logoutUser} className="logoutConfirmation__logoutbtn">
+              Logout
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 };
