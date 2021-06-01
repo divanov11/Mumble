@@ -57,10 +57,7 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
   const closeNotification = () => setShowNotification(false);
   
   let [showComponent, setShowComponent] = useState(false);
-  const toggleLogoutMessage = () => {
-    setShowComponent(true); 
-    setShowComponent(!showComponent);
-  };
+
   const navigationRef = useDetectClickOutside({
     onTriggered: closeDropdown,
   });
