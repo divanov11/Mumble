@@ -56,9 +56,10 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
   const closeDropdown = () => setShowNavigation(false);
   const closeNotification = () => setShowNotification(false);
   
+  let [showComponent, setShowComponent] = useState(false);
   const toggleLogoutMessage = () => {
     setShowComponent(true); 
-    setShowComponent(!showNotification);
+    setShowComponent(!showComponent);
   };
   const navigationRef = useDetectClickOutside({
     onTriggered: closeDropdown,
@@ -70,7 +71,6 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
 
   const hasUnreadNotification = () => !!notifications.find((notification) => !notification.is_read);
 
-  let [showComponent, setShowComponent] = useState(false);
 
   // functin for removing the message after pressing cancel
   const handleClick = () => setShowComponent(!showComponent);
