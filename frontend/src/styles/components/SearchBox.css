@@ -43,12 +43,18 @@
   color: var(--color-gray);
 }
 
-.shortcutText {
+.shortcut__Text {
   font-size: 8px;
 }
 
-.shortcutKey {
+.shortcut__Key {
   font-size: 10px;
   background-color: #303030;
   color: #fff;
+}
+
+@media screen and (max-width: 480px) {
+  .shortcut__Text {
+    display: none;
+  }
 }
