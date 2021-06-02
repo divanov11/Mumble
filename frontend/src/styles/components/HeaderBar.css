@@ -6,7 +6,6 @@
   color: var(--color-white);
   z-index: 100;
   box-shadow: 0 1px 6px 3px #00000015;
-  z-index: 100;
 }
 
 .header > .container {
@@ -143,31 +142,3 @@
   background: var(--color-error);
   border-radius: 50%;
 }
-
-.logoutConfirmation {
-  background-color: var(--color-sub);
-  width: 50%;
-  text-align: center;
-  margin: 10px auto 0 auto;
-}
-
-.logoutConfirmation__cancelbtn {
-  background-color: var(--color-success);
-  width: 30%;
-  outline: none;
-  border: none;
-  margin: 2% 3%;
-}
-
-.logoutConfirmation__logoutbtn {
-  background-color: var(--color-error);
-  width: 30%;
-  outline: none;
-  border: none;
-  margin: 2% 3%;
-}
-
-.logoutConfirmation__message {
-  color: var(--color-light);
-}
-

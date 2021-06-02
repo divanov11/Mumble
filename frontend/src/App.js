@@ -25,6 +25,7 @@ import {
   Error404Page,
   Error500Page,
   ForgotPasswordPage,
+  LogoutConfirmation,
 } from './pages';
 import ArticlesPage from './pages/ArticlesPage';
 import { refreshToken as refreshTokenAction } from './actions/authActions';
@@ -86,6 +87,7 @@ const App = () => {
             <Route exact path="/search" component={SearchPage} />
             <Route exact path="/articles" component={ArticlesPage} />
             <Route exact path="/forgot-password" component={ForgotPasswordPage} />
+            <Route exact path="/logout-confirmation" component={LogoutConfirmation} />
             <Route path="/404" component={Error404Page} />
             <Redirect to="/404" />
           </Switch>
