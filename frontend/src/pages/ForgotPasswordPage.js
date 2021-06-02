@@ -101,7 +101,7 @@ const ForgotPasswordPage = () => {
               rel="noreferrer"
               target="_blank"
               >
-              <i class="fas fa-file-alt"></i>
+              <i className="fas fa-file-alt"></i>
               </a>
             </div>
             <div className="forgotpwd__footerRight">

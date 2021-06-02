@@ -111,7 +111,7 @@ const LoginSignupPage = ({ match, history }) => {
               rel="noreferrer"
               target="_blank"
             >
-              <i class="fas fa-file-alt"></i>
+              <i className="fas fa-file-alt"></i>
             </a>
           </div>
           <div className="loginSignup__footerRight">
