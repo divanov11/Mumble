@@ -95,10 +95,18 @@ const ForgotPasswordPage = () => {
               >
                 <i className="fab fa-discord"></i>
               </a>
+              <a
+              className="forgotpwd__footerIcon"
+              href="https://midouwebdev.gitbook.io/mumble-docs/"
+              rel="noreferrer"
+              target="_blank"
+              >
+              <i class="fas fa-file-alt"></i>
+              </a>
             </div>
             <div className="forgotpwd__footerRight">
               <p>
-                An open source project. <br /> For the community, by the community
+                An open source project. <br /> For the community, by the community.
               </p>
               <a
                 className="forgotpwd__footerIcon"
