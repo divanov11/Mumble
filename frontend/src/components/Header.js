@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDetectClickOutside } from 'react-detect-click-outside';
 import { useSelector, useDispatch } from 'react-redux';
 import classNames from 'classnames';
@@ -9,7 +9,6 @@ import logo from '../assets/logo/dark-logo.png';
 
 import { Avatar } from '../common';
 import SearchBox from './SearchBox';
-import { logout } from '../actions/authActions';
 import { toggleTheme as DarkLightTheme } from '../actions/local';
 import { markAsRead } from '../actions/notificationsActions';
 
@@ -25,7 +24,6 @@ export const getNotificationLink = (notification) => {
 
 const Header = ({ isSidebarNav, toggleSidebarNav }) => {
   const dispatch = useDispatch();
-  const history = useHistory();
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
   const { notifications } = useSelector((state) => state.unreadNotifications);
   const toggleTheme = useDispatch();
@@ -37,9 +35,7 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
   const [showNotification, setShowNotification] = useState(false);
 
   const logoutUser = () => {
-    dispatch(logout());
     closeDropdown();
-    history.push('/login');
   };
 
   const toggleDropdown = (e) => {
@@ -146,10 +142,10 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
               Settings
             </Link>
 
-            <div role="button" className="user-navigation--item" onClick={logoutUser}>
+            <Link to="/logout-confirmation" className="user-navigation--item" onClick={logoutUser}>
               <i className="fas fa-sign-out-alt user--nav--icon"></i>
               Logout
-            </div>
+            </Link>
           </div>
         )}
         {showNotification && (

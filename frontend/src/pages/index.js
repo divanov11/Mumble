@@ -13,3 +13,4 @@ export const NotificationsPage = React.lazy(() => import('./NotificationsPage'))
 export const ProfilePage = React.lazy(() => import('./ProfilePage'));
 export const UserSettingsPage = React.lazy(() => import('./UserSettingsPage'));
 export const SearchPage = React.lazy(() => import('./SearchPage'));
+export const LogoutConfirmation = React.lazy(() => import('./LogoutConfirmation'));
