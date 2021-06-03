@@ -140,14 +140,16 @@ export const getPostComments = (setComments, postId) => async (dispatch, getStat
 };
 
 export const modifyVote = (voteData) => async (dispatch, getState) => {
+  const remumbledPost = voteData.remumbled_post;
   try {
     dispatch({ type: POST_VOTE_REQUEST });
 
     const mumble = await postsService.modifyVote(voteData);
+    if (remumbledPost) remumbledPost.original_mumble = mumble;
 
     dispatch({
       type: POST_VOTE_SUCCESS,
-      payload: mumble,
+      payload: remumbledPost || mumble,
     });
   } catch (error) {
     dispatch(createActionPayload(POST_VOTE_FAIL, error));
