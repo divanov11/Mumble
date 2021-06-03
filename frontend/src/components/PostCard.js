@@ -12,7 +12,7 @@ const PostCard = ({ post, ancestors, link, isComment = false, children, ...other
   let dispatch = useDispatch();
 
   let authUser = auth.user;
-  let authUserId = String(authUser.id);
+  let authUserId = authUser.id;
   let postId = String(post.id);
 
   let [comments, setComments] = useState([]);
@@ -21,6 +21,7 @@ const PostCard = ({ post, ancestors, link, isComment = false, children, ...other
 
   const { user, original_mumble } = post;
   let remumble;
+  let remumbledPost;
 
   if (original_mumble) {
     remumble = {
@@ -30,6 +31,7 @@ const PostCard = ({ post, ancestors, link, isComment = false, children, ...other
       originalMumbleId: original_mumble.id,
       originalUserId: original_mumble.user.user,
     };
+    remumbledPost = post;
     post = original_mumble;
   }
 
@@ -69,6 +71,7 @@ const PostCard = ({ post, ancestors, link, isComment = false, children, ...other
             upVoters={post.upVoters}
             downVoters={post.downVoters}
             authUserId={authUserId}
+            remumbledPost={remumbledPost}
           />
           <div className="post-body">
             {children}
