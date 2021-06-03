@@ -196,9 +196,9 @@ function UserSettingsPage() {
                   <>
                     <Avatar size="lg" src={croppedImageBase64} />
                     <h4>{currentUser?.user?.name}</h4>
-                    <small>{currentUser?.user?.email || 'tempemail@mumble.dev'}</small>
+                    <small>{currentUser?.user?.email}</small>
                     <small>@{currentUser?.user?.username}</small>
-                    <p>Newyork, USA</p>
+                    <br/>
                   </>
                 ) : (
                   <div className="settings-update__infoplaceholder">
@@ -233,6 +233,7 @@ function UserSettingsPage() {
                     text="Update Avatar"
                     iconName="camera"
                   />
+                  <br/>
                 </div>
               </div>
             </div>

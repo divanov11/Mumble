@@ -14,7 +14,7 @@ const UserSettingUpdateModal = ({ heading, dataType, userData, active, setActive
     name: userData.name,
     username: userData.username,
     bio: userData.bio,
-    email: userData.email || 'tempemail@mumble.dev',
+    email: userData.email,
   });
 
   const handleFormSubmit = (e) => {
