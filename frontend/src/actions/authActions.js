@@ -77,3 +77,14 @@ export const refreshToken = () => async (dispatch, getState) => {
     dispatch(logout());
   }
 };
+
+export const deleteAccount = () => async (dispatch, getState) => {
+  try {
+    const response = await authService.deleteAccount();
+    console.log('response:', response);
+    dispatch(logout());
+  } catch (error) {
+    console.log('error:', error);
+    dispatch(logout());
+  }
+};
