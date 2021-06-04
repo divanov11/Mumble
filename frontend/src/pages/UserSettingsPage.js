@@ -198,7 +198,7 @@ function UserSettingsPage() {
                     <h4>{currentUser?.user?.name}</h4>
                     <small>{currentUser?.user?.email}</small>
                     <small>@{currentUser?.user?.username}</small>
-                    <br/>
+                    <br />
                   </>
                 ) : (
                   <div className="settings-update__infoplaceholder">
@@ -233,7 +233,7 @@ function UserSettingsPage() {
                     text="Update Avatar"
                     iconName="camera"
                   />
-                  <br/>
+                  <br />
                 </div>
               </div>
             </div>
