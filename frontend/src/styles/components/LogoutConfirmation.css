@@ -17,6 +17,7 @@
 }
 
 .LogoutConfirmation__themeToggler {
+  -webkit-tap-highlight-color: transparent;
   float: right;
   font-size: 3rem;
   margin-top: 1.5%;

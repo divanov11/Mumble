@@ -118,6 +118,10 @@
   font-size: 1.25rem;
 }
 
+.loginSignup__headerRight{
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* Dark Theme */
 .dark-theme .loginSignup input.input {
   border-color: var(--color-sub);
