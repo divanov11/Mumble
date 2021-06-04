@@ -68,7 +68,7 @@ function UserSettingsPage() {
         <>
           {updateModelActive && (
             <UserSettingUpdateModal
-              heading="Update User Settings"
+              heading={modelContent !== 'user-delete' ? 'Update User Settings' : 'Delete Account'}
               dataType={modelContent}
               userData={currentUser?.user}
               active={updateModelActive}
@@ -173,6 +173,25 @@ function UserSettingsPage() {
                 ></input>
                 <span className="theme-slider"></span>
               </label>
+            </div>
+
+            <div className="settings-update">
+              <div className="settings-update__title">
+                <span>Danger</span>
+              </div>
+              <div className="settings-update__info">
+                {!currentUser?.loading ? (
+                  <Button
+                    iconName="user-times"
+                    text="Delete Account"
+                    color="main"
+                    data-type="user-delete"
+                    onClick={update}
+                  />
+                ) : (
+                  <TextBlock rows={2} color="#c5c5c5" />
+                )}
+              </div>
             </div>
           </Card>
         </section>

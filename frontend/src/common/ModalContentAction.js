@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ModalContentAction = ({ setActive, successAction }) => {
+const ModalContentAction = ({ setActive, successAction, actionButtonText = 'Update' }) => {
   const handleCancel = (e) => {
     e.preventDefault();
     setActive(false);
@@ -19,7 +19,7 @@ const ModalContentAction = ({ setActive, successAction }) => {
         style={{ marginRight: '8px' }}
         onClick={() => handleSuccess()}
       >
-        Update
+        {actionButtonText}
       </button>
       <button className="btn btn-1 btn-md" onClick={handleCancel}>
         Cancel

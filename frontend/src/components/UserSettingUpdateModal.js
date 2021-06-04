@@ -4,6 +4,7 @@ import { Modal, ModalContentAction, TagInput } from '../common';
 import { useForm } from '../hooks';
 import { updateUserProfile, updateUserProfileSkills } from '../actions/userActions';
 import { useState } from 'react';
+import { deleteAccount } from '../actions/authActions';
 
 const UserSettingUpdateModal = ({ heading, dataType, userData, active, setActive }) => {
   let dispatch = useDispatch();
@@ -35,6 +36,12 @@ const UserSettingUpdateModal = ({ heading, dataType, userData, active, setActive
     if (e.key === 'Enter') {
       e.preventDefault();
     }
+  };
+
+  const handleDeleteUserAccount = () => {
+    console.log('handleDeleteUserAccount');
+    dispatch(deleteAccount());
+    setActive(false);
   };
 
   const renderFormFields = () => {
@@ -109,6 +116,19 @@ const UserSettingUpdateModal = ({ heading, dataType, userData, active, setActive
           </div>
           <ModalContentAction successAction={handleUpdateSkills} setActive={setActive} />
         </form>
+      );
+    } else if (dataType === 'user-delete') {
+      return (
+        <div>
+          <div className="form__field" data-error={dataType}>
+            <label htmlFor="formInput#text">Are You Sure to delete your Account?</label>
+          </div>
+          <ModalContentAction
+            successAction={handleDeleteUserAccount}
+            setActive={setActive}
+            actionButtonText="Delete"
+          />
+        </div>
       );
     }
   };
