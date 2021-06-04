@@ -26,7 +26,7 @@ const LogoutConfirmation = () => {
       <div className="LogoutConfirmation__themeToggler">
         <i
           className={classNames(
-            'loginSignup__themeIcon',
+            'LogoutConfirmation__themeIcon',
             'fas',
             `fa-${isDarkTheme ? 'sun' : 'moon'}`,
           )}

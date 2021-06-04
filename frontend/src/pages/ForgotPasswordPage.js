@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import classNames from 'classnames';
 
-import forgotpwdsvg from '../assets/images/forgotpwd-svg.svg';
 import logoDark from '../assets/logo/light-logo.png';
 import logoLight from '../assets/logo/light-logo.png';
 import '../styles/components/ForgotPasswordPage.css';
@@ -67,13 +66,6 @@ const ForgotPasswordPage = () => {
               />
               <Button color="main" text="Reset my password" size="lg"></Button>
             </form>
-          </div>
-          <div className="forgotpwd__bodyRight">
-            <img
-              className="forgotpwd__heroImage"
-              src={isDarkTheme ? forgotpwdsvg : forgotpwdsvg}
-              alt="Mumble ForgotPwd Hero"
-            />
           </div>
         </div>
         <div className="forgotpwd__footer">
