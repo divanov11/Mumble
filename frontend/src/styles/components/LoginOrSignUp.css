@@ -125,11 +125,11 @@
 
 /* Media Queries */
 
-@media screen and (max-width: 1439px) {
+@media screen and (max-width: 1256px) {
   .loginSignup__heroImage {
-    height: 38vw;
-    top: -20vh;
-    right: -8vw;
+    height: 37vw;
+    top: -5vh;
+    left: 47vw;
   }
 }
 
@@ -141,24 +141,16 @@
   .loginSignup__bodyLeft {
     flex-basis: 45%;
   }
-
-  .loginSignup__heroImage {
-    height: 38vw;
-    right: -9vw;
-  }
 }
 
-@media screen and (max-width: 1260px) {
+@media screen and (min-width:1201px) {
   .loginSignup__heroImage {
     height: 36vw;
     right: -9.5vw;
+    top: -3vh;
   }
-}
-
-@media screen and (max-width: 1199px) {
-  .loginSignup__heroImage {
-    height: 40vw;
-    right: -3vw;
+  .loginSignup__footer {
+    position: relative;
   }
 }
 
@@ -204,10 +196,60 @@
   .loginSignup__footerLeft span {
     display: none;
   }
+}
 
-  .loginSignup__footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+@media screen and (min-width: 1101px) and (max-width: 1200px) {
+  .loginSignup__heroImage {
+    height: 38vw;
+    left: 53vw;
+    top: -2.75vh;
+  }
+}
+
+@media screen and (min-width: 1257px) and (max-width:1290px) {
+  .loginSignup__heroImage {
+    height: 36vw;
+    left: 50vw;
+    top: -4vh;
+  }
+}
+
+@media screen and (min-width:1291px) and (max-width: 1339px) {
+  .loginSignup__heroImage {
+    height: 35vw;
+    left: 50vw;
+    top: -5vh;
+  }
+}
+
+@media screen and (min-width:1339px) and (max-width: 1365px) {
+  .loginSignup__heroImage {
+    height: 34vw;
+    left: 52vw;
+    top: -5vh;
+  }
+}
+
+@media screen and (min-width: 1365px) {
+  .loginSignup__heroImage {
+    height: 33vw;
+    left: 52vw;
+    top: -7vh;
+  }
+}
+
+@media screen and (min-width: 1437px) and (max-width: 1584px) {
+  .loginSignup__heroImage {
+    height: 31vw;
+    left: 48vw;
+    top: -10vh;
+  }
+}
+
+@media screen and (min-width: 1585px) {
+  .loginSignup__heroImage {
+    height: 32vw;
+    left: 45vw;
+    top: -18vh;
   }
 }
