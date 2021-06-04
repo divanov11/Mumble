@@ -204,4 +204,10 @@
   .loginSignup__footerLeft span {
     display: none;
   }
+
+  .loginSignup__footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
 }

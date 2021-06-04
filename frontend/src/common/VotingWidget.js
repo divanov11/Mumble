@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import { modifyVote } from '../actions/postActions';
 
-const VotingWidget = ({ votes, postId, postUsername, upVoters, downVoters, authUserId }) => {
+const VotingWidget = ({ votes, postId, postUsername, upVoters, downVoters, authUserId, remumbledPost }) => {
   const dispatch = useDispatch();
 
   const isUpVoted = upVoters.find((vote) => vote.id === authUserId);
@@ -14,7 +14,7 @@ const VotingWidget = ({ votes, postId, postUsername, upVoters, downVoters, authU
     <div className="post-votes">
       <i
         onClick={() =>
-          dispatch(modifyVote({ post_id: postId, value: 'upvote', post_username: postUsername }))
+          dispatch(modifyVote({ post_id: remumbledPost?.original_mumble.id || postId, value: 'upvote', post_username: postUsername, remumbled_post: remumbledPost }))
         }
         className={`${isUpVoted ? 'fas' : 'far'} fa-caret-up vote-icon up-arrow`}
       ></i>
@@ -29,7 +29,7 @@ const VotingWidget = ({ votes, postId, postUsername, upVoters, downVoters, authU
 
       <i
         onClick={() =>
-          dispatch(modifyVote({ post_id: postId, value: 'downvote', post_username: postUsername }))
+          dispatch(modifyVote({ post_id: remumbledPost?.original_mumble.id || postId, value: 'downvote', post_username: postUsername, remumbled_post: remumbledPost }))
         }
         className={`${isDownVoted ? 'fas' : 'far'} fa-caret-down vote-icon down-arrow`}
       ></i>
@@ -38,7 +38,7 @@ const VotingWidget = ({ votes, postId, postUsername, upVoters, downVoters, authU
 };
 
 VotingWidget.propTypes = {
-  authUserId: PropTypes.string,
+  authUserId: PropTypes.number,
   downVoters: PropTypes.array,
   postId: PropTypes.string,
   postUsername: PropTypes.string,

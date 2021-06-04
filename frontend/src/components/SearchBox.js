@@ -62,8 +62,8 @@ const SearchBox = () => {
         onChange={(e) => dispatch(searchBarTyped(e.target.value))}
         placeholder="Search Mumble"
       />
-      <small className="shortcutText">
-        Press <span className="shortcutKey">/</span> to jump to the searh bar
+      <small className="shortcut__Text">
+        Press <span className="shortcut__Key">/</span> to jump to the search bar
       </small>
     </form>
   );

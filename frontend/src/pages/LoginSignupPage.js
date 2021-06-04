@@ -105,10 +105,18 @@ const LoginSignupPage = ({ match, history }) => {
             >
               <i className="fab fa-discord"></i>
             </a>
+            <a
+              className="loginSignup__footerIcon"
+              href="https://midouwebdev.gitbook.io/mumble-docs/"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <i className="fa fa-file"></i>
+            </a>
           </div>
           <div className="loginSignup__footerRight">
             <p>
-              An open source project. <br /> For the community, by the community
+              An open source project. <br /> For the community, by the community.
             </p>
             <a
               className="loginSignup__footerIcon"
