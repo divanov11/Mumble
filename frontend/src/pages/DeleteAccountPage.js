@@ -1,23 +1,19 @@
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { logout } from '../actions/authActions';
+import { deleteAccount } from '../actions/authActions';
 
 import { toggleTheme as DarkLightTheme } from '../actions/local';
 import classNames from 'classnames';
 
 import '../styles/components/LogoutConfirmation.css';
 
-const LogoutConfirmation = () => {
+const DeleteAccountPage = () => {
   const dispatch = useDispatch();
-  const history = useHistory();
-
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
   const toggleTheme = useDispatch();
 
-  // Logs out the user
-  const logoutUser = () => {
-    dispatch(logout());
-    history.push('/login');
+  const handleDeleteAccount = () => {
+    dispatch(deleteAccount());
   };
 
   return (
@@ -26,7 +22,7 @@ const LogoutConfirmation = () => {
       <div className="LogoutConfirmation__themeToggler">
         <i
           className={classNames(
-            'LogoutConfirmation__themeIcon',
+            'loginSignup__themeIcon',
             'fas',
             `fa-${isDarkTheme ? 'sun' : 'moon'}`,
           )}
@@ -36,22 +32,22 @@ const LogoutConfirmation = () => {
         ></i>
       </div>
       <div className="LogoutConfirmation__message">
-        <h1>Do you really want to logout?</h1>
-        <br/>
+        <h1>Are you sure to Delete your Account?</h1>
+        <br />
         {/* Links back to home page */}
         <div className="LogoutConfirmation__buttons">
           <Link
             to="/"
             className="btn btn--main--outline LogoutConfirmation__btn LogoutConfirmation__btn--left"
           >
-          &#x2190; Back
+            &#x2190; Cancel
           </Link>
-          {/* Logs out the user */}
+          {/*  */}
           <Link
-          className="btn btn--main--outline LogoutConfirmation__btn LogoutConfirmation__btn--left"
-            onClick={logoutUser}
+            className="btn btn--main--outline LogoutConfirmation__btn LogoutConfirmation__btn--left"
+            onClick={handleDeleteAccount}
           >
-            Logout <i className="fa fa-sign-out"></i>
+            Delete <i className="fa fa-user-times"></i>
           </Link>
         </div>
       </div>
@@ -59,4 +55,4 @@ const LogoutConfirmation = () => {
   );
 };
 
-export default LogoutConfirmation;
+export default DeleteAccountPage;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import '../styles/components/Error500Page.css';
 
@@ -20,9 +21,7 @@ const Error500Page = ({ error }) => (
     <h2 className="error500page__title">🚨 Internal Server Error !</h2>
     <p className="error500page__info">Something went wrong. 🤷‍♂️</p>
 
-    <a className="error500page__link" href="/">
-      &#x2190; Go Home
-    </a>
+    <Link className="btn btn--main--outline error500page__link" to="/">&#x2190; Go Home</Link>
 
     <div className="error500page__code">
       You can 🙌 raise an issue

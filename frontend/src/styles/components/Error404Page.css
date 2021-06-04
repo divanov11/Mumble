@@ -19,6 +19,7 @@
 
 .main404page__info {
   margin-top: 0;
+  font-size: 15px;
 }
 
 .main404page__logo {
@@ -30,5 +31,40 @@
   .main404page__logo {
     height: 100px;
     width: 100px;
+  }
+}
+
+.main404page__themeToggler {
+  float: right;
+  font-size: 3rem;
+  margin-top: 2%;
+  margin-right: -80rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media screen and (max-width: 800px) {
+  .main404page__themeToggler {
+    font-size: 3rem;
+    margin-top: 4%;
+    margin-right: -50rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .main404page__themeToggler {
+    font-size: 3rem;
+    margin-top: 4%;
+    margin-right: -38rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+@media screen and (max-width: 380px) {
+  .main404page__themeToggler {
+    font-size: 3rem;
+    margin-top: 4%;
+    margin-right: -28rem;
+    -webkit-tap-highlight-color: transparent;
   }
 }
