@@ -1,14 +1,16 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect, useRef, useState } from 'react';
 import { RoundShape, TextBlock } from 'react-placeholder/lib/placeholders';
-import '../styles/components/UserSettingsPage.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { toggleTheme as DarkLightTheme } from '../actions/local';
 import { listUserDetails } from '../actions/userActions';
 import { Avatar, Button, Card } from '../common';
 import { Page, ProfilePicCropperModal, UserSettingUpdateModal } from '../components';
-import { toggleTheme as DarkLightTheme } from '../actions/local';
+import '../styles/components/UserSettingsPage.css';
 
 function UserSettingsPage() {
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
+  const history = useHistory();
   const dispatch = useDispatch();
   const { username } = useSelector((state) => state.auth.user);
   const currentUser = useSelector((state) => state.userProfileDetail);
@@ -68,7 +70,7 @@ function UserSettingsPage() {
         <>
           {updateModelActive && (
             <UserSettingUpdateModal
-              heading={modelContent !== 'user-delete' ? 'Update User Settings' : 'Delete Account'}
+              heading="Update User Settings"
               dataType={modelContent}
               userData={currentUser?.user}
               active={updateModelActive}
@@ -177,7 +179,7 @@ function UserSettingsPage() {
 
             <div className="settings-update">
               <div className="settings-update__title">
-                <span>Danger</span>
+                <span>DANGER ZONE</span>
               </div>
               <div className="settings-update__info">
                 {!currentUser?.loading ? (
@@ -186,7 +188,7 @@ function UserSettingsPage() {
                     text="Delete Account"
                     color="main"
                     data-type="user-delete"
-                    onClick={update}
+                    onClick={() => history.push('/delete-account')}
                   />
                 ) : (
                   <TextBlock rows={2} color="#c5c5c5" />
@@ -217,7 +219,7 @@ function UserSettingsPage() {
                     <h4>{currentUser?.user?.name}</h4>
                     <small>{currentUser?.user?.email}</small>
                     <small>@{currentUser?.user?.username}</small>
-                    <br/>
+                    <br />
                   </>
                 ) : (
                   <div className="settings-update__infoplaceholder">
@@ -252,7 +254,7 @@ function UserSettingsPage() {
                     text="Update Avatar"
                     iconName="camera"
                   />
-                  <br/>
+                  <br />
                 </div>
               </div>
             </div>
