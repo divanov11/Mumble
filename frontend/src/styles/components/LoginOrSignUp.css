@@ -184,6 +184,11 @@
   .loginSignup__footerRight p {
     display: none;
   }
+  .loginSignup__footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
 }
 
 @media screen and (max-width: 500px) {
