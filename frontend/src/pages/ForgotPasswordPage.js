@@ -86,14 +86,16 @@ const ForgotPasswordPage = () => {
                 target="_blank"
               >
                 <i className="fab fa-discord"></i>
+                <span className="tooltip-text">Mumble Discord Server</span>
               </a>
               <a
-              className="forgotpwd__footerIcon"
-              href="https://midouwebdev.gitbook.io/mumble-docs/"
-              rel="noreferrer"
-              target="_blank"
+                className="forgotpwd__footerIcon"
+                href="https://midouwebdev.gitbook.io/mumble-docs/"
+                rel="noreferrer"
+                target="_blank"
               >
-              <i className="fa fa-file"></i>
+                <i className="fa fa-file"></i>
+                <span className="tooltip-text">Mumble Docs</span>
               </a>
             </div>
             <div className="forgotpwd__footerRight">
@@ -107,6 +109,7 @@ const ForgotPasswordPage = () => {
                 target="_blank"
               >
                 <i className="fab fa-github"></i>
+                <span className="tooltip-text">Github Repository</span>
               </a>
             </div>
           </div>
