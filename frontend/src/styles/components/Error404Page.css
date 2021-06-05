@@ -60,6 +60,7 @@
     -webkit-tap-highlight-color: transparent;
   }
 }
+
 @media screen and (max-width: 380px) {
   .main404page__themeToggler {
     font-size: 3rem;

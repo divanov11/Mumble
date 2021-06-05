@@ -95,10 +95,6 @@
   align-items: center;
 }
 
-.loginSignup__footerIcon {
-  margin-left: 1.5rem;
-}
-
 .loginSignup__footerLeft .loginSignup__footerIcon {
   font-size: 2rem;
 }
@@ -153,6 +149,7 @@
     right: -9.5vw;
     top: -3vh;
   }
+
   .loginSignup__footer {
     position: relative;
   }
@@ -184,6 +181,7 @@
   .loginSignup__footerRight p {
     display: none;
   }
+
   .loginSignup__footer {
     position: absolute;
     bottom: 0;
@@ -267,6 +265,7 @@
   position: relative;
   display: inline-block;
   border-bottom: 0.25px dotted var(--color-main);
+  margin-left: 1.5rem;
 }
 
 .loginSignup__footerIcon .tooltip-text {

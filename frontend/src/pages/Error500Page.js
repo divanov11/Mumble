@@ -21,7 +21,9 @@ const Error500Page = ({ error }) => (
     <h2 className="error500page__title">🚨 Internal Server Error !</h2>
     <p className="error500page__info">Something went wrong. 🤷‍♂️</p>
 
-    <Link className="btn btn--main--outline error500page__link" to="/">&#x2190; Go Home</Link>
+    <Link className="btn btn--main--outline error500page__link" to="/">
+      &#x2190; Go Home
+    </Link>
 
     <div className="error500page__code">
       You can 🙌 raise an issue

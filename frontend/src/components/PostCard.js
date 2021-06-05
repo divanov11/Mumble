@@ -7,7 +7,15 @@ import { AuthorBox, VotingWidget } from '../common';
 import { getPostComments } from '../actions/postActions';
 import PostCardOptions from './PostCardOptions';
 
-const PostCard = ({ post, ancestors, link, isComment = false, commentsRerender, children, ...others }) => {
+const PostCard = ({
+  post,
+  ancestors,
+  link,
+  isComment = false,
+  commentsRerender,
+  children,
+  ...others
+}) => {
   let auth = useSelector((state) => state.auth);
   let dispatch = useDispatch();
 
@@ -18,7 +26,6 @@ const PostCard = ({ post, ancestors, link, isComment = false, commentsRerender, 
   let [comments, setComments] = useState([]);
   let [commentCount, setCommentCount] = useState(post.comment_count);
   const [showComments, setShowComments] = useState(false);
-
 
   const { user, original_mumble } = post;
   let remumble;
@@ -47,11 +54,15 @@ const PostCard = ({ post, ancestors, link, isComment = false, commentsRerender, 
   };
 
   const deleteComment = (comment) => {
-    const commentToRemove = commentsRerender.map(function (item) { return item.id; }).indexOf(comment.id);
+    const commentToRemove = commentsRerender
+      .map(function (item) {
+        return item.id;
+      })
+      .indexOf(comment.id);
     commentsRerender.splice(commentToRemove, 1);
 
-    setComments(commentsRerender)
-  }
+    setComments(commentsRerender);
+  };
 
   return (
     <Linkify>
@@ -70,7 +81,12 @@ const PostCard = ({ post, ancestors, link, isComment = false, commentsRerender, 
             url={`/profile/${post.user.username}`}
             size="sm"
           />
-          <PostCardOptions post={post} deletePostFromState={deleteComment} ancestors={ancestors} remumble={remumble} />
+          <PostCardOptions
+            post={post}
+            deletePostFromState={deleteComment}
+            ancestors={ancestors}
+            remumble={remumble}
+          />
         </div>
         <div className="post-contents">
           <VotingWidget
@@ -111,8 +127,8 @@ const PostCard = ({ post, ancestors, link, isComment = false, commentsRerender, 
                   <div className="comment__mentioned">
                     Replying to
                     {comment.reply_at?.map((user) => (
-                    <span key={user.id}> @{user.username}</span>
-                  ))}
+                      <span key={user.id}> @{user.username}</span>
+                    ))}
                   </div>
                 </PostCard>
               </div>
