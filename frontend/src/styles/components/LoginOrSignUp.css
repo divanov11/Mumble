@@ -50,6 +50,13 @@
   cursor: pointer;
 }
 
+.loginSignup__footerIcon {
+  position: relative;
+  display: inline-block;
+  border-bottom: 0.25px dotted var(--color-main);
+  margin-left: 1.5rem;
+}
+
 .loginSignup__body {
   margin-bottom: 12rem;
   margin-top: 2rem;
@@ -259,13 +266,6 @@
     left: 45vw;
     top: -18vh;
   }
-}
-
-.loginSignup__footerIcon {
-  position: relative;
-  display: inline-block;
-  border-bottom: 0.25px dotted var(--color-main);
-  margin-left: 1.5rem;
 }
 
 .loginSignup__footerIcon .tooltip-text {
