@@ -17,7 +17,7 @@ function UserSettingsPage() {
   const { username } = useSelector((state) => state.auth.user);
   const currentUser = useSelector((state) => state.userProfileDetail);
   const profilePic = currentUser?.user?.profile_pic;
-  const [showPostMenu, setShowPostMenu] = useState(false);
+  const [showAvatarSettingsMenu, setShowAvatarSettingsMenu] = useState(false);
   const [updateModelActive, setUpdateModelActive] = useState(false);
   const [profilePicModel, setProfilePicModel] = useState(false);
   const [modelContent, setModelContent] = useState(null);
@@ -42,17 +42,17 @@ function UserSettingsPage() {
     setUpdateModelActive(true);
   };
 
-  const handlePostDropdownMenu = (e) => {
+  const handleAvatarSettingsDropdownMenu = (e) => {
     e.stopPropagation();
-    setShowPostMenu(!showPostMenu);
+    setShowAvatarSettingsMenu(!showAvatarSettingsMenu);
   };
 
-  const closePostMenu = () => {
-    setShowPostMenu(false);
+  const closeAvatarSettingsMenu = () => {
+    setShowAvatarSettingsMenu(false);
   };
 
   const navigationRef = useDetectClickOutside({
-    onTriggered: closePostMenu,
+    onTriggered: closeAvatarSettingsMenu,
   });
 
   const handleFileChange = (e) => {
@@ -261,7 +261,7 @@ function UserSettingsPage() {
                     <div>
                       <span
                         className="avatar-settings__dropmenu-icon"
-                        onClick={handlePostDropdownMenu}
+                        onClick={handleAvatarSettingsDropdownMenu}
                       >
                         <Button
                           style={{ pointerEvents: 'none' }}
@@ -273,7 +273,7 @@ function UserSettingsPage() {
                     <div
                       ref={navigationRef}
                       className={classNames('dropmenu', {
-                        'dropmenu--show': showPostMenu,
+                        'dropmenu--show': showAvatarSettingsMenu,
                       })}
                     >
                       <div className="settings-update__avatar">
