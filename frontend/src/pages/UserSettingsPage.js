@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { RoundShape, TextBlock } from 'react-placeholder/lib/placeholders';
 import { useDispatch, useSelector } from 'react-redux';
+import { useDetectClickOutside } from 'react-detect-click-outside';
 import { useHistory } from 'react-router-dom';
 import { toggleTheme as DarkLightTheme } from '../actions/local';
 import { listUserDetails } from '../actions/userActions';
 import { Avatar, Button, Card } from '../common';
+import classNames from 'classnames';
 import { Page, ProfilePicCropperModal, UserSettingUpdateModal } from '../components';
 import '../styles/components/UserSettingsPage.css';
 
@@ -15,6 +17,7 @@ function UserSettingsPage() {
   const { username } = useSelector((state) => state.auth.user);
   const currentUser = useSelector((state) => state.userProfileDetail);
   const profilePic = currentUser?.user?.profile_pic;
+  const [showPostMenu, setShowPostMenu] = useState(false);
   const [updateModelActive, setUpdateModelActive] = useState(false);
   const [profilePicModel, setProfilePicModel] = useState(false);
   const [modelContent, setModelContent] = useState(null);
@@ -38,6 +41,19 @@ function UserSettingsPage() {
     setModelContent(data_type);
     setUpdateModelActive(true);
   };
+
+  const handlePostDropdownMenu = (e) => {
+    e.stopPropagation();
+    setShowPostMenu(!showPostMenu);
+  };
+
+  const closePostMenu = () => {
+    setShowPostMenu(false);
+  };
+
+  const navigationRef = useDetectClickOutside({
+    onTriggered: closePostMenu,
+  });
 
   const handleFileChange = (e) => {
     const imageBlob = e.target.files[0];
@@ -240,21 +256,56 @@ function UserSettingsPage() {
                   </div>
                 )}
 
-                <div className="settings-update__avatar">
-                  <input
-                    type="file"
-                    accept="image/*"
-                    id="profile-pic"
-                    name="profile-pic"
-                    onChange={handleFileChange}
-                    ref={inputRef}
-                  />
-                  <Button
-                    style={{ pointerEvents: 'none' }}
-                    text="Update Avatar"
-                    iconName="camera"
-                  />
-                  <br />
+                <div className="avatar-settings__options">
+                  <div className="avatar-settings__dropmenu">
+                    <div>
+                      <span
+                        className="avatar-settings__dropmenu-icon"
+                        onClick={handlePostDropdownMenu}
+                      >
+                        <Button
+                          style={{ pointerEvents: 'none' }}
+                          text="Avatar Settings"
+                          iconName="cog"
+                        />
+                      </span>
+                    </div>
+                    <div
+                      ref={navigationRef}
+                      className={classNames('dropmenu', {
+                        'dropmenu--show': showPostMenu,
+                      })}
+                    >
+                      <div className="settings-update__avatar">
+                        <span>
+                          <Button
+                            style={{ pointerEvents: 'none' }}
+                            text="Remove Avatar"
+                            iconName="trash"
+                          />
+                        </span>
+                      </div>
+
+                      <div className="settings-update__avatar">
+                        <input
+                          type="file"
+                          accept="image/*"
+                          id="profile-pic"
+                          name="profile-pic"
+                          onChange={handleFileChange}
+                          ref={inputRef}
+                        />
+                        <Button
+                          style={{ pointerEvents: 'none' }}
+                          text="Update Avatar"
+                          iconName="camera"
+                        />
+                        <br />
+                        <br />
+                        <br />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
