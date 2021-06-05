@@ -61,7 +61,7 @@ a {
   font-weight: var(--font-medium);
 }
 
-.dark-theme i.fas,
-.dark-theme i.far {
-  color: var(--color-text) !important;
+.dark-theme .fas,
+.dark-theme .far {
+  color: var(--color-text);
 }
