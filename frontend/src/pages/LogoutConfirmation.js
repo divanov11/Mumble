@@ -37,18 +37,18 @@ const LogoutConfirmation = () => {
       </div>
       <div className="LogoutConfirmation__message">
         <h1>Do you really want to logout?</h1>
-        <br/>
+        <br />
         {/* Links back to home page */}
         <div className="LogoutConfirmation__buttons">
           <Link
             to="/"
             className="btn btn--main--outline LogoutConfirmation__btn LogoutConfirmation__btn--left"
           >
-          &#x2190; Back
+            &#x2190; Back
           </Link>
           {/* Logs out the user */}
           <Link
-          className="btn btn--main--outline LogoutConfirmation__btn LogoutConfirmation__btn--left"
+            className="btn btn--main--outline LogoutConfirmation__btn LogoutConfirmation__btn--left"
             onClick={logoutUser}
           >
             Logout <i className="fa fa-sign-out"></i>

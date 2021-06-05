@@ -44,7 +44,7 @@ const PostCardOptions = ({ post, ancestors, remumble, deletePostFromState }) => 
       dispatch(deleteUserPost(post.id));
     }
 
-    deletePostFromState(post)
+    deletePostFromState(post);
 
     for (let ancestor of ancestors) {
       ancestor((count) => count - 1);

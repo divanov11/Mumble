@@ -113,7 +113,7 @@ const LoginSignupPage = ({ match, history }) => {
               target="_blank"
             >
               <i className="fa fa-file"></i>
-              <span className="tooltip-text">Mumble docs</span>  
+              <span className="tooltip-text">Mumble docs</span>
             </a>
           </div>
           <div className="loginSignup__footerRight">
