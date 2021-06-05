@@ -5,7 +5,7 @@ import { deleteAccount } from '../actions/authActions';
 import { toggleTheme as DarkLightTheme } from '../actions/local';
 import classNames from 'classnames';
 
-import '../styles/components/LogoutConfirmation.css';
+import '../styles/components/DeleteAccountPage.css';
 
 const DeleteAccountPage = () => {
   const dispatch = useDispatch();
@@ -17,12 +17,12 @@ const DeleteAccountPage = () => {
   };
 
   return (
-    <div className="LogoutConfirmation">
+    <div className="main__DeleteAccountPage">
       {/* Theme changer */}
-      <div className="LogoutConfirmation__themeToggler">
+      <div className="DeleteAccountPage__themeToggler">
         <i
           className={classNames(
-            'loginSignup__themeIcon',
+            'DeleteAccountPage__themeIcon',
             'fas',
             `fa-${isDarkTheme ? 'sun' : 'moon'}`,
           )}
@@ -31,20 +31,20 @@ const DeleteAccountPage = () => {
           }}
         ></i>
       </div>
-      <div className="LogoutConfirmation__message">
+      <div className="DeleteAccountPage__message">
         <h1>Are you sure to Delete your Account?</h1>
         <br />
         {/* Links back to home page */}
-        <div className="LogoutConfirmation__buttons">
+        <div className="DeleteAccountPage__buttons">
           <Link
             to="/"
-            className="btn btn--main--outline LogoutConfirmation__btn LogoutConfirmation__btn--left"
+            className="btn btn--main--outline DeleteAccountPage__btn DeleteAccountPage__btn--left"
           >
             &#x2190; Cancel
           </Link>
           {/*  */}
           <Link
-            className="btn btn--main--outline LogoutConfirmation__btn LogoutConfirmation__btn--left"
+            className="btn btn--main--outline DeleteAccountPage__btn DeleteAccountPage__btn--left"
             onClick={handleDeleteAccount}
           >
             Delete <i className="fa fa-user-times"></i>
