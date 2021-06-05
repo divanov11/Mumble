@@ -47,7 +47,7 @@ const VotingWidget = ({
           dispatch(
             modifyVote({
               post_id: remumbledPost?.original_mumble.id || postId,
-              value: 'downvote',
+              value: `${isUpVoted ? 'upvote' : 'downvote'}`,
               post_username: postUsername,
               remumbled_post: remumbledPost,
             }),
