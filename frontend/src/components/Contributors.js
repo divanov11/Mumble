@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import FollowButton from './FollowButton';
 import { AuthorBox } from '../common';
 import { listRecommenedUsers } from '../actions/userActions';
+import { getImageUrl } from '../utilities/getImageUrl';
 
 const Contributors = () => {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ const Contributors = () => {
           <div key={user.id} className="contributor-wrapper">
             <div className="contributor-preview">
               <AuthorBox
-                avatarSrc={user.profile.profile_pic}
+                avatarSrc={getImageUrl(user.profile.profile_pic)}
                 url={`/profile/${user.username}`}
                 name={user.profile.name}
                 // handle={user.username}

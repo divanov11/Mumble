@@ -11,6 +11,7 @@ import { AuthorBox, Button } from '../common';
 import { listUsers, resetListUsers, listMoreUsers } from '../actions/userActions';
 import FollowButton from './FollowButton';
 import ReactPlaceholder from 'react-placeholder/lib';
+import { getImageUrl } from '../utilities/getImageUrl';
 
 const SearchByUsersList = () => {
   const dispatch = useDispatch();
@@ -85,7 +86,7 @@ const SearchByUsersList = () => {
                       <div className="searchItem">
                         <div className="searchItem__top">
                           <AuthorBox
-                            avatarSrc={user.profile.profile_pic}
+                            avatarSrc={getImageUrl(user.profile.profile_pic)}
                             url={`/profile/${user.username}`}
                             name={user.profile.name}
                             handle={user.username}

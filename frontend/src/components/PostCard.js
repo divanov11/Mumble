@@ -6,6 +6,7 @@ import PostAction from './PostAction';
 import { AuthorBox, VotingWidget } from '../common';
 import { getPostComments } from '../actions/postActions';
 import PostCardOptions from './PostCardOptions';
+import { getImageUrl } from '../utilities/getImageUrl';
 
 const PostCard = ({
   post,
@@ -75,7 +76,7 @@ const PostCard = ({
         )}
         <div className="post-header-wrapper">
           <AuthorBox
-            avatarSrc={post.user.profile_pic}
+            avatarSrc={getImageUrl(post.user.profile_pic)}
             name={post.user.name}
             handle={post.user.username}
             url={`/profile/${post.user.username}`}
@@ -93,8 +94,8 @@ const PostCard = ({
             votes={post.vote_rank}
             postId={postId}
             postUsername={post.user.username}
-            upVoters={post.upVoters}
-            downVoters={post.downVoters}
+            upVoters={post.up_voters}
+            downVoters={post.down_voters}
             authUserId={authUserId}
             remumbledPost={remumbledPost}
           />
