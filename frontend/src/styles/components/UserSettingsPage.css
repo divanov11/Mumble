@@ -269,3 +269,31 @@ input:checked + .theme-slider::before {
     font-size: 36.22px !important;
   }
 }
+
+.avatar-settings__options {
+  padding-bottom: 10rem;
+  line-height: 2;
+}
+
+.avatar-settings__dropmenu {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  margin-right: 3.5rem;
+}
+
+.avatar-settings__dropmenu-icon {
+  cursor: pointer;
+}
+
+.dropmenu {
+  transform-origin: top right;
+  transition: all 0.05s ease-in-out 0s;
+  transform: scaleY(0);
+  top: 5rem;
+  left: 0;
+}
+
+.dropmenu--show {
+  transform: scaleY(1);
+}

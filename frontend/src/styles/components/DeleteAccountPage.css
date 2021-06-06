@@ -1,0 +1,34 @@
+.DeleteAccountPage__message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.DeleteAccountPage__btn--left {
+  margin-right: 5%;
+}
+
+.DeleteAccountPage__buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.DeleteAccountPage__themeToggler {
+  -webkit-tap-highlight-color: transparent;
+  float: right;
+  font-size: 3rem;
+  margin-top: 1.5%;
+  margin-right: 14.5%;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .DeleteAccountPage__themeToggler {
+    font-size: 3rem;
+    margin-top: 10%;
+    margin-right: 12%;
+  }
+}

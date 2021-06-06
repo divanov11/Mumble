@@ -23,6 +23,12 @@ export const postSearchListReducer = (state = { posts: [] }, action) => {
     case POST_SEARCH_LIST_FAIL:
       return { ...state, loading: false, error: action.payload };
 
+    case POST_VOTE_SUCCESS:
+      return {
+        ...state,
+        posts: replaceItem(state.posts, action.payload),
+      };
+
     default:
       return state;
   }

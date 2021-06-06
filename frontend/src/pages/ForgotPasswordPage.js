@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import classNames from 'classnames';
 
-import forgotpwdsvg from '../assets/images/forgotpwd-svg.svg';
 import logoDark from '../assets/logo/light-logo.png';
 import logoLight from '../assets/logo/light-logo.png';
 import '../styles/components/ForgotPasswordPage.css';
@@ -68,13 +67,6 @@ const ForgotPasswordPage = () => {
               <Button color="main" text="Reset my password" size="lg"></Button>
             </form>
           </div>
-          <div className="forgotpwd__bodyRight">
-            <img
-              className="forgotpwd__heroImage"
-              src={isDarkTheme ? forgotpwdsvg : forgotpwdsvg}
-              alt="Mumble ForgotPwd Hero"
-            />
-          </div>
         </div>
         <div className="forgotpwd__footer">
           <div className="container">
@@ -94,6 +86,7 @@ const ForgotPasswordPage = () => {
                 target="_blank"
               >
                 <i className="fab fa-discord"></i>
+                <span className="tooltip-text">Mumble Discord Server</span>
               </a>
               <a
                 className="forgotpwd__footerIcon"
@@ -102,6 +95,7 @@ const ForgotPasswordPage = () => {
                 target="_blank"
               >
                 <i className="fa fa-file"></i>
+                <span className="tooltip-text">Mumble Docs</span>
               </a>
             </div>
             <div className="forgotpwd__footerRight">
@@ -115,6 +109,7 @@ const ForgotPasswordPage = () => {
                 target="_blank"
               >
                 <i className="fab fa-github"></i>
+                <span className="tooltip-text">Github Repository</span>
               </a>
             </div>
           </div>

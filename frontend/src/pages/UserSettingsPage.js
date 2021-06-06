@@ -1,18 +1,23 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect, useRef, useState } from 'react';
 import { RoundShape, TextBlock } from 'react-placeholder/lib/placeholders';
-import '../styles/components/UserSettingsPage.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { useDetectClickOutside } from 'react-detect-click-outside';
+import { useHistory } from 'react-router-dom';
+import { toggleTheme as DarkLightTheme } from '../actions/local';
 import { listUserDetails } from '../actions/userActions';
 import { Avatar, Button, Card } from '../common';
+import classNames from 'classnames';
 import { Page, ProfilePicCropperModal, UserSettingUpdateModal } from '../components';
-import { toggleTheme as DarkLightTheme } from '../actions/local';
+import '../styles/components/UserSettingsPage.css';
 
 function UserSettingsPage() {
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
+  const history = useHistory();
   const dispatch = useDispatch();
   const { username } = useSelector((state) => state.auth.user);
   const currentUser = useSelector((state) => state.userProfileDetail);
   const profilePic = currentUser?.user?.profile_pic;
+  const [showAvatarSettingsMenu, setShowAvatarSettingsMenu] = useState(false);
   const [updateModelActive, setUpdateModelActive] = useState(false);
   const [profilePicModel, setProfilePicModel] = useState(false);
   const [modelContent, setModelContent] = useState(null);
@@ -36,6 +41,19 @@ function UserSettingsPage() {
     setModelContent(data_type);
     setUpdateModelActive(true);
   };
+
+  const handleAvatarSettingsDropdownMenu = (e) => {
+    e.stopPropagation();
+    setShowAvatarSettingsMenu(!showAvatarSettingsMenu);
+  };
+
+  const closeAvatarSettingsMenu = () => {
+    setShowAvatarSettingsMenu(false);
+  };
+
+  const navigationRef = useDetectClickOutside({
+    onTriggered: closeAvatarSettingsMenu,
+  });
 
   const handleFileChange = (e) => {
     const imageBlob = e.target.files[0];
@@ -174,6 +192,25 @@ function UserSettingsPage() {
                 <span className="theme-slider"></span>
               </label>
             </div>
+
+            <div className="settings-update">
+              <div className="settings-update__title">
+                <span>DANGER ZONE</span>
+              </div>
+              <div className="settings-update__info">
+                {!currentUser?.loading ? (
+                  <Button
+                    iconName="user-times"
+                    text="Delete Account"
+                    color="main"
+                    data-type="user-delete"
+                    onClick={() => history.push('/delete-account')}
+                  />
+                ) : (
+                  <TextBlock rows={2} color="#c5c5c5" />
+                )}
+              </div>
+            </div>
           </Card>
         </section>
         <section>
@@ -218,22 +255,57 @@ function UserSettingsPage() {
                     <TextBlock rows={1} color="#c5c5c5" style={{ width: 170 }} />
                   </div>
                 )}
+                
+                <div className="avatar-settings__options">
+                  <div className="avatar-settings__dropmenu">
+                    <div>
+                      <span
+                        className="avatar-settings__dropmenu-icon"
+                        onClick={handleAvatarSettingsDropdownMenu}
+                      >
+                        <Button
+                          style={{ pointerEvents: 'none' }}
+                          text="Avatar Settings"
+                          iconName="cog"
+                        />
+                      </span>
+                    </div>
+                    <div
+                      ref={navigationRef}
+                      className={classNames('dropmenu', {
+                        'dropmenu--show': showAvatarSettingsMenu,
+                      })}
+                    >
+                      <div className="settings-update__avatar">
+                        <span>
+                          <Button
+                            style={{ pointerEvents: 'none' }}
+                            text="Remove Avatar"
+                            iconName="trash"
+                          />
+                        </span>
+                      </div>
 
-                <div className="settings-update__avatar">
-                  <input
-                    type="file"
-                    accept="image/*"
-                    id="profile-pic"
-                    name="profile-pic"
-                    onChange={handleFileChange}
-                    ref={inputRef}
-                  />
-                  <Button
-                    style={{ pointerEvents: 'none' }}
-                    text="Update Avatar"
-                    iconName="camera"
-                  />
-                  <br />
+                      <div className="settings-update__avatar">
+                        <input
+                          type="file"
+                          accept="image/*"
+                          id="profile-pic"
+                          name="profile-pic"
+                          onChange={handleFileChange}
+                          ref={inputRef}
+                        />
+                        <Button
+                          style={{ pointerEvents: 'none' }}
+                          text="Update Avatar"
+                          iconName="camera"
+                        />
+                        <br />
+                        <br />
+                        <br />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

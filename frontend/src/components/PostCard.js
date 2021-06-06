@@ -7,7 +7,15 @@ import { AuthorBox, VotingWidget } from '../common';
 import { getPostComments } from '../actions/postActions';
 import PostCardOptions from './PostCardOptions';
 
-const PostCard = ({ post, ancestors, link, isComment = false, children, ...others }) => {
+const PostCard = ({
+  post,
+  ancestors,
+  link,
+  isComment = false,
+  commentsRerender,
+  children,
+  ...others
+}) => {
   let auth = useSelector((state) => state.auth);
   let dispatch = useDispatch();
 
@@ -41,7 +49,19 @@ const PostCard = ({ post, ancestors, link, isComment = false, children, ...other
     } else {
       setShowComments(!showComments);
     }
+
     dispatch(getPostComments(setComments, post.id));
+  };
+
+  const deleteComment = (comment) => {
+    const commentToRemove = commentsRerender
+      .map(function (item) {
+        return item.id;
+      })
+      .indexOf(comment.id);
+    commentsRerender.splice(commentToRemove, 1);
+
+    setComments(commentsRerender);
   };
 
   return (
@@ -61,7 +81,12 @@ const PostCard = ({ post, ancestors, link, isComment = false, children, ...other
             url={`/profile/${post.user.username}`}
             size="sm"
           />
-          <PostCardOptions post={post} ancestors={ancestors} remumble={remumble} />
+          <PostCardOptions
+            post={post}
+            deletePostFromState={deleteComment}
+            ancestors={ancestors}
+            remumble={remumble}
+          />
         </div>
         <div className="post-contents">
           <VotingWidget
@@ -93,6 +118,7 @@ const PostCard = ({ post, ancestors, link, isComment = false, children, ...other
             {comments.map((comment) => (
               <div key={comment.id} className="post-comment">
                 <PostCard
+                  commentsRerender={comments}
                   post={comment}
                   ancestors={[...ancestors, setCommentCount]}
                   link={'/'}

@@ -104,6 +104,7 @@ const LoginSignupPage = ({ match, history }) => {
               target="_blank"
             >
               <i className="fab fa-discord"></i>
+              <span className="tooltip-text">Mumble Discord Server</span>
             </a>
             <a
               className="loginSignup__footerIcon"
@@ -112,6 +113,7 @@ const LoginSignupPage = ({ match, history }) => {
               target="_blank"
             >
               <i className="fa fa-file"></i>
+              <span className="tooltip-text">Mumble docs</span>
             </a>
           </div>
           <div className="loginSignup__footerRight">
@@ -125,6 +127,7 @@ const LoginSignupPage = ({ match, history }) => {
               target="_blank"
             >
               <i className="fab fa-github"></i>
+              <span className="tooltip-text">Github Repository</span>
             </a>
           </div>
         </div>

@@ -19,10 +19,16 @@ const refreshToken = (refresh) =>
     },
   });
 
+const deleteAccount = () =>
+  post({
+    url: getApiUrl('api/users/delete-profile/'),
+  });
+
 const loginService = {
   login,
   register,
   refreshToken,
+  deleteAccount,
 };
 
 export default loginService;

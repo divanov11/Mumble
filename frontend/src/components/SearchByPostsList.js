@@ -51,7 +51,7 @@ const SearchByPostsList = () => {
         posts.map((post) => (
           <Card key={post.id}>
             <div className="post-wrapper">
-              <PostCard post={post} link={'/'} />
+              <PostCard post={post} ancestors={[]} link={'/'} />
             </div>
           </Card>
         ))}
