@@ -255,7 +255,7 @@ function UserSettingsPage() {
                     <TextBlock rows={1} color="#c5c5c5" style={{ width: 170 }} />
                   </div>
                 )}
-                
+
                 <div className="avatar-settings__options">
                   <div className="avatar-settings__dropmenu">
                     <div>
