@@ -6,6 +6,7 @@ import '../styles/components/DiscussionPage.css';
 import { Avatar, VotingWidget } from '../common';
 import { Contributors, Page } from '../components';
 import { discussions } from '../data';
+import { getImageUrl } from '../utilities/getImageUrl';
 
 const Discussion = ({ match }) => {
   let discussion = discussions.find((d) => d.slug === match.params.slug);
@@ -31,7 +32,7 @@ const Discussion = ({ match }) => {
           <div className="card__body">
             <div className="question-wrapper">
               <div className="question-sidebar">
-                <Avatar alt="img-description" src={discussion.user.profile_pic} />
+                <Avatar alt="img-description" src={getImageUrl(discussion.user.profile_pic)} />
                 <div className="custom-spacer"></div>
                 <VotingWidget votes={discussion.vote_ratio} />
               </div>
@@ -61,7 +62,7 @@ const Discussion = ({ match }) => {
                 {discussion.answers.map((answer) => (
                   <div key={answer.id} className="question-wrapper">
                     <div className="question-sidebar">
-                      <Avatar alt="img-description" src={answer.user.profile_pic} />
+                      <Avatar alt="img-description" src={getImageUrl(answer.user.profile_pic)} />
                       {/* <div className="custom-spacer"></div> */}
                       <VotingWidget votes={answer.vote_ratio} />
                     </div>

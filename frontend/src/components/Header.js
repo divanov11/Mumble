@@ -11,6 +11,7 @@ import { Avatar } from '../common';
 import SearchBox from './SearchBox';
 import { toggleTheme as DarkLightTheme } from '../actions/local';
 import { markAsRead } from '../actions/notificationsActions';
+import { getImageUrl } from '../utilities/getImageUrl';
 
 export const getNotificationLink = (notification) => {
   const notificationUrlMap = {
@@ -96,7 +97,7 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
               id="nav-toggle-icon"
               onClick={toggleDropdown}
               alt="img-description"
-              src={user.profile.profile_pic}
+              src={getImageUrl(user.profile.profile_pic)}
               className="nav-item"
               size="sm"
             />
@@ -165,7 +166,7 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
                 <div key={notification.id} className="user-navigation--item">
                   <Avatar
                     alt="img-description"
-                    src={notification.created_by.profile_pic}
+                    src={getImageUrl(notification.created_by.profile_pic)}
                     className="nav-avatar"
                     size="sm"
                   />

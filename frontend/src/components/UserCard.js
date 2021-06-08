@@ -4,6 +4,7 @@ import '../styles/components/UserCard.css';
 import { Avatar } from '../common';
 import FollowButton from './FollowButton';
 import { useSelector } from 'react-redux';
+import { getImageUrl } from '../utilities/getImageUrl';
 
 const UserCard = ({ userProfile }) => {
   const { isAuthenticated, user } = useSelector((state) => state.auth);
@@ -15,7 +16,7 @@ const UserCard = ({ userProfile }) => {
           <Avatar
             alt="img-description"
             className="user-card__profile-pic"
-            src={userProfile.profile_pic}
+            src={getImageUrl(userProfile.profile_pic)}
             size="lg"
           />
           <h1 className="user-card__profile-name">{userProfile.name}</h1>

@@ -9,6 +9,7 @@ import { formatDate } from '../utilities';
 import { getNotificationLink } from './Header';
 import { markAsRead } from '../actions/notificationsActions';
 import { useDispatch } from 'react-redux';
+import { getImageUrl } from '../utilities/getImageUrl';
 
 const Notification = ({ notification }) => {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ const Notification = ({ notification }) => {
     >
       <div className={classNames('notification--item')}>
         <Avatar
-          src={notification.created_by.profile_pic}
+          src={getImageUrl(notification.created_by.profile_pic)}
           name={notification.created_by.name}
           handle={notification.created_by.username}
           url={`/profile/${notification.created_by.username}`}

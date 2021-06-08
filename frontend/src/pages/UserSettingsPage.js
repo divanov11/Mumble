@@ -9,6 +9,7 @@ import { Avatar, Button, Card } from '../common';
 import classNames from 'classnames';
 import { Page, ProfilePicCropperModal, UserSettingUpdateModal } from '../components';
 import '../styles/components/UserSettingsPage.css';
+import { getImageUrl } from '../utilities/getImageUrl';
 
 function UserSettingsPage() {
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
@@ -202,7 +203,7 @@ function UserSettingsPage() {
                   <Button
                     iconName="user-times"
                     text="Delete Account"
-                    color="main"
+                    color="warning"
                     data-type="user-delete"
                     onClick={() => history.push('/delete-account')}
                   />
@@ -231,7 +232,7 @@ function UserSettingsPage() {
               <div className="settings-update__info">
                 {!currentUser?.loading && croppedImageBase64 !== undefined ? (
                   <>
-                    <Avatar size="lg" src={croppedImageBase64} />
+                    <Avatar size="lg" src={getImageUrl(croppedImageBase64)} />
                     <h4>{currentUser?.user?.name}</h4>
                     <small>{currentUser?.user?.email}</small>
                     <small>@{currentUser?.user?.username}</small>

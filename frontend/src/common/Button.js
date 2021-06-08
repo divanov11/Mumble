@@ -24,6 +24,7 @@ const Button = ({
         'btn--sub': color === 'sub' && !outline && !link,
         'btn--sub--outline': color === 'sub' && outline,
         'btn--sub--link': color === 'sub' && link,
+        'btn--warning': color === 'warning',
         [`btn--${size}`]: size,
       })}
       {...others}
