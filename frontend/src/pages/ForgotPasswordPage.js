@@ -54,7 +54,7 @@ const ForgotPasswordPage = () => {
       <div className="container">
         <div className="forgotpwd__body">
           <div className="forgotpwd__bodyLeft">
-            <form className="form" onSubmit={onSubmit} style={{ width: '100%' }}>
+            <form className="form" onSubmit={onSubmit} style={{ width: '90%' }}>
               <Input
                 name="email"
                 placeholder="e.g user@domain.com"
@@ -63,11 +63,13 @@ const ForgotPasswordPage = () => {
                 label="Email Address:"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                style={{ width: '90%' }}
               />
               <Button color="main" text="Reset my password" size="lg"></Button>
             </form>
           </div>
         </div>
+
         <div className="forgotpwd__footer">
           <div className="container">
             <div className="forgotpwd__footerLeft">

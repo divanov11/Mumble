@@ -1,3 +1,8 @@
+* {
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .loginSignup {
   position: relative;
   min-height: 100vh;
