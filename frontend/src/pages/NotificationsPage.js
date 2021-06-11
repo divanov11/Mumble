@@ -24,6 +24,9 @@ function NotificationsPage() {
           {notifications.map((notification) => (
             <Notification key={notification.id} notification={notification} />
           ))}
+          {notifications.length === 0 && (
+            <div>You have no notifications! Start following some Mumblers</div>
+          )}
         </Card>
       </section>
     </Page>
