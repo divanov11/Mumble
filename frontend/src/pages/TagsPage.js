@@ -29,10 +29,10 @@ const TagsPage = () => {
     if (!skill) return;
     setLoading(true);
     UsersService.getUsersBySkill(skill, page).then((res) => {
-      setResults({
-        ...results,
-        results: [...results.results, ...res.results],
-      });
+      setResults((r) => ({
+        ...r,
+        results: [...r.results, ...res.results],
+      }));
       setHasMore(!!res.next);
       setLoading(false);
     });
