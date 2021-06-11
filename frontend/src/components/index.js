@@ -13,6 +13,7 @@ export { default as RestoreScroll } from './RestoreScroll';
 export { default as SearchBox } from './SearchBox';
 export { default as SignupForm } from './SignupForm';
 export { default as SkillTags } from './SkillTags';
+export { default as SkillList } from './SkillList';
 export { default as TopicTags } from './TopicTags';
 export { default as UserCard } from './UserCard';
 export { default as UserCardPlaceholder } from './UserCardPlaceholder';

@@ -19,6 +19,7 @@ import {
   ProfilePage,
   UserSettingsPage,
   SearchPage,
+  TagsPage,
   CreateArticlePage,
   NotificationsPage,
   LoginSignupPage,
@@ -86,6 +87,7 @@ const App = () => {
             <Route exact path="/notifications" component={NotificationsPage} />
             <Route exact path="/article/:slug" component={ArticlePage} />
             <Route exact path="/search" component={SearchPage} />
+            <Route exact path="/tags" component={TagsPage} />
             <Route exact path="/articles" component={ArticlesPage} />
             <Route exact path="/forgot-password" component={ForgotPasswordPage} />
             <Route exact path="/logout-confirmation" component={LogoutConfirmation} />

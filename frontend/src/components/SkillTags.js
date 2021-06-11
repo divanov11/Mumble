@@ -1,22 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import SkillList from './SkillList';
 
 const SkillTags = ({ tags }) => {
   return (
     <div className="card">
       <div id="topics-wrapper" className="card__body">
         <h5>Skills</h5>
-        <Link className="expand-skills__link" to="#">
-          Expand Skills
-        </Link>
         <div className="line-break"></div>
-        <div className="tags-wrapper">
-          {tags.map((tag, index) => (
-            <div key={index} className="tag">
-              <small>{tag.name}</small>
-            </div>
-          ))}
-        </div>
+        <SkillList tags={tags} />
       </div>
     </div>
   );

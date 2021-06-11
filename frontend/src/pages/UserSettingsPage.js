@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { RoundShape, TextBlock } from 'react-placeholder/lib/placeholders';
 import { useDispatch, useSelector } from 'react-redux';
 import { useDetectClickOutside } from 'react-detect-click-outside';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { toggleTheme as DarkLightTheme } from '../actions/local';
 import { listUserDetails } from '../actions/userActions';
 import { Avatar, Button, Card } from '../common';
@@ -71,11 +71,13 @@ function UserSettingsPage() {
   };
 
   const renderSkills = () => {
-    const skills = currentUser?.user?.skills.map(({ name }, i) => {
+    const skills = currentUser?.user?.skills.map((skill) => {
       return (
-        <div className="tag" key={i}>
-          <small>{name}</small>
-        </div>
+        <Link key={skill.name} to={`/tags?skill=${skill.name}`}>
+          <div className="tag">
+            <small>{skill.name}</small>
+          </div>
+        </Link>
       );
     });
     return skills;

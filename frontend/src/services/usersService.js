@@ -33,6 +33,10 @@ const updateUserProfilePic = (formData) =>
     url: getApiUrl('api/users/profile_update/photo/'),
     payload: formData,
   });
+const getUsersBySkill = (skill, page = 1) =>
+  get({
+    url: getApiUrl(`api/users/skills/${skill}?page=${page}`),
+  });
 
 const usersService = {
   getRecommendedUsers,
@@ -43,6 +47,7 @@ const usersService = {
   getUsers,
   followUser,
   updateUserProfile,
+  getUsersBySkill,
   updateUserProfilePic,
   updateUserProfileSkills,
   getProfile,

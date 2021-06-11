@@ -15,3 +15,4 @@ export const UserSettingsPage = React.lazy(() => import('./UserSettingsPage'));
 export const SearchPage = React.lazy(() => import('./SearchPage'));
 export const LogoutConfirmation = React.lazy(() => import('./LogoutConfirmation'));
 export const DeleteAccountPage = React.lazy(() => import('./DeleteAccountPage'));
+export const TagsPage = React.lazy(() => import('./TagsPage'));
