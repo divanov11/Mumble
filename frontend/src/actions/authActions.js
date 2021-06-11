@@ -17,10 +17,7 @@ export const login = (loginCredentials) => async (dispatch) => {
   try {
     dispatch({ type: LOGIN_REQUEST });
 
-    const tokens = await authService.login({
-      username: loginCredentials.username.toLowerCase(),
-      password: loginCredentials.password,
-    });
+    const tokens = await authService.login(loginCredentials);
 
     dispatch({
       type: LOGIN_SUCCESS,
