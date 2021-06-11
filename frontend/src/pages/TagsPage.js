@@ -23,6 +23,9 @@ const TagsPage = () => {
   useEffect(() => {
     const params = new URLSearchParams(search);
     setSkill(params.get('skill'));
+    setResults({
+      results: [],
+    });
   }, [search]);
 
   useEffect(() => {
