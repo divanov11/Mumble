@@ -20,7 +20,7 @@ const InboxPage = () => {
         <h1>Your Inbox</h1>
         {messages.length === 0 && (
           <div className="empty-mailbox">
-            <img className="empty-mailbox__image" src={mailbox} />
+            <img alt="empty-mailbox" className="empty-mailbox__image" src={mailbox} />
             <h3>You have no messages</h3>
           </div>
         )}
