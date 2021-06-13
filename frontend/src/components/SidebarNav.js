@@ -5,7 +5,7 @@ import '../styles/components/SidebarNav.css';
 
 const menu = [
   { title: 'Home', icon: 'home', path: '/' },
-  { title: 'Inbox', icon: 'inbox', path: '/inbox', disabled: true },
+  { title: 'Inbox', icon: 'inbox', path: '/inbox' },
   { title: 'Contributors', icon: 'users', path: '/search' },
   { title: 'Articles', icon: 'file', path: '/articles' },
   { title: 'Topics', icon: 'tags', path: '/topics', disabled: true },

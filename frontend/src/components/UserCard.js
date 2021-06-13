@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/components/UserCard.css';
 
-import { Avatar } from '../common';
+import { Avatar, Button } from '../common';
 import FollowButton from './FollowButton';
 import { useSelector } from 'react-redux';
 import { getImageUrl } from '../utilities/getImageUrl';
+import CreateMessageModal from './CreateMessageModal';
 
 const UserCard = ({ userProfile }) => {
   const { isAuthenticated, user } = useSelector((state) => state.auth);
+  const [showCreateModal, setShowCreateModal] = useState(false);
 
   return (
     <div className="user-card card">
@@ -40,12 +42,25 @@ const UserCard = ({ userProfile }) => {
           </div>
 
           {isAuthenticated && userProfile?.user !== user?.id && (
-            <div>
+            <div className="user-card__actions">
               <FollowButton userProfile={userProfile} />
+              <Button
+                onClick={() => setShowCreateModal(true)}
+                color="main"
+                size="sm"
+                text="Send Message"
+                outline
+              />
             </div>
           )}
         </div>
       </div>
+
+      <CreateMessageModal
+        toUser={userProfile.user}
+        active={showCreateModal}
+        setActive={setShowCreateModal}
+      />
     </div>
   );
 };

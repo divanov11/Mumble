@@ -63,7 +63,7 @@ const SearchBox = () => {
         placeholder="Search Mumble"
       />
       <small className="shortcut__Text">
-        Press <span className="shortcut__Key">/</span> to jump to the search bar
+        <span className="shortcut__Key">/</span>
       </small>
     </form>
   );

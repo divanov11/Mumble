@@ -32,6 +32,7 @@ import {
 import ArticlesPage from './pages/ArticlesPage';
 import { refreshToken as refreshTokenAction } from './actions/authActions';
 import { getProfile, listFollowing } from './actions/userActions';
+import InboxPage from './pages/InboxPage';
 
 const App = () => {
   const isDarkTheme = useSelector((state) => state.local.darkTheme);
@@ -82,16 +83,17 @@ const App = () => {
             <PrivateRoute exact path="/" component={HomePage} />
             <PrivateRoute exact path="/settings" component={UserSettingsPage} />
             <PrivateRoute exact path="/create-article" component={CreateArticlePage} />
+            <PrivateRoute exact path="/inbox" component={InboxPage} />
+            <PrivateRoute exact path="/notifications" component={NotificationsPage} />
+            <PrivateRoute exact path="/delete-account" component={DeleteAccountPage} />
             <Route exact path="/:parameter(login|signup)" component={LoginSignupPage} />
             <Route exact path="/profile/:username" component={ProfilePage} />
-            <Route exact path="/notifications" component={NotificationsPage} />
             <Route exact path="/article/:slug" component={ArticlePage} />
             <Route exact path="/search" component={SearchPage} />
             <Route exact path="/tags" component={TagsPage} />
             <Route exact path="/articles" component={ArticlesPage} />
             <Route exact path="/forgot-password" component={ForgotPasswordPage} />
             <Route exact path="/logout-confirmation" component={LogoutConfirmation} />
-            <PrivateRoute exact path="/delete-account" component={DeleteAccountPage} />
             <Route path="/404" component={Error404Page} />
             <Redirect to="/404" />
           </Switch>

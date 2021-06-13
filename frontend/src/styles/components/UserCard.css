@@ -18,3 +18,12 @@
 .user-card__profile-summary {
   text-align: center;
 }
+
+.user-card__actions {
+  display: flex;
+  justify-content: center;
+}
+
+.user-card__actions button {
+  margin-right: 10px;
+}
