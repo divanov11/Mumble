@@ -3,7 +3,9 @@ import { useState } from 'react';
 import { MessageService } from '../services';
 import { Page } from '../components';
 import { AuthorBox } from '../common';
+import mailbox from '../assets/images/mailbox.svg';
 import { getImageUrl } from '../utilities/getImageUrl';
+import '../styles/components/InboxPage.css';
 
 const InboxPage = () => {
   const [messages, setMessages] = useState([]);
@@ -16,6 +18,12 @@ const InboxPage = () => {
     <Page>
       <section>
         <h1>Your Inbox</h1>
+        {messages.length === 0 && (
+          <div className="empty-mailbox">
+            <img className="empty-mailbox__image" src={mailbox} />
+            <h3>You have no messages</h3>
+          </div>
+        )}
         {messages.map((message) => (
           <div key={message.id} className="card">
             <div className="card__body">
