@@ -10,6 +10,7 @@ const CreateMessageModal = ({ active, setActive, toUser }) => {
       content,
       to_user: toUser,
     });
+    setContent('');
     setActive(false);
   };
 

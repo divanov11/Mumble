@@ -70,3 +70,8 @@
 .sidebarNav__menuItem > a.active > i.fas {
   color: var(--color-main) !important;
 }
+
+.sidebarNav__menuItem .nav-icon--unread {
+  right: -6px;
+  top: 10px;
+}

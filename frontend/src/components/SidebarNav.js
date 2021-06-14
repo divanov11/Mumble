@@ -1,38 +1,54 @@
 import { NavLink } from 'react-router-dom';
-import classNames from 'classnames';
-
 import '../styles/components/SidebarNav.css';
+import { useEffect } from 'react';
+import { MessageService } from '../services';
+import { useState } from 'react';
 
-const menu = [
-  { title: 'Home', icon: 'home', path: '/' },
-  { title: 'Inbox', icon: 'inbox', path: '/inbox' },
-  { title: 'Contributors', icon: 'users', path: '/search' },
-  { title: 'Articles', icon: 'file', path: '/articles' },
-  { title: 'Topics', icon: 'tags', path: '/topics', disabled: true },
-  { title: 'Settings', icon: 'tools', path: '/settings' },
-];
+const SidebarNav = ({ isSidebarNav, isResponsiveSidebarNav }) => {
+  const [count, setCount] = useState(0);
 
-const SidebarNav = ({ isSidebarNav, isResponsiveSidebarNav }) => (
-  <div
-    className={`sidebarNav
+  useEffect(() => {
+    MessageService.getUnreadMessagesCount().then(({ count }) => setCount(count));
+  }, []);
+
+  return (
+    <div
+      className={`sidebarNav
     ${isSidebarNav && isResponsiveSidebarNav ? 'sidebarNav--full' : ''}`}
-  >
-    <ul className="sidebarNav__menu">
-      {menu.map((item, index) => (
-        <li
-          key={index}
-          className={classNames('sidebarNav__menuItem', {
-            'sidebarNav__menuItem--disabled': item.disabled,
-          })}
-        >
-          <NavLink to={item.path} exact>
-            <i className={`fas fa-${item.icon}`}></i>
-            {item.title}
+    >
+      <ul className="sidebarNav__menu">
+        <li className="sidebarNav__menuItem">
+          <NavLink to="/" exact>
+            <i className="fas fa-home"></i>
+            Home
           </NavLink>
         </li>
-      ))}
-    </ul>
-  </div>
-);
+
+        <li className="sidebarNav__menuItem">
+          <NavLink to="/inbox" exact>
+            <i style={{ position: 'relative' }} className="fas fa-inbox">
+              {count > 0 && <div className="nav-icon--unread"></div>}
+            </i>
+            Inbox
+          </NavLink>
+        </li>
+
+        <li className="sidebarNav__menuItem">
+          <NavLink to="/search" exact>
+            <i className="fas fa-users"></i>
+            Contributors
+          </NavLink>
+        </li>
+
+        <li className="sidebarNav__menuItem">
+          <NavLink to="/settings" exact>
+            <i className="fas fa-tools"></i>
+            Settings
+          </NavLink>
+        </li>
+      </ul>
+    </div>
+  );
+};
 
 export default SidebarNav;
