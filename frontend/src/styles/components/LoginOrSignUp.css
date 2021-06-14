@@ -1,3 +1,7 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .loginSignup {
   position: relative;
   min-height: 100vh;
@@ -89,6 +93,7 @@
   width: 100%;
   padding: 0.5rem 0;
   background-color: var(--color-main-light);
+  overflow-x: hidden;
 }
 
 .loginSignup__footer > .container {
