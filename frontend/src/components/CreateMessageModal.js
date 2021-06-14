@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal, ModalContentAction, TextArea } from '../common';
 import { MessageService } from '../services';
 
-const CreateMessageModal = ({ active, setActive, toUser }) => {
+const CreateMessageModal = ({ active, setActive, toUser, onMessageCreated }) => {
   const [content, setContent] = useState('');
 
   const createMessage = async () => {
@@ -12,6 +12,7 @@ const CreateMessageModal = ({ active, setActive, toUser }) => {
     });
     setContent('');
     setActive(false);
+    onMessageCreated();
   };
 
   return (

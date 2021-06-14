@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { getImageUrl } from '../utilities/getImageUrl';
 import CreateMessageModal from './CreateMessageModal';
 
-const UserCard = ({ userProfile }) => {
+const UserCard = ({ userProfile, onMessageCreated }) => {
   const { isAuthenticated, user } = useSelector((state) => state.auth);
   const [showCreateModal, setShowCreateModal] = useState(false);
 
@@ -60,6 +60,7 @@ const UserCard = ({ userProfile }) => {
         toUser={userProfile.user}
         active={showCreateModal}
         setActive={setShowCreateModal}
+        onMessageCreated={onMessageCreated}
       />
     </div>
   );

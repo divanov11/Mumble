@@ -2,6 +2,14 @@
   padding: 20px;
   border: 1px solid #888;
   border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.message--success {
+  background-color: #f3fdf2;
+  border-color: var(--color-success);
+  color: var(--color-success);
 }
 
 .message--error {

@@ -18,6 +18,8 @@ import {
   listUserPosts,
   resetUserDetails,
 } from '../actions/userActions';
+import { Message } from '../common';
+import { useState } from 'react';
 
 const Profile = ({ match }) => {
   const username = match.params.username;
@@ -38,14 +40,27 @@ const Profile = ({ match }) => {
     return () => dispatch(resetUserDetails());
   }, [dispatch, username]);
 
+  const [message, setMessage] = useState('');
+
+  const onMessageCreated = () => {
+    setMessage('Succesfully created a message');
+  };
+
   return (
     <Page>
-      <section>{!isPostsLoading ? <FeedCard posts={posts} /> : <PostCardPlaceholder />}</section>
+      <section>
+        {message && (
+          <Message onClose={() => setMessage('')} dismissible variant="success">
+            {message}
+          </Message>
+        )}
+        {!isPostsLoading ? <FeedCard posts={posts} /> : <PostCardPlaceholder />}
+      </section>
 
       <section>
         {!isUserLoading && userProfile ? (
           <div>
-            <UserCard userProfile={userProfile} />
+            <UserCard onMessageCreated={onMessageCreated} userProfile={userProfile} />
             <SkillTags tags={userProfile.skills} />
           </div>
         ) : (
