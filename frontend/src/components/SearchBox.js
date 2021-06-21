@@ -53,7 +53,13 @@ const SearchBox = () => {
   });
 
   return (
-    <form onKeyUp={submitHandler} onSubmit={submitHandler} className="form" id="search-form">
+    <form
+      onKeyUp={submitHandler}
+      onSubmit={submitHandler}
+      className="form"
+      id="search-form"
+      autoComplete="off"
+    >
       <i className="fas fa-search" id="search-icon"></i>
       <input
         id="search-input"
