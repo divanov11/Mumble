@@ -194,7 +194,7 @@ export const listFollowing = () => async (dispatch) => {
 export const updateUserProfile = (userData) => async (dispatch, getState) => {
   try {
     let { user } = await usersService.updateUserProfile(userData);
-    user.profile.email = user.email;
+    user.profile.email = user.email || userData.email;
     dispatch({
       type: UPDATE_USER_SUCCESS,
       payload: user.profile,
