@@ -44,7 +44,7 @@ const Button = ({
 
 Button.propTypes = {
   className: PropTypes.string,
-  color: PropTypes.oneOf(['main', 'sub']),
+  color: PropTypes.oneOf(['main', 'sub', 'warning']),
   iconName: PropTypes.string,
   iconStyle: PropTypes.string,
   link: PropTypes.bool,

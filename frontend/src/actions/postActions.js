@@ -50,8 +50,6 @@ export const getPostsForDashboard = (page = 1) => async (dispatch, getState) => 
     dispatch({ type: POST_DASHBOARD_REQUEST });
 
     const response = await PostsService.getPosts(page);
-    console.log(response);
-
     dispatch({
       type: POST_DASHBOARD_SUCCESS,
       payload: response,

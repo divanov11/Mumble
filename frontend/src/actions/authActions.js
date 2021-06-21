@@ -55,7 +55,6 @@ export const register = (inputs) => async (dispatch) => {
       payload: data,
     });
   } catch (error) {
-    console.log('ERROR:', error);
     dispatch(createActionPayload(REGISTER_FAIL, error));
   }
 };
@@ -77,11 +76,9 @@ export const refreshToken = () => async (dispatch, getState) => {
 
 export const deleteAccount = () => async (dispatch, getState) => {
   try {
-    const response = await authService.deleteAccount();
-    console.log('response:', response);
+    await authService.deleteAccount();
     dispatch(logout());
   } catch (error) {
-    console.log('error:', error);
     dispatch(logout());
   }
 };

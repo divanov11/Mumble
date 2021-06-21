@@ -48,6 +48,7 @@ const LogoutConfirmation = () => {
           </Link>
           {/* Logs out the user */}
           <Link
+            to="/login"
             className="btn btn--main--outline LogoutConfirmation__btn LogoutConfirmation__btn--left"
             onClick={logoutUser}
           >
