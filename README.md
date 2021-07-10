@@ -13,13 +13,10 @@
 <a href="https://discord.gg/9Du4KUY3dE">![Mumble Community](https://img.shields.io/discord/825371211399692308?label=Mumble%20Community&style=for-the-badge&logo=Discord)</a>
 <a href="https://www.mumble.dev">![Mumble](https://img.shields.io/badge/Mumble-Live%20Demo-9cf?style=for-the-badge)</a>
 <a href="http://mumble-lp.s3-website-us-west-2.amazonaws.com/">![Mumble UI Kit](https://img.shields.io/badge/Mumble-UI%20Kit-orange?style=for-the-badge)</a>
+<a href="https://open.vscode.dev/divanov11/mumbleapi.git"><img src="https://open.vscode.dev/badges/open-in-vscode.svg" height="25px"></a>
 
 </div>
-<div align="center">
 
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/divanov11/mumble.git)
-
-</div>
 ## Download & Setup Instructions :
 
 Before downloading the project, check to make sure you meet the [project's requirements.](https://github.com/divanov11/Mumble/blob/master/REQUIREMENTS.md)
