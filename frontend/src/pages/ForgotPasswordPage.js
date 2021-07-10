@@ -17,7 +17,7 @@ const ForgotPasswordPage = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log('email:', email);
+    // Do something with the email
     // Include the logic for sending request here
     alert(`we'll send you password reset link to your email`);
     setEmail('');

@@ -78,10 +78,10 @@ const SearchByUsersList = () => {
         )}
         {!showResultsNotFound && (
           <div>
-            {data.results.map((user, index) => (
+            {data.results.map((user) => (
               <>
                 {isAuthenticated && currentUser?.username !== user?.username && (
-                  <div key={index} className="card">
+                  <div key={user.name} className="card">
                     <div className="card__body">
                       <div className="searchItem">
                         <div className="searchItem__top">
@@ -105,10 +105,10 @@ const SearchByUsersList = () => {
               {showLoadMoreButton && (
                 <Button
                   size="lg"
-                  disabled={!data?.next || loading}
+                  loading={!data?.next || loading}
                   onClick={handleLoadMore}
                   text={!loading ? 'Load More' : 'Loading...'}
-                  iconName={loading && 'spinner fa-spin'}
+                  iconName={loading ? 'spinner fa-spin' : ''}
                 />
               )}
             </div>

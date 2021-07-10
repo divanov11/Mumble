@@ -44,6 +44,7 @@ const DeleteAccountPage = () => {
           </Link>
           {/*  */}
           <Link
+            to="/login"
             className="btn btn--main--outline DeleteAccountPage__btn DeleteAccountPage__btn--left"
             onClick={handleDeleteAccount}
           >
