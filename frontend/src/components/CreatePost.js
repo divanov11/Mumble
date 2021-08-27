@@ -38,7 +38,7 @@ const CreatePost = () => {
             <TextArea
               style={{ minHeight: '10rem' }}
               name="create-post"
-              placeholder="Share your brilliant thought!"
+              placeholder="Ask a question!"
               onChange={handleMessageChange}
               value={message}
               label="Create Post"
