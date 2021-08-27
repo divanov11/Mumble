@@ -45,7 +45,7 @@ const CreatePost = () => {
               hideLabel={true}
               error={error}
             />
-            <Button type="submit" size="md" color="main" text="Mumble Now" iconName="comment-alt" />
+            <Button type="submit" size="md" color="main" text="Post Question" iconName="comment-alt" />
           </form>
           <Prompt
             when={message.length > 0}
