@@ -48,8 +48,8 @@
 }
 
 .shortcut__Key {
-  font-size: 10px;
-  background-color: #303030;
+  font-size: 12px;
+  font-weight: bold;
   color: #fff;
 }
 
