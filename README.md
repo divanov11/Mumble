@@ -31,7 +31,7 @@ git clone https://github.com/divanov11/mumble
 
 ---> Navigate to the `frontend/` directory
 
-```Shell
+```S hell
 cd Mumble && cd frontend
 ```
 
