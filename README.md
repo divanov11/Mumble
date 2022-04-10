@@ -19,13 +19,16 @@
 
 ## Download & Setup Instructions :
 
-Before downloading the project, check to make sure you meet the [project's requirements.](https://github.com/divanov11/Mumble/blob/master/REQUIREMENTS.md)
+Before downloading the project,got  check to make sure you meet the [project's requirements.](https://github.com/divanov11/Mumble/blob/master/REQUIREMENTS.md)
 
 Clone the project. This will download the GitHub respository files onto your local machine.
 
 ```Shell
 git clone https://github.com/divanov11/mumble
 ```
+
+
+
 
 ### Frontend Instructions (Create React App) :
 
