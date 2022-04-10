@@ -50,7 +50,7 @@ npm install
 npm run start
 ```
 
----> Open your browser and navigate to either `http://localhost:3000 or http://127.0.0.1:3000`
+--->   Open your browser and navigate to either `http://localhost:3000 or http://127.0.0.1:3000`
 
 ## Want to Contribute?
 
