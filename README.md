@@ -5,7 +5,7 @@
   <h1 align="center">
     MUMBLE
   </h1>
-<p align="center">An Open Source Social Media Platform and Public Forum for Questions and Discussions, built for Developers.</p>
+<p align="center">An Open Source Social Media Platform and Public Forum for Questions and Discussions, built for Developers. This is the change</p>
 </p>
 
 <div align="center">
