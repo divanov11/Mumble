@@ -1,7 +1,7 @@
 <div align="center">
   <img src="./frontend/public/android-chrome-512x512.png" width="15%">
   <h1 align="center">
-    🎨 | Mumble Frontend
+    🎨 | Mumble FrontendXX
   </h1>
   
   <a href="https://www.mumble.dev">![Mumble](https://img.shields.io/badge/Mumble-Live%20Demo-9cf?style=for-the-badge)</a>
