@@ -5,7 +5,7 @@
   <h1 align="center">
     MUMBLE
   </h1>
-<p align="center">XXXMedia Platform and Public Forum for Questions and Discussions, built for Developers.</p>
+<p align="center">XXX</p>
 </p>
 
 <div align="center">
