@@ -1,7 +1,7 @@
 #
 <div align="center">
 <img src="https://mumble.dev/apple-touch-icon.png" width="15%">
-<h1>Security at Mumble</h1>
+<h1>Security at MumbXle</h1>
 
 <a href="https://discord.gg/9Du4KUY3dE">![Mumble Community](https://img.shields.io/discord/825371211399692308?label=Mumble%20Community&style=for-the-badge&logo=Discord)</a>
 <a href="https://www.mumble.dev">![Mumble](https://img.shields.io/badge/Mumble-Live%20Demo-9cf?style=for-the-badge)</a>

@@ -3,9 +3,9 @@
 <p align="center">
   <img src="./frontend/public/android-chrome-512x512.png" width="15%">
   <h1 align="center">
-    MUMBLE
+    MUMBLE_liXXX
   </h1>
-<p align="center">An Open Source Social Media Platform and Public Forum for Questions and Discussions, built for Developers.</p>
+<p align="center">XXXMedia Platform and Public Forum for Questions and Discussions, built for Developers.</p>
 </p>
 
 <div align="center">
