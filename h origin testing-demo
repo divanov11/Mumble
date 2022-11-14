@@ -1,0 +1,598 @@
+[33me0890c5[m[33m ([m[1;36mHEAD -> [m[1;32mtesting-demo[m[33m)[m testing out changing a readme
+[33mf96a585[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m -
+[33m9b0c9a6[m -
+[33m8dfed14[m Refactor the open in vscode badge
+[33m9060996[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33mf73fc21[m Open in VS Code Badge Added
+[33md583d14[m random fixes (#463)
+[33m571ba67[m fixed the problem of overflow in login/forgotpwd page for smaller devices (#457)
+[33mc9716bb[m dismissble alert and display alert on message created
+[33m4946ee3[m adding ability to read messages
+[33m06d4b06[m fixing build error
+[33mf2f4e85[m fixing style issues
+[33mdad1c19[m adding placeholder image
+[33m01ebb4d[m adding inbox
+[33m1193acb[m revert lowercase login fix
+[33m22299bb[m force username to lowercase when logging in
+[33m8d0b938[m fixing bug related to clicking on tabs when already on the skill page
+[33mbcd78cb[m fixing lint issue
+[33m73a0cd0[m fixing stylelint
+[33mad66a81[m working on adding the abililty to click on skill tags
+[33m289a757[m Fixing images so we can run the app locally (#453)
+[33m7ef727c[m Merge pull request #448 from akzain/voting_issue
+[33mc951bcb[m ran npm run format
+[33mea1fe96[m Merge branch 'master' into voting_issue
+[33m1aecfd4[m fix page crash due to invalid props (#446)
+[33mb25dbfd[m Merge pull request #452 from ishitb/icon-hover-issue
+[33m785ab44[m bug-fix: Hovering over icons in dark mode have color effect now
+[33md89d79c[m Merge pull request #451 from ishitb/workflow-failing-bug
+[33mb3fb73d[m bug-fix: Stylelint formatting issues fixed
+[33m83d646f[m Renaming const(s)
+[33mb57d345[m Merge pull request #447 from MidouWebDev/master
+[33m9983d1c[m fixed:downvoting issue when the post is already upvoted
+[33madf1d4b[m Removing profile pic Feature
+[33m2be8c48[m run stylelint & prettier
+[33m40aadf5[m Added Tooltips to the links in the footer
+[33mb60e4cc[m Refactoring Delete Account Page
+[33m6042b76[m Merge pull request #441 from okumujustine/delete-comment-from-ui
+[33ma5580a7[m Merge remote-tracking branch 'upstream/master' into delete-comment-from-ui
+[33m5a8d8a6[m Post comment Delete updating
+[33mf870636[m Update LoginOrSignUp.css
+[33mbdba9a0[m Merge pull request #436 from akzain/theme-toggler-ontap-background-fix
+[33m72e04a5[m Merge pull request #439 from mani-barathi/issue#422
+[33m5a60e1d[m Merge pull request #438 from MidouWebDev/master
+[33ma56c34e[m added delete-account page
+[33me86eb6d[m Fixed some UI Bugs
+[33m2908301[m format
+[33me12871d[m formatted the code
+[33mc05538c[m fixed the ontap backgroun problem
+[33m7d1af7b[m Merge branch 'master' of github.com:divanov11/Mumble into issue#422
+[33m8837023[m delete user
+[33mf1931f5[m fix up/downvoting issue (#428) (#433)
+[33mefcc222[m Merge pull request #432 from MidouWebDev/master
+[33mfc46c77[m Improve Mumble (#431)
+[33m48894a3[m Logout confirmation feature (#430)
+[33m80e77e7[m Footer Bug
+[33m3d121a4[m 🛠️ Fix classNames
+[33m4e7a53c[m 🛠️  Fix some UI Bugs
+[33mfcd9e63[m 🛠️ Fix the display of the new searchbox feature
+[33m97d8a8f[m Merge pull request #424 from okumujustine/darktheme-input-focus
+[33m292a0fb[m Merge branch 'master' of github.com:divanov11/Mumble
+[33mb6444d6[m fix stylelint failure
+[33m28142c4[m added focus styles for input in dark theme
+[33mb10a1ad[m running format
+[33mf7bce48[m Latest to Master (#423)
+[33m790e757[m Merge branch 'master' of github.com:divanov11/Mumble
+[33m8721ed3[m added the shortcut to jump to the search bar (#419)
+[33m60618a1[m Comment count update (#420)
+[33mc14de80[m Fixed notifications image URL
+[33ma0c91dd[m Removed extra imports
+[33m4cd9b5b[m Updated Image url endpoints for linode object storage
+[33m8d0fd43[m Update PostCard.js
+[33mc91ebb6[m Merge pull request #414 from niteshseram/fix/profile-img-header
+[33m2683403[m fixing the profile image header
+[33mb3acb95[m Latest to Master (#412)
+[33mab0886b[m Merge branch 'divanov11:master' into master
+[33m22855ff[m Latest to Master (#401)
+[33m3547f30[m fixing various bugs (#396) (#397)
+[33m8b2a515[m Merge pull request #393 from divanov11/working-on-follow-unfollow-logic
+[33mb00d244[m :zap: linkify mumble
+[33m02ab43d[m :zap: refactor PrivateRoutes.js
+[33m031b4e3[m working on the follow unfollow logic to be more dynamic and not broken
+[33m263ef95[m fixed: issue #369: user search not refreshing with the latest values (#371)
+[33m23509be[m updated delete mumble endpoint (#380) (#388)
+[33m6217679[m Merge pull request #387 from sheyziSilver/update-readme
+[33m1fb1131[m Update README.md
+[33m3fde936[m Modified the instrunctions to hosting the project in the README.md file
+[33m10833c2[m fixed: issue #378: There is a bug in the layout of the login/register pages (#384)
+[33me18a3af[m Merge pull request #385 from divanov11/refresh-token-interval
+[33mc89dc34[m adding the refresh token logic to fetch a new access token
+[33m47dc611[m :fire: fix stylelint for loader
+[33m8b253ab[m :zap: add application-wide <Loading />
+[33mdc99030[m :green_circle: add RouteHander
+[33m3af4f76[m :red_circle: remove Routes.js
+[33mebc0d5d[m :rocket: add lazyload and code-splitting
+[33m985686e[m :rocket: add lazyload and code-splitting
+[33m5b7162c[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33m23576e6[m fix user searched self and follow (#382)
+[33mfdf96d5[m working on the articles page (#377)
+[33m7b9fef0[m Edited the placeholders in UserSettingUpdateModal.js (#376)
+[33m68cf058[m implemented deleting mumble/ remumble (#363) (#369)
+[33mf2fe4b2[m Disabled button and added a loader in login/register #351 (#368)
+[33mc3d7b80[m Update CONTRIBUTING.md
+[33mcdf9816[m Fixed the Discord Link in the ForgotPasswordPage
+[33m26fd12f[m Fixed the Discord Link in the LoginSignupPage
+[33mf05cb17[m Merge pull request #372 from MidouWebDev/master
+[33mfc12425[m :hammer: fixed settings page layout
+[33me376c64[m Fxed all the Discord Links + improved the screenshots section
+[33m9742e7a[m Merge pull request #370 from divanov11/sidebar-nav
+[33mff4291c[m :green_circle: fix all the linting
+[33md3efeca[m :unicorn: change page layouts
+[33m9784aee[m :iphone: add responsiveness to sidebarNav
+[33ma093148[m :fire: add sidebar nav and change home layout
+[33m18ab837[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33m88ad830[m Added load more (pagination) in  search page (#355) (#364)
+[33m5823534[m fixed user follow button appearing on logged in user's profile (#365)
+[33m146cbd2[m :zap: allow username to case insensitive
+[33mfc2ba7a[m Password conformation added
+[33m127eb25[m Added basic error message for user signup. DOES NOT CONSOLE OUT SPECIFIC ERROR YET. NEEDS TO BE DONE IN BACKEND
+[33m2a47065[m Fixed the Discord Server Link in README.md
+[33md19355c[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33m12478c1[m Removed default mumble user
+[33m8dd4e66[m Merge pull request #361 from divanov11/upload-avatar-fix
+[33me58a6c6[m Merge pull request #358 from divanov11/fix-search-page-layout
+[33me9a1b50[m Fixed user search
+[33m7643986[m Modified recommened contributors state
+[33mf36771e[m fixing lint
+[33mf11797c[m fixing a bug and changing the endpoint to patch for uploading avatar images
+[33m1203039[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33m142f37a[m adding back search page classes to fix layout styling
+[33m248516a[m Set up the Security Policy (SECURITY.md)
+[33m7986d33[m Fetching the unread notifications (#348)
+[33mf477a20[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33m56bec0b[m :unicorn: update mumble style guides
+[33mf28395e[m added fixed height and scrollbar for header dropdown (#347)
+[33m943a813[m Fixed bug in the input in ForgotPassword (#342) (#343)
+[33mfee1c2d[m Merge pull request #346 from MidouWebDev/master
+[33m7bba803[m Introducing the Reviewers in MUMBLE Repo
+[33m5543ed2[m :bug: fix layout bugs
+[33mabd37d4[m :bug: fix layout bugs
+[33md82bf4f[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33mcaa66a9[m :fire: add position fixed and sticky to homepage
+[33m67f0090[m Updated SearchByUsersList.js
+[33m33628ae[m fixing same link navigation history issue
+[33m83673fb[m fixing notification image
+[33m646c0bd[m Follow button on profile (#340)
+[33me919b1f[m fixing notification profile url
+[33me6b6428[m Adding Notifications (#337)
+[33m77b459e[m Created the forgot password page ! (#338)
+[33m23e8d40[m fix: License update (#335) (#336)
+[33m7770103[m Requests adjusted for pagination
+[33m55352bd[m Announcing the Project Board feature
+[33m666d18a[m fixed bugs regarding to .map() and .length over undefined objects (#330)
+[33ma106e6a[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33m750bb18[m fetch article for user
+[33m6b022bf[m fixing some initial state issues
+[33m4c5921b[m Create Article Page Integration (#326)
+[33m84c443f[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33m722f35b[m closes #313 (#316)
+[33m49f14c0[m Delete a Mumble (#323)
+[33m2576379[m updated readme with links and screenshots (#317)
+[33m0f12f5a[m :fire: refactors author-box
+[33m48ce970[m :red_circle: refactor 500 Page
+[33mabbb97a[m :red_circle: refactor 500 Page
+[33m414a100[m :flower_playing_cards: refactor cards to less boxy
+[33m8df90b3[m :flower_playing_cards: refactor cards to less boxy
+[33mc250868[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33mfcd20c1[m Basic user settings update actions added
+[33m281e936[m Updated user ID for post setting options
+[33m1d0530f[m Fixed spelling of original
+[33m80fc5b2[m changed usersettings page to use actual user data (#311)
+[33m586907c[m fixed profile change delay bug (#310)
+[33m8c7bd91[m fixed profile change delay bug
+[33m449dadf[m 🧹 clean up action a bit mores
+[33me40b568[m Modified API calls to match new backend
+[33m6a3fee6[m Fixed some UI Bugs (#305)
+[33me8c726c[m Fixed Issue 218 + Updated PR template (#306)
+[33me6f1d4b[m Update postActions.js
+[33mb0eaf38[m Fixed login url
+[33m6f2d76d[m Merge branch 'master' of github.com:divanov11/Mumble
+[33m72b34d3[m refactoring the axios calls into the services
+[33m67d784a[m Modified layout
+[33maa7d7cc[m Modified how voting widget finds users that voted
+[33m2c498fd[m 3 warnings supressed and discussion links style fixed ( issue #218 ). (#298)
+[33mf4b0734[m :bug: fix password fields on login signup form
+[33m7f55451[m :bug: fix password fields on login signup form
+[33me999726[m Merge pull request #296 from divanov11/login-signup
+[33m66854ae[m :unicorn: add responsiveness login-signup page
+[33mc6449aa[m :fire: improve login signup form
+[33m8175b2f[m :fire: improve login page
+[33m57d5d90[m testing out changing a readme (#293)
+[33m8ec5f09[m setting ci true for build
+[33m760f951[m Dark theme toggler title fixed. #286 (#287)
+[33m8635921[m Prompt message check (#278)
+[33m6738faf[m Fixed the dark mode in the mobile view (#291)
+[33mea22e4d[m fixing mergin conflict (#292)
+[33ma4ec116[m Finished the CSS Style Guide (worked on Modularity) (#289)
+[33mb1ceecd[m Created pull_request_template.md (#288)
+[33m7293e3f[m fixing build error
+[33me19f032[m fixing more bem classes
+[33m266a90b[m fixing more BEM issues on various pages
+[33m0bab70e[m fixing the 404 and 500 page BEM styles
+[33m3d179e3[m fixing css and some broken pages due to null state
+[33m290d7e4[m Fixed a style error in SearchByPostsList.js (#282)
+[33m7b407b5[m Changed logo size in error 404 and 500 pages (#284)
+[33m9efbe28[m fixed 2 typos in frontend/README.md (#279)
+[33m8b99001[m :fire: refactor common components
+[33mde55870[m :green_circle: clean build with stylelint
+[33mf253247[m :fire: refactor error404 and error500 styles
+[33mcca94a8[m Fix stylelint errors (#277)
+[33m8740c2b[m :unicorn: improve post card dropmenu layout
+[33mf076ba9[m :unicorn: improve SearchUser layout
+[33m5cb58e3[m :man: refactor FollowButton.js and Contributors.js
+[33m2017e15[m fixing darkmode for 500 page
+[33m9690709[m Vote count margin fix
+[33m07b9161[m Modified how vote count is rendered
+[33m19b4270[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33m53a02bd[m Added basic up/down voting functionality
+[33m6dac0c6[m Added basic up/down voting functionality
+[33mffef00a[m Fixed the Dark/Light Mode in Error 404 Page (#270)
+[33m9aee39a[m Created the new Error 500 Page (#271)
+[33m26346eb[m Search mumble not found (#265)
+[33m2dcbdbe[m Update config.js
+[33m6b16ff2[m vote count colors modified
+[33m7561164[m vote count colors modified
+[33m28b60ca[m Merge pull request #266 from MidouWebDev/master
+[33m7a39e3b[m Fixed the font size of the 404 (h1)
+[33mb68fab1[m Updated Error404Page.js
+[33m8cdc576[m Fixed the animation in Error404Page.css
+[33mb93a8b8[m Updated the link of the img
+[33m9f23d12[m Added "Alt" to "img" (thanks @itzomen 😁)
+[33m4cb6297[m Created Error404Page.css to write the CSS Code
+[33m01e55e6[m Created a better 404 page
+[33m6b4bfa2[m Merge https://github.com/divanov11/Mumble
+[33m271ca79[m Basic registration added
+[33mad9507d[m Basic registration added
+[33mc5b7b9b[m adding validation hook to help make forms (#262)
+[33m96f10f0[m fixing console errors
+[33m319ff85[m - refactoring the post options into a separate component (#260)
+[33m7f041e4[m Fixed merge issues
+[33ma897c88[m Merge pull request #257 from mohammad4kh/tooltip_menu
+[33mf525b0c[m Merge branch 'master' into tooltip_menu
+[33m07c1b76[m Fixed a typo in LoginForm.js (#239)
+[33mf90f4cb[m added BEM in CSS Style Guide (#259)
+[33m5b52963[m Fixed a typo + replaced a link by a badge in STYLE_GUIDE.md (#256)
+[33m8f17297[m Added remumble (share) functionality
+[33m62a1d24[m update dropmenu items, add unfollow and block buttons
+[33m0cc88e2[m Fixed comment toggle issue
+[33mcd5f269[m Remumble comments expandable
+[33m5c584b3[m add dropdowmn menu to posts
+[33m8d1350e[m Started displaying re-mumbles
+[33m3054e39[m Created custom follow button
+[33m1f9ce13[m Removed link issue
+[33m78d2096[m Added basic follow functionality
+[33m6a9cb6d[m Added basic follow functionality
+[33mb09a09c[m Added follow logic to search page
+[33m8c1bf23[m Added comment functionality
+[33m3511d54[m Basic comment functionality added
+[33m50a8491[m Added Create post functionality
+[33me104275[m Removed avatar and write article button
+[33mc31fc65[m Added Create post functionality
+[33m78415ae[m Merge pull request #251 from mani-barathi/issue#232
+[33mb0efd05[m Search page profile pic fixed
+[33m8d33d15[m Contributer images fixed
+[33m7724f16[m -
+[33m37d8db5[m Updaated API Endpoints
+[33m9029ed0[m Updaated API Endpoints
+[33mfdd3311[m Cleaned up profile pic url path and token error
+[33m004aa9a[m Removed extra import
+[33m760e9d3[m Updated token url
+[33m8dcbcad[m Merge pull request #252 from mohammad4kh/jwt-decode-install
+[33m3be585c[m remove duplicate border property to solve style linting
+[33m5ca63c4[m install jwt-decode package to fix build issue
+[33m470d8b3[m Merge pull request #250 from MidouWebDev/master
+[33m1b42703[m added loading placeholder in SearchPage
+[33md9bcbd4[m Merge branch 'master' of https://github.com/divanov11/Mumble into issue#232
+[33m79ff8e6[m Basic login intergration added
+[33m5437862[m Added note to login page
+[33m3eef46a[m Updated some user data
+[33m8317df7[m Added some error handeling with Message component
+[33m21cdcb0[m Added login authentication for users
+[33mc3317e2[m Updated STYLE_GUIDE.md (colors section)
+[33m50a2ef2[m Uploaded the lightmode & color-pallette for the light mode (STYLE_GUIDE.md)
+[33m4c5419e[m Get token from local storage on initial load, parse and set state + update header with user info form token
+[33m240bfec[m Merge pull request #249 from MidouWebDev/master
+[33md5de362[m Merge pull request #248 from MidouWebDev/patch-4
+[33m0922bc0[m Merge pull request #247 from MidouWebDev/patch-1
+[33m50979b6[m Merge pull request #246 from MidouWebDev/patch-3
+[33m1f5fcbf[m Merge pull request #243 from MidouWebDev/master
+[33m22fe8c6[m Updated STYLE_GUIDE.md (Directory Structures Section)
+[33m24dae4a[m Added the logo of MUMBLE on the .md files
+[33m7b9da91[m Added a badge for the Discord Server link
+[33m18984c9[m Updated the badge for the Discord Server
+[33m0355d84[m Fixed a typo mentionned by @bharathjinka09
+[33m1b1097d[m Updated the look of REQUIREMENTS.md
+[33m273f349[m Changed the links to badges in README.md
+[33m0ea2214[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33m15700ab[m added margin between nav-avatar and fixed dropdown styling (#242)
+[33me97036e[m Merge pull request #238 from Hisham-Pak/dev
+[33ma6fbce6[m Fix Contrast Create Article CKEditor (#230)
+[33ma2b0147[m Merge remote-tracking branch 'upstream/master'
+[33ma19ab41[m Updated STYLE_GUIDE.md (Fixed widths of preview images) (#235)
+[33m56ee8ca[m Fix stylelint formatting
+[33mc1e396a[m Merge pull request #1 from Hisham-Pak/Hisham-Pak-patch-1
+[33mb461d7b[m Fix Contrast Create Article CKEditor (#230)
+[33m1feb58c[m Add WYSIWYG (CKEditor) in create article page (#215) (#225)
+[33mb654d24[m Uploaded Dark Mode img for the STYLE_GUIDE.md (#227)
+[33mc93bf33[m Updated the Dark Mode Colors section (#228)
+[33mfaa579f[m Updated the link to the "MSTILE" (SEO WINDOWS ICONS) (#229)
+[33maf57f81[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33mf1a2cd4[m Mocked the Logout process (#214) (#226)
+[33m9b2950c[m Fixed Odd Avatar Notification Loading Issue (#224)
+[33m85e4bd6[m Refactor Theme Selector into Redux (#223)
+[33md0c22db[m Added the "Fonts" in the Table of contents (STYLE_GUIDE.md) (#221)
+[33mad0a9b2[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33m3cfb16a[m Updated STYLE_GUIDE.md (Colors & Fonts) (#219)
+[33md75ee8b[m Merge branch 'master' of https://github.com/mani-barathi/Mumble
+[33m0e76c6e[m refactoring the search page a bit
+[33m3f76f82[m refactoring the search page a bit
+[33mf77ab3b[m Fixed SearchPage follow button alignment issue (#191) (#198)
+[33m0bae01a[m Services Module Directory using Index.js (#212)
+[33m2d37442[m Adding Stylelint (#211)
+[33mc1f2467[m Updated STYLE_GUIDE.md (Directory Structures + some changes) (#210)
+[33m1f4eb6b[m Updated home page layout
+[33m922a4ca[m Updated README.md (centered the MUMBLE Description) (#207)
+[33m772e19a[m Updated STYLE_GUIDE.md (UI Kit Section) (#206)
+[33m2170924[m Private Route & Redux Setup (#174)
+[33mce78b7e[m Merge pull request #205 from hamzalak/fix-redirection-profile-comment
+[33m29beff3[m format file
+[33mfd5636b[m using arrow function for component
+[33mddf7f8e[m formating the code
+[33m3eb0cec[m Abstracting Axios away from Redux Actions (#197)
+[33m90573df[m remove link redirect and refactor function component
+[33m835e261[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33m7b764db[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33m1feb9e4[m :memo: add STYLE_GUIDE.md and update README.md
+[33maf5af20[m revert spacing
+[33m2ca62b3[m navigation icon spacing
+[33m50f8097[m fixed setting page column (#189)
+[33md5d56b0[m fixing a lint error
+[33m67ab80d[m refactor to use services directory and clean up some code
+[33m0250a22[m Update SearchPage.js
+[33m37cb3d3[m Added post search
+[33m5df171f[m Seach on keyup
+[33mab71cd8[m Merge https://github.com/divanov11/Mumble into redux-and-search
+[33m2736267[m Merge pull request #195 from MidouWebDev/patch-2
+[33m459fb15[m Added base redux store and search
+[33m5bee2c1[m Fixed a bad request (/%PUBLIC_URL%) for the mstile
+[33m342873d[m Added user search
+[33m1c9b1bd[m Updated index.html (meta tag : browserconfig.xml for Windows 8 & 10 icons) (#194)
+[33mb65d8a5[m Fixed the icon for Windows 8 & 10 (#193)
+[33me93ee35[m User searchable list now in redux store
+[33md378999[m User profile data in redux store
+[33md68b839[m Uploaded icons for all devices (SEO) (#192)
+[33m67b3864[m Added recommended users to redux store
+[33me83fc0f[m User list action triggered
+[33m4984598[m Added user reducer and constants to store
+[33m70a5de7[m Updated the 192x192 and 512x512 logos (MUMBLE Logos) (#190)
+[33m882d25d[m Set up base redux store
+[33me5a68c0[m Set up base redux store
+[33m989075c[m :zap: modify app.js
+[33m65bc343[m Scroll bar style improvements. (#184)
+[33m9b2f62e[m 🔥 re-organize import and export, implement es6 arrow function (#185)
+[33mfb56146[m 🟢 fix hooks, and get rid of useCallback (#183)
+[33mfd3d340[m Update PostCard.js
+[33me00196a[m Updated proxy url
+[33m7de5ab2[m Merge pull request #181 from divanov11/home-posts-placeholder
+[33m6a42103[m adding placeholder component for the post feed on page load
+[33mfdbd8e9[m Added slider to change theme on User Settings page (#178)
+[33mb3e58c5[m Fixed warnings
+[33m52a6efa[m Live proxy url loading read data
+[33ma076666[m User profile loads user profile and posts
+[33m36a1034[m Making API call to load comments when expanded
+[33m9d94dda[m Loaded API data for posts in feed
+[33me2f2847[m Added Proxy URL
+[33m7421443[m Updated the favicon (from ".png" to ".ico") (#179)
+[33m5fd2218[m Moved requirements to new file to reduce readme clutter (#177)
+[33mb3030e2[m fixed voting widget up and down arrow hover colors (#175)
+[33m16d0bcc[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33mb35cc19[m adding some read / unread logic (#173)
+[33m11cbbe5[m Update Header.js
+[33m2cf15f8[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33m7b2c42c[m :rocket: add logo to header
+[33m1dfedfb[m :fire: enhance dark mode
+[33m7425163[m Changed the website icon to a favicon 16x16 (#171)
+[33m3a4ad07[m Added the favicon.png for the website icon + deleted the other logos in public folder (#168)
+[33m5387d46[m Add spacing mobile menu icons (#170)
+[33m9962e0f[m Made search page responsive
+[33m9a4b2f3[m Made search page responsive
+[33mbd3a485[m Updated index.html (the website icon) (#167)
+[33m801d02f[m Merge pull request #166 from MidouWebDev/master
+[33m7f7529f[m Added the logos again but in frontend/public
+[33m9c1256d[m Added the new logo of MUMBLE (for the light and dark mode) (#165)
+[33m4a4fd5f[m Added the new logo of MUMBLE (for the light and dark mode)
+[33m9f89865[m :rocket: improve the dark mode with contrast
+[33m929def1[m Merge pull request #157 from divanov11/article-page-create
+[33mda0e764[m Merge pull request #160 from gmrzone/LoginPage
+[33mcb69534[m :rocket: add react-toastify
+[33m0d56634[m :rocket: add react-toastify
+[33ma5743a3[m :memo: add resuable input choice
+[33m0bf5a8b[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33med7b9ef[m :memo: add resuable input choice
+[33m7ab97f0[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33ma9548f2[m fixed missing upvote number in discussion page (#158)
+[33m61085fd[m :memo: add resuable Input components
+[33m1ba2e8f[m fix path Error
+[33m17bb116[m fix formatting
+[33m987d845[m login and signup
+[33m11e54a3[m fixed missing upvote number in discussion page
+[33mdf00f7f[m fixing article page
+[33m9a09140[m adding cypress (#154)
+[33m3266f95[m :new_moon_with_face: add dark mode :fire:
+[33m6339779[m :green_circle: implements css varibales everywhere
+[33m67defa5[m :stop_sign: add application error boundary and merge conflicts
+[33me8a0090[m :stop_sign: add application error boundary
+[33m28f4faf[m Scroll Restore on Route path change (#152)
+[33ma9e6122[m Create article page (#153)
+[33mf769f70[m Merge pull request #151 from mohammad4kh/master
+[33mb2a4197[m update needed Node version, delete yarn installing guide
+[33m147c06e[m Merge pull request #150 from MidouWebDev/patch-3
+[33mbfa153c[m Add requirements section to run and develop in the project
+[33m047b401[m Update TASKS-UPDATES.md
+[33m63d78f2[m Merge pull request #149 from divanov11/138-nested-comments
+[33m650e164[m refactoring the recursive logic to allow nested components and fixing some data inconsistency
+[33m30801b4[m Update README.md
+[33m6db9e8d[m Merge pull request #142 from mani-barathi/issue#125
+[33m8bc6497[m Merge branch 'master' into issue#125
+[33m55db262[m Merge pull request #148 from itzomen/notification-page
+[33mfcf3b59[m commented unused variables in notifications.js
+[33m618f079[m added eye :nerd_face: to show notification read status
+[33m290411b[m Changed Live Demo URL (#147)
+[33mc472945[m :hugs: ran npm run format to fix formatting
+[33m34e30ae[m added description to notifications dummy data
+[33m60bad2f[m :rabbit: added Notification page styling
+[33m37202ab[m created Notifications functional component
+[33m3afe978[m added notification page
+[33meddd975[m fixed merge conflixts
+[33m78481d9[m Merge branch 'issue#125' of https://github.com/mani-barathi/Mumble into issue#125
+[33mc270d4f[m fixed merge conflixts
+[33mb9d37a4[m Merge branch 'master' into issue#125
+[33maa33602[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33mdddcbd4[m :red_circle: add a basic 404 page
+[33m07e5e7b[m User setting (#141)
+[33m97fadc0[m :green_circle: pass test for surpress the ci/cd
+[33mc9631d8[m :green_circle: resolve and merge conflicts
+[33m524d00e[m :memo: refactor create post to reusable components
+[33mae0d9d9[m Added live demo
+[33m20d29f8[m Modified user data
+[33m6074437[m added form in create-discussion page
+[33m6484f54[m Merge branch 'master' of https://github.com/divanov11/Mumble into issue#125
+[33mb158406[m Added more dummy data to posts
+[33mfd6cfab[m Merge pull request #137 from divanov11/notification-content-links
+[33mc62502a[m created CreateDiscussionPage and updated Routes
+[33m018fbd6[m linking notifications to actual content
+[33me9df73d[m Merge pull request #136 from mani-barathi/issue#131
+[33m64ea4c9[m toggle comment button
+[33ma72d949[m Fail the build if prettier wasn't ran (#135)
+[33me5cfa12[m :red_circle: remove yarn.lock to enforce npm
+[33m50ac910[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33m371a007[m :memo: add project wide gitignore
+[33mbb32c8e[m Merge pull request #134 from divanov11/130-toggle-discussions
+[33md33f3c1[m 130-toggle-discussions-in-feed
+[33ma4054d7[m :man: update and refactors user settings page
+[33m5fd2a07[m Merge pull request #124 from mohammad4kh/fix-fontError
+[33mc8b0dde[m Merge pull request #123 from gmrzone/profile-pic-cropper
+[33ma8ac209[m Fix Google font GET Error
+[33maea8991[m Improve Responsiveness of profilePicCropper component
+[33mfd6caee[m fix error close #122
+[33mefdf892[m fix skills Model error when clikcing update without adding any skills
+[33m47a740e[m fix conflicts
+[33m34cd225[m Added a ProfilePicCropper Component
+[33mac6eaca[m Added cusrsor to notification bell icon
+[33md682571[m Merge pull request #121 from mani-barathi/issue#120
+[33m48bd438[m fixed header dropdown bug
+[33m357e35e[m Merge pull request #115 from gmrzone/user-setting-update
+[33m7ad6e77[m Merge pull request #117 from mani-barathi/master
+[33m631b7bf[m Merge pull request #111 from divanov11/refactor-use-classnames
+[33m9a10da7[m Merge branch 'master' into refactor-use-classnames
+[33m22c2c09[m Merge branch 'master' into user-setting-update
+[33mb0a21ca[m refactoring logic in modal to instead use an effect (#113)
+[33m63f92b7[m fixed alignment issue in Header SearchBox
+[33m217f0a5[m added a file input to Profile Update button and cleanup UserSettingUpdateModel file
+[33m65fc61a[m :art: update feed ui styles
+[33m53a69d7[m :star2: update feed ui
+[33mcf1d275[m Merge pull request #112 from divanov11/feed-ui
+[33m2386f4a[m refactor(common): removing console logs
+[33mafb3b0d[m refactor(common): bring in classnames library to cleanup code related to dynamic classes
+[33mf8ae36e[m :art: update feed card ui
+[33m88372de[m UI enhance (#110)
+[33md3eaf66[m added Notifications dropdown option (#107)
+[33m302a120[m 🎨 UI enhance (#109)
+[33m7fcfe82[m Merge pull request #108 from divanov11/article
+[33mc0bb47c[m Added single article page
+[33m5bdf8f3[m :unicorn: update styles for header search box
+[33mb4e05a4[m Added search page - no functionality added until API is ready
+[33ma402761[m Added search form to header bar
+[33m48cb5bc[m Merge pull request #105 from abhivemp/master
+[33m5ec6fec[m Fixed file structure
+[33m4c6430e[m Merge pull request #104 from abhivemp/master
+[33me079e44[m Merge pull request #101 from Hrithik5/development
+[33mf7713a9[m fix error when removing tag from usersetting page (#103)
+[33mc563afc[m :memo: update create-post ui
+[33mdf0218d[m Formatted both files
+[33m00b81ca[m Added bug and feature templates
+[33m78256e0[m  fix modal width on mobile devices (#102)
+[33m141e8fc[m Added a Custom Input field component for Skill Tags (#100)
+[33me99ce55[m Corrected a word from advicable to advisable
+[33me0ac8bf[m :man: create and update re-useable Avatar
+[33m204f36c[m :anchor: move useFormHook to hooks/ dir
+[33mbf4a09d[m :package: add re-useable button components on common/
+[33m98e3945[m :fire: fixed dir
+[33m090a182[m temp
+[33m637926f[m :neutral_face: lowecasing directories name
+[33m129edda[m + Add liner and code formatter
+[33m6009313[m will merge with felix
+[33m4c3ac3d[m Merge pull request #50 from felixfaisal/master
+[33m3aa0d90[m this test was failing
+[33mae15de7[m turn ci false to skip pa11y warnings
+[33m2983a5d[m Auto linting and formatting when pushing to master
+[33mf2e4c1a[m adding a react eslint plugin to catch jsx errors (#92)
+[33m887f873[m :red_cicle: remove Model.js in favor of Modal.js
+[33mc1cb9c5[m Merge branch 'master' of https://github.com/divanov11/Mumble
+[33m639f00c[m :star2: improve codes for header navbar dropdown
+[33mdc1d3f5[m Merge pull request #90 from gmrzone/user-setting-fix
+[33m565d532[m fix header dropdown click event and added hover effect (#79)
+[33m458acc0[m Update README.md
+[33m8da82ce[m :memo: update README.md
+[33mb3fc047[m minor fix
+[33m9f6b1b8[m resolve conflicts
+[33me272b5c[m Merge pull request #88 from mohammad4kh/modal-UI_UX
+[33m871e784[m added transition effect to model
+[33mbe07874[m fix conflict with master branch
+[33m08d6d9e[m :memo: update README.md and CONTRIBUTING.md
+[33meb850c3[m fix conflict issues and run npm run format
+[33m0105526[m Merge branch 'master' into attributesName_fix
+[33m4bed25c[m Merge pull request #67 from MidouWebDev/patch-2
+[33mecb13ab[m 🌟 re-arrange css and add prettier format script (#76) (#89)
+[33mfc99df5[m closing the modal if pressed outside of it
+[33mb865bd0[m fixes #86 issue
+[33m3f3d6e5[m Fixing components that have class and for attributes to className and htmlFor respectively
+[33m5df6c17[m Added error state in PostForm (#75) && converted old syntax imports to ES6 imports (#81) (#83)
+[33mf19629a[m fix positioning and height of count badge on Discussions and Popular Articles sidebar (#80)
+[33mf4a3000[m added git commands for fork-and-pull Git workflow (#84)
+[33m847b517[m Removed post title
+[33mc0e7cfd[m Improved user setting page responsiveness and few alignments (#68)
+[33m8576951[m Basic quality of life changes to home page. (#71)
+[33m28dc059[m Fix: Router (#72)
+[33m4d19ea4[m adding a click outside lib so we can close the profile navigation when clicking outside (#73)
+[33m3ca4fde[m Wrapped user id in number function
+[33m3879f8f[m Fixed user id issue
+[33m693d51a[m set up prettier to avoid unnecessary merge conflicts - fix users.js to have numeric id, or app breaks on launch (#69)
+[33me29bd36[m Fix: Code of conduct link (#57)
+[33m21b1f3c[m Added sticky header bar
+[33m3dd7f05[m Added 'need' to tasks-updates
+[33meb20288[m Added pop up navigation in header
+[33m0c7946a[m Updated responsiveness--Cleaned up CSS--Installed UI Kit
+[33m852ccac[m Deleted the "===" in the README.md
+[33m7c7be19[m Added key props
+[33m87f470b[m usersettings reposiveness (#54)
+[33m25cedeb[m Fixed alignment in discussion page and feed (#61)
+[33m3038f48[m Update node.js.yml
+[33m53ecff3[m Added React Build GitHub action
+[33mcb7ff3f[m Improved download and setup instructions (#38)
+[33mca85080[m fixed votingWidget and profile alignment on discussion page (#37)
+[33m2687d35[m Add user search page and functionality (#32)
+[33m697443a[m Update README.md (#30)
+[33m257c220[m Update and rename TASKS-UPDATE.md to TASKS-UPDATES.md
+[33m2cabda3[m Update README.md
+[33m2dd1881[m Update README.md (#28)
+[33m173da55[m New frontend
+[33md5f79dc[m Added front end ROUGH draft
+[33mf3e487d[m Add code of conduct (#26)
+[33m9f64b7a[m Fix CODE_OF_CONDUCT.md link (#27)
+[33mc10f21c[m Created Code of conduct, Contribution guide and license (#19)
+[33m0b3d4d6[m docs: discord link (#10) (#15)
+[33mbcb48c3[m Merge pull request #8 from Mr-spShuvo/master
+[33mba7f6c4[m Merge remote-tracking branch 'upstream/master'
+[33m47e1cc7[m :memo: add basic form and inputs
+[33me301ab0[m Merge pull request #7 from mani-barathi/master
+[33m57f1408[m Update README.md
+[33m6a91e91[m Merge pull request #6 from Mr-spShuvo/master
+[33m982979c[m :bug: add https protocol for highlight.js
+[33mad3b6f7[m Merge pull request #5 from Mr-spShuvo/master
+[33m6135387[m :rocket: re-write styles using bem, add css varibalbes and modules
+[33m3f6f8c4[m Merge pull request #4 from mani-barathi/master
+[33m8ae7ecc[m changed cursor to default for tag && added active state for button
+[33me8a33c4[m Testing webhook
+[33mbc5e9f1[m Testing webhook
+[33m8e0a7de[m Testing webhook
+[33m9d5942c[m Testing webhook
+[33m402afcf[m Testing discord webhook
+[33m35c66a6[m Testing new webhooks connection for discord
+[33m88b08e8[m Merge pull request #3 from MohamedMuneerM/button-hover-effect
+[33mb7119ec[m added hover effects to buttons
+[33m3310642[m Added profile screenshot
+[33m2ebdf76[m Modified page screenshots
+[33me49224e[m Modified page screenshots
+[33mcb76230[m Added readme
+[33mf1cf1f0[m Publishing UI Kit
