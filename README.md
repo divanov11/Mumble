@@ -122,7 +122,7 @@ Dark Mode
 <!-- i will upload the Dark Mode screenshots soon !-->
 <br/>
 
-**Discussion/Question Page** : <br/>
+**Discussion/Question   Page** : <br/>
 
 <table width="100%"> 
 <tr>
