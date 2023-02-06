@@ -1,0 +1,18 @@
+{
+  "name": "luma_cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "npx e2e cypress open"
+  },
+  "author": "abut",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "0.26.0",
+    "cypress": "^10.10.0",
+    "cypress-commands": "2.0.1",
+    "cypress-terminal-report": "3.5.2",
+    "faker": "5.5.3"
+  }
+}
