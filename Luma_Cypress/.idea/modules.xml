@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Cypress/.idea/Cypress.iml" filepath="$PROJECT_DIR$/../Cypress/.idea/Cypress.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Luma_Cypress.iml" filepath="$PROJECT_DIR$/.idea/Luma_Cypress.iml" />
+    </modules>
+  </component>
+</project>

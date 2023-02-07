@@ -1,0 +1,5 @@
+cypress/
+node_modules/
+plugins/
+cypress.config.js
+
