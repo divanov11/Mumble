@@ -57,6 +57,8 @@ We highly recommend to go through the guideline before start contributing.
 
 > **_⚠ Those who wants to contribute on the repo, from now, before pushing/committing your changes, please make sure you run command `npm run format` or `yarn format` or use Prettier plugin to automatically format your code. We want to maintain consistency that's why we want to enforce the formatting. It's required! _**
 
+
+
 ## Reviewers :
 
 After submitting your PR, please tag reviewer(s) in your PR message. You can tag anyone below for the following.
