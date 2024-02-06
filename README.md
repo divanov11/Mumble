@@ -7,7 +7,7 @@
   </h1>
 <p align="center">An Open Source Social Media Platform and Public Forum for Questions and Discussions, built for Developers.</p>
 </p>
-
+I am testing it 
 <div align="center">
   
 <a href="https://discord.gg/9Du4KUY3dE">![Mumble Community](https://img.shields.io/discord/825371211399692308?label=Mumble%20Community&style=for-the-badge&logo=Discord)</a>
@@ -63,24 +63,23 @@ After submitting your PR, please tag reviewer(s) in your PR message. You can tag
 
 <br/>
 
-- **Markdown, Documentation changes :** 
+- **Markdown, Documentation changes :**
 
-     Request [@Mehdi - MidouWebDev](https://github.com/MidouWebDev)'s review !
+  Request [@Mehdi - MidouWebDev](https://github.com/MidouWebDev)'s review !
 
 #
 
 - **Frontend, Design :**
 
-     --> *Choose two reviewers :*
+  --> _Choose two reviewers :_
 
-    [@Dennis Ivy](https://github.com/divanov11)
+  [@Dennis Ivy](https://github.com/divanov11)
 
-    [@Shahriar Parvez](https://github.com/Mr-spShuvo)
+  [@Shahriar Parvez](https://github.com/Mr-spShuvo)
 
-    [@Cody Seibert](https://github.com/codyseibert)
+  [@Cody Seibert](https://github.com/codyseibert)
 
-    [@Mehdi - MidouWebDev](https://github.com/MidouWebDev)
-    
+  [@Mehdi - MidouWebDev](https://github.com/MidouWebDev)
 
 ## 📸 Screenshots :
 
@@ -159,4 +158,3 @@ Dark Mode
 </td>
 </table>
 <br/>
-
