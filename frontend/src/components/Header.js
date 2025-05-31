@@ -9,6 +9,7 @@ import logo from '../assets/logo/dark-logo.png';
 
 import { Avatar } from '../common';
 import SearchBox from './SearchBox';
+import NotificationDropdown from './NotificationDropdown';
 import { toggleTheme as DarkLightTheme } from '../actions/local';
 import { markAsRead } from '../actions/notificationsActions';
 import { getImageUrl } from '../utilities/getImageUrl';
@@ -150,37 +151,8 @@ const Header = ({ isSidebarNav, toggleSidebarNav }) => {
           </div>
         )}
         {showNotification && (
-          <div ref={notificationRef} className="card" id="user--navigation">
-            <Link
-              to={`/notifications`}
-              className="user-navigation--item"
-              onClick={closeNotification}
-            >
-              <i className="fas fa-envelope-open-text nav--icon"></i>
-              <h6>All Notifications</h6>
-            </Link>
-
-            {notifications
-              .filter((notification) => !notification.is_read)
-              .map((notification) => (
-                <div key={notification.id} className="user-navigation--item">
-                  <Avatar
-                    alt="img-description"
-                    src={getImageUrl(notification.created_by.profile_pic)}
-                    className="nav-avatar"
-                    size="sm"
-                  />
-                  <Link
-                    to={getNotificationLink(notification)}
-                    onClick={() => {
-                      closeNotification();
-                      dispatch(markAsRead(notification.id));
-                    }}
-                  >
-                    {notification.content}
-                  </Link>
-                </div>
-              ))}
+          <div ref={notificationRef}>
+            <NotificationDropdown onClose={closeNotification} />
           </div>
         )}
       </div>
