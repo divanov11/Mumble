@@ -25,4 +25,6 @@ export { default as SearchByInterestsList } from './SearchByInterestsList';
 export { default as SearchByArticlesList } from './SearchByArticlesList';
 export { default as SearchBySkillsList } from './SearchBySkillsList';
 export { default as SearchByPostsList } from './SearchByPostsList';
+export { default as SearchFilters } from './SearchFilters';
+export { default as NotificationDropdown } from './NotificationDropdown';
 export { default as SidebarNav } from './SidebarNav';

@@ -14,6 +14,7 @@
     "date-fns": "^2.19.0",
     "jwt-decode": "^3.1.2",
     "lodash": "^4.17.21",
+    "postcss": "^8.5.4",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-detect-click-outside": "^1.0.7",
@@ -31,9 +32,9 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "start:local": "REACT_APP_API_ENDPOINT=http://127.0.0.1:8000 react-scripts start",
-    "build": "react-scripts build",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
+    "start:local": "NODE_OPTIONS=--openssl-legacy-provider REACT_APP_API_ENDPOINT=http://127.0.0.1:8000 react-scripts start",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint ./src",

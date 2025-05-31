@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
 import '../styles/components/SearchPage.css';
 
@@ -12,6 +12,7 @@ import {
   SearchByPostsList,
   Page,
 } from '../components';
+import SearchFilters from '../components/SearchFilters';
 import {
   CATEGORY_ARTICLES,
   CATEGORY_INTERESTS,
@@ -23,18 +24,29 @@ import {
 const SearchPage = () => {
   // refactor this into redux
   let [category, setCategory] = useState(CATEGORY_USERS);
+  const [searchFilters, setSearchFilters] = useState({});
+
+  const handleFiltersChange = useCallback((newFilters) => {
+    setSearchFilters(newFilters);
+    // TODO: Apply filters to search results
+    console.log('Filters applied:', newFilters);
+  }, []);
 
   return (
     <Page>
       <section>
-        {category === CATEGORY_USERS && <SearchByUsersList />}
-        {category === CATEGORY_POSTS && <SearchByPostsList />}
-        {category === CATEGORY_ARTICLES && <SearchByArticlesList articles={articles} />}
-        {category === CATEGORY_SKILLS && <SearchBySkillsList skills={skills} />}
-        {category === CATEGORY_INTERESTS && <SearchByInterestsList interests={interests} />}
+        {category === CATEGORY_USERS && <SearchByUsersList filters={searchFilters} />}
+        {category === CATEGORY_POSTS && <SearchByPostsList filters={searchFilters} />}
+        {category === CATEGORY_ARTICLES && <SearchByArticlesList articles={articles} filters={searchFilters} />}
+        {category === CATEGORY_SKILLS && <SearchBySkillsList skills={skills} filters={searchFilters} />}
+        {category === CATEGORY_INTERESTS && <SearchByInterestsList interests={interests} filters={searchFilters} />}
       </section>
 
       <section className="three-column-layout__right-column">
+        <SearchFilters 
+          category={category} 
+          onFiltersChange={handleFiltersChange}
+        />
         <SearchByPanel category={category} setCategory={setCategory} />
       </section>
     </Page>

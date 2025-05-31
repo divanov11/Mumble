@@ -59,3 +59,20 @@ export const markAsRead = (notificationId) => async (dispatch) => {
     dispatch(createActionPayload(READ_FAIL, error));
   }
 };
+
+export const markAllAsRead = () => async (dispatch) => {
+  try {
+    dispatch({ type: READ_REQUEST });
+
+    // In a real implementation, this would be a separate API endpoint
+    // For now, we'll simulate marking all as read
+    await NotificationsService.markAllAsRead();
+    dispatch({
+      type: READ_SUCCESS,
+    });
+
+    dispatch(getUnreadNotifications());
+  } catch (error) {
+    dispatch(createActionPayload(READ_FAIL, error));
+  }
+};

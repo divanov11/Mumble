@@ -1,5 +1,9 @@
-#search-form {
+.search-container {
+  position: relative;
   margin: 0 1rem;
+}
+
+#search-form {
   display: flex;
   align-items: center;
   border-radius: 10rem;
@@ -13,11 +17,19 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  position: relative;
 }
 
 .dark-theme #search-form {
   color: var(--color-text);
   background-color: var(--color-sub);
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  position: relative;
 }
 
 #search-form input {
@@ -43,6 +55,62 @@
   color: var(--color-gray);
 }
 
+.search-loading {
+  position: absolute;
+  right: 0.5rem;
+  display: flex;
+  align-items: center;
+  color: var(--color-main);
+}
+
+.search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--color-bg);
+  border: 1px solid var(--color-gray-light);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 0.25rem;
+  list-style: none;
+  padding: 0;
+}
+
+.dark-theme .search-suggestions {
+  background: var(--color-bg-dark);
+  border-color: var(--color-gray-dark);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.search-suggestion {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--color-gray-light);
+  transition: background-color 0.2s ease;
+}
+
+.dark-theme .search-suggestion {
+  border-bottom-color: var(--color-gray-dark);
+}
+
+.search-suggestion:last-child {
+  border-bottom: none;
+}
+
+.search-suggestion:hover,
+.search-suggestion--selected {
+  background-color: var(--color-main-light);
+}
+
+.dark-theme .search-suggestion:hover,
+.dark-theme .search-suggestion--selected {
+  background-color: var(--color-main-dark);
+}
+
 .shortcut__Text {
   font-size: 8px;
 }
@@ -51,6 +119,45 @@
   font-size: 10px;
   background-color: #303030;
   color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #555;
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  #search-form {
+    border-width: 3px;
+  }
+  
+  #search-form:focus-within {
+    border-width: 3px;
+  }
+  
+  .search-suggestions {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  #search-form,
+  .search-suggestion {
+    transition: none;
+  }
 }
 
 @media screen and (max-width: 480px) {
