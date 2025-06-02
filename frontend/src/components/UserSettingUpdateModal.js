@@ -16,7 +16,6 @@ const UserSettingUpdateModal = ({ heading, dataType, userData, active, setActive
     bio: userData.bio,
     email: userData.email,
   });
-
   const handleFormSubmit = (e) => {
     e.preventDefault();
     dispatch(updateUserProfile(fields));
@@ -27,10 +26,12 @@ const UserSettingUpdateModal = ({ heading, dataType, userData, active, setActive
     setActive(false);
   };
 
+  // Prevent form submission when pressing Enter in the skills form
   const HandleTagFormSubmit = (e) => {
     e.preventDefault();
   };
 
+  // Prevent form submission when pressing Enter in any field of the skills form
   const preventSubmission = (e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
