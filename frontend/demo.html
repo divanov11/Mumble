@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Skills Tag Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #2d2d2d;
+            margin-top: 0;
+        }
+        
+        .modal {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .modal-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .close-button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        .input-tags-container {
+            position: relative;
+            width: 100%;
+        }
+        
+        .input-tags {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            width: 100%;
+            min-height: 45px;
+            padding: 0 10px;
+            border: 2px solid #e5e5e5;
+            border-radius: 5px;
+            background-color: white;
+        }
+        
+        .input-tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 5px 0;
+        }
+        
+        .tag {
+            display: flex;
+            align-items: center;
+            margin: 2px 5px 2px 0;
+            padding: 5px 10px;
+            background-color: #e1f5fe;
+            border-radius: 5px;
+            color: #0288d1;
+        }
+        
+        .tag i {
+            margin-left: 5px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        
+        .tag-input {
+            flex: 1;
+            min-width: 100px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: #333;
+            font-size: 0.9rem;
+            padding: 10px 5px;
+        }
+        
+        .tag-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            max-height: 200px;
+            overflow-y: auto;
+            background-color: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+        
+        .tag-suggestion {
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .tag-suggestion:hover,
+        .tag-suggestion.active {
+            background-color: #e1f5fe;
+            color: #0288d1;
+        }
+        
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .button {
+            padding: 8px 16px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        
+        .button-cancel {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .button-update {
+            background-color: #2196f3;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dynamic Skills Tag Feature Demo</h1>
+        <p>This is a demonstration of the dynamic skills tag feature implemented for issue #468.</p>
+        
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title">Update User Settings</div>
+                <button class="close-button">&times;</button>
+            </div>
+            
+            <div class="modal-content">
+                <label for="tags">Tags</label>
+                <div class="input-tags-container">
+                    <div class="input-tags" id="input-tags">
+                        <div class="input-tag-list" id="tag-list">
+                            <!-- Existing tags will be added here -->
+                        </div>
+                        <input
+                            id="tag-input"
+                            class="tag-input"
+                            type="text"
+                            placeholder="Type to search skills, use arrow keys to navigate, Enter to select"
+                        />
+                    </div>
+                    
+                    <div class="tag-suggestions" id="tag-suggestions" style="display: none;">
+                        <!-- Suggestions will be added here -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="button button-cancel">Cancel</button>
+                <button class="button button-update">Update</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // List of skills for suggestions
+        const skillsList = [
+            // Programming Languages
+            'JavaScript', 'Python', 'Java', 'C++', 'C#', 'PHP', 'Ruby', 'Swift', 'TypeScript', 'Go',
+            'Kotlin', 'Rust', 'Scala', 'Perl', 'Dart', 'R', 'Elixir', 'Clojure', 'Haskell',
+            
+            // Frontend
+            'React', 'Angular', 'Vue.js', 'Svelte', 'Next.js', 'Gatsby', 'HTML', 'CSS', 'SASS', 'LESS',
+            'Bootstrap', 'Tailwind CSS', 'Material UI', 'Redux', 'jQuery', 'Webpack', 'Babel', 'ESLint',
+            
+            // Backend
+            'Node.js', 'Express.js', 'Django', 'Flask', 'Ruby on Rails', 'Spring Boot', 'Laravel',
+            'ASP.NET', 'FastAPI', 'NestJS', 'GraphQL', 'REST API', 'Socket.IO',
+            
+            // Databases
+            'MongoDB', 'PostgreSQL', 'MySQL', 'SQLite', 'Redis', 'Firebase', 'DynamoDB', 'Cassandra',
+            'Oracle', 'SQL Server', 'Elasticsearch'
+        ];
+
+        // Initial tags
+        let tags = [
+            { name: 'JavaScript' },
+            { name: 'React' },
+            { name: 'Node.js' }
+        ];
+
+        // DOM elements
+        const tagInput = document.getElementById('tag-input');
+        const tagList = document.getElementById('tag-list');
+        const tagSuggestions = document.getElementById('tag-suggestions');
+        const inputTags = document.getElementById('input-tags');
+
+        // Variables for suggestions
+        let activeSuggestionIndex = 0;
+        let filteredSuggestions = [];
+
+        // Render initial tags
+        renderTags();
+
+        // Add event listeners
+        tagInput.addEventListener('input', handleInputChange);
+        tagInput.addEventListener('keydown', handleKeyDown);
+        inputTags.addEventListener('click', () => tagInput.focus());
+        document.addEventListener('click', handleClickOutside);
+
+        // Functions
+        function renderTags() {
+            tagList.innerHTML = '';
+            tags.forEach(tag => {
+                const tagElement = document.createElement('div');
+                tagElement.className = 'tag';
+                tagElement.innerHTML = `
+                    <small>${tag.name}</small>
+                    <i class="fa fa-times" aria-hidden="true">✕</i>
+                `;
+                tagElement.querySelector('i').addEventListener('click', () => removeTag(tag));
+                tagList.appendChild(tagElement);
+            });
+        }
+
+        function handleInputChange(e) {
+            const input = e.target.value.trim();
+            
+            if (input === '') {
+                tagSuggestions.style.display = 'none';
+                filteredSuggestions = [];
+                return;
+            }
+
+            const inputLower = input.toLowerCase();
+            filteredSuggestions = skillsList
+                .filter(skill => 
+                    skill.toLowerCase().includes(inputLower) && 
+                    !tags.some(tag => tag.name.toLowerCase() === skill.toLowerCase())
+                )
+                .slice(0, 5); // Limit to 5 suggestions
+            
+            renderSuggestions();
+            
+            if (filteredSuggestions.length > 0) {
+                tagSuggestions.style.display = 'block';
+                activeSuggestionIndex = 0;
+                highlightActiveSuggestion();
+            } else {
+                tagSuggestions.style.display = 'none';
+            }
+        }
+
+        function renderSuggestions() {
+            tagSuggestions.innerHTML = '';
+            filteredSuggestions.forEach((suggestion, index) => {
+                const suggestionElement = document.createElement('div');
+                suggestionElement.className = 'tag-suggestion';
+                suggestionElement.textContent = suggestion;
+                suggestionElement.addEventListener('click', () => addTag(suggestion));
+                suggestionElement.addEventListener('mouseenter', () => {
+                    activeSuggestionIndex = index;
+                    highlightActiveSuggestion();
+                });
+                tagSuggestions.appendChild(suggestionElement);
+            });
+        }
+
+        function highlightActiveSuggestion() {
+            const suggestions = tagSuggestions.querySelectorAll('.tag-suggestion');
+            suggestions.forEach((suggestion, index) => {
+                if (index === activeSuggestionIndex) {
+                    suggestion.classList.add('active');
+                } else {
+                    suggestion.classList.remove('active');
+                }
+            });
+        }
+
+        function handleKeyDown(e) {
+            // Add tag on Enter or comma
+            if (e.key === 'Enter' || e.key === ',') {
+                e.preventDefault();
+                
+                if (tagSuggestions.style.display === 'block' && filteredSuggestions.length > 0) {
+                    // If suggestions are shown, add the selected suggestion
+                    addTag(filteredSuggestions[activeSuggestionIndex]);
+                } else if (tagInput.value.trim()) {
+                    // Otherwise add the current input
+                    const value = e.key === ',' ? tagInput.value.substring(0, tagInput.value.length - 1) : tagInput.value;
+                    addTag(value);
+                }
+            } 
+            // Navigate through suggestions with arrow keys
+            else if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (tagSuggestions.style.display === 'block') {
+                    activeSuggestionIndex = 
+                        activeSuggestionIndex < filteredSuggestions.length - 1 ? activeSuggestionIndex + 1 : 0;
+                    highlightActiveSuggestion();
+                }
+            } 
+            else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (tagSuggestions.style.display === 'block') {
+                    activeSuggestionIndex = 
+                        activeSuggestionIndex > 0 ? activeSuggestionIndex - 1 : filteredSuggestions.length - 1;
+                    highlightActiveSuggestion();
+                }
+            }
+            // Close suggestions on Escape
+            else if (e.key === 'Escape') {
+                tagSuggestions.style.display = 'none';
+            }
+        }
+
+        function addTag(value) {
+            if (!value || value.trim() === '') return;
+            
+            // Check if tag already exists (case insensitive)
+            const valueToAdd = value.trim();
+            const tagExists = tags.some(tag => tag.name.toLowerCase() === valueToAdd.toLowerCase());
+            
+            if (!tagExists) {
+                // If adding from suggestions list, preserve the original casing from the skills list
+                if (filteredSuggestions.some(s => s.toLowerCase() === valueToAdd.toLowerCase())) {
+                    const originalCasing = filteredSuggestions.find(s => s.toLowerCase() === valueToAdd.toLowerCase());
+                    tags.push({ name: originalCasing });
+                } else {
+                    // Otherwise use the input value as is
+                    tags.push({ name: valueToAdd });
+                }
+                renderTags();
+            }
+            
+            tagInput.value = '';
+            tagSuggestions.style.display = 'none';
+            tagInput.focus();
+        }
+
+        function removeTag(tagToRemove) {
+            tags = tags.filter(tag => tag !== tagToRemove);
+            renderTags();
+        }
+
+        function handleClickOutside(e) {
+            if (!tagSuggestions.contains(e.target) && !tagInput.contains(e.target)) {
+                tagSuggestions.style.display = 'none';
+            }
+        }
+
+        // Close button functionality
+        document.querySelector('.close-button').addEventListener('click', () => {
+            alert('Modal would close here');
+        });
+
+        // Cancel button functionality
+        document.querySelector('.button-cancel').addEventListener('click', () => {
+            alert('Changes would be cancelled here');
+        });
+
+        // Update button functionality
+        document.querySelector('.button-update').addEventListener('click', () => {
+            alert('Skills would be updated here: ' + JSON.stringify(tags.map(tag => tag.name)));
+        });
+    </script>
+</body>
+</html>
